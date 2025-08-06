@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química U3: Reacciones Químicas y Electroquímica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Reacciones Químicas y Electroquímica</h1>
+            <p class="text-lg text-gray-600">Química - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Reacciones Redox -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Reacciones de Óxido-Reducción (Redox)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las reacciones redox son fundamentales en procesos como la combustión, la corrosión de metales y el funcionamiento de las baterías. Involucran la transferencia de electrones entre dos especies químicas, lo que provoca un cambio en sus estados de oxidación.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conceptos Clave</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Oxidación:</strong> Es la <strong>pérdida</strong> de electrones. La especie que se oxida aumenta su estado de oxidación y se denomina <strong>agente reductor</strong> (porque provoca la reducción de la otra especie).</li>
+                            <li><strong>Reducción:</strong> Es la <strong>ganancia</strong> de electrones. La especie que se reduce disminuye su estado de oxidación y se denomina <strong>agente oxidante</strong> (porque provoca la oxidación de la otra especie).</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Regla Mnemotécnica:</strong> "PIERDE Oxida, GANA Reduce".
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> En la reacción \(Zn + Cu^{2+} \rightarrow Zn^{2+} + Cu\):<br>
+                            - El Zinc (Zn) pasa de un estado de oxidación 0 a +2. <strong>Pierde</strong> 2 electrones, por lo tanto, se <strong>oxida</strong>. Es el agente reductor.<br>
+                            - El Cobre (Cu²⁺) pasa de +2 a 0. <strong>Gana</strong> 2 electrones, por lo tanto, se <strong>reduce</strong>. Es el agente oxidante.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=06z5aF-12VU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Reacciones Redox &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ácido-Base y pH -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Reacciones Ácido-Base y pH</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las reacciones ácido-base son cruciales en biología (pH de la sangre), la industria (producción de fertilizantes) y la vida cotidiana (antiácidos estomacales).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definiciones de Ácido y Base</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Teoría de Arrhenius:</strong> Un <strong>ácido</strong> es una sustancia que en solución acuosa libera iones hidrógeno (H⁺). Una <strong>base</strong> es una sustancia que libera iones hidroxilo (OH⁻).</li>
+                            <li><strong>Teoría de Brønsted-Lowry (más general):</strong> Un <strong>ácido</strong> es un dador de protones (H⁺). Una <strong>base</strong> es un aceptor de protones.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Escala de pH</h3>
+                        <p>El pH es una medida logarítmica de la concentración de iones H⁺ en una solución. Permite expresar la acidez o alcalinidad de una forma sencilla.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x200/E0F2FE/0891B2?text=Escala+de+pH" alt="Escala de pH con ejemplos" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Definición Matemática:</strong> \(pH = -\log[H^+]\)<br>
+                            - <strong>pH < 7:</strong> Solución ácida.<br>
+                            - <strong>pH = 7:</strong> Solución neutra.<br>
+                            - <strong>pH > 7:</strong> Solución básica o alcalina.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=c9i-v9V-s-A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Ácidos, Bases y pH &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Equilibrio Químico -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Procesos de Equilibrio</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Muchas reacciones químicas son <strong>reversibles</strong>, es decir, los productos pueden reaccionar para volver a formar los reactivos. El <strong>equilibrio químico</strong> se alcanza cuando las velocidades de la reacción directa e inversa se igualan, y las concentraciones de reactivos y productos permanecen constantes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principio de Le Châtelier</h3>
+                        <p>Este principio establece que si un sistema en equilibrio es perturbado por un cambio en las condiciones (concentración, presión o temperatura), el sistema se desplazará en la dirección que contrarreste el cambio para restablecer un nuevo equilibrio.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Cambio de Concentración:</strong> Si se añade un reactivo, el equilibrio se desplaza hacia los productos. Si se añade un producto, se desplaza hacia los reactivos.</li>
+                            <li><strong>Cambio de Presión (en gases):</strong> Un aumento de presión desplaza el equilibrio hacia el lado con menos moles de gas.</li>
+                            <li><strong>Cambio de Temperatura:</strong> Un aumento de temperatura favorece la reacción endotérmica (la que absorbe calor).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=8-m_2Z7vI4s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Equilibrio Químico y Le Châtelier &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Electroquímica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Electroquímica y Pilas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La electroquímica es la rama de la química que estudia la relación entre las reacciones químicas y la energía eléctrica.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Celdas Galvánicas (Pilas)</h3>
+                        <p>Una pila o celda galvánica es un dispositivo que convierte la energía química de una reacción redox espontánea en energía eléctrica. Consta de dos electrodos (ánodo y cátodo) sumergidos en soluciones de electrolitos y conectados por un puente salino.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Pila+de+Daniell" alt="Esquema de una Pila de Daniell" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Ánodo:</strong> Es el electrodo donde ocurre la <strong>oxidación</strong>. Es el polo negativo de la pila.</li>
+                            <li><strong>Cátodo:</strong> Es el electrodo donde ocurre la <strong>reducción</strong>. Es el polo positivo de la pila.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=P63gV_l3-Cg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Electroquímica y Pilas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

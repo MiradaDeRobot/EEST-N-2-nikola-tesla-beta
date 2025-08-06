@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U1: Diseño y Planificación de Proyectos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Diseño y Planificación de Proyectos</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Modelo Proyectual -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Estructura y Aplicación del Modelo Proyectual</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Abordar un proyecto electrónico sin un plan es como intentar construir una casa sin planos. El <strong>modelo proyectual</strong> es una metodología de trabajo, una secuencia de pasos ordenados que nos guía desde la idea inicial hasta el producto final, asegurando que el resultado sea funcional, fiable y cumpla con los objetivos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fases de un Proyecto Electrónico</h3>
+                        <ol class="list-decimal list-inside space-y-4 mt-4">
+                            <li>
+                                <strong>Idea y Definición de Requisitos:</strong> ¿Qué problema se va a resolver? ¿Qué debe hacer el circuito? En esta fase se definen las especificaciones: alimentación, tamaño, costo, funciones, etc.
+                            </li>
+                            <li>
+                                <strong>Anteproyecto y Diagrama en Bloques:</strong> Se realiza un primer boceto del sistema, dividiéndolo en bloques funcionales (ej: "Fuente de Alimentación", "Etapa de Amplificación", "Control Lógico"). Se investigan posibles soluciones y se eligen los componentes principales.
+                            </li>
+                            <li>
+                                <strong>Diseño y Simulación (Proyecto):</strong> Se diseña el circuito esquemático detallado. Se realizan los cálculos y se simula el comportamiento del circuito por software para verificar que funciona como se espera antes de construir nada.
+                            </li>
+                            <li>
+                                <strong>Diseño del PCB y Construcción del Prototipo:</strong> Se diseña la placa de circuito impreso (PCB) y se fabrica un primer prototipo.
+                            </li>
+                            <li>
+                                <strong>Pruebas y Depuración:</strong> Se ensambla el prototipo y se realizan pruebas exhaustivas para verificar que cumple todas las especificaciones. Se corrigen los errores (bugs) detectados.
+                            </li>
+                             <li>
+                                <strong>Documentación y Producción:</strong> Se genera toda la documentación final (esquemáticos, lista de materiales, manual de usuario) y se prepara el proyecto para su posible producción en serie.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Diseño de Circuitos Impresos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Métodos de Diseño de Circuitos Impresos (PCB)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>Circuito Impreso</strong> o <strong>PCB</strong> (Printed Circuit Board) es una placa de material aislante (como fibra de vidrio) con pistas de cobre que conectan eléctricamente los componentes electrónicos. Es la base física sobre la que se construye casi cualquier dispositivo electrónico moderno.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Software de Diseño Asistido por Computadora (CAD)</h3>
+                        <p>El diseño de un PCB se realiza con software especializado de tipo CAD (Computer-Aided Design). El proceso generalmente consta de dos etapas:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Captura del Esquemático:</strong> Se dibuja el diagrama del circuito, seleccionando los componentes de librerías y conectándolos lógicamente.</li>
+                            <li><strong>Diseño del Layout (Pisteado):</strong> Se importan los componentes del esquemático a la placa virtual. Se ubican los componentes físicamente y se trazan las pistas de cobre que los interconectan.</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Programas Populares:</strong> Eagle, KiCad (de código abierto y muy potente), Altium Designer (profesional), y herramientas más sencillas para empezar como PCB Wizard.
+                        </div>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Software+de+Dise%C3%B1o+de+PCB+(Layout)" alt="Software de Diseño de PCB" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Métodos de Fabricación de Prototipos</h3>
+                        <p>Para crear un prototipo único, existen métodos accesibles que no requieren maquinaria industrial.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Método de Transferencia de Tóner ("Planchado")</h4>
+                        <p>Es el método casero más popular por su bajo costo y buenos resultados.</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-3">
+                            <li>Se imprime el diseño de las pistas (en modo espejo) con una impresora láser sobre papel fotográfico o de revista.</li>
+                            <li>Se coloca el papel sobre una placa de cobre virgen y se aplica calor y presión con una plancha. El tóner (que es un polímero plástico) se derrite y se adhiere al cobre.</li>
+                            <li>Se sumerge la placa en agua para ablandar y retirar el papel, dejando el tóner pegado al cobre como una máscara protectora.</li>
+                            <li>Se sumerge la placa en un ácido corrosivo (como cloruro férrico). El ácido ataca y elimina el cobre no protegido por el tóner.</li>
+                            <li>Se limpia el tóner restante con un solvente (como acetona), revelando las pistas de cobre del circuito.</li>
+                        </ol>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s_40-IIz4xI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre el Método de Planchado para PCB &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

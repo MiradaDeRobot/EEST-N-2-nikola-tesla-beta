@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U1: Sistemas de Numeración y Álgebra de Boole</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Sistemas de Numeración y Álgebra de Boole</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Sistemas Analógicos vs Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas Analógicos y Digitales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La electrónica se divide en dos grandes ramas: analógica y digital. Entender su diferencia es fundamental.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <h3 class="text-2xl font-semibold mb-3">Sistemas Analógicos</h3>
+                            <p>Una señal analógica es continua en el tiempo y en amplitud. Puede tomar infinitos valores dentro de un rango. El mundo real es inherentemente analógico (sonido, luz, temperatura).</p>
+                            <img src="https://placehold.co/400x200/E0F2FE/0891B2?text=Se%C3%B1al+Anal%C3%B3gica" alt="Señal Analógica" class="w-full h-auto rounded-lg shadow-md mt-4">
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <h3 class="text-2xl font-semibold mb-3">Sistemas Digitales</h3>
+                            <p>Una señal digital es discreta. Solo puede tomar un número finito de valores definidos. En la electrónica digital binaria, estos valores son solo dos: <strong>'0' (BAJO)</strong> y <strong>'1' (ALTO)</strong>, representados por niveles de tensión (ej. 0V y 5V).</p>
+                            <img src="https://placehold.co/400x200/E0F2FE/0891B2?text=Se%C3%B1al+Digital" alt="Señal Digital" class="w-full h-auto rounded-lg shadow-md mt-4">
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <strong>Ventaja Digital: Inmunidad al Ruido.</strong> Las señales digitales son mucho más robustas frente al ruido. Un pequeño ruido en una señal analógica la altera permanentemente. En una señal digital, mientras el ruido no sea tan grande como para confundir un '0' con un '1', la información se puede regenerar y transmitir sin errores. Esto es clave para la fiabilidad de las computadoras y las comunicaciones modernas.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sistemas de Numeración -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Sistemas de Numeración</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aunque estamos acostumbrados al sistema decimal (base 10), los sistemas digitales utilizan otras bases para representar la información.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sistemas Posicionales</h3>
+                        <p>El valor de un número depende de la posición de sus dígitos. El valor total es la suma de cada dígito multiplicado por la base elevada a la potencia de su posición.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Decimal (Base 10):</strong> Usa 10 dígitos (0-9). El número \(125_{10} = 1 \cdot 10^2 + 2 \cdot 10^1 + 5 \cdot 10^0\).</li>
+                            <li><strong>Binario (Base 2):</strong> Usa 2 dígitos (0 y 1), llamados <strong>bits</strong>. Es el lenguaje nativo de las computadoras. El número \(1101_2 = 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8+4+0+1 = 13_{10}\).</li>
+                            <li><strong>Hexadecimal (Base 16):</strong> Usa 16 símbolos (0-9 y A-F, donde A=10, ..., F=15). Es muy usado como una forma compacta de representar números binarios, ya que cada dígito hexadecimal corresponde exactamente a 4 bits (un <strong>nibble</strong>).</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Conversión de Decimal a Binario (Divisiones Sucesivas):</strong><br>
+                            Para convertir \(25_{10}\) a binario, dividimos por 2 sucesivamente y anotamos los restos.<br>
+                            \(25 \div 2 = 12\) (Resto <strong>1</strong>) <br>
+                            \(12 \div 2 = 6\) (Resto <strong>0</strong>) <br>
+                            \(6 \div 2 = 3\) (Resto <strong>0</strong>) <br>
+                            \(3 \div 2 = 1\) (Resto <strong>1</strong>) <br>
+                            \(1 \div 2 = 0\) (Resto <strong>1</strong>) <br>
+                            Se leen los restos de abajo hacia arriba: \(11001_2\).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k14-9A0-y6M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Conversión entre Sistemas Numéricos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Álgebra de Boole y Compuertas Lógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Álgebra de Boole y Compuertas Lógicas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El Álgebra de Boole es la matemática de los sistemas digitales. Trabaja con variables que solo pueden tomar dos valores (verdadero/falso, 1/0) y define operaciones lógicas sobre ellas. Los circuitos que implementan estas operaciones se llaman <strong>compuertas lógicas</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Compuertas Lógicas Fundamentales y Universales</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                            <!-- AND -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">AND: \(S = A \cdot B\)</h4>
+                                <p>La salida es '1' solo si A <strong>Y</strong> B son '1'.</p>
+                                <img src="https://placehold.co/300x150/E0F2FE/0891B2?text=S%C3%ADmbolo+AND" alt="Símbolo de la compuerta AND" class="w-full h-auto rounded-lg my-2 max-w-xs mx-auto">
+                            </div>
+                            <!-- OR -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">OR: \(S = A + B\)</h4>
+                                <p>La salida es '1' si A <strong>O</strong> B (o ambas) son '1'.</p>
+                                <img src="https://placehold.co/300x150/E0F2FE/0891B2?text=S%C3%ADmbolo+OR" alt="Símbolo de la compuerta OR" class="w-full h-auto rounded-lg my-2 max-w-xs mx-auto">
+                            </div>
+                            <!-- NOT -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">NOT: \(S = \overline{A}\)</h4>
+                                <p>La salida es el valor inverso de la entrada.</p>
+                                <img src="https://placehold.co/300x150/E0F2FE/0891B2?text=S%C3%ADmbolo+NOT" alt="Símbolo de la compuerta NOT" class="w-full h-auto rounded-lg my-2 max-w-xs mx-auto">
+                            </div>
+                            <!-- XOR -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">XOR (OR Exclusiva): \(S = A \oplus B\)</h4>
+                                <p>La salida es '1' si las entradas son <strong>diferentes</strong>.</p>
+                                <img src="https://placehold.co/300x150/E0F2FE/0891B2?text=S%C3%ADmbolo+XOR" alt="Símbolo de la compuerta XOR" class="w-full h-auto rounded-lg my-2 max-w-xs mx-auto">
+                            </div>
+                        </div>
+                         <div class="info-box mt-6">
+                            <strong>Compuertas Universales: NAND y NOR</strong><br>
+                            Una compuerta es "universal" si se puede construir cualquier otra compuerta lógica (AND, OR, NOT) usando solo ese tipo de compuerta.
+                            <ul class="list-disc list-inside mt-2">
+                                <li><strong>NAND (NOT-AND):</strong> Es una compuerta AND seguida de un inversor (\(\overline{A \cdot B}\)).</li>
+                                <li><strong>NOR (NOT-OR):</strong> Es una compuerta OR seguida de un inversor (\(\overline{A + B}\)).</li>
+                            </ul>
+                            Esto es muy importante en la fabricación de circuitos integrados, ya que es más eficiente producir un solo tipo de compuerta en masa.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teoremas y Postulados del Álgebra de Boole</h3>
+                        <p>Son reglas que nos permiten simplificar expresiones lógicas complejas, lo que se traduce en circuitos más simples, baratos y rápidos.</p>
+                        <div class="space-y-4 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold">Leyes Fundamentales</h4>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li><strong>Ley Conmutativa:</strong> Afirma que el orden de las variables en una operación OR o AND no altera el resultado (\(A+B = B+A\); \(A \cdot B = B \cdot A\)).</li>
+                                    <li><strong>Ley Asociativa:</strong> Permite agrupar las variables de distintas formas en operaciones con más de dos entradas (\(A+(B+C) = (A+B)+C\)).</li>
+                                    <li><strong>Ley Distributiva:</strong> Muestra cómo interactúan las operaciones AND y OR (\(A \cdot (B+C) = A \cdot B + A \cdot C\)).</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold">Teoremas de Absorción</h4>
+                                <p>Estos teoremas son muy útiles para eliminar términos redundantes en una expresión:</p>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>\(A + (A \cdot B) = A\): Si A es verdadero (1), el resultado es 1. Si A es falso (0), el resultado es 0. El resultado siempre es igual a A.</li>
+                                    <li>\(A \cdot (A + B) = A\): Si A es 0, el resultado es 0. Si A es 1, el resultado es 1. El resultado siempre es igual a A.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold">Teoremas de De Morgan</h4>
+                                <p>Son dos de las herramientas más poderosas para la simplificación, ya que permiten pasar de operaciones OR a AND y viceversa, invirtiendo las variables.</p>
+                                <div class="info-box">
+                                    <p><strong>1. \(\overline{A+B} = \overline{A} \cdot \overline{B}\)</strong></p>
+                                    <p class="mt-1 text-base">"Negar que A o B sea verdadero, es lógicamente lo mismo que decir que A es falso Y B es falso". En términos de circuitos, una compuerta NOR es equivalente a una compuerta AND con sus dos entradas invertidas.</p>
+                                    <p class="mt-3"><strong>2. \(\overline{A \cdot B} = \overline{A} + \overline{B}\)</strong></p>
+                                    <p class="mt-1 text-base">"Negar que A y B sean verdaderos, es lógicamente lo mismo que decir que A es falso O B es falso". En términos de circuitos, una compuerta NAND es equivalente a una compuerta OR con sus dos entradas invertidas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video explica en detalle los postulados y teoremas más importantes del Álgebra de Boole.</p>
+                            <a href="https://www.youtube.com/watch?v=s0D-2A7_s-Y" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teoremas del Álgebra de Boole &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Mapas de Karnaugh -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Simplificación con Mapas de Karnaugh (K-maps)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Simplificar funciones booleanas con teoremas puede ser tedioso y propenso a errores. El <strong>Mapa de Karnaugh</strong> es un método gráfico que permite encontrar la expresión más simple para una función lógica de hasta 4 o 5 variables de manera sistemática.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Construcción y Uso del Mapa</h3>
+                        <p>Un K-map es una representación visual de la tabla de verdad de una función. Cada celda del mapa corresponde a una combinación de las variables de entrada (un minterm).</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-3">
+                            <li>Se dibuja el mapa con \(2^n\) celdas, donde n es el número de variables.</li>
+                            <li>Se rellena el mapa colocando un '1' en las celdas correspondientes a las combinaciones que hacen que la función de salida sea '1'.</li>
+                            <li>Se agrupan los '1' adyacentes en grupos de \(2^k\) (1, 2, 4, 8...). Los grupos deben ser lo más grandes posible. Los bordes del mapa se consideran adyacentes (como si fuera un cilindro).</li>
+                            <li>Cada grupo corresponde a un término simplificado. La expresión final es la suma (OR) de todos los términos de los grupos.</li>
+                        </ol>
+                        <div class="example-box">
+                            <strong>Ejemplo con 3 Variables:</strong> Simplificar \(F(A,B,C) = \sum m(1,3,4,5,7)\) <br>
+                            El mapa de 3 variables tiene 8 celdas. Colocamos '1' en las posiciones 1, 3, 4, 5, 7. <br>
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Mapa+de+Karnaugh+de+3+Variables+con+Grupos" alt="Mapa de Karnaugh de 3 variables" class="w-full h-auto rounded-lg my-2 max-w-md mx-auto">
+                            - Un grupo de 4 celdas (m1, m3, m5, m7) simplifica a la variable que no cambia: <strong>C</strong>. <br>
+                            - Un grupo de 2 celdas (m4, m5) simplifica a <strong>\(A \cdot \overline{B}\)</strong>. <br>
+                            La función simplificada es \(F = C + A \cdot \overline{B}\).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g-3f7A-3_p0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Mapas de Karnaugh &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

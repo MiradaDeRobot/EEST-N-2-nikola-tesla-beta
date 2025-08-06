@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U2: Técnicas de Montaje y Soldadura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Técnicas de Montaje y Soldadura</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Técnicas de Montaje y Conexionado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Técnicas de Montaje y Conexionado</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez diseñado el circuito, el siguiente paso es materializarlo. El montaje es el proceso de posicionar y conectar físicamente los componentes. La técnica elegida depende de si estamos creando un prototipo rápido o un producto final.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Montaje en Protoboard</h3>
+                        <p>El protoboard (o placa de pruebas) es una herramienta esencial para el prototipado. Permite construir y modificar circuitos rápidamente sin necesidad de soldar.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Protoboard+con+Componentes" alt="Protoboard con componentes" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Conexiones Internas:</strong><br>
+                            - <strong>Buses de Alimentación:</strong> Las filas largas en los bordes (usualmente marcadas con rojo y azul) están conectadas horizontalmente. Se usan para distribuir VCC y GND a todo el circuito.<br>
+                            - <strong>Pistas de Componentes:</strong> Las filas cortas en el área central están conectadas verticalmente en grupos de 5. El canal central aísla las dos mitades, ideal para colocar circuitos integrados.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Perforado y Montaje de Componentes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Técnicas de Perforado y Montaje de Componentes</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez fabricado el PCB, el siguiente paso es prepararlo para el montaje de los componentes, lo que incluye el perforado de los orificios y la correcta inserción de cada pieza.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Perforado de la Placa (Drilling)</h3>
+                        <p>Se utiliza un minitorno o taladro de banco con brocas (mechas) muy finas. El diámetro de la broca debe ser ligeramente mayor que el del terminal del componente que se va a insertar.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Brocas comunes:</strong> 0.8mm para resistencias y diodos, 1.0mm para terminales más gruesos como los de borneras o potenciómetros.</li>
+                            <li><strong>Técnica:</strong> Es crucial perforar de forma perpendicular a la placa para que los componentes asienten correctamente.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Montaje de Componentes (THT - Through-Hole Technology)</h3>
+                        <p>Esta es la tecnología de "agujero pasante", donde los terminales de los componentes atraviesan la placa y se sueldan por el otro lado.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Orden de Montaje</h4>
+                        <p>Para un trabajo limpio y fácil, se recomienda seguir un orden: de los componentes más bajos a los más altos.</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-3">
+                            <li>Puentes de alambre y resistencias.</li>
+                            <li>Zócalos para circuitos integrados y diodos.</li>
+                            <li>Capacitores cerámicos y de poliéster.</li>
+                            <li>Transistores y reguladores de voltaje.</li>
+                            <li>Capacitores electrolíticos, conectores y borneras.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <strong>¡Cuidado con la Polaridad!</strong> Muchos componentes deben ser colocados en una orientación específica. Invertirlos puede dañar el componente y el circuito. Presta atención a:<br>
+                            - <strong>Diodos:</strong> La banda en el cuerpo indica el cátodo (-).<br>
+                            - <strong>LEDs:</strong> El terminal más largo es el ánodo (+).<br>
+                            - <strong>Capacitores Electrolíticos:</strong> La franja en el cuerpo indica el cátodo (-).<br>
+                            - <strong>Circuitos Integrados:</strong> Una muesca o un punto indica el pin 1.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Soldadura y Desoldadura -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Técnicas de Soldadura y Desoldadura</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La soldadura blanda es el proceso de unir dos metales (el terminal del componente y el cobre del PCB) mediante un metal de aporte (estaño) a una temperatura relativamente baja. Una buena soldadura garantiza una conexión eléctrica fiable y una sujeción mecánica robusta.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Proceso de Soldadura Correcto</h3>
+                        <p>El secreto de una buena soldadura es la <strong>transferencia de calor</strong>. El objetivo es calentar las dos piezas a unir y que sea el calor de estas piezas el que derrita el estaño.</p>
+                        <ol class="list-decimal list-inside space-y-3 mt-4">
+                            <li><strong>Limpieza:</strong> La punta del soldador y las superficies a soldar deben estar limpias y libres de óxido.</li>
+                            <li><strong>Calentar la Unión:</strong> Toca simultáneamente con la punta del soldador el pad de cobre y el terminal del componente. Mantén el contacto por 2-3 segundos.</li>
+                            <li><strong>Aplicar el Estaño:</strong> Acerca el hilo de estaño a la unión (no a la punta del soldador). El estaño debe fluir suave y uniformemente, cubriendo el pad y mojando el terminal.</li>
+                            <li><strong>Retirar el Estaño y el Soldador:</strong> Una vez que el estaño ha fluido, retira primero el hilo de estaño y luego, casi inmediatamente, el soldador.</li>
+                            <li><strong>Enfriar:</strong> Deja que la soldadura se enfríe y solidifique por sí sola durante unos segundos sin mover el componente.</li>
+                        </ol>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Soldadura+Correcta+vs+Incorrecta" alt="Ejemplos de soldaduras" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                            <p class="text-center text-sm mt-2 text-gray-600">Una soldadura correcta tiene forma de cono, es brillante y cubre completamente la unión.</p>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=y5Uh4_aJ11E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver tutorial de Técnicas de Soldadura &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Técnicas de Desoldadura</h3>
+                        <p>Es tan importante saber soldar como desoldar para corregir errores o reemplazar componentes.</p>
+                         <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Bomba Desoldante (Chupaestaño):</strong> Es un dispositivo con un pistón y un resorte. Se calienta la soldadura y, al presionar el botón, el pistón retrocede violentamente, creando un vacío que succiona el estaño derretido.</li>
+                            <li><strong>Malla Desoldante:</strong> Es una trenza de finos hilos de cobre. Se coloca sobre la soldadura y se calienta con el soldador. Por capilaridad, el estaño derretido es absorbido por la malla. Es ideal para limpiar pads y para componentes de montaje superficial.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

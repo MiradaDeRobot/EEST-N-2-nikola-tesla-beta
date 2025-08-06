@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología Electrónica U4: transformacion, Fabricación y control de calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Transformación, Fabricación y Control de Calidad</h1>
+            <p class="text-lg text-gray-600">Tecnología Electrónica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Transformaciones de los Materiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Transformaciones de los Materiales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los componentes y gabinetes de los equipos electrónicos no aparecen de la nada. Parten de materias primas que sufren diversas transformaciones para adquirir la forma y las propiedades deseadas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transformaciones de Forma</h3>
+                        <p>Estos procesos modifican la geometría del material sin alterar su composición química. Son fundamentales para crear chasis, gabinetes, disipadores y otras partes estructurales.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Mecanizado por Arranque de Viruta:</strong> Se elimina material de una pieza en bruto para darle forma. Incluye procesos como el <strong>taladrado</strong> (para hacer agujeros), el <strong>fresado</strong> (para crear superficies planas o ranuras) y el <strong>torneado</strong> (para piezas cilíndricas).</li>
+                            <li><strong>Moldeo por Inyección:</strong> Es el proceso más común para fabricar piezas de plástico. El plástico en granos se calienta hasta fundirse y se inyecta a alta presión en un molde de acero. Al enfriarse, el plástico solidifica con la forma del molde. Así se fabrican los gabinetes de la mayoría de los equipos electrónicos.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Moldeo+por+Inyecci%C3%B3n+de+Pl%C3%A1stico" alt="Proceso de Moldeo por Inyección" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transformaciones Físicas y Químicas</h3>
+                        <p>Estos procesos alteran las propiedades internas del material.</p>
+                         <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Tratamientos Térmicos:</strong> Procesos como el <strong>templado</strong> o el <strong>recocido</strong> en metales, que modifican su dureza y maleabilidad mediante ciclos controlados de calentamiento y enfriamiento.</li>
+                            <li><strong>Reacciones Químicas:</strong> El ataque químico para fabricar PCBs es un ejemplo de transformación química, donde un ácido (cloruro férrico) reacciona con el cobre y lo disuelve.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fabricación de Componentes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Fabricación de Componentes Activos y Pasivos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los componentes electrónicos se fabrican mediante procesos industriales altamente especializados que combinan la ciencia de materiales, la química y la física.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fabricación de Componentes Pasivos</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Resistencias de Película de Carbón:</strong> Se deposita una capa de carbón sobre un cilindro cerámico. Se talla una ranura en espiral sobre la capa para ajustar el valor de la resistencia a la longitud y el ancho de la "pista" de carbón resultante.</li>
+                            <li><strong>Capacitores Cerámicos Multicapa (MLCC):</strong> Se apilan capas alternas de un material cerámico dieléctrico y electrodos metálicos. Este apilamiento permite obtener una gran área de placas en un volumen muy pequeño, logrando altas capacidades.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fabricación de Componentes Activos (Circuitos Integrados)</h3>
+                        <p>La fabricación de diodos, transistores y circuitos integrados se realiza sobre una oblea (wafer) de silicio puro mediante un proceso llamado <strong>fotolitografía</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Proceso+de+Fotolitograf%C3%ADa" alt="Proceso de Fotolitografía" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Pasos Simplificados de la Fotolitografía:</strong><br>
+                            1. Se oxida la superficie de la oblea de silicio para crear una capa aislante de dióxido de silicio.<br>
+                            2. Se aplica una capa de material fotosensible (photoresist).<br>
+                            3. Se expone la oblea a luz ultravioleta a través de una máscara con el patrón del circuito. La luz altera las propiedades químicas del photoresist.<br>
+                            4. Se revela la oblea, eliminando el photoresist expuesto (o no expuesto, según el tipo).<br>
+                            5. Se utiliza un ácido para eliminar la capa de óxido en las zonas no protegidas por el photoresist.<br>
+                            6. Se realiza el proceso de dopaje (tipo N o P) en las zonas descubiertas.<br>
+                            7. Se repiten estos pasos múltiples veces para crear las complejas estructuras tridimensionales de los transistores y sus interconexiones.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=bor0qrB_aVA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Fabricación de Microchips &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Análisis de Producto y Control de Calidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Análisis de Producto y Control de Calidad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En la industria, no basta con fabricar un producto; es crucial asegurar que cada unidad cumpla con las especificaciones de diseño y sea fiable.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis de Producto Electrónico</h3>
+                        <p>Consiste en estudiar un producto existente para entender su funcionamiento, diseño y componentes. A veces se le llama "ingeniería inversa". Este análisis permite aprender de diseños exitosos, identificar puntos de falla o buscar formas de mejorar un producto.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Método Estadístico en la Industria</h3>
+                        <p>Es imposible probar el 100% de los componentes o productos en una línea de producción masiva. En su lugar, se utiliza el <strong>Control Estadístico de Procesos (SPC)</strong>. Se toman muestras representativas de un lote y se miden sus parámetros. Si la muestra cumple con los criterios de calidad dentro de una tolerancia estadística, se asume que todo el lote es válido.</p>
+                        <div class="info-box">
+                            <strong>Inspección de Materiales:</strong> El control de calidad comienza con la inspección de las materias primas y los componentes que llegan a la fábrica. Se verifican sus dimensiones, propiedades eléctricas y se asegura que cumplan con las especificaciones de la hoja de datos (datasheet) para evitar problemas en la producción.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

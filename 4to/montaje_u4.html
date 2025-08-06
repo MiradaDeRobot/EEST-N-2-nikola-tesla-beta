@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U4: Componentes de Mando y Actuadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Componentes de Mando y Actuadores</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Dispositivos de Mando y Comando -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Dispositivos de Mando y Comando</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Estos componentes son la interfaz entre el usuario o un sistema de control y el circuito. Permiten iniciar, detener o modificar el funcionamiento de un sistema de forma manual o automática.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interruptores, Pulsadores y Selectores</h3>
+                        <p>Son dispositivos mecánicos que abren o cierran uno o más circuitos. Se definen por sus polos (número de circuitos que controlan) y sus vías (número de posiciones).</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Interruptores+SPDT+y+DPDT" alt="Interruptores" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div>
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>SPST (Single Pole, Single Throw):</strong> El interruptor más simple. Un solo circuito que se abre o se cierra.</li>
+                                    <li><strong>SPDT (Single Pole, Double Throw):</strong> Un conmutador. Un solo circuito que se conecta a una de dos vías posibles.</li>
+                                    <li><strong>DPDT (Double Pole, Double Throw):</strong> Dos conmutadores en un solo encapsulado, controlados por el mismo actuador.</li>
+                                    <li><strong>Pulsadores NA y NC:</strong> Un pulsador Normalmente Abierto (NA) cierra el circuito al presionarlo. Uno Normalmente Cerrado (NC) lo abre.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Relés -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Relés y Conmutación de Potencia</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los relés son interruptores operados eléctricamente que permiten el aislamiento galvánico entre un circuito de control de baja potencia y un circuito de carga de alta potencia.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Relé Electromagnético (EMR)</h3>
+                        <p>Es el tipo más común. Una bobina genera un campo magnético que mueve físicamente los contactos metálicos. Sus partes son la bobina, el núcleo, la armadura y los contactos (Común, NA, NC).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Funcionamiento+de+un+Rel%C3%A9" alt="Funcionamiento de un Relé" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Ventajas:</strong> Aislamiento completo, soportan altas sobrecargas momentáneas, baja resistencia de contacto. <br>
+                            <strong>Desventajas:</strong> Desgaste mecánico, velocidad de conmutación lenta, consumo de energía en la bobina.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Relé de Estado Sólido (SSR)</h3>
+                        <p>No tienen partes móviles. Utilizan componentes semiconductores de potencia (como Triacs o MOSFETs) para conmutar la carga, y un optoacoplador para aislar el circuito de control.</p>
+                        <div class="info-box">
+                            <strong>Ventajas:</strong> Vida útil extremadamente larga, conmutación silenciosa y muy rápida, sin rebote de contactos. <br>
+                            <strong>Desventajas:</strong> Mayor caída de tensión en los contactos (disipan más calor), más sensibles a sobretensiones.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=kP-aUPu-I7M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Relés Electromagnéticos y de Estado Sólido &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actuadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Actuadores: Del Bit al Movimiento</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los actuadores son los componentes que convierten las señales eléctricas de un sistema de control en una acción física en el mundo real.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Motores de Corriente Continua (DC)</h3>
+                        <p>Convierten la energía eléctrica en movimiento rotacional continuo. La velocidad de giro es proporcional al voltaje aplicado, y el sentido de giro depende de la polaridad.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Circuito+Puente+H" alt="Circuito Puente H para control de motor DC" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-md">
+                        </div>
+                        <div class="info-box">
+                            <strong>Control con Puente H:</strong> Para controlar tanto la velocidad como el sentido de giro, se utiliza un circuito llamado "Puente H". Permite invertir la polaridad aplicada al motor. La velocidad se controla variando el voltaje efectivo mediante una técnica llamada <strong>PWM (Modulación por Ancho de Pulso)</strong>.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Servomotores</h3>
+                        <p>Son un tipo especial de motor que permite controlar la posición angular exacta de su eje. Contienen un motor DC, una caja reductora y un circuito de control interno con un sensor de posición.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Servomotor" alt="Servomotor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                            <strong>Control por PWM:</strong> Se controlan mediante una señal PWM específica. La duración del pulso (generalmente entre 1ms y 2ms) determina el ángulo del eje (ej. 1ms para 0°, 1.5ms para 90°, 2ms para 180°).
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Transductores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Transductores: Del Mundo Físico al Eléctrico</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los transductores, comúnmente llamados sensores, son los "sentidos" de un sistema electrónico. Convierten una magnitud física en una señal eléctrica medible (generalmente voltaje o resistencia).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sensores Resistivos</h3>
+                        <p>Son componentes cuya resistencia eléctrica cambia en respuesta a un estímulo físico.</p>
+                         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Sensor+LDR" alt="Sensor LDR" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold text-center">LDR (Fotorresistencia)</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Termistor+NTC" alt="Termistor NTC" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold text-center">Termistor NTC</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-6">
+                            <li><strong>LDR (Light Dependent Resistor):</strong> Su resistencia disminuye a medida que aumenta la intensidad de la luz que incide sobre ella.</li>
+                            <li><strong>Termistores (NTC/PTC):</strong> Son resistencias sensibles a la temperatura. Los <strong>NTC</strong> (Coeficiente de Temperatura Negativo) disminuyen su resistencia al aumentar la temperatura. Los <strong>PTC</strong> (Coeficiente de Temperatura Positivo) la aumentan.</li>
+                        </ul>
+                         <div class="info-box">
+                            <strong>Acondicionamiento de Señal:</strong> Para convertir el cambio de resistencia en un voltaje medible, se utiliza un <strong>divisor de tensión</strong>. El sensor se conecta en serie con una resistencia fija, y el voltaje en el punto medio varía según la resistencia del sensor.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

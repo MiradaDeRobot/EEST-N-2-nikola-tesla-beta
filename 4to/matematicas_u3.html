@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas U3: Semejanza y Trigonometría</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Semejanza y Trigonometría</h1>
+            <p class="text-lg text-gray-600">Matemáticas - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Semejanza y Teorema de Thales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Semejanza de Figuras y Teorema de Thales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Dos figuras son <strong>semejantes</strong> si tienen la misma forma pero no necesariamente el mismo tamaño. En el caso de los triángulos, esto significa que sus ángulos correspondientes son iguales y sus lados correspondientes son proporcionales. El <strong>Teorema de Thales</strong> es una herramienta fundamental que surge de este concepto.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema de Thales</h3>
+                        <p>Si tres o más rectas paralelas son cortadas por dos rectas transversales, los segmentos determinados en una de las transversales son proporcionales a los segmentos correspondientes en la otra.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Teorema+de+Thales" alt="Ilustración del Teorema de Thales" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(\frac{AB}{A'B'} = \frac{BC}{B'C'} = \frac{AC}{A'C'}\)</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Aplicación Práctica:</strong> Calcular la altura de un edificio. Si un poste de 2 metros de altura proyecta una sombra de 3 metros, y a la misma hora un edificio proyecta una sombra de 45 metros, podemos usar la semejanza de los triángulos formados.<br>
+                            \(\frac{\text{Altura del edificio}}{\text{Altura del poste}} = \frac{\text{Sombra del edificio}}{\text{Sombra del poste}}\) <br>
+                            \(\frac{h}{2m} = \frac{45m}{3m} \implies h = 2m \cdot \frac{45}{3} = 30m\). El edificio mide 30 metros.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=JGy-85DDYIg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema de Thales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Resolución de Triángulos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Resolución de Triángulos Oblicuángulos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Mientras que las razones trigonométricas básicas (seno, coseno, tangente) son suficientes para resolver triángulos rectángulos, para los triángulos que no tienen un ángulo de 90° (llamados <strong>oblicuángulos</strong>), necesitamos herramientas más potentes: el Teorema del Seno y el Teorema del Coseno.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema del Seno</h3>
+                        <p>El Teorema del Seno establece que la relación entre la longitud de un lado de un triángulo y el seno de su ángulo opuesto es constante para todos los lados y ángulos del triángulo.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Teorema+del+Seno" alt="Ilustración del Teorema del Seno" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(\frac{a}{\sin(A)} = \frac{b}{\sin(B)} = \frac{c}{\sin(C)}\)</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>¿Cuándo se usa?</strong> Se utiliza cuando conocemos:<br>
+                            - Dos ángulos y un lado (AAL o ALA).<br>
+                            - Dos lados y el ángulo opuesto a uno de ellos (LLA).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=e2_k8_f2ryc" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema del Seno &rarr;
+                            </a>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema del Coseno</h3>
+                        <p>El Teorema del Coseno es una generalización del Teorema de Pitágoras para cualquier triángulo. Relaciona la longitud de un lado con las longitudes de los otros dos y el coseno del ángulo que forman.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Teorema+del+Coseno" alt="Ilustración del Teorema del Coseno" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-xl font-mono">
+                               \(a^2 = b^2 + c^2 - 2bc \cdot \cos(A)\) <br>
+                               \(b^2 = a^2 + c^2 - 2ac \cdot \cos(B)\) <br>
+                               \(c^2 = a^2 + b^2 - 2ab \cdot \cos(C)\)
+                           </p>
+                        </div>
+                        <div class="info-box">
+                            <strong>¿Cuándo se usa?</strong> Se utiliza cuando conocemos:<br>
+                            - Los tres lados (LLL).<br>
+                            - Dos lados y el ángulo comprendido entre ellos (LAL).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=655-wI_3ADc" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema del Coseno &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

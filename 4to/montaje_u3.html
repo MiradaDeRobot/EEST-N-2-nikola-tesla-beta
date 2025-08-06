@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U3: Normativas e Instalaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Normativas e Instalaciones</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Normas de Instalaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Norma de Instalaciones Eléctricas y Electrónicas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Realizar una instalación eléctrica o electrónica de forma segura y fiable no es una cuestión de opinión, sino que se rige por un conjunto de normas y reglamentaciones. Estas normas garantizan la seguridad de las personas, la protección de los equipos y el correcto funcionamiento de la instalación.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Reglamentación de la AEA</h3>
+                        <p>En Argentina, la <strong>Asociación Electrotécnica Argentina (AEA)</strong> es la entidad encargada de elaborar las reglamentaciones para instalaciones eléctricas. La norma principal es la <strong>AEA 90364</strong>, que establece los requisitos para instalaciones eléctricas en inmuebles.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Esquema+de+Instalaci%C3%B3n+Segura+AEA" alt="Esquema de una instalación eléctrica segura según normas AEA" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Principios Fundamentales</h4>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Protección contra Contactos Directos e Indirectos:</strong> Se deben usar aislaciones adecuadas, barreras físicas y dispositivos de corte automático (como disyuntores diferenciales) para evitar shocks eléctricos.</li>
+                            <li><strong>Protección contra Sobrecorrientes:</strong> Todo circuito debe estar protegido contra cortocircuitos y sobrecargas mediante interruptores termomagnéticos o fusibles.</li>
+                            <li><strong>Correcta Sección de Conductores:</strong> El grosor (sección) de los cables debe ser el adecuado para la corriente que van a transportar, para evitar sobrecalentamiento e incendios.</li>
+                            <li><strong>Puesta a Tierra (PAT):</strong> Todas las partes metálicas de la instalación y los equipos deben estar conectadas a una jabalina de puesta a tierra para desviar corrientes de falla de forma segura.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Accesorios y Dispositivos de Mando -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Accesorios y Dispositivos de Mando y Comando</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Estos componentes son la interfaz entre el usuario o un sistema de control y el circuito. Permiten iniciar, detener o modificar el funcionamiento de un sistema.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interruptores, Pulsadores y Selectores</h3>
+                        <p>Son dispositivos mecánicos que abren o cierran un circuito. La principal diferencia radica en su accionamiento:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Interruptores+(Switches)" alt="Interruptores" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold">Interruptor</p>
+                                <p class="text-base">Mantiene su posición.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Pulsadores" alt="Pulsadores" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold">Pulsador</p>
+                                <p class="text-base">Vuelve a su reposo.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Selectores+Rotativos" alt="Selectores" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold">Selector</p>
+                                <p class="text-base">Elige entre varias opciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Relés (Relays)</h3>
+                        <p>Un relé es un interruptor electromagnético. Permite que un circuito de baja potencia (la bobina) controle un circuito de alta potencia (los contactos) de forma aislada.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Funcionamiento+de+un+Rel%C3%A9" alt="Funcionamiento de un Relé" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Funcionamiento:</strong> Al aplicar una tensión a la <strong>bobina</strong>, se genera un campo magnético que atrae una armadura metálica, moviendo los <strong>contactos</strong> y cambiando el estado del interruptor (de NC a NA).
+                        </div>
+                        <div class="example-box">
+                            <strong>Aplicación Típica:</strong> Controlar una lámpara de 220V con una señal de 5V de un microcontrolador. La salida del microcontrolador (a través de un transistor) energiza la bobina del relé, y los contactos del relé encienden o apagan la lámpara de 220V, manteniendo ambos circuitos completamente aislados.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Elementos de Protección -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Elementos de Protección</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Son dispositivos diseñados para interrumpir el flujo de corriente automáticamente cuando esta supera un valor peligroso, protegiendo tanto la instalación como los equipos conectados.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fusibles</h3>
+                        <p>Son el elemento de protección más simple. Consisten en un filamento o lámina de un metal con un punto de fusión bajo. Si la corriente supera su valor nominal, el filamento se derrite e interrumpe el circuito. Son de un solo uso.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x200/E0F2FE/0891B2?text=Tipos+de+Fusibles" alt="Tipos de Fusibles" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interruptores Termomagnéticos</h3>
+                        <p>Ofrecen una doble protección y son rearmables (no se desechan después de actuar).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/300x400/E0F2FE/0891B2?text=Interruptor+Termomagn%C3%A9tico" alt="Interruptor Termomagnético" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xs">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Protección Térmica:</strong> Una lámina bimetálica se calienta con el paso de la corriente. Si hay una <strong>sobrecarga</strong> (una corriente ligeramente superior a la nominal durante un tiempo), el bimetal se deforma y dispara el interruptor.</li>
+                            <li><strong>Protección Magnética:</strong> Una bobina actúa si se produce un <strong>cortocircuito</strong> (una corriente muy alta e instantánea). El campo magnético generado es tan fuerte que dispara el mecanismo de corte de forma inmediata.</li>
+                        </ul>
+                         <div class="warning-box">
+                            <strong>¡Nunca reemplaces un fusible o interruptor por uno de mayor valor!</strong> La protección está calculada para el cableado y el equipo. Aumentar su valor puede permitir una sobrecorriente que cause un incendio antes de que la protección actúe.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actuadores y Transductores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Actuadores, Transductores e Introducción a la Neumática</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actuadores y Transductores</h3>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Sensor+LDR" alt="Sensor LDR" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold text-center">Transductor (Sensor)</p>
+                                <p class="text-base text-center">Convierte una magnitud física en eléctrica.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Motor+DC" alt="Actuador Motor DC" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold text-center">Actuador</p>
+                                <p class="text-base text-center">Convierte una señal eléctrica en acción.</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-6">
+                            <li><strong>Transductor:</strong> Es un dispositivo que convierte una forma de energía en otra. En electrónica, solemos llamar "transductores" a los <strong>sensores</strong>, que convierten una magnitud física (luz, temperatura, presión) en una señal eléctrica. Ejemplos: LDR (resistencia que varía con la luz), termistor NTC (resistencia que varía con la temperatura).</li>
+                            <li><strong>Actuador:</strong> Es un dispositivo que convierte una señal eléctrica en una acción física (movimiento, luz, sonido). Es el "músculo" de un sistema. Ejemplos: motores, solenoides, LEDs, zumbadores.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Introducción a la Técnica Neumática</h3>
+                        <p>La neumática es la tecnología que utiliza aire comprimido como medio para transmitir energía y realizar trabajo. Es muy común en la automatización industrial.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Circuito+Electroneum%C3%A1tico+B%C3%A1sico" alt="Circuito Electroneumático" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li><strong>Componentes Básicos:</strong> Compresor (genera el aire comprimido), válvulas (dirigen el flujo de aire) y cilindros (actuadores que convierten la presión del aire en movimiento lineal).</li>
+                            <li><strong>Electroneumática:</strong> Es la combinación de la electrónica y la neumática. Un circuito electrónico de control (como un PLC o un microcontrolador) activa <strong>electroválvulas</strong>, que son válvulas neumáticas controladas por un solenoide eléctrico. Esto permite automatizar procesos industriales complejos.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=F110mNE3S2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Principios de Neumática &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

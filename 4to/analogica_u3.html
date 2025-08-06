@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U3: Diodos y Aplicaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Diodos y Aplicaciones</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección El Diodo Semiconductor -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. El Diodo Semiconductor</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El diodo es el componente semiconductor más simple, pero su comportamiento no lineal es la base de innumerables aplicaciones. Está formado por una <strong>unión P-N</strong>, la interfaz entre un material semiconductor dopado tipo P (con portadores mayoritarios positivos o "huecos") y uno tipo N (con portadores mayoritarios negativos o electrones libres).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Unión P-N y la Barrera de Potencial</h3>
+                        <p>Al unir los materiales P y N, los electrones libres de la región N se difunden hacia la región P para recombinarse con los huecos. Este proceso crea una <strong>zona de deplexión</strong> o barrera en la unión, desprovista de portadores libres y con una carga eléctrica neta. Esta carga genera un campo eléctrico que se opone a una mayor difusión, creando una <strong>barrera de potencial</strong> o tensión umbral (\(V_d\)).</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Polarización Directa:</strong> Si se aplica una tensión externa mayor que \(V_d\) (positivo en el ánodo P, negativo en el cátodo N), se vence la barrera de potencial. La zona de deplexión se estrecha y los portadores fluyen a través de la unión, permitiendo una corriente significativa. Para el Silicio, \(V_d \approx 0.7V\); para el Germanio, \(V_d \approx 0.3V\).</li>
+                            <li><strong>Polarización Inversa:</strong> Si se invierte la tensión, la barrera de potencial se ensancha, dificultando aún más el paso de portadores. Solo una minúscula <strong>corriente de fuga</strong> (\(I_s\)), del orden de nanoamperes, logra cruzar la unión.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Curva Característica y Modelos del Diodo</h3>
+                        <p>La relación no lineal entre la tensión y la corriente en un diodo se describe por la <strong>ecuación de Shockley</strong> y se visualiza en su curva característica I-V.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Curva+Caracter%C3%ADstica+del+Diodo" alt="Curva Característica del Diodo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                            <p class="text-center text-sm mt-2 text-gray-600">La curva I-V muestra un crecimiento exponencial de la corriente en polarización directa y una corriente casi nula en inversa hasta la tensión de ruptura.</p>
+                        </div>
+                        <p class="mt-4">Para simplificar el análisis de circuitos, usamos modelos:</p>
+                        <ul class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>1. Modelo Ideal:</strong> El diodo es un interruptor perfecto. Cerrado (cortocircuito) en directa, abierto en inversa. Útil para un primer análisis conceptual.</li>
+                            <li><strong>2. Modelo de Tensión Constante (Real Simplificado):</strong> En directa, se modela como una fuente de tensión de \(V_d\) (0.7V para Si). En inversa, es un circuito abierto. Es el más usado en análisis manual.</li>
+                            <li><strong>3. Modelo Lineal por Tramos:</strong> Más preciso. Modela al diodo en directa como una fuente de \(V_d\) en serie con una pequeña resistencia interna (\(r_d\)), que representa la pendiente de la curva I-V.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Rectificación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Aplicación Fundamental: Rectificación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La rectificación es el proceso de convertir AC en DC. Es el corazón de toda fuente de alimentación lineal.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Rectificador de Media Onda</h3>
+                        <p>Utiliza un solo diodo para permitir el paso de solo la mitad de la onda AC. El voltaje DC promedio en la carga (\(V_{DC}\)) es bajo.</p>
+                        <div class="info-box">
+                            \(V_{DC} = \frac{V_p}{\pi} \approx 0.318 \cdot V_p\) <br>
+                            <strong>PIV (Peak Inverse Voltage):</strong> La máxima tensión inversa que el diodo debe soportar es \(V_p\).
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Rectificador de Onda Completa con Puente de Diodos</h3>
+                        <p>Usa cuatro diodos para aprovechar ambos semiciclos de la onda AC. Es la configuración más usada por su eficiencia y por no requerir transformadores especiales.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Puente+Rectificador+de+Onda+Completa" alt="Circuito de Puente Rectificador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            En cada semiciclo, la corriente pasa a través de dos diodos. La caída de tensión total es \(2 \cdot V_d \approx 1.4V\).<br>
+                            \(V_{DC} = \frac{2V_p}{\pi} \approx 0.636 \cdot V_p\) <br>
+                            <strong>PIV:</strong> Cada diodo debe soportar una tensión inversa de \(V_p\).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=vb5-y_d82aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Rectificadores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Filtrado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Filtrado con Capacitor</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La salida de un rectificador es DC pulsante. Para convertirla en una DC casi constante, se usa un filtro capacitivo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis del Filtro Capacitivo</h3>
+                        <p>El capacitor, en paralelo con la carga, se carga hasta el voltaje pico (\(V_p\)) cuando los diodos conducen. Cuando la tensión del rectificador cae por debajo de \(V_p\), los diodos se cortan y el capacitor entrega la corriente a la carga, descargándose lentamente hasta el siguiente pico.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Se%C3%B1al+Rectificada+y+Filtrada" alt="Señal rectificada y filtrada" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Tensión de Rizado (Ripple):</strong> Es la fluctuación del voltaje DC. Para un rectificador de onda completa, se puede aproximar con: <br>
+                            \(V_{rizado} \approx \frac{I_{carga}}{f \cdot C}\) <br>
+                            Donde \(I_{carga}\) es la corriente de la carga, \(f\) es la frecuencia de la red AC (¡Ojo! para onda completa, la frecuencia del rizado es 2f), y \(C\) es la capacidad del filtro.
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo de Diseño:</strong> Se necesita alimentar una carga de 1A con 12V DC y un rizado máximo de 1V. Usando un rectificador de onda completa desde una red de 50Hz. <br>
+                            La frecuencia del rizado es \(2 \times 50Hz = 100Hz\).<br>
+                            Despejando C: \(C \approx \frac{I_{carga}}{f_{rizado} \cdot V_{rizado}} = \frac{1A}{100Hz \cdot 1V} = 0.01 F = 10,000 \mu F\). Se elegiría un capacitor comercial de este valor o superior.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Diodos Especiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Diodos Especiales y sus Aplicaciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Zener</h3>
+                        <p>Diseñado para operar en la región de ruptura inversa. Mantiene una tensión constante (\(V_z\)) en sus terminales, ideal para <strong>reguladores de tensión</strong> simples.</p>
+                        <div class="example-box">
+                            <strong>Regulador Zener Básico:</strong> Se usa una resistencia en serie (\(R_s\)) para limitar la corriente total, y el Zener en paralelo con la carga.
+                            <div class="info-box mt-4">
+                                <h4 class="font-semibold">Fórmula para la Resistencia Serie (\(R_s\)):</h4>
+                                <p class="mt-2">La resistencia debe ser lo suficientemente pequeña para proveer la corriente necesaria a la carga y al Zener, pero lo suficientemente grande para limitar la corriente máxima y no quemar el diodo.</p>
+                                <p class="mt-2 font-mono text-center text-base bg-sky-100 p-2 rounded">\(R_s = \frac{V_{in(min)} - V_z}{I_{L(max)} + I_{z(min)}}\)</p>
+                                <ul class="list-disc list-inside mt-3 text-base">
+                                    <li>\(V_{in(min)}\): Tensión de entrada mínima (considerando el rizado).</li>
+                                    <li>\(V_z\): Tensión del diodo Zener.</li>
+                                    <li>\(I_{L(max)}\): Corriente máxima que consumirá la carga.</li>
+                                    <li>\(I_{z(min)}\): Corriente mínima que necesita el Zener para regular (dato de la hoja de datos).</li>
+                                </ul>
+                                <p class="mt-3 text-base">También se debe verificar la disipación de potencia para no quemar los componentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Emisor de Luz (LED)</h3>
+                        <p>Convierte energía eléctrica en luz al recombinarse los portadores en la unión P-N. Requiere una <strong>resistencia limitadora</strong> en serie.</p>
+                         <div class="info-box">
+                            Cálculo de la resistencia: \(R_s = \frac{V_{fuente} - V_f}{I_f}\) <br>
+                            Donde \(V_f\) (tensión directa) e \(I_f\) (corriente directa) son parámetros típicos del LED, obtenidos de su hoja de datos (ej. \(V_f \approx 2V\), \(I_f \approx 20mA\) para un LED rojo estándar).
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Schottky</h3>
+                        <p>A diferencia de un diodo convencional que usa una unión P-N, el diodo Schottky se forma por una <strong>unión metal-semiconductor</strong> (tipo N). Esta construcción única le confiere propiedades excepcionales.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Ventajas Clave</h4>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Baja Tensión Umbral (\(V_d\)):</strong> Su caída de tensión en directa es muy baja, típicamente entre <strong>0.2V y 0.4V</strong>. Esto es significativamente menor que los 0.7V de un diodo de silicio. La consecuencia directa es una <strong>mayor eficiencia</strong>, ya que se disipa menos potencia en forma de calor (\(P = V_d \cdot I\)).</li>
+                            <li><strong>Velocidad de Conmutación Ultra Rápida:</strong> En un diodo P-N, al pasar de conducción a corte, existe un "tiempo de recuperación inversa" (\(t_{rr}\)) durante el cual los portadores minoritarios almacenados en la unión deben ser evacuados. El diodo Schottky, al no tener una unión P-N y funcionar con portadores mayoritarios ("hot carriers"), prácticamente <strong>no tiene almacenamiento de carga</strong>. Su \(t_{rr}\) es del orden de picosegundos, lo que lo hace ideal para aplicaciones de muy alta frecuencia.</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Aplicaciones Típicas</h4>
+                         <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Fuentes de Alimentación Conmutadas (SMPS):</strong> Son indispensables como diodos rectificadores en las salidas de estas fuentes, que operan a decenas o cientos de kHz. Un diodo normal sería demasiado lento y se sobrecalentaría.</li>
+                            <li><strong>Circuitos de Radiofrecuencia (RF):</strong> Se utilizan como mezcladores y detectores de señal en radios y otros equipos de comunicación debido a su capacidad para operar a frecuencias de gigahercios.</li>
+                            <li><strong>Protección contra Inversión de Polaridad:</strong> Colocar un diodo Schottky en serie con la entrada de alimentación de un circuito lo protege si la polaridad se conecta al revés, con una pérdida de voltaje mínima.</li>
+                         </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

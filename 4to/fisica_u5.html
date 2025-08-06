@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física U5: Instrumentos Ópticos y Acústica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Instrumentos Ópticos y Acústica</h1>
+            <p class="text-lg text-gray-600">Física - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Lentes e Instrumentos Ópticos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Lentes e Instrumentos Ópticos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los instrumentos ópticos son dispositivos que utilizan lentes y espejos para procesar las ondas de luz con el fin de mejorar una imagen para su visualización o análisis.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Lentes y sus Aberraciones</h3>
+                        <p>Las lentes ideales enfocan todos los rayos de luz paralelos en un único punto focal. Sin embargo, las lentes reales presentan imperfecciones llamadas <strong>aberraciones</strong>.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Aberración Esférica:</strong> Ocurre porque los rayos que pasan por los bordes de una lente esférica se enfocan en un punto diferente a los que pasan por el centro, causando una imagen borrosa.</li>
+                            <li><strong>Aberración Cromática:</strong> Ocurre porque el índice de refracción de la lente es ligeramente diferente para cada color (longitud de onda). Esto hace que cada color se enfoque en un punto distinto, creando halos de colores en los bordes de la imagen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Ojo Humano y sus Defectos</h3>
+                        <p>El ojo es un sistema óptico natural donde el cristalino actúa como una lente convergente que enfoca la luz en la retina.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Miop%C3%ADa+y+su+Correcci%C3%B3n" alt="Miopía y su corrección" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2"><strong>Miopía:</strong> El ojo enfoca la imagen delante de la retina. Se corrige con una lente divergente.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Hipermetrop%C3%ADa+y+su+Correcci%C3%B3n" alt="Hipermetropía y su corrección" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2"><strong>Hipermetropía:</strong> El ojo enfoca la imagen detrás de la retina. Se corrige con una lente convergente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Instrumentos Ópticos Comunes</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=C%C3%A1mara+Fotogr%C3%A1fica" alt="Cámara Fotográfica" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Cámara Fotográfica</h4>
+                                <p class="text-base">Utiliza una lente convergente para formar una imagen real e invertida sobre un sensor digital.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Microscopio+Compuesto" alt="Microscopio" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Microscopio</h4>
+                                <p class="text-base">Utiliza dos lentes (objetivo y ocular) para producir una imagen virtual muy aumentada de un objeto cercano.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Proyector" alt="Proyector" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Proyector</h4>
+                                <p class="text-base">Funciona como una cámara al revés: proyecta una imagen real y aumentada sobre una pantalla.</p>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Instrumentos Ópticos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Acústica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Acústica: Ondas Sonoras</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La acústica es la rama de la física que estudia el sonido, que es una <strong>onda mecánica longitudinal</strong>. Esto significa que necesita un medio material (aire, agua, sólidos) para propagarse y que las partículas del medio vibran en la misma dirección en la que se propaga la onda.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Intensidad Sonora</h3>
+                        <p>La intensidad de una onda sonora es la potencia que transporta por unidad de área. Se mide en Watts por metro cuadrado (W/m²). Como el rango que el oído humano puede percibir es inmenso, se utiliza una escala logarítmica llamada <strong>nivel de intensidad</strong>, medida en <strong>decibelios (dB)</strong>.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Reflexión y Reverberación</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Reflexión (Eco):</strong> Ocurre cuando una onda sonora choca contra una superficie y rebota. Si el retardo entre el sonido original y el reflejado es suficientemente grande, percibimos un eco.</li>
+                            <li><strong>Reverberación:</strong> Es la persistencia del sonido en un espacio después de que la fuente original ha cesado. Se debe a las múltiples reflexiones del sonido en las paredes, el techo y el suelo. Un poco de reverberación puede hacer que el sonido sea más rico, pero demasiada lo vuelve ininteligible.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=3-x0gA-2vNU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Eco y Reverberación &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Efecto Doppler -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Efecto Doppler</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El efecto Doppler es el cambio aparente en la frecuencia de una onda percibido por un observador cuando hay un movimiento relativo entre la fuente de la onda y el observador.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Efecto+Doppler" alt="Ilustración del Efecto Doppler" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo Clásico: La Sirena de una Ambulancia</strong><br>
+                            - Cuando la ambulancia se <strong>acerca</strong>, las ondas sonoras que llegan a nosotros están "comprimidas", por lo que percibimos una frecuencia más alta (un sonido más agudo).<br>
+                            - Cuando la ambulancia se <strong>aleja</strong>, las ondas sonoras que llegan están "estiradas", y percibimos una frecuencia más baja (un sonido más grave).
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> El efecto Doppler se utiliza en radares de velocidad, en medicina para medir el flujo sanguíneo (ecografía Doppler) y en astronomía para determinar si las galaxias se alejan o se acercan a nosotros.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=o_g-3-vXj-A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre el Efecto Doppler &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

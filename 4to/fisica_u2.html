@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física U2: Fluidos y Electricidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Fluidos y Electricidad</h1>
+            <p class="text-lg text-gray-600">Física - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Mecánica de Fluidos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Mecánica de los Fluidos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La mecánica de fluidos es la rama de la física que estudia el comportamiento de los fluidos (líquidos y gases), ya sea en reposo (hidrostática) o en movimiento (hidrodinámica).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Hidrostática: Fluidos en Reposo</h3>
+                        <p>La hidrostática se centra en las propiedades de los fluidos que no están en movimiento. Los conceptos clave son la presión y la densidad.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Presión (\(P\)):</strong> Es la fuerza (\(F\)) ejercida por unidad de área (\(A\)). En un fluido, la presión se ejerce en todas las direcciones. \(P = F/A\).</li>
+                            <li><strong>Principio de Pascal:</strong> Afirma que la presión aplicada a un fluido incompresible contenido en un recipiente se transmite con igual intensidad a todos los puntos del fluido. Este es el principio de funcionamiento de la prensa hidráulica.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Prensa+Hidr%C3%A1ulica+(Principio+de+Pascal)" alt="Prensa Hidráulica" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Neumática</h3>
+                        <p>La neumática es la tecnología que utiliza el aire comprimido (un gas) para realizar trabajo. Se rige por las mismas leyes de los fluidos, pero considerando la alta compresibilidad de los gases.</p>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F110mNE3S2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Principios de Hidrostática y Neumática &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Energía Eléctrica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Energía Eléctrica: Campo y Potencial Electrostáticos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La energía eléctrica surge de la interacción entre cargas eléctricas a través de campos electrostáticos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Campo y Potencial Electrostáticos</h3>
+                        <p>Una carga eléctrica crea un <strong>campo eléctrico</strong> en el espacio que la rodea. Este campo almacena energía potencial. La <strong>diferencia de potencial</strong> o <strong>tensión</strong> entre dos puntos es el trabajo necesario para mover una unidad de carga entre esos dos puntos. Es una medida de la energía potencial eléctrica por unidad de carga.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=L%C3%ADneas+de+Campo+y+Superficies+Equipotenciales" alt="Campo y Potencial Eléctrico" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Dieléctricos</h3>
+                        <p>Un material dieléctrico es un aislante eléctrico que, al ser sometido a un campo eléctrico externo, presenta <strong>polarización</strong>. Sus moléculas se orientan de tal manera que crean un campo eléctrico interno que se opone al campo externo. Esta propiedad es fundamental en los capacitores, ya que permite almacenar más carga a la misma tensión, aumentando así la capacitancia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Corriente Eléctrica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Corriente Eléctrica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>corriente eléctrica (\(I\))</strong> es el flujo ordenado de carga eléctrica (generalmente electrones) a través de un material conductor. Para que exista una corriente, se necesita un circuito cerrado y una diferencia de potencial (tensión) que impulse a las cargas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Intensidad de Corriente</h3>
+                        <p>La intensidad de la corriente se define como la cantidad de carga (\(Q\)) que atraviesa una sección del conductor por unidad de tiempo (\(t\)).</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(I = \frac{Q}{t}\)</p>
+                           <p class="mt-2">La unidad de corriente es el <strong>Ampere (A)</strong>, que equivale a un Coulomb por segundo (C/s).</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Flujo+de+Electrones+en+un+Conductor" alt="Flujo de electrones" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box mt-4">
+                            <strong>Sentido Convencional vs. Sentido Real:</strong> Históricamente, se pensaba que la corriente era un flujo de cargas positivas, por lo que se definió el <strong>sentido convencional</strong> de la corriente como saliendo del polo positivo y entrando en el negativo. Hoy sabemos que en los metales lo que se mueve son los electrones (cargas negativas), en el sentido opuesto. Por convención, en el análisis de circuitos se sigue utilizando el sentido convencional.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=dz8l_V-y4-w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Corriente Eléctrica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

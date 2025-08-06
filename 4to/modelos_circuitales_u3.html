@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U3: Teoremas de Redes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Teoremas de Redes</h1>
+            <p class="text-lg text-gray-600">Fundamentos de los Modelos Circuitales - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Teorema de Superposición -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Teorema de Superposición</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Este teorema es una herramienta muy útil para analizar circuitos lineales que tienen múltiples fuentes de tensión o corriente. Establece que la corriente o tensión en cualquier elemento del circuito es la suma algebraica de los efectos producidos por cada fuente actuando de forma independiente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Procedimiento de Aplicación</h3>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li>Seleccionar una de las fuentes del circuito.</li>
+                            <li>"Apagar" todas las demás fuentes. Para ello, las <strong>fuentes de tensión</strong> se reemplazan por un <strong>cortocircuito</strong> (un cable) y las <strong>fuentes de corriente</strong> se reemplazan por un <strong>circuito abierto</strong>.</li>
+                            <li>Calcular la tensión o corriente deseada, debida únicamente a la fuente activa.</li>
+                            <li>Repetir los pasos 1 a 3 para cada una de las fuentes del circuito.</li>
+                            <li>Sumar algebraicamente todos los resultados individuales para obtener el valor final.</li>
+                        </ol>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=R5nU7w-3C2s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema de Superposición &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Teoremas de Thévenin y Norton -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Teoremas de Thévenin y Norton</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Estos dos teoremas son increíblemente poderosos porque permiten simplificar cualquier circuito lineal complejo, sin importar cuántos componentes tenga, en un circuito equivalente muy simple. Son fundamentales cuando queremos analizar el comportamiento de una carga conectada a un circuito complejo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema de Thévenin</h3>
+                        <p>Afirma que cualquier circuito lineal de dos terminales puede ser reemplazado por un circuito equivalente que consiste en una única <strong>fuente de tensión (\(V_{Th}\))</strong> en serie con una única <strong>resistencia (\(R_{Th}\))</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Equivalente+de+Th%C3%A9venin" alt="Circuito Equivalente de Thévenin" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-md">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Cálculo de \(V_{Th}\) (Tensión de Thévenin):</strong> Es la tensión de circuito abierto medida en los terminales de interés (A y B), es decir, la tensión que aparece cuando no hay nada conectado a ellos.</li>
+                            <li><strong>Cálculo de \(R_{Th}\) (Resistencia de Thévenin):</strong> Es la resistencia equivalente vista desde los terminales A y B, con todas las fuentes independientes "apagadas".</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema de Norton</h3>
+                        <p>Es el dual del teorema de Thévenin. Afirma que el mismo circuito lineal puede ser reemplazado por una única <strong>fuente de corriente (\(I_N\))</strong> en paralelo con una única <strong>resistencia (\(R_N\))</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Equivalente+de+Norton" alt="Circuito Equivalente de Norton" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-md">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Cálculo de \(I_N\) (Corriente de Norton):</strong> Es la corriente de cortocircuito que fluye si se conectan los terminales A y B con un cable.</li>
+                            <li><strong>Cálculo de \(R_N\) (Resistencia de Norton):</strong> Es exactamente la misma que la Resistencia de Thévenin (\(R_N = R_{Th}\)).</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Relación entre Thévenin y Norton:</strong> Son dos caras de la misma moneda. Se puede convertir de uno a otro fácilmente: \(V_{Th} = I_N \cdot R_{Th}\).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=d-a8a-zQ-pE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teoremas de Thévenin y Norton &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Máxima Transferencia de Potencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Teorema de Máxima Transferencia de Potencia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Este teorema es crucial en sistemas de comunicaciones y audio. Responde a la pregunta: ¿qué valor de resistencia de carga (\(R_L\)) extrae la máxima potencia posible de una fuente?</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p>El teorema establece que, para una fuente con una resistencia interna (que podemos modelar como un equivalente de Thévenin), la máxima potencia se entregará a la carga cuando la resistencia de la carga sea igual a la resistencia interna de la fuente.</p>
+                        <div class="info-box text-center text-2xl font-mono">
+                            \(R_L = R_{Th}\)
+                        </div>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Gr%C3%A1fico+de+Transferencia+de+Potencia" alt="Gráfico de Transferencia de Potencia" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">La potencia en la carga es máxima cuando R_L es igual a R_Th.</p>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=b-q21zJ4aQY" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Máxima Transferencia de Potencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

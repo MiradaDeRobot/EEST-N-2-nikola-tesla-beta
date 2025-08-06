@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U4: Transistores y Simulación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Transistores y Simulación</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Transistor BJT -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. El Transistor de Unión Bipolar (BJT)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El transistor es posiblemente el invento más importante del siglo XX y el pilar de toda la electrónica moderna. Es un dispositivo semiconductor de tres terminales que puede funcionar de dos maneras principales: como un <strong>amplificador</strong> de corriente o como un <strong>interruptor</strong> controlado electrónicamente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estructura y Funcionamiento</h3>
+                        <p>El BJT está formado por tres capas de material semiconductor dopado. Existen dos tipos:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>NPN:</strong> Una capa de material tipo P (Base) entre dos capas de material tipo N (Colector y Emisor).</li>
+                            <li><strong>PNP:</strong> Una capa de material tipo N (Base) entre dos capas de material tipo P (Colector y Emisor).</li>
+                        </ul>
+                        <p class="mt-3">El principio fundamental es que una <strong>pequeña corriente inyectada en la Base (\(I_B\)) controla una corriente mucho mayor que fluye entre el Colector y el Emisor (\(I_C\))</strong>. La relación entre estas corrientes es la ganancia de corriente, conocida como <strong>Beta (\(\beta\))</strong> o \(h_{FE}\).</p>
+                        <div class="info-box">
+                            <strong>Relación Fundamental:</strong> \(I_C = \beta \cdot I_B\) <br>
+                            Esta ecuación es válida solo cuando el transistor opera en la región activa. El valor de \(\beta\) puede variar mucho (típicamente entre 50 y 300) incluso entre transistores del mismo modelo.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Regiones de Operación</h3>
+                        <p>El comportamiento del transistor depende de la polarización de sus uniones Base-Emisor y Colector-Base.</p>
+                        <ul class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Región de Corte:</strong> El transistor está "apagado". No circula corriente por el colector (\(I_C \approx 0\)). Esto ocurre cuando la tensión Base-Emisor (\(V_{BE}\)) es menor a ~0.7V, por lo que no hay corriente de base.</li>
+                            <li><strong>Región Activa:</strong> El transistor funciona como un amplificador. La unión Base-Emisor está polarizada en directa (\(V_{BE} \approx 0.7V\)) y la unión Colector-Base en inversa. En esta región, se cumple la relación \(I_C = \beta \cdot I_B\).</li>
+                            <li><strong>Región de Saturación:</strong> El transistor está "completamente encendido". Actúa como un interruptor cerrado. Ambas uniones están polarizadas en directa. La corriente de colector ya no depende de \(\beta\), sino que está limitada por los componentes externos del circuito (la resistencia de carga). La tensión Colector-Emisor (\(V_{CE}\)) es muy baja, típicamente \(V_{CE(sat)} \approx 0.2V\).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Fundamentos del Transistor BJT &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Transistor como Interruptor -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. El Transistor en Conmutación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una de las aplicaciones más importantes del transistor es como interruptor (switch), operando exclusivamente en las regiones de corte y saturación. Esto permite que una señal de baja potencia (ej. de un microcontrolador) controle una carga de alta potencia (ej. un motor, un relé o una tira de LEDs).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diseño de un Interruptor con Transistor NPN</h3>
+                        <p>El objetivo es asegurar que el transistor entre en saturación cuando queremos encender la carga.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x400/E0F2FE/0891B2?text=Circuito+de+Conmutaci%C3%B3n+con+Transistor+NPN" alt="Circuito de conmutación con transistor NPN" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">Un voltaje de entrada \(V_{in}\) en la base controla el paso de corriente a través de la carga (ej. un relé).</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo de Cálculo de la Resistencia de Base (\(R_B\)):</strong><br>
+                            Queremos encender un relé que consume 100mA (\(I_C\)) a 12V. La señal de control es de 5V (\(V_{in}\)). El transistor tiene un \(\beta\) mínimo de 50.
+                            <ol class="list-decimal list-inside mt-3 space-y-2">
+                                <li><strong>Calcular la corriente de colector de saturación (\(I_{C(sat)}\)):</strong> Es la corriente que necesita la carga: \(I_{C(sat)} = 100mA\).</li>
+                                <li><strong>Calcular la corriente de base mínima para saturar (\(I_{B(min)}\)):</strong> \(I_{B(min)} = \frac{I_{C(sat)}}{\beta} = \frac{100mA}{50} = 2mA\). Para asegurar la saturación, se suele usar un factor de seguridad (ej. el doble de corriente): \(I_{B(diseño)} = 4mA\).</li>
+                                <li><strong>Calcular la resistencia de base (\(R_B\)):</strong> Aplicamos la ley de Ohm a la malla de la base. La tensión en la resistencia es \(V_{in} - V_{BE}\).
+                                    <p class="mt-2 font-mono text-center text-base bg-green-100 p-2 rounded">\(R_B = \frac{V_{in} - V_{BE(sat)}}{I_{B(diseño)}} = \frac{5V - 0.7V}{4mA} = \frac{4.3V}{0.004A} = 1075 \Omega\)</p>
+                                    Se elige un valor comercial cercano, como 1 kΩ.
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="warning-box">
+                            <strong>Diodo de Protección (Flyback):</strong> Cuando la carga es inductiva (un motor o un relé), es <strong>imprescindible</strong> colocar un diodo en paralelo con la carga (en polarización inversa). Al cortar la corriente, la bobina genera un pico de tensión inverso muy alto que podría destruir el transistor. El diodo (llamado flyback) cortocircuita este pico de forma segura.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Simulación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Simulación de Circuitos por Software</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Antes de montar un circuito físico, es una práctica profesional estándar simularlo usando software especializado. La simulación permite verificar el diseño, predecir su comportamiento, detectar errores y experimentar con valores de componentes sin riesgo de dañar nada.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Software de Simulación Popular</h3>
+                        <p>La mayoría de los simuladores se basan en SPICE (Simulation Program with Integrated Circuit Emphasis). Algunos programas populares son:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>LTspice:</strong> Gratuito y muy potente, desarrollado por Analog Devices. Es un estándar en la industria por su precisión y su gran librería de componentes.</li>
+                            <li><strong>NI Multisim:</strong> Entorno gráfico muy intuitivo, ideal para la educación. Incluye instrumentos virtuales (osciloscopio, multímetro) que se usan de forma similar a los reales, facilitando el aprendizaje.</li>
+                            <li><strong>Proteus Design Suite:</strong> Combina simulación con diseño de PCB. Es muy popular para simular circuitos que incluyen microcontroladores (como Arduino o PICs), ya que permite cargar y ejecutar el código del microcontrolador en la simulación.</li>
+                            <li><strong>Livewire:</strong> Es un simulador muy visual e interactivo, diseñado específicamente para el ámbito educativo. Permite "arrastrar y soltar" componentes y ver animaciones del flujo de corriente y los niveles de voltaje, lo que lo hace excelente para entender los conceptos básicos.</li>
+                            <li><strong>PCB Wizard:</strong> Generalmente se usa como el siguiente paso después de Livewire. Permite tomar un circuito diseñado y simulado en Livewire y convertirlo fácilmente en un diseño de placa de circuito impreso (PCB) listo para fabricar.</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Tipos de Análisis en Simulación</h4>
+                         <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Análisis de Punto de Operación DC:</strong> Calcula los voltajes y corrientes de polarización (DC) del circuito. Es el primer paso para verificar que los componentes están bien polarizados.</li>
+                            <li><strong>Análisis Transitorio:</strong> Analiza el comportamiento del circuito en el dominio del tiempo. Es ideal para ver cómo responde a una señal de entrada (ej. una onda cuadrada) y para visualizar las formas de onda como lo haría un osciloscopio.</li>
+                            <li><strong>Análisis de Barrido AC:</strong> Analiza la respuesta del circuito a diferentes frecuencias. Se usa para determinar el ancho de banda de un amplificador o la frecuencia de corte de un filtro.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Tutorial de iniciación a la simulación de circuitos con LTspice.</p>
+                            <a href="https://www.youtube.com/watch?v=FEZp_n_i2vI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver tutorial de LTspice &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Verificación Experimental -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Verificación Práctica y Experimental</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La simulación es una herramienta poderosa, pero el mundo real introduce variables que el modelo ideal no siempre contempla: tolerancias de los componentes, ruido, parásitos en el protoboard, etc. Por ello, la verificación experimental es el paso final y definitivo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Metodología de Verificación</h3>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Montaje en Protoboard:</strong> Construir el circuito de forma ordenada, usando cables cortos y colores estandarizados (rojo para VCC, negro para GND).</li>
+                            <li><strong>Verificación Estática (sin señal de entrada):</strong> Con el circuito alimentado, usar el multímetro para medir los voltajes DC en los nodos clave (ej. en la base, colector y emisor del transistor). Comparar estas mediciones con los valores obtenidos en el análisis de punto de operación DC de la simulación. Grandes discrepancias indican un error de montaje o un componente defectuoso.</li>
+                            <li><strong>Verificación Dinámica (con señal de entrada):</strong> Aplicar la señal de prueba con el generador de funciones. Usar el osciloscopio para visualizar la señal en la entrada y en la salida. Verificar que la forma de onda, la amplitud y la frecuencia coincidan con los resultados del análisis transitorio de la simulación.</li>
+                        </ol>
+                        <div class="warning-box">
+                             <strong>Análisis Crítico:</strong> Si los resultados prácticos no coinciden con los simulados, es un momento de aprendizaje. ¿Se tuvo en cuenta la tolerancia de las resistencias? ¿El \(\beta\) real del transistor es diferente al del modelo? ¿Hay oscilaciones inesperadas? El análisis de estas diferencias es clave para convertirse en un buen técnico.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

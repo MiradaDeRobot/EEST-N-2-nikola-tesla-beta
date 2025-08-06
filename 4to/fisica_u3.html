@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física U3: Magnetismo y Ondas Electromagnéticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Magnetismo y Ondas Electromagnéticas</h1>
+            <p class="text-lg text-gray-600">Física - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Campo Magnético -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Interacción y Campo Magnético</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El magnetismo es un fenómeno fundamental que surge del movimiento de las cargas eléctricas. Una corriente eléctrica, que no es más que un flujo de cargas, genera un <strong>campo magnético (\(B\))</strong> en el espacio que la rodea.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Campo Magnético y Fuerza Magnética</h3>
+                        <p>El campo magnético se representa mediante líneas de campo que forman bucles cerrados. La dirección del campo alrededor de un conductor recto se determina con la <strong>Regla de la Mano Derecha</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Campo+Magn%C3%A9tico+en+un+Conductor" alt="Campo Magnético en un conductor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <p class="mt-4">Este campo ejerce una fuerza (Fuerza de Lorentz) sobre otras cargas en movimiento. Esta <strong>interacción magnética</strong> es la base del funcionamiento de los motores eléctricos y los generadores.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=19044m_h7oI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Campo Magnético &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Inducción Electromagnética -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Inducción Electromagnética</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Así como una corriente crea un campo magnético, un campo magnético variable puede crear una corriente. Este fenómeno, descubierto por Michael Faraday, es la <strong>inducción electromagnética</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ley de Faraday y Ley de Lenz</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Ley de Faraday:</strong> Establece que un cambio en el flujo magnético a través de un circuito cerrado induce una fuerza electromotriz (FEM) o tensión en el circuito. La magnitud de la FEM es proporcional a la rapidez del cambio del flujo.</li>
+                            <li><strong>Ley de Lenz:</strong> Complementa a la de Faraday, estableciendo el sentido de la corriente inducida. La corriente inducida crea su propio campo magnético que se opone al cambio de flujo que la originó.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Inducci%C3%B3n+Electromagn%C3%A9tica" alt="Inducción Electromagnética" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> Este principio es la base de los <strong>generadores eléctricos</strong> (que convierten energía mecánica en eléctrica) y los <strong>transformadores</strong> (que cambian los niveles de tensión y corriente alterna).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=z3_y4g2_q-s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Ley de Faraday y Lenz &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Corrientes Variables y Circuitos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Corrientes Eléctricas Variables y Circuitos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>corriente alterna (AC)</strong> es un tipo de corriente eléctrica en la que la dirección del flujo de electrones va y viene a intervalos regulares o en ciclos. Es la forma en que la electricidad se genera y distribuye a nuestros hogares.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Características de la Corriente Alterna</h3>
+                        <p>La forma de onda más común de la AC es la senoidal.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Onda+Senoidal+de+Corriente+Alterna" alt="Onda senoidal de AC" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li><strong>Frecuencia (f):</strong> El número de ciclos completos que la onda realiza por segundo. Se mide en Hertz (Hz). En Argentina, la frecuencia de la red es de 50 Hz.</li>
+                            <li><strong>Período (T):</strong> El tiempo que tarda en completarse un ciclo. Es el inverso de la frecuencia (\(T = 1/f\)).</li>
+                            <li><strong>Valor de Pico (Vp):</strong> La máxima amplitud que alcanza la onda.</li>
+                            <li><strong>Valor Eficaz (RMS):</strong> Es el valor de una corriente continua que produciría la misma disipación de potencia en una resistencia. Los 220V de la red doméstica son un valor RMS.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Circuitos Eléctricos de AC</h3>
+                        <p>En los circuitos de AC, además de las resistencias, los capacitores e inductores presentan una oposición al paso de la corriente llamada <strong>reactancia</strong>. La combinación de la resistencia y la reactancia se denomina <strong>impedancia (Z)</strong>, y es el análogo de la resistencia en los circuitos de DC.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=P8403Iq_g4c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Corriente Alterna &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Espectro Electromagnético -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Espectro Electromagnético</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una de las consecuencias más importantes de la interdependencia de los campos eléctricos y magnéticos es la existencia de las <strong>ondas electromagnéticas</strong>. Estas ondas no necesitan un medio para propagarse y viajan a la velocidad de la luz. El conjunto de todas las posibles frecuencias de estas ondas se conoce como el espectro electromagnético.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Regiones del Espectro</h3>
+                        <p>El espectro se divide en regiones según la frecuencia (o longitud de onda) de las ondas.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/800x300/E0F2FE/0891B2?text=Espectro+Electromagn%C3%A9tico" alt="Espectro Electromagnético" class="w-full h-auto rounded-lg shadow-md mx-auto">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li><strong>Ondas de Radio:</strong> Las de menor frecuencia. Usadas para radio AM/FM, televisión y comunicaciones.</li>
+                            <li><strong>Microondas:</strong> Usadas en hornos, Wi-Fi, Bluetooth y telefonía móvil.</li>
+                            <li><strong>Infrarrojo:</strong> Asociado con el calor. Usado en controles remotos y visión nocturna.</li>
+                            <li><strong>Luz Visible:</strong> La pequeña porción del espectro que nuestros ojos pueden detectar.</li>
+                            <li><strong>Ultravioleta (UV):</strong> Puede causar quemaduras solares.</li>
+                            <li><strong>Rayos X y Rayos Gamma:</strong> Las de mayor frecuencia y energía. Usadas en medicina (radiografías) y astronomía.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Tz6HSVtP7wU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre el Espectro Electromagnético &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

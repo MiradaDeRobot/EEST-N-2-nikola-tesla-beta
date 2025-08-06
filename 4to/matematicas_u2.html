@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas U2: Funciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Funciones</h1>
+            <p class="text-lg text-gray-600">Matemáticas - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es una Función? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. ¿Qué es una Función?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>función</strong> es una regla que asigna a cada elemento de un conjunto de partida (llamado <strong>Dominio</strong>) un único elemento en un conjunto de llegada (llamado <strong>Codominio</strong>). Es una relación matemática fundamental que modela cómo una cantidad depende de otra.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Elementos Clave</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Diagrama+de+Funci%C3%B3n+(Dominio+y+Rango)" alt="Diagrama de una función" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Dominio:</strong> El conjunto de todos los posibles valores de entrada (la variable independiente, usualmente 'x').</li>
+                            <li><strong>Codominio:</strong> El conjunto de todos los posibles valores de salida.</li>
+                            <li><strong>Imagen:</strong> El subconjunto del codominio que consiste en todos los valores de salida que la función realmente toma.</li>
+                        </ul>
+                        <div class="info-box">
+                            Se denota como \(f: A \rightarrow B\), que se lee "f es una función de A en B", donde A es el dominio y B es el codominio. La notación \(y = f(x)\) indica que 'y' es el valor que la función 'f' le asigna a la entrada 'x'.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de Funciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Tipos de Funciones Elementales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones Polinómicas</h3>
+                        <p>Son funciones de la forma \(f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0\).</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Gr%C3%A1fica+de+Funci%C3%B3n+Lineal" alt="Gráfica de Función Lineal" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold">Función Lineal (\(f(x) = mx + b\))</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Gr%C3%A1fica+de+Funci%C3%B3n+Cuadr%C3%A1tica" alt="Gráfica de Función Cuadrática" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="mt-2 font-semibold">Función Cuadrática (\(f(x) = ax^2 + bx + c\))</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Función Valor Absoluto</h3>
+                        <p>La función \(f(x) = |x|\) devuelve el valor de 'x' sin su signo. Su gráfica tiene una característica forma de "V".</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Gr%C3%A1fica+de+Valor+Absoluto" alt="Gráfica de la Función Valor Absoluto" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Función Exponencial y Logarítmica</h3>
+                        <p>Son funciones inversas entre sí.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Gr%C3%A1ficas+Exponencial+y+Logar%C3%ADtmica" alt="Gráficas de Funciones Exponencial y Logarítmica" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li><strong>Función Exponencial (\(f(x) = a^x\)):</strong> La variable independiente está en el exponente. Modela crecimientos o decrecimientos muy rápidos.</li>
+                            <li><strong>Función Logarítmica (\(f(x) = \log_a(x)\)):</strong> Es la inversa de la exponencial. Modela fenómenos que crecen muy lentamente.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones Trigonométricas</h3>
+                        <p>Relacionan los ángulos de un triángulo con las longitudes de sus lados. Son periódicas y modelan fenómenos ondulatorios.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Gr%C3%A1ficas+de+Seno+y+Coseno" alt="Gráficas de las Funciones Seno y Coseno" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li><strong>Seno (\(f(x) = \sin(x)\))</strong> y <strong>Coseno (\(f(x) = \cos(x)\))</strong>.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=H40QE-CgS_E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Tipos de Funciones &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Operaciones y Función Inversa -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Operaciones con Funciones y Función Inversa</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operaciones Algebraicas</h3>
+                        <p>Dadas dos funciones \(f(x)\) y \(g(x)\), se pueden definir nuevas funciones:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Suma:</strong> \((f+g)(x) = f(x) + g(x)\)</li>
+                            <li><strong>Resta:</strong> \((f-g)(x) = f(x) - g(x)\)</li>
+                            <li><strong>Producto:</strong> \((f \cdot g)(x) = f(x) \cdot g(x)\)</li>
+                            <li><strong>Cociente:</strong> \((f/g)(x) = f(x) / g(x)\), siempre que \(g(x) \neq 0\).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Función Inversa (\(f^{-1}(x)\))</h3>
+                        <p>Si una función \(f\) es "uno a uno" (inyectiva), entonces tiene una función inversa \(f^{-1}\) que "deshace" la operación de \(f\). Si \(f(a) = b\), entonces \(f^{-1}(b) = a\). Gráficamente, la función inversa es una reflexión de la función original a través de la recta \(y=x\).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Gr%C3%A1fica+de+Funci%C3%B3n+Inversa" alt="Gráfica de una Función y su Inversa" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Análisis de Gráficas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Análisis de Gráficas de Funciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La gráfica de una función nos da una inmensa cantidad de información sobre su comportamiento.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Características Clave</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=An%C3%A1lisis+de+una+Funci%C3%B3n" alt="Análisis de una Función" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Intervalos de Crecimiento/Decrecimiento:</strong> Una función es creciente en un intervalo si, al movernos de izquierda a derecha, la gráfica sube. Es decreciente si la gráfica baja.</li>
+                            <li><strong>Máximos y Mínimos:</strong> Son los puntos más altos (máximos) o más bajos (mínimos) de la gráfica en una región.</li>
+                            <li><strong>Ceros o Raíces:</strong> Son los puntos donde la gráfica corta el eje 'x'. Son los valores de 'x' para los cuales \(f(x) = 0\).</li>
+                            <li><strong>Continuidad:</strong> Una función es continua si su gráfica se puede dibujar de un solo trazo, sin levantar el lápiz.</li>
+                            <li><strong>Paridad:</strong> Una función es <strong>par</strong> si es simétrica respecto al eje 'y' (\(f(x) = f(-x)\)). Es <strong>impar</strong> si es simétrica respecto al origen (\(f(-x) = -f(x)\)).</li>
+                            <li><strong>Periodicidad:</strong> Una función es periódica si su gráfica se repite en intervalos regulares. Las funciones trigonométricas son el ejemplo principal.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=PPuWf2cDE_s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Análisis de Funciones &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física U4: Óptica Ondulatoria y Geométrica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Óptica Ondulatoria y Geométrica</h1>
+            <p class="text-lg text-gray-600">Física - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Óptica Ondulatoria -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Fenómenos Ondulatorios de la Luz</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La óptica ondulatoria describe la luz como una onda electromagnética. Este modelo permite explicar fenómenos que no se pueden entender si consideramos la luz simplemente como un rayo que viaja en línea recta.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Longitud de Onda, Interferencia y Difracción</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Longitud de Onda (\(\lambda\)):</strong> Es la distancia entre dos crestas consecutivas de una onda. La longitud de onda de la luz visible determina el color que percibimos.</li>
+                            <li><strong>Interferencia:</strong> Ocurre cuando dos o más ondas se superponen. Si las crestas coinciden (interferencia constructiva), la amplitud aumenta. Si una cresta coincide con un valle (interferencia destructiva), la amplitud se anula.</li>
+                            <li><strong>Difracción:</strong> Es la capacidad de las ondas para rodear obstáculos o propagarse a través de pequeñas aberturas. Es el motivo por el que podemos oír a alguien que está a la vuelta de una esquina.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Experimento+de+la+Doble+Rendija" alt="Experimento de la Doble Rendija" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">El patrón de interferencia en el experimento de la doble rendija es la prueba clave del comportamiento ondulatorio de la luz.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Polarización</h3>
+                        <p>La polarización es una propiedad de las ondas transversales (como la luz) que describe la orientación de sus oscilaciones. La luz natural no está polarizada, lo que significa que sus ondas vibran en todas las direcciones perpendiculares a su propagación. Un filtro polarizador solo deja pasar las ondas que vibran en una dirección específica.</p>
+                        <div class="info-box">
+                            <strong>Aplicación:</strong> Las gafas de sol polarizadas bloquean los reflejos (luz que se polariza horizontalmente al reflejarse en superficies como el agua o el asfalto), reduciendo el deslumbramiento.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=A_21-Q-4-3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Interferencia, Difracción y Polarización &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Espectros -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Espectros de Rayas y Series Espectrales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Cuando la luz de un gas caliente a baja presión se hace pasar por un prisma, no se ve un arcoíris continuo, sino un conjunto de líneas de colores brillantes sobre un fondo negro. Este es un <strong>espectro de emisión de rayas</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Origen de los Espectros</h3>
+                        <p>Según el modelo de Bohr, los electrones en un átomo solo pueden ocupar órbitas con niveles de energía específicos. Cuando un electrón "salta" de una órbita de mayor energía a una de menor energía, emite la diferencia de energía en forma de un fotón de luz con una longitud de onda (y color) muy precisa.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Espectro+de+Emisi%C3%B3n+del+%C3%81tomo+de+Hidr%C3%B3geno" alt="Espectro de Emisión del Hidrógeno" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Huella Dactilar Atómica:</strong> Cada elemento químico tiene un conjunto único de niveles de energía, por lo que su espectro de emisión es único, como una huella dactilar. Esto nos permite determinar la composición química de estrellas lejanas analizando su luz.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=m23829k-8k0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Espectros de Emisión y Absorción &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Óptica Geométrica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Óptica Geométrica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La óptica geométrica es un modelo simplificado que describe la luz como un conjunto de <strong>rayos</strong> que viajan en línea recta. Es extremadamente útil para explicar el funcionamiento de espejos, lentes e instrumentos ópticos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Reflexión y Refracción</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Reflexión:</strong> Ocurre cuando un rayo de luz choca contra una superficie y rebota. La Ley de la Reflexión establece que el ángulo de incidencia es igual al ángulo de reflexión.</li>
+                            <li><strong>Refracción:</strong> Es el cambio de dirección que experimenta un rayo de luz al pasar de un medio a otro con diferente índice de refracción (ej. del aire al agua). Este fenómeno es el responsable de que una pajita en un vaso de agua parezca quebrada.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Espejos y Lentes</h3>
+                        <p>Utilizan la reflexión y la refracción para formar imágenes.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Formaci%C3%B3n+de+Im%C3%A1genes+en+Espejo+C%C3%B3ncavo" alt="Espejo Cóncavo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Espejos Curvos</h4>
+                                <p class="text-base text-center">Los espejos cóncavos pueden formar imágenes reales y aumentadas, mientras que los convexos siempre forman imágenes virtuales y reducidas.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Formaci%C3%B3n+de+Im%C3%A1genes+en+Lente+Convergente" alt="Lente Convergente" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Lentes</h4>
+                                <p class="text-base text-center">Las lentes convergentes (convexas) concentran los rayos de luz y pueden formar imágenes reales. Las lentes divergentes (cóncavas) los separan.</p>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Jj2nQ-n2LpA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Reflexión y Refracción &rarr;
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=x-4BCmD-gq0" target="_blank" class="inline-block mt-4 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Lentes Convergentes y Divergentes &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

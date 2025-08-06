@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas U1: Conjuntos Numéricos y Sucesiones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        .formula-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Conjuntos Numéricos y Sucesiones</h1>
+            <p class="text-lg text-gray-600">Matemáticas - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Números Reales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Números Reales (\(\mathbb{R}\))</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>números reales</strong> (\(\mathbb{R}\)) son el conjunto que abarca todos los números que podemos ubicar en la recta numérica. Este conjunto es la unión de dos subconjuntos principales: los números racionales y los irracionales.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Subconjuntos de los Números Reales</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Números Racionales (\(\mathbb{Q}\)):</strong> Son aquellos que pueden expresarse como el cociente de dos números enteros, es decir, como una fracción \(\frac{a}{b}\) donde \(b \neq 0\). Incluyen a los números enteros (\(\mathbb{Z}\)) y los fraccionarios. Su expresión decimal es finita o periódica.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                    <li><strong>Enteros (\(\mathbb{Z}\)):</strong> Incluyen los naturales (positivos), el cero y los negativos. Ej: \(\dots, -2, -1, 0, 1, 2, \dots\)</li>
+                                    <li><strong>Fraccionarios:</strong> Ejemplos: \( \frac{3}{4} = 0.75\) (decimal finito), \( \frac{1}{3} = 0.333...\) (decimal periódico puro), \( \frac{5}{6} = 0.8333...\) (decimal periódico mixto).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Números Irracionales (\(\mathbb{I}\)):</strong> Son aquellos que no pueden expresarse como una fracción de enteros. Su expresión decimal es infinita y no periódica.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                    <li>Ejemplos: \(\pi \approx 3.14159...\), \(\sqrt{2} \approx 1.41421...\), el número de Euler \(e \approx 2.71828...\)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="mt-6 p-4 bg-sky-100 border-2 border-dashed border-sky-300 rounded-lg text-center">
+                            <p class="font-semibold text-sky-800">[Diagrama Visual de Conjuntos Numéricos]</p>
+                            <p class="text-gray-700 mt-2">Imagine círculos concéntricos: el más pequeño contiene a los Naturales (\(\mathbb{N}\)). Este está dentro de los Enteros (\(\mathbb{Z}\)), que a su vez está dentro de los Racionales (\(\mathbb{Q}\)). A un lado, el conjunto de los Irracionales (\(\mathbb{I}\)). Todos estos conjuntos juntos forman el universo de los Números Reales (\(\mathbb{R}\)).</p>
+                        </div>
+                        <p class="text-sm text-center text-gray-500 mt-2">Relación entre conjuntos: \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\)</p>
+                    </div>
+
+                    <p>La propiedad de <strong>completitud</strong> es clave: asegura que no existen "huecos" en la recta real. Cada punto en la recta representa un único número real, y cada número real tiene una única posición en la recta. Esto nos permite hablar de <strong>intervalos</strong>, que son subconjuntos de la recta real. Por ejemplo, el intervalo \([2, 5]\) incluye al 2, al 5 y a todos los números reales entre ellos.</p>
+                </div>
+            </section>
+
+            <!-- Sección Números Complejos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Números Complejos (\(\mathbb{C}\))</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>números complejos</strong> (\(\mathbb{C}\)) extienden el conjunto de los números reales para dar solución a problemas que en \(\mathbb{R}\) no la tienen. El caso más simple es la ecuación \(x^2 = -1\). Para resolverla, se define la <strong>unidad imaginaria</strong> \(i\), donde \(i = \sqrt{-1}\) o, de forma equivalente, \(i^2 = -1\).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Formas de Representación</h3>
+                        <p>Un número complejo \(z\) se puede expresar de varias formas:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Forma Binómica:</strong> \(z = a + bi\), donde \(a = Re(z)\) es la parte real y \(b = Im(z)\) es la parte imaginaria.</li>
+                            <li><strong>Como Par Ordenado:</strong> \(z = (a, b)\). Se representa en el <strong>plano complejo</strong> o diagrama de Argand.</li>
+                            <li><strong>Forma Polar/Trigonométrica:</strong> \(z = \rho (\cos \theta + i \sin \theta)\). Donde \(\rho\) es el <strong>módulo</strong> (la distancia desde el origen al punto) y \(\theta\) es el <strong>argumento</strong> (el ángulo del vector con el eje real positivo).
+                                <div class="formula-box">
+                                    Módulo: \(\rho = |z| = \sqrt{a^2 + b^2}\) <br>
+                                    Argumento: \(\theta = \arctan\left(\frac{b}{a}\right)\) (ajustando el cuadrante)
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-4 p-4 bg-sky-100 border-2 border-dashed border-sky-300 rounded-lg text-center">
+                             <p class="font-semibold text-sky-800">[Diagrama del Plano Complejo]</p>
+                             <p class="text-gray-700 mt-2">Un plano con un eje horizontal (Real) y un eje vertical (Imaginario). El número \(z = 3 + 4i\) se representa como un vector que parte del origen (0,0) y termina en el punto de coordenadas (3, 4). Su módulo \(\rho\) es la longitud de este vector y su argumento \(\theta\) es el ángulo que forma con el eje real positivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operatoria con Números Complejos</h3>
+                        <p>Dados \(z_1 = a+bi\) y \(z_2 = c+di\):</p>
+                        <ul class="list-disc list-inside mt-2 space-y-3">
+                            <li><strong>Suma/Resta:</strong> Se opera parte real con parte real e imaginaria con imaginaria. \(z_1 \pm z_2 = (a \pm c) + (b \pm d)i\).</li>
+                            <li><strong>Multiplicación:</strong> Se aplica la propiedad distributiva, recordando que \(i^2 = -1\). <br>\(z_1 \cdot z_2 = (a+bi)(c+di) = (ac-bd) + (ad+bc)i\).</li>
+                            <li><strong>División:</strong> Se multiplica el numerador y el denominador por el <strong>conjugado</strong> del denominador. El conjugado de \(z = c+di\) es \(\bar{z} = c-di\).<br>
+                                <div class="example-box">
+                                    <strong>Ejemplo de División:</strong> Calcular \(\frac{2+5i}{3-4i}\)
+                                    <p class="mt-2"> \(\frac{2+5i}{3-4i} = \frac{(2+5i)(3+4i)}{(3-4i)(3+4i)} = \frac{6 + 8i + 15i + 20i^2}{3^2 - (4i)^2} = \frac{6 + 23i - 20}{9 - 16i^2} = \frac{-14 + 23i}{9 + 16} = \frac{-14 + 23i}{25} = -\frac{14}{25} + \frac{23}{25}i\) </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sucesiones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Sucesiones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>sucesión</strong> es una función cuyo dominio es el conjunto de los números naturales (\(\mathbb{N}\)). Es una lista infinita y ordenada de números, llamados <strong>términos</strong>. Se denota por su término general \(a_n\), que expresa cada término en función de su posición \(n\).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sucesiones Aritméticas</h3>
+                        <p>La diferencia entre dos términos consecutivos es una constante llamada <strong>diferencia común (\(d\))</strong>.</p>
+                        <div class="formula-box">
+                            <strong>Término general:</strong> \(a_n = a_1 + (n-1)d\) <br>
+                            <strong>Suma de los n primeros términos:</strong> \(S_n = \frac{n(a_1 + a_n)}{2}\)
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo Práctico:</strong> En una progresión aritmética, el 3er término es 7 y el 7mo es 19. Hallar el término general y la suma de los primeros 10 términos.
+                            <p class="mt-2"> Tenemos \(a_3=7\) y \(a_7=19\). Usando la fórmula: <br>
+                            \(a_3 = a_1 + 2d = 7\) <br>
+                            \(a_7 = a_1 + 6d = 19\) <br>
+                            Restando las ecuaciones: \(4d = 12 \implies d=3\). <br>
+                            Sustituyendo: \(a_1 + 2(3) = 7 \implies a_1 = 1\). <br>
+                            <strong>Término general:</strong> \(a_n = 1 + (n-1)3 = 3n-2\). <br>
+                            Para la suma, \(a_{10} = 3(10)-2 = 28\). <br>
+                            <strong>Suma:</strong> \(S_{10} = \frac{10(1 + 28)}{2} = \frac{10 \cdot 29}{2} = 145\).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sucesiones Geométricas</h3>
+                        <p>El cociente entre dos términos consecutivos es una constante llamada <strong>razón común (\(r\))</strong>.</p>
+                         <div class="formula-box">
+                            <strong>Término general:</strong> \(a_n = a_1 \cdot r^{n-1}\) <br>
+                            <strong>Suma de los n primeros términos (si \(r \neq 1\)):</strong> \(S_n = \frac{a_1(r^n - 1)}{r-1}\)
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo Práctico:</strong> Para la sucesión \(3, 6, 12, 24, ...\), calcular el 8º término y la suma de los primeros 8 términos.
+                            <p class="mt-2"> Tenemos \(a_1=3\) y \(r=2\). <br>
+                            <strong>8º término:</strong> \(a_8 = 3 \cdot 2^{8-1} = 3 \cdot 2^7 = 3 \cdot 128 = 384\). <br>
+                            <strong>Suma:</strong> \(S_8 = \frac{3(2^8 - 1)}{2-1} = \frac{3(256 - 1)}{1} = 3 \cdot 255 = 765\).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

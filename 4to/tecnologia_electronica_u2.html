@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología Electrónica U2: Campos y Componentes Pasivos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Campos y Componentes Pasivos</h1>
+            <p class="text-lg text-gray-600">Tecnología Electrónica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Cargas, Campo y Potencial -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Cargas, Campo y Potencial Eléctrico</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Estos tres conceptos son los pilares de la electrostática y describen cómo las cargas eléctricas interactúan entre sí a distancia.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Cargas y Campo Eléctrico</h3>
+                        <p>Una <strong>carga eléctrica</strong> (medida en Coulombs) es una propiedad fundamental de la materia. Crea una región de influencia a su alrededor llamada <strong>campo eléctrico (\(E\))</strong>. Este campo es una fuerza invisible que ejerce una acción sobre cualquier otra carga que se coloque en su interior.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=L%C3%ADneas+de+Campo+El%C3%A9ctrico" alt="Líneas de Campo Eléctrico" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">Las líneas de campo salen de las cargas positivas y entran en las negativas.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Potencial Eléctrico y Tensión</h3>
+                        <p>El <strong>potencial eléctrico (\(V\))</strong> en un punto es la energía potencial que tendría una unidad de carga en ese punto. Sin embargo, lo que realmente importa en los circuitos es la <strong>diferencia de potencial</strong> entre dos puntos, también llamada <strong>tensión o voltaje</strong>.</p>
+                        <div class="info-box">
+                            <strong>Analogía Hidráulica:</strong> Imagina dos tanques de agua a diferente altura. El agua (carga) fluirá desde el tanque más alto (mayor potencial) al más bajo (menor potencial) debido a la diferencia de altura (diferencia de potencial o tensión). La tensión es la "presión" que empuja a los electrones a moverse.
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Este video explica los conceptos fundamentales de campo eléctrico y diferencia de potencial.</p>
+                        <a href="https://www.youtube.com/watch?v=E_m9-8_z-M8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Campo y Potencial Eléctrico &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Capacitancia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Capacitancia</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La capacitancia es la capacidad de un componente para almacenar energía en forma de un campo eléctrico.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Capacitor</h3>
+                        <p>Un capacitor está formado por dos placas conductoras separadas por un material aislante llamado <strong>dieléctrico</strong>. Cuando se aplica una tensión, las cargas se acumulan en las placas (positivas en una, negativas en la otra), creando un campo eléctrico en el dieléctrico donde se almacena la energía.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Estructura+de+un+Capacitor" alt="Estructura de un Capacitor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                            La capacitancia (\(C\)), medida en <strong>Farads (F)</strong>, se define como la cantidad de carga (\(Q\)) que puede almacenar por cada volt (\(V\)) de tensión aplicada: \(C = \frac{Q}{V}\).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=es_pm-p2S-8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Capacitancia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Inductancia y Magnetismo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Inductancia y Campos Electromagnéticos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La inductancia es la propiedad de un componente de almacenar energía en un campo magnético. Los campos eléctricos y magnéticos están íntimamente relacionados, formando la base del electromagnetismo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Campo Magnético y Electromagnético</h3>
+                        <p>Una carga eléctrica en movimiento (es decir, una corriente eléctrica) genera un <strong>campo magnético (\(B\))</strong> a su alrededor. A su vez, un campo magnético variable en el tiempo puede inducir una tensión en un conductor (Ley de Faraday). Esta interdependencia entre campos eléctricos y magnéticos variables es la base de las <strong>ondas electromagnéticas</strong> (como la luz y las ondas de radio).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Campo+Magn%C3%A9tico+en+un+Conductor" alt="Campo Magnético alrededor de un conductor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Inductor</h3>
+                        <p>Un inductor es, en su forma más simple, un alambre enrollado en forma de bobina. Cuando la corriente fluye a través de él, se crea un campo magnético concentrado en su interior, donde se almacena la energía.</p>
+                        <div class="info-box">
+                            La principal característica de un inductor es que <strong>se opone a los cambios bruscos de corriente</strong>. La inductancia (\(L\)), medida en <strong>Henrys (H)</strong>, cuantifica esta oposición.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=O-33iY-sY3M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Inductancia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U3: Circuitos Aritméticos y Secuenciales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        /* Estilos para el modal */
+        #gemini-modal {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Circuitos Aritméticos y Secuenciales</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Bloques Aritméticos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Bloques Aritméticos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los circuitos aritméticos son bloques combinacionales diseñados para realizar operaciones matemáticas con números binarios. Son la base de la <strong>Unidad Aritmético-Lógica (ALU)</strong> de cualquier procesador.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sumadores Binarios</h3>
+                        <div class="concept-text">
+                            <p>Son los circuitos más fundamentales para la aritmética.</p>
+                            <h4 class="text-xl font-semibold mt-6 mb-2">Semisumador (Half Adder)</h4>
+                            <p>Suma dos bits de entrada (A y B) y produce dos salidas: la <strong>Suma (S)</strong> y el <strong>Acarreo de salida (Carry Out, Cout)</strong>.</p>
+                            <div class="info-box">
+                                <strong>Funciones Lógicas:</strong><br>
+                                - Suma: \(S = A \oplus B\) (implementada con una compuerta XOR).<br>
+                                - Acarreo: \(Cout = A \cdot B\) (implementada con una compuerta AND).
+                            </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video explica cómo funcionan los semisumadores y sumadores completos.</p>
+                            <a href="https://www.youtube.com/watch?v=5k5d5Z_gR5A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sumadores Binarios &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3 flex items-center justify-between">
+                            <span>Sumador Completo (Full Adder)</span>
+                            <button class="gemini-button text-2xl p-1 rounded-full hover:bg-yellow-200 transition-colors" title="Explicación simple con IA ✨">✨</button>
+                        </h3>
+                        <div class="concept-text">
+                            <p>Un semisumador no es suficiente para sumar números de más de un bit, ya que no puede aceptar un acarreo de una etapa anterior. El sumador completo resuelve esto: suma tres bits de entrada (A, B, y un <strong>Acarreo de entrada, Cin</strong>) y produce una Suma (S) y un Acarreo de salida (Cout).</p>
+                            <div class="mt-4">
+                                <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Diagrama+L%C3%B3gico+Sumador+Completo" alt="Diagrama Lógico de un Sumador Completo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            </div>
+                            <div class="info-box">
+                                <strong>Implementación:</strong> Un sumador completo se puede construir con dos semisumadores y una compuerta OR. Para sumar números de N bits (ej. 4 bits), se conectan N sumadores completos en cascada: el Cout de una etapa se convierte en el Cin de la siguiente.
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video se enfoca en el diseño y funcionamiento del Sumador Completo.</p>
+                            <a href="https://www.youtube.com/watch?v=136j_2i7V3Q" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sumador Completo &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3 flex items-center justify-between">
+                            <span>Restadores y Comparadores</span>
+                             <button class="gemini-button text-2xl p-1 rounded-full hover:bg-yellow-200 transition-colors" title="Explicación simple con IA ✨">✨</button>
+                        </h3>
+                        <div class="concept-text">
+                            <ul class="list-disc list-inside space-y-3">
+                                <li><strong>Restadores:</strong> La resta binaria se realiza sumando el minuendo con el <strong>complemento a 2</strong> del sustraendo. Esto permite usar el mismo circuito sumador para restar, lo que es muy eficiente.</li>
+                                <li><strong>Comparadores:</strong> Son circuitos que comparan dos números binarios (A y B) y activan una de sus tres salidas: A > B, A < B, o A = B. Internamente, se basan en compuertas XOR (para la igualdad) y lógica adicional para determinar la magnitud.</li>
+                            </ul>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Aprende cómo funcionan los restadores binarios y los comparadores digitales.</p>
+                            <a href="https://www.youtube.com/watch?v=4-8sFUL-yY0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Restadores Binarios &rarr;
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-4 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Comparadores Digitales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos Secuenciales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Introducción a los Circuitos Secuenciales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3 flex items-center justify-between">
+                            <span>Circuitos Secuenciales</span>
+                             <button class="gemini-button text-2xl p-1 rounded-full hover:bg-yellow-200 transition-colors" title="Explicación simple con IA ✨">✨</button>
+                        </h3>
+                        <div class="concept-text">
+                            <p>A diferencia de los circuitos combinacionales, la salida de un <strong>circuito secuencial</strong> depende no solo de las entradas actuales, sino también de la secuencia de entradas pasadas. Esto se debe a que tienen <strong>memoria</strong>. El estado actual del circuito (almacenado en sus elementos de memoria) influye en la salida futura.</p>
+                            <h4 class="text-xl font-semibold mt-6 mb-2">Realimentación (Feedback)</h4>
+                            <p>La propiedad de memoria se logra mediante la <strong>realimentación</strong>, que consiste en conectar una o más salidas del circuito de vuelta a sus entradas. Esto crea un bucle que permite al circuito mantener un estado.</p>
+                            <div class="info-box">
+                                <strong>Tipos de Circuitos Secuenciales:</strong><br>
+                                - <strong>Asíncronos:</strong> El estado puede cambiar en cualquier momento en que cambien las entradas.<br>
+                                - <strong>Síncronos:</strong> El estado solo puede cambiar en instantes de tiempo específicos, definidos por una señal de control llamada <strong>reloj (clock)</strong>. Son los más comunes en sistemas digitales complejos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Latches y Flip-Flops -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. La Unidad de Memoria de 1 Bit: Latches y Flip-Flops</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los latches y flip-flops son los bloques de construcción fundamentales de la memoria en la electrónica digital. Son capaces de almacenar un solo bit de información (un '0' o un '1').</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3 flex items-center justify-between">
+                            <span>Latch S-R (Set-Reset)</span>
+                             <button class="gemini-button text-2xl p-1 rounded-full hover:bg-yellow-200 transition-colors" title="Explicación simple con IA ✨">✨</button>
+                        </h3>
+                        <div class="concept-text">
+                            <p>Es el elemento de memoria más básico. Se puede construir con dos compuertas NAND o NOR en un bucle de realimentación. Tiene dos entradas, S (Set) y R (Reset), y una salida Q.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-3">
+                                <li><strong>Set (S=1, R=0):</strong> Fija la salida Q a '1'.</li>
+                                <li><strong>Reset (R=1, S=0):</strong> Fija la salida Q a '0'.</li>
+                                <li><strong>Mantener (S=0, R=0):</strong> La salida Q "recuerda" o mantiene su estado anterior.</li>
+                                <li><strong>Estado Prohibido (S=1, R=1):</strong> Esta combinación no se debe usar, ya que genera una condición indefinida en la salida.</li>
+                            </ul>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video explica en detalle el funcionamiento del Latch S-R.</p>
+                            <a href="https://www.youtube.com/watch?v=5-8-e_f_a_A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Latch S-R &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3 flex items-center justify-between">
+                            <span>Flip-Flop D (Disparado por Flanco)</span>
+                             <button class="gemini-button text-2xl p-1 rounded-full hover:bg-yellow-200 transition-colors" title="Explicación simple con IA ✨">✨</button>
+                        </h3>
+                        <div class="concept-text">
+                            <p>El flip-flop es un elemento de memoria síncrono. Resuelve los problemas del latch al usar una señal de reloj (CLK) para controlar cuándo se actualiza el estado. El <strong>Flip-Flop tipo D</strong> es el más importante.</p>
+                            <p class="mt-3">Tiene una entrada de datos (D) y una entrada de reloj (CLK). Su funcionamiento es simple: en el <strong>flanco de subida</strong> (o bajada) de la señal de reloj, la salida Q toma el valor que tenga la entrada D en ese preciso instante. En todos los demás momentos, la salida Q permanece sin cambios, almacenando el bit.</p>
+                            <div class="mt-4">
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=S%C3%ADmbolo+Flip-Flop+D" alt="Símbolo de un Flip-Flop D" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                            </div>
+                            <div class="info-box">
+                                <strong>Aplicación Fundamental: Registros.</strong> Al conectar varios flip-flops D en paralelo, con una señal de reloj común, se crea un <strong>registro</strong>. Un registro de 8 bits (hecho con 8 flip-flops) puede almacenar un byte de información. Los registros son la base de la memoria de los procesadores y microcontroladores.
+                            </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=h2e_w4a-m8A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Latches y Flip-Flops &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+
+    <!-- Modal de Gemini -->
+    <div id="gemini-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-2xl w-full mx-auto transform transition-all duration-300 ease-out" id="modal-card">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <h3 class="text-2xl font-bold text-sky-800">✨ Explicación Simplificada</h3>
+                <button id="close-modal-button" class="text-gray-400 hover:text-gray-800 text-3xl leading-none">&times;</button>
+            </div>
+            <!-- Spinner de Carga -->
+            <div id="modal-loader" class="text-center py-8 hidden">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-4 border-sky-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600">Generando explicación con IA...</p>
+            </div>
+            <!-- Contenido del Modal -->
+            <div id="modal-content" class="text-lg text-gray-700 leading-relaxed max-h-[60vh] overflow-y-auto">
+                <!-- La respuesta de Gemini se insertará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('gemini-modal');
+            const modalCard = document.getElementById('modal-card');
+            const closeModalButton = document.getElementById('close-modal-button');
+            const modalContent = document.getElementById('modal-content');
+            const modalLoader = document.getElementById('modal-loader');
+            const geminiButtons = document.querySelectorAll('.gemini-button');
+
+            const showModal = () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            };
+            const hideModal = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            };
+
+            closeModalButton.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            geminiButtons.forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const section = e.target.closest('.bg-white');
+                    const conceptTextElement = section.querySelector('.concept-text');
+                    if (conceptTextElement) {
+                        const conceptText = conceptTextElement.innerText;
+                        modalContent.innerHTML = '';
+                        modalLoader.style.display = 'block';
+                        showModal();
+                        await getSimplifiedExplanation(conceptText);
+                    }
+                });
+            });
+
+            async function getSimplifiedExplanation(text) {
+                const prompt = `Explica el siguiente concepto de electrónica digital de una manera muy simple y clara, usando analogías sencillas para un estudiante de secundaria que lo ve por primera vez. No uses más de 150 palabras. El concepto es: "${text}"`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Dejar como está, será gestionado por el entorno
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error de la API: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    let simplifiedText = "No se pudo obtener una explicación en este momento.";
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                      simplifiedText = result.candidates[0].content.parts[0].text;
+                      // Formateo básico para párrafos
+                      simplifiedText = simplifiedText.replace(/\\n/g, '<br>');
+                    }
+                    
+                    modalContent.innerHTML = simplifiedText;
+
+                } catch (error) {
+                    console.error("Error al llamar a la API de Gemini:", error);
+                    modalContent.innerHTML = '<p class="text-red-500">Hubo un error al generar la explicación. Por favor, intenta de nuevo más tarde.</p>';
+                } finally {
+                    modalLoader.style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

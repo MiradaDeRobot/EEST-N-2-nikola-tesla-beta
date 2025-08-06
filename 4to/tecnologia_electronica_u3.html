@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología Electrónica U3: Materiales en Electrónica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Materiales en Electrónica</h1>
+            <p class="text-lg text-gray-600">Tecnología Electrónica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Propiedades Generales de los Materiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Propiedades Generales de los Materiales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La elección de un material para una aplicación electrónica no depende de una única característica, sino de un conjunto de propiedades que deben ser adecuadas para la función que cumplirá el componente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Propiedades Eléctricas</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Conductividad / Resistividad:</strong> La propiedad más fundamental. La conductividad mide la facilidad con que un material conduce la corriente, mientras que la resistividad mide su oposición. Son inversas entre sí.</li>
+                            <li><strong>Rigidez Dieléctrica:</strong> Específica de los materiales aislantes. Es el máximo campo eléctrico que un material puede soportar sin perder sus propiedades aislantes y entrar en "ruptura", permitiendo el paso de la corriente.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Propiedades Térmicas</h3>
+                         <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Conductividad Térmica:</strong> La capacidad de un material para transferir calor. Es crucial en disipadores (donde se busca alta conductividad, como en el aluminio) y en aislantes (donde se busca baja conductividad).</li>
+                            <li><strong>Coeficiente de Expansión Térmica:</strong> Mide cuánto se expande o contrae un material con los cambios de temperatura. Es importante considerarlo al unir materiales diferentes (ej. un chip de silicio a un disipador de aluminio) para evitar estrés mecánico.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Este video explora las propiedades eléctricas y térmicas clave de los materiales.</p>
+                        <a href="https://www.youtube.com/watch?v=y-GfL2c4-yQ" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Propiedades de los Materiales &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Metales y Aleaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Metales y Aleaciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Son la base de todas las interconexiones eléctricas por su alta concentración de electrones libres.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Cobre (Cu)</h3>
+                        <p>Es el conductor por excelencia en electrónica debido a su óptima relación entre alta conductividad y costo accesible. Se utiliza en cables, pistas de PCB y bobinados de motores y transformadores.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aleaciones para Soldadura</h3>
+                        <p>Una aleación es una mezcla de metales que busca mejorar las propiedades de sus constituyentes. En soldadura, se busca un bajo punto de fusión y buena fluidez.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Estaño-Plomo (Sn-Pb):</strong> La aleación clásica (63% Sn / 37% Pb) es eutéctica, lo que significa que tiene un punto de fusión único y bajo (183°C), facilitando la soldadura.</li>
+                            <li><strong>Aleaciones sin Plomo (Lead-Free):</strong> Debido a la toxicidad del plomo (normativa RoHS), se utilizan aleaciones como la SAC (Estaño-Plata-Cobre), que tienen puntos de fusión más altos (217-227°C) y requieren más cuidado al soldar.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Aprende sobre los metales conductores y las aleaciones usadas en soldadura.</p>
+                        <a href="https://www.youtube.com/watch?v=c_40-IIz4xI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Conductores y Soldadura &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Materiales Inorgánicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Materiales Inorgánicos: Semiconductores y Cerámicos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Silicio (Si)</h3>
+                        <p>Es el elemento base de la electrónica moderna. Su capacidad para formar un cristal de alta pureza y la posibilidad de controlar su conductividad mediante el dopaje lo hacen ideal para fabricar transistores y circuitos integrados.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Materiales Cerámicos</h3>
+                        <p>Son compuestos inorgánicos no metálicos que se caracterizan por ser excelentes aislantes eléctricos y muy resistentes a altas temperaturas. Se utilizan como dieléctricos en capacitores de alta frecuencia y como sustratos para encapsulados de circuitos integrados.</p>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Descubre cómo el silicio se convierte en la base de la electrónica.</p>
+                        <a href="https://www.youtube.com/watch?v=a-f21d-a_I4" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre la Fabricación de Obleas de Silicio &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Polímeros -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Materiales Orgánicos y Polímeros</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los polímeros (plásticos) son esenciales en electrónica por sus propiedades aislantes, bajo costo y facilidad para ser moldeados.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aislantes y Sustratos</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>PVC (Policloruro de Vinilo):</strong> Flexible y buen aislante, es el material más común para el recubrimiento de cables.</li>
+                            <li><strong>FR-4 (Fibra de Vidrio con Resina Epoxi):</strong> Es el material estándar para las placas de circuito impreso (PCB). Ofrece una excelente combinación de rigidez mecánica, aislamiento eléctrico y resistencia a las temperaturas de soldadura.</li>
+                            <li><strong>Resinas Epoxi:</strong> Se utilizan para el encapsulado de circuitos integrados, protegiéndolos de la humedad, el polvo y los golpes.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Este video muestra cómo se fabrican las placas de circuito impreso (PCB), destacando el uso de polímeros como el FR-4.</p>
+                        <a href="https://www.youtube.com/watch?v=l9-4-g-qasE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Fabricación de PCBs &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Sección Deterioro -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">5. Deterioro de los Materiales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los componentes electrónicos no duran para siempre. Los materiales se degradan debido a factores ambientales y de operación, lo que eventualmente lleva a la falla del dispositivo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principales Causas de Falla</h3>
+                         <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Corrosión:</strong> Es la degradación de los metales por una reacción química con su entorno, principalmente la oxidación por la humedad y el oxígeno. Causa malas conexiones y fallas en las soldaduras.</li>
+                            <li><strong>Fatiga Térmica:</strong> Los ciclos repetidos de calentamiento y enfriamiento provocan la expansión y contracción de los materiales. Si dos materiales unidos tienen diferentes coeficientes de expansión, estos ciclos pueden fracturar las uniones de soldadura.</li>
+                            <li><strong>Electromigración:</strong> A altas densidades de corriente, el "viento" de electrones puede desplazar físicamente los átomos de metal en un conductor, creando vacíos y eventualmente cortando la conexión. Es una causa común de falla dentro de los microchips.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Explora las causas comunes del deterioro y falla en componentes electrónicos.</p>
+                        <a href="https://www.youtube.com/watch?v=k-5-d_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Corrosión en Electrónica &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

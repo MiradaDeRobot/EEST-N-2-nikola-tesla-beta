@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas U4: Modelización y Sistemas de Ecuaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Modelización y Sistemas de Ecuaciones</h1>
+            <p class="text-lg text-gray-600">Matemáticas - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Modelización de Fenómenos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Modelización de Fenómenos del Mundo Real</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>modelización matemática</strong> es el proceso de traducir un problema del mundo real a un lenguaje matemático. Consiste en identificar las variables importantes, establecer relaciones entre ellas y crear ecuaciones o funciones que describan el fenómeno. Esto nos permite analizar, predecir y resolver el problema de forma sistemática.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pasos para Modelizar un Problema</h3>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Comprender el Problema:</strong> Leer atentamente el enunciado e identificar la pregunta que se debe responder.</li>
+                            <li><strong>Identificar las Variables:</strong> Determinar qué cantidades son conocidas (datos) y cuáles son desconocidas (incógnitas). Asignarles símbolos (x, y, etc.).</li>
+                            <li><strong>Plantear las Ecuaciones:</strong> Traducir las relaciones descritas en el problema a ecuaciones o inecuaciones matemáticas.</li>
+                            <li><strong>Resolver el Modelo:</strong> Utilizar métodos algebraicos o gráficos para encontrar la solución del sistema planteado.</li>
+                            <li><strong>Interpretar y Verificar:</strong> Traducir la solución matemática de vuelta al contexto del problema original y comprobar si tiene sentido.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ecuaciones e Inecuaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Ecuaciones e Inecuaciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ecuaciones</h3>
+                        <p>Una <strong>ecuación</strong> es una igualdad matemática entre dos expresiones que contiene una o más incógnitas. Resolver una ecuación consiste en encontrar el valor (o los valores) de las incógnitas que hacen que la igualdad sea verdadera.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Inecuaciones</h3>
+                        <p>Una <strong>inecuación</strong> es una desigualdad entre dos expresiones. En lugar de un signo de igual (=), utiliza símbolos como < (menor que), > (mayor que), ≤ (menor o igual que) o ≥ (mayor o igual que). La solución de una inecuación no es un único valor, sino un conjunto de valores o un intervalo.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> Resolver \(2x + 3 > 9\)<br>
+                            \(2x > 9 - 3\) <br>
+                            \(2x > 6\) <br>
+                            \(x > 3\) <br>
+                            La solución son todos los números reales mayores que 3. En notación de intervalo: \((3, \infty)\).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sistemas de Ecuaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Sistemas de Ecuaciones Lineales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un sistema de ecuaciones es un conjunto de dos o más ecuaciones con varias incógnitas que deben satisfacerse simultáneamente. Un sistema de 2x2 tiene dos ecuaciones y dos incógnitas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Resolución Analítica</h3>
+                        <p>Los métodos analíticos buscan encontrar el valor exacto de las incógnitas mediante manipulación algebraica.</p>
+                        
+                        <div class="mt-6">
+                            <h4 class="text-xl font-semibold">Método de Sustitución</h4>
+                            <p class="mt-1">Se despeja una incógnita en una de las ecuaciones y se reemplaza su valor en la otra ecuación.</p>
+                            <div class="example-box">
+                                <strong>Ejemplo:</strong> Resolver el sistema: <br>
+                                1) \(2x + y = 7\) <br>
+                                2) \(x - y = 2\) <br>
+                                <ol class="list-decimal list-inside mt-2 text-base">
+                                    <li>Despejamos 'y' de la ecuación 2: \(y = x - 2\).</li>
+                                    <li>Sustituimos esta expresión en la ecuación 1: \(2x + (x - 2) = 7\).</li>
+                                    <li>Resolvemos para 'x': \(3x - 2 = 7 \implies 3x = 9 \implies x = 3\).</li>
+                                    <li>Reemplazamos el valor de 'x' en la ecuación despejada: \(y = 3 - 2 \implies y = 1\).</li>
+                                    <li>Solución: \((x=3, y=1)\).</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h4 class="text-xl font-semibold">Método de Igualación</h4>
+                            <p class="mt-1">Se despeja la misma incógnita en ambas ecuaciones y se igualan las expresiones resultantes.</p>
+                            <div class="example-box">
+                                 <strong>Ejemplo:</strong> Resolver el sistema: <br>
+                                1) \(2x + y = 7\) <br>
+                                2) \(x - y = 2\) <br>
+                                <ol class="list-decimal list-inside mt-2 text-base">
+                                    <li>Despejamos 'y' de la ecuación 1: \(y = 7 - 2x\).</li>
+                                    <li>Despejamos 'y' de la ecuación 2: \(y = x - 2\).</li>
+                                    <li>Igualamos ambas expresiones: \(7 - 2x = x - 2\).</li>
+                                    <li>Resolvemos para 'x': \(9 = 3x \implies x = 3\).</li>
+                                    <li>Reemplazamos 'x' en cualquiera de las ecuaciones despejadas: \(y = 3 - 2 \implies y = 1\).</li>
+                                     <li>Solución: \((x=3, y=1)\).</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h4 class="text-xl font-semibold">Método de Suma y Resta (Reducción)</h4>
+                            <p class="mt-1">Se multiplican las ecuaciones por números convenientes para que los coeficientes de una de las incógnitas sean opuestos, y luego se suman las ecuaciones para eliminarla.</p>
+                            <div class="example-box">
+                                 <strong>Ejemplo:</strong> Resolver el sistema: <br>
+                                1) \(2x + y = 7\) <br>
+                                2) \(x - y = 2\) <br>
+                                <ol class="list-decimal list-inside mt-2 text-base">
+                                    <li>Los coeficientes de 'y' ya son opuestos (+1 y -1). Sumamos las dos ecuaciones directamente.</li>
+                                    <li>\( (2x + y) + (x - y) = 7 + 2 \).</li>
+                                    <li>Simplificamos: \(3x = 9 \implies x = 3\).</li>
+                                    <li>Reemplazamos el valor de 'x' en cualquiera de las ecuaciones originales, por ejemplo en la 2: \(3 - y = 2 \implies y = 1\).</li>
+                                     <li>Solución: \((x=3, y=1)\).</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=o_g_0-O82-o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Métodos de Resolución de Sistemas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Resolución Gráfica y Discusión de Soluciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Resolución Gráfica y Discusión de Soluciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Cada ecuación lineal de dos variables representa una recta en el plano cartesiano. La solución de un sistema de 2x2 corresponde al punto (o puntos) de intersección de estas rectas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Soluciones</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-4">
+                            <div>
+                                <img src="https://placehold.co/300x250/E0F2FE/0891B2?text=Rectas+Secantes" alt="Rectas Secantes" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sistema Compatible Determinado</h4>
+                                <p class="text-base">Las rectas se cortan en un único punto. Hay <strong>una única solución</strong>.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x250/E0F2FE/0891B2?text=Rectas+Coincidentes" alt="Rectas Coincidentes" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sistema Compatible Indeterminado</h4>
+                                <p class="text-base">Las dos ecuaciones representan la misma recta. Hay <strong>infinitas soluciones</strong>.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x250/E0F2FE/0891B2?text=Rectas+Paralelas" alt="Rectas Paralelas" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sistema Incompatible</h4>
+                                <p class="text-base">Las rectas son paralelas y nunca se cortan. <strong>No hay solución</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <strong>Discusión de Soluciones:</strong> Al intentar resolver un sistema analíticamente, si llegamos a una contradicción (ej. \(0=5\)), el sistema es incompatible. Si llegamos a una identidad (ej. \(0=0\)), el sistema es compatible indeterminado.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

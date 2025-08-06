@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química U2: Gases y Soluciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Gases y Soluciones</h1>
+            <p class="text-lg text-gray-600">Química - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Gases -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Leyes de los Gases Ideales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las leyes de los gases describen el comportamiento de un <strong>gas ideal</strong>, un modelo teórico donde las partículas no tienen volumen y no interactúan entre sí. Estas leyes relacionan las cuatro variables macroscópicas: <strong>presión (P)</strong>, <strong>volumen (V)</strong>, <strong>temperatura (T)</strong> y <strong>cantidad de sustancia (n, en moles)</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Leyes Fundamentales</h3>
+                        <ul class="list-disc list-inside space-y-4 mt-3">
+                            <li>
+                                <strong>Ley de Boyle-Mariotte:</strong> A temperatura y cantidad de gas constantes, el volumen de un gas es inversamente proporcional a su presión. Si aumentas la presión, el volumen disminuye.
+                                <div class="info-box">\(P_1 \cdot V_1 = P_2 \cdot V_2\)</div>
+                            </li>
+                            <li>
+                                <strong>Ley de Charles:</strong> A presión y cantidad de gas constantes, el volumen de un gas es directamente proporcional a su temperatura absoluta (medida en Kelvin). Si calientas un gas, se expande.
+                                <div class="info-box">\(\frac{V_1}{T_1} = \frac{V_2}{T_2}\)</div>
+                            </li>
+                            <li>
+                                <strong>Ley de Gay-Lussac:</strong> A volumen y cantidad de gas constantes, la presión de un gas es directamente proporcional a su temperatura absoluta. Si calientas un gas en un recipiente cerrado, su presión aumenta.
+                                <div class="info-box">\(\frac{P_1}{T_1} = \frac{P_2}{T_2}\)</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ecuación del Gas Ideal</h3>
+                        <p>Esta ecuación combina las tres leyes anteriores en una sola fórmula que relaciona las cuatro variables.</p>
+                        <div class="info-box text-center">
+                            <p class="text-2xl font-mono">\(P \cdot V = n \cdot R \cdot T\)</p>
+                            <p class="mt-2">Donde <strong>R</strong> es la constante universal de los gases ideales.</p>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=U-21_zW2-uU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Leyes de los Gases &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Soluciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Soluciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una solución (o disolución) es una mezcla homogénea de dos o más sustancias. La sustancia que se disuelve se llama <strong>soluto</strong>, y la que disuelve al soluto se llama <strong>solvente</strong> o disolvente. Generalmente, el solvente es el componente que se encuentra en mayor proporción.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Concentración de las Soluciones</h3>
+                        <p>La concentración es una medida de la cantidad de soluto presente en una cantidad dada de solvente o de solución. Existen muchas formas de expresar la concentración:</p>
+                        <ul class="list-disc list-inside space-y-4 mt-3">
+                            <li>
+                                <strong>Porcentaje en Masa (% m/m):</strong> Expresa los gramos de soluto que hay por cada 100 gramos de solución.
+                                <div class="info-box">\(\% \frac{m}{m} = \frac{\text{masa de soluto}}{\text{masa de solución}} \times 100\)</div>
+                            </li>
+                            <li>
+                                <strong>Porcentaje Masa en Volumen (% m/v):</strong> Expresa los gramos de soluto que hay por cada 100 mililitros de solución.
+                                <div class="info-box">\(\% \frac{m}{v} = \frac{\text{masa de soluto (g)}}{\text{volumen de solución (mL)}} \times 100\)</div>
+                            </li>
+                             <li>
+                                <strong>Molaridad (M):</strong> Es una de las más importantes en química. Expresa el número de moles de soluto por cada litro de solución.
+                                <div class="info-box">\(M = \frac{\text{moles de soluto}}{\text{litros de solución}}\)</div>
+                            </li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo de Molaridad:</strong><br>
+                            Se disuelven 40 g de hidróxido de sodio (NaOH) en agua hasta completar 1 litro de solución. ¿Cuál es la molaridad? <br>
+                            1. Calcular la masa molar del NaOH: Na(23) + O(16) + H(1) = 40 g/mol. <br>
+                            2. Calcular los moles de soluto: \(moles = \frac{40 \text{ g}}{40 \text{ g/mol}} = 1 \text{ mol}\). <br>
+                            3. Calcular la Molaridad: \(M = \frac{1 \text{ mol}}{1 \text{ L}} = 1 M\). La solución es 1 Molar.
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=8-b2-a7-6M0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Soluciones y Unidades de Concentración &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

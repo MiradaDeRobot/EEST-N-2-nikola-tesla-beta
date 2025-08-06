@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U2: Bloques Combinacionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Bloques Combinacionales</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción a Circuitos Combinacionales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Circuitos Lógicos Combinacionales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un circuito combinacional es aquel en el que las salidas dependen <strong>única y exclusivamente</strong> de la combinación de las entradas en ese mismo instante. No tienen memoria; no recuerdan estados pasados. Cualquier cambio en las entradas se refleja en las salidas después de un pequeño <strong>retardo de propagación</strong>, que es el tiempo que tardan las señales en atravesar las compuertas lógicas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Formas Canónicas de una Función Lógica</h3>
+                        <p>Toda función lógica puede ser expresada de dos formas estándar o canónicas, derivadas directamente de su tabla de verdad. Estas formas son la base para la implementación de cualquier circuito.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Suma de Productos (SOP - Sum of Products):</strong> La función se expresa como una suma (OR) de términos producto (AND). Cada término producto, llamado <strong>Minterm</strong>, corresponde a una fila de la tabla de verdad donde la salida es '1'. Un minterm es un producto AND de todas las variables de entrada, negando aquellas que son '0' en esa fila para que el término dé '1'.</li>
+                            <li><strong>Producto de Sumas (POS - Product of Sums):</strong> La función se expresa como un producto (AND) de términos suma (OR). Cada término suma, llamado <strong>Maxterm</strong>, corresponde a una fila de la tabla de verdad donde la salida es '0'. Un maxterm es una suma OR de todas las variables, negando aquellas que son '1' en esa fila para que el término dé '0'.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> Dada una tabla de verdad de 2 variables (A, B) con salida F. Si F=1 para A=0, B=1 y para A=1, B=1: <br>
+                            - El minterm para la combinación (0,1) es \(\overline{A} \cdot B\). <br>
+                            - El minterm para la combinación (1,1) es \(A \cdot B\). <br>
+                            - La función en <strong>SOP</strong> es la suma de los minterms: \(F = (\overline{A} \cdot B) + (A \cdot B)\). <br>
+                            - Simplificando con Álgebra de Boole: \(F = B \cdot (\overline{A} + A) = B \cdot 1 = B\).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Decodificadores y Codificadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Decodificadores y Codificadores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Decodificadores</h3>
+                        <p>Un decodificador es un circuito que convierte una entrada en código binario de 'n' bits en una única salida activa de \(2^n\) salidas. Es decir, "decodifica" un número binario para activar una línea específica. Internamente, se construye con compuertas AND, donde cada compuerta corresponde a un minterm de las entradas.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Ejemplo: Decodificador 2 a 4</h4>
+                        <p>Tiene 2 entradas (A, B) y \(2^2 = 4\) salidas (S0, S1, S2, S3). Si la entrada es, por ejemplo, \(10_2\) (A=1, B=0), se activará la salida S2 y las demás permanecerán en '0'.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Diagrama+L%C3%B3gico+Decodificador+2a4" alt="Diagrama Lógico de un Decodificador 2 a 4" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> Selección de memoria (para activar un chip de memoria específico a partir de una dirección), control de displays de 7 segmentos (un decodificador BCD a 7 segmentos convierte un número de 4 bits en los segmentos que deben encenderse), selección de periféricos.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Codificadores</h3>
+                        <p>Realizan la función inversa a un decodificador. Tienen \(2^n\) entradas y 'n' salidas. Cuando una de las entradas se activa, las salidas generan el código binario correspondiente a esa entrada.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Codificador de Prioridad</h4>
+                        <p>Un problema del codificador simple es qué sucede si se activan dos entradas a la vez. Un <strong>codificador de prioridad</strong> resuelve esto: si varias entradas están activas, la salida corresponderá a la entrada de mayor prioridad (generalmente la de mayor número). Además, suelen tener una salida que indica si alguna entrada está activa.</p>
+                         <div class="info-box">
+                            <strong>Aplicaciones:</strong> Teclados (convierten la pulsación de una tecla en su código binario), sistemas de atención de interrupciones en microprocesadores (donde múltiples dispositivos pueden solicitar atención simultáneamente).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Multiplexores y Demultiplexores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Multiplexores y Demultiplexores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Multiplexores (MUX)</h3>
+                        <p>Un multiplexor, o selector de datos, es un circuito con múltiples entradas de datos, un conjunto de entradas de selección y una única salida. Actúa como un conmutador rotativo digital: las entradas de selección determinan cuál de las entradas de datos se conecta a la salida.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Ejemplo: Multiplexor 4 a 1</h4>
+                        <p>Tiene 4 entradas de datos (D0, D1, D2, D3), 2 entradas de selección (S1, S0) y 1 salida (Y). Si las entradas de selección son \(10_2\), la salida Y tomará el valor que tenga la entrada D2.</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Diagrama+L%C3%B3gico+Multiplexor+4a1" alt="Diagrama Lógico de un Multiplexor 4 a 1" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> Enrutamiento de datos en sistemas de comunicaciones, conversión de datos paralelo a serie, e implementación de funciones lógicas (un MUX de \(2^n\) entradas puede implementar cualquier función de 'n' variables).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Z50s_y5k7oA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Multiplexores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Demultiplexores (DEMUX)</h3>
+                        <p>Un demultiplexor, o distribuidor de datos, realiza la operación inversa. Tiene una única entrada de datos, un conjunto de entradas de selección y múltiples salidas. Conecta la entrada de datos a la línea de salida especificada por las entradas de selección, mientras que las demás salidas permanecen en un estado inactivo (generalmente '0').</p>
+                        <div class="info-box">
+                            <strong>Relación con Decodificadores:</strong> Un demultiplexor es funcionalmente idéntico a un decodificador con una entrada de habilitación (Enable). La entrada de datos del DEMUX se conecta a la entrada Enable del decodificador. Cuando el Enable está activo, el decodificador funciona normalmente; cuando está inactivo, todas las salidas están desactivadas.
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> Conversión de datos serie a paralelo (recibiendo un flujo de datos y distribuyéndolo a múltiples líneas), control de periféricos (enviando una señal a un dispositivo específico), decodificación de direcciones.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video explica el funcionamiento y las aplicaciones de los demultiplexores.</p>
+                            <a href="https://www.youtube.com/watch?v=__g-Q53P-58" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Demultiplexores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología Electrónica U1: Fundamentos de Electricidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Fundamentos de Electricidad</h1>
+            <p class="text-lg text-gray-600">Tecnología Electrónica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Estructura Atómica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. El Átomo y su Estructura</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Toda la materia está compuesta por átomos. Entender su estructura es el primer paso para comprender la electricidad. El modelo atómico de Bohr, aunque simplificado, es muy útil para visualizarlo: un núcleo central con protones (carga positiva) y neutrones (sin carga), y electrones (carga negativa) orbitando a su alrededor en diferentes niveles de energía o "capas".</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Electrones de Valencia y Conductividad</h3>
+                        <p>La capacidad de un material para conducir la electricidad depende de los electrones de su capa más externa, la <strong>banda de valencia</strong>. Estos electrones son los que participan en las reacciones químicas y en la conducción eléctrica.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Bandas+de+Energ%C3%ADa" alt="Bandas de Energía de los materiales" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Conductores:</strong> Tienen electrones de valencia muy débilmente ligados al núcleo. La banda de valencia y la de conducción se superponen, permitiendo que los electrones se muevan libremente con muy poca energía aplicada, formando una "nube" de electrones libres. Ejemplos: Cobre, plata, oro.</li>
+                            <li><strong>Aisladores:</strong> Sus electrones de valencia están fuertemente ligados. La brecha de energía (band gap) entre la banda de valencia y la de conducción es muy grande, por lo que se necesita una enorme cantidad de energía para que un electrón se libere y conduzca. Ejemplos: Vidrio, plástico, goma, madera seca.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Este video explica la estructura atómica y la diferencia entre materiales conductores y aislantes.</p>
+                        <a href="https://www.youtube.com/watch?v=prBR_gq9-34" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Átomos, Conductores y Aislantes &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Resistencia y Conductancia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Resistencia, Conductancia y Efectos de la Temperatura</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Resistencia (\(R\))</h3>
+                        <p>La <strong>resistencia</strong> es la oposición que presenta un material al flujo de corriente eléctrica. Es una medida de cuánta dificultad encuentran los electrones para moverse a través del material. Su unidad es el <strong>Ohm (\(\Omega\))</strong>.</p>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-6">Conductancia (\(G\))</h3>
+                        <p>La <strong>conductancia</strong> es la propiedad inversa de la resistencia (\(G = 1/R\)). Representa la facilidad con la que un material permite el paso de la corriente. Su unidad es el <strong>Siemens (S)</strong>.</p>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-6">Efectos de la Temperatura</h3>
+                        <p>La resistencia de la mayoría de los materiales varía con la temperatura. En los <strong>conductores</strong>, al aumentar la temperatura, aumenta la agitación de los átomos en la red cristalina. Esto provoca más colisiones con los electrones que intentan pasar, dificultando su flujo y, por lo tanto, <strong>aumentando la resistencia</strong>. Este comportamiento se describe mediante el <strong>coeficiente de temperatura positivo</strong>.</p>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Aprende qué es la resistencia eléctrica y cómo la temperatura afecta a los conductores.</p>
+                        <a href="https://www.youtube.com/watch?v=ueot_0t_Y7c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Resistencia y Temperatura &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ley de Ohm y Potencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Ley de Ohm y Potencia Eléctrica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ley de Ohm</h3>
+                        <p>La Ley de Ohm es la relación matemática fundamental que liga las tres magnitudes eléctricas básicas en un circuito: Tensión (V), Corriente (I) y Resistencia (R).</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Tri%C3%A1ngulo+de+la+Ley+de+Ohm" alt="Triángulo de la Ley de Ohm" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="info-box">
+                                <p class="text-center text-2xl font-mono">\(V = I \cdot R\)</p>
+                                <p class="mt-2">"La diferencia de potencial (V) en los extremos de una resistencia es directamente proporcional a la corriente (I) que la atraviesa."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Potencia Eléctrica (\(P\)) y Efecto Joule</h3>
+                        <p>La <strong>potencia eléctrica</strong> es la cantidad de energía eléctrica consumida o entregada por un elemento en un segundo. Su unidad es el <strong>Watt (W)</strong>.</p>
+                        <p class="mt-3">El <strong>Efecto Joule</strong> es la manifestación física de la potencia disipada en una resistencia. Cuando la corriente fluye a través de ella, los choques de los electrones con los átomos del material generan calor. La potencia disipada en forma de calor se puede calcular con las siguientes fórmulas:</p>
+                        <div class="info-box">
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>\(P = V \cdot I\)</li>
+                                <li>\(P = I^2 \cdot R\)</li>
+                                <li>\(P = \frac{V^2}{R}\)</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">Este efecto es útil en aplicaciones como estufas o lámparas, pero es una pérdida de energía no deseada en la mayoría de los circuitos electrónicos, lo que obliga a usar disipadores de calor para evitar que los componentes se sobrecalienten.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=ueig6_82i-A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Ley de Ohm y Potencia Eléctrica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

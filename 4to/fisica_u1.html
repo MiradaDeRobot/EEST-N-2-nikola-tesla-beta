@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física U1: Energía Mecánica y Térmica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Energía Mecánica y Térmica</h1>
+            <p class="text-lg text-gray-600">Física - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Energía Mecánica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Energía Mecánica: Cinemática y Dinámica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>energía mecánica</strong> es la suma de la energía asociada al movimiento (cinética) y a la posición (potencial) de un objeto. Para entenderla, primero repasamos sus fundamentos: la cinemática y la dinámica.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Cinemática y Dinámica</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Cinemática:</strong> Describe el movimiento de los cuerpos sin considerar las causas que lo producen. Estudia conceptos como posición, velocidad y aceleración.</li>
+                            <li><strong>Dinámica:</strong> Estudia las causas del movimiento, basándose en las Leyes de Newton. La fuerza es la causa que modifica el estado de movimiento de un cuerpo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Energía Cinética y Potencial</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Energ%C3%ADa+Cin%C3%A9tica" alt="Energía Cinética" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2">La energía del movimiento.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Energ%C3%ADa+Potencial" alt="Energía Potencial" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2">La energía de la posición.</p>
+                            </div>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Energía Cinética (\(E_c\)):</strong> Es la energía que posee un cuerpo debido a su movimiento. Depende de la masa y de la velocidad al cuadrado.
+                                <div class="info-box">\(E_c = \frac{1}{2} m v^2\)</div>
+                            </li>
+                            <li><strong>Energía Potencial Gravitatoria (\(E_p\)):</strong> Es la energía almacenada que tiene un cuerpo debido a su altura en un campo gravitatorio.
+                                <div class="info-box">\(E_p = m g h\)</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transformaciones y Conservación de la Energía Mecánica</h3>
+                        <p>La energía mecánica total de un sistema (\(E_m = E_c + E_p\)) se conserva (permanece constante) si sobre el cuerpo solo actúan fuerzas conservativas (como la gravedad) y no hay rozamiento.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Caída Libre</strong><br>
+                            Al soltar una pelota desde una altura 'h', inicialmente toda su energía es potencial (\(E_p\)). A medida que cae, la altura disminuye (pierde \(E_p\)) pero la velocidad aumenta (gana \(E_c\)). Justo antes de tocar el suelo, toda la energía potencial se ha transformado en energía cinética.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=F9-k_K4p-cQ" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Conservación de la Energía Mecánica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Energía Térmica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Energía Térmica: Calor y Temperatura</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diferencia entre Calor y Temperatura</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Temperatura:</strong> Es una medida de la energía cinética promedio de las partículas de un cuerpo. Nos indica qué tan "caliente" o "frío" está un objeto. Se mide con un termómetro.</li>
+                            <li><strong>Calor:</strong> Es la <strong>transferencia</strong> de energía térmica de un cuerpo de mayor temperatura a uno de menor temperatura. No es algo que un cuerpo "tenga", sino algo que se transfiere.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transferencia de Energía (Calor)</h3>
+                        <p>El calor siempre fluye del cuerpo más caliente al más frío, y puede hacerlo de tres maneras:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Conducci%C3%B3n" alt="Conducción" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Conducción</h4>
+                                <p class="text-base">Transferencia por contacto directo, típica en sólidos.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Convecci%C3%B3n" alt="Convección" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Convección</h4>
+                                <p class="text-base">Transferencia por el movimiento de un fluido (líquido o gas).</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Radiaci%C3%B3n" alt="Radiación" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Radiación</h4>
+                                <p class="text-base">Transferencia por ondas electromagnéticas. No necesita un medio material.</p>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=tI7_J53sU2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Transferencia de Calor &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Calorimetría -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Escalas Termométricas, Calorimetría y Dilatación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Escalas Termométricas</h3>
+                        <p>Son las escalas utilizadas para medir la temperatura.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Celsius (°C):</strong> Basada en los puntos de congelación (0°C) y ebullición (100°C) del agua.</li>
+                            <li><strong>Fahrenheit (°F):</strong> Usada principalmente en Estados Unidos.</li>
+                            <li><strong>Kelvin (K):</strong> Es la escala absoluta de temperatura, utilizada en ciencia. El cero absoluto (0 K) es la temperatura más baja posible.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Calorimetría</h3>
+                        <p>Es la parte de la física que mide el calor. El <strong>calor específico (\(c\))</strong> de una sustancia es la cantidad de calor necesaria para elevar la temperatura de 1 gramo de esa sustancia en 1°C.</p>
+                        <div class="info-box">
+                            <strong>Ecuación Fundamental de la Calorimetría:</strong> \(Q = m \cdot c \cdot \Delta T\)<br>
+                            Donde \(Q\) es el calor transferido, \(m\) la masa, \(c\) el calor específico y \(\Delta T\) el cambio de temperatura.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Dilatación Térmica</h3>
+                        <p>La mayoría de los materiales se expanden (dilatan) cuando se calientan y se contraen cuando se enfrían. Esto ocurre porque el aumento de temperatura aumenta la vibración de los átomos, haciendo que ocupen más espacio.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Dilatación Lineal:</strong> Aumento de longitud en sólidos.</li>
+                            <li><strong>Dilatación Superficial:</strong> Aumento de área.</li>
+                            <li><strong>Dilatación Volumétrica:</strong> Aumento de volumen, típica en líquidos y gases.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Lqg-a_2e8wE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Calorimetría y Dilatación &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

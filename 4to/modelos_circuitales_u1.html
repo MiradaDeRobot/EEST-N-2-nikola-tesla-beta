@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U1: Análisis de Circuitos DC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Análisis de Circuitos de Corriente Continua</h1>
+            <p class="text-lg text-gray-600">Fundamentos de los Modelos Circuitales - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Modelización -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Concepto de Modelización</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En ingeniería, un <strong>modelo</strong> es una representación simplificada de un sistema real que captura sus características más importantes. Los componentes electrónicos reales son complejos, pero para analizar un circuito, los reemplazamos por modelos ideales (como una resistencia perfecta o una fuente de tensión ideal).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué Modelizar?</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Simplificación:</strong> Permite analizar matemáticamente el comportamiento de un circuito sin tener en cuenta todos los efectos parásitos del mundo real.</li>
+                            <li><strong>Predicción:</strong> Un buen modelo nos permite predecir cómo se comportará el circuito antes de construirlo.</li>
+                            <li><strong>Abstracción:</strong> Nos permite enfocarnos en la función del circuito (ej. "amplificar una señal") en lugar de en la física detallada de cada componente.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo: Resistencia Real vs. Modelo Ideal</strong><br>
+                            Una resistencia real no solo tiene resistencia; también tiene una pequeña inductancia y capacitancia parásitas. Para la mayoría de los circuitos de DC, estos efectos son despreciables. Por lo tanto, la modelizamos simplemente como una resistencia ideal, lo que nos permite aplicar la Ley de Ohm fácilmente.
+                        </div>
+                        <div class="info-box">
+                            El <strong>circuito eléctrico</strong> es el modelo por excelencia. Reemplazamos componentes físicos por símbolos (resistencias, fuentes, etc.) y las conexiones por líneas, permitiéndonos aplicar leyes matemáticas para su análisis.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video introduce el concepto de modelado y los elementos básicos de un circuito.</p>
+                            <a href="https://www.youtube.com/watch?v=3-6-440vW-4" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Modelos y Circuitos Eléctricos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos DC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Circuitos de Corriente Continua (DC)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Son circuitos alimentados por fuentes de tensión o corriente que no varían en el tiempo, como baterías o fuentes de alimentación de laboratorio.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Circuitos en Serie</h3>
+                        <p>Los componentes están conectados uno a continuación del otro, formando un único camino para la corriente.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li>La <strong>corriente</strong> es la misma en todos los componentes.</li>
+                            <li>La <strong>tensión total</strong> se divide entre los componentes (Divisor de Tensión).</li>
+                            <li>La <strong>resistencia total o equivalente (\(R_{eq}\))</strong> es la suma de las resistencias individuales: \(R_{eq} = R_1 + R_2 + \dots + R_n\).</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo de Circuito Serie:</strong><br>
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Circuito+Serie" alt="Ejemplo de circuito serie" class="w-full h-auto rounded-lg my-2 max-w-sm mx-auto">
+                            Si V=12V, R1=2kΩ y R2=4kΩ: <br>
+                            1. Resistencia Total: \(R_{eq} = 2k\Omega + 4k\Omega = 6k\Omega\). <br>
+                            2. Corriente Total: \(I = \frac{V}{R_{eq}} = \frac{12V}{6k\Omega} = 2mA\). <br>
+                            3. Caídas de Tensión: \(V_{R1} = I \cdot R1 = 2mA \cdot 2k\Omega = 4V\). \(V_{R2} = I \cdot R2 = 2mA \cdot 4k\Omega = 8V\). (Nótese que 4V + 8V = 12V).
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Circuitos en Paralelo</h3>
+                        <p>Los terminales de los componentes están conectados a los mismos dos puntos (nodos), creando múltiples caminos para la corriente.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li>La <strong>tensión</strong> es la misma en todos los componentes.</li>
+                            <li>La <strong>corriente total</strong> se divide entre las ramas del circuito (Divisor de Corriente).</li>
+                            <li>La inversa de la <strong>resistencia equivalente</strong> es la suma de las inversas de las resistencias individuales: \(\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}\).</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo de Circuito Paralelo:</strong><br>
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Circuito+Paralelo" alt="Ejemplo de circuito paralelo" class="w-full h-auto rounded-lg my-2 max-w-sm mx-auto">
+                            Si V=12V, R1=2kΩ y R2=4kΩ: <br>
+                            1. Resistencia Total: \(R_{eq} = \frac{R_1 \cdot R_2}{R_1 + R_2} = \frac{2k\Omega \cdot 4k\Omega}{2k\Omega + 4k\Omega} = \frac{8}{6}k\Omega \approx 1.33k\Omega\). <br>
+                            2. Corrientes de Rama: \(I_1 = \frac{V}{R_1} = \frac{12V}{2k\Omega} = 6mA\). \(I_2 = \frac{V}{R_2} = \frac{12V}{4k\Omega} = 3mA\). <br>
+                            3. Corriente Total: \(I_{total} = I_1 + I_2 = 6mA + 3mA = 9mA\). (También: \(I_{total} = \frac{12V}{1.33k\Omega} \approx 9mA\)).
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Circuitos Mixtos</h3>
+                        <p>Son una combinación de conexiones en serie y en paralelo. Para resolverlos, se simplifican por partes, calculando las resistencias equivalentes de las secciones en serie o paralelo hasta reducir el circuito a una única resistencia equivalente.</p>
+                         <div class="example-box">
+                            <strong>Ejemplo de Circuito Mixto:</strong><br>
+                            <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Circuito+Mixto" alt="Ejemplo de circuito mixto" class="w-full h-auto rounded-lg my-2 max-w-sm mx-auto">
+                            En un circuito con R1 en serie con el paralelo de R2 y R3: <br>
+                            1. Se calcula la resistencia equivalente del paralelo: \(R_{23} = \frac{R_2 \cdot R_3}{R_2 + R_3}\). <br>
+                            2. Se calcula la resistencia total, que es la suma en serie de R1 y R23: \(R_{eq} = R_1 + R_{23}\).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video explica cómo resolver circuitos en serie, paralelo y mixtos.</p>
+                            <a href="https://www.youtube.com/watch?v=p5394_a-6aU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Circuitos Serie, Paralelo y Mixtos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Leyes Principales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Leyes Principales de Circuitos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cuando los circuitos se vuelven más complejos, la simple reducción serie-paralelo no es suficiente. Las <strong>Leyes de Kirchhoff</strong> son dos principios fundamentales que nos permiten analizar cualquier circuito eléctrico.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ley de Corrientes de Kirchhoff (LCK)</h3>
+                        <p>Se basa en el principio de conservación de la carga. Afirma que la suma algebraica de todas las corrientes que entran y salen de un <strong>nodo</strong> (un punto de unión) es igual a cero. De forma más intuitiva: "todo lo que entra, tiene que salir".</p>
+                        <div class="info-box">
+                            \(\sum I_{entrantes} = \sum I_{salientes}\)
+                        </div>
+                         <div class="example-box">
+                            <strong>Ejemplo LCK:</strong> Si a un nodo llega una corriente I1 de 5A y salen dos corrientes, I2 de 2A y I3, entonces I3 debe ser 3A para que se cumpla la ley: \(5A = 2A + I_3 \implies I_3 = 3A\).
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ley de Tensiones de Kirchhoff (LTK)</h3>
+                        <p>Se basa en el principio de conservación de la energía. Afirma que la suma algebraica de todas las diferencias de potencial (tensiones) en cualquier lazo o <strong>malla</strong> cerrada de un circuito es igual a cero.</p>
+                        <div class="info-box">
+                            \(\sum V = 0\) (en un lazo cerrado)
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo LTK:</strong> En un lazo con una fuente de 9V y dos resistencias R1 y R2 en serie, la suma de las "caídas de tensión" en las resistencias (\(V_{R1}\) y \(V_{R2}\)) debe ser igual a la "subida de tensión" de la fuente: \(9V - V_{R1} - V_{R2} = 0\).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=B8839g1eFEU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Leyes de Kirchhoff &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
