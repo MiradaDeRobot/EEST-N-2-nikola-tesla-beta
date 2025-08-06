@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U1: Análisis Avanzado y Transistores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Análisis Avanzado y Transistores</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Teoremas de Redes en CA -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Teoremas de Redes en Corriente Alterna</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los teoremas que son fundamentales en DC, también se aplican en circuitos de AC. La clave es reemplazar las resistencias por <strong>impedancias (\(Z\))</strong> y los valores de tensión y corriente por <strong>fasores (\(\mathbf{V}, \mathbf{I}\))</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teorema de Superposición en CA</h3>
+                        <p>Permite analizar el efecto de cada fuente de forma individual. El resultado final es la suma fasorial de los efectos individuales.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> En un circuito con una fuente de tensión y una de corriente, para hallar la tensión en un componente: <br>
+                            1. <strong>Apagar la fuente de corriente</strong> (reemplazar por circuito abierto) y calcular la tensión debida a la fuente de tensión. <br>
+                            2. <strong>Apagar la fuente de tensión</strong> (reemplazar por cortocircuito) y calcular la tensión debida a la fuente de corriente. <br>
+                            3. <strong>Sumar fasorialmente</strong> ambas tensiones para obtener el resultado final.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Thévenin y Norton en CA</h3>
+                        <p>Cualquier circuito lineal de dos terminales puede ser reemplazado por su equivalente:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Equivalente de Thévenin:</strong> Una fuente de tensión fasorial \(\mathbf{V_{Th}}\) en serie con una impedancia \(\mathbf{Z_{Th}}\).</li>
+                            <li><strong>Equivalente de Norton:</strong> Una fuente de corriente fasorial \(\mathbf{I_{N}}\) en paralelo con una impedancia \(\mathbf{Z_{N}}\).</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Recordatorio:</strong> \(\mathbf{Z_{N} = Z_{Th}}\) y \(\mathbf{V_{Th} = I_{N} \cdot Z_{Th}}\).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=1-ydeRk-X2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema de Thévenin en CA &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Divisores de Tensión y Corriente -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Divisores de Tensión y Corriente en CA</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las fórmulas de los divisores de tensión y corriente también se aplican en CA, pero utilizando impedancias complejas en lugar de resistencias.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Divisor de Tensión</h3>
+                        <p>Para dos impedancias en serie, la tensión en \(\mathbf{Z_2}\) es:</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(\mathbf{V_2} = \mathbf{V_{total}} \cdot \frac{\mathbf{Z_2}}{\mathbf{Z_1} + \mathbf{Z_2}}\)</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> En un circuito serie con una resistencia R=1kΩ y un capacitor C=1µF, alimentado por 10V a 50Hz, calcular la tensión en el capacitor.<br>
+                            1. Calcular reactancia: \(X_C = \frac{-1}{2\pi \cdot 50 \cdot 1\mu F} \approx -j3183 \Omega\).<br>
+                            2. Aplicar la fórmula: \(\mathbf{V_C} = 10V \cdot \frac{-j3183}{1000 - j3183}\). El resultado será un fasor (tensión con su fase).
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Divisor de Corriente</h3>
+                        <p>Para dos impedancias en paralelo, la corriente que pasa por \(\mathbf{Z_2}\) es:</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(\mathbf{I_2} = \mathbf{I_{total}} \cdot \frac{\mathbf{Z_1}}{\mathbf{Z_1} + \mathbf{Z_2}}\)</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> Un circuito paralelo con R=100Ω y L=50mH es alimentado por una fuente de 2A a 60Hz. Calcular la corriente en el inductor.<br>
+                            1. Calcular reactancia: \(X_L = 2\pi \cdot 60 \cdot 50mH \approx j18.85 \Omega\).<br>
+                            2. Aplicar la fórmula: \(\mathbf{I_L} = 2A \cdot \frac{100}{100 + j18.85}\). El resultado será un fasor (corriente con su fase).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Polarización de Transistores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Polarización de Transistores y Circuitos Realimentados</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para que un transistor funcione como amplificador, debe estar correctamente <strong>polarizado</strong>. Esto significa establecer un punto de operación de reposo (o <strong>punto Q</strong>) en la región activa, aplicando las tensiones y corrientes de continua (DC) adecuadas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Polarización por Divisor de Tensión</h3>
+                        <p>Es el método de polarización más estable y utilizado. Utiliza un divisor de tensión con dos resistencias (R1 y R2) para establecer una tensión de base (\(V_B\)) fija e independiente del \(\beta\) del transistor.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x450/E0F2FE/0891B2?text=Circuito+de+Polarizaci%C3%B3n+por+Divisor+de+Tensi%C3%B3n" alt="Circuito de Polarización por Divisor de Tensión" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="example-box">
+                            <strong>Análisis DC del Circuito:</strong><br>
+                            1. <strong>Calcular Tensión de Base (\(V_B\)):</strong> Se aplica el divisor de tensión: \(V_B = V_{CC} \cdot \frac{R_2}{R_1 + R_2}\).<br>
+                            2. <strong>Calcular Tensión de Emisor (\(V_E\)):</strong> \(V_E = V_B - V_{BE} \approx V_B - 0.7V\).<br>
+                            3. <strong>Calcular Corriente de Emisor (\(I_E\)):</strong> \(I_E = \frac{V_E}{R_E}\).<br>
+                            4. <strong>Aproximar Corriente de Colector (\(I_C\)):</strong> Como \(I_B\) es pequeña, \(I_C \approx I_E\).<br>
+                            5. <strong>Calcular Tensión de Colector (\(V_C\)):</strong> \(V_C = V_{CC} - I_C \cdot R_C\).<br>
+                            6. <strong>Calcular Tensión Colector-Emisor (\(V_{CE}\)):</strong> \(V_{CE} = V_C - V_E\). Este es el punto Q.
+                        </div>
+                         <div class="info-box">
+                            <strong>Circuitos Realimentados:</strong> La resistencia de emisor (\(R_E\)) en este circuito introduce <strong>realimentación negativa</strong>. Si por algún motivo (ej. un cambio de temperatura) la corriente \(I_C\) tiende a aumentar, también aumenta \(I_E\), lo que hace que suba la tensión \(V_E\). Como \(V_B\) es fija, la tensión \(V_{BE}\) disminuye, reduciendo la corriente de base y contrarrestando el aumento inicial de \(I_C\). Esto estabiliza enormemente el punto Q.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Polarización de Transistores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

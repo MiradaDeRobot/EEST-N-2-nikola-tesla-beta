@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones y Máquinas Eléctricas U3: Máquinas de Corriente Alterna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Máquinas de Corriente Alterna (CA)</h1>
+            <p class="text-lg text-gray-600">Instalaciones y Máquinas Eléctricas - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Motores Asincrónicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Motores Asincrónicos (de Inducción)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El motor asincrónico trifásico es el motor más utilizado en la industria por su robustez, bajo mantenimiento y costo reducido. Su principal característica es que la velocidad del rotor nunca es igual (no está en sincronismo) a la velocidad del campo magnético rotante del estator.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principio de Funcionamiento y Aspectos Constructivos</h3>
+                        <p>Se basa en el campo magnético rotante generado por las bobinas del <strong>estator</strong> al ser alimentadas por un sistema trifásico. Este campo giratorio induce corrientes en las barras del <strong>rotor</strong> (generalmente de tipo "jaula de ardilla"), que a su vez crean su propio campo magnético. La interacción entre ambos campos produce la cupla que hace girar al rotor.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Motor+Asincr%C3%B3nico+Jaula+de+Ardilla" alt="Motor Asincrónico" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           <strong>Deslizamiento (s):</strong> Es la diferencia porcentual entre la velocidad del campo (velocidad de sincronismo, \(n_s\)) y la velocidad del rotor (\(n_r\)). Es necesario que exista un deslizamiento para que se induzca corriente en el rotor y se genere cupla. \(s = \frac{n_s - n_r}{n_s}\)
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Distintos Tipos de Arranque</h3>
+                        <p>La corriente de arranque de un motor de inducción puede ser de 5 a 8 veces su corriente nominal. Para limitar este pico en motores de gran potencia, se utilizan métodos de arranque a tensión reducida:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Arranque Directo:</strong> Se aplica la tensión nominal directamente. Solo para motores pequeños.</li>
+                            <li><strong>Arranque Estrella-Triángulo:</strong> El motor arranca conectado en estrella (menor tensión por fase) y, una vez que alcanza velocidad, un temporizador conmuta la conexión a triángulo (tensión nominal).</li>
+                            <li><strong>Arranque con Autotransformador:</strong> Un autotransformador proporciona una tensión reducida durante el arranque.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Arranque Estrella-Triángulo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Motores Sincrónicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Motores Sincrónicos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>motor sincrónico</strong> es un tipo de motor de C.A. en el que la rotación del eje está directamente sincronizada con la frecuencia de la corriente de alimentación. La velocidad de rotación es exactamente la velocidad del campo magnético rotante del estator.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principio y Arranque</h3>
+                        <p>El estator es similar al de un motor asincrónico. El rotor, sin embargo, es un electroimán alimentado con C.C. (o un imán permanente). Una vez que el rotor alcanza una velocidad cercana a la de sincronismo (generalmente impulsado por un bobinado de arranque tipo jaula de ardilla), se energiza el campo del rotor, que se "engancha" magnéticamente con el campo rotante del estator y giran juntos a la misma velocidad.</p>
+                        <div class="info-box">
+                           <strong>Aplicaciones:</strong> Se utilizan en aplicaciones que requieren una velocidad constante y precisa, independientemente de la carga, como en relojes eléctricos, compresores y generadores.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Control de Velocidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Control de Velocidad de Motores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Controlar la velocidad de los motores de C.A. es fundamental en muchas aplicaciones industriales para optimizar procesos y ahorrar energía.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Métodos de Control</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Por Variación de Tensión:</strong> Al reducir la tensión de alimentación, se reduce la cupla del motor y, por lo tanto, su velocidad. Es un método simple pero poco eficiente.</li>
+                            <li><strong>Por Variación del Número de Polos:</strong> Algunos motores están diseñados con bobinados que pueden ser reconectados para cambiar el número de polos magnéticos, lo que cambia la velocidad de sincronismo.</li>
+                            <li><strong>Por Variación de Frecuencia:</strong> Es el método más eficiente y versátil. Utilizando un <strong>Variador de Frecuencia (VFD)</strong>, se puede controlar con gran precisión la velocidad del motor desde cero hasta su velocidad nominal (e incluso por encima).</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Variador+de+Frecuencia+(VFD)" alt="Variador de Frecuencia" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Variadores de Frecuencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

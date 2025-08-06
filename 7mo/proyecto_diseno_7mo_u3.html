@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto y Diseño Electrónico U3: Documentación e Implementación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Documentación e Implementación</h1>
+            <p class="text-lg text-gray-600">Proyecto y Diseño Electrónico - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Documentación y Registro -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Documentación y Registro del Desarrollo del Proyecto</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>documentación</strong> es una de las fases más importantes y a menudo subestimadas de un proyecto. Consiste en registrar de forma clara y ordenada toda la información relevante generada durante el ciclo de vida del proyecto. Un proyecto sin documentación es un proyecto incompleto.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué es crucial documentar?</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Mantenibilidad:</strong> Permite que otra persona (o uno mismo en el futuro) pueda entender, reparar o modificar el proyecto.</li>
+                            <li><strong>Transferencia de Conocimiento:</strong> Facilita la colaboración y permite que otros aprendan del trabajo realizado.</li>
+                            <li><strong>Registro de Decisiones:</strong> Documenta por qué se tomaron ciertas decisiones de diseño, evitando repetir errores.</li>
+                            <li><strong>Cumplimiento de Normativas:</strong> En el ámbito profesional, es un requisito legal y de calidad indispensable.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Elementos de la Documentación Técnica</h3>
+                        <p>La documentación de un proyecto electrónico debe incluir, como mínimo:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Memoria Descriptiva:</strong> Un documento que explica el propósito, los objetivos, el funcionamiento general y la justificación del proyecto.</li>
+                            <li><strong>Planos y Esquemáticos:</strong> Diagramas del circuito electrónico, planos de la placa de circuito impreso (PCB) y planos mecánicos del gabinete.</li>
+                            <li><strong>Código Fuente (Firmware):</strong> El código completo del microcontrolador, bien comentado para explicar su lógica.</li>
+                            <li><strong>Listado de Materiales (BOM - Bill of Materials):</strong> Una lista detallada de todos los componentes utilizados, con sus especificaciones y posibles proveedores.</li>
+                            <li><strong>Guía de Ensamble y Pruebas:</strong> Instrucciones para montar el prototipo y los procedimientos para verificar su correcto funcionamiento.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Importancia de la Documentación Técnica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Implementación Definitiva -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Implementación Definitiva</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>implementación definitiva</strong> es la fase final donde el prototipo funcional se convierte en un producto o sistema terminado, listo para ser entregado o puesto en marcha.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pasos de la Implementación</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Fase+de+Implementaci%C3%B3n+y+Pruebas+Finales" alt="Implementación y Pruebas" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ol class="list-decimal list-inside space-y-3 mt-4">
+                            <li><strong>Ensamble Final:</strong> Montaje de la versión final del PCB en el gabinete definitivo, junto con todos los componentes externos (pantallas, botones, conectores).</li>
+                            <li><strong>Pruebas de Validación:</strong> Se somete al equipo a un conjunto exhaustivo de pruebas para verificar que cumple con TODOS los requerimientos y objetivos definidos al inicio del proyecto.</li>
+                            <li><strong>Elaboración de Manuales:</strong> Se redacta la documentación final para el usuario:
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>Manual de Usuario:</strong> Explica cómo operar el equipo de forma segura y eficiente.</li>
+                                    <li><strong>Manual de Servicio Técnico:</strong> Dirigido a personal técnico, incluye información para la instalación, mantenimiento y reparación del equipo.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Entrega y Puesta en Marcha:</strong> Se entrega el proyecto documentado y se realiza la instalación y configuración final en su entorno de operación.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

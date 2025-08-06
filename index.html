@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Educativo - Técnica Electrónica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo para la barra de scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fee2e2; /* red-100 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b91c1c; /* red-700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #991b1b; /* red-800 */
+        }
+        /* Animación para el acordeón */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-red-500 via-red-600 to-red-700 text-gray-800">
+
+    <div id="app" class="container mx-auto p-4 md:p-8">
+
+        <!-- Vista Principal: Selección de Año -->
+        <div id="home-view">
+            <header class="text-center mb-12">
+                <div class="bg-black p-4 md:p-6 rounded-2xl shadow-xl border border-white/50 flex items-center justify-center space-x-4 md:space-x-6">
+                    <img src="tesla escudo   2.jpg" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-100 text-left">
+                        <span>Portal Educativo de la Escuela Tecnica N°2</span>
+                        <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-red-400">Nikola Tesla</span>
+                    </h1>
+                </div>
+            </header>
+
+            <main>
+                <h2 class="text-2xl font-bold text-center mb-8 text-black">Selecciona un año para ver los contenidos</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="years-grid">
+                    <!-- Los botones de los años se generan con JS -->
+                </div>
+
+                <!-- Nueva sección de Complementos de Estudio -->
+                <hr class="my-12 border-t-2 border-red-300">
+                <h2 class="text-2xl font-bold text-center mb-8 text-black">Complementos de estudio</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="complements-grid">
+                    <!-- Los botones de complementos se generan con JS -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Vista de Contenido: Materias y Unidades -->
+        <div id="content-view" class="hidden">
+            <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <div class="flex items-center">
+                    <button id="back-button" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        Volver
+                    </button>
+                    <h1 id="content-title" class="text-3xl md:text-4xl font-bold text-gray-800 ml-4"></h1>
+                </div>
+                <div id="header-buttons-container">
+                    <!-- El botón para el PDF se insertará aquí -->
+                </div>
+            </header>
+
+            <main id="content-container" class="space-y-4">
+                <!-- El contenido de las materias se genera con JS -->
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // --- BASE DE DATOS DE CONTENIDOS ---
+        const schoolData = {
+            1: {
+                title: "Primer Año",
+                pdf: "diseño_curricular_1.pdf",
+                subjects: [
+                    { name: "Taller de Electricidad Básica", units: [
+                        { title: "Unidad 1: Seguridad e Higiene en el Taller", content: "Normas de seguridad, uso de herramientas manuales, simbología eléctrica básica." },
+                        { title: "Unidad 2: Magnitudes Eléctricas", content: "Tensión, corriente, resistencia. Ley de Ohm. Instrumentos de medición: multímetro." },
+                        { title: "Unidad 3: Circuitos Serie y Paralelo", content: "Análisis de circuitos básicos, cálculo de resistencias equivalentes, mediciones prácticas." },
+                    ]},
+                    { name: "Matemática I", units: [
+                        { title: "Unidad 1: Conjuntos Numéricos", content: "Números naturales, enteros, racionales. Operaciones básicas." },
+                        { title: "Unidad 2: Ecuaciones de Primer Grado", content: "Resolución de ecuaciones e inecuaciones. Problemas de aplicación." },
+                    ]},
+                ]
+            },
+            2: {
+                title: "Segundo Año",
+                pdf: "diseño_curricular_2.pdf",
+                subjects: [
+                    { name: "Taller de Electrónica Analógica I", units: [
+                        { title: "Unidad 1: Componentes Pasivos", content: "Resistencias, capacitores, inductores. Código de colores. Tipos y aplicaciones." },
+                        { title: "Unidad 2: Componentes Activos", content: "Diodos: rectificador, zener, LED. Transistores BJT: corte y saturación." },
+                        { title: "Unidad 3: Fuentes de Alimentación", content: "Rectificación de media onda y onda completa. Filtrado y regulación básica." },
+                    ]},
+                     { name: "Física I", units: [
+                        { title: "Unidad 1: Cinemática", content: "MRU, MRUV, Caída Libre y Tiro Vertical." },
+                        { title: "Unidad 2: Dinámica", content: "Leyes de Newton. Fuerza, masa y aceleración." },
+                    ]},
+                ]
+            },
+            3: {
+                title: "Tercer Año",
+                pdf: "diseño_curricular_3.pdf",
+                subjects: [
+                    { name: "Electrónica Digital I", units: [{ title: "Unidad 1: Sistemas de Numeración", content: "Binario, octal, hexadecimal. Conversiones." }, { title: "Unidad 2: Álgebra de Boole", content: "Compuertas lógicas (AND, OR, NOT, XOR). Teoremas de De Morgan." }] },
+                    { name: "Mediciones Eléctricas", units: [{ title: "Unidad 1: Instrumentos Analógicos y Digitales", content: "Principio de funcionamiento. Errores de medición." }] },
+                ]
+            },
+            4: {
+                title: "Cuarto Año",
+                pdf: "diseño_curricular_4.pdf",
+                subjects: [
+                    { name: "Matemáticas", units: [
+                        { title: "Unidad 1: Conjuntos Numéricos y Sucesiones", content: "Números Reales y Números Complejos: Concepto y representación. Completitud. Operatoria. Sucesiones. Notación y lenguaje.", link: "4to/matematicas_u1.html" }, 
+                        { title: "Unidad 2: Funciones", content: "Funciones: polinómicas, valor absoluto, exponencial, logarítmicas, trigonométricas. Operaciones con funciones. Función inversa. Reconocimiento y caracterización de funciones desde su gráfica y su fórmula.", link: "4to/matematicas_u2.html" },
+                        { title: "Unidad 3: Geometría y Trigonometría", content: "Semejanza de figuras planas Teorema de Thales. Resolución de triángulos mediante el empleo de la trigonometría: teoremas del seno y del coseno.", link: "4to/matematicas_u3.html" },
+                        { title: "Unidad 4: Modelización y Ecuaciones", content: "Modelización de fenómenos. Ecuaciones e inecuaciones. Sistemas de ecuaciones. Resolución gráfica y analítica. Discusión de soluciones.", link: "4to/matematicas_u4.html" }
+                    ]},
+                    { name: "Física", units: [
+                        { title: "Unidad 1: Energía Mecánica y Térmica", content: "Energía mecánica: cinemática, dinámica. Transformaciones de energía. Energía térmica: calor y temperatura. Transferencia de energía. Escalas termométricas. Calorimetría. Dilatáción.", link: "4to/fisica_u1.html" },
+                        { title: "Unidad 2: Fluidos y Electricidad", content: "Mecánica de los fluidos. Leyes de la hidrostática y la neumática. Energía Eléctrica: campo y potencial electrostáticos. Dieléctricos. Corriente Eléctrica.", link: "4to/fisica_u2.html" },
+                        { title: "Unidad 3: Magnetismo y Ondas Electromagnéticas", content: "Interacción Magnética. Inducción. Campo Magnético. Corrientes eléctricas variables. Circuitos eléctricos. Espectro electromagnético.", link: "4to/fisica_u3.html" },
+                        { title: "Unidad 4: Óptica Ondulatoria y Geométrica", content: "Longitud de onda, interferencia y difracción, polarización. Espectros de rayas y series espectrales. Óptica geométrica: propagación, reflexión y refracción, espejos y lentes.", link: "4to/fisica_u4.html" },
+                        { title: "Unidad 5: Instrumentos Ópticos y Acústica", content: "Lentes y sus aberraciones. El ojo y sus defectos, microscopios, cámara fotográfica, proyectores. Acústica: ondas sonoras, intensidad, reflexión, reverberación. Efecto Doppler.", link: "4to/fisica_u5.html" }
+                    ]},
+                    { name: "Química", units: [
+                        { title: "Unidad 1: Estructura Atómica y Reacciones", content: "Estructura atómica. Tabla periódica. Uniones Químicas. Funciones inorgánica. Ecuaciones químicas. Estequiometría.", link: "4to/quimica_u1.html" },
+                        { title: "Unidad 2: Gases y Soluciones", content: "Gases: leyes. Soluciones.", link: "4to/quimica_u2.html" },
+                        { title: "Unidad 3: Reacciones Químicas y Electroquímica", content: "Reacciones de óxido–reducción y ácido–base. pH. Procesos de equilibrio. Electroquímica. Pilas.", link: "4to/quimica_u3.html" },
+                        { title: "Unidad 4: Química Orgánica y Fuentes de Energía", content: "Funciones orgánica. Química y combustibles. Destilación. Refinación. Fuentes de energía y combustibles alternativos.", link: "4to/quimica_u4.html" },
+                        { title: "Unidad 5: Seguridad en el Laboratorio", content: "Normas de seguridad para el trabajo en el laboratorio.", link: "4to/quimica_u5.html" }
+                    ]},
+                    { name: "Fundamentos de los modelos circuitales", units: [
+                        { title: "Unidad 1: Análisis de Circuitos DC", content: "Concepto de modelización, como recurso para el análisis funcional de los circuitos, dispositivos y sistemas. Circuito eléctrico de corriente continua. Características. Circuitos paralelo. Características. Circuitos mixtos. Leyes principales.", link: "4to/modelos_circuitales_u1.html" },
+                        { title: "Unidad 2: Análisis de Mallas y Nodos", content: "Análisis de mallas y nodos.", link: "4to/modelos_circuitales_u2.html" },
+                        { title: "Unidad 3: Teoremas de Redes", content: "Teorema de redes: superposición, Thevenin, Norton, Máxima Transferencia de potencia, Millman, reciprocidad y sustitución.", link: "4to/modelos_circuitales_u3.html" }
+                    ]},
+                    { name: "Tecnología Electrónica", units: [
+                        { title: "Unidad 1: Fundamentos de Electricidad", content: "El Átomo y su estructura. Conductores y aisladores. Resistencias, conductancia, efectos de la temperatura. Ley de Ohm. Potencia.", link: "4to/tecnologia_electronica_u1.html" },
+                        { title: "Unidad 2: Campos y Componentes Pasivos", content: "Cargas eléctricas, campo eléctrico, potencial. Capacitancia. Inductancia. Campo magnético y electromagnético.", link: "4to/tecnologia_electronica_u2.html" },
+                        { title: "Unidad 3: Materiales en Electrónica", content: "Estudio y ensayo de materiales eléctrico-electrónicos. Propiedades generales. Metales, materiales inorgánicos, orgánicos y polímeros. Deterioro.", link: "4to/tecnologia_electronica_u3.html" }
+                    ]},
+                    { name: "Aplicaciones de la Electrónica Analógica", units: [
+                        { title: "Unidad 1: Instrumentación y Seguridad", content: "Instrumentos de medición utilizados en electrónica, digitales y electromecánicos. Herramientas usadas en electrónica. Generadores de señales. Normas de seguridad.", link: "4to/analogica_u1.html" },
+                        { title: "Unidad 2: Mediciones y Componentes", content: "Sistemas de unidades de medición. Patrones de medición. Errores. Propiedades eléctricas y funcionamiento de los componentes y dispositivos electrónicos.", link: "4to/analogica_u2.html" },
+                        { title: "Unidad 3: Diodos y Aplicaciones", content: "Diodos: estudio del componente. Curvas. Aplicaciones de los diodos rectificadores: Rectificación con y sin filtro. Diodos especiales: zener, IR, LED. Aplicaciones.", link: "4to/analogica_u3.html" },
+                        { title: "Unidad 4: Transistores y Simulación", content: "Aplicación de transistores. El transistor en conmutación. Simulación de circuitos mediante un software apropiado. Verificación práctica y experimental.", link: "4to/analogica_u4.html" }
+                    ]},
+                    { name: "Aplicaciones de la Electrónica Digital", units: [
+                        { title: "Unidad 1: Sistemas de Numeración y Álgebra de Boole", content: "Sistemas de numeración. Representación numérica. Sistemas digitales y analógicos. Conversión entre sistemas. Algebra de Boole. Simplificación. Compuertas lógicas.", link: "4to/digital_u1.html" },
+                        { title: "Unidad 2: Bloques Combinacionales", content: "Maxitérminos y minitérminos. Mapa de Karnaugh. Bloques funcionales: Codificadores, decodificadores, multiplexores, demultiplexores.", link: "4to/digital_u2.html" },
+                        { title: "Unidad 3: Circuitos Aritméticos y Secuenciales", content: "Bloques aritméticos: sumadores, restadores y comparadores. Introducción a los circuitos secuenciales. Unidad de memoria de 1 bit.", link: "4to/digital_u3.html" }
+                    ]},
+                    { name: "Montaje de Proyectos Electrónicos", units: [
+                        { title: "Unidad 1: Diseño y Planificación de Proyectos", content: "Estructura y aplicación del modelo proyectual. Métodos básicos utilizados para el diseño de circuitos impresos.", link: "4to/montaje_u1.html" },
+                        { title: "Unidad 2: Técnicas de Montaje y Soldadura", content: "Técnicas de montaje y conexionado. Técnicas de perforado y montaje de componentes. Técnicas de Soldadura y desoldadura.", link: "4to/montaje_u3.html" },
+                        { title: "Unidad 3: Normativas e Instalaciones", content: "Norma de Instalaciones eléctricas y electrónicas. Accesorios utilizados en instalaciones eléctricas y electrónicas.", link: "4to/montaje_u3.html" },
+                        { title: "Unidad 4: Componentes de Mando y Actuadores", content: "Elementos y dispositivo de mando y comando. Relés auxiliares. Microrelés y otros. Elementos de protección. Actuadores. Transductores. Introducción a la técnica neumática.", link: "4to/montaje_u4.html" }
+                    ]}
+                ]
+            },
+            5: {
+                title: "Quinto Año",
+                pdf: "diseño_curricular_5.pdf",
+                subjects: [
+                    { 
+                        name: "Análisis Matemático", 
+                        units: [
+                            { title: "Unidad 1: Límites y Continuidad", content: "Límite de una función en un punto y en el infinito. Continuidad. Formas indeterminadas y Regla de L'Hôpital.", link: "5to/analisis_matematico_5to_u1.html" },
+                            { title: "Unidad 2: Derivadas y Aplicaciones", content: "Derivada de una función en un punto. Derivadas de funciones elementales. Ceros, crecimiento, decrecimiento, máximos y mínimos. Gráficas. Modelización.", link: "5to/analisis_matematico_5to_u2.html" },
+                            { title: "Unidad 3: Integrales Simples", content: "Integrales indefinidas, racionales, trigonométricas. Integrales definidas. Teorema fundamental del cálculo.", link: "5to/analisis_matematico_5to_u3.html" },
+                            { title: "Unidad 4: Integración Avanzada y Aplicaciones", content: "Integración numérica: regla de los trapecios y fórmula de Simpson. Integrales dobles y triples. Cambio de variables. Integrales impropias.", link: "5to/analisis_matematico_5to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Análisis de Modelos Circuitales", 
+                        units: [
+                            { title: "Unidad 1: Análisis de Circuitos en Corriente Alterna (CA)", content: "Análisis con señales senoidales. Dominio de la frecuencia. Impedancia, reactancia, admitancia. Fasores. Respuesta de circuitos RLC.", link: "5to/modelos_circuitales_5to_u1.html" },
+                            { title: "Unidad 2: Potencia y Resonancia en CA", content: "Potencia y factor de potencia. Triángulo de potencias. Respuesta en frecuencia y resonancia. Factor de calidad. Selectividad.", link: "5to/modelos_circuitales_5to_u2.html" },
+                            { title: "Unidad 3: Teoremas y Análisis de Señales", content: "Teoremas de redes en CA. Método de Fourier para ondas periódicas. Circuitos magnéticos acoplados y transformadores.", link: "5to/modelos_circuitales_5to_u3.html" },
+                            { title: "Unidad 4: Filtros y Circuitos Polifásicos", content: "Decibeles, filtros y gráficas de Bode. Filtros pasa bajos, pasa altos, etc. Circuitos polifásicos. Generadores en estrella y triángulo.", link: "5to/modelos_circuitales_5to_u4.html" },
+                            { title: "Unidad 5: Modelos de Cuadripolos y Prácticas", content: "Parámetros híbridos. Realización de prácticas de los contenidos desarrollados.", link: "5to/modelos_circuitales_5to_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Lenguajes Electrónicos", 
+                        units: [
+                            { title: "Unidad 1: Introducción a la Programación y Lenguaje C", content: "Lenguajes y pseudolenguajes. Evolución e historia del Lenguaje C. Conceptos de diagramación lógica. Entornos de programación, compiladores y linkeadores.", link: "5to/lenguajes_electronicos_5to_u1.html" },
+                            { title: "Unidad 2: Estructura y Sintaxis de ANSI C", content: "Estructura de un programa. Operadores (Lógicos, Aritméticos, Relacionales). Tipos de datos. Variables y constantes. Instrucciones al pre-procesador y bibliotecas.", link: "5to/lenguajes_electronicos_5to_u2.html" },
+                            { title: "Unidad 3: Programación Básica en C", content: "Entrada y salida de datos (funciones básicas). Funciones matemáticas (math.h) y manejo de caracteres (ctype.h).", link: "5to/lenguajes_electronicos_5to_u3.html" },
+                            { title: "Unidad 4: Control de Flujo y Cadenas de Caracteres", content: "Estructuras condicionales (if, switch). Estructuras de repetición (while, do-while, for). Manipulación de cadenas de caracteres (string.h).", link: "5to/lenguajes_electronicos_5to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Diseño Asistido y Simulación Electrónica", 
+                        units: [
+                            { title: "Unidad 1: Diseño de PCB Asistido por Computadora (CAD)", content: "Operación y programación de software orientado al diseño de plaquetas electrónicas.", link: "5to/diseno_asistido_5to_u1.html" },
+                            { title: "Unidad 2: Simulación de Circuitos (SPICE)", content: "Resolución de circuitos mediante software de simulación como PROTEUS, MULTISIM o similar. Simulación de instrumental electrónico.", link: "5to/diseno_asistido_5to_u2.html" },
+                            { title: "Unidad 3: Entornos de Simulación de Alto Nivel", content: "Uso de software como MATLAB, SIMULINK o SCILAB para la simulación de sistemas complejos.", link: "5to/diseno_asistido_5to_u3.html" },
+                            { title: "Unidad 4: Interfaces Hombre-Máquina (HMI)", content: "Reconocimiento e interpretación de distintas interfaces hombre-máquina.", link: "5to/diseno_asistido_5to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Aplicaciones de la Electrónica Analógica", 
+                        units: [
+                            { title: "Unidad 1: Análisis Avanzado y Transistores", content: "Teoremas de Thevenin, Norton y Superposición en CA. Divisores de tensión y corriente. Polarización de transistores y circuitos realimentados.", link: "5to/analogica_5to_u1.html" },
+                            { title: "Unidad 2: Circuitos con Amplificadores Operacionales", content: "Amplificadores lineales y no lineales, operadores aritméticos, conversores, osciladores, rectificadores y limitadores. Control de ganancia.", link: "5to/analogica_5to_u2.html" },
+                            { title: "Unidad 3: Respuesta en Frecuencia y Filtros", content: "Concepto de respuesta en frecuencia. Filtros activos: parámetros, clasificación y tipos. Análisis de hojas de datos.", link: "5to/analogica_5to_u3.html" },
+                            { title: "Unidad 4: Amplificadores de Potencia y Componentes de Disparo", content: "Etapas de potencia (BJT, FET). Transistores en conmutación, tiristores, triacs y componentes optoelectrónicos. Ensayos y verificación.", link: "5to/analogica_5to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Aplicaciones de la Electrónica Digital", 
+                        units: [
+                            { title: "Unidad 1: Familias Lógicas y Circuitos Secuenciales", content: "Sistemas secuenciales. Familias lógicas (TTL, RTL, DTL, CMOS, etc.).", link: "5to/digital_5to_u1.html" },
+                            { title: "Unidad 2: Aplicaciones de Flip-Flops", content: "Flip-flops (RS, JK, tipo T, tipo D), Contadores (sincrónicos y asincrónicos), Registros (almacenamiento y desplazamiento).", link: "5to/digital_5to_u2.html" },
+                            { title: "Unidad 3: Memorias y Conversores", content: "Introducción a las memorias. Conversores A/D y D/A.", link: "5to/digital_5to_u3.html" },
+                            { title: "Unidad 4: Introducción a Microcontroladores", content: "Introducción a los dispositivos microcontrolados.", link: "5to/digital_5to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Montaje de Proyectos Electrónicos", 
+                        units: [
+                            { title: "Unidad 1: Sensores y Control con PLC", content: "Aplicación de sensores y transductores. Programación e implementación de circuitos con PLC. Lógica de mando y control.", link: "5to/montaje_5to_u1.html" },
+                            { title: "Unidad 2: Control de Motores", content: "Circuitos de control: inversores de marcha para motores de C.C. y C.A.; variadores de velocidad; control de motores paso a paso.", link: "5to/montaje_5to_u2.html" },
+                            { title: "Unidad 3: Inversores de Potencia", content: "Inversores CC/CA. Control de arranque de motores de C.C.", link: "5to/montaje_5to_u3.html" }
+                        ] 
+                    }
+                ]
+            },
+            6: {
+                title: "Sexto Año",
+                pdf: "diseño_curricular_6.pdf",
+                subjects: [
+                    { 
+                        name: "Matemática Aplicada", 
+                        units: [
+                             { title: "Unidad 1: Cálculo Vectorial", content: "Matemática vectorial: funciones vectoriales de una o más variables. Operaciones vectoriales. Propiedades. Modelización de situaciones. Límites y derivadas parciales.", link: "6to/matematica_aplicada_6to_u1.html" },
+                             { title: "Unidad 2: Transformadas y Funciones Especiales", content: "Funciones especiales. Transformadas de Laplace y de Fourier. Transformada inversa de Laplace.", link: "6to/matematica_aplicada_6to_u2.html" },
+                             { title: "Unidad 3: Probabilidad", content: "Modelos matemáticos. Álgebra de sucesos. Definición axiomática de probabilidad. Espacios muestrales.", link: "6to/matematica_aplicada_6to_u3.html" },
+                             { title: "Unidad 4: Estadística", content: "Objeto de la Estadística. Población y muestra. Estadística descriptiva e inferencia estadística. Diagramas y distribuciones. Inferencia estadística. Relación con la teoría de Probabilidad. Estimaciones.", link: "6to/matematica_aplicada_6to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Sistemas de Comunicaciones", 
+                        units: [
+                            { title: "Unidad 1: Fundamentos de Señales y Transmisión", content: "Análisis de Fourier, teorema del muestreo. Medios guiados y no guiados. Ruido, ancho de banda y capacidad de información.", link: "6to/sistemas_comunicaciones_6to_u1.html" },
+                            { title: "Unidad 2: Modulación y Generación de Señales", content: "Osciladores y sintetizadores. Modulación analógica (AM/FM), digital y de pulsos. Detectores. Teoría de la información.", link: "6to/sistemas_comunicaciones_6to_u2.html" },
+                            { title: "Unidad 3: Transmisores y Receptores", content: "Circuitos moduladores. Transmisores y receptores de AM y FM. Circuitos y componentes.", link: "6to/sistemas_comunicaciones_6to_u3.html" },
+                            { title: "Unidad 4: Propagación y Antenas", content: "Líneas de transmisión. Propagación de ondas, polarización. Tipos y características de antenas. Cálculo de enlaces.", link: "6to/sistemas_comunicaciones_6to_u4.html" },
+                            { title: "Unidad 5: Sistemas Avanzados y Fibra Óptica", content: "Protocolos. Multicanalización y conmutación. Principios de fibra óptica, tipos, conectores y mediciones.", link: "6to/sistemas_comunicaciones_6to_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Instalaciones y Máquinas Eléctricas",
+                        units: [
+                            { title: "Unidad 1: Instalaciones Eléctricas", content: "Clasificación, normas, elementos constitutivos. Cálculo de carga, conductores, factor de potencia y cortocircuito. Sistemas de tierras.", link: "6to/instalaciones_electricas_6to_u1.html" },
+                            { title: "Unidad 2: Principios de Máquinas Rotantes", content: "Campos magnéticos. Generador y motor elemental. Balance energético, cupla y potencia. Pérdidas eléctricas y magnéticas.", link: "6to/instalaciones_electricas_6to_u2.html" },
+                            { title: "Unidad 3: Máquinas de Corriente Alterna (CA)", content: "Motores sincrónicos y asincrónicos (monofásicos y trifásicos). Principios, arranque y control de velocidad.", link: "6to/instalaciones_electricas_6to_u3.html" },
+                            { title: "Unidad 4: Máquinas de Corriente Continua (CC)", content: "Generadores y motores de CC. Principios, arranque, regulación y curvas características (serie, derivación, compuesto).", link: "6to/instalaciones_electricas_6to_u4.html" },
+                            { title: "Unidad 5: Ensayos y Motores Especiales", content: "Principales ensayos de máquinas eléctricas. Motor paso a paso: características y aplicaciones.", link: "6to/instalaciones_electricas_6to_u5.html" }
+                        ]
+                    },
+                    { 
+                        name: "Sistemas Productivos",
+                        units: [
+                            { title: "Unidad 1: Estrategia y Diseño de la Producción", content: "Sistema de producción, bienes y servicios. Evaluación de proyectos. Estrategia tecnológica. Diseño de producto, packaging y proceso.", link: "6to/sistemas_productivos_6to_u1.html"},
+                            { title: "Unidad 2: Táctica y Organización de la Producción", content: "Tipos de producción (continua, montaje, intermitente, proyectos). Logística, abastecimiento, control de stock y distribución. Mantenimiento. Calidad total.", link: "6to/sistemas_productivos_6to_u2.html"},
+                            { title: "Unidad 3: Gestión de Recursos y Ecosistema", content: "La fuerza del trabajo: reclutamiento, selección, capacitación y evaluación. Servicios de planta. Relaciones de la producción con el ecosistema.", link: "6to/sistemas_productivos_6to_u3.html"}
+                        ]
+                    },
+                    { 
+                        name: "Derechos del Trabajo", 
+                        units: [
+                            { title: "Unidad 1: Principios y Contrato Laboral", content: "Principios del derecho. Estabilidad laboral. Contrato de Trabajo. Sueldo mínimo vital y móvil. Remuneración.", link: "6to/derechos_trabajo_6to_u1.html" },
+                            { title: "Unidad 2: Liquidación de Haberes y Cargas Sociales", content: "Recibo de haberes. Aportes y Contribuciones. Asignaciones. ART. Jubilación y Obra Social.", link: "6to/derechos_trabajo_6to_u2.html" },
+                            { title: "Unidad 3: Derechos y Condiciones Laborales", content: "Licencias. Jornada de Trabajo. Vacaciones. Sueldo Anual Complementario. Exigibilidad de derechos.", link: "6to/derechos_trabajo_6to_u3.html" },
+                            { title: "Unidad 4: Ética y Modelos Productivos", content: "Ética profesional. Trabajo decente. PyMES. Empresas recuperadas. Micro emprendimientos.", link: "6to/derechos_trabajo_6to_u4.html" },
+                            { title: "Unidad 5: Economía y Gestión Empresarial", content: "Microeconomía. Costos. Mercado. Rentabilidad. Competencia. Gestión administrativa y comercial: Impuestos.", link: "6to/derechos_trabajo_6to_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Lenguajes Electrónicos", 
+                        units: [
+                            { title: "Unidad 1: Programación Avanzada en C", content: "Registros. Arrays unidimensionales y bidimensionales. Punteros. Funciones (pasaje por valor y referencia). Archivos de texto y binarios.", link: "6to/lenguajes_electronicos_6to_u1.html" },
+                            { title: "Unidad 2: Programación de Bajo Nivel", content: "Variables registro. Operadores a nivel de bits. Campos de bits. Modelos de memoria. Arquitectura x86. Acceso al Hardware y uso de ports.", link: "6to/lenguajes_electronicos_6to_u2.html" },
+                            { title: "Unidad 3: Interrupciones", content: "Concepto de interrupciones (enmascarables y no enmascarables). Vector de interrupciones. Interrupciones del BIOS y de software. Caso de estudio: interrupciones de video.", link: "6to/lenguajes_electronicos_6to_u3.html" },
+                            { title: "Unidad 4: Puertos de Comunicación e Interfaces", content: "Manejo a bajo nivel de puertos Paralelo, USB y Serie (RS232, UART). Diseño y programación de interfaces. La PC como herramienta de control.", link: "6to/lenguajes_electronicos_6to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Aplicaciones de la Electrónica Analógica", 
+                        units: [
+                            { title: "Unidad 1: Servomecanismos y Realimentación", content: "Nociones sobre servomecanismos. Circuitos retroalimentados y osciladores. Selección de actuadores según hojas de datos.", link: "6to/analogica_6to_u1.html" },
+                            { title: "Unidad 2: Dispositivos Electrónicos Especiales", content: "Diodo Schottky, Varactor, diodos de potencia, diodos túnel, celdas fotoconductoras, emisores de IR, celdas solares. Aplicaciones prácticas.", link: "6to/analogica_6to_u2.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Aplicaciones de la Electrónica Digital", 
+                        units: [
+                            { title: "Unidad 1: Familias Lógicas y Circuitos Secuenciales", content: "Sistemas secuenciales. Familias lógicas (TTL, RTL, DTL, CMOS, etc.).", link: "6to/digital_6to_u1.html" },
+                            { title: "Unidad 2: Aplicaciones de Flip-Flops", content: "Flip-flops (RS, JK, tipo T, tipo D), Contadores (sincrónicos y asincrónicos), Registros (almacenamiento y desplazamiento).", link: "6to/digital_6to_u2.html" },
+                            { title: "Unidad 3: Memorias y Conversores", content: "Introducción a las memorias. Conversores A/D y D/A.", link: "6to/digital_6to_u3.html" },
+                            { title: "Unidad 4: Introducción a Microcontroladores", content: "Introducción a los dispositivos microcontrolados.", link: "6to/digital_6to_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Montaje de Proyectos Electrónicos", 
+                        units: [
+                            { title: "Unidad 1: Sensores y Control con PLC", content: "Aplicación de sensores y transductores. Programación e implementación de circuitos con PLC. Lógica de mando y control.", link: "6to/montaje_6to_u1.html" },
+                            { title: "Unidad 2: Control de Motores", content: "Circuitos de control: inversores de marcha para motores de C.C. y C.A.; variadores de velocidad; control de motores paso a paso.", link: "6to/montaje_6to_u2.html" },
+                            { title: "Unidad 3: Inversores de Potencia", content: "Inversores CC/CA. Control de arranque de motores de C.C.", link: "6to/montaje_6to_u3.html" }
+                        ] 
+                    }
+                ]
+            },
+            7: {
+                title: "Séptimo Año",
+                pdf: "diseño_curricular_7.pdf",
+                subjects: [
+                    { 
+                        name: "Emprendimientos Productivos y Desarrollo Local", 
+                        units: [
+                            { title: "Unidad 1: Fundamentos del Emprendedorismo", content: "Teorías. Emprendedorismo social, cultural y tecnológico. Emprendimientos Familiares. Nociones de Derecho, Finanzas, Marketing y Calidad.", link: "7mo/emprendimientos_7mo_u1.html" },
+                            { title: "Unidad 2: Planificación y Puesta en Marcha", content: "Laboratorio de ideas y oportunidades. Planeamiento de emprendimientos y negocios. Incubadoras: Social, Cultural y Tecnológica.", link: "7mo/emprendimientos_7mo_u2.html" },
+                            { title: "Unidad 3: Desarrollo Local y Estrategias Territoriales", content: "Desarrollo local y territorio: clusters, cadenas de valor. Polos tecnológicos. Planificación estratégica y agencias de desarrollo.", link: "7mo/emprendimientos_7mo_u3.html" },
+                            { title: "Unidad 4: Desarrollo Sostenible y Análisis de Casos", content: "Desarrollo rural y sustentabilidad. Cuestiones ambientales. Cooperación y asociativismo. El análisis de casos y la evaluación de experiencias.", link: "7mo/emprendimientos_7mo_u4.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Sistemas de Control", 
+                        units: [
+                            { title: "Unidad 1: Teoría y Representación de Sistemas", content: "Teoría de sistemas. Modelos matemáticos. Respuesta de sistemas. Criterios de comportamiento y estabilidad. Compensación electrónica.", link: "7mo/sistemas_control_7mo_u1.html" },
+                            { title: "Unidad 2: Control de Potencia y Diagnóstico", content: "Sistemas automáticos de control. Control de potencia. Dispositivos utilizados. Técnicas para el diagnóstico y detección de fallas.", link: "7mo/sistemas_control_7mo_u2.html" },
+                            { title: "Unidad 3: Control por Computadora y PLC", content: "Control de procesos discretos. La computadora como elemento de control. Arquitectura. Control mediante PLC. Programación y tipos.", link: "7mo/sistemas_control_7mo_u3.html" },
+                            { title: "Unidad 4: Controladores PID y de Motores", content: "Acciones de control. Controladores PID: ajuste y programación. Control de motores mediante variadores electrónicos.", link: "7mo/sistemas_control_7mo_u4.html" },
+                            { title: "Unidad 5: Instrumentación e Interconexión", content: "Instrumentos de medición específicos. Normas de interconexión. BUS de datos: conceptos, protocolos y aplicaciones.", link: "7mo/sistemas_control_7mo_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Sistemas de Comunicaciones", 
+                        units: [
+                            { title: "Unidad 1: Modulación Digital Avanzada", content: "Banda lateral única. Modulación por desplazamiento de fase (PSK) y amplitud en cuadratura (QAM). Errores.", link: "7mo/sistemas_comunicaciones_7mo_u1.html" },
+                            { title: "Unidad 2: Transmisión y Multiplexado Digital", content: "Modulación de pulso (PCM, Modulación Delta). Multiplexado por división de tiempo, frecuencia y longitud de onda.", link: "7mo/sistemas_comunicaciones_7mo_u2.html" },
+                            { title: "Unidad 3: Redes y Protocolos de Datos", content: "Comunicación de datos, interfases, redes telefónicas y modems. Protocolos y configuraciones de red.", link: "7mo/sistemas_comunicaciones_7mo_u3.html" },
+                            { title: "Unidad 4: Comunicaciones Inalámbricas", content: "Radiocomunicaciones por microondas. Comunicaciones satelitales. Telefonía celular analógica y digital (GSM).", link: "7mo/sistemas_comunicaciones_7mo_u4.html" },
+                            { title: "Unidad 5: Comunicaciones por Fibra Óptica", content: "Principios de propagación de la luz en fibras monomodo y multimodo. Conectores, empalmes y mediciones.", link: "7mo/sistemas_comunicaciones_7mo_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Seguridad, Higiene y Protección Ambiental", 
+                        units: [
+                            { title: "Unidad 1: Infraestructura y Condiciones Ambientales", content: "Características constructivas, agua potable, desagües, efluentes. Higiene laboral, carga térmica, contaminación, radiaciones, ventilación, iluminación, ruidos y vibraciones.", link: "7mo/seguridad_higiene_7mo_u1.html" },
+                            { title: "Unidad 2: Riesgos Específicos y Maquinaria", content: "Instalaciones eléctricas. Máquinas y herramientas. Aparatos de izar. Protección contra incendios.", link: "7mo/seguridad_higiene_7mo_u2.html" },
+                            { title: "Unidad 3: Prevención y Gestión", content: "Equipos y elementos de protección personal (EPP). Capacitación del personal. Registro e información.", link: "7mo/seguridad_higiene_7mo_u3.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Proyecto y Diseño Electrónico", 
+                        units: [
+                            { title: "Unidad 1: Definición y Factibilidad del Proyecto", content: "Elaboración de proyecto, definición y objetivos. Determinación de la factibilidad, ajuste a la realidad y al entorno. Justificación, ventajas y beneficios.", link: "7mo/proyecto_diseno_7mo_u1.html" },
+                            { title: "Unidad 2: Planificación y Diseño", content: "Planificación y seguimiento: análisis y relevamiento. Definición de etapas y tiempos. Selección de herramientas. Diseño y elaboración de los elementos.", link: "7mo/proyecto_diseno_7mo_u2.html" },
+                            { title: "Unidad 3: Documentación e Implementación", content: "Documentación y registro del desarrollo del proyecto. Implementación definitiva.", link: "7mo/proyecto_diseno_7mo_u3.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Instalaciones Industriales", 
+                        units: [
+                            { title: "Unidad 1: Análisis de Instalaciones Existentes", content: "A partir de una planta industrial existente, se revisarán todas sus instalaciones, se analizarán los servicios principales y auxiliares separándolos por instalación y por sector.", link: "7mo/instalaciones_industriales_7mo_u1.html" },
+                            { title: "Unidad 2: Diseño y Cálculo de Nuevas Instalaciones", content: "A partir de la idea de fabricación de un producto o productos, se comienza a realizar el cálculo y diseño de las diferentes instalaciones principales y auxiliares necesarias.", link: "7mo/instalaciones_industriales_7mo_u2.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Electrónica Aplicada", 
+                        units: [
+                            { title: "Unidad 1: Dispositivos de Conmutación y Potencia", content: "El interruptor transistorizado. SCR, UJT, Triacs y otros tiristores. Características y aplicaciones.", link: "7mo/electronica_aplicada_7mo_u1.html" },
+                            { title: "Unidad 2: Sistemas de Control y Telemetría", content: "Sistemas realimentados y servomecanismos. Transductores y dispositivos de medición. Telemetría (PWM, Frecuencia, Multiplexada, Digital).", link: "7mo/electronica_aplicada_7mo_u2.html" },
+                            { title: "Unidad 3: Automatización y Control Industrial", content: "Robots industriales. Domótica. SCADA. HMI. Sistemas de alimentación ininterrumpida (UPS).", link: "7mo/electronica_aplicada_7mo_u3.html" },
+                            { title: "Unidad 4: Aplicaciones Industriales Específicas", content: "Calentamiento por RF, soldadura eléctrica, ultrasonidos, electroerosión. Control de temperatura, iluminación y pesaje.", link: "7mo/electronica_aplicada_7mo_u4.html" },
+                            { title: "Unidad 5: Sistemas Complejos", content: "Sistemas de control para ascensores. Sistemas automáticos de prueba. Principios de receptores de TV. Soldadura industrial automática.", link: "7mo/electronica_aplicada_7mo_u5.html" }
+                        ] 
+                    },
+                    { 
+                        name: "Prácticas Profesionalizantes del Sector Electrónica", 
+                        units: [
+                            { title: "Unidad 1: Fundamentos y Propósito", content: "Las Prácticas Profesionalizantes son estrategias formativas para que los estudiantes consoliden, integren y amplíen saberes correspondientes al perfil profesional, referenciadas en situaciones de trabajo.", link: "7mo/practicas_profesionalizantes_7mo_u1.html" }
+                        ] 
+                    }
+                ]
+            },
+        };
+
+        // --- LÓGICA DE LA APLICACIÓN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeView = document.getElementById('home-view');
+            const contentView = document.getElementById('content-view');
+            const backButton = document.getElementById('back-button');
+            const yearGrid = document.getElementById('years-grid');
+            const complementsGrid = document.getElementById('complements-grid');
+
+            const showHomeView = () => {
+                homeView.classList.remove('hidden');
+                contentView.classList.add('hidden');
+            };
+
+            const showContentView = (key, type) => {
+                homeView.classList.add('hidden');
+                contentView.classList.remove('hidden');
+                renderContent(key, type);
+            };
+
+            const renderButtons = (data, gridElement, isComplement = false) => {
+                gridElement.innerHTML = '';
+                for (const key in data) {
+                    const info = data[key];
+                    const button = document.createElement('button');
+                    
+                    if (isComplement) {
+                        button.className = 'bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:bg-red-50 hover:-translate-y-1 transform transition-all duration-300 text-center';
+                        button.innerHTML = `
+                            <div class="text-2xl font-bold text-red-600">${info.icon || '💻'}</div>
+                            <div class="text-lg font-semibold mt-2 text-gray-700">${info.title}</div>
+                        `;
+                    } else {
+                        button.className = 'bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:bg-red-50 hover:-translate-y-1 transform transition-all duration-300 text-center';
+                        button.innerHTML = `
+                            <div class="text-4xl font-bold text-red-600">${key}</div>
+                            <div class="text-lg font-semibold mt-2 text-gray-700">${info.title}</div>
+                        `;
+                    }
+
+                    button.addEventListener('click', () => showContentView(key, isComplement ? 'complement' : 'year'));
+                    gridElement.appendChild(button);
+                }
+            };
+
+            const renderContent = (key, type) => {
+                const dataSet = type === 'year' ? schoolData : complementsData;
+                const data = dataSet[key];
+                const contentTitle = document.getElementById('content-title');
+                const contentContainer = document.getElementById('content-container');
+                const headerButtonsContainer = document.getElementById('header-buttons-container');
+
+                contentTitle.textContent = `Contenidos de ${data.title}`;
+                contentContainer.innerHTML = '';
+                headerButtonsContainer.innerHTML = ''; 
+
+                if (data.pdf) {
+                    const pdfLink = document.createElement('a');
+                    pdfLink.href = data.pdf;
+                    pdfLink.target = '_blank';
+                    pdfLink.className = 'bg-green-600 text-white hover:bg-green-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg';
+                    pdfLink.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Diseño Curricular
+                    `;
+                    headerButtonsContainer.appendChild(pdfLink);
+                }
+
+                if (!data.subjects || data.subjects.length === 0) {
+                    contentContainer.innerHTML = '<p class="text-gray-500">No hay materias cargadas para esta sección.</p>';
+                    return;
+                }
+
+                data.subjects.forEach(subject => {
+                    const subjectDiv = document.createElement('div');
+                    subjectDiv.className = 'bg-white rounded-lg shadow-sm overflow-hidden';
+                    
+                    let unitsHtml = '<p class="text-sm text-gray-500 p-4">No hay unidades para esta materia.</p>';
+                    if (subject.units && subject.units.length > 0) {
+                        unitsHtml = subject.units.map(unit => {
+                            if (unit.link) { 
+                                return `
+                                <a href="${unit.link}" target="_blank" class="block border-t border-gray-200 p-4 hover:bg-gray-100 transition-colors duration-200">
+                                    <div class="flex justify-between items-center">
+                                        <h4 class="font-semibold text-gray-800">${unit.title}</h4>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-gray-600 mt-1 text-sm pr-6">${unit.content || ''}</p>
+                                </a>`;
+                            } else { 
+                                return `
+                                <div class="border-t border-gray-200 p-4">
+                                    <h4 class="font-semibold text-gray-800">${unit.title}</h4>
+                                    <p class="text-gray-600 mt-1 text-sm">${unit.content}</p>
+                                </div>`;
+                            }
+                        }).join('');
+                    }
+
+                    subjectDiv.innerHTML = `
+                        <button class="accordion-toggle w-full text-left p-4 flex justify-between items-center bg-red-50 hover:bg-red-100 focus:outline-none transition-colors">
+                            <h3 class="text-xl font-semibold text-red-800">${subject.name}</h3>
+                            <svg class="w-6 h-6 transform transition-transform duration-300 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content bg-white">
+                            ${unitsHtml}
+                        </div>
+                    `;
+                    contentContainer.appendChild(subjectDiv);
+                });
+
+                addAccordionListeners();
+            };
+            
+            const addAccordionListeners = () => {
+                document.querySelectorAll('.accordion-toggle').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const content = button.nextElementSibling;
+                        const icon = button.querySelector('svg');
+                        
+                        document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                            if (otherContent !== content && otherContent.style.maxHeight) {
+                                otherContent.style.maxHeight = null;
+                                otherContent.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                            }
+                        });
+
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                            icon.classList.remove('rotate-180');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            icon.classList.add('rotate-180');
+                        }
+                    });
+                });
+            };
+
+            backButton.addEventListener('click', showHomeView);
+
+            // --- Inicialización ---
+            const complementsData = {
+                programacion_basica: {
+                    title: "Programación Básica",
+                    icon: "⌨️",
+                    subjects: [
+                        {
+                            name: "Fundamentos de Programación",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/programacion_basica_u1.html" }
+                            ]
+                        }
+                    ]
+                },
+                programacion: {
+                    title: "Programación",
+                    icon: "💻",
+                    subjects: [
+                        {
+                            name: "Principios de Programación",
+                            units: [
+                                { title: "Unidad 1: Fundamentos", content: "Introducción a los algoritmos y la lógica de programación.", link: "complementos/programacion_u1.html" },
+                                { title: "Unidad 2: Estructuras de Control", content: "Condicionales y bucles para controlar el flujo de un programa.", link: "complementos/programacion_u2.html" }
+                            ]
+                        }
+                    ]
+                },
+                informatica_hardware: {
+                    title: "Informática (Hardware)",
+                    icon: "🔧",
+                    subjects: [
+                        {
+                            name: "Componentes de PC",
+                            units: [
+                                { title: "Unidad 1: Arquitectura de la PC y Placa Madre", content: "Componentes centrales, buses, zócalos y conectores.", link: "complementos/informatica_hardware_u1.html" },
+                                { title: "Unidad 2: Procesador, Memoria y Almacenamiento", content: "CPU, memoria RAM, discos duros (HDD) y unidades de estado sólido (SSD).", link: "complementos/informatica_hardware_u2.html" },
+                                { title: "Unidad 3: Periféricos y Ensamblaje", content: "Tarjetas de video, fuentes de alimentación, periféricos de entrada/salida y montaje de una PC.", link: "complementos/informatica_hardware_u3.html" },
+                                { title: "Unidad 4: Reparación y Mantenimiento", content: "Diagnóstico de problemas comunes de hardware: fallas de arranque, sobrecalentamiento, problemas de memoria y almacenamiento.", link: "complementos/informatica_hardware_u4.html" },
+                                { title: "Unidad 5: Notebooks: Componentes y Cuidados", content: "Diferencias clave entre los componentes de una notebook y una PC de escritorio. Consejos para el cuidado y mantenimiento preventivo.", link: "complementos/informatica_hardware_u5.html" }
+                            ]
+                        }
+                    ]
+                },
+                informatica_software: {
+                    title: "Informática (Software)",
+                    icon: "💾",
+                    subjects: [
+                        {
+                            name: "Microsoft Word",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/word_u1.html" }
+                            ]
+                        },
+                        {
+                            name: "Microsoft Excel",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/excel_u1.html" }
+                            ]
+                        },
+                        {
+                            name: "Microsoft PowerPoint",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/powerpoint_u1.html" }
+                            ]
+                        },
+                        {
+                            name: "Usos de IA en el Estudio",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/ia_estudio_u1.html" }
+                            ]
+                        }
+                    ]
+                },
+                diseno_pcb: {
+                    title: "Diseño PCB",
+                    icon: "✒️",
+                    subjects: [
+                        {
+                            name: "Software de Diseño",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/diseno_pcb_u1.html" }
+                            ]
+                        }
+                    ]
+                },
+                recursos_humanos: {
+                    title: "Recursos Humanos",
+                    icon: "👥",
+                    subjects: [
+                        {
+                            name: "Gestión de Personal",
+                            units: [
+                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/recursos_humanos_u1.html" }
+                            ]
+                        }
+                    ]
+                }
+            };
+
+            renderButtons(schoolData, yearGrid, false);
+            renderButtons(complementsData, complementsGrid, true);
+            showHomeView();
+        });
+    </script>
+</body>
+</html>

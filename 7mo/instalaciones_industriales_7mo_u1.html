@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones Industriales U1: Análisis de Instalaciones Existentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Análisis de Instalaciones Existentes</h1>
+            <p class="text-lg text-gray-600">Instalaciones Industriales - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Metodología -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Metodología de Relevamiento de una Planta Industrial</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El objetivo de esta unidad es desarrollar un enfoque sistemático para analizar las instalaciones de una planta industrial real. Este proceso, conocido como <strong>relevamiento</strong>, es fundamental para el mantenimiento, la planificación de ampliaciones y la optimización de recursos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pasos Iniciales del Análisis</h3>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Obtener Documentación Existente:</strong> El primer paso es recopilar todos los planos disponibles: planos eléctricos (unifilares), planos de distribución de maquinaria (layout), planos de la red de aire comprimido, etc.</li>
+                            <li><strong>Dividir la Planta por Sectores:</strong> Para organizar el trabajo, la planta se divide en áreas funcionales lógicas. Por ejemplo: área de recepción de materia prima, área de producción, sector de envasado, depósito, oficinas, sala de máquinas/servicios.</li>
+                            <li><strong>Separar Servicios Principales y Auxiliares:</strong> Dentro de cada sector, se deben identificar y analizar por separado las instalaciones que son parte del proceso productivo directo (principales) y las que dan soporte a la operación (auxiliares).</li>
+                        </ol>
+                        <div class="example-box">
+                            <strong>Ejemplo Real de Aplicación (Punto 1):</strong><br>
+                            Al llegar a la planta de Arcor, lo primero es solicitar al jefe de mantenimiento el plano de layout general. En él, se marcan los diferentes sectores: "Amasado", "Horneado", "Envasado Primario", "Envasado Secundario", "Depósito". Luego, se solicita el plano unifilar del tablero eléctrico principal para entender cómo se distribuye la energía a los tableros seccionales de cada uno de estos sectores. Con esta información, ya se puede planificar el recorrido del relevamiento, empezando, por ejemplo, por el sector "Amasado".
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Análisis de Servicios -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Análisis de Servicios Principales y Auxiliares</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Servicios Principales (Instalaciones de Proceso)</h3>
+                        <p>Son aquellas directamente involucradas en la fabricación del producto. El análisis se centra en:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Instalación Eléctrica de Potencia:</strong> Trazar el recorrido desde el tablero seccional hasta cada máquina. Identificar el tipo de motor, su potencia, su sistema de arranque (directo, estrella-triángulo, variador) y sus protecciones.</li>
+                            <li><strong>Líneas de Producción:</strong> Analizar el flujo de materiales y las interconexiones entre las máquinas.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo Real de Aplicación (Punto 2 - Principal):</strong><br>
+                            En el sector "Amasado", se analiza la amasadora principal. Se abre su tablero eléctrico y se anota: el interruptor termomagnético es un C63 (curva C, 63A). Se identifican los tres contactores del arranque estrella-triángulo y el relé térmico ajustado a la corriente nominal del motor. Se busca la chapa de características del motor y se registra: marca, potencia (ej. 15 HP), tensión (3x380V), corriente nominal (ej. 25A) y velocidad (ej. 1450 RPM).
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Servicios Auxiliares (Instalaciones de Soporte)</h3>
+                        <p>Son indispensables para el funcionamiento de la planta, pero no transforman el producto. Se debe relevar:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Iluminación:</strong> Tipo de luminarias, circuitos de alimentación, niveles de iluminación en cada sector.</li>
+                            <li><strong>Aire Comprimido:</strong> Ubicación y capacidad de los compresores, red de distribución, puntos de consumo.</li>
+                            <li><strong>Agua y Desagües:</strong> Red de agua para servicios sanitarios y/o refrigeración. Sistema de desagües industriales y planta de tratamiento de efluentes.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo Real de Aplicación (Punto 2 - Auxiliar):</strong><br>
+                            En el mismo sector "Amasado", se observa la instalación de iluminación. Se anota que consta de 10 luminarias tipo "campana LED" de 150W cada una. Se sigue la canalización hasta el tablero seccional y se identifica el interruptor termomagnético que las protege (ej. un C10). Se anota que este circuito es independiente del de fuerza motriz.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Lectura de Planos Eléctricos Industriales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Análisis por Sector -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Integración del Análisis por Sector</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El paso final es consolidar toda la información, creando un informe detallado para cada sector de la planta. Este informe integra el análisis de los servicios principales y auxiliares específicos de esa área.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Caso de Estudio: Relevamiento de una Planta de Galletitas (Ej. Arcor)</h3>
+                        <p>Se toma como ejemplo el <strong>Sector de Amasado y Horneado</strong> de una planta de producción de galletitas.</p>
+                        <div class="example-box">
+                            <ul class="list-disc list-inside space-y-4">
+                                <li>
+                                    <strong>Instalaciones Principales (de Proceso):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2 text-base space-y-2">
+                                        <li><strong>Amasadoras Industriales:</strong> Identificar motores trifásicos (ej. 15 HP), tipo de arranque (estrella-triángulo para limitar corriente), protecciones en el tablero (interruptor termomagnético, contactores).</li>
+                                        <li><strong>Cintas Transportadoras:</strong> Identificar motorreductores de C.A. de menor potencia, controlados por un variador de frecuencia (VFD) para regular la velocidad de la línea.</li>
+                                        <li><strong>Horno Continuo:</strong> Analizar su sistema de alimentación principal. Si es eléctrico, identificar los bancos de resistencias de gran potencia y su sistema de control (ej. con contactores de estado sólido y control PID de temperatura). Si es a gas, analizar el sistema de control de las electroválvulas.</li>
+                                    </ul>
+                                </li>
+                                <li class="mt-4">
+                                    <strong>Instalaciones Auxiliares (de Soporte):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2 text-base space-y-2">
+                                        <li><strong>Iluminación del Sector:</strong> Relevar tipo de luminarias (ej. LED de alta eficiencia), distribución y circuito de alimentación desde el tablero seccional.</li>
+                                        <li><strong>Aire Comprimido:</strong> Identificar las tomas de aire para los cilindros neumáticos que puedan operar en la línea (ej. para desviar galletitas defectuosas).</li>
+                                        <li><strong>Gas Natural:</strong> Trazar la cañería de alimentación al horno, identificando válvulas de corte manual y electroválvulas de seguridad.</li>
+                                        <li><strong>Agua Industrial:</strong> Relevar el circuito de agua de refrigeración para las camisas de las amasadoras, si aplica.</li>
+                                        <li><strong>Extracción de Vapores:</strong> Analizar el sistema de campanas y extractores sobre el horno, identificando el motor del extractor y su tablero de comando.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

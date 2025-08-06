@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U2: Circuitos con Amplificadores Operacionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Circuitos con Amplificadores Operacionales</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción al Op-Amp -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. El Amplificador Operacional (Op-Amp)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>Amplificador Operacional</strong> es uno de los circuitos integrados analógicos más versátiles y utilizados. Es un amplificador de tensión de muy alta ganancia que, mediante el uso de componentes externos (principalmente resistencias y capacitores), puede configurarse para realizar una enorme variedad de operaciones matemáticas y de procesamiento de señales.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Op-Amp Ideal y sus Reglas de Oro</h3>
+                        <p>Para simplificar el análisis, trabajamos con un modelo ideal que tiene las siguientes características:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=S%C3%ADmbolo+del+Amplificador+Operacional" alt="Símbolo del Op-Amp" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Ganancia de Tensión Infinita (\(A_v = \infty\)):</strong> Amplifica enormemente la diferencia de tensión entre sus entradas.</li>
+                            <li><strong>Impedancia de Entrada Infinita (\(Z_{in} = \infty\)):</strong> No consume corriente por sus entradas.</li>
+                            <li><strong>Impedancia de Salida Cero (\(Z_{out} = 0\)):</strong> Puede entregar cualquier cantidad de corriente sin que su tensión de salida caiga.</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Las 2 Reglas de Oro (para circuitos con realimentación negativa):</strong><br>
+                            1. La corriente que entra por las terminales de entrada (+) y (-) es cero. (\(i_+ = i_- = 0\))<br>
+                            2. La diferencia de tensión entre las terminales de entrada es cero. (\(v_+ = v_-\))
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Aplicaciones Lineales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Aplicaciones Lineales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>En la región lineal, el Op-Amp funciona como un amplificador de alta precisión gracias a la <strong>realimentación negativa</strong>. La salida es una versión amplificada y controlada de la entrada.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Amplificador Inversor</h3>
+                        <p>La señal de entrada se aplica a la entrada inversora (-). La salida está desfasada 180° respecto a la entrada. La ganancia se controla con precisión por el cociente de dos resistencias.</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(G = \frac{V_{out}}{V_{in}} = -\frac{R_f}{R_i}\)</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operadores Aritméticos</h3>
+                        <p>Aprovechando las propiedades del Op-Amp, se pueden construir circuitos que realizan operaciones matemáticas:</p>
+                         <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Sumador Inversor:</strong> Suma varias tensiones de entrada, cada una ponderada por su resistencia de entrada.</li>
+                            <li><strong>Restador (Amplificador Diferencial):</strong> Amplifica la diferencia entre dos tensiones de entrada.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s-716g_I2-g" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Aplicaciones Lineales del Op-Amp &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Aplicaciones No Lineales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Aplicaciones No Lineales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cuando se utiliza sin realimentación negativa (o con realimentación positiva), el Op-Amp opera en su región no lineal. La salida se satura, yendo al valor máximo positivo o negativo que la fuente de alimentación le permite.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Comparador</h3>
+                        <p>Es la aplicación no lineal más simple. Compara las tensiones en sus dos entradas:</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Circuito+Comparador" alt="Circuito Comparador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-4">
+                            <li>Si \(V_+ > V_-\), la salida \(V_{out}\) se satura al valor positivo (+Vcc).</li>
+                            <li>Si \(V_- > V_+\), la salida \(V_{out}\) se satura al valor negativo (-Vee).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Rectificadores y Limitadores</h3>
+                         <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Rectificador de Precisión:</strong> Utilizando un Op-Amp con un diodo en el lazo de realimentación, se puede crear un rectificador que funciona incluso para señales muy pequeñas, eliminando la caída de tensión de 0.7V del diodo.</li>
+                            <li><strong>Limitador (Clipper):</strong> Son circuitos que "recortan" una señal para que no supere un cierto nivel de tensión.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Osciladores y Control de Ganancia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Osciladores y Control de Ganancia</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Osciladores con Op-Amps</h3>
+                        <p>Utilizando realimentación positiva junto con una red de temporización (generalmente RC), se pueden construir osciladores estables para generar ondas senoidales (ej. Oscilador de Puente de Wien) o cuadradas (ej. Multivibrador Astable).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Control de Ganancia</h3>
+                        <p>En un amplificador inversor o no inversor, la ganancia depende del cociente de las resistencias \(R_f\) y \(R_i\). Para hacer la ganancia variable, simplemente se reemplaza una de estas resistencias por un <strong>potenciómetro</strong>.</p>
+                        <div class="info-box">
+                            <strong>Control Automático de Ganancia (AGC):</strong> En sistemas más avanzados como los receptores de radio, se utilizan circuitos que ajustan la ganancia automáticamente para mantener un nivel de salida constante, aunque la señal de entrada varíe en intensidad.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

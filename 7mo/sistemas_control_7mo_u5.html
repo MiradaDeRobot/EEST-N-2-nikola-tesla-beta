@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Control U5: Instrumentación e Interconexión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Instrumentación e Interconexión</h1>
+            <p class="text-lg text-gray-600">Sistemas de Control - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Instrumentos de Medición Específicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Instrumentos de Medición Específicos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Más allá del multímetro y el osciloscopio, en el control industrial se utilizan instrumentos especializados para medir y calibrar variables de proceso y analizar redes de comunicación.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Calibradores de Proceso y Analizadores de Redes</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Calibrador de Lazo de Corriente:</strong> Se utiliza para probar y calibrar los lazos de 4-20mA, que son el estándar en la industria para transmitir señales analógicas de sensores.</li>
+                            <li><strong>Analizador de Protocolos de Bus:</strong> Es un dispositivo que se conecta a un bus de datos (como Modbus o Profibus) y "escucha" el tráfico. Permite decodificar los mensajes, diagnosticar errores de comunicación y verificar el correcto funcionamiento de la red.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Normas de Interconexión -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Normas de Interconexión</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para que los equipos de diferentes fabricantes puedan comunicarse entre sí de manera fiable, se necesitan <strong>normas de interconexión</strong> que definan tanto las características físicas (conectores, cables) como las eléctricas (niveles de tensión) de la comunicación.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">RS-485: El Estándar Industrial</h3>
+                        <p>Mientras que RS-232 es para comunicación punto a punto, <strong>RS-485</strong> es un estándar de comunicación serie diseñado para entornos industriales. Sus características principales son:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Comunicación Diferencial:</strong> Utiliza un par de cables trenzados. La información se transmite por la diferencia de tensión entre los dos cables, lo que lo hace extremadamente inmune al ruido electromagnético.</li>
+                            <li><strong>Multidrop:</strong> Permite conectar múltiples dispositivos (hasta 32 en su versión estándar) en un mismo bus.</li>
+                            <li><strong>Largas Distancias:</strong> Puede alcanzar distancias de hasta 1200 metros.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Norma RS-485 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección BUS de Datos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. BUS de Datos: Conceptos y Protocolos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>bus de datos</strong> es un sistema de comunicación que transfiere datos entre los componentes de una computadora o entre varias computadoras y periféricos. En el contexto industrial, se refiere a las redes que conectan PLCs, sensores, actuadores y HMIs.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Protocolos Industriales</h3>
+                        <p>Un <strong>protocolo</strong> es el "idioma" que hablan los dispositivos en la red. Define el formato de los mensajes y las reglas para el intercambio de datos.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Red+Industrial+con+Bus+de+Campo" alt="Red Industrial con Bus de Campo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Modbus:</strong> Es uno de los protocolos más antiguos y simples. Utiliza una arquitectura maestro-esclavo sobre una capa física como RS-485. Es muy popular por su simplicidad y por ser un estándar abierto.</li>
+                            <li><strong>Profibus:</strong> Un bus de campo más rápido y complejo, muy utilizado en la automatización de procesos en Europa.</li>
+                            <li><strong>Ethernet Industrial:</strong> Adaptaciones del protocolo Ethernet estándar para el entorno industrial (ej. Profinet, EtherNet/IP), que ofrecen altas velocidades y conectividad con las redes de oficina.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Protocolos de Comunicación Industrial &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

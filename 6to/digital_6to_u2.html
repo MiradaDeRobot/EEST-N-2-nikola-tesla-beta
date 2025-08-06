@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U2: Aplicaciones de Flip-Flops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Aplicaciones de Flip-Flops</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Flip-Flops -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Flip-Flops</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>Flip-Flops</strong> son los bloques de construcción fundamentales de la lógica secuencial síncrona. Son dispositivos de memoria de 1 bit cuyo estado solo cambia en los instantes marcados por una señal de reloj (CLK). Esto los hace predecibles y estables, a diferencia de los latches asíncronos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Flip-Flops</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                            <!-- RS -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">Flip-Flop R-S (Reset-Set)</h4>
+                                <p>El más básico. La entrada S (Set) pone la salida Q en 1, y la R (Reset) la pone en 0. Tiene un estado prohibido (S=1, R=1).</p>
+                            </div>
+                            <!-- JK -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">Flip-Flop J-K</h4>
+                                <p>Resuelve el problema del R-S. Si J=1 y K=1, la salida bascula (toggle), es decir, invierte su estado anterior.</p>
+                            </div>
+                            <!-- T -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">Flip-Flop T (Toggle)</h4>
+                                <p>Una versión simplificada del J-K. Si T=1, la salida bascula en cada pulso de reloj. Si T=0, mantiene el estado.</p>
+                            </div>
+                            <!-- D -->
+                            <div class="border p-4 rounded-lg">
+                                <h4 class="font-bold text-xl">Flip-Flop D (Data)</h4>
+                                <p>El más importante para almacenamiento. La salida Q toma el valor de la entrada D en el flanco del reloj. Actúa como una celda de memoria de 1 bit.</p>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=h2e_w4a-m8A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tipos de Flip-Flops &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Contadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Contadores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>contador</strong> es un circuito secuencial que recorre una secuencia predeterminada de estados. Su aplicación más común es contar pulsos de reloj. Se construyen interconectando varios flip-flops.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Contadores Asincrónicos (de Rizo)</h3>
+                        <p>Son los más simples de construir. La salida de un flip-flop (generalmente tipo T o JK en modo toggle) se conecta a la entrada de reloj del siguiente. El cambio de estado se propaga "en cascada" o "rizo" a través de los flip-flops, lo que introduce un retardo de propagación acumulativo.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Contador+Asincr%C3%B3nico+de+3+bits" alt="Contador Asincrónico" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Contadores Sincrónicos</h3>
+                        <p>En un contador sincrónico, todas las entradas de reloj de los flip-flops están conectadas a la misma señal de reloj. Esto hace que todos los flip-flops cambien de estado simultáneamente, eliminando el retardo de propagación. Son más rápidos y fiables, pero su lógica de diseño es más compleja.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=4-8sFUL-yY0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Contadores Sincrónicos y Asincrónicos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Registros -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Registros</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>registro</strong> es un grupo de flip-flops (generalmente de tipo D) que se utilizan para almacenar un conjunto de bits, como un byte o una palabra de datos. Son la base de la memoria de acceso rápido dentro de un procesador.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Registros</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Registro de Almacenamiento (o de Carga Paralela):</strong> Todos los bits de un dato se cargan en los flip-flops simultáneamente con un único pulso de reloj.</li>
+                            <li><strong>Registro de Desplazamiento:</strong> Los bits se mueven (desplazan) una posición a la derecha o a la izquierda con cada pulso de reloj. Son fundamentales para la conversión de datos entre formatos serie y paralelo.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Registro+de+Desplazamiento+de+4+bits" alt="Registro de Desplazamiento" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Registros de Desplazamiento &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

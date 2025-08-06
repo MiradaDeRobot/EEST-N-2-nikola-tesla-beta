@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones y Máquinas Eléctricas U2: Principios de Máquinas Rotantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Principios de Máquinas Rotantes</h1>
+            <p class="text-lg text-gray-600">Instalaciones y Máquinas Eléctricas - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Campos Magnéticos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Campos Magnéticos en Máquinas Eléctricas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El funcionamiento de todas las máquinas eléctricas rotantes se basa en la interacción de campos magnéticos. Dependiendo de la máquina, estos campos pueden ser de diferentes tipos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Campos Magnéticos</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Fijos y Constantes:</strong> Producidos por imanes permanentes o por bobinas alimentadas con corriente continua (electroimanes). Son la base de los motores de C.C.</li>
+                            <li><strong>Alternativos:</strong> Producidos por bobinas alimentadas con corriente alterna. El campo magnético invierte su polaridad a la misma frecuencia que la corriente.</li>
+                            <li><strong>Rotantes:</strong> Es el concepto clave en las máquinas de C.A. Se genera al alimentar un conjunto de bobinas (generalmente tres, desfasadas 120° en el espacio) con un sistema de corrientes trifásicas (desfasadas 120° en el tiempo). El resultado es un campo magnético de magnitud constante que gira a una velocidad sincrónica.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Campo+Magn%C3%A9tico+Rotante" alt="Campo Magnético Rotante" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Campo Magnético Rotante &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Generador y Motor Elemental -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Generador y Motor Elemental</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las máquinas eléctricas son dispositivos reversibles: pueden funcionar como motor o como generador.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Generador Elemental</h3>
+                        <p>Convierte energía mecánica en energía eléctrica. Se basa en la <strong>Ley de Inducción de Faraday</strong>. Al hacer girar una espira conductora dentro de un campo magnético, se induce una tensión (FEM) en sus terminales.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Motor Elemental</h3>
+                        <p>Convierte energía eléctrica en energía mecánica. Se basa en la <strong>Fuerza de Lorentz</strong>. Al hacer circular una corriente por una espira que se encuentra dentro de un campo magnético, aparece una fuerza sobre los conductores que produce un par de giro (cupla) que hace rotar la espira.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Principio de Motor y Generador &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Balance Energético -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Balance Energético, Cupla y Potencia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ninguna máquina es 100% eficiente. Parte de la energía que se le entrega se pierde en forma de calor. El balance energético estudia cómo se distribuye y transforma la energía dentro de la máquina.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Cupla y Potencia Mecánica</h3>
+                        <p>La <strong>cupla o torque (\(\tau\))</strong> es la "fuerza de giro" que produce el motor. La <strong>potencia mecánica (\(P_{mec}\))</strong> que entrega el eje del motor depende de la cupla y de la velocidad angular (\(\omega\)).</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(P_{mec} = \tau \cdot \omega\)</p>
+                           <p class="mt-2">Donde \(\omega\) se mide en radianes por segundo.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Balance Energético</h3>
+                        <p>Por el principio de conservación de la energía:</p>
+                         <div class="info-box text-center">
+                           <p class="text-xl font-mono">\(Potencia_{Entrada} = Potencia_{Salida} + Potencia_{Pérdidas}\)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Pérdidas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Pérdidas Eléctricas y Magnéticas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Las pérdidas en una máquina eléctrica son las responsables de su calentamiento y de que su rendimiento sea menor al 100%.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pérdidas Eléctricas (Pérdidas en el Cobre)</h3>
+                        <p>Se deben al <strong>Efecto Joule</strong> en los bobinados del estator y del rotor. Son proporcionales al cuadrado de la corriente que circula por ellos (\(P = I^2 \cdot R\)).</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pérdidas Magnéticas (Pérdidas en el Hierro)</h3>
+                        <p>Ocurren en el núcleo magnético de la máquina y tienen dos componentes principales:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Pérdidas por Histéresis:</strong> Es la energía que se pierde en forma de calor cada vez que se invierte el campo magnético en el núcleo, debido a la reorientación de los dominios magnéticos.</li>
+                            <li><strong>Pérdidas por Corrientes Parásitas (de Foucault):</strong> El flujo magnético variable induce corrientes circulares en el núcleo de hierro. Para minimizar estas corrientes, los núcleos no son macizos, sino que se construyen apilando <strong>chapas de hierro delgadas y aisladas</strong> entre sí.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Pérdidas en Máquinas Eléctricas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

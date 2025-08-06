@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U1: Servomecanismos y Realimentación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Servomecanismos y Realimentación</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Servomecanismos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Nociones sobre Servomecanismos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>servomecanismo</strong> es un sistema de control automático que utiliza la <strong>realimentación</strong> para controlar una variable física, como la posición, velocidad o aceleración de un objeto. A diferencia de un sistema de lazo abierto, un servomecanismo compara constantemente la salida real con la salida deseada (setpoint) y corrige cualquier error.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sistemas de Lazo Abierto vs. Lazo Cerrado</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                           <li><strong>Lazo Abierto:</strong> El sistema no conoce el resultado de su acción. Actúa a ciegas. Ejemplo: un tostador con temporizador. No sabe si la tostada está quemada o cruda, simplemente se apaga cuando el tiempo termina.</li>
+                           <li><strong>Lazo Cerrado (Realimentado):</strong> El sistema utiliza un sensor para medir la salida y compararla con el valor deseado. La diferencia, llamada <strong>señal de error</strong>, se usa para ajustar la acción de control. Los servomecanismos son siempre sistemas de lazo cerrado.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes de un Sistema de Lazo Cerrado</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Diagrama+de+Bloques+de+un+Servomecanismo" alt="Diagrama de Bloques de un Servomecanismo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Entrada (Setpoint):</strong> El valor deseado para la variable a controlar.</li>
+                            <li><strong>Controlador:</strong> El "cerebro" del sistema. Compara el setpoint con la medición del sensor y calcula la acción correctiva. Puede ser desde un simple comparador analógico hasta un complejo controlador PID (Proporcional-Integral-Derivativo).</li>
+                            <li><strong>Actuador:</strong> El "músculo" del sistema (ej. un motor) que actúa sobre el proceso.</li>
+                            <li><strong>Planta o Proceso:</strong> El sistema físico que se está controlando.</li>
+                            <li><strong>Sensor:</strong> Mide la variable de salida real y la "realimenta" al controlador.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Analogía: Control de Crucero de un Auto</strong><br>
+                            - <strong>Setpoint:</strong> La velocidad deseada (ej. 110 km/h).<br>
+                            - <strong>Controlador:</strong> La computadora del auto.<br>
+                            - <strong>Actuador:</strong> El sistema de inyección de combustible.<br>
+                            - <strong>Planta:</strong> El motor y el auto.<br>
+                            - <strong>Sensor:</strong> El velocímetro.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos Retroalimentados y Osciladores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Circuitos Retroalimentados y Osciladores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>retroalimentación</strong> (o realimentación) es una de las técnicas más importantes en electrónica analógica. Consiste en tomar una porción de la señal de salida de un circuito y reinyectarla en la entrada.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Retroalimentación Negativa y Positiva</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Retroalimentación Negativa:</strong> La señal realimentada se resta de la señal de entrada. Tiene un efecto estabilizador. Aunque reduce la ganancia del amplificador, a cambio ofrece mejoras significativas: aumenta la estabilidad, reduce la distorsión, mejora la inmunidad al ruido y permite controlar con precisión la ganancia del circuito. Es la base de los amplificadores operacionales.</li>
+                            <li><strong>Retroalimentación Positiva:</strong> La señal realimentada se suma a la señal de entrada. Tiene un efecto desestabilizador que refuerza la señal original. Si la ganancia del lazo es suficientemente alta, puede llevar al sistema a la saturación (como en un comparador con histéresis o Schmitt trigger) o a la oscilación.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Osciladores</h3>
+                        <p>Un <strong>oscilador</strong> es un circuito que, utilizando retroalimentación positiva de manera controlada, es capaz de generar una señal de salida periódica (senoidal, cuadrada, etc.) sin necesidad de una señal de entrada. Convierte la energía de una fuente de DC en una señal de AC de una frecuencia específica.</p>
+                        <div class="info-box">
+                            <strong>Criterio de Barkhausen:</strong> Para que un circuito oscile de forma sostenida, se deben cumplir dos condiciones:<br>
+                            1. La ganancia total del lazo de realimentación debe ser exactamente 1. Si es menor, la oscilación se amortigua; si es mayor, satura.<br>
+                            2. El desfase total del lazo debe ser de 0° o un múltiplo de 360°. Esto asegura que la señal realimentada esté en fase con la señal de entrada, reforzándola.
+                        </div>
+                        <p class="mt-4">Ejemplos comunes son los osciladores <strong>RC</strong> (como el de puente de Wien) y los <strong>LC</strong> (como el Colpitts o el Hartley), que utilizan redes de resistencias-capacitores o inductores-capacitores para fijar la frecuencia de oscilación.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Retroalimentación y Osciladores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Selección de Actuadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Selección de Actuadores según Hojas de Datos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>actuador</strong> es el componente que realiza la acción física en un sistema de control. Elegir el actuador correcto (un motor, un solenoide, etc.) es crucial y requiere una interpretación cuidadosa de su <strong>hoja de datos (datasheet)</strong> para asegurar que cumple con los requisitos técnicos y económicos del proyecto.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Parámetros Clave en el Datasheet de un Motor DC</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Hoja+de+Datos+de+un+Motor+DC" alt="Hoja de Datos de un Motor DC" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-4 mt-4">
+                            <li><strong>Tensión Nominal:</strong> El voltaje al que el motor opera con su máximo rendimiento.</li>
+                            <li><strong>Velocidad sin Carga (No-load Speed):</strong> Las revoluciones por minuto (RPM) que alcanza el motor cuando no está moviendo nada.</li>
+                            <li><strong>Corriente sin Carga (No-load Current):</strong> La corriente que consume el motor cuando gira libremente.</li>
+                            <li><strong>Corriente de Arranque (Stall Current):</strong> La corriente máxima que consume el motor cuando su eje está completamente bloqueado. ¡Es un valor crítico para diseñar el circuito de control, ya que debe ser capaz de suministrar esta corriente!</li>
+                            <li><strong>Torque o Cupla (Torque):</strong> La "fuerza" de rotación del motor. El <strong>torque de arranque (stall torque)</strong> es el máximo torque que puede ejercer.</li>
+                            <li><strong>Eficiencia:</strong> La relación entre la potencia mecánica de salida y la potencia eléctrica de entrada. Se suele graficar en función del torque.</li>
+                            <li><strong>Dimensiones Mecánicas:</strong> Un diagrama con las medidas físicas del motor, el diámetro del eje, y la ubicación de los agujeros de montaje.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=yApd_Gg-d-s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Cómo Interpretar Hojas de Datos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

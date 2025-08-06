@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U2: Programación de Bajo Nivel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Programación de Bajo Nivel en C</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Operadores a Nivel de Bits -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Operadores y Campos a Nivel de Bits</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La programación de bajo nivel nos permite manipular directamente los bits que componen los datos. Esto es fundamental en electrónica para controlar registros de hardware, optimizar el uso de memoria y realizar operaciones de forma muy eficiente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operadores a Nivel de Bits</h3>
+                        <p>Estos operadores trabajan con la representación binaria de los números.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>AND (`&`):</strong> Pone un bit a 1 solo si ambos bits correspondientes son 1. Útil para "apagar" bits (máscara).</li>
+                            <li><strong>OR (`|`):</strong> Pone un bit a 1 si alguno de los bits correspondientes es 1. Útil para "encender" bits.</li>
+                            <li><strong>XOR (`^`):</strong> Pone un bit a 1 si los bits correspondientes son diferentes. Útil para invertir bits específicos.</li>
+                            <li><strong>NOT (`~`):</strong> Invierte todos los bits de un número (unos por ceros y viceversa).</li>
+                            <li><strong>Desplazamiento (`<<`, `>>`):</strong> Mueven todos los bits de un número hacia la izquierda o la derecha. Desplazar a la izquierda un lugar equivale a multiplicar por 2; a la derecha, a dividir por 2.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Campos de Bits</h3>
+                        <p>Los campos de bits son una característica de las estructuras (`struct`) que permite empaquetar datos en menos espacio, especificando el número exacto de bits que ocupará cada miembro. Es extremadamente útil para mapear registros de hardware, donde cada bit puede tener un significado de control diferente.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong>
+<pre><code>// Se define un registro de control de 8 bits
+struct Control {
+    unsigned int enable : 1;  // 'enable' usa solo 1 bit
+    unsigned int mode   : 3;  // 'mode' usa 3 bits
+    unsigned int speed  : 4;  // 'speed' usa 4 bits
+}; // Total: 1 + 3 + 4 = 8 bits (1 byte)
+</code></pre>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Operadores a Nivel de Bits &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Memoria y Arquitectura -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Modelos de Memoria y Arquitectura x86</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modelos de Memoria</h3>
+                        <p>En los inicios de la programación en C para PC, los programadores debían lidiar con las limitaciones de la arquitectura. Los <strong>modelos de memoria</strong> (tiny, small, medium, compact, large, huge) eran configuraciones del compilador que definían cómo se organizaría el programa en la memoria segmentada del procesador, afectando el tamaño del código y los datos que se podían manejar.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Arquitectura x86</h3>
+                        <p>La familia de procesadores <strong>x86</strong> de Intel ha sido la base de la PC durante décadas. Conocer su arquitectura es clave para la programación de bajo nivel. Esto incluye entender sus registros principales (AX, BX, CX, DX), el manejo de la pila (stack) y el cálculo de direcciones de memoria a través de segmentos y desplazamientos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Acceso al Hardware -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Acceso al Hardware y Uso de Puertos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En sistemas operativos antiguos como MS-DOS, los programas podían comunicarse directamente con el hardware (puerto paralelo, puerto serie, tarjeta de video) a través de <strong>puertos de entrada/salida (I/O)</strong>. Cada puerto tiene una dirección única en el mapa de I/O del sistema.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones de Acceso a Puertos</h3>
+                        <p>Lenguajes como Borland C o Turbo C proporcionaban funciones en bibliotecas como `<dos.h>` o `<conio.h>` para interactuar con estos puertos:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>`outportb(direccion_puerto, dato)`:</strong> Escribe un byte de datos en un puerto específico.</li>
+                            <li><strong>`inportb(direccion_puerto)`:</strong> Lee un byte de datos desde un puerto específico.</li>
+                        </ul>
+                        <div class="info-box">
+                           <strong>Nota Importante:</strong> En sistemas operativos modernos (Windows, Linux), el acceso directo a los puertos de hardware está protegido por el kernel. Un programa de usuario no puede usar estas funciones directamente; se requieren drivers o permisos especiales. Sin embargo, este concepto sigue siendo 100% válido y es la base de la programación de microcontroladores.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Acceso a Hardware a Bajo Nivel &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+ 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrónica Aplicada U2: Sistemas de Control y Telemetría</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Sistemas de Control y Telemetría</h1>
+            <p class="text-lg text-gray-600">Electrónica Aplicada - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Sistemas Realimentados y Servomecanismos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas Realimentados y Servomecanismos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>sistema realimentado</strong>, o de lazo cerrado, es aquel que mide su propia salida para compararla con una entrada de referencia (setpoint) y ajustar su comportamiento en consecuencia. Esta capacidad de autocorrección es la base de todos los sistemas de control automático modernos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Servomecanismos</h3>
+                        <p>Un <strong>servomecanismo</strong> es un tipo específico de sistema de lazo cerrado diseñado para seguir un comando de posición, velocidad o aceleración. Un servomotor, por ejemplo, utiliza un sensor de posición interno (como un potenciómetro o un encoder) para saber en qué ángulo se encuentra su eje y corregir su posición continuamente para que coincida con la señal de control.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Diagrama+de+Bloques+de+un+Servomecanismo" alt="Diagrama de Bloques de un Servomecanismo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Transductores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Transductores y Dispositivos de Medición</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>transductor</strong> es un dispositivo que convierte una forma de energía en otra. En el contexto del control, son los "sentidos" del sistema: convierten una variable física (temperatura, presión, luz, etc.) en una señal eléctrica medible (tensión o corriente).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ejemplos de Transductores</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Termocupla:</strong> Convierte temperatura en una pequeña tensión.</li>
+                            <li><strong>Galga Extensiométrica:</strong> Convierte deformación mecánica (fuerza o presión) en un cambio de resistencia.</li>
+                            <li><strong>Potenciómetro:</strong> Convierte una posición angular en una resistencia variable.</li>
+                            <li><strong>Fotodiodo:</strong> Convierte intensidad de luz en corriente.</li>
+                        </ul>
+                        <div class="info-box">
+                           A menudo, la señal de un transductor es muy débil y necesita ser amplificada y filtrada antes de que un microcontrolador o PLC pueda leerla. A este proceso se le llama <strong>acondicionamiento de señal</strong>.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sensores y Transductores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Telemetría -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Telemetría</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>telemetría</strong> es la tecnología que permite la medición remota de magnitudes y el posterior envío de la información hacia el operador del sistema. Es fundamental en aplicaciones donde el sistema a controlar está a distancia o es inaccesible, como en satélites, drones o procesos industriales distribuidos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Métodos de Telemetría</h3>
+                        <p>Para transmitir la información de los sensores de forma fiable, se utilizan diferentes técnicas de modulación:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Telemetr%C3%ADa+PWM" alt="Telemetría PWM" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Modulación por Ancho de Pulso (PWM)</h4>
+                                <p class="text-base text-center">La información se codifica en el ancho (ciclo de trabajo) de los pulsos de una señal cuadrada.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Telemetr%C3%ADa+por+Frecuencia" alt="Telemetría por Frecuencia" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Telemetría por Frecuencia de Pulso</h4>
+                                <p class="text-base text-center">La información se codifica en la frecuencia de un tren de pulsos.</p>
+                           </div>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Telemetría Multiplexada:</strong> Utiliza técnicas de multiplexado (TDM o FDM) para enviar datos de múltiples sensores a través de un único canal de comunicación.</li>
+                            <li><strong>Telemetría Digital:</strong> Es el método más moderno. Los datos de los sensores se digitalizan (usando un ADC) y se transmiten como un flujo de datos binarios utilizando protocolos de comunicación serie (como UART o RS-485).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sistemas de Telemetría &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

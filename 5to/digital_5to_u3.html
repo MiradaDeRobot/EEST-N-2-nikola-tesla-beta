@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U3: Memorias y Conversores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Memorias y Conversores</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Memorias -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Introducción a las Memorias</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las <strong>memorias</strong> son circuitos digitales diseñados para almacenar grandes cantidades de información binaria (bits). Son un componente esencial en cualquier sistema digital, desde computadoras hasta microcontroladores.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Clasificación de Memorias</h3>
+                        <p>Las memorias se clasifican principalmente por su volatilidad y su método de acceso.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Memorias Volátiles (RAM):</strong> Pierden su contenido cuando se interrumpe la alimentación eléctrica. Son de acceso rápido y se utilizan como memoria principal de trabajo.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>SRAM (RAM Estática):</strong> Muy rápida, construida con flip-flops. No necesita refresco. Se usa para la memoria caché de los procesadores.</li>
+                                    <li><strong>DRAM (RAM Dinámica):</strong> Más lenta y densa, construida con capacitores. Requiere un refresco periódico para no perder los datos. Es la memoria principal de las computadoras.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Memorias No Volátiles (ROM):</strong> Retienen la información incluso sin alimentación. Se usan para almacenar el firmware o el programa de arranque de un sistema.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>ROM (Read-Only Memory):</strong> Grabada en fábrica, no se puede modificar.</li>
+                                    <li><strong>PROM (Programmable ROM):</strong> Se puede programar una sola vez.</li>
+                                    <li><strong>EPROM (Erasable PROM):</strong> Se puede borrar con luz ultravioleta y reprogramar.</li>
+                                    <li><strong>EEPROM (Electrically Erasable PROM):</strong> Se puede borrar y reprogramar eléctricamente, bit a bit.</li>
+                                    <li><strong>Flash ROM:</strong> Similar a la EEPROM, pero se borra en bloques, lo que la hace mucho más rápida. Es la tecnología de los pendrives y discos de estado sólido (SSD).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tipos de Memorias &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Conversores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Conversores A/D y D/A</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El mundo real es analógico, pero las computadoras y microcontroladores son digitales. Los <strong>conversores</strong> son los circuitos que actúan como traductores entre estos dos mundos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Convertidor Digital-Analógico (D/A o DAC)</h3>
+                        <p>Un DAC convierte un número binario (digital) en un valor de tensión o corriente analógico proporcional. Es el puente del mundo digital al mundo físico.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Diagrama+de+un+DAC+R-2R" alt="Diagrama de un DAC" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicaciones:</strong> Generación de audio en tarjetas de sonido, control de motores, generación de señales de prueba.
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Convertidor Analógico-Digital (A/D o ADC)</h3>
+                        <p>Un ADC realiza la operación inversa: toma una muestra de una señal analógica en un instante de tiempo y la convierte en un número binario que la representa. Este proceso tiene dos pasos clave:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Muestreo (Sampling):</strong> Se toman muestras del valor de la señal analógica a intervalos de tiempo regulares. El <strong>Teorema de Nyquist</strong> establece que la frecuencia de muestreo debe ser al menos el doble de la máxima frecuencia de la señal para poder reconstruirla sin pérdida de información.</li>
+                            <li><strong>Cuantificación:</strong> Se asigna un valor digital a cada muestra. Como el número de valores digitales es finito, este paso introduce un pequeño error llamado <strong>error de cuantificación</strong>.</li>
+                        </ul>
+                         <div class="info-box">
+                            <strong>Resolución:</strong> Es el número de bits que utiliza el ADC para representar la señal. Un ADC de 10 bits puede representar \(2^{10} = 1024\) niveles diferentes, ofreciendo más precisión que uno de 8 bits (\(2^8 = 256\) niveles).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=4-8sFUL-yY0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Conversores A/D y D/A &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U2: Modulación y Generación de Señales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Modulación y Generación de Señales</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Osciladores y Sintetizadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Generación de Señal: Osciladores y Sintetizadores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Toda comunicación inalámbrica necesita una <strong>onda portadora</strong>, una señal senoidal de alta frecuencia que "transportará" la información. Los circuitos encargados de generar esta onda son los osciladores.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Osciladores</h3>
+                        <p>Un oscilador es un circuito electrónico que produce una señal periódica y oscilante, generalmente una onda senoidal o cuadrada, sin ninguna entrada periódica. Los más comunes en comunicaciones son los <strong>osciladores LC</strong> (basados en un circuito tanque de inductor y capacitor) y los <strong>osciladores a cristal</strong> (que usan un cristal de cuarzo para una estabilidad de frecuencia extremadamente alta).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Sintetizadores de Frecuencia</h3>
+                        <p>Un sintetizador es un sistema más complejo que permite generar una amplia gama de frecuencias con la misma estabilidad de un oscilador a cristal. Utiliza un circuito llamado <strong>Bucle de Enganche de Fase (PLL)</strong> para generar una frecuencia de salida que es un múltiplo exacto de una frecuencia de referencia muy estable.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Osciladores y PLL &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Modulación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Modulación: Montando la Información en la Portadora</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>modulación</strong> es el proceso de modificar una característica de la onda portadora (amplitud, frecuencia o fase) de acuerdo con la señal de información que se quiere transmitir (la moduladora). Es el corazón de cualquier sistema de comunicación.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación Analógica</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Modulaci%C3%B3n+en+Amplitud+(AM)" alt="Modulación AM" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Modulación en Amplitud (AM)</h4>
+                                <p class="text-base text-center">La amplitud de la portadora varía en función de la señal de información. Es simple pero susceptible al ruido.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Modulaci%C3%B3n+en+Frecuencia+(FM)" alt="Modulación FM" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Modulación en Frecuencia (FM)</h4>
+                                <p class="text-base text-center">La frecuencia de la portadora varía en función de la señal de información. Es mucho más inmune al ruido que la AM.</p>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación Digital y de Pulsos</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Modulación Digital:</strong> Se utiliza para transmitir datos binarios. Las técnicas más comunes son <strong>ASK</strong> (modulación por desplazamiento de amplitud), <strong>FSK</strong> (por desplazamiento de frecuencia) y <strong>PSK</strong> (por desplazamiento de fase).</li>
+                            <li><strong>Modulación de Pulsos:</strong> La señal analógica se muestrea y se modifica alguna característica de un tren de pulsos. La más importante es la <strong>Modulación por Codificación de Pulsos (PCM)</strong>, que es la base de la telefonía digital y el audio de los CDs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Detectores y Teoría de la Información -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Detectores y Teoría de la Información</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Detectores (Demoduladores)</h3>
+                        <p>Un <strong>detector</strong> o <strong>demodulador</strong> es el circuito en el receptor que realiza el proceso inverso a la modulación: extrae la señal de información original de la onda portadora recibida. Cada tipo de modulación tiene su propio tipo de detector.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Teoría de la Información</h3>
+                        <p>Iniciada por Claude Shannon, es la base matemática de las comunicaciones digitales. Introduce el concepto de <strong>bit</strong> como la unidad fundamental de información y estudia los límites de la compresión de datos y la velocidad de transmisión a través de un canal con ruido (Teorema de Shannon-Hartley).</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teoría de la Información &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

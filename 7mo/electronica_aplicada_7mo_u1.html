@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrónica Aplicada U1: Dispositivos de Conmutación y Potencia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Dispositivos de Conmutación y Potencia</h1>
+            <p class="text-lg text-gray-600">Electrónica Aplicada - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Interruptor Transistorizado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. El Interruptor Transistorizado</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Además de su uso como amplificador, una de las aplicaciones más importantes del transistor (tanto BJT como MOSFET) es funcionar como un <strong>interruptor electrónico</strong>. En lugar de operar en la región activa, se lo hace trabajar en sus dos estados extremos: corte y saturación.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estados de Conmutación</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Transistor+como+Interruptor+(Corte+y+Saturaci%C3%B3n)" alt="Transistor como Interruptor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Corte:</strong> No se aplica corriente (BJT) o tensión (MOSFET) a la base/compuerta. El transistor se comporta como un interruptor abierto: no circula corriente por la carga.</li>
+                            <li><strong>Saturación:</strong> Se aplica suficiente corriente/tensión a la base/compuerta para que el transistor conduzca plenamente. Se comporta como un interruptor cerrado: la corriente máxima circula por la carga.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Aplicación Práctica:</strong> Controlar un relé desde un microcontrolador. La salida de 5V de un microcontrolador no puede activar directamente un relé de 12V. Se utiliza un transistor como interfaz: el microcontrolador controla la base del transistor, y el transistor conmuta la alta corriente necesaria para la bobina del relé.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tiristores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Tiristores: SCR, UJT y TRIAC</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los <strong>tiristores</strong> son una familia de dispositivos semiconductores de potencia que se utilizan como interruptores, ya sea en modo de bloqueo (apagado) o de conducción (encendido). Una vez que se activan, permanecen en estado de conducción hasta que la corriente cae por debajo de un cierto umbral.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">SCR (Rectificador Controlado de Silicio)</h3>
+                        <p>Es un interruptor unidireccional con tres terminales: Ánodo, Cátodo y Compuerta (Gate). Permanece bloqueado hasta que se aplica un pequeño pulso de corriente a la compuerta. Una vez disparado, se "enlaza" (latches) y permanece conduciendo aunque se retire el pulso. Solo se apaga cuando la corriente Ánodo-Cátodo se interrumpe o cae por debajo de la corriente de mantenimiento.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">TRIAC</h3>
+                        <p>Puede considerarse como dos SCR conectados en antiparalelo. Es un interruptor <strong>bidireccional</strong>, lo que lo hace ideal para el control de potencia en circuitos de corriente alterna (CA). Al igual que el SCR, se dispara con un pulso en la compuerta.</p>
+                        <div class="example-box">
+                            <strong>Aplicación Típica:</strong> El dimmer o atenuador de luz. El TRIAC, junto con un circuito de disparo, controla qué porción de la onda senoidal de AC llega a la lámpara, regulando así su brillo.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">UJT (Transistor Unijuntura)</h3>
+                        <p>El UJT no es un tiristor en sí mismo, pero es un componente clave en los <strong>circuitos de disparo</strong> para SCRs y TRIACs. Es un interruptor que se activa cuando la tensión en su emisor alcanza un cierto umbral. Se utiliza para construir <strong>osciladores de relajación</strong> que generan los pulsos periódicos necesarios para disparar la compuerta de los tiristores en el momento preciso del ciclo de CA.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=sC2i9j_4i-o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tiristores (SCR y TRIAC) &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

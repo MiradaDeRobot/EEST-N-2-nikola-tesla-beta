@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Asistido U3: Entornos de Simulación de Alto Nivel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Entornos de Simulación de Alto Nivel</h1>
+            <p class="text-lg text-gray-600">Diseño Asistido y Simulación Electrónica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Simulación de Alto Nivel -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Simulación de Sistemas Complejos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que los simuladores tipo SPICE (como Multisim o Proteus) son excelentes para analizar el comportamiento a nivel de componentes de un circuito, los <strong>entornos de simulación de alto nivel</strong> se enfocan en el comportamiento del <strong>sistema completo</strong>. No se centran tanto en el voltaje de un transistor individual, sino en cómo funciona un sistema de control, un algoritmo de procesamiento de señales o un sistema de comunicaciones en su conjunto.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué usar estos entornos?</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Modelado Matemático:</strong> Permiten implementar y probar modelos matemáticos complejos de forma rápida.</li>
+                            <li><strong>Análisis de Datos:</strong> Son herramientas muy potentes para procesar, analizar y visualizar grandes cantidades de datos obtenidos de mediciones reales.</li>
+                            <li><strong>Diseño de Algoritmos:</strong> Son ideales para diseñar y probar algoritmos de control, filtros digitales o sistemas de modulación antes de implementarlos en hardware.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección MATLAB y SCILAB -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. MATLAB y SCILAB: El Poder del Cálculo Numérico</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p><strong>MATLAB</strong> (MATrix LABoratory) es un entorno de computación numérica y un lenguaje de programación de alto nivel. Su principal fortaleza es el trabajo con matrices, lo que lo hace extremadamente potente para el cálculo científico y la ingeniería. <strong>SCILAB</strong> es una alternativa de software libre y gratuito con una funcionalidad muy similar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aplicaciones en Electrónica</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Procesamiento de Señales:</strong> Analizar señales en el dominio del tiempo y la frecuencia (usando la Transformada de Fourier, FFT), diseñar filtros digitales y analizar su respuesta.</li>
+                            <li><strong>Teoría de Control:</strong> Diseñar y analizar la estabilidad de sistemas de control, como los controladores PID.</li>
+                            <li><strong>Comunicaciones:</strong> Simular sistemas de modulación y demodulación, y analizar el efecto del ruido.</li>
+                            <li><strong>Visualización de Datos:</strong> Crear gráficos 2D y 3D de alta calidad para representar resultados de simulaciones o mediciones.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Interfaz+de+MATLAB" alt="Interfaz de MATLAB" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=T__8_j-Q2Yc" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video de Introducción a MATLAB &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Mini Manual de Uso Básico de MATLAB/SCILAB</h3>
+                        <p>La interfaz principal es la <strong>Ventana de Comandos</strong>, donde se pueden ejecutar instrucciones directamente.</p>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Definir Variables y Vectores:</strong> Simplemente escribe el nombre de la variable seguido de un igual y el valor. Para un vector (una matriz de una fila), usa corchetes.
+                                <div class="example-box text-base font-mono">
+                                    >> a = 5 <br>
+                                    >> b = [1 2 3 4 5]
+                                </div>
+                            </li>
+                            <li><strong>Operaciones Matriciales:</strong> Realiza operaciones con vectores y matrices de forma natural.
+                                <div class="example-box text-base font-mono">
+                                    >> c = b * 2  % Multiplica cada elemento de b por 2 <br>
+                                    >> d = b.^2 % Eleva al cuadrado cada elemento de b
+                                </div>
+                            </li>
+                            <li><strong>Crear un Gráfico Simple (Plot):</strong> Se puede graficar un vector contra otro.
+                                <div class="example-box text-base font-mono">
+                                    >> x = 0:0.1:2*pi; % Crea un vector x desde 0 a 2*pi con pasos de 0.1 <br>
+                                    >> y = sin(x);     % Calcula el seno de cada elemento de x <br>
+                                    >> plot(x, y);     % Grafica y vs x <br>
+                                    >> grid on;        % Añade una grilla al gráfico <br>
+                                    >> title('Gráfico de la función Seno');
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección SIMULINK -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. SIMULINK: Simulación Gráfica por Bloques</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>SIMULINK</strong> es un entorno de programación gráfica que funciona sobre MATLAB. Permite modelar, simular y analizar sistemas dinámicos mediante diagramas de bloques. En lugar de escribir código, se arrastran y conectan bloques que representan operaciones matemáticas, sistemas físicos o algoritmos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ventajas del Modelado por Bloques</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Intuitivo:</strong> La representación gráfica es muy fácil de entender y se asemeja a los diagramas en bloques que se usan en la teoría.</li>
+                            <li><strong>Ideal para Sistemas de Control:</strong> Permite modelar fácilmente sistemas con realimentación, controladores, plantas y sensores.</li>
+                            <li><strong>Simulación en el Tiempo:</strong> Se puede observar la evolución de las señales en el tiempo, como si se estuviera usando un osciloscopio virtual.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Modelo+de+un+Sistema+de+Control+en+SIMULINK" alt="Modelo en SIMULINK" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=9-v540_iY3I" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video de Introducción a SIMULINK &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Mini Manual de Uso Básico de SIMULINK</h3>
+                        <p>Simulink se basa en la conexión de bloques funcionales.</p>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Iniciar Simulink:</strong> En la ventana de comandos de MATLAB, escribe `simulink` y presiona Enter. Se abrirá la ventana de inicio. Elige "Blank Model" para crear un nuevo proyecto.</li>
+                            <li><strong>Abrir la Librería de Bloques:</strong> En la barra de herramientas del modelo, haz clic en el icono de la "Library Browser".</li>
+                            <li><strong>Añadir Bloques al Modelo:</strong>
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li>En la librería, busca en "Simulink > Sources" y arrastra el bloque "Sine Wave" al modelo.</li>
+                                    <li>Busca en "Simulink > Sinks" y arrastra el bloque "Scope" (osciloscopio).</li>
+                                </ul>
+                            </li>
+                             <li><strong>Conectar los Bloques:</strong> Acerca el cursor a la salida del bloque "Sine Wave" (aparecerá una cruz). Haz clic y arrastra hasta la entrada del bloque "Scope". Se dibujará una flecha de conexión.</li>
+                             <li><strong>Configurar y Simular:</strong> Haz doble clic en el bloque "Sine Wave" para ajustar su frecuencia o amplitud. En la barra de herramientas, establece el tiempo de simulación (ej. 10 segundos) y haz clic en el botón "Run" (Play).</li>
+                             <li><strong>Ver el Resultado:</strong> Haz doble clic en el bloque "Scope" para abrir el osciloscopio virtual y ver la gráfica de la onda senoidal generada.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

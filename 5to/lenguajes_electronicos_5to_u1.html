@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U1: Introducción a la Programación y Lenguaje C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Introducción a la Programación y Lenguaje C</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Lenguajes y Pseudolenguajes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Lenguajes y Pseudolenguajes</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para comunicarnos con una computadora y darle instrucciones, necesitamos un lenguaje que ambos podamos entender. Los lenguajes de programación son sistemas formales diseñados para expresar procesos que pueden ser llevados a cabo por máquinas como las computadoras. Un <strong>algoritmo</strong> es una secuencia finita y ordenada de pasos para resolver un problema.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Niveles de Lenguajes</h3>
+                        <p>Los lenguajes se clasifican por su nivel de abstracción respecto al hardware de la computadora.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Lenguaje de Máquina:</strong> Es el nivel más bajo, compuesto por secuencias de 1s y 0s (código binario) que el procesador (CPU) entiende directamente. Cada tipo de procesador tiene su propio lenguaje de máquina. Es extremadamente difícil de leer y escribir para un humano.</li>
+                            <li><strong>Lenguaje Ensamblador (Assembly):</strong> Es un lenguaje de bajo nivel que utiliza mnemónicos (palabras cortas como 'MOV' para mover datos, 'ADD' para sumar, 'JMP' para saltar) para representar las instrucciones de máquina. Un programa llamado "ensamblador" lo traduce a código máquina. Sigue estando muy ligado a la arquitectura específica del procesador, pero es más legible que el binario.</li>
+                            <li><strong>Lenguaje de Alto Nivel:</strong> Son lenguajes como C, C++, Pascal, Delphi, Visual Basic, Python, etc. Utilizan una sintaxis más cercana al lenguaje humano, con palabras en inglés y notación matemática. Son independientes de la máquina (portables) y mucho más fáciles de aprender y usar. Un programa llamado "compilador" o "intérprete" se encarga de traducirlo a lenguaje de máquina.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pseudocódigo y Diagramación Lógica</h3>
+                        <p>Antes de escribir código, es fundamental planificar la lógica del programa. Dos herramientas clave para esto son:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Pseudocódigo:</strong> Es una descripción de un algoritmo en lenguaje natural, pero con una estructura que se asemeja a un lenguaje de programación. No se puede compilar, solo sirve para planificar la secuencia de pasos de forma clara y sin preocuparse por la sintaxis exacta de un lenguaje.</li>
+                            <li><strong>Diagrama de Flujo:</strong> Es una representación gráfica del algoritmo. Utiliza símbolos estandarizados para representar acciones (rectángulos), decisiones (rombos), entrada/salida de datos (paralelogramos), inicio/fin (óvalos), etc., conectados por flechas que indican el flujo del programa. Es muy útil para visualizar la lógica de algoritmos complejos.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Ejemplo+de+Diagrama+de+Flujo" alt="Ejemplo de Diagrama de Flujo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=DFG-I_pB3Jg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Diagramas de Flujo y Pseudocódigo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Lenguaje C -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Introducción al Lenguaje C</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El lenguaje C, desarrollado en los años 70, es uno de los lenguajes de programación más influyentes de la historia. Se le considera un lenguaje de "nivel medio", ya que combina la facilidad de un lenguaje de alto nivel (estructuras de control, variables) con la capacidad de acceder a recursos del sistema a bajo nivel (manejo directo de memoria con punteros), lo que lo hace ideal para la programación de sistemas operativos, drivers y, especialmente, para la electrónica y los sistemas embebidos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Evolución Histórica e Importancia</h3>
+                        <p>C fue creado por Dennis Ritchie en los Laboratorios Bell. Su desarrollo estuvo íntimamente ligado al del sistema operativo UNIX, que fue reescrito casi en su totalidad en C. Esta simbiosis le dio una gran popularidad. En 1989, el Instituto Nacional Estadounidense de Estándares (ANSI) publicó un estándar para el lenguaje, conocido como <strong>ANSI C</strong>, para garantizar que un programa escrito en C pudiera compilarse y funcionar en diferentes plataformas sin cambios (portabilidad).</p>
+                        <div class="info-box">
+                            La influencia de C es inmensa. Lenguajes posteriores muy populares como <strong>C++</strong> (que añade orientación a objetos), <strong>Java</strong> y <strong>C#</strong> heredaron gran parte de su sintaxis y estructura.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Entornos de Programación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Entornos de Programación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para escribir, compilar y probar un programa, se utiliza un <strong>Entorno de Desarrollo Integrado (IDE)</strong>. Un IDE agrupa varias herramientas esenciales para el programador en una sola aplicación, facilitando el ciclo de desarrollo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Compiladores y Linkeadores</h3>
+                        <p>El proceso para convertir el código fuente (lo que escribimos en un archivo .c) en un programa ejecutable (un archivo .exe en Windows) tiene varios pasos:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x200/E0F2FE/0891B2?text=C%C3%B3digo+Fuente+->+Compilador+->+Linkeador+->+Ejecutable" alt="Proceso de Compilación" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Preprocesador:</strong> Lee el código fuente y procesa las directivas que empiezan con '#' (como `#include` para añadir bibliotecas).</li>
+                            <li><strong>Compilador:</strong> Traduce el código fuente preprocesado a código objeto (.obj). El código objeto es una versión intermedia en lenguaje de máquina, pero aún no es un programa completo porque las llamadas a funciones de bibliotecas (como `printf`) no están resueltas.</li>
+                            <li><strong>Linkeador (Enlazador):</strong> Toma uno o más archivos de código objeto y los enlaza con el código de las bibliotecas de funciones necesarias. Resuelve las referencias a funciones y crea el archivo ejecutable final que el sistema operativo puede cargar y correr.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=yO_q_55g21c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Compiladores y Linkeadores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U5: Fibra Óptica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Comunicaciones por Fibra Óptica</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Principios de Propagación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Principios de Propagación de la Luz en Fibras</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La fibra óptica es el medio de transmisión guiado de mayor capacidad. Utiliza pulsos de luz para transmitir información a través de hilos de vidrio o plástico del grosor de un cabello humano.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Reflexión Interna Total</h3>
+                        <p>La luz se mantiene confinada dentro de la fibra gracias al principio de <strong>reflexión interna total</strong>. La fibra está construida con un núcleo de vidrio de alto índice de refracción, rodeado por un revestimiento de un índice ligeramente menor. Cuando la luz que viaja por el núcleo incide sobre el revestimiento con un ángulo suficientemente rasante (mayor al ángulo crítico), se refleja completamente, sin escapar.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Reflexi%C3%B3n+Interna+Total+en+Fibra+%C3%93ptica" alt="Reflexión Interna Total" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fibras Monomodo y Multimodo</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Fibra+Multimodo" alt="Fibra Multimodo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Fibra Multimodo</h4>
+                                <p class="text-base text-center">Tiene un núcleo más grande (50 o 62.5 µm) que permite que la luz viaje por múltiples caminos o "modos". Es más barata y fácil de conectar, pero sufre de dispersión modal, lo que limita su ancho de banda y distancia. Se usa para distancias cortas (ej. redes LAN, centros de datos).</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Fibra+Monomodo" alt="Fibra Monomodo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Fibra Monomodo</h4>
+                                <p class="text-base text-center">Tiene un núcleo extremadamente fino (9 µm) que obliga a la luz a viajar por un único camino. Elimina la dispersión modal, permitiendo velocidades altísimas y se usa para largas distancias (comunicaciones submarinas, redes troncales).</p>
+                           </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Fibra Óptica Monomodo vs. Multimodo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Conectores, Empalmes y Mediciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Conectores, Empalmes y Mediciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La instalación y el mantenimiento de redes de fibra óptica requieren técnicas y herramientas de alta precisión para minimizar las pérdidas de señal.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conectores y Empalmes</h3>
+                        <p>Para unir tramos de fibra óptica se utilizan conectores (para uniones desmontables) o empalmes (para uniones permanentes).</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Conectores:</strong> Los más comunes son los tipos <strong>SC</strong> (Subscriber Connector), <strong>ST</strong> (Straight Tip) y <strong>LC</strong> (Lucent Connector). Requieren un pulido de alta precisión de sus caras (ferrules) para asegurar un contacto perfecto y minimizar las pérdidas por reflexión.</li>
+                            <li><strong>Empalmes:</strong> El <strong>empalme por fusión</strong> utiliza una máquina especializada (fusionadora) que alinea los núcleos de las fibras con micro-posicionadores y luego aplica un arco eléctrico para fundir y unir los extremos, logrando una unión de muy baja pérdida.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Empalme+por+Fusi%C3%B3n+de+Fibra+%C3%93ptica" alt="Empalme por Fusión" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principales Mediciones</h3>
+                        <p>La principal medida en un enlace de fibra óptica es la <strong>atenuación</strong>, que es la pérdida de potencia de la señal de luz a medida que viaja por la fibra. Se mide en decibelios por kilómetro (dB/km).</p>
+                        <div class="info-box">
+                           Las <strong>pérdidas</strong> totales en un enlace se deben a la atenuación intrínseca de la fibra, a las pérdidas en los empalmes (muy bajas) y a las pérdidas en los conectores (más significativas). Para medir estas pérdidas y localizar fallas se utiliza un instrumento llamado <strong>OTDR (Reflectómetro Óptico en el Dominio del Tiempo)</strong>.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Conectores y Empalmes de Fibra Óptica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

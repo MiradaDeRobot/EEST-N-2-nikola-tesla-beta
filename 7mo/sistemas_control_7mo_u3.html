@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Control U3: Control por Computadora y PLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Control por Computadora y PLC</h1>
+            <p class="text-lg text-gray-600">Sistemas de Control - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Control de Procesos Discretos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Control de Procesos Discretos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>proceso discreto</strong> es aquel en el que las variables de estado cambian en instantes de tiempo específicos, en lugar de hacerlo de forma continua. El control se basa en eventos y secuencias lógicas (ON/OFF, abierto/cerrado, etc.).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Computadora como Elemento de Control</h3>
+                        <p>La computadora (ya sea una PC industrial o un PLC) reemplaza la lógica de relés cableada por un programa de software. Esto ofrece una flexibilidad inmensa, permitiendo modificar la lógica de control sin cambiar el cableado físico.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Arquitectura+de+Control+por+Computador" alt="Arquitectura de Control por Computador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Arquitectura General:</strong> El sistema consta de una CPU, memoria, interfaces de entrada/salida (E/S) para conectar sensores y actuadores, y una interfaz hombre-máquina (HMI) para la supervisión.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Control mediante PLC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Control mediante PLC</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>Controlador Lógico Programable (PLC)</strong> es el dispositivo por excelencia para el control de procesos discretos en la industria. Es una computadora robusta, diseñada para soportar ambientes hostiles y para ser programada de forma intuitiva por personal técnico.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Arquitectura y Tipos de PLC</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>PLC Compacto:</strong> La CPU, la fuente de alimentación y los módulos de E/S están integrados en una sola carcasa. Son ideales para aplicaciones pequeñas y medianas.</li>
+                            <li><strong>PLC Modular:</strong> La CPU, la fuente y los módulos de E/S son componentes separados que se montan sobre un riel (rack). Permite una gran flexibilidad y escalabilidad para sistemas complejos.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Programación de PLC</h3>
+                        <p>Existen varios lenguajes de programación estandarizados (IEC 61131-3):</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Lenguaje+Ladder+(LD)" alt="Lenguaje Ladder" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Diagrama de Escalera (Ladder)</h4>
+                                <p class="text-base text-center">El más popular. Su simbología se basa en los circuitos de control con relés.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Diagrama+de+Bloques+de+Funciones+(FBD)" alt="Diagrama de Bloques de Funciones" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Diagrama de Bloques de Funciones (FBD)</h4>
+                                <p class="text-base text-center">Utiliza bloques que representan funciones lógicas y aritméticas, conectados entre sí.</p>
+                           </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Programación de PLC en Ladder &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U1: Análisis de Circuitos en CA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Análisis de Circuitos en Corriente Alterna (CA)</h1>
+            <p class="text-lg text-gray-600">Análisis de Modelos Circuitales - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Señales Senoidales y Dominio de la Frecuencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Señales Senoidales y Dominio de la Frecuencia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que en DC las tensiones y corrientes son constantes, en <strong>Corriente Alterna (CA)</strong> varían continuamente en el tiempo, generalmente de forma senoidal. Analizar estos circuitos requiere nuevas herramientas, ya que el comportamiento de capacitores e inductores depende de la frecuencia de la señal.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Del Dominio del Tiempo al Dominio de la Frecuencia</h3>
+                        <p>Analizar circuitos de CA usando ecuaciones diferenciales en el dominio del tiempo es muy complejo. Por ello, transformamos el problema al <strong>dominio de la frecuencia</strong>. En este dominio, las señales senoidales se representan mediante <strong>fasores</strong>, y la oposición al paso de la corriente se representa con la <strong>impedancia</strong>.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Este video introduce los conceptos de señales senoidales y el dominio de la frecuencia.</p>
+                            <a href="https://www.youtube.com/watch?v=s_891gSUnbA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Dominio del Tiempo y Frecuencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fasores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Fasores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>fasor</strong> es un número complejo que representa la amplitud y la fase de una onda senoidal. Nos permite convertir las ecuaciones diferenciales de los circuitos de CA en ecuaciones algebraicas simples, que son mucho más fáciles de resolver.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Representación Fasorial</h3>
+                        <p>Una señal senoidal en el dominio del tiempo, como \(v(t) = V_p \cos(\omega t + \phi)\), se representa en el dominio de la frecuencia por el fasor \(\mathbf{V} = V_p \angle \phi\).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Relaci%C3%B3n+Onda+Senoidal+-+Fasor" alt="Relación entre onda senoidal y fasor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">El fasor es un "vector" que gira a la frecuencia \(\omega\). Su longitud es la amplitud (\(V_p\)) y su ángulo inicial es la fase (\(\phi\)).</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=y2_j3_a-f2o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Fasores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Impedancia y Admitancia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Impedancia y Admitancia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En los circuitos de CA, la oposición total al paso de la corriente se llama <strong>impedancia (\(Z\))</strong>. Es el análogo de la resistencia en DC, pero es un número complejo que incluye tanto la resistencia como la oposición debida a capacitores e inductores (reactancia).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Resistencia, Reactancia e Impedancia</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Resistencia (\(R\)):</strong> La parte real de la impedancia. Disipa energía en forma de calor.</li>
+                            <li><strong>Reactancia (\(X\)):</strong> La parte imaginaria de la impedancia. Almacena y libera energía, pero no la disipa.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>Reactancia Inductiva (\(X_L\)):</strong> \(X_L = \omega L = 2\pi f L\). Aumenta con la frecuencia.</li>
+                                    <li><strong>Reactancia Capacitiva (\(X_C\)):</strong> \(X_C = -\frac{1}{\omega C} = -\frac{1}{2\pi f C}\). Disminuye con la frecuencia.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Impedancia (\(Z\)):</strong> \(Z = R + jX\). Su unidad es el Ohm (\(\Omega\)).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Admitancia, Conductancia y Susceptancia</h3>
+                        <p>Son los conceptos inversos. La <strong>admitancia (\(Y\))</strong> es la facilidad total al paso de la corriente (\(Y = 1/Z\)) y se mide en Siemens (S).</p>
+                         <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Conductancia (\(G\)):</strong> Es la parte real de la admitancia.</li>
+                            <li><strong>Susceptancia (\(B\)):</strong> Es la parte imaginaria de la admitancia.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <p class="mt-1">Este video explica en detalle los conceptos de reactancia e impedancia.</p>
+                        <a href="https://www.youtube.com/watch?v=O5-s9g-2s-w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Impedancia y Reactancia &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Circuitos RLC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Respuesta de Circuitos RLC</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Gracias a los fasores y la impedancia, podemos analizar circuitos RLC (que contienen resistencias, inductores y capacitores) de CA usando las mismas técnicas que para los circuitos de DC (Ley de Ohm, Leyes de Kirchhoff).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis de un Circuito RLC Serie</h3>
+                        <p>En un circuito RLC serie, la impedancia total es la suma de las impedancias individuales:</p>
+                        <div class="info-box">
+                            \(Z_{total} = Z_R + Z_L + Z_C = R + j\omega L + \frac{1}{j\omega C} = R + j(\omega L - \frac{1}{\omega C})\)
+                        </div>
+                        <div class="example-box">
+                            <strong>Ley de Ohm para CA:</strong> Una vez calculada la impedancia total, se puede encontrar la corriente fasorial del circuito: \(\mathbf{I} = \frac{\mathbf{V}}{Z_{total}}\). El resultado será un número complejo que nos dará la amplitud y la fase de la corriente.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=L5SkQz-m8vM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Circuitos RLC en CA &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

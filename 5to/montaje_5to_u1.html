@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U1: Sensores y Control con PLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Sensores y Control con PLC</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Sensores y Transductores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Aplicación de Sensores y Transductores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En la electrónica industrial y la automatización, los <strong>sensores</strong> son los "sentidos" del sistema. Son dispositivos capaces de detectar cambios en una variable física o química y convertirlos en una señal eléctrica que un sistema de control pueda interpretar.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Sensores Industriales</h3>
+                        <p>Existen muchos tipos de sensores, cada uno diseñado para una aplicación específica:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Sensor+Inductivo" alt="Sensor Inductivo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sensor Inductivo</h4>
+                                <p class="text-base">Detecta la presencia de objetos metálicos sin contacto físico.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Sensor+Capacitivo" alt="Sensor Capacitivo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sensor Capacitivo</h4>
+                                <p class="text-base">Detecta cualquier tipo de material (metálico, plástico, líquido, etc.).</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Sensor+Fotoel%C3%A9ctrico" alt="Sensor Fotoeléctrico" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Sensor Fotoeléctrico</h4>
+                                <p class="text-base">Utiliza un haz de luz para detectar la presencia o ausencia de un objeto.</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <strong>Salidas Analógicas vs. Digitales:</strong> Un sensor digital (como los de proximidad) tiene una salida de dos estados (ON/OFF). Un sensor analógico (como uno de temperatura o presión) proporciona una salida de tensión o corriente proporcional a la magnitud medida.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tipos de Sensores Industriales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección PLC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Programación e Implementación con PLC</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>Controlador Lógico Programable (PLC)</strong> es una computadora industrial diseñada para automatizar procesos. Es el cerebro de la mayoría de las máquinas y líneas de producción modernas, recibiendo información de los sensores y activando actuadores según la lógica programada.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Arquitectura y Lenguajes de Programación</h3>
+                        <p>Un PLC consta de una CPU, módulos de entrada (para conectar sensores), módulos de salida (para conectar actuadores) y una memoria de programa. Se programan utilizando lenguajes estandarizados, siendo el más común el <strong>Diagrama de Escalera (Ladder)</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Ejemplo+de+Programa+en+Ladder" alt="Programa en Ladder" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                            <p class="text-center text-sm mt-2 text-gray-600">El lenguaje Ladder utiliza una simbología basada en los circuitos de relés eléctricos.</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Introducción a la Programación de PLC &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Lógica de Mando y Control -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Lógica de Mando y Control</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En cualquier sistema automatizado, es crucial diferenciar entre el circuito de mando y el circuito de potencia.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Mando vs. Potencia</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Circuito de Mando (o de Control):</strong> Es el circuito de baja tensión y baja corriente que contiene la "lógica" del sistema. Incluye los sensores, los botones de comando y las entradas/salidas del PLC.</li>
+                            <li><strong>Circuito de Potencia (o de Fuerza):</strong> Es el circuito de alta tensión y alta corriente que alimenta a los actuadores (motores, resistencias, etc.). Es controlado por el circuito de mando a través de elementos de conmutación como relés o contactores.</li>
+                        </ul>
+                         <div class="example-box">
+                            <strong>Ejemplo: Arranque de un Motor</strong><br>
+                            La lógica de un arranque de motor (con un pulsador de marcha y uno de parada) se programa en el PLC (circuito de mando). Una salida del PLC activa la bobina de un <strong>contactor</strong>. Los contactos principales del contactor, que soportan alta corriente, son los que cierran el circuito de potencia para alimentar el motor.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U4: Propagación y Antenas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Propagación y Antenas</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Líneas de Transmisión -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Líneas de Transmisión</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>línea de transmisión</strong> es una estructura diseñada para guiar la energía de radiofrecuencia (RF) desde un punto a otro con la mínima pérdida posible. En un sistema de comunicaciones, conecta el transmisor con la antena y la antena con el receptor.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Impedancia Característica y Adaptación</h3>
+                        <p>Toda línea de transmisión tiene una <strong>impedancia característica (\(Z_0\))</strong>, que es la relación entre la tensión y la corriente de la onda que viaja por ella. Para una máxima transferencia de energía, la impedancia de la fuente, la línea y la carga (la antena) deben ser iguales. A este concepto se le llama <strong>adaptación de impedancias</strong>.</p>
+                        <div class="info-box">
+                            Si las impedancias no están adaptadas, parte de la energía se refleja de vuelta hacia el transmisor, creando <strong>ondas estacionarias</strong> y reduciendo la eficiencia del sistema.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Líneas de Transmisión &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Propagación de Ondas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Propagación de Ondas y Polarización</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una vez que la antena irradia la señal, esta viaja por el espacio en forma de onda electromagnética. El modo en que viaja depende de su frecuencia y de la atmósfera terrestre.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modos de Propagación</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Onda Terrestre:</strong> Sigue la curvatura de la Tierra. Es efectiva para bajas frecuencias (radio AM).</li>
+                            <li><strong>Onda Celeste (Ionósferica):</strong> La señal se refleja en la ionosfera, permitiendo comunicaciones a muy larga distancia. Es típica de la radio de onda corta (HF).</li>
+                            <li><strong>Onda Espacial (Línea de Vista):</strong> La señal viaja en línea recta. Se usa para altas frecuencias (FM, TV, microondas, satélites).</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Polarización Electromagnética</h3>
+                        <p>La <strong>polarización</strong> de una onda de radio describe la orientación del campo eléctrico de la onda con respecto a la superficie de la Tierra. Para una comunicación óptima, las antenas transmisora y receptora deben tener la misma polarización.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Polarizaci%C3%B3n+Vertical" alt="Polarización Vertical" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Polarización Vertical</h4>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Polarizaci%C3%B3n+Horizontal" alt="Polarización Horizontal" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Polarización Horizontal</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Antenas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Antenas: Tipos y Características</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>antena</strong> es un transductor que convierte la energía eléctrica guiada (de la línea de transmisión) en ondas electromagnéticas que se propagan por el espacio (transmisión), y viceversa (recepción).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos Comunes de Antenas</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Antena+Dipolo" alt="Antena Dipolo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Dipolo</h4>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Antena+Yagi-Uda" alt="Antena Yagi" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Yagi-Uda</h4>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Antena+Parab%C3%B3lica" alt="Antena Parabólica" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Parabólica</h4>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Características Principales</h3>
+                         <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Ganancia:</strong> Mide la capacidad de la antena para concentrar la energía en una dirección particular.</li>
+                            <li><strong>Directividad y Patrón de Radiación:</strong> El patrón de radiación es un gráfico que muestra cómo irradia la antena en todas las direcciones. Una antena directiva concentra la energía en un lóbulo principal estrecho.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tipos de Antenas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Cálculo de Enlaces -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Cálculo de Enlaces</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>El <strong>cálculo de un radioenlace</strong> (o balance de potencias) es un análisis que se realiza para determinar si la señal que llega al receptor tendrá la suficiente potencia para ser decodificada correctamente, superando las pérdidas del trayecto y el ruido.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Balance de Potencias (Link Budget)</h3>
+                        <p>Se suman todas las ganancias (en dB) y se restan todas las pérdidas (en dB) del sistema para calcular la potencia recibida.</p>
+                        <div class="info-box">
+                           <p class="text-center text-lg font-mono">\(P_{RX} = P_{TX} + G_{TX} - L_{TX} - L_{FS} - L_{M} + G_{RX} - L_{RX}\)</p>
+                           <ul class="list-disc list-inside mt-3 text-base">
+                               <li>\(P_{RX}\): Potencia Recibida</li>
+                               <li>\(P_{TX}\): Potencia del Transmisor</li>
+                               <li>\(G_{TX}, G_{RX}\): Ganancias de las Antenas</li>
+                               <li>\(L_{TX}, L_{RX}\): Pérdidas en los Cables</li>
+                               <li>\(L_{FS}\): Pérdida en el Espacio Libre (la mayor de todas)</li>
+                               <li>\(L_{M}\): Márgen de Desvanecimiento (para factores climáticos)</li>
+                           </ul>
+                        </div>
+                        <div class="info-box mt-4">
+                            El resultado (\(P_{RX}\)) debe ser mayor que la <strong>sensibilidad del receptor</strong> para que el enlace funcione.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U4: Puertos de Comunicación e Interfaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Puertos de Comunicación e Interfaces</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Puerto Paralelo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Manejo a Bajo Nivel del Puerto Paralelo</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El puerto paralelo (también conocido como LPT) fue diseñado originalmente para conectar impresoras, pero su simplicidad lo convirtió en el favorito para proyectos de control electrónico en la era de MS-DOS. Permite controlar 8 líneas de datos de forma simultánea.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Registros y Direcciones</h3>
+                        <p>El puerto paralelo se controla a través de tres registros, cada uno ubicado en una dirección de memoria de E/S específica:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Registro de Datos (Dirección Base, ej. 0x378):</strong> Es un registro de 8 bits que controla directamente el estado de los pines de datos (D0-D7). Escribir un byte en este registro pone los pines en alto o bajo.</li>
+                            <li><strong>Registro de Estado (Base + 1):</strong> Permite leer el estado de líneas de entrada como 'Busy' o 'Ack'.</li>
+                            <li><strong>Registro de Control (Base + 2):</strong> Permite controlar líneas de salida como 'Strobe' o 'Init'.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Pines+del+Puerto+Paralelo+(DB-25)" alt="Pines del Puerto Paralelo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Puerto Serie -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Manejo a Bajo Nivel del Puerto Serie (RS-232)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El puerto serie transmite los datos bit a bit, de forma secuencial, a través de un solo cable. La comunicación es <strong>asíncrona</strong>, lo que significa que no hay una señal de reloj compartida; la sincronización se logra mediante bits de inicio y de parada en cada trama de datos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La UART y la Norma RS-232</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>UART (Transmisor-Receptor Asíncrono Universal):</strong> Es el chip que gestiona la comunicación serie. Convierte los bytes de datos paralelos de la computadora en un flujo de bits serie para la transmisión, y viceversa para la recepción.</li>
+                            <li><strong>Norma RS-232:</strong> Es un estándar que define los niveles de tensión y las funciones de los pines para la comunicación serie.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Comunicación Simplex y Duplex</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Simplex:</strong> La comunicación ocurre en una sola dirección (ej. radiodifusión).</li>
+                            <li><strong>Half-Duplex:</strong> La comunicación puede ocurrir en ambas direcciones, pero no simultáneamente (ej. walkie-talkie).</li>
+                            <li><strong>Full-Duplex:</strong> La comunicación ocurre en ambas direcciones al mismo tiempo (ej. una llamada telefónica).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Puerto USB -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Manejo del Puerto USB</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>USB (Universal Serial Bus)</strong> es el estándar de conexión periférica dominante en la actualidad. Es un protocolo serie mucho más complejo que RS-232, que permite la conexión en caliente (hot-plug), la alimentación de dispositivos y altas velocidades de transferencia.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Manejo a Bajo y Alto Nivel</h3>
+                        <p>El manejo a bajo nivel del USB es extremadamente complejo y está fuera del alcance de la programación de aplicaciones estándar. Requiere la creación de <strong>drivers</strong> que se comunican con el controlador host del sistema operativo.</p>
+                        <div class="info-box">
+                           Para aplicaciones de control, el enfoque moderno es utilizar <strong>conversores USB a Serie</strong> (como los chips FTDI) o microcontroladores con interfaz USB nativa. Estos dispositivos actúan como un puente, permitiendo que la PC se comunique con el hardware externo a través de un puerto serie virtual, lo que simplifica enormemente la programación.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaces y Control -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Diseño de Interfaces y la PC como Herramienta de Control</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una <strong>interfaz</strong> es el circuito electrónico que se conecta entre el puerto de la computadora y el dispositivo que se quiere controlar. Su función es adaptar los niveles de tensión y corriente, y proteger el puerto de la PC.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ejemplo: Interfaz para Control de Relés</h3>
+                        <p>Para controlar un relé de 12V desde un puerto paralelo (que opera a 5V), se necesita una interfaz. El circuito típico utiliza un transistor como interruptor:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Interfaz+de+Potencia+con+Transistor" alt="Interfaz de Potencia con Transistor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           Un pin del puerto paralelo se conecta a la base del transistor a través de una resistencia limitadora. Cuando el pin se pone en alto (5V), el transistor se satura y permite que la corriente de una fuente de 12V fluya a través de la bobina del relé, activándolo. El diodo en paralelo con la bobina es crucial para proteger al transistor de los picos de tensión inversos al desactivar el relé.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Control con Puerto Paralelo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

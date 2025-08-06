@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U2: Estructura y Sintaxis de ANSI C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Estructura y Sintaxis de ANSI C</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Estructura de un Programa -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Estructura de un Programa en C</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Todo programa en C, sin importar su complejidad, sigue una estructura básica. Comprender sus partes es el primer paso para aprender a programar.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Programa Mínimo: "Hola, Mundo"</h3>
+                        <p>Este es el programa más simple que se puede escribir en C, y nos muestra las partes esenciales:</p>
+                        <div class="example-box">
+<pre><code>// 1. Directivas del pre-procesador
+#include &lt;stdio.h&gt;
+
+// 2. Función principal (main)
+int main() {
+    // 3. Cuerpo de la función
+    printf("Hola, Mundo\n"); // Instrucción
+    
+    // 4. Valor de retorno
+    return 0;
+}
+</code></pre>
+                        </div>
+                        <ol class="list-decimal list-inside space-y-3 mt-4">
+                            <li><strong>Directivas del Pre-procesador:</strong> Instrucciones que se ejecutan antes de la compilación. `#include <stdio.h>` le dice al compilador que incluya la biblioteca estándar de entrada/salida.</li>
+                            <li><strong>Función `main()`:</strong> Es el punto de entrada obligatorio de todo programa en C. La ejecución siempre comienza aquí.</li>
+                            <li><strong>Cuerpo de la Función:</strong> Encerrado entre llaves `{}`, contiene las instrucciones que se ejecutarán. Cada instrucción termina con un punto y coma `;`.</li>
+                            <li><strong>Valor de Retorno:</strong> La instrucción `return 0;` indica al sistema operativo que el programa terminó correctamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de Datos, Variables y Constantes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Tipos de Datos, Variables y Constantes</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para poder trabajar con información, necesitamos almacenarla en la memoria de la computadora. Las variables y constantes son los contenedores que usamos para ello, y los tipos de datos le dicen al compilador qué clase de información vamos a guardar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Datos Fundamentales</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>`int`</strong>: Para almacenar números enteros (sin decimales).</li>
+                            <li><strong>`float`</strong>: Para números de punto flotante (con decimales) de precisión simple.</li>
+                            <li><strong>`double`</strong>: Para números de punto flotante de doble precisión (más decimales y rango más amplio que float).</li>
+                            <li><strong>`char`</strong>: Para almacenar un único carácter (letra, número o símbolo).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Variables y Constantes</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Variables:</strong> Son espacios de memoria con un nombre, cuyo valor puede cambiar durante la ejecución del programa. Se deben declarar antes de usarse: `tipo_de_dato nombre_variable;`. Ejemplo: `int edad = 25;`</li>
+                            <li><strong>Constantes:</strong> Son valores que no pueden ser modificados una vez definidos. Se declaran con la palabra clave `const`. Ejemplo: `const float PI = 3.1416;`</li>
+                            <li><strong>Ámbito (Scope):</strong> Las variables declaradas dentro de una función (como `main`) son <strong>locales</strong> a esa función. Las declaradas fuera de cualquier función son <strong>globales</strong> y accesibles desde todo el programa.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Operadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Operadores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los operadores son símbolos que le indican al compilador que realice operaciones matemáticas o lógicas específicas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Operadores</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Aritméticos:</strong> `+` (suma), `-` (resta), `*` (multiplicación), `/` (división), `%` (módulo o resto de la división).</li>
+                            <li><strong>Relacionales:</strong> Se usan para comparar valores. Devuelven 1 (verdadero) o 0 (falso). `==` (igual a), `!=` (distinto de), `<` (menor que), `>` (mayor que), `<=` (menor o igual que), `>=` (mayor o igual que).</li>
+                            <li><strong>Lógicos:</strong> Se usan para combinar expresiones lógicas. `&&` (Y lógico), `||` (O lógico), `!` (NO lógico).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=12-Q_2a-4oQ" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Operadores en C &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Pre-procesador y Bibliotecas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Pre-procesador y Bibliotecas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>El pre-procesador es una herramienta que se ejecuta antes que el compilador. Su trabajo es procesar directivas especiales en el código fuente que comienzan con el símbolo `#`.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Directivas y Bibliotecas</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>`#include`</strong>: Es la directiva más común. Le dice al pre-procesador que copie y pegue el contenido de otro archivo (llamado archivo de cabecera o header, con extensión `.h`) en el código fuente.</li>
+                            <li><strong>Bibliotecas (Libraries):</strong> Son colecciones de funciones pre-compiladas que podemos usar en nuestros programas. Para usar una función de una biblioteca, primero debemos incluir su archivo de cabecera correspondiente.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>Biblioteca Estándar:</strong> Viene con el compilador de C. Ejemplos: `<stdio.h>` para entrada/salida (`printf`, `scanf`), `<math.h>` para funciones matemáticas (`sqrt`, `pow`).</li>
+                                    <li><strong>Biblioteca de Usuario:</strong> Son archivos `.h` que nosotros mismos creamos para organizar nuestro código en módulos reutilizables.</li>
+                                </ul>
+                            </li>
+                            <li><strong>`#define`</strong>: Se usa para definir constantes simbólicas y macros. El pre-procesador reemplaza todas las ocurrencias de la constante por su valor antes de la compilación. Ejemplo: `#define PI 3.14159`</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

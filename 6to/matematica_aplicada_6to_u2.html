@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Aplicada U2: Transformadas y Funciones Especiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Transformadas y Funciones Especiales</h1>
+            <p class="text-lg text-gray-600">Matemática Aplicada - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Funciones Especiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Funciones Especiales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En ingeniería y física, existen ciertas funciones que, aunque no son continuas o derivables en todos sus puntos, son extremadamente útiles para modelar fenómenos del mundo real, como interruptores, impulsos o señales abruptas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Función Escalonada Unitaria (Heaviside)</h3>
+                        <p>La función escalón unitario, denotada como \(u(t)\), se utiliza para representar una señal que se "enciende" en un momento determinado y permanece encendida. Se define como:</p>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\( u(t) = \begin{cases} 0 & \text{si } t < 0 \\ 1 & \text{si } t \geq 0 \end{cases} \)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Función Impulso Unitario (Delta de Dirac)</h3>
+                        <p>La función Delta de Dirac, \(\delta(t)\), es un concepto más abstracto. Representa un "impulso" de duración infinitesimalmente corta pero de área total igual a 1. Se utiliza para modelar fenómenos instantáneos, como un golpe o un cortocircuito.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Transformada de Laplace -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Transformada de Laplace</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>Transformada de Laplace</strong> es una poderosa herramienta matemática que convierte ecuaciones diferenciales (en el dominio del tiempo, \(t\)) en ecuaciones algebraicas (en el dominio de la frecuencia compleja, \(s\)). Esto simplifica enormemente el análisis de circuitos, especialmente para estudiar su respuesta transitoria.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definición y Aplicación</h3>
+                        <p>La transformada de una función \(f(t)\) se denota como \(F(s)\).</p>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(\mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} e^{-st} f(t) \,dt\)</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Uso en Circuitos:</strong> Los componentes de un circuito se pueden representar en el dominio 's' por su impedancia: <br>
+                            - Resistencia: \(R \rightarrow R\) <br>
+                            - Inductor: \(L \rightarrow sL\) <br>
+                            - Capacitor: \(C \rightarrow \frac{1}{sC}\) <br>
+                            Con estas transformaciones, un circuito RLC se puede analizar con las mismas reglas del álgebra que un circuito resistivo simple.
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transformada Inversa de Laplace</h3>
+                        <p>Una vez que se resuelve el problema algebraico en el dominio 's', se utiliza la <strong>transformada inversa (\(\mathcal{L}^{-1}\))</strong> para convertir la solución de vuelta al dominio del tiempo y obtener la respuesta real del circuito.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Transformada de Laplace &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Transformada de Fourier -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Transformada de Fourier</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Transformada de Fourier</strong> es otra herramienta matemática fundamental, pero con un propósito diferente: descompone una señal en el dominio del tiempo en las frecuencias que la componen. Nos permite pasar del dominio del tiempo al <strong>dominio de la frecuencia</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis Espectral</h3>
+                        <p>El resultado de la Transformada de Fourier es el <strong>espectro</strong> de la señal, un gráfico que muestra qué "cantidad" de cada frecuencia está presente en la señal original.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Se%C3%B1al+en+el+Tiempo+vs.+Espectro+en+Frecuencia" alt="Dominio del Tiempo vs. Dominio de la Frecuencia" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                           <strong>Aplicaciones:</strong> Es esencial en el procesamiento de señales, las comunicaciones (para analizar el ancho de banda), el análisis de audio (ecualizadores) y el filtrado de señales.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Transformada de Fourier &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Aplicada U3: Probabilidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Probabilidad</h1>
+            <p class="text-lg text-gray-600">Matemática Aplicada - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Modelos Matemáticos y Espacios Muestrales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Modelos Matemáticos y Espacios Muestrales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La teoría de la probabilidad nos proporciona <strong>modelos matemáticos</strong> para analizar experimentos o fenómenos aleatorios, es decir, aquellos en los que no podemos predecir el resultado con certeza. El primer paso para construir un modelo es definir todos los resultados posibles.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Experimento Aleatorio y Espacio Muestral</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Experimento Aleatorio:</strong> Es cualquier proceso que puede repetirse bajo las mismas condiciones, pero cuyo resultado no se conoce de antemano.</li>
+                            <li><strong>Espacio Muestral (\(S\)):</strong> Es el conjunto de <strong>todos</strong> los resultados posibles de un experimento aleatorio.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplos:</strong><br>
+                            - <strong>Lanzar un dado:</strong> El espacio muestral es \(S = \{1, 2, 3, 4, 5, 6\}\).<br>
+                            - <strong>Lanzar una moneda:</strong> El espacio muestral es \(S = \{\text{Cara, Cruz}\}\).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sucesos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Sucesos y Álgebra de Sucesos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>suceso</strong> (o evento) es cualquier subconjunto del espacio muestral. Es decir, es uno o más de los posibles resultados del experimento.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Sucesos y Operaciones</h3>
+                        <p>El <strong>álgebra de sucesos</strong> nos permite combinar y operar con diferentes eventos.</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Diagrama+de+Venn+con+Uni%C3%B3n+e+Intersecci%C3%B3n" alt="Diagrama de Venn" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Suceso Elemental:</strong> Un resultado único. Ejemplo: "Obtener un 5" al lanzar un dado.</li>
+                            <li><strong>Suceso Compuesto:</strong> Formado por varios resultados. Ejemplo: "Obtener un número par" (\(\{2, 4, 6\}\)).</li>
+                            <li><strong>Unión (\(A \cup B\)):</strong> Ocurre si ocurre A, o si ocurre B, o ambos.</li>
+                            <li><strong>Intersección (\(A \cap B\)):</strong> Ocurre si ocurren A y B simultáneamente.</li>
+                            <li><strong>Suceso Complementario (\(\overline{A}\)):</strong> Ocurre si <strong>no</strong> ocurre A.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Espacios Muestrales y Sucesos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Definición de Probabilidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Definición de Probabilidad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La probabilidad es un número entre 0 y 1 que cuantifica la posibilidad de que ocurra un suceso. Un valor de 0 significa que es imposible que ocurra, y un valor de 1 significa que es seguro que ocurrirá.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definición Clásica de Laplace</h3>
+                        <p>Cuando todos los resultados de un experimento son igualmente probables, la probabilidad de un suceso A se calcula como:</p>
+                        <div class="info-box text-center">
+                           <p class="text-2xl font-mono">\(P(A) = \frac{\text{Número de casos favorables a A}}{\text{Número total de casos posibles}}\)</p>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> ¿Cuál es la probabilidad de obtener un número mayor que 4 al lanzar un dado?<br>
+                            - Casos favorables (obtener 5 o 6): 2 <br>
+                            - Casos posibles (1, 2, 3, 4, 5, 6): 6 <br>
+                            - Probabilidad: \(P(\text{mayor que 4}) = \frac{2}{6} = \frac{1}{3} \approx 0.33\)
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definición Axiomática de Probabilidad</h3>
+                        <p>Esta es una definición más formal y general que no depende de que los casos sean igualmente probables. Se basa en tres axiomas (postulados):</p>
+                         <ul class="list-decimal list-inside space-y-3">
+                            <li><strong>Axioma 1 (No negatividad):</strong> La probabilidad de cualquier suceso es siempre mayor o igual a cero. \(P(A) \ge 0\).</li>
+                            <li><strong>Axioma 2 (Certidumbre):</strong> La probabilidad del espacio muestral completo es 1. \(P(S) = 1\). (Es seguro que ocurrirá alguno de los resultados posibles).</li>
+                            <li><strong>Axioma 3 (Aditividad):</strong> Si dos sucesos A y B son mutuamente excluyentes (no pueden ocurrir a la vez), la probabilidad de que ocurra uno u otro es la suma de sus probabilidades. \(P(A \cup B) = P(A) + P(B)\).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Axiomas de Probabilidad &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

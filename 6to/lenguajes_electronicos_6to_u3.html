@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U3: Interrupciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Interrupciones</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Concepto de Interrupciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Concepto y Fundamento de las Interrupciones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>interrupción</strong> es una señal que recibe el procesador (CPU) para indicarle que ha ocurrido un evento que requiere su atención inmediata. Cuando la CPU recibe una interrupción, suspende la tarea que está ejecutando, guarda su estado actual y salta a ejecutar una rutina especial llamada <strong>Rutina de Servicio de Interrupción (ISR)</strong> para atender el evento.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interrupciones Enmascarables y No Enmascarables</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Interrupciones Enmascarables (IRQ):</strong> Son la mayoría. El programador puede "enmascararlas" o ignorarlas temporalmente si está ejecutando una tarea muy crítica que no puede ser interrumpida. Ejemplo: la pulsación de una tecla o la llegada de datos por el puerto serie.</li>
+                            <li><strong>Interrupciones No Enmascarables (NMI):</strong> No pueden ser ignoradas por el software. Están reservadas para eventos de alta prioridad que deben ser atendidos sí o sí, como un error de paridad en la memoria o una falla de alimentación.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Vector de Interrupciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Vector de Interrupciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Cuando ocurre una interrupción, ¿cómo sabe la CPU a qué dirección de memoria debe saltar para ejecutar la ISR correcta? La respuesta está en la <strong>Tabla de Vectores de Interrupción (IVT)</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p>La IVT es una tabla ubicada en las primeras posiciones de la memoria RAM que contiene las direcciones de memoria de todas las Rutinas de Servicio de Interrupción. Cada interrupción tiene un número asignado (de 0 a 255 en la arquitectura x86). Este número sirve como un índice para buscar en la tabla la dirección de la rutina que debe ejecutar.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Tabla+de+Vectores+de+Interrupci%C3%B3n+(IVT)" alt="Vector de Interrupciones" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de Interrupciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Interrupciones del BIOS y de Software</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las interrupciones no solo son generadas por el hardware, sino que también pueden ser invocadas por el propio software.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interrupciones del BIOS</h3>
+                        <p>El <strong>BIOS</strong> (Sistema Básico de Entrada/Salida) es un firmware almacenado en la ROM de la placa madre que proporciona un conjunto de rutinas de bajo nivel para interactuar con el hardware estándar (teclado, disco, video, etc.). Estas rutinas se invocan a través de interrupciones de software.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interrupciones de Software</h3>
+                        <p>Son interrupciones generadas deliberadamente por un programa mediante una instrucción especial (en x86, la instrucción es `INT`). Al ejecutar `INT n`, el procesador detiene el programa y salta a la ISR correspondiente al número `n` en el vector de interrupciones. Era el método estándar para que los programas solicitaran servicios al BIOS o al sistema operativo en entornos como MS-DOS.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Caso de Estudio -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Caso de Estudio: Interrupciones de Video (INT 10H)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interrupción de software número <strong>10H</strong> (el 16 en hexadecimal) era la puerta de entrada a todos los servicios de video del BIOS en la era de MS-DOS. Permitía a los programas controlar la pantalla en modo texto y gráfico sin necesidad de conocer los detalles del hardware de la tarjeta de video.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones y Estructuras Asociadas</h3>
+                        <p>Para usar la INT 10H, se debían cargar valores específicos en los registros de la CPU antes de llamar a la interrupción. El valor en el registro `AH` indicaba la función a realizar.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Función 00H (Set Video Mode):</strong> Se cargaba en `AL` el número del modo de video deseado (ej. 03H para modo texto 80x25 a 16 colores).</li>
+                            <li><strong>Función 02H (Set Cursor Position):</strong> Se cargaban en `DH` y `DL` las coordenadas de fila y columna para mover el cursor.</li>
+                            <li><strong>Función 09H (Write Character and Attribute):</strong> Se usaba para escribir un carácter en la posición actual del cursor con un color específico.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo en Ensamblador (conceptual):</strong>
+<pre><code>MOV AH, 09h     ; Cargar el número de la función "Escribir Carácter" en AH
+MOV AL, 'A'     ; Cargar el carácter 'A' en AL
+MOV BH, 0       ; Número de página de video
+MOV BL, 0Fh     ; Atributo: texto blanco brillante sobre fondo negro
+MOV CX, 1       ; Número de veces a repetir el carácter
+INT 10h         ; Llamar a la interrupción de video
+</code></pre>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Interrupciones del BIOS &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

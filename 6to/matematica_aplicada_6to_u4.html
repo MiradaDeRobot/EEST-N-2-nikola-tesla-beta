@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Aplicada U4: Estadística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Estadística</h1>
+            <p class="text-lg text-gray-600">Matemática Aplicada - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Objeto de la Estadística -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Objeto de la Estadística, Población y Muestra</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>estadística</strong> es la ciencia que se ocupa de la recolección, organización, análisis, interpretación y presentación de datos. Su objetivo es transformar datos en información útil para la toma de decisiones.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Población y Muestra</h3>
+                        <p>Son dos conceptos fundamentales para entender cómo funciona la estadística.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Poblaci%C3%B3n+y+Muestra" alt="Diagrama de Población y Muestra" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Población:</strong> Es el conjunto completo de todos los individuos, objetos o eventos que se desea estudiar. Puede ser finita (ej. todos los tornillos producidos en una fábrica en un día) o infinita.</li>
+                            <li><strong>Muestra:</strong> Es un subconjunto representativo de la población. Como estudiar una población entera suele ser imposible o muy costoso, se analiza una muestra para obtener conclusiones sobre la población total.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ramas de la Estadística -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Estadística Descriptiva e Inferencia Estadística</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La estadística se divide en dos grandes ramas, cada una con un propósito diferente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estadística Descriptiva</h3>
+                        <p>Se encarga de resumir y describir las características de un conjunto de datos. No hace generalizaciones más allá de los datos analizados. Utiliza medidas como la media, la mediana, la moda y la desviación estándar, así como gráficos (diagramas de barras, histogramas, etc.).</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Inferencia Estadística</h3>
+                        <p>Va un paso más allá. Utiliza los datos de una muestra para hacer <strong>inferencias</strong>, es decir, para sacar conclusiones y hacer predicciones sobre la población total. Se basa fuertemente en la teoría de la probabilidad para cuantificar la certeza de sus conclusiones.</p>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre Estadística Descriptiva e Inferencial &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Diagramas y Distribuciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Diagramas y Distribuciones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La visualización de datos es clave para entenderlos. Los diagramas estadísticos nos permiten ver patrones y tendencias de forma rápida.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Diagramas</h3>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Diagrama+de+Barras" alt="Diagrama de Barras" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Diagrama de Barras</h4>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Histograma" alt="Histograma" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Histograma</h4>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Diagrama+Circular" alt="Diagrama Circular" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Diagrama Circular</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Distribuciones de Frecuencia</h3>
+                        <p>Una distribución de frecuencia muestra cuántas veces ocurre cada valor en un conjunto de datos. Cuando se grafica, a menudo sigue patrones reconocibles, como la <strong>distribución normal</strong> (o campana de Gauss), que es fundamental en estadística.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Inferencia Estadística -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Inferencia Estadística y Estimaciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La inferencia estadística utiliza la teoría de la probabilidad para hacer afirmaciones sobre una población a partir de los datos de una muestra, cuantificando siempre la incertidumbre de dichas afirmaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estimaciones</h3>
+                        <p>Una <strong>estimación</strong> es el proceso de utilizar un estadístico de la muestra (como la media de la muestra) para aproximar un parámetro de la población (la media real de la población).</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Estimación Puntual:</strong> Proporciona un único valor como la mejor "adivinanza" para el parámetro.</li>
+                            <li><strong>Estimación por Intervalo:</strong> Proporciona un rango de valores, llamado <strong>intervalo de confianza</strong>, dentro del cual es probable que se encuentre el verdadero parámetro de la población, junto con un nivel de confianza (ej. 95%).</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Inferencia Estadística &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

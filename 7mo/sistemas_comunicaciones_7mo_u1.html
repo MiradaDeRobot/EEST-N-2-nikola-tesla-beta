@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U1: Modulación Digital Avanzada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Modulación Digital Avanzada</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Banda Lateral Única -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas de Comunicación de Banda Lateral Única (SSB)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Banda Lateral Única</strong> (SSB, por sus siglas en inglés) es una forma de modulación en amplitud (AM) muy eficiente. En una transmisión de AM convencional, la señal modulada contiene la portadora y dos bandas laterales (superior e inferior) que son simétricas y contienen la misma información. La SSB transmite solo una de las bandas laterales, eliminando la portadora y la otra banda.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ventajas de la SSB</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Eficiencia en Ancho de Banda:</strong> Ocupa menos de la mitad del ancho de banda que una señal de AM, permitiendo más transmisiones en el mismo espectro.</li>
+                            <li><strong>Eficiencia en Potencia:</strong> Toda la potencia de transmisión se concentra en la banda lateral que lleva la información, logrando un mayor alcance con la misma potencia.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Espectro+de+AM+vs.+SSB" alt="Espectro de AM vs. SSB" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Modulación SSB &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Modulación Digital -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Modulación Digital: PSK y QAM</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La modulación digital se utiliza para transmitir datos binarios (1s y 0s). Las técnicas más avanzadas, como PSK y QAM, permiten transmitir múltiples bits por cada cambio de estado de la portadora (símbolo), aumentando la velocidad de transmisión.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación por Desplazamiento de Fase (PSK)</h3>
+                        <p>En PSK, la información se codifica en la <strong>fase</strong> de la onda portadora. Cada valor de fase representa un símbolo o un grupo de bits.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Diagrama+de+Constelaci%C3%B3n+8-PSK" alt="Diagrama de Constelación 8-PSK" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>BPSK (Binary PSK):</strong> Usa dos fases (0° y 180°) para transmitir 1 bit por símbolo.</li>
+                            <li><strong>QPSK (Quadrature PSK):</strong> Usa cuatro fases (0°, 90°, 180°, 270°) para transmitir 2 bits por símbolo.</li>
+                            <li><strong>8-PSK y 16-PSK:</strong> Usan 8 y 16 fases, respectivamente, para transmitir 3 y 4 bits por símbolo.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación de Amplitud en Cuadratura (QAM)</h3>
+                        <p>QAM es una técnica aún más eficiente que modula tanto la <strong>amplitud como la fase</strong> de la portadora. Esto permite empaquetar aún más bits en cada símbolo.</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Diagrama+de+Constelaci%C3%B3n+16-QAM" alt="Diagrama de Constelación 16-QAM" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           En <strong>16-QAM</strong>, hay 16 combinaciones posibles de amplitud y fase, lo que permite transmitir 4 bits por símbolo. Es una técnica muy utilizada en Wi-Fi, televisión digital y módems de internet.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Errores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Errores en la Comunicación Digital</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En el mundo real, el ruido y las interferencias pueden corromper la señal transmitida, haciendo que el receptor interprete un 1 como un 0, o viceversa. Esto se conoce como un <strong>error de bit</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tasa de Error de Bit (BER)</h3>
+                        <p>La <strong>BER (Bit Error Rate)</strong> es la medida de la calidad de un sistema de comunicación digital. Se define como el número de bits erróneos recibidos dividido por el número total de bits transmitidos.</p>
+                        <div class="info-box">
+                           Las modulaciones más complejas (como 16-QAM) son más eficientes en el uso del ancho de banda, pero también son más susceptibles al ruido. Esto significa que, para una misma relación señal-ruido, 16-QAM tendrá una BER más alta que QPSK. Existe un compromiso entre la velocidad de transmisión y la robustez frente al ruido.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Modulación Digital PSK y QAM &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

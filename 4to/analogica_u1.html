@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U1: Instrumentación y Seguridad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Instrumentación y Seguridad</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Instrumentos de Medición -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Instrumentos de Medición</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>En electrónica, medir es fundamental para analizar, diagnosticar y diseñar circuitos. Los instrumentos de medición nos permiten cuantificar magnitudes eléctricas como tensión, corriente y resistencia, que son invisibles al ojo humano.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Multímetro (o Téster)</h3>
+                        <p>Es la herramienta más versátil y común en cualquier taller de electrónica. Combina varias funciones de medición en un solo dispositivo. Existen dos tipos principales:</p>
+                        
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Mult%C3%ADmetro+Digital+(DMM)" alt="Multímetro Digital" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center text-sm mt-2 text-gray-600"><strong>Multímetro Digital (DMM):</strong> preciso y con pantalla LCD.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Mult%C3%ADmetro+Anal%C3%B3gico" alt="Multímetro Analógico" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center text-sm mt-2 text-gray-600"><strong>Multímetro Analógico:</strong> con aguja y escala graduada.</p>
+                            </div>
+                        </div>
+
+                        <h4 class="text-xl font-semibold mt-8 mb-2">Cómo Medir Correctamente</h4>
+                        <ul class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Tensión (Voltaje):</strong> Se mide <strong>en paralelo</strong> al componente. El cable rojo (positivo) se conecta al punto de mayor potencial y el negro (común) al de menor potencial.</li>
+                            <li><strong>Corriente (Amperaje):</strong> Se mide <strong>en serie</strong>. Se debe abrir el circuito e intercalar el multímetro para que la corriente fluya a través de él. ¡Medir corriente en paralelo puede destruir el fusible del multímetro o el propio instrumento!</li>
+                            <li><strong>Resistencia (Ohms):</strong> Se mide <strong>en paralelo</strong> al componente, pero es <strong>imprescindible</strong> que el componente esté <strong>desenergizado</strong> y, preferiblemente, aislado del resto del circuito para evitar lecturas incorrectas.</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <strong>Conceptos Clave: Precisión y Resolución</strong><br>
+                            - <strong>Precisión:</strong> Qué tan cerca está el valor medido del valor real. Se expresa como un porcentaje de error.<br>
+                            - <strong>Resolución:</strong> El cambio más pequeño en la magnitud que el instrumento puede detectar. En un DMM, se relaciona con el número de dígitos en la pantalla.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Aprende a usar un multímetro digital desde cero.</p>
+                            <a href="https://www.youtube.com/watch?v=7_5gS9Y_WqM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver tutorial de Multímetro Digital &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Osciloscopio</h3>
+                        <p>El osciloscopio es un instrumento que permite visualizar señales eléctricas en función del tiempo. En lugar de mostrar solo un número, dibuja una gráfica de la señal en su pantalla, lo que nos permite analizar su forma, amplitud, frecuencia y otros parámetros.</p>
+                        
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Pantalla+de+un+Osciloscopio" alt="Osciloscopio mostrando una onda senoidal" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+
+                        <h4 class="text-xl font-semibold mt-8 mb-2">Controles Fundamentales</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Eje Vertical (Tensión):</strong> La perilla `Volts/Div` ajusta la escala de voltaje. Si está en 1V/Div, cada división vertical de la cuadrícula equivale a 1 Volt.</li>
+                            <li><strong>Eje Horizontal (Tiempo):</strong> La perilla `Time/Div` ajusta la base de tiempo. Si está en 1ms/Div, cada división horizontal equivale a 1 milisegundo.</li>
+                            <li><strong>Trigger (Disparo):</strong> Esencial para estabilizar la imagen de señales periódicas. Le indica al osciloscopio en qué punto de la señal (nivel de voltaje y pendiente) debe empezar a dibujar la traza.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Introducción al funcionamiento y uso básico del osciloscopio.</p>
+                            <a href="https://www.youtube.com/watch?v=C_Qh_1_tGvE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Osciloscopios &rarr;
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fuente de Alimentación de Laboratorio</h3>
+                        <p>Es un equipo que proporciona una tensión y corriente continua (DC) regulada y ajustable. Es fundamental para alimentar los circuitos que diseñamos y probamos, permitiéndonos controlar con precisión la energía que reciben.</p>
+                        
+                        <div class="mt-4">
+                            <img src="https://placehold.co/450x300/E0F2FE/0891B2?text=Fuente+de+Alimentaci%C3%B3n+de+Laboratorio" alt="Fuente de Alimentación de Laboratorio" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-md">
+                        </div>
+
+                        <h4 class="text-xl font-semibold mt-8 mb-2">Características Principales</h4>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Ajuste de Tensión (CV - Constant Voltage):</strong> Permite fijar el voltaje de salida deseado (ej. 5V, 12V). La fuente mantendrá este voltaje constante mientras la carga no demande más corriente de la permitida.</li>
+                            <li><strong>Límite de Corriente (CC - Constant Current):</strong> Permite establecer una corriente máxima de seguridad. Si el circuito intenta consumir más de este límite (por ejemplo, debido a un cortocircuito), la fuente reducirá automáticamente el voltaje para no superar la corriente fijada, protegiendo así el circuito.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Generadores de Señales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Generadores de Señales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras los instrumentos de medición "leen" señales, los generadores las "crean". Son equipos que producen señales eléctricas con formas de onda, frecuencias y amplitudes controladas. Se usan para inyectar una señal conocida a la entrada de un circuito y observar su respuesta en la salida con un osciloscopio.</p>
+                    
+                    <div class="mt-4">
+                        <img src="https://placehold.co/450x300/E0F2FE/0891B2?text=Generador+de+Funciones" alt="Generador de Funciones" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-md">
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-8">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Señales y Aplicaciones</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Onda Senoidal:</strong> La forma de onda más pura, sin armónicos. Fundamental para probar la respuesta en frecuencia de circuitos de audio, filtros y amplificadores.</li>
+                            <li><strong>Onda Cuadrada:</strong> Alterna entre un valor máximo y uno mínimo. Esencial para probar la respuesta transitoria de circuitos y para simular señales digitales (relojes, datos).</li>
+                            <li><strong>Onda Triangular/Diente de Sierra:</strong> Sube y baja linealmente. Se usa en generadores, circuitos de barrido y para probar la linealidad de los sistemas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Herramientas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Herramientas del Taller</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Además de los instrumentos, un buen trabajo en electrónica requiere de herramientas manuales adecuadas para el montaje, la soldadura y la depuración de circuitos.</p>
+                    
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Estaci%C3%B3n+de+Soldadura" alt="Estación de Soldadura" class="w-full h-auto rounded-lg shadow-md">
+                            <p class="text-center text-sm mt-2 text-gray-600">Estación de soldadura con control de temperatura.</p>
+                        </div>
+                        <div>
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Protoboard" alt="Protoboard" class="w-full h-auto rounded-lg shadow-md">
+                            <p class="text-center text-sm mt-2 text-gray-600">Protoboard para montaje rápido de circuitos.</p>
+                        </div>
+                    </div>
+
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-8">
+                        <h3 class="text-2xl font-semibold mb-3">Herramientas Esenciales</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Estación de Soldadura:</strong> Un soldador con control de temperatura es superior a un cautín simple, ya que permite ajustar la temperatura ideal para cada tipo de soldadura y componente, evitando dañar los más sensibles.</li>
+                            <li><strong>Herramientas de Desoldadura:</strong> La <strong>bomba desoldante</strong> (o "chupaestaño") succiona el estaño derretido, mientras que la <strong>malla desoldante</strong> lo absorbe por capilaridad. Son indispensables para corregir errores o reemplazar componentes.</li>
+                            <li><strong>Pinzas y Alicates:</strong> Un buen juego incluye alicates de corte al ras (para cortar terminales de componentes), de punta fina (para sujetar y doblar terminales), y pelacables automáticos o manuales.</li>
+                            <li><strong>Protoboard (Placa de Pruebas):</strong> Permite montar circuitos de forma temporal sin soldar. Es crucial entender sus conexiones internas: las filas largas (buses) se usan para alimentación (+V y GND) y las filas cortas (pistas) para interconectar los componentes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Normas de Seguridad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Normas de Seguridad en el Taller</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La seguridad es la prioridad número uno. Trabajar con electricidad implica riesgos invisibles pero serios que deben ser minimizados siguiendo normas y procedimientos estrictos.</p>
+                    <div class="warning-box">
+                        <h3 class="text-2xl font-semibold mb-3 text-amber-700">¡Atención! Riesgo Eléctrico</h3>
+                        <p>El cuerpo humano es un conductor. Una corriente de apenas 10mA puede causar contracciones musculares, y corrientes mayores pueden ser fatales. La clave es evitar que la corriente circule a través del cuerpo, especialmente por el corazón.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Regla de una mano:</strong> Al trabajar en circuitos energizados (solo cuando sea estrictamente necesario), mantén una mano en el bolsillo o detrás de la espalda. Esto evita que la corriente pueda cruzar tu pecho.</li>
+                            <li><strong>Transformador de Aislación:</strong> Es un dispositivo que aísla galvánicamente la red eléctrica del circuito de prueba, aumentando enormemente la seguridad.</li>
+                            <li><strong>Puesta a Tierra (GND):</strong> La carcasa metálica de todos los instrumentos debe estar conectada a tierra para que, en caso de una falla interna, la corriente se desvíe a tierra y no a través del usuario.</li>
+                            <li><strong>Disyuntor Diferencial (RCD):</strong> Es un interruptor que corta la alimentación si detecta una pequeña fuga de corriente a tierra (como la que ocurriría si la corriente pasa por una persona). Es un elemento de seguridad vital.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Seguridad contra Descargas Electroestáticas (ESD)</h3>
+                        <p>Muchos componentes electrónicos (como microcontroladores y ciertos transistores) son extremadamente sensibles a la electricidad estática que nuestro cuerpo acumula. Una pequeña descarga, imperceptible para nosotros, puede destruirlos permanentemente.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Pulsera Antiestática:</strong> Se conecta a un punto de tierra y descarga de forma segura la estática de tu cuerpo.</li>
+                            <li><strong>Manta Antiestática:</strong> Proporciona una superficie de trabajo segura para los componentes sensibles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

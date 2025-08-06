@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U5: Sistemas Avanzados y Fibra Óptica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Sistemas Avanzados y Fibra Óptica</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Protocolos, Multicanalización y Conmutación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Protocolos, Multicanalización y Conmutación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para que dos dispositivos puedan comunicarse de manera efectiva, no basta con tener un canal físico. Necesitan un conjunto de reglas y convenciones que gobiernen el intercambio de información. A esto se le llama <strong>protocolo</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Multicanalización (Multiplexado)</h3>
+                        <p>El multiplexado es una técnica que permite que múltiples señales de comunicación compartan un mismo medio de transmisión. Esto es fundamental para un uso eficiente de los recursos.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Multiplexado por División de Frecuencia (FDM):</strong> Cada señal se modula sobre una portadora de frecuencia diferente. Es el principio de la radio y la TV.</li>
+                            <li><strong>Multiplexado por División de Tiempo (TDM):</strong> A cada señal se le asigna una pequeña ranura de tiempo (timeslot) para transmitir. Es la base de la telefonía digital.</li>
+                            <li><strong>Multiplexado por División de Longitud de Onda (WDM):</strong> Es el análogo de FDM para la fibra óptica. Se transmiten múltiples haces de luz de diferentes colores (longitudes de onda) por la misma fibra.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conmutación</h3>
+                        <p>La conmutación es el proceso de establecer rutas temporales entre dos o más puntos para permitir la transmisión de información. Es la base de las redes telefónicas e internet.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Conmutación de Circuitos:</strong> Se establece un camino físico dedicado y exclusivo entre los dos extremos antes de que comience la comunicación. Es el método de la red telefónica tradicional.</li>
+                            <li><strong>Conmutación de Paquetes:</strong> La información se divide en pequeños bloques llamados "paquetes". Cada paquete viaja de forma independiente por la red y se reensambla en el destino. Es el método de internet.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Multiplexado y Conmutación &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fibra Óptica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Comunicaciones con Fibra Óptica</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La fibra óptica es el medio de transmisión guiado de mayor capacidad. Utiliza pulsos de luz para transmitir información a través de hilos de vidrio o plástico del grosor de un cabello humano.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principios de Propagación de la Luz</h3>
+                        <p>La luz se mantiene confinada dentro de la fibra gracias al principio de <strong>reflexión interna total</strong>. La fibra está construida con un núcleo de vidrio de alto índice de refracción, rodeado por un revestimiento de un índice ligeramente menor. Cuando la luz que viaja por el núcleo incide sobre el revestimiento con un ángulo suficientemente rasante, se refleja completamente, sin escapar.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Reflexi%C3%B3n+Interna+Total+en+Fibra+%C3%93ptica" alt="Reflexión Interna Total" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fibras Monomodo y Multimodo</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Fibra+Multimodo" alt="Fibra Multimodo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Fibra Multimodo</h4>
+                                <p class="text-base text-center">Tiene un núcleo más grande que permite que la luz viaje por múltiples caminos o "modos". Es más barata pero tiene menor ancho de banda y se usa para distancias cortas.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Fibra+Monomodo" alt="Fibra Monomodo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Fibra Monomodo</h4>
+                                <p class="text-base text-center">Tiene un núcleo extremadamente fino que obliga a la luz a viajar por un único camino. Permite velocidades altísimas y se usa para largas distancias (comunicaciones transoceánicas).</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Conectores y Mediciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Conectores, Empalmes y Mediciones en Fibra Óptica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conectores y Empalmes</h3>
+                        <p>Para unir tramos de fibra óptica se utilizan conectores (para uniones desmontables) o empalmes (para uniones permanentes).</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Conectores:</strong> Los más comunes son los tipos SC, ST y LC. Requieren un pulido de alta precisión para minimizar las pérdidas.</li>
+                            <li><strong>Empalmes:</strong> El <strong>empalme por fusión</strong> utiliza un arco eléctrico para fundir y unir los extremos de dos fibras, logrando una unión de muy baja pérdida.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principales Mediciones</h3>
+                        <p>La principal medida en un enlace de fibra óptica es la <strong>atenuación</strong>, que es la pérdida de potencia de la señal de luz a medida que viaja por la fibra. Se mide en decibelios por kilómetro (dB/km).</p>
+                        <div class="info-box">
+                           Las pérdidas en un enlace se deben a la atenuación intrínseca de la fibra, a las pérdidas en los empalmes y a las pérdidas en los conectores.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Fibra Óptica y Conectores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

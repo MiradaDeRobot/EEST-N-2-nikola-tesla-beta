@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Control U4: Controladores PID y de Motores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Controladores PID y de Motores</h1>
+            <p class="text-lg text-gray-600">Sistemas de Control - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Acciones de Control -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Acciones de Control</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las <strong>acciones de control</strong> son los algoritmos matemáticos que utiliza un controlador para decidir cómo manipular la salida en función de la señal de error (la diferencia entre el valor deseado y el valor medido).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Acciones de Control</h3>
+                        <ul class="list-disc list-inside space-y-4 mt-3">
+                            <li><strong>Control On-Off (Todo-Nada):</strong> Es la forma más simple. El actuador solo tiene dos estados (encendido o apagado). La salida se activa cuando el error supera un umbral y se desactiva cuando cae por debajo. Ejemplo: el termostato de una estufa.</li>
+                            <li><strong>Control Proporcional (P):</strong> La salida del controlador es directamente proporcional al error. A mayor error, mayor es la acción de control. Reduce el tiempo de respuesta, pero suele dejar un error en estado estacionario.</li>
+                            <li><strong>Control Integral (I):</strong> La salida del controlador es proporcional a la integral del error en el tiempo. Su principal función es eliminar el error en estado estacionario.</li>
+                            <li><strong>Control Derivativo (D):</strong> La salida del controlador es proporcional a la derivada (la tasa de cambio) del error. Actúa de forma predictiva, anticipándose a los cambios y mejorando la estabilidad del sistema.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Controladores PID -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Controladores PID</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>controlador PID (Proporcional-Integral-Derivativo)</strong> es el algoritmo de control por realimentación más utilizado en la industria. Combina las tres acciones de control (P, I y D) para lograr una respuesta rápida, precisa y estable.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ajuste y Programación de Controladores PID</h3>
+                        <p>El <strong>ajuste (o sintonización)</strong> de un controlador PID consiste en encontrar los valores óptimos para las ganancias de cada acción (Kp, Ki, Kd) para un proceso específico. Un mal ajuste puede hacer que el sistema sea lento, inestable u oscilatorio.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Respuesta+de+un+Sistema+con+Control+PID" alt="Respuesta de un Sistema con Control PID" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box">
+                           <strong>Métodos de Sintonización:</strong> Existen varios métodos, desde el método de prueba y error hasta técnicas formales como el método de Ziegler-Nichols. Hoy en día, muchos controladores industriales y PLCs incluyen funciones de "auto-sintonización" (autotuning).
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Controladores PID &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Control de Motores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Control de Motores Mediante Variadores Electrónicos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>variadores electrónicos</strong> son dispositivos de electrónica de potencia que permiten controlar con gran precisión la velocidad, el par y la posición de los motores eléctricos. Son una pieza clave en la automatización industrial moderna.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Variadores de Frecuencia (VFD)</h3>
+                        <p>Un <strong>Variador de Frecuencia (VFD)</strong> se utiliza para controlar la velocidad de los motores de inducción de corriente alterna. Su principio de funcionamiento es:</p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Rectificación:</strong> Convierte la CA de la red en CC.</li>
+                            <li><strong>Etapa Intermedia (DC Bus):</strong> Almacena la energía en grandes capacitores.</li>
+                            <li><strong>Inversión:</strong> Utiliza transistores de potencia (IGBTs) conmutando a alta frecuencia (usando PWM) para generar una señal de CA de tensión y frecuencia variables que alimenta al motor.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Variadores de Frecuencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

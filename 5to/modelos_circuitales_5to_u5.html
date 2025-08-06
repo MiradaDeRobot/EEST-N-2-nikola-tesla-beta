@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U5: Modelos de Cuadripolos y Prácticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Modelos de Cuadripolos y Prácticas</h1>
+            <p class="text-lg text-gray-600">Análisis de Modelos Circuitales - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Parámetros Híbridos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Parámetros Híbridos (Parámetros h)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para analizar el comportamiento de un transistor en un circuito, especialmente como amplificador de pequeña señal, es muy útil modelarlo como un <strong>cuadripolo</strong> o "caja negra" de dos puertos: un puerto de entrada y un puerto de salida. Los <strong>parámetros híbridos (parámetros h)</strong> son un conjunto de cuatro valores que describen matemáticamente el comportamiento de este cuadripolo.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Modelo de Cuadripolo</h3>
+                        <p>El modelo relaciona las tensiones y corrientes de entrada (\(V_1, I_1\)) con las de salida (\(V_2, I_2\)) mediante un sistema de ecuaciones lineales.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Modelo+de+Cuadripolo" alt="Modelo de Cuadripolo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-xl font-mono">
+                               \(V_1 = h_{ie} \cdot I_1 + h_{re} \cdot V_2\) <br>
+                               \(I_2 = h_{fe} \cdot I_1 + h_{oe} \cdot V_2\)
+                           </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Significado de los Parámetros h</h3>
+                        <p>Cada parámetro se mide bajo condiciones específicas (cortocircuito o circuito abierto) y tiene un significado físico claro:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>\(h_{ie}\) (Impedancia de entrada):</strong> Es la resistencia que "ve" la señal al entrar al transistor. Se mide en Ohms (\(\Omega\)).</li>
+                            <li><strong>\(h_{re}\) (Relación inversa de tensión):</strong> Mide cómo la tensión de salida afecta a la de entrada. Es adimensional.</li>
+                            <li><strong>\(h_{fe}\) (Ganancia de corriente):</strong> ¡El más famoso! Es el \(\beta\) del transistor. Indica cuántas veces se amplifica la corriente de entrada. Es adimensional.</li>
+                            <li><strong>\(h_{oe}\) (Admitancia de salida):</strong> Es la inversa de la resistencia de salida del transistor. Se mide en Siemens (S).</li>
+                        </ul>
+                        <div class="info-box">
+                            Estos parámetros se encuentran en las <strong>hojas de datos (datasheets)</strong> de los transistores y son fundamentales para diseñar y analizar circuitos amplificadores con precisión.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=1-ydeRk-X2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Parámetros Híbridos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Prácticas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Realización de Prácticas de los Contenidos Desarrollados</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La teoría del análisis de circuitos cobra vida en el laboratorio. La realización de prácticas es esencial para consolidar los conocimientos, desarrollar habilidades de medición y aprender a comparar los resultados teóricos y simulados con el comportamiento del mundo real.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ejemplos de Prácticas de Laboratorio</h3>
+                        <p>A lo largo del curso, se deben realizar prácticas que cubran los temas vistos. El procedimiento general es:</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-3">
+                            <li><strong>Análisis Teórico:</strong> Resolver el circuito en papel usando las leyes y teoremas correspondientes.</li>
+                            <li><strong>Simulación:</strong> Montar y simular el circuito en un software (como Multisim o LTspice) para verificar los cálculos teóricos.</li>
+                            <li><strong>Montaje y Medición:</strong> Ensamblar el circuito en un protoboard y medir las tensiones y corrientes con un multímetro y un osciloscopio.</li>
+                            <li><strong>Análisis de Resultados:</strong> Comparar los tres resultados (teórico, simulado y medido) y justificar las posibles diferencias (tolerancias de los componentes, error de los instrumentos, etc.).</li>
+                        </ol>
+                        <div class="example-box">
+                            <strong>Prácticas Sugeridas:</strong><br>
+                            <ul class="list-disc list-inside mt-2">
+                                <li>Verificación de los Teoremas de Thévenin y Norton en un circuito de CA.</li>
+                                <li>Análisis de la respuesta en frecuencia de un circuito RLC serie para encontrar su frecuencia de resonancia y su factor de calidad.</li>
+                                <li>Diseño y medición de un filtro pasa-bajos y un pasa-altos, y levantamiento de su diagrama de Bode.</li>
+                                <li>Medición de potencias (activa, reactiva, aparente) y corrección del factor de potencia en una carga inductiva.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

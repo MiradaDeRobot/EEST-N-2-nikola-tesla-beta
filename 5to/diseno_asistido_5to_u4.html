@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Asistido U4: Interfaces Hombre-Máquina (HMI)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Interfaces Hombre-Máquina (HMI)</h1>
+            <p class="text-lg text-gray-600">Diseño Asistido y Simulación Electrónica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es una HMI? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. ¿Qué es una Interfaz Hombre-Máquina?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>Interfaz Hombre-Máquina</strong> (HMI, por sus siglas en inglés: Human-Machine Interface) es el panel o pantalla que permite a un usuario interactuar con una máquina, un sistema o un proceso. Es el "puente" de comunicación que traduce las acciones del operador en comandos para la máquina y presenta la información del estado de la máquina de una forma comprensible para el ser humano.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Propósito y Función</h3>
+                        <p>El objetivo principal de una HMI es proporcionar una visión clara y en tiempo real de un proceso industrial o sistema automatizado. Sus funciones incluyen:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Visualización de Datos:</strong> Mostrar el estado de sensores, temperaturas, presiones, velocidades, etc.</li>
+                            <li><strong>Control del Proceso:</strong> Permitir al operador encender o apagar motores, abrir o cerrar válvulas, y ajustar parámetros del sistema.</li>
+                            <li><strong>Gestión de Alarmas:</strong> Notificar al operador sobre condiciones anormales o peligrosas que requieren atención inmediata.</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Analogía:</strong> El tablero de un automóvil es una HMI. El velocímetro y el medidor de combustible visualizan datos, mientras que el volante y los pedales son los elementos de control.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de HMI -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Reconocimiento de Distintas Interfaces</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las HMIs han evolucionado desde simples paneles de botones hasta complejas pantallas táctiles. Cada tipo tiene su lugar dependiendo de la complejidad de la tarea a controlar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de HMIs</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-4">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Panel+de+Botones" alt="Panel de Botones" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Panel de Botones (Push Button)</h4>
+                                <p class="text-base">Es la forma más básica. Usa indicadores luminosos, pulsadores y selectores físicos. Son robustos y fiables para tareas simples de arranque/parada.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=HMI+basada+en+Texto" alt="HMI basada en Texto" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">HMI basada en Texto</h4>
+                                <p class="text-base">Utiliza pantallas de caracteres (como LCDs) para mostrar menús y datos. Ofrece más información que un simple panel de luces.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=HMI+Gr%C3%A1fica+(Pantalla+T%C3%A1ctil)" alt="HMI Gráfica" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">HMI Gráfica (GUI)</h4>
+                                <p class="text-base">Son las más modernas. Utilizan pantallas táctiles a color para mostrar diagramas del proceso (mímicos), gráficos de tendencias y alarmas de forma muy visual e intuitiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Interpretación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Interpretación de Interfaces</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Interpretar correctamente una HMI es crucial para operar un sistema de forma segura y eficiente. Un buen diseño de HMI utiliza convenciones de color y simbología para facilitar esta tarea.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principios de Diseño y Usabilidad</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Consistencia:</strong> Los elementos similares deben verse y comportarse de la misma manera en todas las pantallas.</li>
+                            <li><strong>Claridad:</strong> La información debe ser fácil de leer y entender de un vistazo. Evitar el exceso de información en una sola pantalla.</li>
+                            <li><strong>Feedback:</strong> El sistema debe dar una respuesta clara al operador cuando presiona un botón o realiza una acción (ej. un cambio de color, un sonido).</li>
+                            <li><strong>Código de Colores:</strong> Se utilizan colores estandarizados para indicar estados:
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>Verde:</strong> Normal, en funcionamiento, activo.</li>
+                                    <li><strong>Rojo:</strong> Alarma, falla, peligro.</li>
+                                    <li><strong>Amarillo:</strong> Advertencia, precaución.</li>
+                                    <li><strong>Azul:</strong> Información, modo manual.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J11z_pCg2v8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre ¿Qué es una HMI? &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaje U3: Inversores y Arranque de Motores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Inversores de Potencia y Arranque de Motores</h1>
+            <p class="text-lg text-gray-600">Montaje de Proyectos Electrónicos - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Inversores CC/CA -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Inversores CC/CA</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>inversor</strong> es un dispositivo de electrónica de potencia que convierte una tensión de corriente continua (CC) en una tensión de corriente alterna (CA). Son fundamentales en sistemas de energía solar, fuentes de alimentación ininterrumpida (UPS) y para alimentar equipos de CA desde una batería.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principio de Funcionamiento</h3>
+                        <p>El concepto básico consiste en una etapa de conmutación (generalmente con transistores MOSFET) que "trocea" la tensión de CC para generar una onda cuadrada. Luego, esta onda pasa por un transformador para elevar la tensión y por un filtro para suavizar la forma de onda.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Diagrama+de+Bloques+de+un+Inversor" alt="Diagrama de Bloques de un Inversor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Onda de Salida</h3>
+                        <p>La calidad (y el costo) de un inversor depende de cuán bien su salida se aproxima a una onda senoidal pura como la de la red eléctrica.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Onda+Cuadrada" alt="Onda Cuadrada" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Onda Cuadrada</h4>
+                                <p class="text-base">La más simple y barata. Apta solo para cargas resistivas simples.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Onda+Senoidal+Modificada" alt="Onda Senoidal Modificada" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Onda Senoidal Modificada</h4>
+                                <p class="text-base">Una aproximación escalonada. Compatible con la mayoría de los equipos.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Onda+Senoidal+Pura" alt="Onda Senoidal Pura" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Onda Senoidal Pura</h4>
+                                <p class="text-base">La de mayor calidad, idéntica a la red eléctrica. Necesaria para equipos sensibles.</p>
+                            </div>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Inversores CC/CA &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Arranque de Motores de C.C. -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Control de Arranque de Motores de C.C.</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Cuando un motor de corriente continua arranca desde el reposo, su velocidad es cero. En este instante, la única oposición a la corriente es la pequeña resistencia de sus bobinados. Esto provoca una <strong>corriente de arranque (Inrush Current)</strong> muy elevada, que puede ser de 5 a 10 veces la corriente nominal, poniendo en riesgo tanto la fuente de alimentación como el propio motor.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Arranque Suave (Soft Start)</h3>
+                        <p>Para evitar este pico de corriente, se utilizan circuitos de <strong>arranque suave</strong>. La idea es no aplicar la tensión nominal al motor de golpe, sino aumentarla gradualmente desde cero hasta su valor nominal. La técnica más eficiente para lograr esto es la <strong>Modulación por Ancho de Pulso (PWM)</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Se%C3%B1al+PWM+para+Arranque+Suave" alt="Señal PWM para Arranque Suave" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                            <p class="text-center text-sm mt-2 text-gray-600">El ciclo de trabajo de la señal PWM se incrementa gradualmente, aumentando la tensión efectiva en el motor.</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>Implementación:</strong> Un microcontrolador o un circuito temporizador genera una señal PWM cuyo ciclo de trabajo aumenta progresivamente durante un tiempo predefinido. Esta señal controla un transistor de potencia (MOSFET) que alimenta al motor.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Arranque Suave de Motores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

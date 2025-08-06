@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Aplicada U1: Cálculo Vectorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Cálculo Vectorial</h1>
+            <p class="text-lg text-gray-600">Matemática Aplicada - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Matemática Vectorial -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Matemática Vectorial</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que un escalar es una magnitud que se define con un solo número (temperatura, masa), un <strong>vector</strong> es una magnitud que necesita un número (módulo), una dirección y un sentido para quedar completamente definida. Son fundamentales para describir fenómenos físicos como la fuerza, la velocidad o los campos eléctricos y magnéticos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operaciones Vectoriales y Propiedades</h3>
+                        <p>Dados dos vectores \(\vec{A} = (A_x, A_y)\) y \(\vec{B} = (B_x, B_y)\):</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Suma y Resta:</strong> Se realizan componente a componente. \(\vec{A} \pm \vec{B} = (A_x \pm B_x, A_y \pm B_y)\).</li>
+                            <li><strong>Producto Escalar (Dot Product):</strong> El resultado es un escalar. \(\vec{A} \cdot \vec{B} = |\vec{A}| |\vec{B}| \cos(\theta) = A_x B_x + A_y B_y\). Sirve para calcular proyecciones y trabajo.</li>
+                            <li><strong>Producto Vectorial (Cross Product):</strong> El resultado es un nuevo vector perpendicular al plano formado por \(\vec{A}\) y \(\vec{B}\). Su módulo es \(|\vec{A}| |\vec{B}| \sin(\theta)\). Sirve para calcular torques y campos magnéticos.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Operaciones con Vectores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funciones Vectoriales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Funciones Vectoriales y Modelización</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una <strong>función vectorial</strong> es una función que toma uno o más escalares como entrada y devuelve un vector. Son esenciales para modelizar situaciones donde una magnitud vectorial cambia en el espacio o en el tiempo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ejemplos de Modelización</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Trayectoria de un Proyectil:</strong> La posición de un proyectil en el tiempo se puede describir con una función vectorial \(\vec{r}(t) = (x(t), y(t))\), donde 't' es el tiempo.</li>
+                            <li><strong>Campo Eléctrico:</strong> Un campo eléctrico en el espacio es una función vectorial que asigna un vector de campo \(\vec{E}\) a cada punto \((x, y, z)\).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Límites y Derivadas Parciales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Límites y Derivadas Parciales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El cálculo diferencial se extiende a funciones de varias variables. El concepto clave es la <strong>derivada parcial</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Derivada Parcial</h3>
+                        <p>La derivada parcial de una función de varias variables es su derivada con respecto a una de esas variables, manteniendo las otras como constantes. Geométricamente, representa la pendiente de la superficie de la función en la dirección de uno de los ejes.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Derivada+Parcial+en+una+Superficie" alt="Derivada Parcial" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> Dada la función \(f(x, y) = x^2 + 3xy + y^3\):<br>
+                            - <strong>Derivada parcial respecto a x (\(\frac{\partial f}{\partial x}\)):</strong> Se trata a 'y' como una constante. <br> \(\frac{\partial f}{\partial x} = 2x + 3y\) <br>
+                            - <strong>Derivada parcial respecto a y (\(\frac{\partial f}{\partial y}\)):</strong> Se trata a 'x' como una constante. <br> \(\frac{\partial f}{\partial y} = 3x + 3y^2\)
+                        </div>
+                         <div class="info-box">
+                            <strong>Límites:</strong> El concepto de límite se extiende a funciones de varias variables, pero es más complejo. Para que el límite en un punto exista, la función debe acercarse al mismo valor sin importar la trayectoria por la que nos acerquemos al punto.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Derivadas Parciales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

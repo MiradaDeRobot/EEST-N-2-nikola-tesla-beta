@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Asistido U2: Simulación de Circuitos (SPICE)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Simulación de Circuitos (SPICE)</h1>
+            <p class="text-lg text-gray-600">Diseño Asistido y Simulación Electrónica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Software de Simulación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Resolución de Circuitos Mediante Software de Simulación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La simulación de circuitos es el proceso de utilizar un programa de computadora para predecir el comportamiento de un circuito electrónico. Es un paso fundamental en el diseño, ya que permite verificar el funcionamiento, detectar errores y optimizar el circuito antes de construir un prototipo físico, ahorrando tiempo y dinero.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Software de Simulación Popular</h3>
+                        <p>La mayoría de los simuladores de circuitos se basan en un motor llamado <strong>SPICE</strong> (Simulation Program with Integrated Circuit Emphasis). Algunos de los programas más utilizados en el ámbito educativo y profesional son:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Interfaz+de+Livewire" alt="Livewire" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Livewire</h4>
+                                <p class="text-base">Muy visual e interactivo, ideal para aprender los conceptos básicos con animaciones de flujo de corriente.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Interfaz+de+Multisim" alt="Multisim" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">NI Multisim</h4>
+                                <p class="text-base">Entorno gráfico muy intuitivo con una amplia gama de instrumentos virtuales que imitan a los reales.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Interfaz+de+Proteus" alt="Proteus" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Proteus</h4>
+                                <p class="text-base">Combina simulación con diseño de PCB. Es muy potente para simular microcontroladores.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini Manual de Livewire -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Mini Manual de Uso de Livewire</h3>
+                        <p>Livewire es una herramienta fantástica para empezar a simular por su enfoque visual e interactivo. Permite "ver" cómo fluye la corriente y cómo cambian los voltajes.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Armando+un+circuito+en+Livewire" alt="Armando un circuito en Livewire" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Pasos para Simular un Circuito Básico (LED con Resistencia)</h4>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li><strong>Abrir la Galería de Componentes:</strong> Al abrir Livewire, verás una barra de herramientas en la parte superior. Haz clic en el icono de la galería (suele parecer una biblioteca de libros) para abrir el panel de componentes.</li>
+                            <li><strong>Seleccionar Componentes:</strong>
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li>Busca en "Power Supplies" y arrastra una "Battery" al área de trabajo. Haz doble clic sobre ella para cambiar su voltaje (ej. 9V).</li>
+                                    <li>Busca en "Passive Components" y arrastra una "Resistor". Haz doble clic para cambiar su valor (ej. 330Ω).</li>
+                                    <li>Busca en "Output Components" y arrastra un "LED". Puedes elegir el color.</li>
+                                    <li>En "Power Supplies", busca "Ground" y arrástralo. Es la referencia de 0V.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Conectar los Componentes:</strong> Acerca el cursor a la terminal de un componente. El cursor cambiará a un lápiz de dibujo. Haz clic y arrastra para dibujar un "cable" hasta la terminal de otro componente. Conecta la batería, la resistencia y el LED en serie, y el terminal negativo de la batería a Ground.</li>
+                            <li><strong>Iniciar la Simulación:</strong> En la barra de herramientas superior, haz clic en el botón "Run" (suele ser un triángulo de Play).</li>
+                            <li><strong>Interpretar los Resultados:</strong> Si todo está bien conectado, el LED se encenderá. Livewire mostrará puntos de colores en los cables: <strong>rojo</strong> para voltaje positivo, <strong>azul</strong> para negativo (GND) y <strong>puntos grises en movimiento</strong> que representan el flujo de corriente.</li>
+                        </ol>
+                        <div class="info-box">
+                            <strong>Consejo:</strong> Usa el menú "View" para activar o desactivar las etiquetas de voltaje, corriente o flujo, y así personalizar la visualización de tu simulación.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Sección Simulación de Instrumental -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Simulación de Instrumental Electrónico</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una de las grandes ventajas de los simuladores es que incluyen versiones virtuales de los instrumentos de laboratorio. Esto permite realizar mediciones en el circuito simulado de la misma forma que se haría en un banco de pruebas real.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Instrumentos Virtuales Comunes</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Panel+de+Instrumentos+Virtuales+en+Multisim" alt="Instrumentos Virtuales" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-4 mt-4">
+                            <li><strong>Multímetro Virtual:</strong> Permite medir tensión, corriente, resistencia y otras magnitudes. Se conecta al circuito colocando sus puntas de prueba virtuales en los nodos deseados.</li>
+                            <li><strong>Generador de Funciones Virtual:</strong> Genera señales de prueba (senoidales, cuadradas, triangulares) con frecuencia y amplitud ajustables para inyectar en el circuito.</li>
+                            <li><strong>Osciloscopio Virtual:</strong> Es la herramienta más poderosa para la visualización. Permite ver la forma de onda de las señales en cualquier punto del circuito en función del tiempo, analizando su amplitud, frecuencia y desfase.</li>
+                            <li><strong>Analizador Lógico:</strong> Específico para circuitos digitales, permite visualizar el estado (0 o 1) de múltiples líneas simultáneamente, ideal para analizar buses de datos o protocolos de comunicación.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Simulación con Instrumentos Virtuales en Multisim &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

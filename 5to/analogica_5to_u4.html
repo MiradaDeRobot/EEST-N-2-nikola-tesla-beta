@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U4: Amplificadores de Potencia y Componentes de Disparo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Amplificadores de Potencia y Componentes de Disparo</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Amplificadores de Potencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Etapas de Potencia (BJT y FET)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que los amplificadores de pequeña señal se enfocan en aumentar la tensión de una señal con la mínima distorsión, los <strong>amplificadores de potencia</strong> están diseñados para entregar una cantidad significativa de potencia a una carga, como un parlante o un motor. Su principal objetivo es la <strong>eficiencia</strong>, es decir, transferir la máxima potencia de la fuente de alimentación a la carga, disipando la menor cantidad posible como calor.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Clasificación de Etapas de Potencia</h3>
+                        <p>Se clasifican según el punto de polarización del transistor, lo que determina su ángulo de conducción:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Clase A:</strong> El transistor conduce durante los 360° del ciclo de la señal. Ofrece la mejor linealidad (menor distorsión) pero es muy ineficiente (máximo teórico 25%).</li>
+                            <li><strong>Clase B:</strong> Utiliza dos transistores complementarios (push-pull), donde cada uno conduce durante 180°. Es mucho más eficiente (máximo 78.5%) pero sufre de "distorsión de cruce".</li>
+                            <li><strong>Clase AB:</strong> Es la más común en audio. Es una mejora de la Clase B donde ambos transistores conducen un poco más de 180° para eliminar la distorsión de cruce, manteniendo una alta eficiencia.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Transistores de Potencia: BJT vs. FET</h3>
+                        <p>Tanto los BJT como los FET (especialmente los MOSFET) se utilizan en etapas de potencia.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Transistor+BJT+de+Potencia" alt="Transistor BJT de Potencia" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">BJT de Potencia</h4>
+                                <p class="text-base text-center">Controlado por corriente. Robusto, pero más lento y con mayor consumo en el circuito de control.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Transistor+MOSFET+de+Potencia" alt="Transistor MOSFET de Potencia" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">MOSFET de Potencia</h4>
+                                <p class="text-base text-center">Controlado por tensión. Muy rápido, ideal para fuentes conmutadas, y más fácil de excitar.</p>
+                            </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g24-b_5A_3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Amplificadores de Potencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Componentes de Disparo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Componentes de Disparo y Conmutación</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Además de los transistores, existen otros semiconductores diseñados específicamente para la conmutación y el control de alta potencia, especialmente en corriente alterna. Estos son conocidos como <strong>tiristores</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">SCR (Rectificador Controlado de Silicio)</h3>
+                        <p>Es un diodo con un tercer terminal llamado <strong>compuerta (Gate)</strong>. Permanece bloqueado (circuito abierto) hasta que se aplica un pequeño pulso de corriente a la compuerta. Una vez disparado, se "enlaza" (latches) y permanece conduciendo aunque se retire el pulso de la compuerta. Solo se apaga cuando la corriente que lo atraviesa cae por debajo de un valor mínimo.</p>
+                        <div class="info-box">
+                           <strong>Aplicación:</strong> Control de potencia en DC y en rectificadores controlados.
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">TRIAC</h3>
+                        <p>Puede considerarse como dos SCR conectados en antiparalelo. Es un interruptor <strong>bidireccional</strong>, lo que lo hace ideal para controlar la potencia en circuitos de corriente alterna. Al igual que el SCR, se dispara con un pulso en la compuerta.</p>
+                        <div class="example-box">
+                            <strong>Aplicación Típica:</strong> El dimmer o atenuador de luz de una lámpara incandescente. El TRIAC, junto con un circuito de disparo, controla qué porción de la onda senoidal de AC llega a la lámpara, regulando así su brillo.
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Optoacopladores</h3>
+                        <p>Son componentes que combinan un emisor de luz (generalmente un LED infrarrojo) y un fotodetector (como un fototransistor o un fototriac) en un mismo encapsulado, manteniendo un aislamiento eléctrico completo entre ambos.</p>
+                        <div class="info-box">
+                           <strong>Función Principal: Aislamiento Galvánico.</strong> Permiten que un circuito de control de baja tensión (ej. un microcontrolador a 5V) pueda controlar de forma segura un circuito de alta potencia (ej. disparar un TRIAC que maneja 220V) sin ningún tipo de conexión eléctrica entre ellos, solo un haz de luz.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=sC2i9j_4i-o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tiristores (SCR y TRIAC) &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ensayos y Verificación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Ensayos y Verificación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La verificación experimental es el paso final y crucial en el desarrollo de cualquier proyecto electrónico. Es el momento de comprobar si el circuito real se comporta como lo predijeron los cálculos teóricos y las simulaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Metodología de Ensayo</h3>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Inspección Visual:</strong> Revisar la placa en busca de cortocircuitos, soldaduras frías o componentes mal colocados.</li>
+                            <li><strong>Prueba de Continuidad:</strong> Con el circuito desenergizado, usar el multímetro para verificar las conexiones de alimentación y tierra.</li>
+                            <li><strong>Prueba de Encendido sin Carga:</strong> Alimentar el circuito y medir los voltajes de polarización en puntos clave (punto Q de los transistores, salidas de los reguladores) para asegurarse de que son correctos.</li>
+                            <li><strong>Prueba Funcional con Carga:</strong> Conectar la carga y aplicar una señal de prueba. Usar el osciloscopio para medir la ganancia, el ancho de banda, la distorsión y verificar que la señal de salida es la esperada.</li>
+                            <li><strong>Pruebas de Estrés:</strong> Verificar el comportamiento del circuito bajo condiciones extremas (máxima carga, temperatura) para asegurar su fiabilidad.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

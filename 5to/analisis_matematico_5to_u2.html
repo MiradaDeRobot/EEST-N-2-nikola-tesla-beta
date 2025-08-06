@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Matemático U2: Derivadas y Aplicaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Derivadas y Aplicaciones</h1>
+            <p class="text-lg text-gray-600">Análisis Matemático - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Derivada en un Punto -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Derivada de una Función en un Punto</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>derivada</strong> es uno de los conceptos más importantes del cálculo. Geométricamente, la derivada de una función en un punto representa la <strong>pendiente de la recta tangente</strong> a la gráfica de la función en ese punto. Físicamente, representa la <strong>razón de cambio instantánea</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definición Formal como un Límite</h3>
+                        <p>La derivada de una función \(f(x)\) en un punto \(x=a\), denotada como \(f'(a)\), se define mediante el siguiente límite:</p>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\)</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Recta+Tangente+y+Secante" alt="Recta Tangente y Secante" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                            <p class="text-center text-sm mt-2 text-gray-600">La derivada es el límite de la pendiente de las rectas secantes cuando el punto se acerca al punto de tangencia.</p>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=A-z8-c-L-0o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Definición de Derivada &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Derivadas de Funciones Elementales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Derivadas de Funciones Elementales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Calcular la derivada usando la definición de límite puede ser largo. Afortunadamente, existen reglas y fórmulas para derivar funciones comunes de manera directa.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tabla de Derivadas y Reglas Básicas</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-left text-base">
+                                <thead class="border-b bg-gray-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Función \(f(x)\)</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Derivada \(f'(x)\)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">\(c\) (constante)</td><td class="px-6 py-4">\(0\)</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">\(x^n\)</td><td class="px-6 py-4">\(n \cdot x^{n-1}\)</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">\(\sin(x)\)</td><td class="px-6 py-4">\(\cos(x)\)</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">\(\cos(x)\)</td><td class="px-6 py-4">\(-\sin(x)\)</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">\(e^x\)</td><td class="px-6 py-4">\(e^x\)</td></tr>
+                                    <tr><td class="px-6 py-4 font-medium">\(\ln(x)\)</td><td class="px-6 py-4">\(\frac{1}{x}\)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                         <div class="info-box">
+                            <strong>Reglas de Operaciones:</strong><br>
+                            - <strong>Suma/Resta:</strong> \((f \pm g)' = f' \pm g'\)<br>
+                            - <strong>Producto:</strong> \((f \cdot g)' = f' \cdot g + f \cdot g'\)<br>
+                            - <strong>Cociente:</strong> \((\frac{f}{g})' = \frac{f' \cdot g - f \cdot g'}{g^2}\)<br>
+                            - <strong>Regla de la Cadena (para funciones compuestas):</strong> \([f(g(x))]' = f'(g(x)) \cdot g'(x)\)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Aplicaciones de la Derivada -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Aplicaciones: Análisis de Funciones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La derivada es la herramienta más poderosa para analizar el comportamiento de una función: dónde crece, dónde decrece y dónde alcanza sus puntos más altos o bajos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Crecimiento, Decrecimiento, Máximos y Mínimos</h3>
+                        <p>El signo de la primera derivada (\(f'(x)\)) nos dice si la función original (\(f(x)\)) está creciendo o decreciendo.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li>Si \(f'(x) > 0\) en un intervalo, entonces \(f(x)\) es <strong>creciente</strong> en ese intervalo.</li>
+                            <li>Si \(f'(x) < 0\) en un intervalo, entonces \(f(x)\) es <strong>decreciente</strong> en ese intervalo.</li>
+                            <li>Si \(f'(x) = 0\) en un punto, ese punto es un <strong>punto crítico</strong>, y puede ser un <strong>máximo</strong> o un <strong>mínimo</strong> local.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Relaci%C3%B3n+entre+f(x)+y+f'(x)" alt="Relación entre una función y su derivada" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                            <p class="text-center text-sm mt-2 text-gray-600">Donde f(x) tiene un máximo o mínimo, su derivada f'(x) cruza el eje x (vale cero).</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=z8_k72D-2-E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Máximos y Mínimos con Derivadas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Modelización -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Modelización de Fenómenos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La capacidad de la derivada para encontrar máximos y mínimos la convierte en una herramienta fundamental para resolver problemas de <strong>optimización</strong> en ciencia, ingeniería y economía.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Problemas de Optimización</h3>
+                        <p>Estos problemas buscan maximizar o minimizar una cantidad (ej. maximizar el volumen de una caja, minimizar el costo de un material).</p>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong> Se quiere construir una caja sin tapa a partir de una lámina cuadrada de 12 cm de lado, cortando cuadrados iguales en las esquinas y doblando los lados. ¿Cuál es la altura del corte que maximiza el volumen de la caja?<br>
+                            1. <strong>Modelizar:</strong> Si el corte es 'x', la base de la caja será \((12-2x) \times (12-2x)\) y la altura será 'x'. El volumen es \(V(x) = x(12-2x)^2\).<br>
+                            2. <strong>Derivar:</strong> Se calcula la derivada \(V'(x)\).<br>
+                            3. <strong>Encontrar Puntos Críticos:</strong> Se iguala la derivada a cero (\(V'(x)=0\)) y se resuelve para 'x'.<br>
+                            4. <strong>Verificar:</strong> Se comprueba cuál de los puntos críticos corresponde a un máximo. La solución es \(x=2\) cm.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

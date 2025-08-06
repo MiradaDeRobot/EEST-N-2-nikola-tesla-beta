@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U4: Introducción a los Dispositivos Microcontrolados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Introducción a los Dispositivos Microcontrolados</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es un Microcontrolador? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. ¿Qué es un Dispositivo Microcontrolado?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>microcontrolador (MCU)</strong> es un circuito integrado que contiene en un solo chip todos los componentes de una pequeña computadora. Está diseñado específicamente para gobernar y controlar dispositivos electrónicos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Microcontrolador vs. Microprocesador</h3>
+                        <p>Es crucial entender su diferencia:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Microprocesador (CPU):</strong> Es solo la unidad central de procesamiento. Necesita componentes externos (memoria RAM, memoria ROM, periféricos) para funcionar. Es el cerebro de una computadora personal.</li>
+                            <li><strong>Microcontrolador (MCU):</strong> Es un sistema completo. Integra la CPU, la memoria RAM, la memoria de programa (Flash ROM) y una variedad de periféricos en un único chip. Es el cerebro de un sistema embebido (como un lavarropas, un control remoto o un robot).</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Microprocesador+vs+Microcontrolador" alt="Comparación Microprocesador vs Microcontrolador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Arquitectura -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Arquitectura de un Microcontrolador</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Aunque existen muchas familias de microcontroladores (PIC, AVR, ARM, etc.), todos comparten una arquitectura interna similar con los siguientes bloques fundamentales:</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes Internos</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Arquitectura+Interna+de+un+Microcontrolador" alt="Arquitectura de un Microcontrolador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-4 mt-4">
+                            <li><strong>CPU (Unidad Central de Procesamiento):</strong> El núcleo que ejecuta las instrucciones del programa.</li>
+                            <li><strong>Memoria Flash (ROM):</strong> Memoria no volátil donde se almacena permanentemente el programa (el "firmware").</li>
+                            <li><strong>Memoria RAM (SRAM):</strong> Memoria volátil utilizada para almacenar las variables y datos temporales mientras el programa se ejecuta.</li>
+                            <li><strong>Periféricos:</strong> Son los módulos de hardware que permiten al microcontrolador interactuar con el mundo exterior. Los más comunes son:
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>GPIO (General Purpose Input/Output):</strong> Pines que se pueden configurar como entradas (para leer un pulsador) o salidas (para encender un LED).</li>
+                                    <li><strong>ADC (Convertidor Analógico-Digital):</strong> Permite leer voltajes analógicos de sensores.</li>
+                                    <li><strong>Timers/Contadores:</strong> Para medir tiempo, contar eventos o generar señales periódicas (PWM).</li>
+                                    <li><strong>Módulos de Comunicación Serial:</strong> Como <strong>UART</strong> (para comunicación RS-232), <strong>I²C</strong> y <strong>SPI</strong> para comunicarse con otros chips.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s-f94_y_G3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre ¿Qué es un Microcontrolador? &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Programación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Programación de Dispositivos Microcontrolados</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Programar un microcontrolador implica escribir un conjunto de instrucciones que la CPU pueda ejecutar para realizar una tarea específica. El lenguaje más utilizado para esto es una extensión del <strong>Lenguaje C</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Flujo de Trabajo de Desarrollo</h3>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Escribir el Código:</strong> Se escribe el programa en un IDE específico para el microcontrolador (ej. MPLAB X para PICs, Arduino IDE para Arduino).</li>
+                            <li><strong>Compilar:</strong> El compilador traduce el código C a código máquina específico para ese microcontrolador, generando un archivo binario (generalmente con extensión `.hex`).</li>
+                            <li><strong>Grabar (o "Quemar"):</strong> Se utiliza un dispositivo de hardware llamado <strong>programador</strong> para transferir el archivo `.hex` desde la computadora a la memoria Flash del microcontrolador.</li>
+                            <li><strong>Probar:</strong> Se alimenta el microcontrolador y este comienza a ejecutar el programa grabado.</li>
+                        </ol>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=4-8sFUL-yY0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Cómo Programar un Microcontrolador &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

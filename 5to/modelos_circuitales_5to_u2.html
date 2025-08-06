@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U2: Potencia y Resonancia en CA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Potencia y Resonancia en CA</h1>
+            <p class="text-lg text-gray-600">Análisis de Modelos Circuitales - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Potencia en CA -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Potencia en Corriente Alterna</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En circuitos de CA, la presencia de capacitores e inductores hace que la tensión y la corriente puedan estar desfasadas. Esto complica el cálculo de la potencia y da lugar a tres conceptos diferentes.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Triángulo de Potencias</h3>
+                        <p>La relación entre los tres tipos de potencia se puede visualizar en un triángulo rectángulo:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Potencia Activa (P):</strong> Es la potencia que realmente se consume en el circuito y se transforma en trabajo útil o calor. Se mide en <strong>Watts (W)</strong>. Es la asociada a las resistencias.</li>
+                            <li><strong>Potencia Reactiva (Q):</strong> Es la potencia que los capacitores e inductores almacenan y devuelven a la red en cada ciclo. No realiza trabajo útil. Se mide en <strong>Volt-Amper Reactivo (VAR)</strong>.</li>
+                            <li><strong>Potencia Aparente (S):</strong> Es la potencia total que la fuente debe entregar al circuito. Es la suma vectorial de P y Q. Se mide en <strong>Volt-Amper (VA)</strong>.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Tri%C3%A1ngulo+de+Potencias" alt="Triángulo de Potencias" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Factor de Potencia (FP)</h3>
+                        <p>El factor de potencia es el coseno del ángulo (\(\phi\)) del triángulo de potencias. Indica qué tan eficientemente se está utilizando la energía. Un FP cercano a 1 significa que casi toda la potencia aparente se convierte en potencia activa (útil). Un FP bajo indica una gran cantidad de potencia reactiva, lo cual es ineficiente.</p>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(FP = \cos(\phi) = \frac{P}{S}\)</p>
+                           <p class="mt-2">Las empresas de electricidad penalizan a las industrias con un bajo factor de potencia, por lo que se utilizan bancos de capacitores para "corregirlo" y acercarlo a 1.</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Gk1_zH3a-mY" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Potencia en CA y Factor de Potencia &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Respuesta en Frecuencia y Resonancia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Respuesta en Frecuencia y Resonancia</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>respuesta en frecuencia</strong> de un circuito describe cómo su comportamiento (impedancia, ganancia, etc.) varía a medida que cambia la frecuencia de la señal de entrada. Un fenómeno clave en esta respuesta es la <strong>resonancia</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Resonancia en Circuitos RLC</h3>
+                        <p>La resonancia ocurre a una frecuencia específica, llamada <strong>frecuencia de resonancia (\(f_0\))</strong>, en la que la reactancia inductiva (\(X_L\)) y la reactancia capacitiva (\(X_C\)) se cancelan mutuamente.</p>
+                        <div class="info-box">
+                           <p>En resonancia: \(X_L = -X_C \implies 2\pi f_0 L = \frac{1}{2\pi f_0 C}\)</p>
+                           <p class="text-center text-2xl font-mono mt-2">\(f_0 = \frac{1}{2\pi\sqrt{LC}}\)</p>
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>En un circuito RLC serie:</strong> En resonancia, la impedancia total es mínima e igual a la resistencia (\(Z = R\)). Esto provoca que la corriente en el circuito sea máxima.</li>
+                            <li><strong>En un circuito RLC paralelo:</strong> En resonancia, la impedancia total es máxima, lo que provoca que la corriente total suministrada por la fuente sea mínima.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Factor de Calidad y Selectividad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Factor de Calidad y Selectividad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Factor de Calidad (Q)</h3>
+                        <p>El <strong>factor de calidad (Q)</strong> es un parámetro adimensional que describe cuán "aguda" es la curva de resonancia de un circuito. Un valor de Q alto indica una resonancia muy pronunciada y selectiva.</p>
+                        <div class="info-box">
+                           <p>Para un circuito RLC serie: \(Q = \frac{X_L}{R} = \frac{2\pi f_0 L}{R}\)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Selectividad y Ancho de Banda</h3>
+                        <p>La <strong>selectividad</strong> es la capacidad de un circuito resonante para "seleccionar" una banda estrecha de frecuencias y rechazar las demás. Esta propiedad es la base de la sintonización de radios y televisores.</p>
+                        <p class="mt-3">La selectividad está directamente relacionada con el <strong>ancho de banda (BW)</strong>, que es el rango de frecuencias en el que la potencia del circuito es mayor o igual a la mitad de la potencia máxima en resonancia.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Curvas+de+Resonancia+(Alto+Q+vs+Bajo+Q)" alt="Curvas de resonancia" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(BW = \frac{f_0}{Q}\)</p>
+                           <p class="mt-2">Un <strong>Q alto</strong> implica un <strong>ancho de banda estrecho</strong> y, por lo tanto, una <strong>alta selectividad</strong>.</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=Qz-207-2vGg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Resonancia, Factor Q y Ancho de Banda &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

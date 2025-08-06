@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U3: Transmisores y Receptores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Transmisores y Receptores</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Circuitos Moduladores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Circuitos Moduladores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>circuito modulador</strong> es el corazón de un transmisor. Su función es combinar la señal de información de baja frecuencia (como el audio) con una onda portadora de alta frecuencia para que pueda ser transmitida eficientemente por el aire.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulador de Amplitud (AM)</h3>
+                        <p>Un modulador de AM varía la amplitud de la portadora en proporción directa a la amplitud de la señal de información. Un circuito clásico utiliza un transistor en su región no lineal para "mezclar" ambas señales.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulador de Frecuencia (FM)</h3>
+                        <p>Un modulador de FM varía la frecuencia de la portadora en proporción a la amplitud de la señal de información. Un método común es usar un <strong>diodo varactor</strong> en el circuito tanque de un oscilador LC. La señal de audio varía la tensión en el varactor, lo que cambia su capacidad y, por lo tanto, la frecuencia de oscilación de la portadora.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Circuitos Moduladores AM y FM &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Transmisores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Transmisores de AM y FM</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>transmisor</strong> es un sistema electrónico que toma una señal de información, la modula sobre una portadora de radiofrecuencia (RF), la amplifica y la envía a una antena para su propagación.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diagrama en Bloques de un Transmisor de AM</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/700x250/E0F2FE/0891B2?text=Diagrama+en+Bloques+de+un+Transmisor+de+AM" alt="Diagrama en Bloques de un Transmisor de AM" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-3xl">
+                        </div>
+                        <ol class="list-decimal list-inside space-y-2 mt-4">
+                           <li><strong>Oscilador de RF:</strong> Genera la onda portadora de alta frecuencia estable.</li>
+                           <li><strong>Amplificador de Audio:</strong> Amplifica la señal de información de baja frecuencia.</li>
+                           <li><strong>Modulador:</strong> Combina la señal de audio y la portadora para crear la señal de AM.</li>
+                           <li><strong>Amplificador de Potencia de RF:</strong> Amplifica la señal modulada a un nivel de potencia suficiente para la transmisión.</li>
+                           <li><strong>Antena:</strong> Convierte la señal eléctrica de RF en una onda electromagnética.</li>
+                        </ol>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diagrama en Bloques de un Transmisor de FM</h3>
+                        <p>Es similar al de AM, pero el modulador actúa directamente sobre la frecuencia del oscilador.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Receptores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Receptores de AM y FM</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>receptor</strong> realiza el proceso inverso: capta la onda electromagnética con una antena, la amplifica, la demodula para extraer la información original y la reproduce.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Receptor Superheterodino</h3>
+                        <p>Es la arquitectura de receptor más común tanto para AM como para FM. Su principio clave es convertir la frecuencia de la estación de radio sintonizada (que puede variar) a una <strong>Frecuencia Intermedia (FI)</strong> fija y estándar. Esto permite que la mayor parte de la amplificación y el filtrado se realicen en una única frecuencia, lo que simplifica enormemente el diseño y mejora la selectividad.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/800x250/E0F2FE/0891B2?text=Diagrama+en+Bloques+de+un+Receptor+Superheterodino" alt="Diagrama en Bloques de un Receptor Superheterodino" class="w-full h-auto rounded-lg shadow-md mx-auto">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Amplificador de RF:</strong> Amplifica la débil señal recibida por la antena.</li>
+                            <li><strong>Oscilador Local y Mezclador:</strong> El oscilador local genera una frecuencia que, al "mezclarse" con la de la estación sintonizada, produce la Frecuencia Intermedia.</li>
+                            <li><strong>Amplificador de FI:</strong> Proporciona la mayor parte de la ganancia y selectividad del receptor.</li>
+                            <li><strong>Detector (Demodulador):</strong> Extrae la señal de audio de la portadora de FI.</li>
+                            <li><strong>Amplificador de Audio:</strong> Amplifica la señal de audio para poder ser escuchada en un parlante.</li>
+                        </ul>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Receptores Superheterodinos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

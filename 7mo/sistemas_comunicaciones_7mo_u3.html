@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U3: Redes y Protocolos de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Redes y Protocolos de Datos</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Comunicación de Datos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Comunicación de Datos, Interfaces y Módems</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>comunicación de datos</strong> es el proceso de transferir información digital entre dos o más puntos. Para que esto sea posible, se necesitan interfaces estandarizadas y dispositivos que adapten las señales al medio de transmisión.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interfaces</h3>
+                        <p>Una <strong>interfaz</strong> es el punto de conexión físico y eléctrico entre dos dispositivos. Define las características mecánicas (conectores), eléctricas (niveles de tensión) y funcionales (significado de cada señal) para permitir la comunicación. El estándar <strong>RS-232</strong> es un ejemplo clásico de una interfaz para comunicación serie.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Redes Telefónicas y Módems</h3>
+                        <p>La red telefónica pública conmutada (PSTN) fue diseñada para transmitir la voz humana (una señal analógica de bajo ancho de banda). Para transmitir datos digitales a través de ella, se necesita un dispositivo llamado <strong>módem</strong> (Modulador-Demodulador).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x250/E0F2FE/0891B2?text=Funcionamiento+de+un+M%C3%B3dem" alt="Funcionamiento de un Módem" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                           <strong>Función del Módem:</strong><br>
+                           - <strong>Modulación:</strong> Convierte los datos digitales (1s y 0s) de la computadora en una señal analógica (tonos) que puede viajar por la línea telefónica.<br>
+                           - <strong>Demodulación:</strong> Recibe la señal analógica y la convierte de nuevo en datos digitales para la computadora receptora.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Protocolos y Configuraciones de Red -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Protocolos y Configuraciones de Red</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>protocolo de comunicación</strong> es un conjunto de reglas y convenciones que gobiernan el intercambio de datos entre dispositivos. Define el formato, el orden y el significado de los mensajes. Sin protocolos, la comunicación sería caótica e imposible.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Configuraciones de Red (Topologías)</h3>
+                        <p>La topología de red describe la disposición física o lógica de los nodos y las conexiones en una red.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4 text-center">
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Topolog%C3%ADa+de+Bus" alt="Topología de Bus" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Topología de Bus</h4>
+                                <p class="text-base">Todos los nodos comparten un único canal de comunicación.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Topolog%C3%ADa+de+Estrella" alt="Topología de Estrella" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Topología de Estrella</h4>
+                                <p class="text-base">Todos los nodos se conectan a un nodo central (hub o switch). Es la más común en redes LAN.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Topolog%C3%ADa+de+Anillo" alt="Topología de Anillo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Topología de Anillo</h4>
+                                <p class="text-base">Cada nodo se conecta con los dos siguientes, formando un único camino cerrado.</p>
+                           </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bsMo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Protocolos y Topologías de Red &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

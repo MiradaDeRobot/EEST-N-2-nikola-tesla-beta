@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Control U1: Teoría y Representación de Sistemas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Teoría y Representación de Sistemas</h1>
+            <p class="text-lg text-gray-600">Sistemas de Control - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Teoría de Sistemas y Modelos Matemáticos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Teoría de Sistemas y Modelos Matemáticos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Teoría de Sistemas</strong> estudia los sistemas en general, sin importar su naturaleza (física, biológica, social). En control, un <strong>sistema</strong> es un conjunto de componentes que interactúan para lograr un objetivo. Para analizarlo y diseñarlo, necesitamos un <strong>modelo matemático</strong> que describa su comportamiento.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Función de Transferencia</h3>
+                        <p>La herramienta más común para modelar sistemas lineales e invariantes en el tiempo es la <strong>función de transferencia (\(G(s)\))</strong>. Utilizando la Transformada de Laplace, describe la relación entre la salida y la entrada del sistema en el dominio de la frecuencia compleja 's'.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x200/E0F2FE/0891B2?text=Diagrama+de+Bloques+de+un+Sistema" alt="Diagrama de Bloques" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(G(s) = \frac{Y(s)}{X(s)}\)</p>
+                           <p class="mt-2">Donde \(Y(s)\) es la transformada de Laplace de la señal de salida y \(X(s)\) es la transformada de la señal de entrada.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Respuesta de Sistemas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Respuesta de Sistemas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>respuesta de un sistema</strong> describe cómo se comporta su salida a lo largo del tiempo ante una determinada señal de entrada. Típicamente se analiza la respuesta a una entrada escalón, que simula un cambio brusco en el setpoint.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Respuesta Transitoria y Estacionaria</h3>
+                        <p>La respuesta total se compone de dos partes:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Respuesta Transitoria:</strong> Es el comportamiento inicial del sistema mientras se adapta al cambio.</li>
+                            <li><strong>Respuesta Estacionaria:</strong> Es el comportamiento del sistema después de que ha pasado mucho tiempo y se ha estabilizado.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Respuesta+de+un+Sistema+a+un+Escal%C3%B3n" alt="Respuesta a un Escalón" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Estabilidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Criterios de Comportamiento y Estabilidad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>estabilidad</strong> es la propiedad más importante de un sistema de control. Un sistema es estable si, ante una entrada acotada, su salida también es acotada (criterio BIBO: Bounded-Input, Bounded-Output). Un sistema inestable es inútil y potencialmente peligroso.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis de Estabilidad</h3>
+                        <p>La estabilidad de un sistema se puede determinar analizando los <strong>polos</strong> de su función de transferencia (las raíces del denominador). Para que un sistema sea estable, todos sus polos deben estar en el <strong>semiplano izquierdo</strong> del plano complejo 's'.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Plano+'s'+con+Polos+Estables+e+Inestables" alt="Plano 's'" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Compensación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Compensación Electrónica del Sistema</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>A menudo, un sistema básico no cumple con los requisitos de comportamiento deseados (es muy lento, oscila demasiado o es inestable). La <strong>compensación</strong> consiste en añadir un controlador o una red de compensación al sistema para modificar su respuesta y hacer que cumpla las especificaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Compensadores</h3>
+                        <p>Se diseñan para modificar la ubicación de los polos y ceros del sistema en lazo cerrado.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Compensador de Adelanto (Lead):</strong> Mejora la respuesta transitoria (la hace más rápida).</li>
+                            <li><strong>Compensador de Atraso (Lag):</strong> Mejora el error en estado estacionario.</li>
+                            <li><strong>Compensador de Adelanto-Atraso (Lead-Lag):</strong> Combina las ventajas de ambos.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Estabilidad y Compensación de Sistemas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

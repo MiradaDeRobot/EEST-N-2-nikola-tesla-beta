@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrónica Aplicada U4: Aplicaciones Industriales Específicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Aplicaciones Industriales Específicas</h1>
+            <p class="text-lg text-gray-600">Electrónica Aplicada - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Procesos Especiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Procesos Industriales Avanzados</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La electrónica de potencia y de control permite el desarrollo de procesos industriales que van más allá de la mecánica tradicional.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Calentamiento por Radiofrecuencia (RF)</h3>
+                        <p>También conocido como calentamiento dieléctrico. Se utiliza para calentar materiales aislantes eléctricos. El material se coloca entre dos electrodos a los que se aplica un campo eléctrico de alta frecuencia (RF). Las moléculas polares del material intentan alinearse con el campo oscilante, generando calor por fricción interna.</p>
+                        <div class="info-box">
+                            <strong>Aplicación:</strong> Secado de madera, precalentamiento de plásticos antes del moldeo, y en los hornos de microondas domésticos.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Soldadura Eléctrica por Resistencia</h3>
+                        <p>Este proceso une dos piezas metálicas aplicando una fuerte presión y haciendo pasar una corriente eléctrica muy alta a través de ellas. El calor generado por el efecto Joule (\(P = I^2 \cdot R\)) en el punto de contacto funde el metal y crea la unión.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ultrasonidos</h3>
+                        <p>Se utilizan ondas sonoras de muy alta frecuencia (inaudibles para el ser humano) para diversas aplicaciones industriales. Un transductor piezoeléctrico convierte una señal eléctrica de alta frecuencia en vibraciones mecánicas.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Limpieza por Ultrasonido:</strong> Las vibraciones generan y colapsan millones de burbujas microscópicas en un líquido (cavitación), creando un efecto de "cepillado" muy eficaz para limpiar piezas complejas.</li>
+                            <li><strong>Soldadura por Ultrasonido:</strong> Las vibraciones de alta frecuencia se utilizan para unir plásticos o metales finos sin necesidad de adhesivos o calor externo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Electroerosión (EDM)</h3>
+                        <p>Es un proceso de mecanizado que utiliza descargas eléctricas controladas (chispas) para erosionar y dar forma a piezas metálicas. Es ideal para fabricar moldes y matrices de alta precisión con metales muy duros que serían difíciles de mecanizar por métodos tradicionales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sistemas de Control Específicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Sistemas de Control de Procesos Específicos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Muchos procesos industriales requieren el control preciso de variables específicas. Estos sistemas de control son aplicaciones dedicadas de los principios vistos en unidades anteriores.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Control de Temperatura</h3>
+                        <p>Es uno de los lazos de control más comunes en la industria. Un sensor (como una termocupla o un PT100) mide la temperatura del proceso. Un controlador (generalmente un PID) compara esta medición con el setpoint y ajusta la potencia entregada a un elemento calefactor (una resistencia) para mantener la temperatura constante.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Lazo+de+Control+de+Temperatura" alt="Lazo de Control de Temperatura" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Control de Iluminación</h3>
+                        <p>Los sistemas modernos de control de iluminación (ej. protocolo DALI) permiten regular la intensidad y el color de grandes grupos de luminarias de forma centralizada, optimizando el confort visual y el ahorro energético.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pesaje y Dosificación Electrónicos</h3>
+                        <p>Se utilizan <strong>celdas de carga</strong> (transductores que convierten fuerza en una señal eléctrica) para medir el peso en silos o tolvas. Un sistema de control (generalmente un PLC) utiliza esta información para controlar la apertura y cierre de compuertas o la velocidad de cintas transportadoras, permitiendo dosificar la cantidad exacta de material requerida en un proceso de mezcla.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Control de Procesos Industriales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U1: Fundamentos de Señales y Transmisión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Fundamentos de Señales y Transmisión</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Análisis de Señales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Análisis de Señales: Fourier y Muestreo</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para entender las comunicaciones, primero debemos entender la naturaleza de las señales que transmitimos. El <strong>análisis de Fourier</strong> y el <strong>teorema del muestreo</strong> son dos pilares matemáticos que nos permiten procesar y digitalizar señales del mundo real.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis de Fourier</h3>
+                        <p>El Teorema de Fourier nos dice que cualquier señal periódica, sin importar su forma, puede ser descompuesta en una suma de ondas senoidales simples (una fundamental y sus armónicos). Esto nos permite analizar la señal en el <strong>dominio de la frecuencia</strong>, es decir, ver qué "ingredientes" de frecuencia la componen.</p>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Teorema del Muestreo (Nyquist-Shannon)</h3>
+                        <p>Para convertir una señal analógica en digital, debemos tomar muestras de su valor a intervalos regulares. El teorema del muestreo establece una regla crucial: la <strong>frecuencia de muestreo (\(f_s\))</strong> debe ser, como mínimo, el doble de la máxima frecuencia presente en la señal analógica (\(f_{max}\)) para poder reconstruirla sin pérdida de información.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Muestreo+y+Aliasing" alt="Muestreo y Aliasing" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                           <p class="text-center text-2xl font-mono">\(f_s \ge 2 \cdot f_{max}\)</p>
+                           <p class="mt-2">Si no se cumple esta condición, se produce un efecto de distorsión llamado <strong>aliasing</strong>, donde las altas frecuencias se "disfrazan" de bajas frecuencias, corrompiendo la señal.</p>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=r18Gi8lSkfA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre el Teorema de Muestreo &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Medios de Transmisión -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Medios de Transmisión</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p>Un medio de transmisión es el canal físico a través del cual viaja la señal desde el transmisor hasta el receptor. Se dividen en dos grandes categorías.</p>
+                        <h3 class="text-2xl font-semibold my-3">Medios Guiados</h3>
+                        <p>Las ondas se confinan dentro de un camino físico sólido.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Par Trenzado:</strong> Dos cables de cobre aislados y trenzados para reducir la interferencia. Usado en telefonía y redes Ethernet (UTP/STP).</li>
+                            <li><strong>Cable Coaxial:</strong> Un conductor central rodeado por un aislante, una malla conductora y una cubierta exterior. Ofrece mayor ancho de banda y protección contra el ruido. Usado en TV por cable e internet.</li>
+                            <li><strong>Fibra Óptica:</strong> Transmite datos como pulsos de luz a través de un finísimo hilo de vidrio o plástico. Ofrece un ancho de banda inmenso, inmunidad total a la interferencia electromagnética y gran seguridad.</li>
+                        </ul>
+                        <h3 class="text-2xl font-semibold my-3 mt-8">Medios No Guiados</h3>
+                        <p>Las ondas electromagnéticas se propagan libremente por el espacio.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Ondas de Radio:</strong> Usadas para radiodifusión (AM/FM), televisión y redes Wi-Fi.</li>
+                            <li><strong>Microondas:</strong> Usadas en enlaces punto a punto terrestres, comunicaciones satelitales y redes de telefonía móvil.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Ruido, Ancho de Banda y Capacidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Ruido, Ancho de Banda y Capacidad de Información</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Toda comunicación está limitada por tres factores fundamentales: el ruido, el ancho de banda y la capacidad del canal.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ruido</h3>
+                        <p>El <strong>ruido</strong> es cualquier señal no deseada que se suma a la señal original, degradando su calidad. El <strong>ruido térmico</strong>, producido por la agitación de los electrones en los componentes, es inevitable y está presente en todos los sistemas.</p>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Ancho de Banda y Capacidad de Información</h3>
+                        <p>El <strong>ancho de banda (B)</strong> de un canal es el rango de frecuencias que puede transmitir. La <strong>capacidad (C)</strong> es la máxima velocidad (en bits por segundo) a la que se puede transmitir información a través de ese canal con una tasa de error muy baja.</p>
+                        <div class="info-box">
+                           <strong>Teorema de Shannon-Hartley:</strong> Establece el límite teórico de la capacidad de un canal en presencia de ruido. <br>
+                           <p class="text-center text-2xl font-mono mt-2">\(C = B \cdot \log_2(1 + \frac{S}{N})\)</p>
+                           Donde \(B\) es el ancho de banda y \(S/N\) es la relación señal a ruido.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Capacidad de Canal y Teorema de Shannon &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

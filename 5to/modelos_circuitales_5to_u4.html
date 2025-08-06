@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U4: Filtros y Circuitos Polifásicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Filtros y Circuitos Polifásicos</h1>
+            <p class="text-lg text-gray-600">Análisis de Modelos Circuitales - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Decibeles y Gráficas de Bode -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Decibeles, Filtros y Gráficas de Bode</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para analizar la respuesta en frecuencia de los circuitos, especialmente los filtros, utilizamos herramientas matemáticas y gráficas específicas como los decibeles y los diagramas de Bode.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Decibeles (dB)</h3>
+                        <p>El <strong>decibel</strong> es una unidad logarítmica que se utiliza para expresar la relación entre dos valores de una magnitud, comúnmente la potencia o la tensión. Es muy útil en electrónica porque permite manejar rangos de valores muy amplios de forma cómoda.</p>
+                        <div class="info-box">
+                           <strong>Ganancia de Tensión en dB:</strong> \(G_{dB} = 20 \log_{10}\left(\frac{V_{salida}}{V_{entrada}}\right)\)<br>
+                           <strong>Ganancia de Potencia en dB:</strong> \(G_{dB} = 10 \log_{10}\left(\frac{P_{salida}}{P_{entrada}}\right)\)
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=1o_a-Q-4-3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Decibeles &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Gráficas de Bode</h3>
+                        <p>Un <strong>diagrama de Bode</strong> es un gráfico que representa la respuesta en frecuencia de un sistema. Consta de dos partes:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Gráfico de Magnitud:</strong> Muestra la ganancia en decibeles (eje Y) en función de la frecuencia en escala logarítmica (eje X).</li>
+                            <li><strong>Gráfico de Fase:</strong> Muestra el desfase entre la señal de salida y la de entrada (eje Y) en función de la frecuencia (eje X).</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Diagrama+de+Bode+de+un+Filtro+Pasa-Bajos" alt="Diagrama de Bode" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s3__t9-o_F4" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Diagramas de Bode &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Filtros -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Filtros</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>filtro</strong> es un circuito diseñado para permitir el paso de señales en un cierto rango de frecuencias (banda de paso) y atenuar o bloquear las señales en otras frecuencias (banda de atenuación).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Filtros Pasivos</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Respuesta+Filtro+Pasa-Bajos" alt="Filtro Pasa-Bajos" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Filtro Pasa-Bajos (LPF)</h4>
+                                <p class="text-base text-center">Deja pasar las bajas frecuencias y atenúa las altas.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Respuesta+Filtro+Pasa-Altos" alt="Filtro Pasa-Altos" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Filtro Pasa-Altos (HPF)</h4>
+                                <p class="text-base text-center">Deja pasar las altas frecuencias y atenúa las bajas.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Respuesta+Filtro+Pasa-Banda" alt="Filtro Pasa-Banda" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Filtro Pasa-Banda (BPF)</h4>
+                                <p class="text-base text-center">Deja pasar solo un rango específico de frecuencias.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Respuesta+Filtro+Rechaza-Banda" alt="Filtro Rechaza-Banda" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Filtro Rechaza-Banda (Notch)</h4>
+                                <p class="text-base text-center">Atenúa un rango específico de frecuencias.</p>
+                           </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=484s4_8-Z8o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Filtros Pasivos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos Polifásicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Circuitos Polifásicos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los sistemas polifásicos, y en particular los <strong>sistemas trifásicos</strong>, son el estándar mundial para la generación, transmisión y distribución de energía eléctrica a gran escala. Consisten en tres fuentes de tensión senoidales de igual amplitud y frecuencia, pero desfasadas 120° entre sí.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ventajas de los Sistemas Trifásicos</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>Mayor Potencia:</strong> Un sistema trifásico puede transmitir más potencia con los mismos conductores que un sistema monofásico.</li>
+                            <li><strong>Ahorro en Conductores:</strong> Requiere menos cobre para transmitir la misma potencia.</li>
+                            <li><strong>Motores más Eficientes:</strong> Los motores de inducción trifásicos son más simples, robustos y eficientes que los monofásicos.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conexiones en Estrella (Y) y Triángulo (Δ)</h3>
+                        <p>Tanto los generadores como las cargas trifásicas se pueden conectar de dos maneras:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Conexi%C3%B3n+Estrella+(Y)" alt="Conexión Estrella" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Conexión Estrella</h4>
+                                <p class="text-base">Los terminales de un extremo de las tres fases se unen en un punto común (neutro). La tensión de línea es \(\sqrt{3}\) veces la tensión de fase. La corriente de línea es igual a la de fase.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Conexi%C3%B3n+Tri%C3%A1ngulo+(Delta)" alt="Conexión Triángulo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Conexión Triángulo</h4>
+                                <p class="text-base">Las fases se conectan en serie formando un bucle cerrado. La tensión de línea es igual a la de fase. La corriente de línea es \(\sqrt{3}\) veces la corriente de fase.</p>
+                            </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=3-5R9gOQ_Yk" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sistemas Trifásicos &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

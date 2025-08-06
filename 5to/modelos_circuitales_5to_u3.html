@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Circuitales U3: Teoremas y Análisis de Señales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Teoremas y Análisis de Señales</h1>
+            <p class="text-lg text-gray-600">Análisis de Modelos Circuitales - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Teoremas de Redes en CA -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Teoremas de Redes en CA</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los teoremas que estudiamos para corriente continua (Thévenin, Norton, Superposición) son tan poderosos que también se aplican a circuitos de corriente alterna. La única diferencia, pero fundamental, es que ahora trabajamos en el dominio de la frecuencia, utilizando <strong>fasores</strong> para las tensiones y corrientes, e <strong>impedancias</strong> para los componentes pasivos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aplicación de Teoremas en CA</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Superposición:</strong> Se analiza el efecto de cada fuente de CA de forma individual, apagando las demás (fuentes de tensión por cortocircuitos, fuentes de corriente por circuitos abiertos). El resultado final es la suma fasorial de los efectos individuales.</li>
+                            <li><strong>Thévenin en CA:</strong> Cualquier circuito lineal se puede reducir a una fuente de tensión fasorial \(\mathbf{V_{Th}}\) en serie con una impedancia \(\mathbf{Z_{Th}}\).</li>
+                            <li><strong>Norton en CA:</strong> El mismo circuito se puede reducir a una fuente de corriente fasorial \(\mathbf{I_{N}}\) en paralelo con una impedancia \(\mathbf{Z_{N}}\) (donde \(\mathbf{Z_{N} = Z_{Th}}\)).</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Cálculo de \(Z_{Th}\):</strong> La Resistencia de Thévenin ahora es una Impedancia de Thévenin. Se calcula de la misma forma: se apagan las fuentes independientes y se calcula la impedancia equivalente vista desde los terminales de interés, sumando las impedancias en serie o paralelo.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=1-ydeRk-X2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Teorema de Thévenin en CA &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Método de Fourier -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Método de Fourier para Ondas Periódicas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Hasta ahora, hemos analizado circuitos con señales senoidales puras. Pero, ¿qué pasa con otras formas de onda periódicas, como una onda cuadrada o triangular? El <strong>Análisis de Fourier</strong> nos da la respuesta.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Serie de Fourier</h3>
+                        <p>El Teorema de Fourier establece que <strong>cualquier señal periódica</strong>, sin importar cuán compleja sea su forma, puede descomponerse en una suma de ondas senoidales simples. Esta suma consiste en:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li>Un término de corriente continua (el valor promedio de la señal).</li>
+                            <li>Una onda senoidal de <strong>frecuencia fundamental</strong> (la misma que la señal original).</li>
+                            <li>Una serie (potencialmente infinita) de ondas senoidales de frecuencias que son múltiplos enteros de la fundamental, llamadas <strong>armónicos</strong>.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Descomposici%C3%B3n+de+Onda+Cuadrada+en+Arm%C3%B3nicos" alt="Descomposición de Fourier de una onda cuadrada" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicación:</strong> Gracias a Fourier, podemos analizar la respuesta de un circuito a una onda cuadrada aplicando el Teorema de Superposición. Calculamos la respuesta del circuito a la componente de DC, luego a la fundamental, luego al segundo armónico, al tercero, y así sucesivamente. La respuesta total es la suma de todas las respuestas individuales.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=r18Gi8lSkfA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Serie de Fourier &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Circuitos Magnéticos y Transformadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Circuitos Magnéticos Acoplados y Transformadores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>transformador</strong> es un dispositivo que transfiere energía eléctrica de un circuito a otro a través de un campo magnético, sin conexión eléctrica directa. Se basa en el principio de inducción mutua entre dos bobinas (devanados) magnéticamente acopladas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Transformador Ideal</h3>
+                        <p>En un modelo ideal, asumimos que no hay pérdidas de energía. Su función es cambiar los niveles de tensión y corriente de CA.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Esquema+de+un+Transformador" alt="Esquema de un Transformador" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box">
+                           <strong>Relación de Transformación (\(a\)):</strong> Es la relación entre el número de espiras del devanado primario (\(N_p\)) y el secundario (\(N_s\)).<br>
+                           <p class="text-center text-xl font-mono mt-2">\(\frac{V_p}{V_s} = \frac{N_p}{N_s} = a\)</p>
+                           <p class="text-center text-xl font-mono mt-2">\(\frac{I_s}{I_p} = \frac{N_p}{N_s} = a\)</p>
+                           <ul class="list-disc list-inside mt-3 text-base">
+                               <li>Si \(a > 1\), es un transformador <strong>reductor</strong> (baja la tensión, sube la corriente).</li>
+                               <li>Si \(a < 1\), es un transformador <strong>elevador</strong> (sube la tensión, baja la corriente).</li>
+                           </ul>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=P7w4Uo_sIBI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Transformadores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

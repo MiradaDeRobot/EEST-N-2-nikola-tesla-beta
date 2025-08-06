@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital U1: Familias Lógicas y Circuitos Secuenciales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 1: Familias Lógicas y Circuitos Secuenciales</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Digital - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Sistemas Secuenciales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas Secuenciales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>A diferencia de los circuitos combinacionales (donde la salida depende solo de las entradas actuales), la salida de un <strong>circuito secuencial</strong> depende de las entradas actuales y del <strong>estado anterior</strong> del circuito. Esto significa que los circuitos secuenciales tienen <strong>memoria</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Concepto de Estado y Realimentación</h3>
+                        <p>La capacidad de "recordar" se logra mediante la <strong>realimentación (feedback)</strong>, donde una o más salidas se conectan de nuevo a las entradas del circuito. Este bucle permite que el circuito mantenga un estado interno.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Modelo+General+de+un+Circuito+Secuencial" alt="Modelo de un Circuito Secuencial" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                        <div class="info-box">
+                            Un circuito secuencial se modela como una parte combinacional que recibe las entradas externas y el estado actual (de los elementos de memoria) para generar las salidas y el próximo estado.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Familias Lógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Familias Lógicas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una <strong>familia lógica</strong> es un conjunto de circuitos integrados (chips) que comparten una tecnología de fabricación y, por lo tanto, tienen características eléctricas estandarizadas. Esto permite que diferentes chips de la misma familia se puedan interconectar fácilmente para construir sistemas complejos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Evolución de las Familias Lógicas</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>RTL (Lógica Resistor-Transistor) y DTL (Lógica Diodo-Transistor):</strong> Fueron de las primeras familias lógicas. Eran simples pero lentas, consumían mucha potencia y eran muy susceptibles al ruido. Hoy en día tienen un interés puramente histórico.</li>
+                            <li><strong>TTL (Lógica Transistor-Transistor):</strong> Fue el estándar de la industria durante décadas. La famosa serie <strong>74xx</strong> (ej. 7400, 7404) pertenece a esta familia. Ofrecía una buena velocidad y era muy robusta, pero su consumo de potencia era considerable.</li>
+                            <li><strong>CMOS (Semiconductor Complementario de Óxido Metálico):</strong> Es la tecnología dominante en la actualidad. Su principal ventaja es su <strong>consumo de potencia estático casi nulo</strong> (solo consume significativamente cuando cambia de estado). La serie <strong>4000</strong> fue la original, y las series <strong>74HC/HCT</strong> son versiones modernas compatibles en pines con la serie TTL pero con la eficiencia de CMOS.</li>
+                        </ul>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Chip+TTL+(ej.+74LS00)" alt="Chip TTL" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold">TTL (ej. 74LS00)</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x250/E0F2FE/0891B2?text=Chip+CMOS+(ej.+CD4011)" alt="Chip CMOS" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold">CMOS (ej. CD4011)</p>
+                            </div>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s-f94_y_G3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Familias Lógicas TTL y CMOS &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

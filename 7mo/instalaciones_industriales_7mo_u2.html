@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones Industriales U2: Diseño y Cálculo de Nuevas Instalaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Diseño y Cálculo de Nuevas Instalaciones</h1>
+            <p class="text-lg text-gray-600">Instalaciones Industriales - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Definición del Proceso -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Del Producto al Proceso: Definición de Requerimientos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El diseño de cualquier instalación industrial comienza con una idea clara del producto a fabricar y del proceso necesario para ello. Esta etapa inicial define todos los requerimientos técnicos posteriores.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Definición del Proceso y Layout</h3>
+                        <p>A partir del producto (ej. galletitas), se define la secuencia de operaciones y la maquinaria necesaria. Esto se plasma en un <strong>plano de layout</strong>, que es un diagrama de la distribución de las máquinas en la planta. El layout es fundamental para optimizar el flujo de materiales y determinar la ubicación de los servicios.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Plano+de+Layout+de+Planta+Industrial" alt="Plano de Layout" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="example-box">
+                            <strong>Caso de Estudio: Planta de Galletitas (Arcor)</strong><br>
+                            Para fabricar galletitas, necesitamos como mínimo: una amasadora, una cinta transportadora, un horno continuo y una máquina envasadora. El layout ubicará estas máquinas en una secuencia lógica para que el producto fluya sin interrupciones.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Cálculo de Instalaciones Principales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Cálculo y Diseño de Instalaciones Principales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las instalaciones principales son aquellas directamente ligadas a la fuerza motriz de la maquinaria de producción.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Cálculo de la Instalación Eléctrica de Potencia</h3>
+                        <p>Basándose en la lista de máquinas del layout, se calcula la potencia total requerida.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Cálculo de la Carga Total:</strong> Se suman las potencias de todos los motores y equipos. Se aplica un <strong>factor de simultaneidad</strong>, ya que es poco probable que todas las máquinas funcionen a su máxima potencia al mismo tiempo.</li>
+                            <li><strong>Dimensionamiento de Conductores y Protecciones:</strong> Para cada máquina, se calcula la sección del conductor necesaria para soportar su corriente nominal y se elige un interruptor termomagnético adecuado para proteger el circuito.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo de Cálculo para la Amasadora (Motor 15 HP):</strong><br>
+                            1. <strong>Potencia:</strong> 15 HP ≈ 11 kW.<br>
+                            2. <strong>Corriente Nominal:</strong> Se calcula con la fórmula de potencia trifásica: \(I = \frac{P}{\sqrt{3} \cdot V \cdot \cos\phi}\). Suponiendo V=380V y cos φ=0.85, la corriente es de aprox. 20A.<br>
+                            3. <strong>Selección de Protección:</strong> Se elige un interruptor termomagnético de curva D (para arranque de motores) de un calibre superior, por ejemplo 25A.<br>
+                            4. <strong>Selección del Conductor:</strong> Se busca en las tablas de la norma AEA un conductor que soporte 25A (ej. 4 mm²).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Diseño de Instalaciones Auxiliares -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Diseño de Instalaciones Auxiliares</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez dimensionada la instalación de potencia, se diseñan los sistemas de soporte necesarios para el funcionamiento de la planta.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diseño de la Instalación de Iluminación</h3>
+                        <p>El diseño busca lograr un nivel de iluminación adecuado para cada sector (medido en lux), según lo que exigen las normativas de higiene y seguridad. Se calcula el número de luminarias necesarias y se distribuyen uniformemente para evitar sombras. Luego se diseñan los circuitos eléctricos correspondientes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diseño de la Red de Aire Comprimido</h3>
+                        <p>Se identifican todos los puntos de consumo de aire comprimido (actuadores neumáticos, herramientas, etc.) y se suma su caudal (en m³/h o L/min). Con este dato, se dimensiona el compresor y el pulmón (depósito acumulador), y se diseña el trazado de la red de cañerías para minimizar las caídas de presión.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Diseño de Instalaciones Industriales &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

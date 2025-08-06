@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrónica Aplicada U5: Sistemas Complejos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 5: Sistemas Complejos</h1>
+            <p class="text-lg text-gray-600">Electrónica Aplicada - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Control de Ascensores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas de Control para Ascensores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El control de un ascensor es un sistema de control complejo y crítico para la seguridad. Involucra la gestión de un motor de alta potencia, la lectura de múltiples sensores y la ejecución de una lógica de control precisa para garantizar un funcionamiento suave y seguro.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes del Sistema de Control</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Controlador (PLC o Microcontrolador):</strong> Es el cerebro que recibe las llamadas de los pisos y de la cabina, y gestiona la secuencia de movimientos.</li>
+                            <li><strong>Variador de Frecuencia (VFD):</strong> Controla el motor principal, permitiendo arranques y paradas suaves (curva de aceleración en "S") para el confort de los pasajeros.</li>
+                            <li><strong>Sensores de Posición:</strong> Informan al controlador en qué piso se encuentra la cabina y cuándo debe empezar a frenar.</li>
+                            <li><strong>Sistemas de Seguridad:</strong> Sensores de sobrecarga, contactos de puerta, limitadores de velocidad y paracaídas de emergencia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sistemas Automáticos de Prueba -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Sistemas Automáticos de Prueba (ATE)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>ATE (Automatic Test Equipment)</strong> es un sistema computarizado que se utiliza en la fabricación en serie para probar placas o dispositivos electrónicos de forma rápida y automática, verificando que cumplan con todas sus especificaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funcionamiento</h3>
+                        <p>El ATE se conecta a la placa bajo prueba a través de una "cama de pinos" y ejecuta una secuencia de pruebas programada:</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li>Aplica señales de estímulo a las entradas del circuito.</li>
+                            <li>Mide las respuestas en los puntos de prueba de la salida.</li>
+                            <li>Compara los valores medidos con los valores esperados.</li>
+                            <li>Genera un informe de "Pasa / No Pasa" (Pass / Fail).</li>
+                        </ul>
+                        <div class="info-box">
+                           Los ATE son cruciales para garantizar la calidad en la producción en masa, ya que permiten probar miles de unidades por día con una fiabilidad mucho mayor que la prueba manual.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Receptores de TV -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Principios de Receptores de TV</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un receptor de televisión es un sistema electrónico complejo que recibe una señal de radiofrecuencia (RF) y la procesa para extraer la información de video y audio y reproducirla en una pantalla y altavoces.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diagrama en Bloques Simplificado</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/700x300/E0F2FE/0891B2?text=Diagrama+en+Bloques+de+un+Receptor+de+TV" alt="Diagrama en Bloques de un Receptor de TV" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-3xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Sintonizador:</strong> Selecciona la frecuencia del canal deseado y la convierte a una Frecuencia Intermedia (FI).</li>
+                            <li><strong>Etapa de FI y Detección de Video:</strong> Amplifica la señal de FI y demodula la señal de video (luminancia y crominancia).</li>
+                            <li><strong>Procesamiento de Video:</strong> Separa las señales de color y sincronismo, y las procesa para ser enviadas al panel de la pantalla.</li>
+                            <li><strong>Detección y Amplificación de Audio:</strong> Extrae la señal de audio de la portadora, la demodula y la amplifica para alimentar los parlantes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Soldadura Industrial Automática -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">4. Soldadura Industrial Automática</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La soldadura industrial automática utiliza robots y sistemas de control para realizar procesos de soldadura de forma repetitiva, rápida y con una calidad muy superior a la soldadura manual.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Soldadura Automatizada</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Soldadura por Resistencia por Puntos:</strong> Es la más utilizada en la industria automotriz. Dos electrodos presionan las chapas metálicas y una alta corriente las funde en ese punto.</li>
+                            <li><strong>Soldadura por Arco (MIG/TIG):</strong> Un brazo robótico mueve la torcha de soldadura a lo largo de una trayectoria programada, creando un cordón de soldadura continuo.</li>
+                        </ul>
+                        <div class="info-box">
+                           Estos sistemas a menudo integran <strong>sistemas de visión artificial</strong> para guiar al robot y realizar controles de calidad sobre la soldadura realizada.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Soldadura Robotizada &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Matemático U4: Integración Avanzada y Aplicaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 4: Integración Avanzada y Aplicaciones</h1>
+            <p class="text-lg text-gray-600">Análisis Matemático - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Integración Numérica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Integración Numérica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>¿Qué sucede cuando no podemos encontrar la antiderivada de una función? La integración numérica nos ofrece métodos para obtener una <strong>aproximación</strong> del valor de una integral definida. Son herramientas fundamentales en ingeniería y ciencias cuando las soluciones analíticas no son posibles.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Regla de los Trapecios</h3>
+                        <p>Este método aproxima el área bajo la curva dividiéndola en varios <strong>trapecios</strong> en lugar de rectángulos. Es más preciso que la suma de Riemann porque se adapta mejor a la forma de la curva.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Regla+de+los+Trapecios" alt="Regla de los Trapecios" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Fórmula de Simpson</h3>
+                        <p>La regla de Simpson es un método aún más preciso. En lugar de usar líneas rectas (trapecios) para aproximar la función, utiliza <strong>parábolas</strong>. Al adaptarse mucho mejor a las curvas, generalmente produce un resultado más cercano al valor real con el mismo número de divisiones.</p>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=r-Z8-i-4-tM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Integración Numérica &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Integrales Múltiples -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Integrales Dobles y Triples</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Las integrales múltiples son la extensión del concepto de integral a funciones de más de una variable.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Integral Doble</h3>
+                        <p>Así como la integral simple calcula el área bajo una curva, la <strong>integral doble</strong> calcula el <strong>volumen bajo una superficie</strong> en el espacio tridimensional.</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Volumen+bajo+una+Superficie" alt="Volumen bajo una superficie" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Integral Triple y Cambio de Variables</h3>
+                        <p>La <strong>integral triple</strong> se utiliza para integrar sobre una región tridimensional. Sirve para calcular el volumen de figuras complejas o la masa de un objeto con densidad variable.</p>
+                        <p class="mt-3">El <strong>cambio de variables</strong> es una técnica para simplificar integrales múltiples, cambiando el sistema de coordenadas. Por ejemplo, se usan coordenadas polares para regiones circulares o coordenadas esféricas para regiones esféricas.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=42Q_s-S1_vM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Integrales Dobles &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Integrales Impropias -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Integrales Impropias</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una integral se llama <strong>impropia</strong> si al menos uno de sus límites de integración es infinito, o si la función tiene una discontinuidad infinita (una asíntota vertical) dentro del intervalo de integración. Se resuelven utilizando límites.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Integrales Impropias</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Tipo 1 (Intervalo Infinito):</strong> Se reemplaza el infinito por una variable y se calcula el límite. \(\int_{a}^{\infty} f(x) \,dx = \lim_{b \to \infty} \int_{a}^{b} f(x) \,dx\)</li>
+                            <li><strong>Tipo 2 (Discontinuidad Infinita):</strong> Si la función es discontinua en \(c\), se divide la integral en dos y se calcula el límite acercándose a \(c\).</li>
+                        </ul>
+                        <div class="info-box">
+                           <strong>Convergencia y Divergencia:</strong> Si el límite existe y es un número finito, se dice que la integral <strong>converge</strong>. Si el límite no existe o es infinito, la integral <strong>diverge</strong>.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-l_52k-u-c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Integrales Impropias &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

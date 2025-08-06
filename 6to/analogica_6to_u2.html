@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U2: Dispositivos Electrónicos Especiales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Dispositivos Electrónicos Especiales</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 6º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Diodos Especiales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Diodos para Aplicaciones Específicas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Más allá de la rectificación, existen diodos diseñados para explotar características particulares de la unión semiconductora, abriendo la puerta a un sinfín de aplicaciones avanzadas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Schottky</h3>
+                        <p>A diferencia de un diodo convencional que usa una unión P-N, el diodo Schottky se forma por una <strong>unión metal-semiconductor</strong> (tipo N). Esta construcción única le confiere propiedades excepcionales. Al no tener una unión P-N, no hay recombinación de portadores minoritarios, lo que elimina el "tiempo de recuperación inversa" (\(t_{rr}\)).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Diodo+Schottky" alt="Diodo Schottky" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                           <li><strong>Ventaja 1 - Baja Tensión Umbral (\(V_d\)):</strong> Su caída de tensión en directa es muy baja, típicamente entre <strong>0.2V y 0.4V</strong>. Esto se traduce en una mayor eficiencia, ya que disipa menos potencia en forma de calor (\(P = V_d \cdot I\)).</li>
+                           <li><strong>Ventaja 2 - Velocidad de Conmutación:</strong> Su tiempo de conmutación es del orden de picosegundos, haciéndolo ideal para aplicaciones de muy alta frecuencia.</li>
+                           <li><strong>Aplicaciones:</strong> Fuentes de alimentación conmutadas (SMPS), circuitos de radiofrecuencia (RF), protección contra inversión de polaridad.</li>
+                        </ul>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=5-8-e_f_a_A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Diodo Schottky &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Varactor (Varicap)</h3>
+                        <p>Este diodo se utiliza siempre en polarización inversa. La zona de deplexión de la unión P-N actúa como el dieléctrico de un capacitor. Al aumentar la tensión inversa, esta zona se ensancha, separando más las "placas" y disminuyendo la capacitancia. Por lo tanto, actúa como un <strong>capacitor variable controlado por voltaje</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Diodo+Varactor" alt="Diodo Varactor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicación Principal:</strong> Sintonización de circuitos de radiofrecuencia (RF), como en los sintonizadores de radio y TV, y en osciladores controlados por voltaje (VCO) y bucles de enganche de fase (PLL).
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=sC2i9j_4i-o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Diodo Varactor &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodos de Potencia</h3>
+                        <p>Son diodos rectificadores diseñados para manejar altas corrientes (decenas o cientos de amperes) y altas tensiones inversas. Su construcción es más robusta, con una unión P-N de mayor área y encapsulados metálicos que facilitan el montaje en disipadores de calor para evacuar la gran cantidad de potencia que disipan.</p>
+                         <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Diodo+de+Potencia" alt="Diodo de Potencia" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diodo Túnel</h3>
+                        <p>Basado en un efecto cuántico llamado "efecto túnel", este diodo presenta una característica única: una región de <strong>resistencia negativa</strong> en su curva I-V. Esto significa que en un pequeño rango, al aumentar la tensión, la corriente disminuye. Esta propiedad lo hace útil para construir osciladores de muy alta frecuencia (microondas) y amplificadores.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Curva+I-V+Diodo+T%C3%BAnel" alt="Curva I-V de un Diodo Túnel" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Dispositivos Optoelectrónicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Dispositivos Optoelectrónicos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La optoelectrónica es la rama que combina la óptica y la electrónica. Estudia dispositivos que emiten, detectan o controlan la luz.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Celdas Fotoconductoras (LDR)</h3>
+                        <p>Una LDR (Light Dependent Resistor) es una resistencia cuyo valor óhmico disminuye drásticamente a medida que aumenta la intensidad de la luz que incide sobre ella. Están hechas de materiales semiconductores como el sulfuro de cadmio. Los fotones de la luz incidente aportan la energía necesaria para que los electrones salten a la banda de conducción, aumentando el número de portadores de carga y disminuyendo la resistencia.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Sensor+LDR" alt="Sensor LDR" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="info-box">
+                            <strong>Aplicación Práctica:</strong> Control automático de alumbrado público. Un circuito con un LDR puede detectar la caída de la luz al anochecer y activar un relé para encender las luces.
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=1o_a-Q-4-3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre LDR &rarr;
+                            </a>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Emisores de Infrarrojo (LED IR)</h3>
+                        <p>Son diodos emisores de luz fabricados con materiales como el Arseniuro de Galio (GaAs) que, al ser polarizados en directa, emiten luz en el espectro infrarrojo (longitudes de onda más largas que el rojo visible), invisible para el ojo humano. Se utilizan en conjunto con un receptor (como un fotodiodo o fototransistor) para crear enlaces de comunicación o detección óptica.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=LED+Infrarrojo+(IR)" alt="LED Infrarrojo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                        <div class="example-box">
+                            <strong>Aplicación Práctica:</strong> El control remoto de un televisor utiliza un LED IR para enviar pulsos de luz codificados. El televisor tiene un fotodiodo que recibe estos pulsos y los decodifica para ejecutar la orden. También se usan en barreras de seguridad y sensores de proximidad.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=k-y_423bs-Mo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Emisores y Receptores IR &rarr;
+                            </a>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Celdas Solares (Fotovoltaicas)</h3>
+                        <p>Son dispositivos que convierten la energía de la luz (fotones) directamente en energía eléctrica mediante el <strong>efecto fotovoltaico</strong>. Están formadas por una gran unión P-N. Cuando la luz incide sobre la unión, los fotones con suficiente energía crean pares electrón-hueco. El campo eléctrico intrínseco de la zona de deplexión separa estos pares, enviando los electrones a la región N y los huecos a la P. Esta separación de cargas genera una diferencia de potencial y, si se conecta un circuito externo, una corriente eléctrica.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x300/E0F2FE/0891B2?text=Funcionamiento+de+una+Celda+Solar" alt="Funcionamiento de una Celda Solar" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=m23829k-8k0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Celdas Solares &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

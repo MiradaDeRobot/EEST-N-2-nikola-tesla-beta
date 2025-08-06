@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes Electrónicos U3: Programación Básica en C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 3: Programación Básica en C</h1>
+            <p class="text-lg text-gray-600">Lenguajes Electrónicos - 5º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Entrada y Salida de Datos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Entrada y Salida de Datos (Funciones Básicas)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La interacción con el usuario es fundamental en la mayoría de los programas. En C, esto se logra principalmente con dos funciones de la biblioteca estándar de entrada/salida (`stdio.h`).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Salida de Datos: `printf()`</h3>
+                        <p>La función `printf` (print formatted) se utiliza para mostrar texto y datos en la consola. Su poder reside en los <strong>especificadores de formato</strong>, que son códigos que indican cómo se debe imprimir una variable.</p>
+                        <ul class="list-disc list-inside space-y-2 mt-3">
+                            <li><strong>`%d`</strong> o <strong>`%i`</strong>: Para imprimir números enteros (`int`).</li>
+                            <li><strong>`%f`</strong>: Para imprimir números de punto flotante (`float`, `double`).</li>
+                            <li><strong>`%c`</strong>: Para imprimir un único carácter (`char`).</li>
+                            <li><strong>`%s`</strong>: Para imprimir una cadena de caracteres (string).</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Entrada de Datos: `scanf()`</h3>
+                        <p>La función `scanf` se utiliza para leer datos introducidos por el usuario desde el teclado y almacenarlos en variables. También utiliza especificadores de formato para saber qué tipo de dato esperar.</p>
+                        <div class="info-box">
+                            <strong>El Ampersand (`&`):</strong> Al usar `scanf`, es crucial preceder el nombre de la variable con el símbolo ampersand (`&`). Este operador le indica a la función la <strong>dirección de memoria</strong> donde debe guardar el dato leído.
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo Completo:</strong>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nombre[20];
+    int edad;
+
+    printf("Por favor, ingresa tu nombre: ");
+    scanf("%s", nombre); // No se usa & para cadenas de caracteres
+
+    printf("Ahora, ingresa tu edad: ");
+    scanf("%d", &edad);
+
+    printf("\nHola, %s. Tienes %d años.\n", nombre, edad);
+
+    return 0;
+}
+</code></pre>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=g-5-f0b_s-A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre `printf` y `scanf` &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funciones Matemáticas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Funciones Matemáticas (`math.h`)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para realizar operaciones matemáticas más complejas que las básicas, C proporciona la biblioteca `math.h`. Para usarla, debemos incluirla al principio de nuestro programa con `#include <math.h>`.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones Comunes</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-left text-base">
+                                <thead class="border-b bg-gray-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Función</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Descripción</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Ejemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">`sqrt(x)`</td><td class="px-6 py-4">Calcula la raíz cuadrada de x.</td><td class="px-6 py-4">`sqrt(16.0)` devuelve `4.0`</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">`pow(b, e)`</td><td class="px-6 py-4">Calcula la potencia de una base b elevada a un exponente e.</td><td class="px-6 py-4">`pow(2.0, 3.0)` devuelve `8.0`</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">`sin(x)`, `cos(x)`, `tan(x)`</td><td class="px-6 py-4">Calculan el seno, coseno y tangente de un ángulo x (en radianes).</td><td class="px-6 py-4">`sin(0.0)` devuelve `0.0`</td></tr>
+                                    <tr><td class="px-6 py-4 font-medium">`log(x)`, `log10(x)`</td><td class="px-6 py-4">Calculan el logaritmo natural y en base 10 de x.</td><td class="px-6 py-4">`log10(100.0)` devuelve `2.0`</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=O-3-3iY-sY3M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre la Biblioteca `math.h` &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Manejo de Caracteres -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Manejo de Caracteres (`ctype.h`)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La biblioteca `ctype.h` proporciona un conjunto de funciones muy útiles para clasificar y convertir caracteres individuales. Es fundamental para validar entradas de usuario y procesar texto.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones de Clasificación y Conversión</h3>
+                        <p>Estas funciones reciben un carácter como argumento y devuelven un valor distinto de cero (verdadero) si el carácter cumple la condición, o cero (falso) si no la cumple.</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>`isalpha(c)`:</strong> Devuelve verdadero si `c` es una letra del alfabeto.</li>
+                            <li><strong>`isdigit(c)`:</strong> Devuelve verdadero si `c` es un dígito numérico (0-9).</li>
+                            <li><strong>`isalnum(c)`:</strong> Devuelve verdadero si `c` es una letra o un dígito.</li>
+                            <li><strong>`islower(c)` / `isupper(c)`:</strong> Verifican si `c` es una letra minúscula o mayúscula.</li>
+                            <li><strong>`tolower(c)` / `toupper(c)`:</strong> Convierten el carácter `c` a minúscula o mayúscula, respectivamente.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Ejemplo:</strong>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main() {
+    char caracter = 'A';
+    
+    if (isupper(caracter)) {
+        printf("El caracter '%c' es una mayúscula.\n", caracter);
+        printf("En minúscula es: '%c'\n", tolower(caracter));
+    }
+    
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

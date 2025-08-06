@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analógica U2: Mediciones y Componentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fffbeb; /* amber-50 */
+            border-left: 4px solid #f59e0b; /* amber-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Mediciones y Componentes</h1>
+            <p class="text-lg text-gray-600">Aplicaciones de la Electrónica Analógica - 4º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Sistemas de Unidades -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Sistemas de Unidades y Patrones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para que nuestras mediciones sean consistentes y universalmente entendidas, utilizamos el <strong>Sistema Internacional de Unidades (SI)</strong>. Este sistema no solo estandariza las unidades, sino que también establece una jerarquía de patrones para asegurar que un Volt medido en Argentina sea igual a un Volt medido en cualquier otra parte del mundo.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Unidades Fundamentales y Derivadas</h3>
+                        <p>El SI define siete unidades básicas. En electrónica, las más relevantes son el <strong>Ampere (A)</strong> para la corriente, el <strong>Segundo (s)</strong> para el tiempo, y el <strong>Metro (m)</strong> para la longitud. A partir de estas, se derivan otras unidades cruciales:</p>
+                        <div class="overflow-x-auto mt-4">
+                            <table class="min-w-full text-left text-base">
+                                <thead class="border-b bg-gray-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Magnitud</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Unidad (SI)</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Símbolo</th>
+                                        <th scope="col" class="px-6 py-4 font-semibold">Derivación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">Carga Eléctrica</td><td class="px-6 py-4">Coulomb</td><td class="px-6 py-4">C</td><td class="px-6 py-4">A · s</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">Tensión Eléctrica</td><td class="px-6 py-4">Volt</td><td class="px-6 py-4">V</td><td class="px-6 py-4">J / C (Joule por Coulomb)</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">Resistencia</td><td class="px-6 py-4">Ohm</td><td class="px-6 py-4">Ω</td><td class="px-6 py-4">V / A</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">Capacitancia</td><td class="px-6 py-4">Farad</td><td class="px-6 py-4">F</td><td class="px-6 py-4">C / V</td></tr>
+                                    <tr class="border-b"><td class="px-6 py-4 font-medium">Inductancia</td><td class="px-6 py-4">Henry</td><td class="px-6 py-4">H</td><td class="px-6 py-4">(V · s) / A</td></tr>
+                                    <tr><td class="px-6 py-4 font-medium">Frecuencia</td><td class="px-6 py-4">Hertz</td><td class="px-6 py-4">Hz</td><td class="px-6 py-4">s⁻¹ (ciclos por segundo)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="info-box">
+                            <strong>Patrones y Trazabilidad:</strong> Un <strong>patrón</strong> es una materialización de una unidad de medida. Los laboratorios nacionales (como el INTI en Argentina) mantienen patrones primarios de altísima precisión. Los laboratorios de calibración usan patrones secundarios, que a su vez son calibrados contra los primarios. Este vínculo ininterrumpido se llama <strong>trazabilidad</strong> y garantiza la confianza en las mediciones.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Errores en la Medición -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Errores en la Medición</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ninguna medición es perfectamente exacta. Siempre existe un grado de incertidumbre o error. Comprender las fuentes de error es crucial para interpretar correctamente los resultados y determinar la confiabilidad de una medida.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Clasificación de Errores</h3>
+                        <ul class="list-disc list-inside space-y-4">
+                            <li><strong>Errores Sistemáticos:</strong> Son errores que se repiten de forma constante y predecible. Desplazan todas las mediciones en la misma dirección.
+                                <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                    <li><strong>Causa:</strong> Instrumentos mal calibrados, defectos de fábrica, o un método de medición incorrecto (error de carga).</li>
+                                    <li><strong>Ejemplo:</strong> Un voltímetro que, debido a una falla interna, siempre mide 0.1V por encima del valor real. Si el voltaje es 5V, medirá 5.1V; si es 10V, medirá 10.1V.</li>
+                                    <li><strong>Corrección:</strong> Se pueden minimizar o corregir mediante la calibración del instrumento o la aplicación de un factor de corrección.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Errores Aleatorios (o Accidentales):</strong> Son variaciones impredecibles en las mediciones. Hacen que las lecturas fluctúen alrededor de un valor central.
+                                 <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                    <li><strong>Causa:</strong> Ruido eléctrico, vibraciones, fluctuaciones de temperatura, limitaciones del observador.</li>
+                                    <li><strong>Ejemplo:</strong> Medir una resistencia varias veces y obtener valores como 99.8Ω, 100.1Ω, 100.0Ω, 99.9Ω.</li>
+                                    <li><strong>Corrección:</strong> No se pueden eliminar, pero su efecto se reduce realizando múltiples mediciones y calculando un promedio estadístico.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Error de Carga:</strong> Es un tipo de error sistemático que ocurre porque el propio acto de medir altera el circuito. Por ejemplo, un voltímetro no tiene resistencia interna infinita, por lo que al conectarlo en paralelo, desvía una pequeña corriente, alterando el voltaje que intenta medir. Este error es más significativo en circuitos de alta impedancia.</li>
+                        </ul>
+                         <div class="info-box">
+                            <strong>Exactitud vs. Precisión:</strong><br>
+                            - <strong>Exactitud:</strong> Es la cercanía de una medición al valor verdadero. Un instrumento exacto tiene bajos errores sistemáticos.<br>
+                            - <strong>Precisión:</strong> Es la capacidad de un instrumento de repetir la misma medición bajo las mismas condiciones. Un instrumento preciso tiene bajos errores aleatorios.
+                         </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <p class="mt-1">Entiende mejor los diferentes tipos de errores en la medición.</p>
+                            <a href="https://www.youtube.com/watch?v=O5-s9g-2s-w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Tipos de Errores &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Componentes Pasivos (AMPLIADA) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">3. Propiedades de los Componentes Pasivos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los componentes pasivos son los "ladrillos" fundamentales de cualquier circuito. No amplifican ni generan señales, sino que interactúan con la energía de formas predecibles: la disipan (resistencias), la almacenan en un campo eléctrico (capacitores) o en un campo magnético (inductores).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Resistencias</h3>
+                        <p>Su función principal es oponerse al paso de la corriente eléctrica, disipando energía en forma de calor (Efecto Joule). Se rigen por la Ley de Ohm \(V = I \cdot R\).</p>
+                        
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Código de Colores</h4>
+                        <p>Es un sistema estandarizado para identificar el valor de una resistencia. Se lee de izquierda a derecha, comenzando por la banda más cercana a un extremo.</p>
+                        <div class="overflow-x-auto mt-4">
+                            <table class="min-w-full text-left text-sm">
+                                <thead class="border-b bg-gray-100"><tr><th class="px-4 py-2">Color</th><th class="px-4 py-2">Valor (1ª/2ª/3ª banda)</th><th class="px-4 py-2">Multiplicador</th><th class="px-4 py-2">Tolerancia</th><th class="px-4 py-2">Coef. Temp.</th></tr></thead>
+                                <tbody>
+                                    <tr style="background-color: #000; color: #fff;"><td class="px-4 py-2">Negro</td><td>0</td><td>x1 Ω</td><td></td><td></td></tr>
+                                    <tr style="background-color: #A52A2A; color: #fff;"><td class="px-4 py-2">Marrón</td><td>1</td><td>x10 Ω</td><td>±1%</td><td>100 ppm/°C</td></tr>
+                                    <tr style="background-color: #FF0000; color: #fff;"><td class="px-4 py-2">Rojo</td><td>2</td><td>x100 Ω</td><td>±2%</td><td>50 ppm/°C</td></tr>
+                                    <tr style="background-color: #FFA500;"><td class="px-4 py-2">Naranja</td><td>3</td><td>x1 kΩ</td><td></td><td>15 ppm/°C</td></tr>
+                                    <tr style="background-color: #FFFF00;"><td class="px-4 py-2">Amarillo</td><td>4</td><td>x10 kΩ</td><td></td><td>25 ppm/°C</td></tr>
+                                    <tr style="background-color: #008000; color: #fff;"><td class="px-4 py-2">Verde</td><td>5</td><td>x100 kΩ</td><td>±0.5%</td><td></td></tr>
+                                    <tr style="background-color: #0000FF; color: #fff;"><td class="px-4 py-2">Azul</td><td>6</td><td>x1 MΩ</td><td>±0.25%</td><td>10 ppm/°C</td></tr>
+                                    <tr style="background-color: #800080; color: #fff;"><td class="px-4 py-2">Violeta</td><td>7</td><td>x10 MΩ</td><td>±0.1%</td><td>5 ppm/°C</td></tr>
+                                    <tr style="background-color: #808080; color: #fff;"><td class="px-4 py-2">Gris</td><td>8</td><td></td><td></td><td></td></tr>
+                                    <tr style="background-color: #fff; border: 1px solid #ddd;"><td class="px-4 py-2">Blanco</td><td>9</td><td></td><td></td><td></td></tr>
+                                    <tr style="background-color: #FFD700;"><td class="px-4 py-2">Oro</td><td></td><td>x0.1 Ω</td><td>±5%</td><td></td></tr>
+                                    <tr style="background-color: #C0C0C0;"><td class="px-4 py-2">Plata</td><td></td><td>x0.01 Ω</td><td>±10%</td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo de Lectura (4 Bandas):</strong> Marrón - Negro - Rojo - Oro <br>
+                            - 1ª Banda (Marrón): <strong>1</strong> <br>
+                            - 2ª Banda (Negro): <strong>0</strong> <br>
+                            - 3ª Banda (Rojo - Multiplicador): <strong>x100 Ω</strong> <br>
+                            - 4ª Banda (Oro - Tolerancia): <strong>±5%</strong> <br>
+                            Valor: \(10 \times 100 = 1000 \Omega = 1 k\Omega\). El valor real estará entre 950 Ω y 1050 Ω.
+                        </div>
+                        <div class="info-box">
+                            <strong>Resistencias de 5 y 6 Bandas:</strong> Se usan para mayor precisión. <br>
+                            - <strong>5 Bandas:</strong> Las tres primeras son cifras significativas, la cuarta es el multiplicador y la quinta la tolerancia. <br>
+                            - <strong>6 Bandas:</strong> Igual que la de 5, pero la sexta banda indica el coeficiente de temperatura.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Capacitores (o Condensadores)</h3>
+                        <p>Almacenan energía en un campo eléctrico entre dos placas conductoras separadas por un material dieléctrico. Su principal característica es que se oponen a los cambios bruscos de voltaje.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Comportamiento y Parámetros</h4>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                             <li><strong>Proceso de Carga/Descarga:</strong> En un circuito RC (Resistencia-Capacitor), el tiempo que tarda en cargarse o descargarse depende de la <strong>constante de tiempo Tau (\(\tau = R \cdot C\))</strong>. Se considera que un capacitor está casi completamente cargado después de 5\(\tau\).</li>
+                            <li><strong>Reactancia Capacitiva (\(X_C\)):</strong> Es la oposición que presenta al paso de la corriente alterna. Disminuye a medida que aumenta la frecuencia. \(X_C = \frac{1}{2\pi fC}\). Esto significa que para la DC (f=0), la reactancia es infinita (circuito abierto), y para altas frecuencias, es muy baja (casi un cortocircuito).</li>
+                            <li><strong>Lectura de Valores:</strong> Los capacitores cerámicos y de película a menudo usan un código numérico. Por ejemplo, "104" significa \(10 \times 10^4\) picofarads (pF), lo que equivale a 100,000 pF o 100 nF o 0.1 µF.</li>
+                        </ul>
+                        <div class="warning-box">
+                            <strong>¡Cuidado con la Polaridad!</strong> Los capacitores electrolíticos y de tantalio tienen terminales positivo (+) y negativo (-). Conectarlos al revés puede hacer que exploten. El terminal negativo suele estar indicado con una franja en el cuerpo del componente.
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Inductores (o Bobinas)</h3>
+                        <p>Almacenan energía en un campo magnético, generado por una corriente que fluye a través de un alambre enrollado. Su principal característica es que se oponen a los cambios bruscos de corriente, basándose en la Ley de Inducción de Faraday.</p>
+                        <h4 class="text-xl font-semibold mt-6 mb-2">Comportamiento y Parámetros</h4>
+                         <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Reactancia Inductiva (\(X_L\)):</strong> Es la oposición que presenta al paso de la corriente alterna. Aumenta linealmente con la frecuencia. \(X_L = 2\pi fL\). Para la DC (f=0), la reactancia es cero (un cortocircuito ideal).</li>
+                            <li><strong>Material del Núcleo:</strong> El material dentro de la bobina (núcleo) es crucial. Los núcleos de <strong>aire</strong> se usan en altas frecuencias. Los de <strong>hierro</strong> o <strong>ferrita</strong> concentran el campo magnético, permitiendo obtener inductancias mucho mayores en menor espacio, y son ideales para filtros y fuentes de alimentación.</li>
+                            <li><strong>Factor de Calidad (Q):</strong> Es una medida de la "pureza" de un inductor. Relaciona la energía que almacena con la que disipa (debido a la resistencia del alambre). Un Q alto es deseable en circuitos resonantes (filtros de radio).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

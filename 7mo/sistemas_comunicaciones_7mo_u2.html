@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Comunicaciones U2: Transmisión y Multiplexado Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0ea5e9; /* sky-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0369a1; /* sky-700 */
+        }
+        h4 {
+            color: #075985; /* sky-800 */
+        }
+        .info-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-sky-800">Unidad 2: Transmisión y Multiplexado Digital</h1>
+            <p class="text-lg text-gray-600">Sistemas de Comunicaciones - 7º Año</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Modulación de Pulso -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">1. Modulación de Pulso</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>modulación de pulso</strong> es una familia de técnicas en las que una señal analógica se convierte en una señal digital mediante el muestreo. La información de la señal original se codifica en alguna característica de un tren de pulsos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación por Codificación de Pulsos (PCM)</h3>
+                        <p><strong>PCM</strong> es el método estándar para la digitalización de audio y voz. Es la base de la telefonía digital, los CDs de audio y los archivos de sonido sin comprimir (como .wav). El proceso consta de tres pasos:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Muestreo:</strong> Se toman muestras de la señal analógica a una frecuencia constante (ej. 8000 muestras/segundo para la voz).</li>
+                            <li><strong>Cuantificación:</strong> A cada muestra se le asigna un valor numérico discreto de una escala finita.</li>
+                            <li><strong>Codificación:</strong> Cada valor numérico se convierte a su representación en código binario.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Proceso+de+Modulaci%C3%B3n+PCM" alt="Proceso de PCM" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modulación Delta</h3>
+                        <p>La modulación delta es una técnica más simple que PCM. En lugar de codificar el valor absoluto de cada muestra, codifica la <strong>diferencia</strong> entre la muestra actual y la anterior. Si la señal sube, envía un '1'; si baja, envía un '0'. Es más simple de implementar pero puede sufrir de "sobrecarga de pendiente" si la señal cambia muy rápido.</p>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Modulación por Pulsos (PCM) &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Multiplexado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-cyan-700">2. Multiplexado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>multiplexado</strong> es la técnica de combinar múltiples señales de comunicación en un solo canal de transmisión. Permite un uso mucho más eficiente de los medios de transmisión, como los cables o el espectro radioeléctrico.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Multiplexado por División de Frecuencia (FDM)</h3>
+                        <p>En FDM, a cada señal se le asigna una porción diferente del espectro de frecuencias del canal. Cada señal se modula sobre una portadora de frecuencia distinta. Es el principio utilizado en la radiodifusión AM y FM, donde cada estación de radio ocupa una frecuencia diferente.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Multiplexado por División de Tiempo (TDM)</h3>
+                        <p>En TDM, a cada señal se le asigna una pequeña ranura de tiempo (timeslot) para transmitir de forma secuencial y repetitiva. Es como si varios usuarios se turnaran para usar el canal muy rápidamente. Es la base de la telefonía digital (T1/E1) y de los sistemas GSM.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Multiplexado por División de Longitud de Onda (WDM)</h3>
+                        <p>WDM es el análogo de FDM pero para la <strong>fibra óptica</strong>. Consiste en transmitir múltiples haces de luz de diferentes colores (longitudes de onda) simultáneamente a través de la misma fibra. Esto permite multiplicar enormemente la capacidad de transmisión de un solo cable de fibra óptica.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Esquema+de+Multiplexado+WDM" alt="Esquema de WDM" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Técnicas de Multiplexado &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="index.html" class="bg-cyan-600 text-white hover:bg-cyan-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
