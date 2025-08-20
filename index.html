@@ -42,7 +42,7 @@
         <div id="home-view">
             <header class="text-center mb-12">
                 <div class="bg-black p-4 md:p-6 rounded-2xl shadow-xl border border-white/50 flex items-center justify-center space-x-4 md:space-x-6">
-                    <img src="tesla escudo   2.jpg" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0">
+                    <img src="tesla escudo   2.jpg" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/312E81?text=Escudo+ETN%C2%B02';">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-100 text-left">
                         <span>Portal Educativo de la Escuela Tecnica N°2</span>
                         <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-red-400">Nikola Tesla</span>
@@ -51,6 +51,20 @@
             </header>
 
             <main>
+                <!-- Buscador -->
+                <div class="mb-12">
+                    <div class="relative">
+                        <input type="search" id="search-input" placeholder="Buscar un tema..." class="w-full p-4 pl-12 text-lg border-2 border-gray-300 rounded-full focus:ring-red-500 focus:border-red-500 transition-colors">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="search-results" class="bg-white mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto hidden"></div>
+                </div>
+
+
                 <h2 class="text-2xl font-bold text-center mb-8 text-black">Selecciona un año para ver los contenidos</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="years-grid">
                     <!-- Los botones de los años se generan con JS -->
@@ -103,6 +117,14 @@
                     { name: "Matemática I", units: [
                         { title: "Unidad 1: Conjuntos Numéricos", content: "Números naturales, enteros, racionales. Operaciones básicas." },
                         { title: "Unidad 2: Ecuaciones de Primer Grado", content: "Resolución de ecuaciones e inecuaciones. Problemas de aplicación." },
+                    ]},
+                    { name: "Inglés", units: [
+                        { title: "Unidad 1: Saludos y Presentaciones", content: "El alfabeto, saludos formales e informales, presentarse a uno mismo y a otros.", link: "1ro/ingles_u1.html" },
+                        { title: "Unidad 2: El Verbo 'To Be'", content: "Uso del verbo ser/estar en presente simple (am, is, are) en sus formas afirmativa, negativa e interrogativa.", link: "1ro/ingles_u2.html" },
+                        { title: "Unidad 3: Mi Familia y Mis Posesiones", content: "Vocabulario sobre la familia, pronombres posesivos (my, your, his, her) y el verbo 'have got'.", link: "1ro/ingles_u3.html" },
+                        { title: "Unidad 4: La Hora y la Rutina Diaria", content: "Aprender a decir la hora, vocabulario sobre la rutina diaria y el presente simple.", link: "1ro/ingles_u4.html" },
+                        { title: "Unidad 5: Habilidades y Gustos", content: "Uso del verbo modal 'can' para expresar habilidad y los verbos 'like', 'love', 'hate' para expresar preferencias.", link: "1ro/ingles_u5.html" },
+                        { title: "Unidad 6: Mi Ciudad", content: "Vocabulario sobre lugares de la ciudad, uso de 'there is / there are' y preposiciones de lugar.", link: "1ro/ingles_u6.html" }
                     ]},
                 ]
             },
@@ -420,6 +442,8 @@
             const backButton = document.getElementById('back-button');
             const yearGrid = document.getElementById('years-grid');
             const complementsGrid = document.getElementById('complements-grid');
+            const searchInput = document.getElementById('search-input');
+            const searchResultsContainer = document.getElementById('search-results');
 
             const showHomeView = () => {
                 homeView.classList.remove('hidden');
@@ -554,7 +578,56 @@
                 });
             };
 
+            const handleSearch = () => {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                searchResultsContainer.innerHTML = '';
+
+                if (searchTerm.length < 3) {
+                    searchResultsContainer.classList.add('hidden');
+                    return;
+                }
+
+                const allData = {...schoolData, ...complementsData};
+                let resultsFound = false;
+
+                for (const key in allData) {
+                    const section = allData[key];
+                    section.subjects.forEach(subject => {
+                        subject.units.forEach(unit => {
+                            const unitTitle = unit.title.toLowerCase();
+                            const unitContent = unit.content.toLowerCase();
+
+                            if (unit.link && (unitTitle.includes(searchTerm) || unitContent.includes(searchTerm))) {
+                                resultsFound = true;
+                                const resultLink = document.createElement('a');
+                                resultLink.href = unit.link;
+                                resultLink.target = '_blank';
+                                resultLink.className = 'block p-4 border-b border-gray-200 hover:bg-gray-100';
+                                resultLink.innerHTML = `
+                                    <p class="font-semibold">${unit.title}</p>
+                                    <p class="text-sm text-gray-600">${section.title} &gt; ${subject.name}</p>
+                                `;
+                                searchResultsContainer.appendChild(resultLink);
+                            }
+                        });
+                    });
+                }
+
+                if (resultsFound) {
+                    searchResultsContainer.classList.remove('hidden');
+                } else {
+                    searchResultsContainer.innerHTML = `<p class="p-4 text-gray-500">No se encontraron resultados.</p>`;
+                    searchResultsContainer.classList.remove('hidden');
+                }
+            };
+
             backButton.addEventListener('click', showHomeView);
+            searchInput.addEventListener('input', handleSearch);
+            document.addEventListener('click', (e) => {
+                if (!searchResultsContainer.contains(e.target) && e.target !== searchInput) {
+                    searchResultsContainer.classList.add('hidden');
+                }
+            });
 
             // --- Inicialización ---
             const complementsData = {
@@ -563,9 +636,27 @@
                     icon: "⌨️",
                     subjects: [
                         {
-                            name: "Fundamentos de Programación",
+                            name: "Pensamiento Computacional sin PC",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/programacion_basica_u1.html" }
+                                { title: "Unidad 1: Algoritmos en la Vida Cotidiana", content: "Creando secuencias de pasos para resolver problemas, como una receta de cocina.", link: "complementos/pensamiento_computacional_u1.html" },
+                                { title: "Unidad 2: Decisiones y Repeticiones", content: "Introducción a los condicionales (si... entonces) y los bucles (repetir hasta) con juegos y actividades.", link: "complementos/pensamiento_computacional_u2.html" },
+                                { title: "Unidad 3: Descomponiendo Problemas Grandes", content: "Aprendiendo a dividir un problema complejo en tareas más pequeñas y manejables.", link: "complementos/pensamiento_computacional_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Introducción a la Programación con Scratch",
+                            units: [
+                                { title: "Unidad 1: Conociendo Scratch y el Pensamiento Lógico", content: "Interfaz, sprites, bloques de movimiento y apariencia. Secuencias lógicas.", link: "complementos/scratch_u1.html" },
+                                { title: "Unidad 2: Eventos, Bucles y Condicionales", content: "Bloques de eventos, bucles de repetición y toma de decisiones.", link: "complementos/scratch_u2.html" },
+                                { title: "Unidad 3: Variables y Animaciones", content: "Creación de variables (puntuaciones), uso de disfraces para animar e interacción entre objetos.", link: "complementos/scratch_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Programación y Robótica con mBlock",
+                            units: [
+                                { title: "Unidad 1: Del Bloque al Hardware", content: "Conexión con placas Arduino, control de LEDs y lectura de pulsadores.", link: "complementos/mblock_u1.html" },
+                                { title: "Unidad 2: Interactuando con el Mundo Real: Sensores", content: "Lectura de sensores analógicos (luz, potenciómetros) y digitales.", link: "complementos/mblock_u2.html" },
+                                { title: "Unidad 3: Controlando Actuadores", content: "Control de servomotores, zumbadores y construcción de un robot simple.", link: "complementos/mblock_u3.html" }
                             ]
                         }
                     ]
@@ -575,10 +666,43 @@
                     icon: "💻",
                     subjects: [
                         {
-                            name: "Principios de Programación",
+                            name: "Programación en Arduino",
                             units: [
-                                { title: "Unidad 1: Fundamentos", content: "Introducción a los algoritmos y la lógica de programación.", link: "complementos/programacion_u1.html" },
-                                { title: "Unidad 2: Estructuras de Control", content: "Condicionales y bucles para controlar el flujo de un programa.", link: "complementos/programacion_u2.html" }
+                                { title: "Unidad 1: Introducción a la Plataforma Arduino y Entorno de Desarrollo (IDE)", content: "Placas, shields y el IDE de Arduino.", link: "complementos/arduino_u1.html" },
+                                { title: "Unidad 2: Entradas y Salidas Digitales y Analógicas", content: "Control de LEDs, lectura de pulsadores, PWM y lectura de potenciómetros.", link: "complementos/arduino_u2.html" },
+                                { title: "Unidad 3: Comunicación Serial y Librerías", content: "Uso del monitor serie y cómo instalar y utilizar librerías para sensores complejos.", link: "complementos/arduino_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Programación con ESP8266",
+                            units: [
+                                { title: "Unidad 1: Fundamentos del ESP8266 y Conectividad Wi-Fi", content: "Programación del ESP8266 con el IDE de Arduino. Escaneo y conexión a redes Wi-Fi.", link: "complementos/esp8266_u1.html" },
+                                { title: "Unidad 2: Servidores Web y Control Remoto", content: "Creación de un servidor web en el ESP8266 para controlar dispositivos desde un navegador.", link: "complementos/esp8266_u2.html" },
+                                { title: "Unidad 3: Internet de las Cosas (IoT) con MQTT", content: "Introducción al protocolo MQTT para el envío de datos de sensores a plataformas IoT.", link: "complementos/esp8266_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Programación con ESP32",
+                            units: [
+                                { title: "Unidad 1: Capacidades del ESP32: Dual Core, Bluetooth y Periféricos", content: "Diferencias con el ESP8266 y uso de sus periféricos avanzados.", link: "complementos/esp32_u1.html" },
+                                { title: "Unidad 2: Proyectos con Bluetooth Low Energy (BLE)", content: "Creación de dispositivos BLE para comunicarse con un smartphone.", link: "complementos/esp32_u2.html" },
+                                { title: "Unidad 3: Aplicaciones Avanzadas y FreeRTOS", content: "Introducción al sistema operativo de tiempo real para gestionar tareas complejas.", link: "complementos/esp32_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Programación con Raspberry Pi",
+                            units: [
+                                { title: "Unidad 1: Introducción a Raspberry Pi y Linux", content: "Configuración inicial, uso de la terminal de Linux y comandos básicos.", link: "complementos/rpi_u1.html" },
+                                { title: "Unidad 2: Programación de los pines GPIO con Python", content: "Control de LEDs, botones y sensores utilizando el lenguaje Python.", link: "complementos/rpi_u2.html" },
+                                { title: "Unidad 3: Proyectos de Visión por Computadora y Servidores", content: "Uso de la cámara para proyectos de visión y configuración como servidor web.", link: "complementos/rpi_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Programación de PLC",
+                            units: [
+                                { title: "Unidad 1: Lógica de Escalera (Ladder) y Fundamentos de Control", content: "Contactos, bobinas, enclavamientos y lógica básica de control.", link: "complementos/plc_u1.html" },
+                                { title: "Unidad 2: Temporizadores, Contadores y Operaciones Matemáticas", content: "Uso de bloques de función para temporizar, contar eventos y realizar cálculos.", link: "complementos/plc_u2.html" },
+                                { title: "Unidad 3: Manejo de Entradas y Salidas Analógicas", content: "Escalado y tratamiento de señales analógicas de sensores de 4-20mA.", link: "complementos/plc_u3.html" }
                             ]
                         }
                     ]
@@ -606,25 +730,35 @@
                         {
                             name: "Microsoft Word",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/word_u1.html" }
+                                { title: "Unidad 1: Fundamentos y Formato de Texto", content: "Interfaz, creación de documentos, formato de fuentes y párrafos, listas y estilos.", link: "complementos/word_u1.html" },
+                                { title: "Unidad 2: Elementos Gráficos y Tablas", content: "Inserción y formato de imágenes, formas, SmartArt y tablas.", link: "complementos/word_u2.html" },
+                                { title: "Unidad 3: Documentos Largos y Colaboración", content: "Índices automáticos, encabezados, pies de página, control de cambios y comentarios.", link: "complementos/word_u3.html" },
+                                { title: "Unidad 4: Herramientas Avanzadas y Automatización", content: "Combinación de correspondencia, creación de plantillas y uso de macros simples.", link: "complementos/word_u4.html" },
+                                { title: "Unidad 5: Normas APA e Integración", content: "Aplicación de formato APA para trabajos académicos, gestión de citas y bibliografía. Integración con Excel y PowerPoint.", link: "complementos/word_u5.html" }
                             ]
                         },
                         {
                             name: "Microsoft Excel",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/excel_u1.html" }
+                                { title: "Unidad 1: Introducción y Fórmulas Básicas", content: "Interfaz, celdas, rangos, operaciones aritméticas y funciones básicas (SUMA, PROMEDIO).", link: "complementos/excel_u1.html" },
+                                { title: "Unidad 2: Gráficos y Formato Condicional", content: "Creación de gráficos de barras, circulares y de líneas. Aplicación de reglas de formato para resaltar datos.", link: "complementos/excel_u2.html" },
+                                { title: "Unidad 3: Funciones Avanzadas y Tablas Dinámicas", content: "Uso de funciones lógicas (SI, Y, O) y de búsqueda (BUSCARV). Creación de tablas dinámicas para resumir datos.", link: "complementos/excel_u3.html" }
                             ]
                         },
                         {
                             name: "Microsoft PowerPoint",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/powerpoint_u1.html" }
+                                { title: "Unidad 1: Creación de Presentaciones Efectivas", content: "Interfaz, plantillas, diapositivas, inserción de texto e imágenes.", link: "complementos/powerpoint_u1.html" },
+                                { title: "Unidad 2: Animaciones y Transiciones", content: "Aplicación de efectos de animación a objetos y transiciones entre diapositivas para dinamizar la presentación.", link: "complementos/powerpoint_u2.html" },
+                                { title: "Unidad 3: Herramientas Multimedia y de Exposición", content: "Inserción de video y audio. Uso de la vista de moderador y consejos para una exposición eficaz.", link: "complementos/powerpoint_u3.html" }
                             ]
                         },
                         {
                             name: "Usos de IA en el Estudio",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/ia_estudio_u1.html" }
+                                { title: "Unidad 1: Asistentes de Escritura y Resumen", content: "Herramientas de IA para mejorar la redacción, corregir gramática y resumir textos largos.", link: "complementos/ia_u1.html" },
+                                { title: "Unidad 2: Búsqueda Inteligente e Investigación", content: "Uso de IA para encontrar información académica, verificar fuentes y obtener respuestas a preguntas complejas.", link: "complementos/ia_u2.html" },
+                                { title: "Unidad 3: Apoyo Creativo y Explicaciones", content: "Cómo usar modelos de lenguaje para brainstorming, explicar conceptos difíciles y generar ideas.", link: "complementos/ia_u3.html" }
                             ]
                         }
                     ]
@@ -634,9 +768,35 @@
                     icon: "✒️",
                     subjects: [
                         {
-                            name: "Software de Diseño",
+                            name: "Métodos de Fabricación de PCB",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/diseno_pcb_u1.html" }
+                                { title: "Unidad 1: Método Manual y Serigráfico", content: "Técnicas de transferencia térmica (planchado), uso de marcadores indelebles y principios de la serigrafía para la creación de circuitos.", link: "complementos/pcb_fabricacion_u1.html" },
+                                { title: "Unidad 2: Ataque Químico y Perforado", content: "Uso de cloruro férrico y percloruro de amonio. Medidas de seguridad, tiempos de atacado y técnicas de perforado.", link: "complementos/pcb_fabricacion_u2.html" },
+                                { title: "Unidad 3: Montaje y Soldadura de Componentes", content: "Técnicas de soldadura para componentes THT y SMD. Herramientas, estaño y buenas prácticas.", link: "complementos/pcb_fabricacion_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Diseño de PCB con PCB Wizard / Livewire",
+                            units: [
+                                { title: "Unidad 1: Del Esquemático al Ruteado", content: "Interfaz, creación de esquemáticos, conversión a PCB y ruteado manual de pistas.", link: "complementos/pcbwizard_u1.html" },
+                                { title: "Unidad 2: Creación de Componentes y Librerías", content: "Uso de los editores de símbolos y footprints para crear componentes que no están en las librerías.", link: "complementos/pcbwizard_u2.html" },
+                                { title: "Unidad 3: Generación de Archivos para Fabricación Manual", content: "Exportación a PDF, configuración de la impresión y consejos para el método de transferencia térmica.", link: "complementos/pcbwizard_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Diseño y Simulación con Proteus",
+                            units: [
+                                { title: "Unidad 1: Entorno de Simulación y Captura Esquemática", content: "Simulación de circuitos analógicos y digitales en ISIS. Uso de instrumental virtual.", link: "complementos/proteus_u1.html" },
+                                { title: "Unidad 2: Diseño de PCB en ARES", content: "Ruteado manual y automático, creación de planos de masa y configuración de capas.", link: "complementos/proteus_u2.html" },
+                                { title: "Unidad 3: Visualización 3D y Generación de Gerbers", content: "Uso del visor 3D y generación de archivos Gerber para fabricación industrial.", link: "complementos/proteus_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Diseño Profesional con Eagle / KiCad",
+                            units: [
+                                { title: "Unidad 1: Flujo de Trabajo Profesional", content: "Gestión de proyectos, librerías, y configuración de reglas de diseño (DRC).", link: "complementos/eagle_kicad_u1.html" },
+                                { title: "Unidad 2: Técnicas de Ruteado Avanzado", content: "Ruteado de pares diferenciales, pistas de alta frecuencia, vías y planos de potencia.", link: "complementos/eagle_kicad_u2.html" },
+                                { title: "Unidad 3: Paneles y Fabricación en Serie", content: "Panelización de PCBs para optimizar la fabricación y preparación de archivos para enviar a un fabricante.", link: "complementos/eagle_kicad_u3.html" }
                             ]
                         }
                     ]
@@ -646,9 +806,81 @@
                     icon: "👥",
                     subjects: [
                         {
-                            name: "Gestión de Personal",
+                            name: "Búsqueda de Empleo y Presentación Profesional",
                             units: [
-                                { title: "Unidad 1: (Próximamente)", content: "Contenido de la unidad 1 será añadido aquí.", link: "complementos/recursos_humanos_u1.html" }
+                                { title: "Unidad 1: Armado de Currículum Vitae (CV) y Carta de Presentación", content: "Estructura, contenido y consejos para crear un CV de alto impacto.", link: "complementos/cv_u1.html" },
+                                { title: "Unidad 2: La Entrevista Laboral: Preparación y Técnicas", content: "Tipos de entrevista, preguntas comunes y cómo comunicar tus fortalezas.", link: "complementos/entrevista_u2.html" },
+                                { title: "Unidad 3: Marca Personal y Redes Profesionales", content: "Uso de LinkedIn y otras plataformas para construir una red de contactos y buscar oportunidades.", link: "complementos/marcapersonal_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Habilidades Interpersonales en el Trabajo",
+                            units: [
+                                { title: "Unidad 1: Comunicación Efectiva y Trabajo en Equipo", content: "Técnicas de comunicación asertiva y colaboración en un entorno profesional.", link: "complementos/habilidades_u1.html" },
+                                { title: "Unidad 2: Liderazgo y Resolución de Conflictos", content: "Introducción a los estilos de liderazgo y métodos para la resolución constructiva de conflictos.", link: "complementos/habilidades_u2.html" },
+                                { title: "Unidad 3: Inteligencia Emocional y Adaptabilidad", content: "Gestión de emociones, empatía y capacidad de adaptación al cambio.", link: "complementos/habilidades_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "El Mundo Laboral del Técnico Electrónico",
+                            units: [
+                                { title: "Unidad 1: Perfiles Profesionales y Salidas Laborales", content: "Exploración de los diferentes roles que puede ocupar un técnico: mantenimiento, desarrollo, etc.", link: "complementos/mundolaboral_u1.html" },
+                                { title: "Unidad 2: Derechos y Obligaciones del Trabajador", content: "Repaso de los conceptos clave del contrato de trabajo y la Ley de Riesgos del Trabajo.", link: "complementos/mundolaboral_u2.html" },
+                                { title: "Unidad 3: Cultura Empresarial y Crecimiento Profesional", content: "Cómo entender la cultura de una empresa y planificar una carrera a largo plazo.", link: "complementos/mundolaboral_u3.html" }
+                            ]
+                        }
+                    ]
+                },
+                 capacitaciones: {
+                    title: "Capacitaciones",
+                    icon: "🎓",
+                    subjects: [
+                        {
+                            name: "Diseño 3D",
+                            units: [
+                                { title: "Unidad 1: Introducción a Fusion 360", content: "Curso de iniciación al diseño paramétrico para piezas mecánicas y gabinetes.", link: "https://www.youtube.com/watch?v=videoseries?list=PL-Qce-9K32q1u6a2y2bflk6g-S2gV_Gk-" },
+                                { title: "Unidad 2: Curso de FreeCAD", content: "Aprende a utilizar este potente software de diseño 3D de código abierto.", link: "https://www.youtube.com/watch?v=videoseries?list=PL643A239C9335A536" },
+                                { title: "Unidad 3: Diseño para Impresión 3D", content: "Consejos y técnicas para optimizar tus diseños para ser fabricados en impresoras 3D.", link: "https://www.youtube.com/watch?v=WpmZg6u4pI4" }
+                            ]
+                        },
+                        {
+                            name: "Arduino",
+                            units: [
+                                { title: "Unidad 1: Curso de Arduino desde Cero", content: "Un curso completo para empezar a programar con la plataforma Arduino.", link: "https://www.youtube.com/watch?v=videoseries?list=PLkjnQ3NFTPk-Max-eC1-8s0n_tVH3-i-s" },
+                                { title: "Unidad 2: Proyectos de Electrónica con Arduino", content: "Ideas y tutoriales para construir proyectos prácticos con Arduino.", link: "https://www.youtube.com/watch?v=videoseries?list=PL4f-J_82-t2H-n-3f9-z7g-D6vj_2-i-a" },
+                                { title: "Unidad 3: Arduino Avanzado", content: "Técnicas avanzadas de programación, interrupciones y manejo de memoria.", link: "https://www.youtube.com/watch?v=videoseries?list=PL40DB2F350F235D43" }
+                            ]
+                        },
+                        {
+                            name: "Electrónica Básica",
+                            units: [
+                                { title: "Unidad 1: Conceptos Fundamentales de Electrónica", content: "Aprende sobre tensión, corriente, resistencia y los componentes básicos.", link: "https://www.youtube.com/watch?v=videoseries?list=PL-Qce-9K32q1u6a2y2bflk6g-S2gV_Gk-" },
+                                { title: "Unidad 2: Electrónica Analógica", content: "Un curso sobre diodos, transistores, amplificadores operacionales y filtros.", link: "https://www.youtube.com/watch?v=videoseries?list=PL40DB2F350F235D43" },
+                                { title: "Unidad 3: Electrónica Digital", content: "Aprende sobre compuertas lógicas, sistemas de numeración y circuitos combinacionales.", link: "https://www.youtube.com/watch?v=videoseries?list=PL4f-J_82-t2H-n-3f9-z7g-D6vj_2-i-a" }
+                            ]
+                        },
+                        {
+                            name: "Electricidad Domiciliaria",
+                            units: [
+                                { title: "Unidad 1: Curso de Electricidad Básica", content: "Conceptos fundamentales de electricidad y seguridad en instalaciones domiciliarias.", link: "https://www.youtube.com/watch?v=videoseries?list=PL-Qce-9K32q1u6a2y2bflk6g-S2gV_Gk-" },
+                                { title: "Unidad 2: Tableros Eléctricos y Protecciones", content: "Cómo armar un tablero eléctrico domiciliario, interruptores termomagnéticos y diferenciales.", link: "https://www.youtube.com/watch?v=videoseries?list=PL4f-J_82-t2H-n-3f9-z7g-D6vj_2-i-a" },
+                                { title: "Unidad 3: Circuitos de Iluminación y Tomacorrientes", content: "Instalación de circuitos de punto y toma, y circuitos de combinación.", link: "https://www.youtube.com/watch?v=videoseries?list=PL40DB2F350F235D43" }
+                            ]
+                        },
+                         {
+                            name: "Reparación de Celulares",
+                            units: [
+                                { title: "Unidad 1: Curso de Reparación de Celulares Nivel Inicial", content: "Herramientas, diagnóstico de fallas comunes y desarme de equipos.", link: "https://www.youtube.com/watch?v=videoseries?list=PL-Qce-9K32q1u6a2y2bflk6g-S2gV_Gk-" },
+                                { title: "Unidad 2: Microelectrónica y Soldadura SMD", content: "Técnicas de soldadura para componentes de montaje superficial en placas de celulares.", link: "https://www.youtube.com/watch?v=videoseries?list=PL4f-J_82-t2H-n-3f9-z7g-D6vj_2-i-a" },
+                                { title: "Unidad 3: Software y Desbloqueo", content: "Uso de software para flasheo, reparación de IMEI y desbloqueo de equipos.", link: "https://www.youtube.com/watch?v=videoseries?list=PL40DB2F350F235D43" }
+                            ]
+                        },
+                         {
+                            name: "HTML - CSS - JavaScript",
+                            units: [
+                                { title: "Unidad 1: Curso de HTML para Principiantes", content: "Aprende la estructura básica de las páginas web con HTML.", link: "https://www.youtube.com/watch?v=videoseries?list=PL-Qce-9K32q1u6a2y2bflk6g-S2gV_Gk-" },
+                                { title: "Unidad 2: Curso de CSS para dar Estilo", content: "Aprende a dar estilo y diseño a tus páginas web con CSS.", link: "https://www.youtube.com/watch?v=videoseries?list=PL4f-J_82-t2H-n-3f9-z7g-D6vj_2-i-a" },
+                                { title: "Unidad 3: Curso de JavaScript para la Interactividad", content: "Aprende a dar interactividad y dinamismo a tus sitios web con JavaScript.", link: "https://www.youtube.com/watch?v=videoseries?list=PL40DB2F350F235D43" }
                             ]
                         }
                     ]
@@ -662,3 +894,5 @@
     </script>
 </body>
 </html>
+
+
