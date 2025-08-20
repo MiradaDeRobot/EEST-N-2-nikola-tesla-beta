@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch U2: Eventos, Bucles y Condicionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Eventos, Bucles y Condicionales</h1>
+            <p class="text-lg text-gray-600">Introducción a la Programación con Scratch</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Eventos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Eventos: Los Disparadores de Acciones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En la unidad anterior, usamos el bloque "Al hacer clic en (bandera verde)" para iniciar nuestros programas. Este es un ejemplo de un <strong>evento</strong>. Los eventos son los "disparadores" que le dicen a nuestros scripts cuándo deben empezar a ejecutarse.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bloques de Eventos Principales</h3>
+                        <p>En la categoría <strong>Eventos</strong> (amarillo), encontrarás los bloques más importantes para iniciar la interacción:</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div>
+                                <img src="https://placehold.co/300x150/FEF2F2/991B1B?text=Al+hacer+clic+en+Bandera" alt="Evento Bandera Verde" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Inicio General</h4>
+                                <p class="text-base text-center">El evento más común para iniciar el programa principal.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x150/FEF2F2/991B1B?text=Al+presionar+tecla..." alt="Evento Tecla" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Interacción con Teclado</h4>
+                                <p class="text-base text-center">Permite controlar un personaje con las flechas o cualquier otra tecla.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/300x150/FEF2F2/991B1B?text=Al+hacer+clic+en+este+objeto" alt="Evento Clic en Objeto" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Interacción con el Ratón</h4>
+                                <p class="text-base text-center">Ejecuta un script cuando el usuario hace clic directamente sobre el Sprite.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Bucles -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Bucles: Repitiendo Instrucciones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los <strong>bucles</strong> (o ciclos) son una de las herramientas más poderosas de la programación. Nos permiten ejecutar un conjunto de bloques una y otra vez sin tener que escribirlos múltiples veces. Se encuentran en la categoría <strong>Control</strong> (naranja).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Bucles en Scratch</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Bucle "Por siempre":</strong> Ejecuta los bloques que tiene adentro de forma infinita, hasta que se detiene el programa. Es ideal para acciones que deben ocurrir constantemente, como el movimiento de un personaje.</li>
+                            <li><strong>Bucle "Repetir N veces":</strong> Ejecuta los bloques un número específico de veces. Es útil para acciones que tienen un final definido, como hacer que un personaje salte o parpadee 3 veces.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Condicionales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Condicionales: Tomando Decisiones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>condicionales</strong> permiten que nuestros programas tomen decisiones y se comporten de manera diferente según las circunstancias. Utilizan bloques con forma de rombo de la categoría <strong>Sensores</strong> (celeste) para evaluar si una condición es verdadera o falsa.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bloques Condicionales</h3>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Bloque "Si ... entonces":</strong> Ejecuta los bloques de su interior solo si la condición que se coloca en el hexágono es verdadera.</li>
+                            <li><strong>Bloque "Si ... entonces / Si no":</strong> Ofrece dos caminos. Si la condición es verdadera, ejecuta el primer grupo de bloques. Si es falsa, ejecuta el segundo.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x300/E0F2FE/0891B2?text=Bloques+Condicionales+y+Sensores" alt="Bloques Condicionales" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Actividad Integradora -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Actividad Integradora: "El Gato y el Ratón"</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Vamos a crear un pequeño juego que combine todo lo que hemos aprendido: eventos, bucles y condicionales.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Objetivo del Juego</h3>
+                        <p>Controlar al gato con el ratón para que atrape a un ratón que se mueve por la pantalla.</p>
+                        <div class="example-box">
+                            <strong>Pasos a seguir:</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base space-y-2">
+                                <li><strong>Preparar el Escenario:</strong> Elige un fondo y añade un nuevo Sprite de un ratón. Reduce su tamaño.</li>
+                                <li><strong>Programar al Gato (Sprite1):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Usa el evento "Al hacer clic en (bandera verde)".</li>
+                                        <li>Dentro de un bucle "por siempre", usa el bloque "ir a puntero del ratón" de <strong>Movimiento</strong>. Esto hará que el gato siga al cursor.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Programar al Ratón (Sprite2):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Usa el evento "Al hacer clic en (bandera verde)".</li>
+                                        <li>Dentro de un bucle "por siempre", haz que el ratón se mueva y rebote en los bordes (como el gato de la Unidad 1).</li>
+                                        <li>Añade un bloque "Si ... entonces" dentro del bucle.</li>
+                                        <li>En la condición del "Si", coloca el sensor "¿tocando a Sprite1?".</li>
+                                        <li>Dentro del "Si", haz que el ratón se esconda (bloque de <strong>Apariencia</strong>), espere 1 segundo y vuelva a aparecer en una posición aleatoria (bloque "ir a posición aleatoria" de <strong>Movimiento</strong>).</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

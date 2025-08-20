@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi U2: Programación de los pines GPIO con Python</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Programación de los pines GPIO con Python</h1>
+            <p class="text-lg text-gray-600">Programación con Raspberry Pi</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué son los GPIO? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué son los Pines GPIO?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Raspberry Pi</strong> no es solo una computadora pequeña; también es una potente herramienta para la electrónica. Su principal característica para esto es el cabezal de 40 pines <strong>GPIO (General Purpose Input/Output)</strong>. A diferencia de los puertos USB, estos pines nos dan un control directo y de bajo nivel sobre el hardware, permitiéndonos conectar LEDs, sensores, motores y otros componentes electrónicos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Programación con Python y la Librería RPi.GPIO</h3>
+                        <p>El lenguaje más popular para controlar los pines GPIO es <strong>Python</strong>, gracias a su simplicidad y a la potente librería <strong>RPi.GPIO</strong>, que ya viene preinstalada en Raspberry Pi OS. Esta librería nos proporciona funciones sencillas para configurar los pines y leer o escribir en ellos.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Cabezal+GPIO+de+40+pines" alt="Pines GPIO" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Salidas Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividades Prácticas con Salidas Digitales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 1: Blink Básico</h3>
+                        <p>Este script hace parpadear un LED conectado al pin GPIO 17.</p>
+                        <div class="example-box">
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+led_pin = 17
+GPIO.setup(led_pin, GPIO.OUT)
+
+try:
+    while True:
+        GPIO.output(led_pin, GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(led_pin, GPIO.LOW)
+        time.sleep(1)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: Semáforo Simple</h3>
+                        <p>Este código simula un semáforo usando tres LEDs (rojo, amarillo y verde) conectados a los pines GPIO 17, 27 y 22.</p>
+                        <div class="example-box">
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+led_rojo = 17
+led_amarillo = 27
+led_verde = 22
+
+GPIO.setup([led_rojo, led_amarillo, led_verde], GPIO.OUT)
+
+try:
+    while True:
+        # Verde
+        GPIO.output(led_verde, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(led_verde, GPIO.LOW)
+        # Amarillo
+        GPIO.output(led_amarillo, GPIO.HIGH)
+        time.sleep(2)
+        GPIO.output(led_amarillo, GPIO.LOW)
+        # Rojo
+        GPIO.output(led_rojo, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(led_rojo, GPIO.LOW)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 3: Efecto "Auto Fantástico"</h3>
+                        <p>Este código enciende y apaga una secuencia de 6 LEDs (conectados del pin 4 al 9) para crear un efecto de barrido.</p>
+                        <div class="example-box">
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+led_pins = [4, 17, 27, 22, 5, 6]
+
+for pin in led_pins:
+    GPIO.setup(pin, GPIO.OUT)
+
+def knight_rider():
+    for pin in led_pins:
+        GPIO.output(pin, GPIO.HIGH)
+        time.sleep(0.05)
+        GPIO.output(pin, GPIO.LOW)
+    for pin in reversed(led_pins):
+        GPIO.output(pin, GPIO.HIGH)
+        time.sleep(0.05)
+        GPIO.output(pin, GPIO.LOW)
+
+try:
+    while True:
+        knight_rider()
+except KeyboardInterrupt:
+    GPIO.cleanup()
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 4: Generando Sonido con un Zumbador</h3>
+                        <p>Podemos generar un tono simple encendiendo y apagando un pin muy rápidamente. Esto crea una onda cuadrada que el zumbador convierte en sonido.</p>
+                        <div class="example-box">
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+buzzer_pin = 23
+GPIO.setup(buzzer_pin, GPIO.OUT)
+
+def beep(duration):
+    period = 1.0 / 440 # Frecuencia de 440Hz (Nota La)
+    delay = period / 2
+    cycles = int(duration * 440)
+    for i in range(cycles):
+        GPIO.output(buzzer_pin, GPIO.HIGH)
+        time.sleep(delay)
+        GPIO.output(buzzer_pin, GPIO.LOW)
+        time.sleep(delay)
+
+try:
+    print("Presiona Ctrl+C para salir")
+    while True:
+        beep(0.5) # Emite un tono de medio segundo
+        time.sleep(1) # Espera un segundo
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Entradas Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Entradas Digitales: Leyendo un Pulsador</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ahora vamos a leer información del mundo exterior. Usaremos un pulsador para que nuestro programa reaccione a una acción del usuario.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Código en Python para Leer un Botón</h3>
+                        <p>Este script enciende un LED mientras un pulsador (conectado al pin GPIO 18) está presionado.</p>
+                        <div class="example-box">
+<pre><code>import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+led_pin = 17
+button_pin = 18
+
+GPIO.setup(led_pin, GPIO.OUT)
+GPIO.setup(button_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+try:
+    while True:
+        if GPIO.input(button_pin) == GPIO.HIGH:
+            GPIO.output(led_pin, GPIO.HIGH)
+        else:
+            GPIO.output(led_pin, GPIO.LOW)
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+</code></pre>
+                        </div>
+                         <div class="info-box mt-4">
+                           <strong>Resistencias Pull-up / Pull-down:</strong> Son necesarias en las entradas digitales para asegurar que el pin tenga un estado definido (ALTO o BAJO) cuando el pulsador no está presionado, evitando lecturas "flotantes" o erráticas. La Raspberry Pi nos permite activar estas resistencias internamente por software.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

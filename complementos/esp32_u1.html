@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 U1: Capacidades, Dual Core y Periféricos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Capacidades del ESP32: Dual Core, Bluetooth y Periféricos</h1>
+            <p class="text-lg text-gray-600">Programación con ESP32</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es el ESP32? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Introducción al ESP32</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>ESP32</strong> es el sucesor del popular ESP8266. Es un microcontrolador mucho más potente que no solo incluye conectividad Wi-Fi, sino también <strong>Bluetooth</strong>, un procesador de <strong>doble núcleo</strong> y una mayor cantidad de periféricos avanzados.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principales Ventajas sobre el ESP8266</h3>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Placa+de+Desarrollo+ESP32" alt="Placa ESP32" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Procesador Dual-Core:</strong> Tiene dos núcleos que pueden ejecutar tareas en paralelo. Esto es ideal para manejar la conectividad Wi-Fi en un núcleo y el programa principal en el otro, sin interrupciones.</li>
+                            <li><strong>Bluetooth Integrado:</strong> Incluye tanto Bluetooth Clásico como Bluetooth de Baja Energía (BLE), abriendo un nuevo mundo de aplicaciones.</li>
+                            <li><strong>Más Pines y Periféricos:</strong> Ofrece más pines GPIO, más entradas analógicas (ADC), dos salidas analógicas reales (DAC) y periféricos avanzados como sensores táctiles capacitivos y un sensor de efecto Hall.</li>
+                            <li><strong>Mayor Velocidad:</strong> Opera a frecuencias de hasta 240 MHz, siendo significativamente más rápido que el ESP8266.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Dual Core -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Aprovechando el Doble Núcleo (Dual Core)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La característica más destacada del ESP32 es su procesador de doble núcleo. Esto nos permite ejecutar dos secuencias de código de forma simultánea, una en cada núcleo. En el entorno de Arduino, esto se gestiona a través de un sistema operativo de tiempo real llamado <strong>FreeRTOS</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Creando Tareas en Diferentes Núcleos</h3>
+                        <p>Podemos asignar tareas específicas a cada núcleo. Por convención, el núcleo 0 se suele reservar para las tareas de radio (Wi-Fi y Bluetooth) y el núcleo 1 para el código del usuario.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Dos Tareas en Paralelo</strong><br>
+                            <p class="text-base mt-2">Este código crea dos tareas. La `Tarea1` corre en el núcleo 0 y hace parpadear el LED integrado. La `Tarea2` corre en el núcleo 1 e imprime un mensaje en el Monitor Serie. Ambas se ejecutan al mismo tiempo.</p>
+<pre><code>TaskHandle_t Tarea1;
+TaskHandle_t Tarea2;
+
+#define LED 2 // Pin del LED integrado en la mayoría de las placas ESP32
+
+void Tarea1code( void * pvParameters ){
+  pinMode(LED, OUTPUT);
+  for(;;){ // Bucle infinito de la tarea
+    digitalWrite(LED, HIGH);
+    delay(500);
+    digitalWrite(LED, LOW);
+    delay(500);
+  } 
+}
+
+void Tarea2code( void * pvParameters ){
+  for(;;){
+    Serial.println("Ejecutando Tarea 2 en el núcleo 1...");
+    delay(1000);
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Crear Tarea 1 y asignarla al núcleo 0
+  xTaskCreatePinnedToCore(
+                    Tarea1code,   /* Función de la tarea */
+                    "Tarea1",     /* Nombre de la tarea */
+                    10000,        /* Tamaño de la pila */
+                    NULL,         /* Parámetros de la tarea */
+                    1,            /* Prioridad */
+                    &Tarea1,      /* Handle de la tarea */
+                    0);           /* Núcleo 0 */
+
+  // Crear Tarea 2 y asignarla al núcleo 1
+  xTaskCreatePinnedToCore(
+                    Tarea2code,
+                    "Tarea2",
+                    10000,
+                    NULL,
+                    1,
+                    &Tarea2,
+                    1);
+}
+
+void loop() {
+  // El loop principal puede quedar vacío o usarse para tareas de baja prioridad
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

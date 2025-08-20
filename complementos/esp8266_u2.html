@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP8266 U2: Servidores Web y Control Remoto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Servidores Web y Control Remoto</h1>
+            <p class="text-lg text-gray-600">Programación con ESP8266</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Servidor Web -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es un Servidor Web en un ESP8266?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>servidor web</strong> es un programa que espera peticiones de un cliente (como un navegador web) y le responde, generalmente enviándole una página web. Al implementar un servidor web en un ESP8266, podemos crear una interfaz de control accesible desde cualquier dispositivo con un navegador (un celular, una tablet, otra PC) que esté en la misma red Wi-Fi.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funcionamiento Básico</h3>
+                        <p>El proceso es el siguiente:</p>
+                        <ol class="list-decimal list-inside space-y-3 mt-3">
+                            <li>El ESP8266 se conecta a la red Wi-Fi y obtiene una dirección IP.</li>
+                            <li>Inicia un servidor web que "escucha" en un puerto específico (generalmente el puerto 80).</li>
+                            <li>Desde un navegador, escribimos la dirección IP del ESP8266.</li>
+                            <li>El navegador envía una petición HTTP al servidor en el ESP8266.</li>
+                            <li>El ESP8266 recibe la petición, la procesa y responde enviando el código HTML de una página web.</li>
+                            <li>El navegador recibe el HTML y lo muestra, permitiendo al usuario interactuar con botones y enlaces.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Control Remoto de un LED -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividad Práctica 1: Control Remoto de un LED</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Vamos a crear nuestro primer proyecto de IoT: una página web alojada en el ESP8266 que nos permitirá encender y apagar el LED integrado en la placa (generalmente conectado al pin D4 o GPIO2).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis del Código</h3>
+                        <p>Este código crea un servidor web con dos "rutas": `/encender` y `/apagar`, que controlarán el estado del LED.</p>
+                        <div class="example-box">
+<pre><code>#include &lt;ESP8266WiFi.h&gt;
+#include &lt;ESP8266WebServer.h&gt;
+
+const char* ssid = "NOMBRE_DE_TU_RED";
+const char* password = "PASSWORD_DE_TU_RED";
+
+ESP8266WebServer server(80);
+const int pinLed = 2;
+
+void handleRoot() {
+  String html = "&lt;h1&gt;Control de LED&lt;/h1&gt;";
+  html += "&lt;a href='/encender'&gt;&lt;button&gt;Encender&lt;/button&gt;&lt;/a&gt;";
+  html += "&lt;a href='/apagar'&gt;&lt;button&gt;Apagar&lt;/button&gt;&lt;/a&gt;";
+  server.send(200, "text/html", html);
+}
+
+void handleEncender() {
+  digitalWrite(pinLed, LOW);
+  server.send(200, "text/plain", "LED Encendido");
+}
+
+void handleApagar() {
+  digitalWrite(pinLed, HIGH);
+  server.send(200, "text/plain", "LED Apagado");
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinLed, OUTPUT);
+  digitalWrite(pinLed, HIGH);
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWi-Fi conectado!");
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+
+  server.on("/", handleRoot);
+  server.on("/encender", handleEncender);
+  server.on("/apagar", handleApagar);
+  server.begin();
+}
+
+void loop() {
+  server.handleClient();
+}
+</code></pre>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Pasos para Probar:</strong><br>
+                           1. Reemplaza `NOMBRE_DE_TU_RED` y `PASSWORD_DE_TU_RED` con los datos de tu Wi-Fi.<br>
+                           2. Sube el código a tu placa ESP8266.<br>
+                           3. Abre el Monitor Serie para ver la dirección IP que obtuvo la placa.<br>
+                           4. Escribe esa dirección IP en el navegador de tu celular o PC. Deberías ver la página con los dos botones.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividades Adicionales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Más Actividades Prácticas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: Mostrar Datos de un Sensor en la Web</h3>
+                        <p>Ahora, en lugar de controlar, vamos a leer. Crearemos una página web que muestre la temperatura y humedad leídas desde un sensor DHT11.</p>
+                        <div class="example-box">
+                            <p class="text-base mb-2">Necesitarás instalar la librería `DHT sensor library` de Adafruit.</p>
+<pre><code>#include &lt;ESP8266WiFi.h&gt;
+#include &lt;ESP8266WebServer.h&gt;
+#include "DHT.h"
+
+const char* ssid = "NOMBRE_DE_TU_RED";
+const char* password = "PASSWORD_DE_TU_RED";
+
+ESP8266WebServer server(80);
+#define DHTPIN D4 // Pin D4 (GPIO2)
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+void handleRoot() {
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+
+  String html = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;";
+  html += "&lt;meta http-equiv='refresh' content='5'&gt;"; // Refresca la página cada 5 seg
+  html += "&lt;title&gt;Estacion Meteorologica&lt;/title&gt;&lt;/head&gt;";
+  html += "&lt;body&gt;&lt;h1&gt;Datos del Sensor DHT11&lt;/h1&gt;";
+  html += "&lt;p&gt;Temperatura: " + String(t) + " C&lt;/p&gt;";
+  html += "&lt;p&gt;Humedad: " + String(h) + " %&lt;/p&gt;";
+  html += "&lt;/body&gt;&lt;/html&gt;";
+  
+  server.send(200, "text/html", html);
+}
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) { delay(500); Serial.print("."); }
+  Serial.println("\nWi-Fi conectado!");
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+
+  server.on("/", handleRoot);
+  server.begin();
+}
+
+void loop() {
+  server.handleClient();
+}
+</code></pre>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 3: Mejorando la Interfaz con CSS</h3>
+                        <p>Una página web no tiene por qué ser aburrida. Podemos añadir estilos CSS directamente en el código HTML para hacerla más atractiva.</p>
+                        <div class="example-box">
+                            <p class="text-base mb-2">Este es el código de la Actividad 1, pero con una página web estilizada.</p>
+<pre><code>// ... (incluir librerías y credenciales de Wi-Fi como en el primer ejemplo) ...
+// ESP8266WebServer server(80);
+// const int pinLed = 2;
+
+void handleRootStyled() {
+  String html = "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Control LED&lt;/title&gt;";
+  html += "&lt;style&gt; body { text-align: center; font-family: sans-serif; background-color: #282c34; color: white; }";
+  html += "button { padding: 15px 30px; font-size: 20px; margin: 10px; border: none; border-radius: 10px; cursor: pointer; }";
+  html += ".on { background-color: #4CAF50; color: white; }";
+  html += ".off { background-color: #f44336; color: white; } &lt;/style&gt;&lt;/head&gt;";
+  html += "&lt;body&gt;&lt;h1&gt;Control de LED&lt;/h1&gt;";
+  html += "&lt;a href='/encender'&gt;&lt;button class='on'&gt;Encender&lt;/button&gt;&lt;/a&gt;";
+  html += "&lt;a href='/apagar'&gt;&lt;button class='off'&gt;Apagar&lt;/button&gt;&lt;/a&gt;";
+  html += "&lt;/body&gt;&lt;/html&gt;";
+  server.send(200, "text/html", html);
+}
+
+// ... (las funciones handleEncender, handleApagar y loop son iguales al primer ejemplo) ...
+
+void setup() {
+  // ... (la configuración inicial es la misma) ...
+  
+  // Solo cambiamos la función que se ejecuta en la ruta raíz
+  server.on("/", handleRootStyled);
+  server.on("/encender", handleEncender);
+  server.on("/apagar", handleApagar);
+  server.begin();
+}
+
+// ...
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

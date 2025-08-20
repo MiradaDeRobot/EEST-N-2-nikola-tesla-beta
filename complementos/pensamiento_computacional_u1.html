@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensamiento Computacional U1: Algoritmos en la Vida Cotidiana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Algoritmos en la Vida Cotidiana</h1>
+            <p class="text-lg text-gray-600">Pensamiento Computacional sin PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es un Algoritmo? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es un Algoritmo?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aunque la palabra "algoritmo" suena complicada, la usamos todos los días sin darnos cuenta. Un <strong>algoritmo</strong> es simplemente una <strong>secuencia de pasos finitos, claros y ordenados</strong> que se deben seguir para resolver un problema o completar una tarea.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Características de un Buen Algoritmo</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Preciso:</strong> Cada paso debe ser claro y no dejar lugar a dudas. No puede haber ambigüedad.</li>
+                            <li><strong>Ordenado:</strong> Los pasos deben tener una secuencia lógica y definida. El orden importa.</li>
+                            <li><strong>Finito:</strong> Debe tener un número limitado de pasos y terminar en algún momento.</li>
+                            <li><strong>Efectivo:</strong> Debe resolver el problema para el cual fue diseñado.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>El Ejemplo Perfecto: Una Receta de Cocina</strong><br>
+                            Una receta para preparar una chocolatada es un algoritmo. Tiene una lista de ingredientes (datos de entrada) y una serie de pasos precisos y ordenados (proceso) para obtener un resultado final (salida: la chocolatada). Si un paso es ambiguo ("añadir un poco de azúcar") o el orden es incorrecto, el resultado no será el esperado.
+                        </div>
+                        <div class="info-box">
+                            <h4 class="font-bold text-xl mb-2">Algoritmo vs. Programa</h4>
+                            Un <strong>algoritmo</strong> es la idea, la secuencia de pasos lógicos. Un <strong>programa</strong> es la implementación de ese algoritmo en un lenguaje específico que una computadora puede entender (como Scratch, Python o C++).
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-8">
+                        <h3 class="text-2xl font-semibold mb-3">Representación Visual: Diagramas de Flujo</h3>
+                        <p>Una forma muy común de visualizar un algoritmo es a través de un <strong>diagrama de flujo</strong>. Utiliza símbolos estandarizados para representar los diferentes tipos de pasos (inicio/fin, proceso, decisión, entrada/salida) y flechas para indicar el orden de ejecución.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/400x500/E0F2FE/0891B2?text=Diagrama+de+Flujo+Simple+(L%C3%A1mpara)" alt="Diagrama de Flujo" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-sm">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Práctica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividad Práctica: El Robot Humano</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Esta actividad se realiza en equipos y no necesita computadoras. El objetivo es experimentar en carne propia la importancia de dar instrucciones precisas y ordenadas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Instrucciones de la Actividad</h3>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Formar Equipos:</strong> Un estudiante será el "robot" y los demás serán los "programadores".</li>
+                            <li><strong>Definir un Objetivo Simple:</strong> Por ejemplo, "el robot debe caminar desde la puerta hasta el pizarrón y dibujar un círculo".</li>
+                            <li><strong>Crear el Algoritmo:</strong> Los programadores deben escribir en un papel la lista de instrucciones más detallada posible. No pueden usar palabras ambiguas, solo comandos simples.</li>
+                            <li><strong>Ejecutar el Programa:</strong> El "robot" debe seguir las instrucciones al pie de la letra, sin interpretar ni adivinar. Si una instrucción es ambigua o falta un paso, el robot se "tildará" o hará algo incorrecto.</li>
+                        </ol>
+                        <div class="info-box">
+                           <strong>Discusión Final:</strong> ¿Qué pasó? ¿El robot cumplió el objetivo? ¿Qué pasos faltaron o fueron ambiguos? Esta actividad demuestra que las computadoras, al igual que nuestro "robot humano", no tienen sentido común y necesitan instrucciones extremadamente precisas para funcionar.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Sección -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Identificando Algoritmos a Nuestro Alrededor</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ahora que entendemos el concepto, podemos empezar a ver algoritmos en todas partes. Identificarlos nos ayuda a desarrollar el pensamiento computacional.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad de Reflexión</h3>
+                        <p>Piensa en una tarea que realizas todos los días y descríbela como un algoritmo. ¿Cuáles son los pasos? ¿Están en orden? ¿Son lo suficientemente precisos?</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Algoritmo para "Cruzar la Calle"</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Llegar a la esquina.</li>
+                                <li>Mirar el semáforo peatonal.</li>
+                                <li><strong>Si</strong> el semáforo está en verde, <strong>entonces</strong>:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Mirar a la izquierda.</li>
+                                        <li>Mirar a la derecha.</li>
+                                        <li>Si no vienen autos, cruzar por la senda peatonal.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Si no</strong>, esperar a que cambie a verde.</li>
+                                <li>Volver al paso 2.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

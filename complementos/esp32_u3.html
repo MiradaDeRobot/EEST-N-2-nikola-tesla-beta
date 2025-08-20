@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 U3: Aplicaciones Avanzadas y FreeRTOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Aplicaciones Avanzadas y FreeRTOS</h1>
+            <p class="text-lg text-gray-600">Programación con ESP32</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es FreeRTOS? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es un Sistema Operativo de Tiempo Real (RTOS)?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>Sistema Operativo de Tiempo Real (RTOS)</strong> es un tipo de sistema operativo diseñado para gestionar el hardware y el software de un sistema embebido de forma predecible y determinista. Su función principal es administrar las diferentes <strong>tareas</strong> que debe realizar el microcontrolador, asignándoles prioridades y tiempo de procesador.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué usar un RTOS en el ESP32?</h3>
+                        <p>El entorno de Arduino para ESP32 ya utiliza <strong>FreeRTOS</strong> por debajo. Aunque el `setup()` y el `loop()` nos lo ocultan, nos permite aprovechar el doble núcleo y gestionar tareas complejas de forma eficiente. Usar un RTOS es crucial cuando un proyecto necesita:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li>Realizar múltiples acciones simultáneamente (ej. leer un sensor, actualizar una pantalla y gestionar una conexión Wi-Fi al mismo tiempo).</li>
+                            <li>Responder a eventos en un tiempo garantizado.</li>
+                            <li>Evitar el uso de la función `delay()`, que bloquea por completo al procesador.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Práctica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividad Práctica: Multitarea con FreeRTOS</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Vamos a crear un programa que realice dos tareas en paralelo sin que una interfiera con la otra, demostrando el poder de la multitarea.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis del Código</h3>
+                        <p>Este código crea dos tareas: una para hacer parpadear un LED cada 250 milisegundos y otra para leer un sensor de temperatura cada 2 segundos. Ambas se ejecutan en el mismo núcleo, pero el RTOS se encarga de alternar entre ellas.</p>
+                        <div class="example-box">
+<pre><code>#include "DHT.h"
+
+#define LED_PIN 2
+#define DHTPIN 4
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+
+// Tarea para el parpadeo del LED
+void TareaBlink(void *pvParameters) {
+  pinMode(LED_PIN, OUTPUT);
+  for (;;) { // Bucle infinito de la tarea
+    digitalWrite(LED_PIN, HIGH);
+    vTaskDelay(250 / portTICK_PERIOD_MS); // Pausa de 250ms sin bloquear
+    digitalWrite(LED_PIN, LOW);
+    vTaskDelay(250 / portTICK_PERIOD_MS);
+  }
+}
+
+// Tarea para leer el sensor
+void TareaSensor(void *pvParameters) {
+  dht.begin();
+  for (;;) {
+    float t = dht.readTemperature();
+    if (!isnan(t)) {
+      Serial.print("Temperatura: ");
+      Serial.print(t);
+      Serial.println(" *C");
+    }
+    vTaskDelay(2000 / portTICK_PERIOD_MS); // Pausa de 2 segundos sin bloquear
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  
+  // Crear la tarea de parpadeo con prioridad 1
+  xTaskCreate(
+    TareaBlink,
+    "Blink LED",
+    1000,
+    NULL,
+    1,
+    NULL);
+
+  // Crear la tarea de lectura del sensor con prioridad 1
+  xTaskCreate(
+    TareaSensor,
+    "Read Sensor",
+    2000,
+    NULL,
+    1,
+    NULL);
+}
+
+void loop() {
+  // El loop principal queda vacío porque la lógica está en las tareas
+}
+</code></pre>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Función Clave: `vTaskDelay()`</strong><br>
+                           Esta función es la alternativa de FreeRTOS a `delay()`. La gran diferencia es que `vTaskDelay()` no detiene al procesador. Simplemente "duerme" la tarea actual y le permite al RTOS ejecutar otras tareas durante ese tiempo.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Multitarea con FreeRTOS en ESP32 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

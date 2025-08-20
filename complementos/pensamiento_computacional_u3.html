@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensamiento Computacional U3: Descomponiendo Problemas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Descomponiendo Problemas Grandes</h1>
+            <p class="text-lg text-gray-600">Pensamiento Computacional sin PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Descomposición -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. La Estrategia de "Dividir para Vencer"</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cuando nos enfrentamos a un problema muy grande y complejo, intentar resolverlo todo de una vez puede ser abrumador y confuso. El <strong>pensamiento computacional</strong> nos enseña una estrategia clave: la <strong>descomposición</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Qué es la Descomposición?</h3>
+                        <p>Descomponer un problema significa dividirlo en subproblemas más pequeños y manejables. Cada subproblema se puede resolver de forma más sencilla y, al final, la solución de todas las partes pequeñas nos da la solución al problema grande original. Este enfoque también se conoce como <strong>diseño descendente (Top-Down Design)</strong>.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Problema+Grande+%3D+Suma+de+Problemas+Peque%C3%B1os" alt="Descomposición de un Problema" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box">
+                            <strong>Ventajas de Descomponer:</strong><br>
+                            <ul class="list-disc list-inside mt-2">
+                                <li><strong>Claridad:</strong> Hace que el problema sea mucho más fácil de entender en su totalidad.</li>
+                                <li><strong>Colaboración:</strong> Permite que diferentes personas o equipos trabajen en diferentes partes al mismo tiempo.</li>
+                                <li><strong>Depuración:</strong> Facilita la identificación y corrección de errores, ya que podemos probar cada parte pequeña por separado.</li>
+                                <li><strong>Reutilización:</strong> A veces, la solución a un subproblema puede ser reutilizada en otros proyectos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Práctica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividad Práctica: Planificando un Evento</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Vamos a aplicar la descomposición a un problema real y complejo: organizar un evento para la escuela, como una feria de ciencias o un acto de fin de año.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Gran Problema: "Organizar la Feria de Ciencias"</h3>
+                        <p>Esta tarea es demasiado grande. Vamos a descomponerla en subproblemas más pequeños.</p>
+                        <div class="example-box">
+                            <strong>Posible Descomposición del Problema:</strong><br>
+                            <ul class="list-disc list-inside mt-2 text-base space-y-2">
+                                <li>
+                                    <strong>Gestión y Logística:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Definir la fecha y el horario.</li>
+                                        <li>Conseguir los permisos de la dirección.</li>
+                                        <li>Asignar los espacios (stands) para cada curso.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Comunicación y Difusión:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Diseñar afiches para la escuela.</li>
+                                        <li>Enviar invitaciones a los padres.</li>
+                                        <li>Publicar en las redes sociales de la escuela.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Contenido y Proyectos:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Definir las reglas para los proyectos.</li>
+                                        <li>Inscribir a los grupos participantes.</li>
+                                        <li>Organizar un jurado para evaluar los proyectos.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-box mt-4">
+                            <strong>Tarea para la clase:</strong> En grupos, elegir un evento (un cumpleaños, un viaje, un torneo deportivo) y descomponerlo en al menos 4 o 5 subproblemas principales. Luego, cada subproblema debe dividirse en tareas aún más pequeñas.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Conexión con la Programación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. ¿Y Cómo se Aplica esto en la Programación?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La descomposición es, quizás, la habilidad más importante de un programador. Un programa grande y complejo, como un videojuego o una aplicación, nunca se escribe de una sola vez.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p>Los programadores dividen el problema en <strong>módulos</strong> o <strong>funciones</strong>. Cada función tiene una tarea única y bien definida. Por ejemplo, en un videojuego:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li>Una función se encarga de dibujar el personaje en la pantalla.</li>
+                            <li>Otra función se encarga de mover al personaje cuando se presiona una tecla.</li>
+                            <li>Una tercera función se encarga de llevar la puntuación.</li>
+                            <li>Y otra se encarga de detectar si el personaje choca con un enemigo.</li>
+                        </ul>
+                        <p class="mt-4">Al trabajar en estas pequeñas partes por separado, el desarrollo se vuelve mucho más organizado, rápido y fácil de depurar. Cuando empecemos a usar Scratch, veremos que crear nuestros propios "bloques" es una forma de aplicar la descomposición.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

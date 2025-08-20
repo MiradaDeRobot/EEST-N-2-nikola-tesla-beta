@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mBlock U1: Del Bloque al Hardware</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Del Bloque al Hardware</h1>
+            <p class="text-lg text-gray-600">Programación y Robótica con mBlock</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es mBlock? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es mBlock?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>mBlock</strong> es un software de programación gráfica basado en Scratch, pero con una capacidad fundamental: puede generar código para placas de desarrollo electrónico como <strong>Arduino</strong>. Actúa como un traductor que convierte nuestros programas de bloques en un lenguaje que el hardware puede entender y ejecutar.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conectando el Mundo Virtual y el Físico</h3>
+                        <p>La gran ventaja de mBlock es que nos permite aprender a programar hardware sin necesidad de escribir código complejo. Podemos controlar LEDs, leer sensores y mover motores usando la misma lógica de bloques que ya conocemos de Scratch.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/700x350/E0F2FE/0891B2?text=Interfaz+de+mBlock+con+Arduino" alt="Interfaz de mBlock" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-3xl">
+                        </div>
+                        <div class="info-box">
+                           <strong>Modos de Trabajo:</strong> mBlock puede trabajar en modo "En Vivo", donde la computadora controla directamente al Arduino, o en modo "Subir", donde el programa de bloques se traduce a código de Arduino y se graba de forma permanente en la placa para que funcione de manera autónoma.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Primer Circuito -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. "Hola Mundo" del Hardware: Encender un LED</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El primer paso en la programación de hardware es siempre el más simple: hacer que algo se encienda. Vamos a construir un circuito básico y a programarlo para hacer parpadear un LED.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Montaje del Circuito</h3>
+                        <p>Necesitarás una placa Arduino, un protoboard, un LED y una resistencia de 220Ω (Rojo-Rojo-Marrón).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x400/E0F2FE/0891B2?text=Circuito+B%C3%A1sico+LED+en+Protoboard" alt="Circuito LED" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                         <ol class="list-decimal list-inside space-y-2 mt-4">
+                            <li>Conecta el pin GND del Arduino a la línea azul (negativa) del protoboard.</li>
+                            <li>Conecta el ánodo del LED (la pata más larga) a una fila del protoboard.</li>
+                            <li>Conecta la resistencia desde la misma fila del ánodo a otra fila.</li>
+                            <li>Conecta un cable desde el final de la resistencia al pin digital 13 del Arduino.</li>
+                            <li>Conecta el cátodo del LED (la pata más corta) a la línea azul (GND) del protoboard.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Programa en mBlock</h3>
+                        <p>El objetivo es hacer que el LED parpadee cada segundo.</p>
+                        <div class="example-box">
+                            <ul class="list-disc list-inside mt-2 text-base">
+                                <li>Desde la pestaña "Dispositivos", asegúrate de tener seleccionado "Arduino Uno".</li>
+                                <li>Usa el evento "Cuando Arduino Uno se inicia".</li>
+                                <li>Dentro de un bucle "por siempre" de <strong>Control</strong>:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Usa el bloque "fija el pin digital (9) en alta" de la categoría <strong>Pin</strong>. Cambia el 9 por el 13.</li>
+                                        <li>Añade un bloque "espera (1) segundos" de <strong>Control</strong>.</li>
+                                        <li>Usa otro bloque "fija el pin digital (13) en baja".</li>
+                                        <li>Añade otro bloque "espera (1) segundos".</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Subir el Programa:</strong> Conecta el Arduino a la PC, selecciona el puerto COM correcto en mBlock y haz clic en el botón "Subir". El programa se grabará en la placa y el LED comenzará a parpadear.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Entradas Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Leyendo el Mundo Exterior: Pulsadores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ahora vamos a leer una entrada. Añadiremos un pulsador al circuito para que el LED solo se encienda cuando lo presionamos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modificando el Circuito y el Programa</h3>
+                        <p>Añade un pulsador y una resistencia de 10kΩ al protoboard para crear una configuración "pull-down".</p>
+                        <div class="example-box">
+                            <strong>Lógica del Nuevo Programa:</strong><br>
+                            <ul class="list-disc list-inside mt-2 text-base">
+                                <li>Dentro del bucle "por siempre", usa un condicional "Si ... entonces / Si no".</li>
+                                <li>En la condición, coloca el bloque "lee el pin digital (2)" de la categoría <strong>Pin</strong>. Conecta el pulsador al pin 2.</li>
+                                <li><strong>Si</strong> el pin 2 está en alto (presionado), <strong>entonces</strong> fija el pin 13 en alta.</li>
+                                <li><strong>Si no</strong>, fija el pin 13 en baja.</li>
+                            </ul>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Primeros Pasos con mBlock y Arduino &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

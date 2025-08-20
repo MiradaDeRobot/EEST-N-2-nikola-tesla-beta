@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino U3: Comunicación Serial y Librerías</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Comunicación Serial y Librerías</h1>
+            <p class="text-lg text-gray-600">Programación en Arduino</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Comunicación Serial -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Comunicación Serial: Hablando con la Computadora</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>comunicación serial</strong> es un método para enviar y recibir datos bit por bit entre dos dispositivos. En Arduino, es la herramienta fundamental para la <strong>depuración de programas (debugging)</strong>, ya que nos permite enviar mensajes y valores de sensores desde la placa a la computadora para ver qué está pasando en tiempo real.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Monitor Serie</h3>
+                        <p>El IDE de Arduino incluye una herramienta llamada <strong>Monitor Serie</strong> (accesible desde el ícono de la lupa en la esquina superior derecha). Actúa como una terminal que muestra los datos que el Arduino envía a través del cable USB.</p>
+                        <div class="info-box">
+                            <strong>Funciones Clave:</strong>
+                            <ul class="list-disc list-inside space-y-2 mt-2">
+                                <li><code>Serial.begin(velocidad);</code>: Inicia la comunicación serial. Se coloca en el `setup()`. La velocidad estándar es 9600 baudios.</li>
+                                <li><code>Serial.print(dato);</code>: Envía un dato al Monitor Serie sin saltar de línea.</li>
+                                <li><code>Serial.println(dato);</code>: Envía un dato y luego hace un salto de línea.</li>
+                                <li><code>Serial.available();</code>: Devuelve el número de bytes disponibles para leer desde el puerto serie.</li>
+                                <li><code>Serial.read();</code>: Lee el siguiente byte de datos entrantes.</li>
+                            </ul>
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo 1: Leer un Potenciómetro y Mostrarlo en la PC</strong><br>
+<pre><code>const int pinPot = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valorPot = analogRead(pinPot);
+  Serial.print("Valor del Potenciómetro: ");
+  Serial.println(valorPot);
+  delay(500);
+}
+</code></pre>
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo 2: Controlar un LED desde el Teclado</strong><br>
+                            <p class="text-base mt-2">Abre el Monitor Serie, escribe 'e' y presiona Enter para encender el LED, o 'a' para apagarlo.</p>
+<pre><code>const int pinLed = 13;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(pinLed, OUTPUT);
+}
+
+void loop() {
+  // Si hay datos disponibles para leer
+  if (Serial.available() > 0) {
+    // Lee el caracter entrante
+    char comando = Serial.read();
+
+    if (comando == 'e') {
+      digitalWrite(pinLed, HIGH);
+      Serial.println("LED Encendido");
+    } else if (comando == 'a') {
+      digitalWrite(pinLed, LOW);
+      Serial.println("LED Apagado");
+    }
+  }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Librerías -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Librerías: Simplificando la Complejidad</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una <strong>librería</strong> (o biblioteca) es un conjunto de código preescrito que nos facilita el uso de un sensor, un módulo o una función compleja. En lugar de tener que escribir todo el código de bajo nivel para manejar un dispositivo, simplemente "incluimos" la librería y usamos las funciones simplificadas que nos ofrece.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cómo se usan?</h3>
+                        <p>Para usar una librería, debemos incluirla al principio de nuestro sketch con la directiva <code>#include</code>. El IDE de Arduino ya viene con muchas librerías estándar.</p>
+                        <div class="info-box">
+                           <strong>Instalación de Librerías:</strong> Si un sensor o módulo requiere una librería que no viene con el IDE, podemos instalarla fácilmente desde el Gestor de Librerías (`Herramientas > Administrar Bibliotecas...`).
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo: Mover un Servomotor con la librería `Servo.h`</strong><br>
+                            <p class="text-base mt-2">Este código mueve un servomotor de 0° a 180° y viceversa.</p>
+<pre><code>#include &lt;Servo.h&gt; // 1. Incluir la librería
+
+Servo miServo;  // 2. Crear un objeto de la clase Servo
+
+void setup() {
+  miServo.attach(9); // 3. Asociar el objeto al pin 9
+}
+
+void loop() {
+  // Mueve el servo de 0 a 180 grados
+  for (int angulo = 0; angulo <= 180; angulo += 1) {
+    miServo.write(angulo); // 4. Usar la función write()
+    delay(15);
+  }
+  // Mueve el servo de 180 a 0 grados
+  for (int angulo = 180; angulo >= 0; angulo -= 1) {
+    miServo.write(angulo);
+    delay(15);
+  }
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Integradora -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Actividades Integradoras</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a crear proyectos que combinen la lectura de sensores complejos (que requieren librerías) y la comunicación serial para depurar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 1: Sensor de Distancia con Display LCD</h3>
+                        <p>Medir la distancia con un sensor ultrasónico HC-SR04 y mostrar el resultado en una pantalla LCD I2C y en el Monitor Serie.</p>
+                        <div class="example-box">
+                            <strong>Código de Ejemplo:</strong><br>
+                            <p class="text-base mt-2">Este código requiere instalar la librería `LiquidCrystal_I2C` desde el gestor de librerías.</p>
+<pre><code>#include &lt;Wire.h&gt; 
+#include &lt;LiquidCrystal_I2C.h&gt;
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+const int pinTrig = 9;
+const int pinEcho = 10;
+
+void setup() {
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+  pinMode(pinTrig, OUTPUT);
+  pinMode(pinEcho, INPUT);
+}
+
+void loop() {
+  long duracion, distancia;
+  digitalWrite(pinTrig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinTrig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinTrig, LOW);
+  duracion = pulseIn(pinEcho, HIGH);
+  distancia = duracion / 58.2;
+  Serial.print(distancia);
+  Serial.println(" cm");
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Distancia:");
+  lcd.setCursor(0, 1);
+  lcd.print(distancia);
+  lcd.print(" cm");
+  delay(500);
+}
+</code></pre>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: Termómetro y Higrómetro Digital</h3>
+                        <p>Usar un sensor DHT11 para medir la temperatura y la humedad del ambiente y mostrar los datos en el Monitor Serie.</p>
+                        <div class="example-box">
+                            <strong>Código de Ejemplo:</strong><br>
+                            <p class="text-base mt-2">Este código requiere instalar la librería `DHT sensor library` de Adafruit desde el gestor de librerías.</p>
+<pre><code>#include "DHT.h"
+
+#define DHTPIN 2     // Pin digital donde está conectado el sensor
+#define DHTTYPE DHT11   // Define el tipo de sensor
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  // Espera un par de segundos entre mediciones.
+  delay(2000);
+
+  // Lee la humedad y la temperatura
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+
+  // Comprueba si la lectura falló
+  if (isnan(h) || isnan(t)) {
+    Serial.println("Error al leer del sensor DHT!");
+    return;
+  }
+
+  Serial.print("Humedad: ");
+  Serial.print(h);
+  Serial.print(" %\t");
+  Serial.print("Temperatura: ");
+  Serial.print(t);
+  Serial.println(" *C");
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

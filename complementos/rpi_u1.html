@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi U1: Introducción a Raspberry Pi y Linux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Introducción a Raspberry Pi y Linux</h1>
+            <p class="text-lg text-gray-600">Programación con Raspberry Pi</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es Raspberry Pi? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es una Raspberry Pi?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>Raspberry Pi</strong> es una computadora de placa única (SBC - Single Board Computer) de bajo costo y del tamaño de una tarjeta de crédito. A diferencia de un microcontrolador como Arduino, una Raspberry Pi es una <strong>computadora completa</strong>: tiene un procesador más potente, memoria RAM, puertos USB, HDMI, Ethernet y ejecuta un sistema operativo completo, generalmente una versión de <strong>Linux</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Familia de Placas Raspberry Pi</h3>
+                        <p>No existe un solo tipo de Raspberry Pi. La fundación ha lanzado varios modelos, cada uno con diferentes características:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-4">
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Raspberry+Pi+4" alt="Raspberry Pi 4" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Modelos Principales (Ej. Pi 4, Pi 5)</h4>
+                                <p class="text-base">Son los más potentes y con más conectividad. Ideales para usarse como una computadora de escritorio, servidor multimedia o para proyectos que requieren mucho procesamiento.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Raspberry+Pi+Zero" alt="Raspberry Pi Zero" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Modelos Zero</h4>
+                                <p class="text-base">Versiones mucho más pequeñas y de menor consumo. Perfectas para proyectos portátiles o donde el espacio es crítico, como drones o cámaras compactas.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Raspberry+Pi+Pico" alt="Raspberry Pi Pico" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Raspberry Pi Pico</h4>
+                                <p class="text-base">Es un <strong>microcontrolador</strong>, no una computadora. Compite directamente con Arduino y es ideal para tareas de control de hardware en tiempo real.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Sistema Operativo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Sistema Operativo: Raspberry Pi OS (antes Raspbian)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El sistema operativo oficial es <strong>Raspberry Pi OS</strong>, una versión de Linux basada en Debian y optimizada para el hardware de la Pi. Se instala en una tarjeta MicroSD, que actúa como el "disco duro" de la computadora.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Configuración Inicial</h3>
+                        <p>El primer paso es "quemar" la imagen del sistema operativo en la tarjeta MicroSD usando una herramienta como "Raspberry Pi Imager". Este programa nos permite pre-configurar el nombre de usuario, la contraseña y la conexión Wi-Fi antes del primer arranque.</p>
+                        <div class="info-box">
+                           Una vez instalada la MicroSD, se conectan un teclado, un ratón, un monitor (vía HDMI) y la alimentación (USB-C) para iniciar el entorno de escritorio, que es muy similar al de otras computadoras.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Terminal de Linux -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. La Terminal de Comandos de Linux</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aunque Raspberry Pi OS tiene una interfaz gráfica, el verdadero poder de Linux reside en su <strong>terminal de comandos</strong>. Es una interfaz de texto que nos permite interactuar directamente con el sistema operativo, siendo mucho más rápida y potente para muchas tareas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Comandos Básicos Esenciales</h3>
+                        <p>Estos son algunos de los comandos que más utilizarás:</p>
+                        <div class="example-box">
+<pre><code># Muestra el directorio actual
+pwd
+
+# Lista los archivos y carpetas del directorio actual
+ls -l
+
+# Cambia al directorio "Documentos"
+cd Documentos
+
+# Vuelve al directorio anterior
+cd ..
+
+# Crea una nueva carpeta llamada "Proyectos"
+mkdir Proyectos
+
+# Actualiza la lista de paquetes de software
+sudo apt update
+
+# Instala las actualizaciones disponibles
+sudo apt upgrade
+</code></pre>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>¿Qué es `sudo`?</strong> Es la abreviatura de "Super User Do". Se antepone a un comando para ejecutarlo con privilegios de administrador, algo necesario para instalar software o modificar archivos del sistema.
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Comandos Básicos de Linux &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

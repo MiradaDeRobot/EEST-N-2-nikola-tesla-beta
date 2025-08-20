@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch U3: Variables, Animaciones y Clones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Variables, Animaciones y Clones</h1>
+            <p class="text-lg text-gray-600">Introducción a la Programación con Scratch</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Variables -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Variables: La Memoria de Nuestros Programas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Hasta ahora, nuestros programas pueden reaccionar a eventos, pero no pueden "recordar" información. Para eso, usamos <strong>variables</strong>. Una variable es como una caja con una etiqueta donde podemos guardar un dato (un número, texto, etc.) para usarlo más tarde.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Creando y Usando Variables</h3>
+                        <p>En la categoría <strong>Variables</strong> (naranja oscuro), podemos crear nuestras propias variables. Al crear una, aparecerán nuevos bloques para manipularla:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Fijar [variable] a [valor]:</strong> Asigna un valor inicial a la variable (ej. fijar "puntos" a 0).</li>
+                            <li><strong>Cambiar [variable] por [valor]:</strong> Suma (o resta) un valor al que ya tiene la variable (ej. cambiar "puntos" por 1).</li>
+                        </ul>
+                        <div class="info-box">
+                            <strong>Variables "Para todos los objetos" vs. "Solo para este objeto":</strong> Al crear una variable, Scratch te da a elegir. Una variable "global" (para todos) puede ser leída y modificada por cualquier Sprite. Una variable "local" (solo para este objeto) pertenece a un único Sprite.
+                        </div>
+                        <div class="example-box">
+                            <strong>Actividad: Añadir Puntuación y Vidas al Juego del Gato y el Ratón</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Crea una variable global llamada "Puntos".</li>
+                                <li>En el script del <strong>Ratón</strong>, al inicio, "fijar Puntos a 0".</li>
+                                <li>Dentro del condicional "Si ¿tocando a Sprite1?", añade el bloque "cambiar Puntos por 1".</li>
+                                <li>Ahora, añade un nuevo Sprite que sea el "malo" (ej. un murciélago).</li>
+                                <li>Crea una variable local para el Gato llamada "Vidas".</li>
+                                <li>En el script del <strong>Gato</strong>, al inicio, "fijar Vidas a 3".</li>
+                                <li>Añade un condicional al Gato: "Si ¿tocando a Murciélago?, entonces cambiar Vidas por -1 y esperar 1 segundo".</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Animaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Animaciones con Disfraces</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La animación en Scratch se basa en el concepto de <strong>disfraces</strong>. Un Sprite puede tener múltiples imágenes o "disfraces". Al cambiar rápidamente entre ellos, creamos la ilusión de movimiento, como en los dibujos animados tradicionales.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Editor de Disfraces</h3>
+                        <p>Haciendo clic en la pestaña "Disfraces" (junto a "Código"), puedes ver, editar y crear nuevos disfraces para tu Sprite. Muchos Sprites de la biblioteca ya vienen con varios disfraces listos para animar.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=Pesta%C3%B1a+y+Editor+de+Disfraces" alt="Editor de Disfraces" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="example-box">
+                            <strong>Actividad: Hacer que un Personaje Vuele</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Elige un Sprite que tenga disfraces de movimiento, como un murciélago ("Bat") o un pájaro.</li>
+                                <li>Crea un script que comience con la bandera verde.</li>
+                                <li>Dentro de un bucle "por siempre", añade el bloque "siguiente disfraz" de <strong>Apariencia</strong>.</li>
+                                <li>Añade un pequeño bloque "esperar 0.1 segundos" de <strong>Control</strong> dentro del bucle. Sin esta pausa, el cambio de disfraz sería demasiado rápido para verse.</li>
+                                <li>Añade bloques de movimiento para que el personaje se desplace por el escenario mientras mueve sus alas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Interacción entre Objetos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Interacción Avanzada: Mensajes</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>A veces necesitamos que la acción de un Sprite active un script en otro Sprite. Para esto, Scratch utiliza un sistema de <strong>mensajes</strong>. Un Sprite puede "enviar" un mensaje, y otros Sprites pueden tener scripts que se activan "al recibir" ese mensaje.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bloques de Mensajes</h3>
+                        <p>Se encuentran en la categoría <strong>Eventos</strong>.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Enviar [mensaje]:</strong> Emite un mensaje a todos los Sprites del proyecto.</li>
+                            <li><strong>Al recibir [mensaje]:</strong> Es un bloque de inicio que ejecuta el script cuando recibe un mensaje específico.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Actividad: Nivel Superado</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>En nuestro juego del Gato y el Ratón, modifica el script del Ratón. Añade un condicional "Si Puntos = 10 entonces...".</li>
+                                <li>Dentro de ese "Si", añade el bloque "enviar [Nivel Superado]".</li>
+                                <li>Ahora, ve al <strong>Fondo</strong> del escenario. Crea un nuevo script para el fondo que comience con "Al recibir [Nivel Superado]".</li>
+                                <li>Dentro de este script, usa el bloque "cambiar fondo a..." de <strong>Apariencia</strong> para mostrar una imagen de "¡Ganaste!".</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Sección: Clones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Creando Ejércitos: Los Clones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>¿Qué pasa si queremos crear muchos enemigos o una lluvia de objetos? Crear 50 Sprites iguales sería muy tedioso. La solución son los <strong>clones</strong>. Un clon es una copia de un Sprite que comparte sus disfraces y scripts, pero puede tener su propia posición, tamaño y comportamiento.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bloques de Clonación</h3>
+                        <p>Se encuentran en la categoría <strong>Control</strong>.</p>
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong>Crear clon de [mí mismo]:</strong> El Sprite original crea una copia.</li>
+                            <li><strong>Al comenzar como clon:</strong> Es un bloque de evento que ejecuta el script solo en el clon, no en el original.</li>
+                            <li><strong>Eliminar este clon:</strong> El clon se autodestruye.</li>
+                        </ul>
+                        <div class="example-box">
+                            <strong>Actividad: Lluvia de Manzanas</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Crea un nuevo proyecto con un Sprite de una manzana.</li>
+                                <li><strong>Script del Sprite Original (el "Creador"):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Al hacer clic en (bandera verde), esconder el original.</li>
+                                        <li>Dentro de un bucle "por siempre", esperar 1 segundo y "crear clon de mí mismo".</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Script de los Clones:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Usar el evento "Al comenzar como clon".</li>
+                                        <li>Ir a una posición X aleatoria en la parte superior de la pantalla (Y=180).</li>
+                                        <li>Mostrar el clon.</li>
+                                        <li>Usar un bucle "repetir hasta que" la posición Y sea menor que -170.</li>
+                                        <li>Dentro del bucle, "cambiar Y por -5" para que caiga.</li>
+                                        <li>Al final, "eliminar este clon" para que no se acumulen.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

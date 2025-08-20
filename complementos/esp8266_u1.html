@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP8266 U1: Fundamentos y Conectividad Wi-Fi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Fundamentos del ESP8266 y Conectividad Wi-Fi</h1>
+            <p class="text-lg text-gray-600">Programación con ESP8266</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es el ESP8266? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es el ESP8266?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>ESP8266</strong> es un microcontrolador de bajo costo con una capacidad fundamental integrada: <strong>conectividad Wi-Fi</strong>. Esto lo convierte en el cerebro ideal para proyectos de <strong>Internet de las Cosas (IoT)</strong>, permitiendo que nuestros dispositivos se conecten a internet para enviar datos o ser controlados de forma remota.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Placas de Desarrollo Comunes: NodeMCU y Wemos D1 Mini</h3>
+                        <p>Aunque el chip es el ESP8266, rara vez se usa solo. Lo más común es utilizarlo en una placa de desarrollo que incluye el chip, un conversor USB-Serie para programarlo, un regulador de voltaje y los pines de E/S expuestos.</p>
+                        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Placa+NodeMCU+(ESP8266)" alt="Placa NodeMCU ESP8266" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">NodeMCU</h4>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/400x300/E0F2FE/0891B2?text=Placa+Wemos+D1+Mini" alt="Placa Wemos D1 Mini" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-center">Wemos D1 Mini</h4>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                           <strong>¡Atención al Voltaje!</strong> Aunque la placa se alimenta con 5V a través del conector USB, el chip ESP8266 y todos sus pines de entrada/salida (GPIO) funcionan a <strong>3.3V</strong>. La placa incluye un regulador de voltaje que convierte los 5V del USB a los 3.3V que necesita el chip. Esto significa que conectar un sensor o componente de 5V directamente a sus pines de entrada puede dañarlo permanentemente. Siempre se deben usar adaptadores de nivel lógico.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Configuración del IDE -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Configuración del IDE de Arduino para ESP8266</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para poder programar el ESP8266, primero debemos indicarle al IDE de Arduino cómo hacerlo. Esto se hace añadiendo un "Gestor de Tarjetas" adicional, que contiene toda la información que el IDE necesita para compilar y subir el código a estas placas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pasos de Configuración</h3>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>Abre el IDE de Arduino y ve a `Archivo > Preferencias`.</li>
+                            <li>En el campo "Gestor de URLs Adicionales de Tarjetas", pega la siguiente URL: <code class="text-sm bg-gray-200 p-1 rounded">http://arduino.esp8266.com/stable/package_esp8266com_index.json</code></li>
+                            <li>Ve a `Herramientas > Placa > Gestor de Tarjetas...`.</li>
+                            <li>En el buscador, escribe "esp8266" y dale a instalar al paquete "esp8266 by ESP8266 Community".</li>
+                            <li>Una vez instalado, podrás seleccionar tu placa (ej. "NodeMCU 1.0") desde el menú `Herramientas > Placa`.</li>
+                        </ol>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=s5a7e-POQcE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Cómo Configurar el IDE para ESP8266 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección "Hola Mundo" Wi-Fi -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. "Hola Mundo" del IoT: Escanear Redes Wi-Fi</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Nuestro primer programa no hará parpadear un LED, sino que usará la capacidad principal del ESP8266: el Wi-Fi. Crearemos un sketch que escanee las redes Wi-Fi a su alrededor y las muestre en el Monitor Serie.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis del Código</h3>
+                        <p>Este código utiliza la librería `ESP8266WiFi.h`, que ya viene instalada con el gestor de tarjetas.</p>
+                        <div class="example-box">
+<pre><code>#include "ESP8266WiFi.h" // Incluye la librería para el manejo de Wi-Fi
+
+void setup() {
+  Serial.begin(115200); // Inicia el puerto serie a una velocidad más alta
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect(); 
+  delay(100);
+  Serial.println("Setup finalizado. Iniciando escaneo...");
+}
+
+void loop() {
+  Serial.println("Escaneando redes Wi-Fi...");
+  int n = WiFi.scanNetworks();
+  
+  if (n == 0) {
+    Serial.println("No se encontraron redes.");
+  } else {
+    Serial.print(n);
+    Serial.println(" redes encontradas:");
+    for (int i = 0; i < n; ++i) {
+      Serial.print(i + 1);
+      Serial.print(": ");
+      Serial.print(WiFi.SSID(i));
+      Serial.print(" (");
+      Serial.print(WiFi.RSSI(i));
+      Serial.print(")");
+      Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE) ? " " : "*");
+      delay(10);
+    }
+  }
+  Serial.println("");
+  delay(5000);
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Sección: Conectarse a una Red -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Conectándose a una Red Wi-Fi</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El siguiente paso lógico es conectarnos a nuestra propia red Wi-Fi. Esto es esencial para que nuestro dispositivo pueda acceder a internet.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Código para Conexión</h3>
+                        <p>Este sketch se conecta a una red específica e imprime la dirección IP que le asignó el router.</p>
+                        <div class="example-box">
+<pre><code>#include &lt;ESP8266WiFi.h&gt;
+
+const char* ssid = "NOMBRE_DE_TU_RED";
+const char* password = "PASSWORD_DE_TU_RED";
+
+void setup() {
+  Serial.begin(115200);
+  delay(10);
+
+  Serial.println();
+  Serial.print("Conectando a ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("¡Wi-Fi conectado!");
+  Serial.print("Dirección IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  // No se necesita código aquí para este ejemplo
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

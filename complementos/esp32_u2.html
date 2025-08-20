@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 U2: Proyectos con Bluetooth Low Energy (BLE)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Proyectos con Bluetooth Low Energy (BLE)</h1>
+            <p class="text-lg text-gray-600">Programación con ESP32</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es BLE? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es Bluetooth Low Energy (BLE)?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El ESP32 soporta dos tipos de Bluetooth: Clásico y de Baja Energía (BLE). Mientras que el Bluetooth Clásico es ideal para transmitir flujos de datos continuos (como música a auriculares), el <strong>Bluetooth Low Energy (BLE)</strong> está diseñado para enviar pequeñas cantidades de datos de forma intermitente, con un consumo de energía extremadamente bajo.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modelo de Servidor y Cliente BLE</h3>
+                        <p>La comunicación BLE se basa en un modelo de servidor-cliente:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Servidor (o Periférico):</strong> Es el dispositivo que tiene los datos (ej. un ESP32 con un sensor). "Anuncia" su presencia y los servicios que ofrece.</li>
+                            <li><strong>Cliente (o Central):</strong> Es el dispositivo que busca servidores y se conecta a ellos para leer o escribir datos (ej. un smartphone).</li>
+                        </ul>
+                        <div class="info-box">
+                           <strong>Servicios y Características:</strong> Los datos en un servidor BLE se organizan en <strong>Servicios</strong>, que a su vez contienen <strong>Características</strong>. Una característica es el dato en sí (ej. el valor de la temperatura). Cada servicio y característica tiene un identificador único llamado <strong>UUID</strong>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividades Prácticas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Actividades Prácticas con BLE</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 1: Servidor BLE Básico ("Hola Mundo")</h3>
+                        <p>Programamos el ESP32 para que actúe como un servidor BLE, creando un servicio y una característica que se puede leer y escribir desde un celular.</p>
+                        <div class="example-box">
+<pre><code>#include &lt;BLEDevice.h&gt;
+#include &lt;BLEServer.h&gt;
+
+#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
+
+void setup() {
+  Serial.begin(115200);
+  BLEDevice::init("Mi ESP32");
+  BLEServer *pServer = BLEDevice::createServer();
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+  BLECharacteristic *pCharacteristic = pService->createCharacteristic(
+                                         CHARACTERISTIC_UUID,
+                                         BLECharacteristic::PROPERTY_READ |
+                                         BLECharacteristic::PROPERTY_WRITE
+                                       );
+  pCharacteristic->setValue("Hola Mundo BLE");
+  pService->start();
+  BLEDevice::startAdvertising();
+  Serial.println("Servidor BLE listo.");
+}
+
+void loop() {
+  delay(2000);
+}
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: Control Remoto de un LED con BLE</h3>
+                        <p>Ahora, el ESP32 reaccionará a los datos que se escriban en su característica para encender o apagar un LED.</p>
+                        <div class="example-box">
+<pre><code>#include &lt;BLEDevice.h&gt;
+#include &lt;BLEServer.h&gt;
+
+#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
+#define LED_PIN 2
+
+// Clase para manejar los eventos de escritura
+class MyCallbacks: public BLECharacteristicCallbacks {
+    void onWrite(BLECharacteristic *pCharacteristic) {
+      std::string value = pCharacteristic->getValue();
+      if (value.length() > 0) {
+        Serial.print("Nuevo valor: ");
+        Serial.println(value.c_str());
+        if(strcmp(value.c_str(), "on") == 0) {
+          digitalWrite(LED_PIN, HIGH);
+        } else if(strcmp(value.c_str(), "off") == 0) {
+          digitalWrite(LED_PIN, LOW);
+        }
+      }
+    }
+};
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_PIN, OUTPUT);
+  
+  BLEDevice::init("Control LED ESP32");
+  BLEServer *pServer = BLEDevice::createServer();
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+  BLECharacteristic *pCharacteristic = pService->createCharacteristic(
+                                         CHARACTERISTIC_UUID,
+                                         BLECharacteristic::PROPERTY_WRITE
+                                       );
+  pCharacteristic->setCallbacks(new MyCallbacks()); // Asignamos el callback
+  pService->start();
+  BLEDevice::startAdvertising();
+  Serial.println("Servidor BLE para control de LED listo.");
+}
+
+void loop() {
+  delay(2000);
+}
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 3: Termómetro BLE con Notificaciones</h3>
+                        <p>El ESP32 medirá la temperatura y notificará automáticamente al celular cada vez que haya un cambio, sin que el celular tenga que preguntar.</p>
+                        <div class="example-box">
+                            <p class="text-base mb-2">Este ejemplo asume que tienes un sensor de temperatura como el DHT11 y su librería instalada.</p>
+<pre><code>#include &lt;BLEDevice.h&gt;
+#include &lt;BLEServer.h&gt;
+#include "DHT.h"
+
+#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+#define TEMP_CHAR_UUID      "c3c4f0d8-2458-4c64-add7-39d200133f98"
+#define DHTPIN 4
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+BLECharacteristic* pTempCharacteristic;
+float lastTemp = 0;
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  
+  BLEDevice::init("Termometro ESP32");
+  BLEServer *pServer = BLEDevice::createServer();
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+  
+  pTempCharacteristic = pService->createCharacteristic(
+                         TEMP_CHAR_UUID,
+                         BLECharacteristic::PROPERTY_READ |
+                         BLECharacteristic::PROPERTY_NOTIFY
+                       );
+  
+  pService->start();
+  BLEDevice::startAdvertising();
+  Serial.println("Servidor de Temperatura BLE listo.");
+}
+
+void loop() {
+  float temp = dht.readTemperature();
+  if (!isnan(temp) && temp != lastTemp) {
+    lastTemp = temp;
+    pTempCharacteristic->setValue(String(temp).c_str());
+    pTempCharacteristic->notify(); // Envía la notificación
+    Serial.print("Nueva temperatura enviada: ");
+    Serial.println(temp);
+  }
+  delay(2000);
+}
+</code></pre>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Servidor BLE con ESP32 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

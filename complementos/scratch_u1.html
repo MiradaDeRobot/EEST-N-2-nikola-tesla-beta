@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch U1: Conociendo Scratch y el Pensamiento Lógico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Conociendo Scratch y el Pensamiento Lógico</h1>
+            <p class="text-lg text-gray-600">Introducción a la Programación con Scratch</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es Scratch? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es Scratch y por qué es Genial?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Scratch</strong> es un lenguaje de programación visual creado por el MIT. Su objetivo principal es hacer que la programación sea accesible, divertida y creativa para todos. En lugar de escribir complejas líneas de código, en Scratch construimos programas encastrando <strong>bloques de colores</strong>, como si fueran piezas de LEGO.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Interfaz de Scratch: Nuestro Taller Creativo</h3>
+                        <p>La pantalla de Scratch se divide en varias áreas principales que trabajaremos constantemente:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/800x450/E0F2FE/0891B2?text=Interfaz+de+Scratch+Detallada" alt="Interfaz de Scratch" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-4xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Escenario:</strong> Es nuestro mundo virtual. Aquí es donde nuestros personajes (llamados "Sprites") cobrarán vida, se moverán e interactuarán.</li>
+                            <li><strong>Paleta de Bloques:</strong> A la izquierda, es nuestra caja de herramientas. Contiene todos los comandos posibles, organizados por categorías de colores: <strong>Movimiento</strong> (azul), <strong>Apariencia</strong> (violeta), <strong>Sonido</strong> (magenta), <strong>Eventos</strong> (amarillo), <strong>Control</strong> (naranja), etc.</li>
+                            <li><strong>Área de Programación:</strong> Es el gran espacio en el centro. Aquí arrastramos y unimos los bloques para construir nuestros algoritmos (que en Scratch se llaman "scripts" o programas).</li>
+                            <li><strong>Panel de Sprites:</strong> Debajo del escenario, nos permite elegir, nombrar, y configurar nuestros personajes y los fondos del escenario.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Sección: Conceptos Clave -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Conceptos Clave de Programación en Scratch</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Scratch hace que los conceptos fundamentales de la programación sean visuales y fáciles de entender.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc list-inside space-y-4">
+                            <li><strong>Secuencia:</strong> Al igual que en nuestros algoritmos en papel, el orden de los bloques importa. El programa se ejecuta de arriba hacia abajo, un bloque a la vez.</li>
+                            <li><strong>Eventos:</strong> Son los "disparadores" que inician un programa. El bloque más importante es "Al hacer clic en (bandera verde)", pero hay otros como "Al presionar la tecla..." o "Al hacer clic en este objeto".</li>
+                            <li><strong>Bucles (Repeticiones):</strong> Son bloques que nos permiten repetir acciones sin tener que añadir el mismo bloque una y otra vez. El bloque "repetir 10" es un ejemplo de bucle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Primer Programa -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Nuestro Primer Programa: "El Gato Caminante"</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Vamos a aplicar lo que aprendimos sobre algoritmos para crear nuestro primer programa. El objetivo es simple: hacer que el gato de Scratch camine de un lado a otro del escenario de forma continua.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Algoritmo en Bloques (Paso a Paso)</h3>
+                        <div class="example-box">
+                            <strong>Pasos a seguir en Scratch:</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li><strong>Iniciar el programa:</strong> Ve a la categoría <strong>Eventos</strong> (amarillo) y arrastra el bloque "Al hacer clic en (bandera verde)" al área de programación. Este será el disparador de nuestro algoritmo.</li>
+                                <li><strong>Crear un bucle infinito:</strong> Queremos que el gato camine siempre. Ve a <strong>Control</strong> (naranja) y arrastra el bloque "por siempre". Encastra todo lo que sigue dentro de este bloque.</li>
+                                <li><strong>Mover el personaje:</strong> Ve a <strong>Movimiento</strong> (azul) y encastra el bloque "mover 10 pasos" dentro del bucle "por siempre".</li>
+                                <li><strong>Animar el movimiento:</strong> Para que no se deslice, vamos a hacer que cambie de apariencia. Ve a <strong>Apariencia</strong> (violeta) y añade el bloque "siguiente disfraz" debajo de "mover 10 pasos".</li>
+                                <li><strong>Evitar que se escape:</strong> Para que no se vaya de la pantalla, añade el bloque "rebotar si toca un borde" de la categoría <strong>Movimiento</strong>.</li>
+                                <li><strong>Corregir la rotación:</strong> Verás que al rebotar, el gato se pone boca abajo. Para solucionarlo, busca en <strong>Movimiento</strong> el bloque "fijar estilo de rotación a izquierda-derecha" y colócalo justo después de la bandera verde, pero antes del bucle "por siempre".</li>
+                            </ol>
+                        </div>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x450/E0F2FE/0891B2?text=Bloques+del+Gato+Caminante+Completo" alt="Bloques del Gato Caminante" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="info-box mt-4">
+                           Acabamos de traducir un algoritmo a un programa real. Cada bloque es una instrucción precisa y el orden en que los encastramos define la secuencia de ejecución.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Nueva Actividad Práctica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Más Actividades para Practicar</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 1: "Una Conversación Simple"</h3>
+                        <p>Vamos a hacer que dos personajes hablen entre sí. Esto nos enseñará a manejar más de un objeto y a controlar los tiempos.</p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>Añade un nuevo Sprite desde la biblioteca (por ejemplo, otro animal o una persona).</li>
+                            <li>Coloca los dos Sprites uno frente al otro en el escenario.</li>
+                            <li><strong>Para el Gato (Sprite1):</strong>
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li>Usa el evento "Al hacer clic en (bandera verde)".</li>
+                                    <li>Usa el bloque "decir Hola! durante 2 segundos" de <strong>Apariencia</strong>.</li>
+                                </ul>
+                            </li>
+                             <li><strong>Para el nuevo Sprite (Sprite2):</strong>
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li>Usa el evento "Al hacer clic en (bandera verde)".</li>
+                                    <li>Usa un bloque "esperar 2 segundos" de <strong>Control</strong> para que no hable al mismo tiempo que el gato.</li>
+                                    <li>Usa el bloque "decir ¿Cómo estás? durante 2 segundos".</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="info-box">
+                           <strong>¿Qué aprendimos?</strong> Cada Sprite tiene su propia área de programación. Podemos coordinar sus acciones usando bloques de tiempo como "esperar".
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: "Dibuja tu Nombre"</h3>
+                        <p>Vamos a usar la extensión "Lápiz" para que el gato dibuje la inicial de tu nombre.</p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>Haz clic en el botón azul "Añadir extensión" en la esquina inferior izquierda de la paleta de bloques y selecciona "Lápiz". Aparecerá una nueva categoría de bloques verdes.</li>
+                            <li>Crea un nuevo script que comience con "al presionar la tecla espacio".</li>
+                            <li>Añade el bloque "borrar todo" para limpiar el escenario cada vez que empieces.</li>
+                            <li>Añade el bloque "lápiz abajo" para que el gato empiece a dibujar.</li>
+                            <li>Usando los bloques de <strong>Movimiento</strong> "mover..." y "girar...", crea la secuencia de pasos para que el gato dibuje la primera letra de tu nombre.</li>
+                            <li>Usa el bloque "lápiz arriba" al final para que el gato deje de dibujar.</li>
+                        </ol>
+                        <div class="example-box">
+                            <strong>Pista para dibujar una "L":</strong><br>
+                            <ul class="list-disc list-inside text-base">
+                                <li>Lápiz abajo</li>
+                                <li>Girar 180 grados (para apuntar hacia abajo)</li>
+                                <li>Mover 100 pasos</li>
+                                <li>Girar a la izquierda 90 grados (para apuntar a la derecha)</li>
+                                <li>Mover 50 pasos</li>
+                                <li>Lápiz arriba</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

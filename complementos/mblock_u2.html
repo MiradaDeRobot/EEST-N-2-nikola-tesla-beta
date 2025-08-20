@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mBlock U2: Interactuando con el Mundo Real - Sensores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Interactuando con el Mundo Real: Sensores</h1>
+            <p class="text-lg text-gray-600">Programación y Robótica con mBlock</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Entradas Analógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Entradas Analógicas vs. Digitales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>En la unidad anterior, usamos un pulsador. Este es un sensor <strong>digital</strong>: solo tiene dos estados, presionado (ALTO) o no presionado (BAJO). Sin embargo, la mayoría de los fenómenos del mundo real (temperatura, luz, sonido) son <strong>analógicos</strong>, es decir, pueden tener un rango infinito de valores.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pines Analógicos de Arduino</h3>
+                        <p>Para leer estas señales, el Arduino tiene pines específicos marcados como "Analog In" (A0, A1, A2, etc.). Estos pines están conectados a un <strong>Convertidor Analógico-Digital (ADC)</strong> interno, que convierte la tensión que recibe (entre 0V y 5V) en un número entero.</p>
+                        <div class="info-box">
+                           <strong>Resolución del ADC:</strong> El ADC del Arduino Uno tiene una resolución de 10 bits. Esto significa que puede representar la tensión de entrada con \(2^{10} = 1024\) valores diferentes. Por lo tanto, leerá un <strong>0</strong> si el voltaje es 0V, un <strong>1023</strong> si es 5V, y un valor intermedio para voltajes entre medio.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Potenciómetro -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Lectura de un Potenciómetro</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>potenciómetro</strong> es una resistencia variable con tres terminales. Es el sensor analógico perfecto para empezar, ya que nos permite variar manualmente una tensión de forma muy sencilla.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Montaje del Circuito</h3>
+                        <p>Conectaremos el potenciómetro como un divisor de tensión.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x400/E0F2FE/0891B2?text=Conexi%C3%B3n+de+Potenci%C3%B3metro+a+Arduino" alt="Circuito Potenciómetro" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                         <ol class="list-decimal list-inside space-y-2 mt-4">
+                            <li>Conecta un terminal extremo del potenciómetro a 5V en el Arduino.</li>
+                            <li>Conecta el otro terminal extremo a GND.</li>
+                            <li>Conecta el terminal central al pin analógico A0 del Arduino.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Programa en mBlock</h3>
+                        <p>Vamos a leer el valor del potenciómetro y mostrarlo en la pantalla usando el Panda.</p>
+                        <div class="example-box">
+                            <ul class="list-disc list-inside mt-2 text-base">
+                                <li>Selecciona el Panda como objeto y usa el evento "Cuando Arduino Uno se inicia".</li>
+                                <li>Dentro de un bucle "por siempre" de <strong>Control</strong>:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Usa el bloque "decir [Hola!]" de <strong>Apariencia</strong>.</li>
+                                        <li>Dentro del espacio en blanco, coloca el bloque "lee el pin analógico (A0)" de la categoría <strong>Pin</strong>.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Modo "En Vivo":</strong> Para esta prueba, conecta el Arduino y usa el modo "En Vivo". Al girar la perilla del potenciómetro, verás cómo el número que dice el Panda cambia en tiempo real entre 0 y 1023.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección LDR -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Sensor de Luz: La Fotorresistencia (LDR)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>LDR</strong> es una resistencia cuyo valor cambia con la intensidad de la luz que recibe: a más luz, menor resistencia. Para leerla con Arduino, necesitamos conectarla en un <strong>divisor de tensión</strong> junto con una resistencia fija (generalmente de 10kΩ).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad: Luz de Noche Automática</h3>
+                        <p>Vamos a combinar todo lo aprendido para crear un sistema que encienda un LED automáticamente cuando la luz ambiente disminuye.</p>
+                        <div class="example-box">
+                            <strong>Lógica del Programa:</strong><br>
+                            <ul class="list-disc list-inside mt-2 text-base">
+                                <li>Dentro de un bucle "por siempre":
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Lee el valor del pin analógico donde está conectada la LDR (ej. A0).</li>
+                                        <li>Usa un condicional "Si ... entonces / Si no".</li>
+                                        <li>La condición será: "<strong>Si</strong> el valor leído en A0 es <strong>menor que</strong> un umbral (ej. 300), <strong>entonces</strong> encender el LED (pin 13 en alta)".</li>
+                                        <li><strong>Si no</strong> (hay suficiente luz), apagar el LED (pin 13 en baja).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Calibración:</strong> El valor de umbral (300 en el ejemplo) dependerá de la luz de tu habitación y de la resistencia que uses. Deberás experimentar para encontrar el valor que funcione mejor para ti. ¡Esto es calibrar un sensor!
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Sensores Analógicos con mBlock &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

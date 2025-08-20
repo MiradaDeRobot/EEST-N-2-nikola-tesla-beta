@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mBlock U3: Controlando Actuadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Controlando Actuadores</h1>
+            <p class="text-lg text-gray-600">Programación y Robótica con mBlock</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Salidas PWM -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Salidas "Analógicas": PWM y Servomotores</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Así como podemos leer valores analógicos, también podemos generar salidas que se comportan de forma "analógica". No podemos generar un voltaje de 2.5V directamente, pero podemos usar una técnica llamada <strong>PWM (Modulación por Ancho de Pulso)</strong> para simularlo.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Servomotores: Control de Posición Preciso</h3>
+                        <p>Un <strong>servomotor</strong> es un tipo especial de motor que permite controlar la posición angular de su eje de forma precisa. En lugar de girar continuamente, podemos ordenarle que se mueva a un ángulo específico (generalmente entre 0° y 180°) y se mantenga allí.</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x400/E0F2FE/0891B2?text=Conexi%C3%B3n+de+un+Servomotor" alt="Circuito Servomotor" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                         <div class="example-box">
+                            <strong>Actividad: Controlando un Servo con un Potenciómetro</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Conecta un potenciómetro al pin A0 y un servomotor al pin digital 9 (un pin con capacidad PWM ~).</li>
+                                <li><strong>Lógica del Programa:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Dentro de un bucle "por siempre", lee el valor del pin analógico A0 (que irá de 0 a 1023).</li>
+                                        <li>Necesitamos convertir ese rango a un ángulo de 0 a 180. Para esto, usamos el bloque <strong>"mapear"</strong> de la categoría <strong>Operadores</strong>: `mapear [valor de A0] de [0] a [1023] a [0] a [180]`.</li>
+                                        <li>Usa el bloque "fija el ángulo del servo en el pin (9) a (0)" de la categoría <strong>Pin</strong> y coloca el bloque "mapear" en el lugar del ángulo.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Zumbadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Generando Sonido con Zumbadores</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un <strong>zumbador (buzzer)</strong> es un pequeño actuador que convierte una señal eléctrica en sonido. Podemos usarlo para crear alertas, melodías simples o para dar feedback auditivo en nuestros proyectos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Programa en mBlock</h3>
+                        <p>mBlock tiene bloques específicos para controlar un zumbador en la categoría <strong>Altavoz</strong>.</p>
+                        <div class="example-box">
+                            <strong>Actividad: Alarma de Proximidad</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Conecta un sensor de distancia ultrasónico y un zumbador al Arduino.</li>
+                                <li><strong>Lógica del Programa:</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Dentro de un bucle "por siempre", lee la distancia del sensor.</li>
+                                        <li>Usa un condicional: <strong>Si</strong> la distancia es menor que 20 cm, <strong>entonces</strong> usa el bloque "reproduce el sonido (C4) durante (0.25) pulsos".</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Servomotores y Zumbadores con mBlock &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Robot Simple -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Proyecto Integrador: Construcción de un Robot Simple</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Es hora de combinar todo lo que hemos aprendido en las tres unidades para construir un robot móvil básico que pueda evitar obstáculos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes Necesarios</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Chasis de robot con dos motores de C.C. y ruedas.</li>
+                            <li>Placa Arduino Uno.</li>
+                            <li>Controlador de motores (Driver L298N).</li>
+                            <li>Sensor de distancia ultrasónico (HC-SR04).</li>
+                            <li>Servomotor (para montar el sensor).</li>
+                            <li>Portapilas y baterías.</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Esquema+de+Montaje+de+Robot+Simple" alt="Montaje de Robot" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Lógica de Programación del Robot "Esquiva-Obstáculos":</strong><br>
+                           <ol class="list-decimal list-inside mt-2 text-base">
+                               <li>Dentro de un bucle "por siempre":</li>
+                               <li>Hacer que el robot avance.</li>
+                               <li>Leer la distancia con el sensor ultrasónico.</li>
+                               <li><strong>Si</strong> la distancia es menor que 20 cm:
+                                   <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                       <li>Detener el robot.</li>
+                                       <li>Retroceder un poco.</li>
+                                       <li>Girar hacia un lado (ej. a la derecha).</li>
+                                   </ul>
+                               </li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

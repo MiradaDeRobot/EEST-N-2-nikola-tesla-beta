@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi U3: Visión por Computadora y Servidores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Proyectos de Visión por Computadora y Servidores</h1>
+            <p class="text-lg text-gray-600">Programación con Raspberry Pi</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Visión por Computadora -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Visión por Computadora con la Cámara Pi</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>visión por computadora</strong> es un campo de la inteligencia artificial que entrena a las computadoras para interpretar y comprender el mundo visual. Con el Módulo de Cámara oficial, la Raspberry Pi se convierte en una plataforma excelente para experimentar con esta tecnología.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conexión y Habilitación de la Cámara</h3>
+                        <p>El módulo de cámara se conecta al puerto CSI (Camera Serial Interface) de la Raspberry Pi. Una vez conectado, es necesario habilitarlo desde la configuración del sistema operativo (`sudo raspi-config` en la terminal).</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/600x350/E0F2FE/0891B2?text=M%C3%B3dulo+de+C%C3%A1mara+para+Raspberry+Pi" alt="Módulo de Cámara" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-2xl">
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Capturando una Imagen con Python</h3>
+                        <p>La librería `picamera` nos permite controlar la cámara de forma muy sencilla desde un script de Python.</p>
+                        <div class="example-box">
+<pre><code>from picamera import PiCamera
+from time import sleep
+
+# Crear un objeto cámara
+camera = PiCamera()
+
+# Iniciar la previsualización (muestra lo que ve la cámara en el monitor)
+camera.start_preview()
+
+# Esperar 5 segundos para que la cámara se ajuste a la luz
+sleep(5)
+
+# Capturar una imagen y guardarla en el escritorio
+camera.capture('/home/pi/Desktop/foto.jpg')
+
+# Detener la previsualización
+camera.stop_preview()
+</code></pre>
+                        </div>
+                         <div class="info-box mt-4">
+                           <strong>Siguientes Pasos:</strong> Una vez que podemos capturar imágenes, el siguiente paso es procesarlas. Librerías como <strong>OpenCV</strong> nos permiten realizar tareas como detección de rostros, seguimiento de objetos o reconocimiento de colores.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Servidor Web -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. La Raspberry Pi como Servidor Web</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Gracias a que ejecuta un sistema operativo completo, la Raspberry Pi es ideal para funcionar como un <strong>servidor web</strong> de bajo consumo. Esto nos permite crear interfaces web para controlar los pines GPIO desde cualquier dispositivo en la misma red.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Creando un Servidor Web con Flask</h3>
+                        <p><strong>Flask</strong> es un micro-framework de Python que hace que crear un servidor web sea increíblemente simple. Para instalarlo, abrimos una terminal y escribimos: `pip install Flask`.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Controlar un LED desde el Navegador</strong><br>
+                            <p class="text-base mt-2">Este script crea una página web con dos botones para encender y apagar un LED conectado al pin GPIO 17.</p>
+<pre><code>from flask import Flask
+import RPi.GPIO as GPIO
+
+app = Flask(__name__)
+
+led_pin = 17
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(led_pin, GPIO.OUT)
+
+@app.route('/')
+def index():
+    return '&lt;h1&gt;Control de LED&lt;/h1&gt;&lt;a href="/encender"&gt;&lt;button&gt;Encender&lt;/button&gt;&lt;/a&gt;&lt;a href="/apagar"&gt;&lt;button&gt;Apagar&lt;/button&gt;&lt;/a&gt;'
+
+@app.route('/encender')
+def encender():
+    GPIO.output(led_pin, GPIO.HIGH)
+    return 'LED Encendido'
+
+@app.route('/apagar')
+def apagar():
+    GPIO.output(led_pin, GPIO.LOW)
+    return 'LED Apagado'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
+</code></pre>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Para ejecutarlo:</strong> Guarda el código como `servidor.py` y ejecútalo desde la terminal con `python servidor.py`. Luego, desde cualquier navegador en la misma red, accede a la dirección IP de tu Raspberry Pi.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

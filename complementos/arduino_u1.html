@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino U1: Introducción a la Plataforma y al IDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Introducción a la Plataforma Arduino y Entorno de Desarrollo (IDE)</h1>
+            <p class="text-lg text-gray-600">Programación en Arduino</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es Arduino? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es Arduino?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Arduino</strong> es una plataforma de hardware y software de código abierto, diseñada para facilitar la creación de proyectos de electrónica interactiva. Se compone de una <strong>placa de desarrollo</strong> (hardware) que se programa utilizando un <strong>Entorno de Desarrollo Integrado (IDE)</strong> (software).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Hardware: La Placa Arduino Uno</h3>
+                        <p>La placa más popular para empezar es el Arduino Uno. Sus partes principales son:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/700x400/E0F2FE/0891B2?text=Partes+de+la+Placa+Arduino+Uno" alt="Partes de Arduino Uno" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-3xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Microcontrolador (ATmega328P):</strong> Es el cerebro de la placa, donde se ejecuta nuestro programa.</li>
+                            <li><strong>Pines Digitales (0-13):</strong> Pueden ser configurados como entradas o salidas de dos estados (ALTO/BAJO).</li>
+                            <li><strong>Pines Analógicos (A0-A5):</strong> Permiten leer voltajes variables de sensores.</li>
+                            <li><strong>Conector USB:</strong> Sirve para alimentar la placa y para cargarle los programas desde la PC.</li>
+                            <li><strong>Botón de Reset:</strong> Reinicia la ejecución del programa.</li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold mt-8 mb-2 text-red-800">Otros Pines y Conectores Importantes</h4>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>Pines de Alimentación:</strong>
+                                <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>VIN:</strong> Para alimentar la placa con una fuente externa (ej. una batería de 9V).</li>
+                                    <li><strong>5V y 3.3V:</strong> Pines que proveen una salida de tensión regulada para alimentar sensores y otros componentes.</li>
+                                    <li><strong>GND:</strong> Pines de tierra o masa (0V), la referencia común para todos los voltajes.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Pines de Comunicación:</strong>
+                                 <ul class="list-inside list-['-_'] ml-6 mt-2 text-base">
+                                    <li><strong>Serial (RX/TX):</strong> Los pines 0 (RX - recepción) y 1 (TX - transmisión) se usan para la comunicación serie con la computadora u otros dispositivos.</li>
+                                    <li><strong>I2C (SDA/SCL):</strong> Los pines A4 (SDA) y A5 (SCL) se usan para el protocolo de comunicación I2C, muy útil para conectar múltiples sensores con solo dos cables.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nueva Sección: Otros Modelos de Arduino -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Otros Modelos de Placas Arduino</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Aunque el Arduino Uno es el más popular, existen muchos otros modelos, cada uno adaptado a diferentes necesidades de tamaño, potencia o número de pines.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Arduino+Nano" alt="Arduino Nano" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Arduino Nano</h4>
+                                <p class="text-base">Es una versión compacta del Uno, ideal para montar en protoboards y para proyectos donde el espacio es limitado. Tiene casi las mismas capacidades que el Uno.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Arduino+Mega+2560" alt="Arduino Mega" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Arduino Mega 2560</h4>
+                                <p class="text-base">Una placa mucho más grande y potente. Ofrece 54 pines digitales, 16 entradas analógicas y más memoria, ideal para proyectos complejos como impresoras 3D o robots avanzados.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Arduino+Leonardo" alt="Arduino Leonardo" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Arduino Leonardo</h4>
+                                <p class="text-base">Su microcontrolador tiene comunicación USB nativa, lo que le permite a la placa actuar como un dispositivo de interfaz humana (HID), como un teclado o un ratón.</p>
+                           </div>
+                           <div class="md:col-start-2 lg:col-start-auto">
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Arduino+Pro+Mini" alt="Arduino Pro Mini" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Arduino Pro Mini</h4>
+                                <p class="text-base">Una versión minimalista, sin conector USB ni pines soldados. Es extremadamente pequeña y de bajo consumo, diseñada para ser integrada de forma permanente en un proyecto.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/300x200/E0F2FE/0891B2?text=Arduino+LilyPad" alt="Arduino LilyPad" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold">Arduino LilyPad</h4>
+                                <p class="text-base">Una placa con forma circular y pads grandes diseñados para ser cosidos con hilo conductor. Es la placa ideal para proyectos de e-textiles y tecnología vestible (wearables).</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección El Software IDE -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. El Entorno de Desarrollo (IDE)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>IDE de Arduino</strong> es un programa simple que se instala en la computadora y nos permite escribir, compilar y subir nuestro código a la placa Arduino. El lenguaje de programación es una versión simplificada de C++.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estructura de un Programa (Sketch)</h3>
+                        <p>Todo programa de Arduino, llamado "sketch", tiene dos funciones principales que son obligatorias:</p>
+                        <div class="example-box">
+<pre><code>void setup() {
+  // Este código se ejecuta una sola vez, al principio.
+  // Aquí se configuran los pines y se inician las comunicaciones.
+}
+
+void loop() {
+  // Este código se ejecuta en un bucle infinito,
+  // una y otra vez, mientras la placa esté encendida.
+  // Aquí va la lógica principal de nuestro programa.
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Hola Mundo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. "Hola Mundo" en Arduino: El Sketch "Blink"</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El primer programa que se suele hacer en cualquier plataforma de hardware es hacer parpadear un LED. En Arduino, este sketch se llama "Blink" y ya viene incluido en los ejemplos del IDE.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Análisis del Código</h3>
+                        <p>Este programa hace parpadear el LED integrado en la placa Arduino, que está conectado internamente al pin 13.</p>
+                        <div class="example-box">
+<pre><code>// La función setup se ejecuta una vez cuando se presiona reset o se enciende la placa
+void setup() {
+  // Inicializa el pin digital 13 como una salida.
+  pinMode(13, OUTPUT);
+}
+
+// La función loop se ejecuta una y otra vez para siempre
+void loop() {
+  digitalWrite(13, HIGH);   // Enciende el LED (HIGH es el nivel de voltaje alto)
+  delay(1000);              // Espera un segundo (1000 milisegundos)
+  digitalWrite(13, LOW);    // Apaga el LED haciéndolo BAJO
+  delay(1000);              // Espera un segundo
+}
+</code></pre>
+                        </div>
+                        <div class="info-box mt-4">
+                           <strong>Pasos para subir el código:</strong><br>
+                           1. Conecta tu Arduino a la PC.<br>
+                           2. En el IDE, ve a `Herramientas > Placa` y selecciona "Arduino Uno".<br>
+                           3. Ve a `Herramientas > Puerto` y selecciona el puerto COM al que está conectado.<br>
+                           4. Haz clic en el botón con la flecha hacia la derecha ("Subir").
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre "Hola Mundo" con Arduino &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

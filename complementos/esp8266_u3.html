@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP8266 U3: Internet de las Cosas (IoT) con MQTT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Internet de las Cosas (IoT) con MQTT</h1>
+            <p class="text-lg text-gray-600">Programación con ESP8266</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es IoT? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es el Internet de las Cosas (IoT)?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>Internet de las Cosas (IoT)</strong> se refiere a la red de objetos físicos ("cosas") que llevan incorporados sensores, software y otras tecnologías con el fin de conectarse e intercambiar datos con otros dispositivos y sistemas a través de internet. El ESP8266 es un componente fundamental en el mundo del IoT.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ejemplos de Aplicaciones IoT</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>Hogar Inteligente (Smart Home):</strong> Luces que se encienden solas, termostatos que aprenden tus hábitos, cerraduras que puedes abrir con tu celular.</li>
+                            <li><strong>Ciudades Inteligentes (Smart Cities):</strong> Sensores de estacionamiento que indican lugares libres, sistemas de recolección de basura que optimizan sus rutas, alumbrado público que se regula según el tráfico.</li>
+                            <li><strong>Industria 4.0:</strong> Sensores en máquinas que predicen fallas antes de que ocurran, sistemas de logística que rastrean paquetes en tiempo real.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Protocolo MQTT -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. El Protocolo MQTT</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Mientras que un servidor web es útil para el control local, no es eficiente para que muchos dispositivos envíen datos a un servidor central. Para esto, se utiliza un protocolo diseñado para IoT: <strong>MQTT (Message Queuing Telemetry Transport)</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Modelo Publicador/Suscriptor</h3>
+                        <p>MQTT es un protocolo de mensajería extremadamente ligero que funciona con un modelo de publicación y suscripción. Los componentes son:</p>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/700x350/E0F2FE/0891B2?text=Arquitectura+del+Protocolo+MQTT" alt="Arquitectura MQTT" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-3xl">
+                        </div>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Broker:</strong> Es un servidor central que recibe todos los mensajes y los distribuye a los clientes interesados.</li>
+                            <li><strong>Cliente Publicador (Publisher):</strong> Un dispositivo (como un ESP8266 con un sensor) que envía mensajes a un "tema" (topic) específico en el broker.</li>
+                            <li><strong>Cliente Suscriptor (Subscriber):</strong> Un dispositivo o aplicación que se suscribe a un "tema" en el broker. Cuando un publicador envía un mensaje a ese tema, el broker se lo reenvía a todos los suscriptores.</li>
+                        </ul>
+                        <div class="info-box">
+                           <strong>Temas (Topics):</strong> Son como "canales" de información, organizados jerárquicamente. Por ejemplo, un sensor de temperatura en la cocina podría publicar en el tema `casa/cocina/temperatura`. Un cliente podría suscribirse a `casa/cocina/#` para recibir todos los datos de la cocina.
+                        </div>
+                         <div class="info-box mt-4">
+                           <strong>Calidad de Servicio (QoS):</strong> MQTT permite definir la fiabilidad de la entrega de un mensaje con tres niveles de QoS (0, 1 y 2), desde "enviar y olvidar" hasta "asegurar que llegue una sola vez".
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Práctica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Actividades Prácticas con MQTT</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 1: Enviando Datos de un Sensor (Publicador)</h3>
+                        <p>Vamos a construir un termómetro IoT que publique la temperatura y humedad leídas por un sensor DHT11 a un broker MQTT público en internet.</p>
+                        <div class="example-box">
+                            <p class="text-base mb-2">Este código utiliza la librería `PubSubClient`, que se debe instalar desde el Gestor de Librerías del IDE de Arduino.</p>
+<pre><code>#include &lt;ESP8266WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+#include "DHT.h"
+
+// --- Configuración Wi-Fi y MQTT ---
+const char* ssid = "NOMBRE_DE_TU_RED";
+const char* password = "PASSWORD_DE_TU_RED";
+const char* mqtt_server = "broker.hivemq.com"; // Broker MQTT público
+
+// --- Inicialización de objetos ---
+WiFiClient espClient;
+PubSubClient client(espClient);
+DHT dht(D4, DHT11); // Sensor DHT11 en el pin D4
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  
+  // Conexión a Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWi-Fi conectado!");
+
+  // Conexión al Broker MQTT
+  client.setServer(mqtt_server, 1883);
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop();
+
+  float t = dht.readTemperature();
+  if (!isnan(t)) {
+    client.publish("escuela/tesla/temperatura", String(t).c_str());
+    Serial.print("Temperatura enviada: ");
+    Serial.println(t);
+  }
+
+  delay(10000); // Espera 10 segundos
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Intentando conexión MQTT...");
+    if (client.connect("ESP8266_SensorTemp")) {
+      Serial.println("conectado");
+    } else {
+      Serial.print("falló, rc=");
+      Serial.print(client.state());
+      Serial.println(" intentando de nuevo en 5 segundos");
+      delay(5000);
+    }
+  }
+}
+</code></pre>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Actividad 2: Control Remoto de un LED (Suscriptor)</h3>
+                        <p>Ahora haremos lo contrario: nuestro ESP8266 se suscribirá a un tema y esperará comandos ("on" o "off") para encender o apagar un LED.</p>
+                        <div class="example-box">
+                            <p class="text-base mb-2">Para probarlo, puedes usar un cliente MQTT online como <a href="http://www.hivemq.com/demos/websocket-client/" target="_blank" class="text-blue-600 hover:underline">HiveMQ Websocket Client</a> para publicar "on" o "off" en el tema `escuela/tesla/luz`.</p>
+<pre><code>#include &lt;ESP8266WiFi.h&gt;
+#include &lt;PubSubClient.h&gt;
+
+// ... (Configuración Wi-Fi y MQTT igual que en el ejemplo anterior) ...
+const int pinLed = D1; // LED conectado al pin D1
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Mensaje recibido en [");
+  Serial.print(topic);
+  Serial.print("] ");
+  
+  String mensaje;
+  for (int i = 0; i < length; i++) {
+    mensaje += (char)payload[i];
+  }
+  Serial.println(mensaje);
+
+  if (mensaje == "on") {
+    digitalWrite(pinLed, HIGH);
+  } else if (mensaje == "off") {
+    digitalWrite(pinLed, LOW);
+  }
+}
+
+void setup() {
+  pinMode(pinLed, OUTPUT);
+  // ... (Setup de Serial y Wi-Fi igual que en el ejemplo anterior) ...
+  
+  client.setServer(mqtt_server, 1883);
+  client.setCallback(callback); // Asigna la función que se ejecutará al recibir un mensaje
+}
+
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Intentando conexión MQTT...");
+    if (client.connect("ESP8266_ControlLED")) {
+      Serial.println("conectado");
+      // Se suscribe al tema para recibir comandos
+      client.subscribe("escuela/tesla/luz");
+    } else {
+      // ... (código de reintento igual que antes) ...
+    }
+  }
+}
+
+void loop() {
+  if (!client.connected()) {
+    reconnect();
+  }
+  client.loop(); // Mantiene la conexión y revisa si hay mensajes nuevos
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

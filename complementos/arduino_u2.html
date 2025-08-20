@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino U2: Entradas y Salidas Digitales y Analógicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Entradas y Salidas Digitales y Analógicas</h1>
+            <p class="text-lg text-gray-600">Programación en Arduino</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Entradas y Salidas Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Entradas y Salidas Digitales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las E/S (Entradas/Salidas) digitales son la forma más básica de interacción. Trabajan con dos únicos estados: <strong>HIGH</strong> (5V) y <strong>LOW</strong> (0V).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Salidas Digitales: Controlando LEDs</h3>
+                        <p>Ya vimos el ejemplo "Blink". Las funciones clave son <code>pinMode(pin, OUTPUT);</code> para configurar un pin como salida y <code>digitalWrite(pin, HIGH/LOW);</code> para poner el pin en estado alto o bajo.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo 1: Secuencia de Luces (Semáforo)</strong><br>
+                            <p class="text-base mt-2">Este código simula un semáforo simple usando tres LEDs (rojo, amarillo y verde) conectados a los pines 13, 12 y 11.</p>
+<pre><code>const int ledRojo = 13;
+const int ledAmarillo = 12;
+const int ledVerde = 11;
+
+void setup() {
+  pinMode(ledRojo, OUTPUT);
+  pinMode(ledAmarillo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledVerde, HIGH);
+  delay(5000);
+  digitalWrite(ledVerde, LOW);
+  digitalWrite(ledAmarillo, HIGH);
+  delay(2000);
+  digitalWrite(ledAmarillo, LOW);
+  digitalWrite(ledRojo, HIGH);
+  delay(5000);
+  digitalWrite(ledRojo, LOW);
+}
+</code></pre>
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo 2: Efecto "Auto Fantástico"</strong><br>
+                            <p class="text-base mt-2">Este código enciende y apaga una secuencia de 6 LEDs (conectados del pin 2 al 7) para crear un efecto de barrido.</p>
+<pre><code>const int leds[] = {2, 3, 4, 5, 6, 7};
+const int numLeds = 6;
+
+void setup() {
+  for (int i = 0; i < numLeds; i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Barrido de izquierda a derecha
+  for (int i = 0; i < numLeds; i++) {
+    digitalWrite(leds[i], HIGH);
+    delay(100);
+    digitalWrite(leds[i], LOW);
+  }
+  // Barrido de derecha a izquierda
+  for (int i = numLeds - 1; i >= 0; i--) {
+    digitalWrite(leds[i], HIGH);
+    delay(100);
+    digitalWrite(leds[i], LOW);
+  }
+}
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Entradas Digitales: Leyendo un Pulsador</h3>
+                        <p>Para leer un pulsador, configuramos un pin como entrada y leemos su estado con <code>digitalRead(pin);</code>.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo 1: Encender un LED con un Pulsador</strong><br>
+<pre><code>const int pinBoton = 2;
+const int pinLed = 13;
+
+void setup() {
+  pinMode(pinLed, OUTPUT);
+  pinMode(pinBoton, INPUT);
+}
+
+void loop() {
+  int estadoBoton = digitalRead(pinBoton);
+  if (estadoBoton == HIGH) {
+    digitalWrite(pinLed, HIGH);
+  } else {
+    digitalWrite(pinLed, LOW);
+  }
+}
+</code></pre>
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo 2: Contador de Pulsos</strong><br>
+                            <p class="text-base mt-2">Este código cuenta cuántas veces se presiona un botón y muestra el resultado en el Monitor Serie.</p>
+<pre><code>const int pinBoton = 2;
+int contador = 0;
+int estadoBotonAnterior = LOW;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(pinBoton, INPUT);
+}
+
+void loop() {
+  int estadoBotonActual = digitalRead(pinBoton);
+  // Detecta el flanco de subida (cuando se presiona)
+  if (estadoBotonActual == HIGH && estadoBotonAnterior == LOW) {
+    contador++;
+    Serial.print("Pulsaciones: ");
+    Serial.println(contador);
+  }
+  estadoBotonAnterior = estadoBotonActual;
+  delay(50); // Pequeño retardo anti-rebote
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Entradas y Salidas Analógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Entradas y Salidas Analógicas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para interactuar con el mundo real, que es analógico, necesitamos poder leer y generar valores intermedios, no solo ON/OFF.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Salidas Analógicas (PWM)</h3>
+                        <p>Arduino simula una salida analógica usando <strong>PWM</strong> en los pines marcados con (~). La función <code>analogWrite(pin, valor)</code> permite establecer un "nivel de potencia" entre 0 (apagado) y 255 (máximo).</p>
+                        <div class="example-box">
+                            <strong>Ejemplo 1: Controlar la velocidad de un motor DC con un Potenciómetro</strong><br>
+                            <p class="text-base mt-2">Se necesita un transistor (ej. TIP120) para manejar la corriente del motor.</p>
+<pre><code>const int pinPot = A0;
+const int pinMotor = 9; // Un pin con PWM (~)
+
+void setup() {
+  pinMode(pinMotor, OUTPUT);
+}
+
+void loop() {
+  int valorPot = analogRead(pinPot);
+  int velocidad = map(valorPot, 0, 1023, 0, 255);
+  analogWrite(pinMotor, velocidad);
+}
+</code></pre>
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo 2: Control de un LED RGB</strong><br>
+                            <p class="text-base mt-2">Se usan 3 potenciómetros para controlar el color de un LED RGB conectado a los pines PWM 9, 10 y 11.</p>
+<pre><code>const int pinRojo = 9;
+const int pinVerde = 10;
+const int pinAzul = 11;
+
+void setup() {
+  pinMode(pinRojo, OUTPUT);
+  pinMode(pinVerde, OUTPUT);
+  pinMode(pinAzul, OUTPUT);
+}
+
+void loop() {
+  int valorR = analogRead(A0);
+  int valorG = analogRead(A1);
+  int valorB = analogRead(A2);
+
+  analogWrite(pinRojo, map(valorR, 0, 1023, 0, 255));
+  analogWrite(pinVerde, map(valorG, 0, 1023, 0, 255));
+  analogWrite(pinAzul, map(valorB, 0, 1023, 0, 255));
+}
+</code></pre>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Entradas Analógicas</h3>
+                        <p>Los pines A0-A5 pueden leer un voltaje entre 0V y 5V y convertirlo en un número entre 0 y 1023. La función clave es <code>analogRead(pin)</code>.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo 1: Termómetro Básico con LM35</strong><br>
+                            <p class="text-base mt-2">El sensor LM35 entrega 10mV por cada grado Celsius. El resultado se muestra en el Monitor Serie del IDE.</p>
+<pre><code>const int pinSensor = A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int lectura = analogRead(pinSensor);
+  float voltaje = lectura * (5.0 / 1024.0);
+  float temperaturaC = voltaje * 100.0;
+  
+  Serial.print("Temperatura: ");
+  Serial.print(temperaturaC);
+  Serial.println(" C");
+  
+  delay(1000);
+}
+</code></pre>
+                        </div>
+                        <div class="example-box mt-4">
+                            <strong>Ejemplo 2: Alarma de Temperatura</strong><br>
+                            <p class="text-base mt-2">Usa el sensor LM35 y un zumbador (buzzer). Si la temperatura supera los 30°C, el zumbador suena.</p>
+<pre><code>const int pinSensor = A0;
+const int pinBuzzer = 8;
+
+void setup() {
+  pinMode(pinBuzzer, OUTPUT);
+}
+
+void loop() {
+  int lectura = analogRead(pinSensor);
+  float voltaje = lectura * (5.0 / 1024.0);
+  float temperaturaC = voltaje * 100.0;
+  
+  if (temperaturaC > 30) {
+    digitalWrite(pinBuzzer, HIGH);
+  } else {
+    digitalWrite(pinBuzzer, LOW);
+  }
+  delay(500);
+}
+</code></pre>
+                        </div>
+                         <div class="video-box">
+                            <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                            <a href="https://www.youtube.com/watch?v=J3Z8p-94_aA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                                Ver video sobre Entradas y Salidas Analógicas &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

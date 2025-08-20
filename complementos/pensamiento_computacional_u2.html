@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensamiento Computacional U2: Decisiones y Repeticiones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Decisiones y Repeticiones</h1>
+            <p class="text-lg text-gray-600">Pensamiento Computacional sin PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Decisiones (Condicionales) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Tomando Decisiones: Los Condicionales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los algoritmos no siempre son una secuencia lineal de pasos. A menudo, necesitan tomar diferentes caminos según si se cumple o no una cierta condición. A esto se le llama <strong>bifurcación condicional</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Estructura "Si... Entonces... Si no..."</h3>
+                        <p>Es la forma más básica de toma de decisiones. Se evalúa una condición que solo puede ser verdadera o falsa:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-3">
+                            <li><strong>SI</strong> la condición es verdadera, <strong>ENTONCES</strong> se ejecuta un conjunto de acciones.</li>
+                            <li><strong>SI NO</strong> (es decir, si es falsa), se ejecuta un conjunto de acciones diferente (o ninguna).</li>
+                        </ul>
+                        <div class="mt-4">
+                            <img src="https://placehold.co/500x350/E0F2FE/0891B2?text=Diagrama+de+Flujo+de+un+Condicional" alt="Diagrama de Flujo Condicional" class="w-full h-auto rounded-lg shadow-md mx-auto max-w-lg">
+                        </div>
+                        <div class="example-box">
+                            <strong>Ejemplo Cotidiano: Salir de Casa</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Abrir la puerta.</li>
+                                <li>Asomar la cabeza.</li>
+                                <li><strong>¿Está lloviendo?</strong> (Esta es la condición)</li>
+                                <li><strong>SI</strong> está lloviendo, <strong>ENTONCES</strong> volver a entrar y agarrar un paraguas.</li>
+                                <li><strong>SI NO</strong>, simplemente salir.</li>
+                                <li>Cerrar la puerta.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Condicionales Anidados</h3>
+                        <p>A veces, después de tomar una decisión, necesitamos tomar otra. A esto se le llama un <strong>condicional anidado</strong>: una estructura "Si..." dentro de otra.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Elegir qué hacer el fin de semana</strong><br>
+                            <ul class="list-disc list-inside mt-2 text-base">
+                                <li><strong>SI</strong> es sábado:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li><strong>SI</strong> hace buen tiempo, <strong>ENTONCES</strong> ir a la plaza.</li>
+                                        <li><strong>SI NO</strong>, ver una película en casa.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>SI NO</strong> (es domingo), <strong>ENTONCES</strong> hacer la tarea para el lunes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Repeticiones (Bucles) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Repitiendo Tareas: Los Bucles</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Muchas tareas requieren repetir un conjunto de acciones varias veces. En programación, a esto se le llama <strong>bucle</strong> o <strong>ciclo</strong>. Permite ejecutar un bloque de instrucciones de forma repetida.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bucle "Mientras..."</h3>
+                        <p>El bucle "mientras" (o `while` en muchos lenguajes) ejecuta un bloque de código repetidamente <strong>mientras</strong> una condición sea verdadera. La condición se comprueba antes de cada repetición.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Lavar los Platos</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Ir a la pileta de la cocina.</li>
+                                <li><strong>MIENTRAS</strong> haya platos sucios en la pileta:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Agarrar un plato.</li>
+                                        <li>Enjabonarlo.</li>
+                                        <li>Enjuagarlo.</li>
+                                        <li>Ponerlo en el secaplatos.</li>
+                                    </ul>
+                                </li>
+                                <li>Secarse las manos.</li>
+                            </ol>
+                        </div>
+                         <div class="info-box">
+                            <strong>¡Cuidado con los bucles infinitos!</strong> Si la condición de un bucle "mientras" nunca se vuelve falsa (por ejemplo, si nunca se acaban los platos sucios), el algoritmo se quedará repitiendo los mismos pasos para siempre, sin poder terminar.
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Bucle "Repetir N Veces"</h3>
+                        <p>Este tipo de bucle (o `for` en muchos lenguajes) se utiliza cuando sabemos de antemano cuántas veces queremos repetir una acción.</p>
+                        <div class="example-box">
+                            <strong>Ejemplo: Hacer ejercicio</strong><br>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li>Ponerse en posición.</li>
+                                <li><strong>REPETIR</strong> 15 veces:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li>Hacer una flexión de brazos.</li>
+                                    </ul>
+                                </li>
+                                <li>Descansar.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Actividad Práctica 2 -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Actividad Práctica: El Robot Humano 2.0</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ahora vamos a combinar los conceptos de algoritmos, condicionales y bucles en una actividad más desafiante.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Instrucciones y Desafíos</h3>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Preparar el Escenario:</strong> Colocar algunos obstáculos (sillas, mochilas) en el camino entre la puerta y el pizarrón.</li>
+                            <li><strong>Nuevo Objetivo:</strong> "El robot debe caminar desde la puerta hasta el pizarrón sin chocar con ningún obstáculo".</li>
+                            <li><strong>Crear el Algoritmo Mejorado:</strong> Los "programadores" deben escribir un nuevo conjunto de instrucciones que incluya condicionales y bucles.</li>
+                            <li><strong>Ejecutar y Depurar:</strong> El "robot" ejecuta el programa. Si el algoritmo falla (el robot choca o no llega a destino), los programadores deben "depurar" su código, es decir, encontrar el error en la lógica y corregirlo.</li>
+                        </ol>
+                        <div class="info-box">
+                            <h4 class="font-bold text-xl mb-2">Variaciones y Desafíos:</h4>
+                             <ul class="list-disc list-inside text-base">
+                                <li><strong>Desafío 1:</strong> El robot debe recoger un objeto en el camino y llevarlo hasta el pizarrón.</li>
+                                <li><strong>Desafío 2:</strong> El robot debe dibujar una figura específica (un cuadrado, un triángulo) en el pizarrón.</li>
+                                <li><strong>Desafío 3 (Avanzado):</strong> Crear un "lenguaje" con solo 4 o 5 comandos permitidos y escribir todo el algoritmo usando únicamente esos comandos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
