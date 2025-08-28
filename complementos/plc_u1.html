@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC U1: Lógica de Escalera y Fundamentos de Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Lógica de Escalera (Ladder) y Fundamentos de Control</h1>
+            <p class="text-lg text-gray-600">Programación de PLC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es un PLC? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. ¿Qué es un PLC?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>PLC (Controlador Lógico Programable)</strong> es una computadora industrial diseñada específicamente para automatizar procesos electromecánicos, como el control de maquinaria en una línea de montaje, atracciones de parques de diversiones o el control de semáforos. A diferencia de un Arduino o una Raspberry Pi, un PLC está construido para ser extremadamente <strong>robusto y fiable</strong> en entornos industriales hostiles, resistiendo vibraciones, ruido eléctrico y temperaturas extremas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes Clave de un PLC</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=PLC+Industrial" alt="PLC Industrial" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-4">
+                                    <li><strong>CPU (Unidad Central de Procesamiento):</strong> El cerebro que ejecuta el programa de control. Realiza cálculos, toma decisiones lógicas y gestiona la comunicación entre los distintos módulos.</li>
+                                    <li><strong>Módulos de Entrada (Inputs):</strong> Son los "sentidos" del PLC. Convierten las señales eléctricas de dispositivos de campo (pulsadores, sensores de proximidad, finales de carrera) en señales lógicas que la CPU puede entender.</li>
+                                    <li><strong>Módulos de Salida (Outputs):</strong> Son las "manos" del PLC. Convierten las decisiones lógicas de la CPU en señales eléctricas para activar dispositivos externos como motores, luces, válvulas o contactores.</li>
+                                    <li><strong>Fuente de Alimentación:</strong> Proporciona la energía estable y regulada (usualmente a 24V DC) que necesitan la CPU y los módulos para funcionar de manera fiable.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=l5_d_3q_oY8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "¿Qué es un PLC y para qué sirve?" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Lenguaje Ladder -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. El Lenguaje de Escalera (Ladder)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El lenguaje de programación más común para los PLC es el <strong>Diagrama de Escalera o Ladder (LD)</strong>. Su diseño se basa intencionadamente en los diagramas de circuitos de relés electromecánicos que los técnicos e ingenieros eléctricos han usado durante décadas. Esta familiaridad hizo que la transición de la lógica cableada a la lógica programada fuera mucho más sencilla.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estructura y Flujo de Ejecución</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Rieles de Alimentación:</strong> Dos líneas verticales a los lados que representan la fuente de energía virtual. La lógica fluye de izquierda a derecha.</li>
+                            <li><strong>Renglones (Rungs):</strong> Líneas horizontales donde se coloca la lógica. El PLC ejecuta los renglones en orden, de arriba hacia abajo, repetidamente.</li>
+                            <li><strong>Instrucciones:</strong> Símbolos que representan condiciones (entradas) y acciones (salidas).</li>
+                        </ul>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">El Ciclo de Scan (Scan Cycle)</h4>
+                            <p class="text-base">El PLC no ejecuta el código de forma continua como un microcontrolador normal. Opera en un ciclo repetitivo llamado "scan":</p>
+                            <ol class="list-decimal list-inside mt-2 text-base">
+                                <li><strong>Leer Entradas:</strong> El PLC "congela" el estado de todas las entradas físicas y lo guarda en su memoria.</li>
+                                <li><strong>Ejecutar Programa:</strong> Resuelve la lógica de cada renglón, de arriba a abajo, usando el estado de las entradas que guardó.</li>
+                                <li><strong>Actualizar Salidas:</strong> Una vez resuelta toda la lógica, actualiza el estado de todas las salidas físicas al mismo tiempo.</li>
+                                <li><strong>Repetir:</strong> Vuelve al paso 1. Este ciclo es extremadamente rápido, repitiéndose miles de veces por segundo.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Elementos Fundamentales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Elementos Fundamentales de Ladder</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La lógica de escalera se construye con tres elementos básicos que representan entradas, salidas y sus estados. Cada elemento está asociado a una <strong>dirección de memoria</strong> única que lo identifica (por ejemplo, `I:0/0` para la primera entrada, `O:0/1` para la segunda salida).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-800">Contacto Normalmente Abierto (NO)</h4>
+                            <pre>--| |--</pre>
+                            <p class="text-base mt-2"><strong>Pregunta:</strong> "¿La entrada/memoria está en ON?"<br>Es "verdadero" (deja pasar la energía) solo si la entrada física o la memoria asociada está activada (estado 1). Ideal para un pulsador de "Marcha".</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-800">Contacto Normalmente Cerrado (NC)</h4>
+                            <pre>--|/|--</pre>
+                            <p class="text-base mt-2"><strong>Pregunta:</strong> "¿La entrada/memoria está en OFF?"<br>Es "verdadero" (deja pasar la energía) solo si la entrada física o la memoria asociada está desactivada (estado 0). Ideal para un pulsador de "Parada" o una parada de emergencia.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-red-800">Bobina (Salida)</h4>
+                            <pre>--( )--</pre>
+                            <p class="text-base mt-2"><strong>Acción:</strong> "Activar la salida."<br>Se activa (se pone en estado 1) si la combinación lógica de contactos a su izquierda resulta verdadera.</p>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=fhlgve1_I4E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Contactos y Bobinas en Lógica Ladder" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Lógica de Control -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Lógica de Control Básica y Enclavamiento</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Combinando los elementos básicos, podemos crear toda la lógica de control necesaria para un automatismo, desde las compuertas lógicas más simples hasta complejos sistemas de control.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Compuertas Lógicas</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="example-box">
+                                <h4 class="text-xl font-semibold text-green-800 mb-2">Lógica AND (Contactos en Serie)</h4>
+                                <p class="text-base mb-2">La Salida se activa solo si la Entrada_1 Y la Entrada_2 están activas. Útil para condiciones de seguridad donde dos cosas deben ocurrir a la vez.</p>
+                                <pre>|--| |------| |------( Salida )--|</br>| Entrada_1  Entrada_2          |</pre>
+                            </div>
+                            <div class="example-box">
+                                <h4 class="text-xl font-semibold text-green-800 mb-2">Lógica OR (Contactos en Paralelo)</h4>
+                                <p class="text-base mb-2">La Salida se activa si la Entrada_1 O la Entrada_2 (o ambas) están activas. Útil para activar un proceso desde dos lugares distintos.</p>
+                                <pre>|--+--| |---+----( Salida )--|</br>|  Entrada_1  |                |</br>|     +--| |--+                |</br>|        Entrada_2               |</pre>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">El Enclavamiento: La Memoria de 1 Bit</h4>
+                            <p class="text-base">El enclavamiento (o auto-retención) es una de las técnicas más importantes en la programación de PLC. Permite que una salida permanezca activada incluso después de que el pulsador (que es momentáneo) que la activó se haya soltado. Es la forma más básica de crear una memoria.</p>
+                            <p class="text-base mt-2">En el ejemplo, al presionar "Start", la bobina "Motor" se activa. Inmediatamente, el contacto "Motor" (asociado a esa bobina) se cierra, creando un camino alternativo para la energía. Ahora, aunque se suelte "Start", la energía sigue fluyendo a través del contacto "Motor", manteniéndolo encendido. La única forma de romper este sello es activando el contacto NC "Stop".</p>
+                        </div>
+                        <div class="example-box">
+<pre>
+|--| |------+--|/|------( Motor )--|
+|  Start    |    Stop             |
+|           |                     |
+|--| |------+                     |
+|  Motor                          |
+</pre>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=sTwVLm422pA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Arranque y Paro (Enclavamiento) de un Motor" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

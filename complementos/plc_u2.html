@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC U2: Temporizadores, Contadores y Operaciones Matemáticas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Temporizadores, Contadores y Operaciones Matemáticas</h1>
+            <p class="text-lg text-gray-600">Programación de PLC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Temporizadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Temporizadores (Timers)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>temporizadores</strong> son bloques de función esenciales en la automatización. Permiten activar o desactivar una salida después de que haya transcurrido un período de tiempo predeterminado. Son fundamentales para procesos que requieren esperas, secuencias o retardos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Parámetros Clave de un Temporizador</h3>
+                        <p>Un temporizador típico se configura con varios parámetros y utiliza bits de estado para informar sobre su funcionamiento:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Preset (PRE):</strong> Es el valor de tiempo que queremos que el temporizador cuente. Lo configuramos nosotros.</li>
+                            <li><strong>Accumulator (ACC):</strong> Es el valor de tiempo actual que el temporizador ha contado. Comienza en 0 y aumenta.</li>
+                            <li><strong>Enable Bit (EN):</strong> Este bit se activa (vale 1) mientras la condición de entrada del temporizador sea verdadera.</li>
+                            <li><strong>Timer-Timing Bit (TT):</strong> Este bit se activa (vale 1) mientras el temporizador está contando (es decir, ACC < PRE).</li>
+                            <li><strong>Done Bit (DN):</strong> Este bit se activa (vale 1) cuando el temporizador ha terminado de contar (es decir, ACC = PRE).</li>
+                        </ul>
+                        
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Tipos Comunes de Temporizadores</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-base mt-2">
+                                <div>
+                                    <strong>TON (Timer On-Delay):</strong> El más común. Retarda la activación de una salida. Cuando su entrada se vuelve verdadera, empieza a contar. Al llegar al valor preset, activa su bit "Done" (DN), que permanece activo hasta que la entrada se vuelve falsa.
+                                </div>
+                                <div>
+                                    <strong>TOF (Timer Off-Delay):</strong> Retarda la desactivación de una salida. Cuando su entrada se vuelve verdadera, su bit "Done" (DN) se activa instantáneamente. Cuando la entrada se vuelve falsa, el temporizador empieza a contar, y solo al llegar al preset, el bit DN se desactiva.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="example-box">
+                            <h4 class="text-xl font-semibold text-green-800 mb-2">Ejemplo Práctico: Arranque Retardado de un Motor</h4>
+                            <p class="text-base mb-2">Al presionar "Start", el temporizador T4:0 comienza a contar. Después de 10 segundos, su bit DN (T4:0/DN) se activará, encendiendo el motor. El motor se apagará si se presiona "Stop".</p>
+<pre>
+Renglón 1: Lógica del Temporizador
+|--| |------+--|/|------[TON T4:0 PRESET:10 ACCUM:0]--|
+|  Start    |  Stop                                  |
+|           |                                        |
+|--| |------+                                        |
+| T4:0/DN                                            |
+
+Renglón 2: Lógica de la Salida
+|--| |--------------------( Motor )--|
+| T4:0/DN                             |
+</pre>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=U-iN8v-S22E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Temporizadores TON y TOF en PLC" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Contadores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Contadores (Counters)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Los <strong>contadores</strong> son bloques de función que permiten contar eventos o pulsos. Se utilizan para realizar una acción después de que un evento haya ocurrido un número específico de veces, como contar botellas en una cinta transportadora o el número de ciclos de una máquina.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Parámetros y Tipos de Contadores</h3>
+                        <p>Al igual que los temporizadores, los contadores tienen parámetros y bits de estado:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Preset (PRE):</strong> El número de eventos que queremos contar.</li>
+                            <li><strong>Accumulator (ACC):</strong> El número de eventos contados hasta el momento.</li>
+                            <li><strong>Count-Up Bit (CU) o Count-Down Bit (CD):</strong> Bits que se activan con cada pulso de conteo (ascendente o descendente).</li>
+                            <li><strong>Done Bit (DN):</strong> Se activa cuando ACC >= PRE.</li>
+                            <li><strong>Reset (RES):</strong> Una instrucción separada que se usa para reiniciar el contador (ACC = 0).</li>
+                        </ul>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Tipos Principales</h4>
+                            <p class="text-base"><strong>CTU (Count-Up):</strong> Contador ascendente. Incrementa su acumulador en 1 cada vez que la entrada pasa de falso a verdadero (flanco ascendente).<br><strong>CTD (Count-Down):</strong> Contador descendente. Decrementa su acumulador en 1 con cada flanco ascendente en su entrada.</p>
+                        </div>
+                        <div class="example-box">
+                            <h4 class="text-xl font-semibold text-green-800 mb-2">Ejemplo: Llenado de una Caja</h4>
+                            <p class="text-base mb-2">Un sensor detecta cada botella que pasa. Cuando el contador C5:1 llega a 12, su bit DN se activa, encendiendo una luz que indica "Caja Llena". El pulsador "Reset" reinicia el conteo para la siguiente caja.</p>
+<pre>
+Renglón 1: Lógica de Conteo
+|--| |----------------[CTU C5:1 PRESET:12 ACCUM:0]--|
+| Sensor_Botella                                    |
+
+Renglón 2: Lógica de Salida
+|--| |--------------------( Luz_Caja_Llena )--|
+|  C5:1/DN                                    |
+
+Renglón 3: Lógica de Reinicio
+|--| |--------------------[RES C5:1]--|
+| Pulsador_Reset                      |
+</pre>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s0e9Z_Gq1xM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Contadores CTU y CTD en PLC" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Operaciones Matemáticas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Operaciones Matemáticas y de Comparación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Además de la lógica booleana, los PLC son capaces de realizar operaciones matemáticas y de comparación, lo que permite controlar procesos más complejos que involucran variables analógicas, recetas o cálculos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Instrucciones Comunes</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Matemáticas</h4>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>ADD:</strong> Suma dos valores.</li>
+                                    <li><strong>SUB:</strong> Resta un valor de otro.</li>
+                                    <li><strong>MUL:</strong> Multiplica dos valores.</li>
+                                    <li><strong>DIV:</strong> Divide un valor por otro.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Comparación</h4>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>EQU (Equal):</strong> Verdadero si dos valores son iguales.</li>
+                                    <li><strong>GRT (Greater Than):</strong> Verdadero si el primer valor es mayor que el segundo.</li>
+                                    <li><strong>LES (Less Than):</strong> Verdadero si el primer valor es menor que el segundo.</li>
+                                    <li><strong>LIM (Limit):</strong> Verdadero si un valor está dentro de un rango.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="example-box">
+                            <h4 class="text-xl font-semibold text-green-800 mb-2">Ejemplo: Control de Nivel de un Tanque</h4>
+                            <p class="text-base mb-2">Un sensor analógico (Sensor_Nivel) mide la altura del líquido. Si el nivel es mayor a 250 cm, se activa una alarma.</p>
+<pre>
+|--[GRT Sensor_Nivel 250]----( Alarma_Alto_Nivel )--|
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word U2: Elementos Gráficos y Tablas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2b579a; /* Word Blue */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e3a8a; /* Darker Word Blue */
+        }
+        h4 {
+            color: #1e40af; /* Even Darker Word Blue */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-blue-800">Unidad 2: Elementos Gráficos y Tablas</h1>
+            <p class="text-lg text-gray-600">Microsoft Word</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Imágenes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">1. Inserción y Formato de Imágenes</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un documento de texto a menudo necesita elementos visuales para ser más atractivo y comprensible. Las imágenes son el recurso gráfico más común. Word permite insertar imágenes desde tu computadora o buscarlas en línea.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Pestaña "Formato de Imagen"</h3>
+                        <p class="mb-4">Al seleccionar una imagen en tu documento, aparece una nueva pestaña contextual llamada <strong>"Formato de Imagen"</strong>. Esta pestaña contiene todas las herramientas para manipular y estilizar la imagen.</p>
+                        <img src="https://placehold.co/1000x150/EFF6FF/1E3A8A?text=Pestaña+Formato+de+Imagen" alt="Pestaña Formato de Imagen" class="w-full h-auto rounded-lg shadow-md">
+                        
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Herramientas Clave de Formato de Imagen</h4>
+                            <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                                <li><strong>Ajustar:</strong> Permite realizar correcciones básicas de brillo y contraste, cambiar el color (ej. a blanco y negro) y aplicar efectos artísticos.</li>
+                                <li><strong>Estilos de imagen:</strong> Ofrece una galería de estilos predefinidos para añadir rápidamente bordes, sombras o reflejos.</li>
+                                <li><strong>Organizar (Ajuste de Texto):</strong> Es una de las herramientas más importantes. Define cómo el texto se acomoda alrededor de la imagen (ej. "Cuadrado", "Estrecho", "Detrás del texto").</li>
+                                <li><strong>Recortar:</strong> Permite eliminar partes no deseadas de la imagen sin modificar el archivo original.</li>
+                                <li><strong>Tamaño:</strong> Permite especificar las dimensiones exactas de la imagen en centímetros.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=N20E4s3aH_A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Insertar y dar formato a imágenes en Word" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Formas y SmartArt -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">2. Trabajando con Formas y SmartArt</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Además de las imágenes, Word ofrece herramientas para crear diagramas y gráficos vectoriales directamente en el documento. Las <strong>Formas</strong> son para dibujos simples, mientras que <strong>SmartArt</strong> es ideal para diagramas de flujo, organigramas y listas visuales.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Creación de Diagramas</h3>
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">Formas</h4>
+                                <p class="text-base mb-3">Desde la pestaña "Insertar", puedes añadir líneas, flechas, rectángulos, círculos y una gran variedad de figuras. Al seleccionar una forma, aparece la pestaña "Formato de Forma", que permite cambiar su color de relleno, contorno, y aplicar efectos como sombras o biselados.</p>
+                                <img src="https://placehold.co/500x300/F0FDF4/15803D?text=Ejemplos+de+Formas" alt="Formas en Word" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                             <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">SmartArt</h4>
+                                <p class="text-base mb-3">Es una herramienta para crear diagramas de aspecto profesional de forma rápida. Puedes elegir entre cientos de plantillas para representar procesos, ciclos, jerarquías, etc. Simplemente eliges un diseño, escribes el texto y Word se encarga del formato.</p>
+                                <img src="https://placehold.co/500x300/FEF2F2/991B1B?text=Ejemplos+de+SmartArt" alt="SmartArt en Word" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tablas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">3. Creación y Formato de Tablas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las <strong>tablas</strong> son la herramienta perfecta para organizar información en filas y columnas. Son indispensables para presentar datos numéricos, comparar características o crear listas estructuradas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Insertar y Personalizar una Tabla</h3>
+                        <p class="mb-4">Desde la pestaña "Insertar", puedes crear una tabla seleccionando el número de filas y columnas en una cuadrícula. Una vez creada, aparecen dos pestañas contextuales: <strong>"Diseño de Tabla"</strong> y <strong>"Disposición"</strong>.</p>
+                        <img src="https://placehold.co/1000x150/EFF6FF/1E3A8A?text=Pestañas+de+Diseño+de+Tabla+y+Disposición" alt="Pestañas de Tabla" class="w-full h-auto rounded-lg shadow-md">
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Herramientas Clave para Tablas</h4>
+                            <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                                <li><strong>Diseño de Tabla > Estilos de tabla:</strong> Aplica un diseño de color y bordes predefinido con un solo clic.</li>
+                                <li><strong>Diseño de Tabla > Sombreado y Bordes:</strong> Permite personalizar el color de fondo de las celdas y el estilo de los bordes.</li>
+                                <li><strong>Disposición > Combinar Celdas:</strong> Une dos o más celdas seleccionadas en una sola. Ideal para crear títulos que abarquen varias columnas.</li>
+                                <li><strong>Disposición > Dividir Celdas:</strong> Divide una celda en múltiples filas o columnas.</li>
+                                <li><strong>Disposición > Alineación:</strong> Controla la alineación del texto dentro de cada celda (ej. centrado vertical y horizontalmente).</li>
+                                <li><strong>Disposición > Insertar y Eliminar:</strong> Permite añadir o quitar filas y columnas fácilmente.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=36g6-wYOptI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo crear y dar formato a tablas en Word" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

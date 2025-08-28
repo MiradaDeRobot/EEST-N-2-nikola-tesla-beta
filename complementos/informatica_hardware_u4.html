@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de PC U4: Reparación y Mantenimiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 4: Reparación y Mantenimiento</h1>
+            <p class="text-lg text-gray-600">Componentes de PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Diagnóstico de Problemas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Diagnóstico de Problemas Comunes de Hardware</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Saber identificar la causa de un problema es una de las habilidades más importantes para un técnico. Los fallos de hardware a menudo se presentan con síntomas específicos que nos pueden guiar hacia el componente defectuoso.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Guía de Troubleshooting</h3>
+                        <div class="space-y-6 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: La PC no enciende en absoluto</h4>
+                                <p class="text-base mt-2">No hay luces, ni ventiladores, ni sonidos.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Problema de alimentación.</li>
+                                    <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Verificar que el cable de alimentación esté bien conectado a la PSU y al tomacorriente.</li>
+                                            <li>Asegurarse de que el interruptor de la fuente de alimentación (PSU) esté en la posición de encendido (I).</li>
+                                            <li>Probar con otro cable de alimentación o en otro tomacorriente.</li>
+                                            <li>Si nada funciona, la PSU es la principal sospechosa.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: Pitidos al arrancar (Beep Codes)</h4>
+                                <p class="text-base mt-2">La PC enciende pero no da video y emite una secuencia de pitidos.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Falla crítica de hardware detectada por el BIOS (RAM, GPU o CPU).</li>
+                                     <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Escuchar atentamente la secuencia de pitidos (ej. uno largo y dos cortos).</li>
+                                            <li>Consultar el manual de la placa madre o buscar en internet "beep codes" seguido del fabricante del BIOS (AMI, Award, Phoenix) para interpretar el código.</li>
+                                            <li>Generalmente, los errores más comunes apuntan a problemas con la memoria RAM o la tarjeta gráfica. Reasentar estos componentes suele ser la solución.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: La PC enciende pero no da video (Sin pitidos)</h4>
+                                <p class="text-base mt-2">Los ventiladores giran y las luces se encienden, pero el monitor no recibe señal.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Memoria RAM, tarjeta gráfica o conexiones.</li>
+                                     <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Verificar que el monitor esté encendido y conectado al puerto correcto de la tarjeta gráfica.</li>
+                                            <li>Reasentar los módulos de RAM: quitarlos y volver a ponerlos firmemente.</li>
+                                            <li>Reasentar la tarjeta gráfica en su ranura PCIe.</li>
+                                            <li>Si la CPU tiene gráficos integrados, quitar la GPU dedicada y probar conectando el monitor a la placa madre.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                             <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: Sobrecalentamiento y apagados repentinos</h4>
+                                <p class="text-base mt-2">La PC se apaga o se vuelve muy lenta bajo carga (jugando o trabajando).</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Mala refrigeración de la CPU o GPU.</li>
+                                     <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Monitorear las temperaturas con software como HWMonitor.</li>
+                                            <li>Limpiar el polvo de ventiladores y disipadores con aire comprimido.</li>
+                                            <li>Verificar que todos los ventiladores giren correctamente.</li>
+                                            <li>Si el problema persiste, puede ser necesario cambiar la pasta térmica de la CPU.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: Pantallazos Azules (BSOD) y reinicios aleatorios</h4>
+                                <p class="text-base mt-2">El sistema operativo se interrumpe bruscamente mostrando una pantalla de error azul.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Falla de RAM, drivers inestables, software corrupto o PSU defectuosa.</li>
+                                     <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Anotar el código de error del pantallazo azul para buscarlo en internet.</li>
+                                            <li>Actualizar o reinstalar los drivers, especialmente los de la tarjeta gráfica.</li>
+                                            <li>Probar los módulos de RAM de a uno o usar MemTest86 para buscar errores.</li>
+                                            <li>Realizar una restauración del sistema o un escaneo de malware.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                             <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Síntoma: Ruidos extraños (clics, zumbidos)</h4>
+                                <p class="text-base mt-2">Se escuchan sonidos mecánicos inusuales provenientes del gabinete.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li><strong>Causa probable:</strong> Falla mecánica de un disco duro (HDD) o un ventilador.</li>
+                                     <li><strong>Pasos a seguir:</strong>
+                                        <ol class="list-decimal list-inside ml-4">
+                                            <li>Si el ruido es un "clic" repetitivo, es muy probable que sea un disco duro a punto de fallar. **Hacer una copia de seguridad de los datos importantes inmediatamente.**</li>
+                                            <li>Si es un zumbido o rechinido, puede ser un ventilador obstruido o con los rodamientos gastados. Identificar qué ventilador es (CPU, GPU, gabinete) y limpiarlo o reemplazarlo.</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Precauciones y Herramientas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Precauciones y Herramientas Esenciales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Trabajar con componentes electrónicos requiere cuidado y las herramientas adecuadas. Una pequeña descarga de electricidad estática, invisible para nosotros, puede dañar permanentemente un componente caro.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Seguridad Primero: Cuidado con la Electricidad Estática (ESD)</h3>
+                        <p class="mt-4">La <strong>Descarga Electroestática (ESD)</strong> es la principal causa de fallos en componentes durante el ensamblaje o la reparación. Nuestro cuerpo puede acumular una carga estática que, al tocar un componente, se descarga bruscamente a través de él, dañando sus circuitos internos.</p>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Buenas Prácticas Anti-ESD</h4>
+                             <ul class="list-disc list-inside space-y-2 text-base">
+                                <li><strong>Usa una pulsera antiestática:</strong> Es la mejor protección. Se conecta a una parte metálica sin pintar del gabinete para mantenerte siempre al mismo potencial eléctrico.</li>
+                                <li><strong>Toca el metal:</strong> Antes de tocar cualquier componente, toca una parte metálica del chasis del gabinete (con la PC desenchufada) para descargar cualquier estática acumulada.</li>
+                                <li><strong>Trabaja sobre una superficie dura:</strong> Evita alfombras o ropa que genere mucha estática.</li>
+                                <li><strong>Mantén los componentes en sus bolsas:</strong> No saques las piezas de sus bolsas antiestáticas hasta el momento exacto de instalarlas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Kit de Herramientas del Técnico</h3>
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Herramientas de Hardware</h4>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>Destornilladores:</strong> Un buen juego con puntas intercambiables, siendo la más importante la Phillips #2.</li>
+                                    <li><strong>Pulsera antiestática:</strong> Indispensable para la seguridad de los componentes.</li>
+                                    <li><strong>Aire comprimido o soplador:</strong> Para la limpieza de polvo sin contacto físico.</li>
+                                    <li><strong>Alcohol isopropílico y paños sin pelusa:</strong> Para limpiar pasta térmica vieja.</li>
+                                    <li><strong>Precintos o velcro:</strong> Para una buena gestión de cables.</li>
+                                </ul>
+                            </div>
+                             <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Herramientas de Software</h4>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>HWMonitor:</strong> Para monitorear voltajes, temperaturas y velocidades de ventiladores.</li>
+                                    <li><strong>CrystalDiskInfo:</strong> Para verificar el estado de salud de los discos duros y SSD.</li>
+                                    <li><strong>MemTest86:</strong> Una herramienta booteable para realizar un análisis exhaustivo de la memoria RAM.</li>
+                                    <li><strong>Pendrive Booteable:</strong> Con una instalación de Windows o una distribución de Linux para reparar el sistema o recuperar datos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Mantenimiento Preventivo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Mantenimiento Preventivo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El mantenimiento preventivo es el conjunto de acciones que realizamos para evitar que los problemas ocurran. Un buen mantenimiento alarga la vida útil de los componentes y asegura que la PC funcione siempre a su máximo rendimiento.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Limpieza Física y de Software</h3>
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Mantenimiento Físico (Cada 6-12 meses)</h4>
+                                <p class="text-base mb-3">El polvo es el enemigo número uno del hardware. Actúa como un aislante térmico, impidiendo que los componentes se enfríen correctamente.</p>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>Limpieza de Ventiladores y Filtros:</strong> Usar aire comprimido para soplar el polvo de todos los ventiladores y filtros de polvo del gabinete.</li>
+                                    <li><strong>Limpieza de Disipadores:</strong> Prestar especial atención al disipador de la CPU y la GPU.</li>
+                                    <li><strong>Gestión de Cables:</strong> Mantener los cables ordenados para no obstruir el flujo de aire.</li>
+                                </ul>
+                            </div>
+                             <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Mantenimiento de Software (Regularmente)</h4>
+                                <p class="text-base mb-3">Un sistema operativo limpio y actualizado es tan importante como un hardware limpio.</p>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>Actualizaciones:</strong> Mantener el sistema operativo y los drivers (especialmente los de la tarjeta gráfica) actualizados.</li>
+                                    <li><strong>Limpieza de Disco:</strong> Usar la herramienta "Liberador de espacio en disco" de Windows para eliminar archivos temporales.</li>
+                                    <li><strong>Desfragmentación (Solo para HDD):</strong> Si usas un disco duro mecánico, desfragmentarlo periódicamente puede mejorar los tiempos de acceso. <strong>¡No desfragmentar un SSD!</strong></li>
+                                    <li><strong>Análisis de Malware:</strong> Realizar escaneos regulares con un buen antivirus.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=YR7342340f0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo hacer Mantenimiento y Limpieza a tu PC" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

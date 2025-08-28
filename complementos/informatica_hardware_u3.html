@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de PC U3: Periféricos y Ensamblaje</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Periféricos y Ensamblaje</h1>
+            <p class="text-lg text-gray-600">Componentes de PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Tarjeta Gráfica (GPU) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. La Tarjeta Gráfica (GPU)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Unidad de Procesamiento Gráfico (GPU)</strong>, comúnmente conocida como tarjeta gráfica o de video, es un componente especializado en procesar y renderizar imágenes, videos y animaciones 2D/3D. Mientras que la CPU es un procesador de propósito general, la GPU es un procesador masivamente paralelo, con miles de núcleos más pequeños diseñados para manejar miles de tareas simultáneas, como calcular el color de cada píxel en una pantalla.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes de una Tarjeta Gráfica</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Tarjeta+Gráfica+Moderna" alt="Tarjeta Gráfica Moderna" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>GPU (El chip gráfico):</strong> Es el verdadero procesador de la tarjeta, donde residen los miles de núcleos.</li>
+                                    <li><strong>VRAM (Video RAM):</strong> Es una memoria RAM dedicada y de alta velocidad que almacena las texturas, modelos y otros datos gráficos que la GPU necesita para renderizar una imagen.</li>
+                                    <li><strong>Sistema de Refrigeración:</strong> Compuesto por disipadores y ventiladores, es crucial para mantener la temperatura de la GPU bajo control durante cargas de trabajo intensas.</li>
+                                    <li><strong>Puertos de Salida:</strong> Conectores como HDMI y DisplayPort para enviar la señal de video al monitor.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">¿Gráficos Integrados vs. Dedicados?</h4>
+                            <p class="text-base">Algunas CPU vienen con gráficos integrados (iGPU), que son suficientes para tareas básicas. Sin embargo, para jugar videojuegos, edición de video o diseño 3D, una <strong>tarjeta gráfica dedicada</strong> (que se instala en la ranura PCIe x16) es indispensable, ya que es inmensamente más potente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fuente de Alimentación (PSU) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. La Fuente de Alimentación (PSU)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>Fuente de Alimentación (PSU - Power Supply Unit)</strong> es el corazón eléctrico de la PC. Su función es tomar la corriente alterna (AC) de la pared y convertirla en corriente continua (DC) de bajo voltaje (principalmente 12V, 5V y 3.3V) que los componentes de la computadora pueden usar. Una fuente de buena calidad es vital para la estabilidad y longevidad del sistema.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aspectos a Considerar</h3>
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Potencia (Watts)</h4>
+                                <p class="text-base">Es la cantidad máxima de energía que puede entregar. Se debe elegir una fuente que pueda suministrar suficiente potencia para todos los componentes, especialmente la CPU y la GPU, con un margen de seguridad.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Certificación 80 Plus</h4>
+                                <p class="text-base">Indica la eficiencia energética de la fuente. Una certificación "80 Plus Bronze", por ejemplo, garantiza al menos un 82% de eficiencia, lo que significa que se desperdicia menos energía en forma de calor, resultando en un menor consumo eléctrico y una operación más fría.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Modularidad</h4>
+                                <p class="text-base">Se refiere a si los cables vienen fijos o se pueden conectar y desconectar. Las fuentes <strong>modulares</strong> o <strong>semi-modulares</strong> permiten usar solo los cables necesarios, facilitando el montaje y mejorando el flujo de aire dentro del gabinete.</p>
+                            </div>
+                             <div>
+                                <img src="https://placehold.co/500x300/FEF2F2/991B1B?text=Fuente+de+Alimentación+Modular" alt="Fuente de Alimentación" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=fKzSAe_wE-E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo elegir una Fuente de Alimentación" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Ensamblaje -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Periféricos y Ensamblaje Final</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que tenemos todos los componentes internos, necesitamos los <strong>periféricos</strong> para interactuar con la PC y un <strong>gabinete</strong> para alojar y proteger todo. El ensamblaje es el proceso de unir todas estas piezas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Pasos Generales del Ensamblaje</h3>
+                        <p class="mb-4">Aunque cada montaje es único, el orden general de los pasos suele ser el siguiente:</p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li><strong>Preparación fuera del gabinete:</strong> Instalar la CPU, la memoria RAM y el cooler de la CPU en la placa madre sobre una superficie no conductora.</li>
+                            <li><strong>Instalación en el gabinete:</strong> Atornillar la placa madre preparada dentro del gabinete.</li>
+                            <li><strong>Instalación de la GPU y PSU:</strong> Colocar la tarjeta gráfica en su ranura PCIe x16 y la fuente de alimentación en su bahía correspondiente.</li>
+                            <li><strong>Conexión de cables:</strong> Conectar los cables de alimentación (ATX de 24 pines, CPU de 8 pines, PCIe para la GPU) y los cables de datos (SATA para los discos).</li>
+                            <li><strong>Conexiones del panel frontal:</strong> Conectar los pequeños cables del gabinete a la placa madre (botón de encendido, LEDs, puertos USB frontales).</li>
+                            <li><strong>Gestión de cables (Cable Management):</strong> Ordenar y sujetar los cables para que no obstruyan el flujo de aire.</li>
+                        </ol>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s_w9z_a7i3k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Guía de Ensamblaje de PC paso a paso" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

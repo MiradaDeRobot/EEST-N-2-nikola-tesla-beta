@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word U3: Documentos Largos y Colaboración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2b579a; /* Word Blue */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e3a8a; /* Darker Word Blue */
+        }
+        h4 {
+            color: #1e40af; /* Even Darker Word Blue */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-blue-800">Unidad 3: Documentos Largos y Colaboración</h1>
+            <p class="text-lg text-gray-600">Microsoft Word</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Encabezados y Pies de Página -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">1. Documentos Largos: Encabezados, Pies de Página y Numeración</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cuando trabajamos con documentos de varias páginas, como informes o monografías, es fundamental mantener la consistencia y facilitar la navegación. Los <strong>encabezados</strong> y <strong>pies de página</strong> son áreas en los márgenes superior e inferior que se repiten en cada página, ideales para incluir información como el título del documento, el nombre del autor o la numeración de página.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Insertar y Editar</h3>
+                        <p class="mb-4">Puedes acceder a estas áreas desde la pestaña <strong>"Insertar" > "Encabezado" o "Pie de página"</strong>. Al hacerlo, Word entra en un modo de edición especial y activa la pestaña contextual <strong>"Encabezado y pie de página"</strong>.</p>
+                        <img src="https://placehold.co/1000x150/EFF6FF/1E3A8A?text=Pestaña+Encabezado+y+pie+de+página" alt="Pestaña de Encabezado y Pie de Página" class="w-full h-auto rounded-lg shadow-md">
+                        
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Opciones Clave</h4>
+                            <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                                <li><strong>Número de página:</strong> Permite insertar la numeración automática en diferentes posiciones y formatos.</li>
+                                <li><strong>Fecha y hora:</strong> Inserta la fecha actual, que puede actualizarse automáticamente.</li>
+                                <li><strong>Primera página diferente:</strong> Una opción muy útil que permite tener una portada sin encabezado ni número de página.</li>
+                                <li><strong>Páginas pares e impares diferentes:</strong> Ideal para documentos con formato de libro, donde la numeración o el título pueden variar de posición.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tablas de Contenido -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">2. La Magia de las Tablas de Contenido Automáticas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Crear un índice manualmente es una de las tareas más tediosas e ineficientes en Word. La solución profesional es generar una <strong>Tabla de Contenido (TOC)</strong> automática. Esta herramienta escanea tu documento en busca de títulos y crea un índice completo con sus respectivos números de página.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Requisito Indispensable: Usar Estilos</h3>
+                        <p class="mb-4">La tabla de contenido automática solo funciona si has estructurado tu documento usando los <strong>estilos de título</strong> (Título 1, Título 2, Título 3, etc.). Word utiliza estos estilos para identificar qué textos son títulos y cuál es su jerarquía.</p>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4 items-center">
+                            <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">¿Cómo se inserta?</h4>
+                                <ol class="list-decimal list-inside space-y-2 text-base">
+                                    <li>Ve a la pestaña <strong>"Referencias"</strong>.</li>
+                                    <li>Haz clic en <strong>"Tabla de contenido"</strong> y elige uno de los diseños automáticos.</li>
+                                    <li>¡Listo! Word generará el índice por ti.</li>
+                                    <li>Si realizas cambios en el documento (agregas o quitas texto), simplemente haz clic derecho sobre la tabla y selecciona <strong>"Actualizar campos"</strong> para que los números de página se corrijan solos.</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/500x300/F0FDF4/15803D?text=Galería+de+Tabla+de+Contenido" alt="Tabla de Contenido en Word" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F2i_d_3-s2s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Crear Tablas de Contenido Automáticas" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Colaboración -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">3. Herramientas de Colaboración</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Word no es solo para trabajar en solitario. Incluye potentes herramientas de colaboración que permiten que varias personas revisen un documento, sugieran cambios y dejen comentarios sin alterar el texto original. Estas funciones se encuentran en la pestaña <strong>"Revisar"</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Control de Cambios y Comentarios</h3>
+                        <img src="https://placehold.co/1000x150/EFF6FF/1E3A8A?text=Pestaña+Revisar+-+Control+de+Cambios+y+Comentarios" alt="Pestaña Revisar" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">Control de Cambios</h4>
+                                <p class="text-base">Al activar esta función, cada modificación que hagas (borrar texto, añadir palabras, cambiar formato) no se aplica directamente, sino que se marca como una sugerencia. El texto borrado aparece tachado y el texto añadido en otro color. El autor original puede luego revisar cada cambio y decidir si lo <strong>acepta</strong> o lo <strong>rechaza</strong>.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">Comentarios</h4>
+                                <p class="text-base">Los comentarios permiten hacer anotaciones o preguntas sobre una parte específica del texto sin modificarlo. Son como "post-its" virtuales que aparecen en el margen del documento. Son ideales para pedir aclaraciones o dar feedback a un compañero.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=FlpMaxNIIs8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Usar Control de Cambios y Comentarios" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

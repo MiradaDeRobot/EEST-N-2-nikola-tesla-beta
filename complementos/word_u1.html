@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word U1: Fundamentos y Formato de Texto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2b579a; /* Word Blue */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e3a8a; /* Darker Word Blue */
+        }
+        h4 {
+            color: #1e40af; /* Even Darker Word Blue */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-blue-800">Unidad 1: Fundamentos y Formato de Texto</h1>
+            <p class="text-lg text-gray-600">Microsoft Word</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción a Word -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">1. Introducción a Microsoft Word</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Microsoft Word</strong> es el procesador de textos más utilizado del mundo. Es una herramienta increíblemente potente que va mucho más allá de simplemente escribir. Permite crear, editar, dar formato y compartir documentos de aspecto profesional, desde una simple carta hasta un complejo informe técnico o un trabajo académico.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Interfaz de Usuario de Word</h3>
+                        <p class="mb-4">Conocer la interfaz es el primer paso para dominar el programa. Se compone de varias áreas clave:</p>
+                        <img src="https://placehold.co/1000x500/EFF6FF/1E3A8A?text=Interfaz+de+Microsoft+Word" alt="Interfaz de Word" class="w-full h-auto rounded-lg shadow-md">
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Cinta de Opciones (Ribbon):</strong> Es la banda principal en la parte superior. Contiene todas las herramientas y comandos, organizados en pestañas (Inicio, Insertar, Diseño, etc.).</li>
+                            <li><strong>Pestañas:</strong> Cada pestaña agrupa comandos relacionados. La pestaña "Inicio" contiene las herramientas de formato más comunes.</li>
+                            <li><strong>Grupos:</strong> Dentro de cada pestaña, los comandos se organizan en grupos lógicos (ej. Fuente, Párrafo, Estilos).</li>
+                            <li><strong>Barra de Herramientas de Acceso Rápido:</strong> Ubicada en la esquina superior izquierda, permite añadir atajos a tus comandos más utilizados, como Guardar o Deshacer.</li>
+                            <li><strong>Área del Documento:</strong> Es la página en blanco donde escribes y editas tu texto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Formato de Texto -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">2. Formato de Caracteres y Párrafos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Dar formato es aplicar estilos visuales al texto para mejorar su legibilidad y apariencia. Word distingue entre el formato a nivel de <strong>carácter</strong> (letras individuales) y a nivel de <strong>párrafo</strong> (bloques de texto).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Grupo "Fuente": Dando Estilo a las Letras</h3>
+                        <p class="mb-4">Estas herramientas, ubicadas en la pestaña "Inicio", modifican la apariencia de los caracteres seleccionados.</p>
+                        <img src="https://placehold.co/800x150/EFF6FF/1E3A8A?text=Grupo+Fuente+en+la+Cinta+de+Opciones" alt="Grupo Fuente de Word" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-base">
+                            <div class="example-box"><strong>Tipo de Fuente:</strong> Cambia la tipografía (ej. Arial, Times New Roman, Calibri).</div>
+                            <div class="example-box"><strong>Tamaño de Fuente:</strong> Aumenta o disminuye el tamaño del texto.</div>
+                            <div class="example-box"><strong>Negrita, Cursiva y Subrayado:</strong> Resaltan el texto para darle énfasis.</div>
+                            <div class="example-box"><strong>Color de Fuente:</strong> Cambia el color del texto.</div>
+                            <div class="example-box"><strong>Resaltado:</strong> Simula un marcador fluorescente sobre el texto.</div>
+                            <div class="example-box"><strong>Mayúsculas y Minúsculas:</strong> Permite cambiar rápidamente entre diferentes tipos de capitalización.</div>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Grupo "Párrafo": Organizando el Texto</h3>
+                        <p class="mb-4">Estas herramientas se aplican a párrafos completos y son esenciales para estructurar el documento.</p>
+                        <img src="https://placehold.co/800x150/EFF6FF/1E3A8A?text=Grupo+Párrafo+en+la+Cinta+de+Opciones" alt="Grupo Párrafo de Word" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                            <li><strong>Alineación:</strong> Controla cómo se alinea el texto con los márgenes (Izquierda, Centrado, Derecha, Justificado).</li>
+                            <li><strong>Listas (Viñetas y Numeración):</strong> Permiten crear listas ordenadas (1, 2, 3) o desordenadas (•, -, *).</li>
+                            <li><strong>Interlineado:</strong> Ajusta el espacio vertical entre las líneas de un párrafo.</li>
+                            <li><strong>Sangría:</strong> Aumenta o disminuye el espacio entre el párrafo y el margen.</li>
+                            <li><strong>Bordes y Sombreado:</strong> Permite añadir bordes alrededor de un párrafo o aplicarle un color de fondo.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=uV3B5a9g3gI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Formato de Texto y Párrafos en Word" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Estilos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">3. El Poder de los Estilos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aplicar formato manualmente a cada título y párrafo es ineficiente y propenso a errores. La forma profesional de trabajar en Word es usando <strong>Estilos</strong>. Un estilo es un conjunto predefinido de formatos (fuente, tamaño, color, alineación, etc.) que se puede aplicar a cualquier texto con un solo clic.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué usar Estilos?</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                             <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/EFF6FF/1E3A8A?text=Galería+de+Estilos+de+Word" alt="Estilos de Word" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-4">
+                                    <li><strong>Consistencia:</strong> Asegura que todos los títulos de nivel 1, por ejemplo, se vean exactamente iguales en todo el documento.</li>
+                                    <li><strong>Eficiencia:</strong> Si decides cambiar el formato de todos tus títulos, solo tienes que modificar el estilo una vez, y Word actualizará automáticamente todas las instancias.</li>
+                                    <li><strong>Estructura y Navegación:</strong> Al usar estilos de título (Título 1, Título 2, etc.), Word entiende la jerarquía de tu documento. Esto es fundamental para crear tablas de contenido automáticas y usar el Panel de Navegación.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Práctica Recomendada</h4>
+                            <p class="text-base">En lugar de seleccionar un texto y aplicarle negrita, tamaño 16 y color azul, aplícale el estilo "Título 1". Si no te gusta cómo se ve, modifica el estilo "Título 1" para que se ajuste a tus preferencias. Este es el flujo de trabajo correcto para documentos largos y profesionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

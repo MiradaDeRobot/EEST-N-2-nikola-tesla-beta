@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de PC U1: Arquitectura de la PC y Placa Madre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Arquitectura de la PC y Placa Madre</h1>
+            <p class="text-lg text-gray-600">Componentes de PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Arquitectura de la PC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Arquitectura Fundamental de una PC</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Antes de analizar cada pieza por separado, es crucial entender cómo interactúan los componentes principales de una computadora. La mayoría de las PC modernas siguen la <strong>arquitectura de Von Neumann</strong>, que define un sistema con cuatro subsistemas principales: la unidad de procesamiento, la memoria, el almacenamiento y los dispositivos de entrada/salida.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Los 4 Pilares de una Computadora</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Diagrama+de+Arquitectura+de+PC" alt="Arquitectura de PC" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-4">
+                                    <li><strong>CPU (Unidad Central de Procesamiento):</strong> Es el cerebro. Ejecuta instrucciones y realiza todos los cálculos.</li>
+                                    <li><strong>Memoria RAM:</strong> Es la memoria de trabajo, volátil y de acceso ultra rápido. Almacena temporalmente los datos y programas que la CPU está usando en ese momento.</li>
+                                    <li><strong>Almacenamiento (Disco Duro/SSD):</strong> Es la memoria permanente, no volátil. Guarda el sistema operativo, los programas y tus archivos personales incluso cuando la PC está apagada.</li>
+                                    <li><strong>Dispositivos de Entrada/Salida (E/S):</strong> Permiten la interacción con el usuario (teclado, mouse, monitor) y con otros sistemas (red, puertos USB).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=d_iB39K21n8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo funciona una Computadora" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Placa Madre -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. La Placa Madre (Motherboard)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>placa madre</strong> es el componente más importante de una PC. Es una gran placa de circuito impreso (PCB) que actúa como el sistema nervioso central, conectando todos los componentes entre sí y permitiendo que se comuniquen. La elección de la placa madre determina qué procesador, cuánta memoria RAM y qué tipo de periféricos puedes instalar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Anatomía de una Placa Madre</h3>
+                        <img src="https://placehold.co/800x600/E0F2FE/0891B2?text=Partes+de+una+Placa+Madre" alt="Partes de una Placa Madre" class="w-full h-auto rounded-lg shadow-md mt-4">
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Componentes Principales</h4>
+                            <p class="text-base">A continuación, exploraremos en detalle las partes más importantes que se encuentran en una placa madre moderna.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Componentes Detallados -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Zócalos, Ranuras y Conectores Clave</h2>
+                <div class="space-y-12 text-lg leading-relaxed">
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Zócalo del CPU (CPU Socket)</h3>
+                        <p>Es el conector donde se instala el procesador. Es el componente más delicado y específico. Cada zócalo es compatible solo con una familia de procesadores (ej. AM5 para AMD Ryzen 7000, LGA 1700 para Intel Core de 12ª/13ª Gen). Los pines de contacto pueden estar en el zócalo (LGA - Land Grid Array) o en el propio procesador (PGA - Pin Grid Array).</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ranuras de Memoria RAM (RAM Slots)</h3>
+                        <p>Aquí es donde se instalan los módulos de memoria RAM. La mayoría de las placas tienen 2 o 4 ranuras. Es importante verificar el tipo de memoria compatible (ej. DDR4, DDR5) y la velocidad máxima que soporta. Para un rendimiento óptimo, se recomienda instalar las memorias en pares para aprovechar la tecnología <strong>Dual Channel</strong>, que duplica el ancho de banda de comunicación entre la RAM y la CPU.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ranuras de Expansión (PCI Express)</h3>
+                        <p>Las ranuras <strong>PCI Express (PCIe)</strong> permiten conectar componentes adicionales para ampliar las capacidades de la PC. Vienen en diferentes tamaños:</p>
+                        <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                            <li><strong>PCIe x16:</strong> La más larga y rápida. Se usa casi exclusivamente para la tarjeta gráfica.</li>
+                            <li><strong>PCIe x4 y x1:</strong> Más cortas, se usan para tarjetas de sonido, tarjetas de red, capturadoras de video o unidades de almacenamiento SSD NVMe de alta velocidad.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conectores de Almacenamiento y Alimentación</h3>
+                        <p>La placa madre distribuye energía y datos. Los conectores más importantes son:</p>
+                         <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                            <li><strong>Conectores SATA:</strong> Puertos para conectar discos duros (HDD) y unidades de estado sólido (SSD) de 2.5 pulgadas.</li>
+                            <li><strong>Conectores M.2:</strong> Una ranura moderna y compacta para los SSD más rápidos (NVMe), que se conectan directamente a los carriles PCIe.</li>
+                            <li><strong>Conector ATX de 24 pines:</strong> El conector principal que recibe energía de la fuente de alimentación para toda la placa.</li>
+                            <li><strong>Conector de CPU de 4+4 pines:</strong> Proporciona energía dedicada y estable exclusivamente para el procesador.</li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=b2pd3Y6a_30" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video detallado sobre "Partes de la Placa Madre" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 S0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

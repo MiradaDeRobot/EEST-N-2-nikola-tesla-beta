@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC U3: Manejo de Entradas y Salidas Analógicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 3: Manejo de Entradas y Salidas Analógicas</h1>
+            <p class="text-lg text-gray-600">Programación de PLC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Señales Analógicas vs Digitales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. Señales Analógicas vs. Digitales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Hasta ahora, hemos trabajado con señales <strong>digitales</strong> (o discretas), que solo tienen dos estados: ON/OFF, verdadero/falso, 1/0. Un pulsador está presionado o no lo está. Un motor está encendido o apagado. Sin embargo, muchos procesos industriales requieren medir variables que cambian continuamente.</p>
+                    <p>Las <strong>señales analógicas</strong> pueden tomar cualquier valor dentro de un rango determinado. Son cruciales para medir magnitudes físicas como la temperatura, la presión, el nivel de un líquido, la velocidad de un motor o el peso en una balanza.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Diferencias Clave</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Señal Digital</h4>
+                                <img src="https://placehold.co/500x250/E0F2FE/0891B2?text=Señal+Digital+(ON/OFF)" alt="Señal Digital" class="w-full h-auto rounded-lg shadow-md">
+                                <ul class="list-disc list-inside space-y-2 mt-3">
+                                    <li>Dos estados únicos (0V o 24V).</li>
+                                    <li>Representa condiciones lógicas.</li>
+                                    <li>Ejemplos: Pulsador, final de carrera, luz piloto.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Señal Analógica</h4>
+                                <img src="https://placehold.co/500x250/FEF2F2/B91C1C?text=Señal+Analógica+(Variable)" alt="Señal Analógica" class="w-full h-auto rounded-lg shadow-md">
+                                <ul class="list-disc list-inside space-y-2 mt-3">
+                                    <li>Infinitos valores dentro de un rango (ej. 0-10V).</li>
+                                    <li>Representa mediciones físicas.</li>
+                                    <li>Ejemplos: Sensor de temperatura, transmisor de presión.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Módulos de Entrada Analógica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Módulos de Entrada Analógica</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para que un PLC pueda "entender" una señal analógica, necesita un <strong>módulo de entrada analógica</strong>. Este hardware especializado contiene un <strong>Convertidor Analógico-Digital (ADC)</strong>, que transforma la señal de voltaje o corriente del sensor en un número entero que la CPU del PLC puede procesar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Conceptos Importantes</h3>
+                        <ul class="list-disc list-inside space-y-4 mt-4">
+                            <li><strong>Tipos de Señal:</strong> Los estándares más comunes en la industria son <strong>0-10V</strong> y <strong>4-20mA</strong>. La señal de 4-20mA es a menudo preferida porque es menos susceptible al ruido eléctrico y permite detectar un cable cortado (la corriente caería a 0mA, fuera del rango normal).</li>
+                            <li><strong>Resolución:</strong> Es la precisión con la que el ADC puede medir. Se mide en bits. Una resolución más alta significa mediciones más precisas. Por ejemplo, un ADC de 12 bits puede representar una señal con 4096 pasos (2^12).</li>
+                        </ul>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">¿Cómo funciona?</h4>
+                            <p class="text-base">Imagina un sensor de temperatura que mide de 0°C a 100°C y entrega una señal de 0V a 10V. El módulo de entrada analógica lee este voltaje. Si lee 5V, el ADC lo convierte en un valor numérico intermedio (por ejemplo, 2048 en un sistema de 12 bits). Este número crudo es el que nuestro programa de PLC leerá.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s-x9m6nU-6g" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Entradas Analógicas en PLC (0-10V y 4-20mA)" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Escalado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Escalado de Señales (Scaling)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El valor numérico crudo que nos entrega el módulo ADC (ej. 0-4095) no es útil por sí mismo. Necesitamos convertirlo a unidades de ingeniería que podamos entender (ej. °C, Bares, RPM). Este proceso de conversión se llama <strong>escalado</strong>.</p>
+                    <p>El escalado es una simple relación lineal (una regla de tres) que mapea el rango de valores del ADC al rango de la variable física que estamos midiendo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Fórmula del Escalado</h3>
+                        <p>La mayoría de los PLC tienen bloques de función específicos para escalar, pero la fórmula matemática subyacente es siempre la misma:</p>
+                        <div class="example-box">
+                            <pre>ValorEscalado = ((ValorCrudo - MinCrudo) * (MaxIng - MinIng)) / (MaxCrudo - MinCrudo) + MinIng</pre>
+                            <ul class="list-disc list-inside text-base mt-4">
+                                <li><strong>ValorCrudo:</strong> El número que leemos del módulo ADC.</li>
+                                <li><strong>Min/Max Crudo:</strong> El rango de valores del ADC (ej. 0 y 4095).</li>
+                                <li><strong>Min/Max Ing:</strong> El rango de nuestra variable en unidades de ingeniería (ej. 0 y 100 °C).</li>
+                            </ul>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Ejemplo Práctico de Escalado</h4>
+                            <p class="text-base">Tenemos un sensor de presión de 0 a 10 Bares, que da una señal de 4-20mA. Nuestro módulo ADC tiene una resolución de 12 bits, que para 4-20mA se mapea a un rango crudo de 624 a 3120.</p>
+                            <p class="text-base mt-2">Si leemos un valor crudo de <strong>1872</strong>, el cálculo sería:</p>
+                            <p class="text-base mt-2">Presión = ((1872 - 624) * (10 - 0)) / (3120 - 624) + 0 = (1248 * 10) / 2496 = <strong>5 Bares</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Salidas Analógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Módulos de Salida Analógica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Así como podemos leer señales analógicas, también podemos generarlas. Un <strong>módulo de salida analógica</strong> hace el proceso inverso: toma un valor numérico de la CPU y lo convierte en una señal de voltaje o corriente proporcional. Esto nos permite controlar dispositivos que no son simplemente ON/OFF, sino que pueden operar en un rango continuo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aplicaciones Comunes</h3>
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Variadores de Frecuencia (VFD):</strong> Una salida de 0-10V puede controlar la velocidad de un motor de 0% a 100%.</li>
+                            <li><strong>Válvulas Proporcionales:</strong> Permiten regular el flujo de un líquido o gas de forma precisa, en lugar de simplemente abrirla o cerrarla por completo.</li>
+                            <li><strong>Actuadores y Posicionadores:</strong> Controlan la posición exacta de un brazo robótico o una compuerta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

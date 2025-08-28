@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de PC U2: Procesador, Memoria y Almacenamiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 2: Procesador, Memoria y Almacenamiento</h1>
+            <p class="text-lg text-gray-600">Componentes de PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Procesador (CPU) -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. El Procesador (CPU)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Unidad Central de Procesamiento (CPU)</strong> es, sin duda, el cerebro de la computadora. Es un chip increíblemente complejo encargado de interpretar y ejecutar la gran mayoría de las instrucciones de los programas. La velocidad y eficiencia de la CPU determinan en gran medida el rendimiento general del sistema.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Características Clave de una CPU</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=CPU+Moderno" alt="CPU Moderno" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Núcleos (Cores):</strong> Un núcleo es una unidad de procesamiento individual. Una CPU con múltiples núcleos (ej. 4, 6, 8) puede ejecutar múltiples tareas simultáneamente, mejorando drásticamente el rendimiento en multitarea.</li>
+                                    <li><strong>Frecuencia de Reloj (Clock Speed):</strong> Medida en Gigahercios (GHz), indica cuántos ciclos de procesamiento puede realizar un núcleo por segundo. Una frecuencia más alta generalmente significa un rendimiento más rápido.</li>
+                                    <li><strong>Hilos (Threads):</strong> La mayoría de los procesadores modernos usan tecnologías como el Hyper-Threading (Intel) o SMT (AMD) para que cada núcleo físico pueda manejar dos hilos de ejecución (tareas) a la vez, optimizando el uso de los recursos.</li>
+                                    <li><strong>Memoria Caché:</strong> Una pequeña cantidad de memoria ultra rápida integrada en la propia CPU. Almacena los datos más utilizados para que el procesador no tenga que esperar a la memoria RAM, acelerando el rendimiento.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v= ดิ_iB39K21n8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Qué es la CPU y cómo funciona" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Memoria RAM -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Memoria RAM (Random Access Memory)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>Memoria de Acceso Aleatorio (RAM)</strong> es la memoria de trabajo de la computadora. Es un tipo de memoria <strong>volátil</strong>, lo que significa que su contenido se borra cuando se apaga la PC. Su función es almacenar temporalmente los datos y las instrucciones de los programas que se están ejecutando en ese momento para que la CPU pueda acceder a ellos de forma casi instantánea.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Factores a Considerar en la RAM</h3>
+                         <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/FEF2F2/991B1B?text=Módulos+de+RAM+DDR5" alt="Módulos de RAM" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Capacidad:</strong> Medida en Gigabytes (GB). Es la cantidad de datos que puede almacenar. Para tareas básicas, 8 GB pueden ser suficientes, pero 16 GB es el estándar recomendado para un buen rendimiento, y 32 GB o más para tareas profesionales.</li>
+                                    <li><strong>Tipo (DDR):</strong> La tecnología de la memoria. Las más comunes hoy en día son DDR4 y la más reciente DDR5, que ofrece mayores velocidades y eficiencia. Las placas madre solo son compatibles con un tipo.</li>
+                                    <li><strong>Velocidad (Frecuencia):</strong> Medida en Megahercios (MHz), indica la rapidez con la que la memoria puede leer y escribir datos. Una mayor velocidad mejora el rendimiento general del sistema.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Almacenamiento -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Almacenamiento: HDD vs. SSD</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>A diferencia de la RAM, el almacenamiento es <strong>no volátil</strong>, lo que significa que retiene los datos incluso sin energía. Aquí es donde se guardan permanentemente el sistema operativo, los programas y todos tus archivos. Existen dos tecnologías principales:</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Disco Duro (HDD - Hard Disk Drive)</h3>
+                            <img src="https://placehold.co/500x300/F1F5F9/1E293B?text=Interior+de+un+HDD" alt="Disco Duro HDD" class="w-full h-auto rounded-lg shadow-md mb-4">
+                            <p class="text-base">Es la tecnología más antigua. Utiliza platos magnéticos que giran a alta velocidad y un cabezal de lectura/escritura que se mueve para acceder a los datos. Son como un tocadiscos de alta tecnología.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-3 text-base">
+                                <li><strong>Ventaja:</strong> Gran capacidad de almacenamiento a un bajo costo.</li>
+                                <li><strong>Desventaja:</strong> Son lentos, frágiles a los golpes y consumen más energía debido a sus partes móviles.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Unidad de Estado Sólido (SSD)</h3>
+                             <img src="https://placehold.co/500x300/F0FDF4/15803D?text=SSD+SATA+y+SSD+NVMe" alt="Unidades SSD" class="w-full h-auto rounded-lg shadow-md mb-4">
+                            <p class="text-base">Utiliza chips de memoria flash (similares a los de un pendrive) para almacenar datos. No tienen partes móviles.</p>
+                             <ul class="list-disc list-inside space-y-2 mt-3 text-base">
+                                <li><strong>Ventaja:</strong> Extremadamente rápidos, resistentes, silenciosos y de bajo consumo. Mejoran drásticamente los tiempos de arranque del sistema y la carga de programas.</li>
+                                <li><strong>Desventaja:</strong> Son más caros por gigabyte que los HDD.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="info-box">
+                        <h4 class="text-xl font-semibold text-red-800 mb-2">SSD NVMe: La Máxima Velocidad</h4>
+                        <p class="text-base">Dentro de los SSD, el protocolo <strong>NVMe (Non-Volatile Memory Express)</strong>, que utiliza las ranuras M.2 de la placa madre, ofrece velocidades de lectura y escritura varias veces superiores a las de los SSD tradicionales que usan la interfaz SATA. Es el estándar actual para un rendimiento de almacenamiento de alta gama.</p>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=6_N_5s3i_Go" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Diferencias entre HDD, SSD y NVMe" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes de PC U5: Notebooks - Componentes y Cuidados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 5: Notebooks - Componentes y Cuidados</h1>
+            <p class="text-lg text-gray-600">Componentes de PC</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección El Mundo de las Notebooks -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. El Desafío de la Portabilidad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>notebook</strong> (o laptop) es una computadora personal diseñada para ser portátil. Este simple objetivo de portabilidad impone enormes desafíos de ingeniería que definen las diferencias fundamentales con una PC de escritorio. Todos los componentes deben ser más pequeños, consumir menos energía y generar menos calor, todo ello integrado en un chasis compacto.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Los 3 Pilares del Diseño de una Notebook</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=Interior+de+una+Notebook" alt="Interior de una Notebook" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-4">
+                                    <li><strong>Integración:</strong> La placa madre es altamente personalizada para el chasis. Muchos componentes que son modulares en un escritorio (como la tarjeta de red o de sonido) vienen integrados y a menudo soldados.</li>
+                                    <li><strong>Consumo Energético:</strong> La eficiencia es clave para maximizar la duración de la batería. Los componentes se diseñan para usar la menor cantidad de energía posible, a menudo sacrificando algo de rendimiento máximo.</li>
+                                    <li><strong>Disipación de Calor:</strong> El espacio reducido hace que la refrigeración sea un reto. Se utilizan sistemas de enfriamiento compactos con heatpipes y ventiladores tipo turbina para expulsar el aire caliente de manera eficiente.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Diferencias en Componentes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Componentes Clave: Versiones Móviles</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Aunque los nombres son los mismos (CPU, RAM, GPU), los componentes de una notebook son versiones especializadas y no son intercambiables con sus contrapartes de escritorio.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="space-y-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">CPU y GPU Móviles</h4>
+                                <p class="text-base">Los procesadores y tarjetas gráficas para notebooks están diseñados para un bajo consumo (TDP). A menudo, la CPU y la GPU están <strong>soldadas directamente a la placa madre</strong> (proceso conocido como BGA), haciendo imposible su actualización. Se identifican por sufijos en sus nombres (ej. 'U' para bajo consumo, 'H' para alto rendimiento en Intel).</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Memoria RAM SO-DIMM</h4>
+                                <p class="text-base">Las notebooks utilizan un formato de memoria RAM mucho más pequeño llamado <strong>SO-DIMM</strong>. Es crucial verificar si la RAM está soldada a la placa o si existen ranuras de expansión para una posible actualización.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Almacenamiento Compacto</h4>
+                                <p class="text-base">El estándar actual es el <strong>SSD M.2 NVMe</strong> por su increíble velocidad y tamaño reducido. Algunos modelos más grandes pueden incluir también una bahía para un disco SATA de 2.5 pulgadas (SSD o HDD).</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Pantalla Integrada</h4>
+                                <p class="text-base">La pantalla es un componente integral. Sus características clave son la resolución (ej. Full HD, 4K), la tecnología del panel (IPS para mejores colores, OLED para negros puros) y la tasa de refresco (Hz), importante para gaming.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Batería y Cargador</h4>
+                                <p class="text-base">La batería es un componente exclusivo de las notebooks. Su capacidad se mide en Watt-hora (Wh). El cargador es específico para cada marca y modelo, y es crucial usar el correcto para no dañar la batería o la placa.</p>
+                            </div>
+                             <div>
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Conectividad</h4>
+                                <p class="text-base">Las tarjetas Wi-Fi y Bluetooth vienen integradas. Los puertos también son un factor clave, siendo el <strong>Thunderbolt / USB4</strong> el más avanzado, ya que permite video, datos de alta velocidad y carga, todo a través de un único conector USB-C.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=I_3uuWJ6_D4" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Diferencias entre PC de Escritorio y Notebook" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Reparación y Actualizaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. Reparación y Actualizaciones Comunes</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>A diferencia de una PC de escritorio, las posibilidades de actualización en una notebook son limitadas. Sin embargo, algunas mejoras clave son posibles y pueden extender significativamente la vida útil y el rendimiento del equipo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Qué se puede actualizar?</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div class="example-box">
+                                <h4 class="text-xl font-semibold text-green-800 mb-2">Actualizaciones Frecuentes</h4>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>Memoria RAM:</strong> Si la notebook tiene ranuras SO-DIMM libres o accesibles, aumentar la RAM (ej. de 8GB a 16GB) es una de las mejoras más efectivas para la multitarea.</li>
+                                    <li><strong>Almacenamiento:</strong> Reemplazar un disco duro mecánico (HDD) por un SSD es la actualización que más impacto tiene en la velocidad general del sistema. También se puede añadir un segundo SSD si hay una ranura M.2 o SATA libre.</li>
+                                </ul>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="text-xl font-semibold text-red-800 mb-2">Componentes No Actualizables</h4>
+                                <ul class="list-disc list-inside space-y-2 text-base">
+                                    <li><strong>CPU y GPU:</strong> En el 99% de las notebooks, estos componentes están soldados a la placa madre y no se pueden cambiar.</li>
+                                    <li><strong>Placa Madre:</strong> Es específica para cada modelo de chasis, por lo que no se puede reemplazar por una diferente.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Cuidados y Mantenimiento -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">4. Cuidados Esenciales y Mantenimiento</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Debido a su naturaleza portátil y su diseño compacto, las notebooks requieren cuidados específicos para asegurar una larga vida útil y un rendimiento óptimo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Guía de Buenas Prácticas</h3>
+                        <div class="space-y-6 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800">Mantén la Ventilación Despejada</h4>
+                                <p class="text-base mt-2">Es el cuidado más importante. Nunca uses la notebook sobre superficies blandas como camas, almohadas o mantas, ya que bloquean las entradas de aire y causan sobrecalentamiento. Usa siempre una superficie dura y plana.</p>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Cuidado de la Batería</h4>
+                                <p class="text-base mt-2">Las baterías modernas de ion de litio no sufren de "efecto memoria". Para maximizar su vida útil:</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base pl-4">
+                                    <li>Evita descargarla completamente a 0% de forma habitual.</li>
+                                    <li>No la dejes conectada al 100% de carga durante días si no la estás usando. Muchos fabricantes incluyen software para limitar la carga máxima al 80% para este fin.</li>
+                                    <li>Evita el calor extremo, ya que degrada la batería rápidamente.</li>
+                                </ul>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">Limpieza y Transporte</h4>
+                                <p class="text-base mt-2">Limpia la pantalla con un paño de microfibra y un líquido especial para pantallas. Para el teclado y el chasis, puedes usar un paño ligeramente humedecido con alcohol isopropílico. Transporta siempre la notebook en una funda o mochila acolchada para protegerla de golpes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=0-91s9-CQ3s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Limpiar y Cuidar tu Notebook" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
