@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Empleo U1: CV y Carta de Presentación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #b91c1c; /* red-700 */
+        }
+        h4 {
+            color: #991b1b; /* red-800 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-red-800">Unidad 1: Armado de Currículum Vitae (CV) y Carta de Presentación</h1>
+            <p class="text-lg text-gray-600">Búsqueda de Empleo y Presentación Profesional</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección La Importancia del CV -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">1. El CV: Tu Herramienta de Marketing Personal</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>Currículum Vitae (CV)</strong> es mucho más que una simple lista de tus estudios y trabajos. Es tu principal herramienta de marketing en el mundo laboral. Un reclutador dedica, en promedio, solo unos pocos segundos a revisar cada CV. Por lo tanto, tu objetivo es crear un documento claro, conciso y de alto impacto que capte su atención inmediatamente y lo convenza de que eres el candidato ideal para una entrevista.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Propósitos Clave de un Buen CV</h3>
+                        <div class="mt-4 flex flex-col md:flex-row gap-6 items-center">
+                            <div class="md:w-1/2">
+                                <img src="https://placehold.co/600x400/E0F2FE/0891B2?text=CV+Profesional+y+Conciso" alt="Ejemplo de CV" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                            <div class="md:w-1/2">
+                                <ul class="list-disc list-inside space-y-4">
+                                    <li><strong>Generar una primera impresión positiva:</strong> Demuestra profesionalismo, atención al detalle y seriedad.</li>
+                                    <li><strong>Resumir tus cualificaciones:</strong> Presenta de forma clara tu educación, experiencia y habilidades relevantes para el puesto.</li>
+                                    <li><strong>Adaptarse a la oferta:</strong> Un CV efectivo no es genérico; se adapta para resaltar lo que cada empresa específica está buscando.</li>
+                                    <li><strong>Conseguir una entrevista:</strong> El objetivo final del CV no es conseguir el trabajo, sino despertar el interés suficiente para que te llamen a una entrevista.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Estructura del CV -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">2. Estructura y Secciones Clave de un CV Moderno</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Un CV bien estructurado es fácil de leer y permite al reclutador encontrar la información que busca rápidamente. Aunque el diseño puede variar, las secciones fundamentales son siempre las mismas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="space-y-6 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-800">1. Datos Personales</h4>
+                                <p class="text-base mt-2">Debe ser breve y profesional. Incluye: Nombre completo, número de teléfono, correo electrónico profesional y enlace a tu perfil de LinkedIn (si lo tienes).</p>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">2. Perfil Profesional</h4>
+                                <p class="text-base mt-2">Un párrafo corto (3-4 líneas) al inicio del CV que resume quién eres, cuáles son tus fortalezas y cuál es tu objetivo profesional. Es tu "discurso de ascensor".</p>
+                            </div>
+                             <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">3. Experiencia Laboral</h4>
+                                <p class="text-base mt-2">Enumera tus trabajos en orden cronológico inverso (el más reciente primero). Para cada puesto, incluye: Nombre del cargo, nombre de la empresa, fechas y 2-3 puntos describiendo tus responsabilidades y logros más importantes.</p>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">4. Educación</h4>
+                                <p class="text-base mt-2">También en orden cronológico inverso. Incluye: Título obtenido (ej. Técnico Electrónico), nombre de la institución y año de egreso.</p>
+                            </div>
+                            <div class="border-t pt-6">
+                                <h4 class="text-xl font-semibold text-red-800">5. Habilidades (Skills)</h4>
+                                <p class="text-base mt-2">Divide esta sección en "Habilidades Técnicas" (software que manejas, lenguajes de programación, etc.) y "Habilidades Interpersonales" (trabajo en equipo, comunicación, resolución de problemas).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=P6A6n_Y_s-s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo hacer un Currículum Vitae en 2024" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Carta de Presentación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-red-700">3. La Carta de Presentación: Tu Voz Personal</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que el CV es un resumen de hechos, la <strong>carta de presentación</strong> es tu oportunidad para hablarle directamente al reclutador. Es un documento que acompaña a tu CV y te permite explicar por qué estás interesado en el puesto y por qué eres el candidato perfecto para la empresa.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Estructura de una Carta de Presentación Efectiva</h3>
+                        <div class="info-box">
+                            <ol class="list-decimal list-inside space-y-3 mt-4 text-base">
+                                <li><strong>Introducción:</strong> Preséntate, menciona el puesto al que aplicas y dónde viste la oferta. Muestra entusiasmo por la oportunidad.</li>
+                                <li><strong>Cuerpo (2-3 párrafos):</strong> Aquí es donde "vendes" tu candidatura. Conecta tu experiencia y habilidades directamente con los requisitos del puesto. No repitas tu CV; explica cómo tus logros pasados te preparan para los desafíos de este nuevo rol. Demuestra que has investigado sobre la empresa.</li>
+                                <li><strong>Cierre:</strong> Reitera tu interés en el puesto, agradece al reclutador por su tiempo y expresa tu deseo de tener una entrevista.</li>
+                                <li><strong>Despedida Profesional:</strong> Usa una despedida formal como "Atentamente" o "Saludos cordiales", seguido de tu nombre completo.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
