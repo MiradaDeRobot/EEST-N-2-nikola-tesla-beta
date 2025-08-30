@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint U2: Animaciones y Transiciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #c43e1c; /* PowerPoint Orange/Red */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #d85a2a; /* Lighter Orange/Red */
+        }
+        h4 {
+            color: #b34922; /* Darker Orange/Red */
+        }
+        .info-box {
+            background-color: #fff4f0; /* orange-50 */
+            border-left: 4px solid #f97316; /* orange-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-orange-800">Unidad 2: Animaciones y Transiciones</h1>
+            <p class="text-lg text-gray-600">Microsoft PowerPoint</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Transiciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">1. Transiciones: Dando Fluidez entre Diapositivas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>transición</strong> es el efecto visual que se reproduce al pasar de una diapositiva a la siguiente durante una presentación. Usadas correctamente, las transiciones pueden agregar un toque profesional y ayudar a que la presentación fluya de manera más suave y atractiva para la audiencia.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Aplicar y Configurar Transiciones</h3>
+                        <p class="mb-4">PowerPoint ofrece una amplia galería de transiciones, desde efectos sutiles hasta otros más dinámicos.</p>
+                        <img src="https://placehold.co/1200x250/FFF4F0/C43E1C?text=Cinta+de+Opciones+-+Pestaña+Transiciones" alt="Pestaña Transiciones" class="w-full h-auto rounded-lg shadow-md">
+                        <div class="info-box mt-4">
+                           <h4 class="font-semibold text-lg text-orange-800">Pasos para aplicar una transición:</h4>
+                           <ol class="list-decimal list-inside space-y-2 mt-2 text-base">
+                               <li>Selecciona la diapositiva a la que quieres aplicarle el efecto de entrada.</li>
+                               <li>Ve a la pestaña <strong>"Transiciones"</strong> en la cinta de opciones.</li>
+                               <li>Explora la galería de efectos y haz clic en uno para obtener una vista previa.</li>
+                               <li>En el grupo "Intervalos", puedes configurar:
+                                   <ul class="list-disc list-inside ml-6 mt-1">
+                                       <li><strong>Sonido:</strong> Añadir un sonido al cambio de diapositiva (no se recomienda en entornos profesionales).</li>
+                                       <li><strong>Duración:</strong> Controla la velocidad del efecto de transición.</li>
+                                       <li><strong>Aplicar a todas:</strong> Con un solo clic, aplicas la misma transición y configuración a todas las diapositivas.</li>
+                                   </ul>
+                               </li>
+                               <li>En "Avanzar a la diapositiva", puedes decidir si el cambio se hace <strong>al hacer clic con el mouse</strong> o <strong>automáticamente después de</strong> un tiempo determinado.</li>
+                           </ol>
+                        </div>
+                         <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg text-green-800">Consejo de Diseño: Sutiliza es Clave</h4>
+                            <p class="text-base mt-2">Las mejores transiciones son las que no distraen. Efectos sutiles como "Desvanecer", "Empuje" o "Cortinas" suelen ser más profesionales que efectos llamativos como "Avión de papel" o "Fracturar". La coherencia también es importante; usar una o dos transiciones diferentes en toda la presentación es suficiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Animaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">2. Animaciones: Dando Vida a los Objetos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>A diferencia de las transiciones (que se aplican a diapositivas enteras), las <strong>animaciones</strong> se aplican a los objetos individuales dentro de una diapositiva, como texto, imágenes, formas o gráficos. Permiten controlar cómo y cuándo aparece cada elemento, ayudando a guiar la atención de la audiencia y a presentar la información paso a paso.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Animaciones</h3>
+                        <p>PowerPoint clasifica las animaciones en cuatro categorías:</p>
+                        <img src="https://placehold.co/1200x300/F0FDF4/15803D?text=Tipos+de+Animaciones+(Entrada,+Énfasis,+Salir,+Trayectorias)" alt="Tipos de Animaciones" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <ul class="list-disc list-inside space-y-3">
+                            <li><strong class="text-green-600">Entrada:</strong> Hacen que un objeto aparezca en la diapositiva (ej. "Aparecer", "Desplazar hacia arriba", "Zoom"). Son las más utilizadas.</li>
+                            <li><strong class="text-yellow-600">Énfasis:</strong> Llaman la atención sobre un objeto que ya está en la pantalla (ej. "Girar", "Aumentar y hundir", "Color de relleno").</li>
+                            <li><strong class="text-red-600">Salir:</strong> Hacen que un objeto desaparezca de la diapositiva (ej. "Desvanecer", "Reducir y girar").</li>
+                            <li><strong class="text-blue-600">Trayectorias de la animación:</strong> Mueven un objeto de un punto a otro de la diapositiva siguiendo una ruta específica.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Panel de Animación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">3. El Panel de Animación: Control Total</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para gestionar múltiples animaciones en una sola diapositiva, la herramienta esencial es el <strong>Panel de Animación</strong>. Este panel te permite ver todas las animaciones, reordenarlas y configurar sus intervalos y efectos con gran precisión.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Usando el Panel de Animación</h3>
+                         <p class="mb-4">Para abrirlo, ve a la pestaña <strong>"Animaciones"</strong> y haz clic en "Panel de animación".</p>
+                         <img src="https://placehold.co/1200x500/FFF4F0/C43E1C?text=Panel+de+Animación+con+múltiples+efectos" alt="Panel de Animación" class="w-full h-auto rounded-lg shadow-md">
+                         <div class="info-box mt-4">
+                            <h4 class="font-semibold text-lg text-orange-800">Funciones Clave del Panel:</h4>
+                             <ul class="list-disc list-inside space-y-3 mt-2 text-base">
+                                <li><strong>Reordenar Animaciones:</strong> Simplemente arrastra los efectos en la lista para cambiar el orden en que se reproducen.</li>
+                                <li><strong>Configurar el Inicio:</strong> Para cada animación, puedes elegir cuándo empieza:
+                                    <ul class="list-disc list-inside ml-6 mt-1">
+                                        <li><strong>Al hacer clic (predeterminado):</strong> La animación espera a que hagas clic.</li>
+                                        <li><strong>Con la anterior:</strong> La animación se inicia al mismo tiempo que la anterior.</li>
+                                        <li><strong>Después de la anterior:</strong> La animación se inicia automáticamente cuando termina la anterior.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Duración y Retraso:</strong> Puedes controlar cuánto dura el efecto de la animación y si debe haber una pausa (retraso) antes de que comience.</li>
+                            </ul>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=wF0j2-ff6sI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Animaciones Avanzadas y Panel de Animación" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-orange-600 text-white hover:bg-orange-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

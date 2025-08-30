@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel U1: Introducción y Fórmulas Básicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #166534; /* green-800 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #15803d; /* green-700 */
+        }
+        h4 {
+            color: #16a34a; /* green-600 */
+        }
+        .info-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-green-800">Unidad 1: Introducción y Fórmulas Básicas</h1>
+            <p class="text-lg text-gray-600">Microsoft Excel</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es Excel? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">1. ¿Qué es Excel y para qué sirve?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Microsoft Excel</strong> es un programa de hoja de cálculo, una de las herramientas más utilizadas en el mundo para organizar, analizar y visualizar información. Su principal fortaleza radica en su capacidad para realizar cálculos automáticos, desde simples sumas hasta complejos análisis financieros, todo a través de una grilla de celdas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Principales Usos de Excel</h3>
+                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 text-base">
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Cálculos y Operaciones</h4>
+                                <p>Automatizar cualquier tipo de operación matemática, desde presupuestos personales hasta inventarios complejos.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Análisis de Datos</h4>
+                                <p>Organizar grandes volúmenes de datos en tablas para luego filtrarlos, ordenarlos y analizarlos con herramientas como las tablas dinámicas.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Creación de Gráficos</h4>
+                                <p>Convertir datos numéricos en representaciones visuales (gráficos de barras, circulares, de líneas) para facilitar su interpretación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">2. Explorando la Interfaz de Excel</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Al abrir Excel, te encontrarás con una interfaz llena de herramientas. Conocer sus componentes principales es el primer paso para dominar el programa.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <img src="https://placehold.co/1200x500/E0F2FE/0891B2?text=Interfaz+Principal+de+Excel" alt="Interfaz de Excel" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <ul class="list-decimal list-inside space-y-4 mt-4 text-base">
+                            <li><strong>Cinta de Opciones:</strong> Es la barra superior que agrupa todas las herramientas y comandos en pestañas (Inicio, Insertar, Fórmulas, etc.).</li>
+                            <li><strong>Barra de Fórmulas:</strong> Muestra el contenido real de la celda activa. Aquí es donde escribes y editas las fórmulas.</li>
+                            <li><strong>Cuadro de Nombres:</strong> Muestra la dirección de la celda seleccionada (ej. A1, B2).</li>
+                            <li><strong>Columnas y Filas:</strong> Las columnas se identifican con letras (A, B, C...) y las filas con números (1, 2, 3...).</li>
+                            <li><strong>Celdas:</strong> La intersección de una fila y una columna. Es la unidad básica donde se introducen los datos.</li>
+                             <li><strong>Hojas de Cálculo:</strong> Un archivo de Excel (llamado "libro") puede contener múltiples hojas de cálculo, que puedes navegar usando las pestañas en la parte inferior.</li>
+                        </ul>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k1_iY_i2-4U" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Primeros Pasos y la Interfaz de Excel" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Fórmulas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">3. Fórmulas: El Corazón de Excel</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La verdadera potencia de Excel reside en las <strong>fórmulas</strong>. Una fórmula es una expresión que realiza un cálculo. Siempre debe comenzar con el signo igual (<strong>=</strong>).</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Operadores Aritméticos Básicos</h3>
+                        <p class="text-base mt-2">Puedes usar Excel como una calculadora, utilizando los operadores matemáticos estándar:</p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-4 text-base">
+                            <div class="example-box"><pre>=10 + 5   (Suma)</pre></div>
+                            <div class="example-box"><pre>=10 - 5   (Resta)</pre></div>
+                            <div class="example-box"><pre>=10 * 5   (Multiplicación)</pre></div>
+                            <div class="example-box"><pre>=10 / 5   (División)</pre></div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Uso de Referencias de Celda</h3>
+                        <p class="text-base mt-2">Lo más potente es que las fórmulas pueden hacer referencia a otras celdas. Si el valor de una celda referenciada cambia, el resultado de la fórmula se actualiza automáticamente.</p>
+                        <img src="https://placehold.co/800x300/F0F9FF/0EA5E9?text=Ejemplo+de+fórmula+con+referencias" alt="Fórmula con Referencias" class="w-full max-w-2xl mx-auto h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg text-sky-800">Ejemplo Práctico</h4>
+                           <p class="text-base mt-2">Imagina que tienes el valor <strong>100</strong> en la celda A1 y el valor <strong>50</strong> en la celda A2. Para sumarlos, en la celda A3 escribirías:</p>
+                           <pre class="mt-2">=A1 + A2</pre>
+                           <p class="text-base mt-2">Excel mostrará el resultado <strong>150</strong>. Si luego cambias el valor de A1 a 200, el resultado en A3 se actualizará automáticamente a 250.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Funciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">4. Funciones Básicas: Simplificando Tareas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las <strong>funciones</strong> son fórmulas predefinidas que realizan cálculos específicos. Usan una sintaxis determinada: el nombre de la función seguido de paréntesis, dentro de los cuales van los "argumentos" (los datos con los que trabajará).</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones Esenciales para Empezar</h3>
+                         <ul class="list-disc list-inside space-y-6 mt-4 text-base">
+                            <li>
+                                <strong>SUMA:</strong> Suma todos los números en un rango de celdas.
+                                <pre class="text-sm mt-2">Sintaxis: =SUMA(A1:A10)</pre>
+                                <p class="mt-1">Esto sumaría todos los valores desde la celda A1 hasta la A10.</p>
+                            </li>
+                            <li>
+                                <strong>PROMEDIO:</strong> Calcula el promedio (la media aritmética) de un rango de celdas.
+                                <pre class="text-sm mt-2">Sintaxis: =PROMEDIO(B1:B5)</pre>
+                            </li>
+                            <li>
+                                <strong>MAX:</strong> Devuelve el valor máximo de un conjunto de valores.
+                                <pre class="text-sm mt-2">Sintaxis: =MAX(C1:C20)</pre>
+                            </li>
+                             <li>
+                                <strong>MIN:</strong> Devuelve el valor mínimo de un conjunto de valores.
+                                <pre class="text-sm mt-2">Sintaxis: =MIN(C1:C20)</pre>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=GeiA6K-h28w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Fórmulas y Funciones Básicas en Excel" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-green-700 text-white hover:bg-green-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

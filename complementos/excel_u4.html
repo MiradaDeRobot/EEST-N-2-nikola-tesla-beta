@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel U4: Fórmulas de Excel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #166534; /* green-800 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #15803d; /* green-700 */
+        }
+        h4 {
+            color: #16a34a; /* green-600 */
+        }
+        .info-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-green-800">Unidad 4: Catálogo de Fórmulas de Excel</h1>
+            <p class="text-lg text-gray-600">Microsoft Excel</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Funciones Básicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">1. Funciones Matemáticas y Estadísticas Básicas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Estas son las funciones fundamentales que forman la base de la mayoría de los cálculos en Excel. Son esenciales para cualquier usuario.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">SUMA, PROMEDIO, MAX y MIN</h3>
+                            <p class="text-base mt-2"><strong>SUMA</strong> suma todos los números en un rango. <strong>PROMEDIO</strong> calcula la media aritmética. <strong>MAX</strong> y <strong>MIN</strong> devuelven el valor más alto y más bajo de un rango, respectivamente.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Para una lista de notas en el rango B2:B30:</p>
+                               <pre class="mt-2 text-sm">=SUMA(B2:B30)   ' Suma todas las notas
+=PROMEDIO(B2:B30) ' Calcula el promedio
+=MAX(B2:B30)     ' Encuentra la nota más alta
+=MIN(B2:B30)     ' Encuentra la nota más baja</pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">CONTAR y CONTARA</h3>
+                            <p class="text-base mt-2"><strong>CONTAR</strong> cuenta cuántas celdas contienen números. <strong>CONTARA</strong> cuenta cuántas celdas no están vacías (contienen números, texto, etc.).</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">En un rango A1:A10 con 7 números y 2 celdas con texto:</p>
+                               <pre class="mt-2 text-sm">=CONTAR(A1:A10)   ' Resultado: 7
+=CONTARA(A1:A10)  ' Resultado: 9</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funciones Estadísticas y Condicionales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">2. Funciones Lógicas y Condicionales</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Estas funciones te permiten realizar acciones basadas en si se cumplen o no ciertas condiciones, añadiendo inteligencia a tus hojas de cálculo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">CONTAR.SI, SUMAR.SI y PROMEDIO.SI</h3>
+                            <p class="text-base mt-2">Permiten contar, sumar o promediar datos que cumplen con <strong>un solo criterio</strong>.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo con SUMAR.SI</h4>
+                               <p class="text-base mt-2">Para sumar las ventas (columna B) que corresponden a la "Zona Norte" (columna A):</p>
+                               <pre class="mt-2 text-sm">=SUMAR.SI(A2:A100; "Zona Norte"; B2:B100)</pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">CONTAR.SI.CONJUNTO y SUMAR.SI.CONJUNTO</h3>
+                            <p class="text-base mt-2">Son las versiones avanzadas que te permiten evaluar <strong>múltiples criterios</strong> a la vez.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo con SUMAR.SI.CONJUNTO</h4>
+                               <p class="text-base mt-2">Para sumar las ventas (columna C) de la "Zona Norte" (columna A) que además sean del producto "Teclados" (columna B):</p>
+                               <pre class="mt-2 text-sm">=SUMAR.SI.CONJUNTO(C2:C100; A2:A100; "Zona Norte"; B2:B100; "Teclados")</pre>
+                            </div>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">SI.ERROR</h3>
+                            <p class="text-base mt-2">Esta función es increíblemente útil para "atrapar" errores. Si una fórmula produce un error (como #N/A o #¡DIV/0!), puedes mostrar un mensaje personalizado en su lugar.</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Si una división en A1/B1 puede dar error porque B1 es 0, puedes usar:</p>
+                               <pre class="mt-2 text-sm">=SI.ERROR(A1/B1; "Dato no válido")</pre>
+                               <p class="mt-1 text-base">En lugar de un error, la celda mostrará "Dato no válido".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funciones de Texto -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">3. Funciones de Texto</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Estas funciones son esenciales para manipular y limpiar texto, como unir nombres, cambiar a mayúsculas o extraer partes de un texto.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">CONCATENAR y el operador &</h3>
+                            <p class="text-base mt-2">Unen dos o más cadenas de texto en una sola. El operador ampersand (&) es una forma más moderna y simple de hacerlo.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Si en A2 tienes "Juan" y en B2 "Pérez", para unirlos:</p>
+                               <pre class="mt-2 text-sm">=A2 & " " & B2   ' Resultado: "Juan Pérez"</pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">IZQUIERDA, DERECHA y EXTRAE</h3>
+                            <p class="text-base mt-2">Permiten extraer un número específico de caracteres del principio, del final o de cualquier parte de una cadena de texto.</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Si en A1 está el texto "AR-PROD-001":</p>
+                               <pre class="mt-2 text-sm">=IZQUIERDA(A1; 2)  ' Resultado: "AR"
+=DERECHA(A1; 3)    ' Resultado: "001"
+=EXTRAE(A1; 4; 4)    ' Resultado: "PROD"</pre>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">LARGO y ENCONTRAR</h3>
+                            <p class="text-base mt-2"><strong>LARGO</strong> devuelve el número de caracteres de un texto. <strong>ENCONTRAR</strong> devuelve la posición inicial de un texto dentro de otro. Son muy útiles cuando se combinan con EXTRAE.</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo combinado</h4>
+                               <p class="text-base mt-2">Para extraer el nombre de un email como "juan.perez@correo.com" que está en A1:</p>
+                               <pre class="mt-2 text-sm">=IZQUIERDA(A1; ENCONTRAR("@"; A1) - 1)</pre>
+                               <p class="mt-1 text-base">El resultado sería "juan.perez".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=FJHX2JEv8xU" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Funciones de Texto en Excel" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Funciones de Fecha y Hora -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">4. Funciones de Fecha y Hora</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Excel maneja las fechas y horas como números, lo que permite realizar cálculos con ellas. Estas funciones te ayudan a trabajar con fechas de forma dinámica.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">HOY y AHORA</h3>
+                            <p class="text-base mt-2"><strong>HOY()</strong> devuelve la fecha actual. <strong>AHORA()</strong> devuelve la fecha y la hora actuales. No necesitan argumentos.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">DIA, MES y AÑO</h3>
+                            <p class="text-base mt-2">Extraen el número del día, mes o año de una fecha dada.</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Si en A1 tienes la fecha "15/08/2025":</p>
+                               <pre class="mt-2 text-sm">=DIA(A1)   ' Resultado: 15
+=MES(A1)   ' Resultado: 8
+=AÑO(A1)   ' Resultado: 2025</pre>
+                            </div>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">SIFECHA</h3>
+                            <p class="text-base mt-2">Calcula la diferencia entre dos fechas en años ("Y"), meses ("M") o días ("D").</p>
+                             <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Si en A1 tienes una fecha de nacimiento y en B1 la fecha actual, para calcular la edad en años:</p>
+                               <pre class="mt-2 text-sm">=SIFECHA(A1; B1; "Y")</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Funciones de Búsqueda -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">5. Funciones de Búsqueda y Referencia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aunque BUSCARV es muy popular, Excel tiene funciones más modernas y potentes como BUSCARX, o la combinación de INDICE y COINCIDIR, que ofrecen mayor flexibilidad.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">BUSCARX (versiones modernas de Excel)</h3>
+                            <p class="text-base mt-2">Es el sucesor de BUSCARV. Es más flexible porque puede buscar en cualquier columna y devolver un valor de cualquier otra columna (sin importar el orden), y maneja los errores de forma nativa.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo</h4>
+                               <p class="text-base mt-2">Buscar el sueldo (columna C) de un empleado por su ID (columna A). El ID a buscar está en la celda E2.</p>
+                               <pre class="mt-2 text-sm">=BUSCARX(E2; A2:A100; C2:C100; "No encontrado")</pre>
+                               <p class="mt-1 text-base">Busca el ID, en el rango de IDs, y devuelve el valor del rango de sueldos. Si no lo encuentra, dice "No encontrado".</p>
+                           </div>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">INDICE y COINCIDIR</h3>
+                            <p class="text-base mt-2">Esta es una combinación de dos funciones que juntas son extremadamente potentes. <strong>COINCIDIR</strong> encuentra la posición (el número de fila) de un valor en una columna. <strong>INDICE</strong> devuelve el valor de una celda en una posición específica.</p>
+                            <div class="example-box">
+                               <h4 class="font-semibold text-lg text-sky-800">Ejemplo Combinado</h4>
+                               <p class="text-base mt-2">Mismo caso anterior: buscar sueldo (columna C) por ID (columna A).</p>
+                               <pre class="mt-2 text-sm">=INDICE(C2:C100; COINCIDIR(E2; A2:A100; 0))</pre>
+                               <p class="mt-1 text-base"><strong>Paso 1:</strong> `COINCIDIR` busca el ID de E2 en la lista de IDs y devuelve su número de fila (ej. 5).<br><strong>Paso 2:</strong> `INDICE` toma ese número (5) y devuelve el valor que está en la 5ª posición del rango de sueldos.</p>
+                           </div>
+                         </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k_pL9yL-c9A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "BUSCARX vs. INDICE y COINCIDIR" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-green-700 text-white hover:bg-green-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1_0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

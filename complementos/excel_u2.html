@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel U2: Gráficos y Formato Condicional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #166534; /* green-800 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #15803d; /* green-700 */
+        }
+        h4 {
+            color: #16a34a; /* green-600 */
+        }
+        .info-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-green-800">Unidad 2: Gráficos y Formato Condicional</h1>
+            <p class="text-lg text-gray-600">Microsoft Excel</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Gráficos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">1. Gráficos: Visualizando tus Datos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un gráfico es una representación visual de tus datos. Permite identificar tendencias, patrones y comparaciones de una manera mucho más rápida y efectiva que simplemente mirando una tabla de números. Excel ofrece una amplia variedad de tipos de gráficos para adaptarse a diferentes necesidades de análisis.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Gráficos Más Comunes</h3>
+                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 text-base">
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Gráfico de Columnas/Barras</h4>
+                                <p>Ideal para comparar valores entre diferentes categorías. Es uno de los más utilizados y fáciles de interpretar.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Gráfico de Líneas</h4>
+                                <p>Perfecto para mostrar tendencias y cambios en los datos a lo largo del tiempo (ej. ventas mensuales, temperatura diaria).</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg text-green-800">Gráfico Circular (o de Torta)</h4>
+                                <p>Se utiliza para mostrar la proporción de cada categoría con respecto a un total (100%).</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">¿Cómo Crear un Gráfico?</h3>
+                        <img src="https://placehold.co/1200x400/E0F2FE/0891B2?text=Pasos+para+crear+un+gráfico+en+Excel" alt="Crear un gráfico" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Selecciona los Datos:</strong> Haz clic y arrastra para seleccionar el rango de celdas que quieres graficar, incluyendo los encabezados de fila y columna.</li>
+                                <li><strong>Ve a la Pestaña "Insertar":</strong> En la cinta de opciones, haz clic en "Insertar".</li>
+                                <li><strong>Elige un Tipo de Gráfico:</strong> En el grupo "Gráficos", haz clic en el tipo de gráfico que deseas (ej. Columnas, Líneas). Excel te mostrará una vista previa.</li>
+                                <li><strong>Personaliza tu Gráfico:</strong> Una vez creado el gráfico, aparecerán nuevas pestañas ("Diseño de Gráfico" y "Formato") que te permitirán cambiar colores, agregar títulos, etiquetas de datos y mucho más.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k_pL9yL-c9A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo crear gráficos en Excel" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Formato Condicional -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">2. Formato Condicional: Haz que tus Datos Hablen</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>formato condicional</strong> es una herramienta que aplica automáticamente un formato específico (como un color de fondo, un color de fuente o un ícono) a las celdas que cumplen con una determinada condición o regla. Es extremadamente útil para resaltar visualmente datos importantes, valores atípicos o tendencias sin tener que buscarlos manualmente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Reglas de Formato Condicional Más Usadas</h3>
+                        <img src="https://placehold.co/1200x400/F0F9FF/0EA5E9?text=Ejemplos+de+Formato+Condicional" alt="Formato Condicional" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-green-800 mb-2">Resaltar Reglas de Celdas</h4>
+                                <p class="text-base">Permite resaltar celdas que son mayores que, menores que, iguales a un valor específico, o que contienen un texto determinado. Muy útil para encontrar rápidamente datos clave.</p>
+                                <p class="text-sm mt-2"><strong>Ejemplo:</strong> Resaltar en rojo todas las notas de exámenes inferiores a 4.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-green-800 mb-2">Barras de Datos</h4>
+                                <p class="text-base">Añade una barra de color dentro de cada celda, cuya longitud representa el valor de la celda en comparación con las demás. Es una forma rápida de crear un "gráfico" dentro de tu tabla.</p>
+                                <p class="text-sm mt-2"><strong>Ejemplo:</strong> Visualizar las ventas de cada vendedor con barras de datos para ver rápidamente quién vendió más.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">¿Cómo Aplicar Formato Condicional?</h3>
+                        <div class="example-box">
+                           <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Selecciona los Datos:</strong> Haz clic y arrastra para seleccionar el rango de celdas al que quieres aplicar el formato.</li>
+                                <li><strong>Ve a la Pestaña "Inicio":</strong> En la cinta de opciones, haz clic en "Inicio".</li>
+                                <li><strong>Haz clic en "Formato Condicional":</strong> Se desplegará un menú con varias opciones.</li>
+                                <li><strong>Elige una Regla:</strong> Selecciona el tipo de regla que quieres aplicar (ej. "Resaltar reglas de celdas" > "Es mayor que...").</li>
+                                <li><strong>Configura la Condición:</strong> En el cuadro de diálogo, especifica la condición (ej. el valor "1000") y elige el formato que deseas aplicar (ej. "Relleno rojo claro con texto rojo oscuro"). Haz clic en Aceptar.</li>
+                           </ol>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=I7tZmW2gI9c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo usar el Formato Condicional" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-green-700 text-white hover:bg-green-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

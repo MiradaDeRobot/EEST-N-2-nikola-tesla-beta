@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint U1: Creación de Presentaciones Efectivas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #c43e1c; /* PowerPoint Orange/Red */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #d85a2a; /* Lighter Orange/Red */
+        }
+        h4 {
+            color: #b34922; /* Darker Orange/Red */
+        }
+        .info-box {
+            background-color: #fff4f0; /* orange-50 */
+            border-left: 4px solid #f97316; /* orange-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-orange-800">Unidad 1: Creación de Presentaciones Efectivas</h1>
+            <p class="text-lg text-gray-600">Microsoft PowerPoint</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción a PowerPoint -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">1. ¿Qué es PowerPoint y para qué sirve?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Microsoft PowerPoint</strong> es el software líder para la creación de presentaciones visuales. Su función principal es ayudarte a comunicar ideas, proyectos o informes de una manera estructurada y atractiva a través de una serie de <strong>diapositivas</strong>. Una buena presentación no solo transmite información, sino que también capta la atención de la audiencia y refuerza tu mensaje.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Interfaz Principal</h3>
+                        <p class="mb-4">La interfaz de PowerPoint está diseñada para ser intuitiva y facilitar el acceso a sus múltiples herramientas.</p>
+                        <img src="https://placehold.co/1200x600/FFF4F0/C43E1C?text=Interfaz+de+PowerPoint" alt="Interfaz de PowerPoint" class="w-full h-auto rounded-lg shadow-md">
+                        <ul class="list-disc list-inside space-y-3 mt-4">
+                            <li><strong>Panel de Diapositivas:</strong> La columna izquierda que muestra miniaturas de todas las diapositivas de tu presentación en orden.</li>
+                            <li><strong>Diapositiva Activa:</strong> El área central grande donde diseñas y editas la diapositiva que tienes seleccionada.</li>
+                            <li><strong>Cinta de Opciones:</strong> Similar a Word y Excel, contiene todas las herramientas organizadas en pestañas (Inicio, Insertar, Diseño, Animaciones, etc.).</li>
+                            <li><strong>Panel de Notas:</strong> Un espacio debajo de la diapositiva activa para escribir notas o un guion para el orador que no serán visibles para la audiencia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Creación y Gestión de Diapositivas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">2. Creación y Gestión de Diapositivas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El corazón de cualquier presentación son sus diapositivas. Aprender a crearlas, organizarlas y aplicarles un diseño coherente es el primer paso para un resultado profesional.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Empezando tu Presentación</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4 items-center">
+                            <div>
+                                <h4 class="text-xl font-semibold text-orange-800 mb-2">Plantillas y Diseños</h4>
+                                <p class="text-base">Puedes empezar con una <strong>presentación en blanco</strong> o elegir una de las muchas <strong>plantillas</strong> de diseño que ofrece PowerPoint. Las plantillas ya incluyen una combinación de colores, fuentes y diseños de diapositiva que garantizan un aspecto profesional y coherente.</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/500x300/F0FDF4/15803D?text=Galería+de+Plantillas" alt="Plantillas de PowerPoint" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Trabajando con Diapositivas</h3>
+                        <div class="info-box">
+                             <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>Nueva Diapositiva:</strong> En la pestaña "Inicio", el botón "Nueva diapositiva" te permite agregar una diapositiva. Al hacer clic en la flecha inferior, puedes elegir un <strong>diseño</strong> específico.</li>
+                                <li><strong>Diseño (Layout):</strong> Cada diapositiva tiene un diseño que define la disposición de sus elementos (ej. "Diapositiva de título", "Título y objetos", "En blanco"). Puedes cambiar el diseño de una diapositiva en cualquier momento.</li>
+                                <li><strong>Organizar Diapositivas:</strong> En el panel izquierdo, puedes arrastrar las miniaturas para reordenar tus diapositivas fácilmente.</li>
+                                <li><strong>Vista Clasificador de Diapositivas:</strong> En la barra inferior, esta vista te muestra todas tus diapositivas en una cuadrícula, ideal para tener una visión general y reorganizar una presentación larga.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Contenido -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-orange-700">3. Añadir y Formatear Contenido Esencial</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que tienes la estructura de tus diapositivas, el siguiente paso es añadir el contenido. Los elementos más básicos son el texto y las imágenes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Trabajar con Texto e Imágenes</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div>
+                                <h4 class="text-xl font-semibold text-orange-800 mb-2">Cuadros de Texto</h4>
+                                <p class="text-base">El texto en PowerPoint se introduce dentro de "cuadros de texto". Los diseños de diapositiva ya vienen con marcadores de posición para títulos y contenido. Puedes formatear el texto (fuente, tamaño, color, listas) usando las herramientas de la pestaña "Inicio", que son muy similares a las de Microsoft Word.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-orange-800 mb-2">Insertar Imágenes</h4>
+                                <p class="text-base">Desde la pestaña "Insertar", puedes añadir imágenes desde tu computadora o en línea. Al igual que en Word, al seleccionar una imagen aparece la pestaña "Formato de Imagen", que te permite recortarla, aplicarle estilos, bordes y efectos para que se integre mejor en tu diapositiva.</p>
+                            </div>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg text-green-800">Consejo Clave: "Menos es Más"</h4>
+                            <p class="text-base mt-2">Evita sobrecargar tus diapositivas con demasiado texto. La diapositiva debe ser un apoyo visual para tu discurso, no un guion completo. Utiliza frases cortas, viñetas e imágenes potentes para transmitir tus ideas de forma clara y directa.</p>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F0h_h_vT84s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tutorial de PowerPoint para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-orange-600 text-white hover:bg-orange-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

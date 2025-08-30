@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB U3: Montaje y Soldadura de Componentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #a16207; /* yellow-700 / Copper color */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #854d0e; /* yellow-800 */
+        }
+        h4 {
+            color: #713f12; /* yellow-900 */
+        }
+        .info-box {
+            background-color: #f7fee7; /* lime-50 */
+            border-left: 4px solid #84cc16; /* lime-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-pcb {
+            background-color: #a16207;
+        }
+        .footer-button-pcb:hover {
+            background-color: #854d0e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #713f12;">Unidad 3: Montaje y Soldadura de Componentes</h1>
+            <p class="text-lg text-gray-600">Métodos de Fabricación de PCB</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción al Montaje -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">1. El Arte de la Soldadura en Electrónica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>soldadura blanda (soldering)</strong> es el proceso de unir dos o más piezas metálicas (como la pata de un componente y el pad de cobre de un PCB) mediante un metal de aporte fundido, llamado <strong>estaño</strong>. Una buena soldadura no solo crea una conexión eléctrica fiable y de baja resistencia, sino que también proporciona una unión mecánica robusta.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes THT vs. SMD</h3>
+                        <p class="mb-4 text-base">Antes de soldar, es crucial entender los dos tipos principales de componentes electrónicos según su montaje:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">THT (Through-Hole Technology)</h4>
+                                <img src="https://placehold.co/500x300/F0FDF4/15803D?text=Componentes+THT" alt="Componentes THT" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-base mt-2">Los componentes de "Tecnología de Agujero Pasante" tienen patas (o pines) largos que se insertan a través de los agujeros perforados en el PCB y se sueldan por el lado opuesto. Son ideales para principiantes, prototipos y componentes que requieren una gran robustez mecánica.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">SMD (Surface-Mount Device)</h4>
+                                <img src="https://placehold.co/500x300/FAF9F7/713F12?text=Componentes+SMD" alt="Componentes SMD" class="w-full h-auto rounded-lg shadow-md">
+                                <p class="text-base mt-2">Los "Dispositivos de Montaje Superficial" no tienen patas, sino pequeñas terminaciones metálicas que se sueldan directamente sobre los pads en la misma superficie del PCB. Permiten una mayor densidad de componentes y la automatización del montaje, siendo el estándar en la industria actual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Herramientas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">2. Herramientas Esenciales para la Estación de Soldadura</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Contar con las herramientas adecuadas es fundamental para lograr soldaduras de calidad y trabajar de forma segura y eficiente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">1. Soldador o Cautín</h4>
+                                <p class="text-base mt-1">Es la herramienta principal. Se recomienda uno de tipo "lápiz" con control de temperatura. Una temperatura de 320-360°C es ideal para la mayoría de trabajos con estaño con plomo.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">2. Estaño para Soldar</h4>
+                                <p class="text-base mt-1">El más común es el de aleación 60/40 (60% estaño, 40% plomo) con un núcleo de resina (flux). Diámetros de 0.5mm a 1mm son los más versátiles.</p>
+                            </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">3. Soporte para el Soldador</h4>
+                                <p class="text-base mt-1">Un soporte metálico es crucial para dejar el cautín caliente de forma segura y evitar quemaduras o incendios.</p>
+                            </div>
+                             <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">4. Limpiador de Punta</h4>
+                                <p class="text-base mt-1">Una esponja húmeda (no empapada) o, mejor aún, una viruta de latón ("brass wool") para limpiar el exceso de estaño y óxido de la punta del cautín.</p>
+                            </div>
+                              <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">5. "Tercera Mano"</h4>
+                                <p class="text-base mt-1">Un soporte con pinzas de cocodrilo que sujeta el PCB, dejando tus dos manos libres para manejar el soldador y el estaño.</p>
+                            </div>
+                             <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #4d7c0f;">6. Herramientas de Desoldado</h4>
+                                <p class="text-base mt-1">Para corregir errores. Las más comunes son la <strong>bomba de estaño</strong> (extractor de succión) y la <strong>malla desoldadora</strong> (cinta de cobre que absorbe el estaño).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Proceso de Soldadura THT -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">3. Técnica de Soldadura para Componentes THT</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Soldar componentes THT es una habilidad que se perfecciona con la práctica. La clave está en calentar ambas partes (el pad y la pata del componente) simultáneamente antes de aplicar el estaño.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">El Proceso en 4 Pasos</h3>
+                          <img src="https://placehold.co/1200x400/FAF9F7/713f12?text=Pasos+para+una+soldadura+perfecta" alt="Pasos de soldadura" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="example-box">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Preparación:</strong> Inserta el componente en el PCB. Si es necesario, dobla ligeramente las patas por el otro lado para que no se caiga. Asegúrate de que la punta del soldador esté limpia y estañada (con una fina capa brillante de estaño).</li>
+                                <li><strong>Calentar la Unión:</strong> Toca simultáneamente con la punta del soldador el pad de cobre y la pata del componente. Mantén el contacto durante 1-2 segundos para que ambas partes alcancen la temperatura de fusión del estaño.</li>
+                                <li><strong>Aplicar el Estaño:</strong> Sin retirar el soldador, acerca el hilo de estaño al lado opuesto de la unión (no a la punta del soldador). El estaño debería derretirse instantáneamente y fluir por capilaridad, cubriendo la unión de manera uniforme. Aplica solo la cantidad necesaria.</li>
+                                <li><strong>Retirar y Enfriar:</strong> Primero, retira el hilo de estaño. Inmediatamente después, retira el soldador. Deja que la soldadura se enfríe y solidifique por sí sola durante unos segundos sin mover el componente.</li>
+                            </ol>
+                         </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #4d7c0f;">La Soldadura Perfecta</h4>
+                            <p class="text-base mt-2">Una buena soldadura tiene una forma cónica (como un pequeño volcán), es brillante y cubre completamente el pad sin hacer una "bola" grande. Indica que el estaño ha mojado bien ambas superficies metálicas.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=c_21-4j_ioI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Soldar Componentes Electrónicos" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Sección Errores Comunes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">4. Errores Comunes y Cómo Evitarlos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Identificar una mala soldadura es tan importante como saber hacer una buena. Estos son los errores más frecuentes:</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                             <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">Soldadura Fría</h4>
+                                <p class="text-base mt-1">Ocurre cuando no se calienta lo suficiente la unión. El estaño no fluye bien, resultando en una unión opaca, rugosa y poco fiable. Es la causa más común de fallos en circuitos amateur.</p>
+                             </div>
+                              <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">Exceso de Estaño</h4>
+                                <p class="text-base mt-1">Se forma una gran bola de estaño que puede no estar haciendo buen contacto. Además, aumenta el riesgo de crear puentes con pistas cercanas.</p>
+                             </div>
+                             <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">Puente de Soldadura</h4>
+                                <p class="text-base mt-1">Ocurre cuando el estaño une accidentalmente dos puntos que no deberían estar conectados, como dos patas de un circuito integrado, creando un cortocircuito.</p>
+                             </div>
+                             <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">Pad Levantado</h4>
+                                <p class="text-base mt-1">Aplicar demasiado calor durante demasiado tiempo puede hacer que el adhesivo que pega el pad de cobre a la placa se debilite y el pad se despegue. Hay que ser rápido y preciso.</p>
+                             </div>
+                             <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">Falta de Estaño</h4>
+                                <p class="text-base mt-1">La unión no está completamente cubierta, lo que resulta en una conexión mecánica y eléctrica débil que puede fallar con el tiempo.</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

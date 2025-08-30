@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel U3: Funciones Avanzadas y Tablas Dinámicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #166534; /* green-800 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #15803d; /* green-700 */
+        }
+        h4 {
+            color: #16a34a; /* green-600 */
+        }
+        .info-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-green-800">Unidad 3: Funciones Avanzadas y Tablas Dinámicas</h1>
+            <p class="text-lg text-gray-600">Microsoft Excel</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Funciones Lógicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">1. Funciones Lógicas: Tomando Decisiones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las funciones lógicas permiten que tus hojas de cálculo tomen "decisiones" y realicen una acción u otra dependiendo de si una condición se cumple o no. La función más importante de este grupo es la función <strong>SI</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Función SI</h3>
+                        <p class="text-base mt-2">Evalúa una condición. Si la condición es VERDADERA, devuelve un valor; si es FALSA, devuelve otro.</p>
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg text-sky-800">Sintaxis</h4>
+                           <pre class="mt-2 text-sm">=SI(prueba_lógica; valor_si_verdadero; valor_si_falso)</pre>
+                           <h4 class="font-semibold text-lg text-sky-800 mt-4">Ejemplo Práctico: Estado de Alumnos</h4>
+                           <p class="text-base mt-2">Imagina una lista de alumnos con sus notas en la columna B. Queremos que en la columna C aparezca "Aprobado" si la nota es 6 o más, y "Desaprobado" si es menor. En la celda C2 escribiríamos:</p>
+                           <pre class="mt-2">=SI(B2>=6; "Aprobado"; "Desaprobado")</pre>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Combinando Condiciones con Y / O</h3>
+                        <p class="text-base mt-2">A menudo, necesitamos evaluar más de una condición a la vez. Para esto, usamos las funciones <strong>Y</strong> y <strong>O</strong> dentro de la prueba lógica de la función SI.</p>
+                         <ul class="list-disc list-inside space-y-4 mt-4 text-base">
+                            <li><strong>Función Y:</strong> Devuelve VERDADERO solo si <strong>TODAS</strong> las condiciones se cumplen.</li>
+                            <li><strong>Función O:</strong> Devuelve VERDADERO si <strong>al menos UNA</strong> de las condiciones se cumple.</li>
+                        </ul>
+                         <div class="example-box">
+                           <h4 class="font-semibold text-lg text-sky-800 mt-4">Ejemplo con "Y"</h4>
+                           <p class="text-base mt-2">Para dar un bonus, un empleado debe vender más de $5000 (celda B2) y tener menos de 2 ausencias (celda C2).</p>
+                           <pre class="mt-2">=SI(Y(B2>5000; C2<2); "Recibe Bonus"; "No recibe Bonus")</pre>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k1_iY_i2-4U" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "La Función SI, Y, O en Excel" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección BUSCARV -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">2. BUSCARV: Encontrando Datos en Tablas Grandes</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La función <strong>BUSCARV</strong> (búsqueda vertical) es una de las más útiles y potentes de Excel. Te permite buscar un valor en la primera columna de una tabla y devolver un valor correspondiente de cualquier otra columna en la misma fila.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Entendiendo la Sintaxis de BUSCARV</h3>
+                         <img src="https://placehold.co/1200x400/F0F9FF/0EA5E9?text=Ejemplo+de+funcionamiento+de+BUSCARV" alt="BUSCARV" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <div class="example-box">
+                            <h4 class="font-semibold text-lg text-sky-800">Sintaxis</h4>
+                            <pre class="text-sm mt-2">=BUSCARV(valor_buscado; matriz_tabla; indicador_columnas; [rango])</pre>
+                             <ol class="list-decimal list-inside space-y-3 text-base mt-4">
+                                <li><strong>valor_buscado:</strong> El dato que quieres encontrar (ej. un código de producto).</li>
+                                <li><strong>matriz_tabla:</strong> El rango de celdas que contiene toda la tabla de datos. La búsqueda siempre se hará en la primera columna de este rango.</li>
+                                <li><strong>indicador_columnas:</strong> El número de la columna de la tabla de la cual quieres obtener el resultado (ej. 2 para la segunda columna).</li>
+                                <li><strong>[rango]:</strong> Se usa <strong>FALSO</strong> para una coincidencia exacta (lo más común) o <strong>VERDADERO</strong> para una coincidencia aproximada.</li>
+                           </ol>
+                        </div>
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg text-green-800">¡Importante!</h4>
+                           <p class="text-base mt-2">Para que BUSCARV funcione correctamente, el valor que buscas debe estar siempre en la <strong>primera columna</strong> del rango que seleccionas en `matriz_tabla`.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=I7tZmW2gI9c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo usar la función BUSCARV" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tablas Dinámicas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-green-700">3. Tablas Dinámicas: Resumiendo Datos al Instante</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>Tabla Dinámica</strong> es una herramienta interactiva que te permite resumir, analizar y explorar grandes cantidades de datos con solo arrastrar y soltar campos. Es ideal para convertir una lista interminable de registros en un informe claro y conciso.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cómo Crear una Tabla Dinámica?</h3>
+                        <img src="https://placehold.co/1200x500/E0F2FE/0891B2?text=Panel+de+Campos+de+Tabla+Dinámica" alt="Tabla Dinámica" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Selecciona tus Datos:</strong> Asegúrate de que tus datos estén en un formato de tabla, con encabezados claros y sin filas o columnas en blanco. Selecciona cualquier celda dentro de tu tabla.</li>
+                                <li><strong>Ve a la Pestaña "Insertar":</strong> En la cinta de opciones, haz clic en "Insertar" y luego en "Tabla Dinámica".</li>
+                                <li><strong>Confirma el Rango:</strong> Excel seleccionará automáticamente tu tabla. Simplemente haz clic en Aceptar. Se creará una nueva hoja con el esqueleto de la tabla dinámica.</li>
+                                <li><strong>Arrastra los Campos:</strong> A la derecha aparecerá el panel "Campos de Tabla Dinámica". Arrastra los campos que quieras analizar a las cuatro áreas:
+                                    <ul class="list-disc list-inside ml-6 mt-2">
+                                        <li><strong>FILAS:</strong> Agrupa los datos en filas (ej. Vendedores, Productos).</li>
+                                        <li><strong>COLUMNAS:</strong> Agrupa los datos en columnas (ej. Meses, Regiones).</li>
+                                        <li><strong>VALORES:</strong> El campo que quieres calcular (ej. Suma de Ventas, Promedio de Notas).</li>
+                                        <li><strong>FILTROS:</strong> Para filtrar el informe completo por un campo (ej. Año).</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k_pL9yL-c9A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tablas Dinámicas para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-green-700 text-white hover:bg-green-800 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

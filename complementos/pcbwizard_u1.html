@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Wizard U1: Del Esquemático al Ruteado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-pcb {
+            background-color: #047857;
+        }
+        .footer-button-pcb:hover {
+            background-color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 1: Del Esquemático al Ruteado</h1>
+            <p class="text-lg text-gray-600">Diseño de PCB con PCB Wizard / Livewire</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. ¿Qué son Livewire y PCB Wizard?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Livewire</strong> y <strong>PCB Wizard</strong> son dos programas de software que trabajan juntos y están diseñados específicamente para ser una puerta de entrada al mundo del diseño electrónico. Son conocidos por su simplicidad, su interfaz visual amigable y su curva de aprendizaje suave, lo que los hace ideales para estudiantes y aficionados.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Livewire: El Laboratorio Virtual</h3>
+                            <p class="text-base">Livewire es un simulador de circuitos. Aquí es donde dibujas el <strong>diagrama esquemático</strong> de tu circuito, conectando componentes virtuales como resistencias, LEDs, transistores, etc. Su gran ventaja es que puedes "encender" el circuito y simular su comportamiento en tiempo real para verificar que funciona como esperas antes de fabricarlo.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">PCB Wizard: El Taller de Diseño</h3>
+                            <p class="text-base">Una vez que tu circuito funciona en Livewire, PCB Wizard toma ese diseño y lo convierte en un diseño de placa de circuito impreso (PCB). Aquí es donde organizas los componentes físicamente y dibujas las <strong>pistas de cobre</strong> que los conectarán.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Creación del Esquemático -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. Creación y Simulación del Esquemático en Livewire</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El primer paso es siempre construir y verificar el circuito en el entorno de simulación de Livewire. Esto nos ahorra tiempo y recursos al detectar errores lógicos antes de pasar al hardware.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Interfaz y Flujo de Trabajo</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Interfaz+de+Livewire" alt="Interfaz de Livewire" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos para Crear un Esquemático:</h4>
+                           <ol class="list-decimal list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Abrir la Galería de Componentes:</strong> En el lado derecho, encontrarás la galería (Gallery) con todos los componentes, organizados por categorías (Power Supplies, Connectors, Logic Gates, etc.).</li>
+                               <li><strong>Arrastrar y Soltar:</strong> Haz clic en un componente y arrástralo al área de trabajo principal.</li>
+                               <li><strong>Realizar Conexiones (Cableado):</strong> Para conectar dos componentes, haz clic en el terminal de uno y arrastra el cursor hasta el terminal del otro. Livewire dibujará el cable automáticamente.</li>
+                               <li><strong>Editar Propiedades:</strong> Haciendo doble clic en un componente (como una resistencia), puedes cambiar sus valores (ej. de 1kΩ a 220Ω).</li>
+                               <li><strong>Simular el Circuito:</strong> Una vez que todo está conectado, haz clic en el botón "Run" (el triángulo de Play) en la barra de herramientas superior para iniciar la simulación. Podrás ver cómo fluye la corriente, el estado de los LEDs, etc.</li>
+                           </ol>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=D-s3q4c3-2A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Simulación de un Circuito Básico en Livewire" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Diseño del PCB -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Conversión y Ruteado en PCB Wizard</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Con el esquemático verificado, el siguiente paso es transferir el diseño a PCB Wizard para crear la placa física. Este proceso implica organizar los componentes y "rutear" (dibujar) las pistas de cobre.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Del Mundo Lógico al Mundo Físico</h3>
+                         <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #047857;">El Proceso de Conversión:</h4>
+                           <ol class="list-decimal list-inside space-y-3 mt-2 text-base">
+                               <li>En Livewire, ve al menú <strong>Tools > Convert to PCB Layout</strong>.</li>
+                               <li>Esto abrirá automáticamente PCB Wizard con dos elementos: un recuadro que representa el borde de tu placa y todos tus componentes con sus "huellas" (footprints) físicas, conectados por unas líneas finas llamadas "ratsnest". Estas líneas te indican qué pines deben conectarse entre sí.</li>
+                           </ol>
+                         </div>
+                         
+                         <h3 class="text-2xl font-semibold mb-3 mt-8">El Arte de Rutear</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Interfaz+de+PCB+Wizard+con+componentes+y+ratsnest" alt="Interfaz de PCB Wizard" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="example-box">
+                            <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos para el Ruteado:</h4>
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Colocar Componentes:</strong> Arrastra y rota los componentes dentro del borde de la placa. Una buena colocación es clave: intenta que las líneas del "ratsnest" se crucen lo menos posible.</li>
+                                <li><strong>Ruteado Manual:</strong> Selecciona la herramienta de "Track" (pista). Haz clic en un pad y luego en el pad al que debe conectarse, siguiendo la guía del ratsnest. PCB Wizard dibujará la pista de cobre. Puedes hacer clic en puntos intermedios para crear ángulos.</li>
+                                <li><strong>Ruteado Automático:</strong> PCB Wizard tiene una herramienta de "Autoroute" que intentará dibujar todas las pistas por ti. Es muy útil para aprender, pero para diseños complejos, el ruteado manual suele dar mejores resultados.</li>
+                                <li><strong>Ajustar Grosor de Pistas:</strong> Puedes cambiar el grosor de las pistas. Las pistas que llevan más corriente (como las de alimentación) deben ser más gruesas que las que llevan señales de datos.</li>
+                            </ol>
+                         </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=Fj2F2n_qPkk" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Diseño de PCB en PCB Wizard" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

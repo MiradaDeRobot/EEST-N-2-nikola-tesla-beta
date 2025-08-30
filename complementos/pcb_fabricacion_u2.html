@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB U2: Ataque Químico y Perforado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #a16207; /* yellow-700 / Copper color */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #854d0e; /* yellow-800 */
+        }
+        h4 {
+            color: #713f12; /* yellow-900 */
+        }
+        .info-box {
+            background-color: #f7fee7; /* lime-50 */
+            border-left: 4px solid #84cc16; /* lime-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        /* --- CORRECCIÓN AÑADIDA AQUÍ --- */
+        .footer-button-pcb {
+            background-color: #a16207;
+        }
+        .footer-button-pcb:hover {
+            background-color: #854d0e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #713f12;">Unidad 2: Ataque Químico y Perforado</h1>
+            <p class="text-lg text-gray-600">Métodos de Fabricación de PCB</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Atacado Químico -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">1. El Proceso de Atacado Químico (Etching)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que hemos transferido el diseño a la placa de cobre, el siguiente paso es el <strong>atacado químico</strong>. Este proceso consiste en sumergir la placa en una solución ácida que disuelve el cobre no deseado, es decir, todo el cobre que no está protegido por la máscara de tóner o tinta que aplicamos en la unidad anterior.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cómo Funciona el Atacado?</h3>
+                        <p class="mb-4 text-base">La máscara (el tóner o la tinta indeleble) es resistente al ácido. Cuando la placa se sumerge, el ácido comienza a reaccionar y a disolver todo el cobre expuesto. Las áreas cubiertas por la máscara permanecen intactas, formando las pistas y pads del circuito final.</p>
+                        <img src="https://placehold.co/1200x400/FAF9F7/713F12?text=Proceso+de+Atacado+Químico" alt="Proceso de Atacado Químico" class="w-full h-auto rounded-lg shadow-md">
+                        <div class="warning-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡LA SEGURIDAD ES PRIMORDIAL!</h4>
+                           <p class="text-base mt-2">Trabajar con ácidos es peligroso. Es absolutamente obligatorio seguir las siguientes normas de seguridad:</p>
+                           <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                               <li>Trabaja siempre en un <strong>área bien ventilada</strong> o al aire libre para evitar inhalar los vapores.</li>
+                               <li>Usa <strong>guantes de látex o nitrilo</strong> para proteger tus manos.</li>
+                               <li>Usa <strong>gafas de seguridad</strong> para proteger tus ojos de salpicaduras.</li>
+                               <li>Usa <strong>pinzas de plástico</strong> para manipular la placa dentro del ácido. Nunca uses pinzas metálicas.</li>
+                               <li>Ten agua cerca para enjuagar cualquier salpicadura en la piel inmediatamente.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de Ácidos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">2. Químicos Comunes para el Atacado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Existen varios productos químicos para realizar el atacado. Los dos más comunes y accesibles para uso en talleres son el Cloruro Férrico y el Persulfato de Amonio.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Cloruro Férrico (FeCl₃)</h3>
+                            <p class="text-base">Es el más tradicional y fácil de conseguir. Viene en forma de sales o líquido ya preparado.</p>
+                             <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                                <li><strong>Pros:</strong> Es barato, reutilizable varias veces y relativamente rápido.</li>
+                                <li><strong>Contras:</strong> Es de un color marrón opaco, lo que impide ver el progreso del atacado. Mancha permanentemente la ropa, la piel y casi cualquier superficie que toca.</li>
+                                <li><strong>Preparación:</strong> Se disuelve en agua caliente (no hirviendo) hasta obtener una solución saturada. La proporción suele ser de 250g de sal por cada litro de agua.</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold mb-3">Persulfato de Amonio o Sodio</h3>
+                            <p class="text-base">Es una alternativa más moderna y limpia. Se vende como un polvo blanco cristalino.</p>
+                             <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                                <li><strong>Pros:</strong> La solución es transparente, lo que te permite ver perfectamente cómo el cobre se va disolviendo. No mancha.</li>
+                                <li><strong>Contras:</strong> Es un poco más caro y no es reutilizable (es de un solo uso). Requiere trabajar con agua a una temperatura controlada (entre 40-50°C) para ser efectivo.</li>
+                                <li><strong>Preparación:</strong> Se disuelve en agua caliente (40-50°C). La proporción es de aproximadamente 200-250g por litro de agua.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=Jv72n_w_a4s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo atacar una PCB con Cloruro Férrico" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Perforado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">3. El Proceso de Perforado</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que el cobre sobrante ha sido eliminado y la placa ha sido enjuagada y secada, el siguiente paso es perforar los agujeros (o "pads") donde se insertarán las patas de los componentes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Herramientas y Técnica</h3>
+                          <img src="https://placehold.co/1200x400/FAF9F7/713f12?text=Perforado+de+PCB+con+minitorno" alt="Perforado de PCB" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box">
+                            <h4 class="font-semibold text-lg" style="color: #4d7c0f;">Herramientas Necesarias:</h4>
+                             <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                <li><strong>Minitorno (tipo Dremel) o Taladro de Banco:</strong> Es la herramienta ideal por su alta velocidad y precisión.</li>
+                                <li><strong>Juego de brocas (mechas) de carburo de tungsteno:</strong> Son específicas para PCB, muy duras pero frágiles. Los tamaños más comunes son:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-1">
+                                        <li><strong>0.8 mm:</strong> Para pines de circuitos integrados (ICs), resistencias, capacitores pequeños.</li>
+                                        <li><strong>1.0 mm:</strong> Para diodos, transistores, bornes de conexión.</li>
+                                        <li><strong>1.2 mm o más:</strong> Para componentes de potencia o terminales gruesos.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                         </div>
+                         <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #44403c;">Técnica de Perforado:</h4>
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Sujeción Firme:</strong> Sujeta la placa firmemente sobre una base de madera o un material de descarte para no dañar tu mesa de trabajo.</li>
+                                <li><strong>Perpendicularidad:</strong> Es crucial que la broca entre en la placa de forma perfectamente perpendicular (a 90°). Si perforas en ángulo, puedes levantar el pad de cobre.</li>
+                                <li><strong>Velocidad Alta, Avance Lento:</strong> Usa una velocidad alta en el minitorno y baja la broca suavemente. No hagas fuerza; deja que la broca haga el trabajo.</li>
+                                <li><strong>Empieza por los agujeros más pequeños:</strong> Si tienes que cambiar de broca, haz primero todos los agujeros de un mismo tamaño para optimizar el tiempo.</li>
+                            </ol>
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Limpieza Final -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">4. Limpieza y Acabado Final</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Después de perforar, solo quedan unos pocos pasos para tener la placa lista para el montaje de componentes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Pasos Finales</h3>
+                         <ol class="list-decimal list-inside space-y-4 text-base">
+                             <li><strong>Remover la Máscara:</strong> Usa un paño con un solvente como <strong>acetona</strong> o <strong>alcohol isopropílico</strong> para frotar la placa y disolver el tóner o la tinta del marcador. Las pistas de cobre brillante quedarán al descubierto.</li>
+                             <li><strong>Lijado Suave (Opcional):</strong> Puedes pasarle de nuevo y muy suavemente una lana de acero fina para eliminar cualquier pequeña rebaba que haya quedado del perforado.</li>
+                             <li><strong>Aplicar Capa Protectora (Recomendado):</strong> El cobre se oxida rápidamente al contacto con el aire y la humedad. Para evitar esto y facilitar la soldadura, es muy recomendable aplicar una capa protectora. Las opciones más comunes son:
+                                <ul class="list-disc list-inside ml-6 mt-2">
+                                    <li><strong>Flux:</strong> Una resina (como la "pez rubia" diluida en alcohol) que protege el cobre y ayuda a que el estaño fluya mejor al soldar.</li>
+                                    <li><strong>Barniz para PCB:</strong> Un barniz específico que crea una capa protectora duradera.</li>
+                                </ul>
+                            </li>
+                         </ol>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <!-- --- CÓDIGO CORREGIDO AQUÍ --- -->
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

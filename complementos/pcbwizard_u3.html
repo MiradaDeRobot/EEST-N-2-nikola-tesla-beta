@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Wizard U3: Generación de Archivos para Fabricación Manual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-pcb {
+            background-color: #047857;
+        }
+        .footer-button-pcb:hover {
+            background-color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 3: Generación de Archivos para Fabricación Manual</h1>
+            <p class="text-lg text-gray-600">Diseño de PCB con PCB Wizard / Livewire</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. Del Diseño Digital a la Realidad Física</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Hemos diseñado y ruteado nuestro circuito, pero ahora enfrentamos el paso más crítico: <strong>traducir el diseño digital a un formato físico</strong> que podamos usar para fabricar la placa. Una exportación incorrecta puede arruinar todo el trabajo previo, resultando en una placa con pistas cortadas, componentes que no encajan o un diseño inutilizable.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Importancia de la Precisión</h3>
+                         <p class="text-base">El objetivo es generar una impresión en papel que sea una representación <strong>exacta y a escala 1:1</strong> de las pistas de cobre. Esta impresión será la plantilla que transferiremos a la placa de cobre virgen. Cualquier error en la escala, la orientación o las capas seleccionadas se traducirá en un error físico en la placa final.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Preparación del Diseño -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. Preparación del Diseño y Verificaciones Finales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Antes de exportar, es fundamental realizar una serie de verificaciones para asegurarse de que el diseño es robusto y fabricable.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Checklist Pre-Exportación</h3>
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Grosor de las Pistas:</strong> Revisa que las pistas tengan un grosor adecuado. Las pistas de alimentación (VCC y GND) deben ser más gruesas que las pistas de señal. Un buen punto de partida es 0.5mm para señales y 1.0mm o más para alimentación.</li>
+                               <li><strong>Distancia entre Pistas:</strong> Asegúrate de que haya suficiente espacio entre pistas y entre pistas y pads para evitar cortocircuitos durante el atacado químico.</li>
+                               <li><strong>Verificación de Conexiones:</strong> Repasa visualmente el "ratsnest" (si aún es visible) o las conexiones del esquemático para confirmar que todas las pistas necesarias han sido ruteadas.</li>
+                               <li><strong>Orientación de Componentes:</strong> Confirma que los componentes polarizados (diodos, capacitores electrolíticos, circuitos integrados) estén orientados correctamente en la serigrafía.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Exportación para Planchado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Exportación para el Método de Transferencia Térmica</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para el método de planchado, necesitamos una impresión de alta calidad de las pistas de cobre. Esta impresión debe estar en <strong>modo espejo</strong>, ya que al plancharla sobre el cobre, la imagen se invertirá, quedando en la orientación correcta.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Configurando la Impresión en PCB Wizard</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Ventana+de+Impresión+de+PCB+Wizard" alt="Ventana de Impresión" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="example-box">
+                            <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos para la Exportación Correcta:</h4>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li>Ve al menú <strong>File > Print</strong>.</li>
+                                <li>En la ventana de impresión, configura las siguientes opciones:
+                                    <ul class="list-disc list-inside ml-6 mt-2">
+                                        <li><strong>Artwork:</strong> Esta es la opción para imprimir las capas de cobre.</li>
+                                        <li><strong>Scale:</strong> Asegúrate de que esté configurado en <strong>100%</strong>. ¡Esto es crucial para que los componentes encajen!</li>
+                                        <li><strong>Layers (Capas):</strong> Desmarca todas las casillas excepto <strong>"Bottom Copper"</strong> (cobre inferior). También puedes dejar "Pads" para que los agujeros se impriman.</li>
+                                        <li><strong>Mirror (Espejo):</strong> Marca la casilla <strong>"Mirror"</strong>. Este es el paso clave para la transferencia térmica.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Imprimir a PDF (Recomendado):</strong> En lugar de imprimir directamente en papel, es una buena práctica "imprimir" a un archivo PDF. Esto te permite guardar el diseño, verificarlo en pantalla y llevarlo a imprimir a cualquier lugar con una impresora láser.</li>
+                            </ol>
+                         </div>
+                         <div class="warning-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡No olvides el Modo Espejo!</h4>
+                            <p class="text-base mt-2">Si olvidas marcar la opción "Mirror", tu circuito quedará invertido en la placa. Los circuitos integrados y otros componentes con pines específicos no se podrán soldar correctamente.</p>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Documentación Adicional -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">4. Generación de Documentación de Ensamblaje</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Además de las pistas de cobre, es muy útil imprimir una guía de ensamblaje. Esta es una impresión de la capa de componentes (serigrafía o "silkscreen") que muestra el contorno y el nombre de cada componente, facilitando enormemente el proceso de soldadura.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Imprimiendo la Guía de Componentes</h3>
+                          <div class="info-box">
+                             <h4 class="font-semibold text-lg" style="color: #047857;">Pasos:</h4>
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                 <li>Vuelve al menú <strong>File > Print</strong>.</li>
+                                 <li>En la sección de capas (Layers), desmarca "Bottom Copper" y marca <strong>"Top Silkscreen"</strong>.</li>
+                                 <li><strong>Importante:</strong> Para esta impresión, asegúrate de que la casilla <strong>"Mirror" esté desmarcada</strong>. Queremos ver la guía tal como se verá desde arriba.</li>
+                                 <li>Imprime esta hoja en papel normal. Te servirá como un mapa para saber dónde va cada componente.</li>
+                             </ol>
+                          </div>
+                     </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=kR22A1G7__I" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Imprimir correctamente desde PCB Wizard" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

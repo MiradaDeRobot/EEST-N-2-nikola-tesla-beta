@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB U1: Método Manual y Serigráfico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #a16207; /* yellow-700 / Copper color */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #854d0e; /* yellow-800 */
+        }
+        h4 {
+            color: #713f12; /* yellow-900 */
+        }
+        .info-box {
+            background-color: #f7fee7; /* lime-50 */
+            border-left: 4px solid #84cc16; /* lime-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        /* --- CORRECCIÓN AÑADIDA AQUÍ --- */
+        .footer-button-pcb {
+            background-color: #a16207;
+        }
+        .footer-button-pcb:hover {
+            background-color: #854d0e;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #713f12;">Unidad 1: Método Manual y Serigráfico</h1>
+            <p class="text-lg text-gray-600">Métodos de Fabricación de PCB</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">1. Introducción a la Fabricación de PCB</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un <strong>Circuito Impreso</strong> (o PCB, por sus siglas en inglés, <em>Printed Circuit Board</em>) es la base física sobre la cual se montan y se interconectan los componentes electrónicos. Consiste en una placa de material aislante con una o varias capas de cobre conductoras, donde se "dibujan" las pistas que conectan los componentes, reemplazando los cables y permitiendo crear circuitos compactos, fiables y fáciles de producir en masa.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Del Cable al Circuito Impreso</h3>
+                        <p class="mb-4 text-base">Antes de los PCBs, los componentes se conectaban manualmente con cables (montaje "punto a punto"). Este método era lento, propenso a errores y muy voluminoso. El PCB revolucionó la electrónica al permitir la automatización y miniaturización de los circuitos.</p>
+                        <img src="https://placehold.co/1200x400/FAF9F7/713F12?text=Evolución+del+cableado+a+PCB" alt="Evolución del cableado a PCB" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Método de Transferencia Térmica -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">2. Método de Transferencia Térmica (Planchado)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Este es el método artesanal más popular y accesible para fabricar PCBs de calidad aceptable en casa o en un taller. Se basa en transferir el tóner de una impresión láser desde un papel especial a la placa de cobre utilizando calor y presión (una plancha doméstica).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Proceso Paso a Paso</h3>
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #4d7c0f;">Materiales Necesarios:</h4>
+                           <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                               <li>Placa de cobre virgen (placa fenólica o de fibra de vidrio).</li>
+                               <li>Papel glossy, fotográfico o de revista (cualquier papel satinado funciona bien).</li>
+                               <li>Impresora láser (muy importante, de inyección de tinta no sirve).</li>
+                               <li>Plancha doméstica.</li>
+                               <li>Lana de acero fina o virulana para limpiar.</li>
+                               <li>Alcohol isopropílico o acetona.</li>
+                           </ul>
+                        </div>
+                        <div class="example-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos Detallados:</h4>
+                           <ol class="list-decimal list-inside space-y-4 mt-2 text-base">
+                               <li><strong>Diseño e Impresión:</strong> Diseña tu circuito en un software de PCB (como Proteus, Eagle, KiCad). Imprime el diseño en modo espejo sobre el lado brillante del papel glossy, asegurándote de que la impresora láser esté configurada para la máxima calidad y densidad de tóner.</li>
+                               <li><strong>Preparación de la Placa:</strong> Corta la placa de cobre al tamaño de tu diseño. Lija suavemente la superficie de cobre con la lana de acero hasta que brille uniformemente. Esto elimina la capa de óxido y las impurezas. Límpiala con un paño y alcohol o acetona para quitar toda la grasa. A partir de ahora, no toques el cobre con los dedos.</li>
+                               <li><strong>Transferencia del Tóner:</strong> Coloca la impresión con el tóner hacia abajo, en contacto con el cobre. Calienta la plancha a temperatura media-alta (sin vapor). Plancha sobre el papel con presión firme y constante durante 3-5 minutos, moviendo la plancha para distribuir el calor de manera uniforme por toda la superficie.</li>
+                               <li><strong>Enfriado y Retirado del Papel:</strong> Una vez planchado, sumerge la placa caliente en un recipiente con agua fría durante unos 10-15 minutos. El papel se ablandará. Con mucho cuidado, empieza a retirar el papel frotando suavemente con los dedos. Las fibras del papel se irán desprendiendo, dejando el tóner (que es plástico) adherido al cobre.</li>
+                           </ol>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=QQf33S2_4_Q" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Fabricación de PCB con el método de la plancha" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Método con Marcador Indeleble -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">3. Método con Marcador Indeleble</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Este es el método más simple y rápido, ideal para circuitos muy sencillos y prototipos rápidos. Consiste en dibujar las pistas del circuito directamente sobre la placa de cobre con un marcador permanente. La tinta del marcador actúa como una máscara que protege el cobre del ataque químico.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Consideraciones y Proceso</h3>
+                         <div class="example-box">
+                            <h4 class="font-semibold text-lg" style="color: #44403c;">Proceso:</h4>
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Limpia la placa de cobre de la misma manera que en el método de planchado.</li>
+                                <li>Dibuja tu circuito directamente sobre el cobre. Es crucial que las líneas sean gruesas y uniformes. Si es necesario, aplica dos o tres capas de tinta, dejando secar entre cada una.</li>
+                                <li>Asegúrate de que no haya interrupciones en las pistas, ya que cualquier pequeño espacio sin tinta resultará en una pista cortada después del ataque químico.</li>
+                            </ol>
+                         </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #4d7c0f;">¿Qué marcador usar?</h4>
+                            <p class="text-base mt-2">No todos los marcadores "permanentes" funcionan. Los más recomendados son los de marcas como <strong>Sharpie</strong> o <strong>Edding</strong>. La clave es que la tinta sea a base de alcohol o esmalte, ya que estas resisten mejor el ácido. Siempre es bueno hacer una prueba en un trozo de cobre de descarte antes de dibujar el circuito final.</p>
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Serigrafía -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #854d0e;">4. Serigrafía: El Estándar Industrial</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La serigrafía es el método utilizado para la fabricación profesional y en masa de PCBs. Aunque es más complejo y requiere más equipamiento, ofrece una precisión y repetibilidad inigualables. El proceso consiste en transferir una tinta especial resistente al ácido a través de una malla (o pantalla) que tiene el patrón del circuito.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Concepto Básico del Proceso</h3>
+                         <img src="https://placehold.co/1200x400/FAF9F7/713f12?text=Proceso+básico+de+Serigrafía+para+PCB" alt="Proceso de Serigrafía" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <ol class="list-decimal list-inside space-y-3 text-base">
+                             <li>Se prepara una pantalla con una emulsión fotosensible.</li>
+                             <li>Se coloca un fotolito (una transparencia con el diseño del circuito en negro) sobre la pantalla y se expone a luz ultravioleta.</li>
+                             <li>La luz endurece la emulsión excepto en las zonas cubiertas por el diseño. Al lavar la pantalla, estas zonas se desprenden, dejando una "plantilla" del circuito.</li>
+                             <li>Se coloca la pantalla sobre la placa de cobre y se aplica la tinta. La tinta pasa solo a través de las áreas abiertas de la malla, transfiriendo el diseño a la placa.</li>
+                         </ol>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=4a_4b98cBRY" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Fabricación de PCB por Serigrafía" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <!-- --- CÓDIGO CORREGIDO AQUÍ --- -->
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

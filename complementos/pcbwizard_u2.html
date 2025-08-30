@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Wizard U2: Creación de Componentes y Librerías</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #fafaf9; /* stone-50 */
+            border-left: 4px solid #78716c; /* stone-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-pcb {
+            background-color: #047857;
+        }
+        .footer-button-pcb:hover {
+            background-color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 2: Creación de Componentes y Librerías</h1>
+            <p class="text-lg text-gray-600">Diseño de PCB con PCB Wizard / Livewire</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. ¿Por Qué Crear Nuevos Componentes?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Aunque Livewire y PCB Wizard vienen con una extensa galería de componentes comunes, tarde o temprano te encontrarás con un componente que no está en la librería. Saber cómo crear tus propias piezas es una habilidad esencial que te da la libertad de diseñar cualquier circuito que imagines sin limitaciones.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Situaciones Comunes</h3>
+                         <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                            <li><strong>Componentes Específicos:</strong> Necesitas usar un microcontrolador, un sensor o un circuito integrado que no viene por defecto.</li>
+                            <li><strong>Footprints Personalizados:</strong> Un componente existe en la librería, pero necesitas una huella física (footprint) diferente (por ejemplo, una versión SMD en lugar de THT).</li>
+                            <li><strong>Conectores a Medida:</strong> Quieres crear un conector con un número de pines y una disposición específicos para tu proyecto.</li>
+                            <li><strong>Aprendizaje y Organización:</strong> Crear tus propios componentes te ayuda a entender su estructura y a organizar tus piezas personalizadas en librerías propias.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Símbolo en Livewire -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. Creación del Símbolo Esquemático en Livewire</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El primer paso es crear el <strong>símbolo</strong>, que es la representación lógica del componente que usarás en el diagrama esquemático. No tiene por qué parecerse al componente físico, pero debe ser claro y funcional.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Usando el Editor de Símbolos</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Editor+de+Símbolos+de+Livewire" alt="Editor de Símbolos" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos para Crear un Símbolo:</h4>
+                           <ol class="list-decimal list-inside space-y-3 mt-2 text-base">
+                               <li>Abre Livewire, ve al menú <strong>File > New > Symbol</strong>. Esto abrirá el editor de símbolos.</li>
+                               <li><strong>Dibujar el Cuerpo:</strong> Usa las herramientas de dibujo de la izquierda (rectángulo, círculo, línea) para crear el cuerpo del símbolo. Un rectángulo es lo más común para circuitos integrados.</li>
+                               <li><strong>Añadir Pines:</strong> Selecciona la herramienta "Pin". Haz clic donde quieras colocar un pin. Es crucial configurar cada pin correctamente:
+                                    <ul class="list-disc list-inside ml-6 mt-1">
+                                        <li><strong>Nombre del Pin:</strong> Dale un nombre descriptivo (ej. VCC, GND, TX, RX).</li>
+                                        <li><strong>Número de Pin:</strong> Asigna el número que corresponde al pin físico del componente real. ¡Esto es vital para la conversión a PCB!</li>
+                                    </ul>
+                               </li>
+                               <li><strong>Guardar el Símbolo:</strong> Ve a <strong>File > Save As</strong>. Guarda tu nuevo símbolo en una librería de usuario (puedes crear una nueva). Dale un nombre descriptivo, como "MiSensorXYZ".</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Footprint en PCB Wizard -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Creación del Footprint Físico en PCB Wizard</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>footprint</strong> (o huella) es el dibujo a escala real de la parte física del componente que irá en el PCB. Debe ser preciso y basarse en las medidas del <strong>datasheet</strong> (hoja de datos) del componente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Usando el Editor de Footprints</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Editor+de+Footprints+de+PCB+Wizard" alt="Editor de Footprints" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="example-box">
+                            <h4 class="font-semibold text-lg" style="color: #44403c;">Pasos para Crear un Footprint:</h4>
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Abre PCB Wizard, ve a <strong>File > New > PCB Footprint</strong>.</li>
+                                <li><strong>Consultar el Datasheet:</strong> Este es el paso más importante. Busca la hoja de datos de tu componente en internet. Contendrá un diagrama con las dimensiones exactas: distancia entre pines, tamaño de los pads, etc.</li>
+                                <li><strong>Colocar Pads:</strong> Selecciona la herramienta "Pad" y colócalos en el área de trabajo según las medidas del datasheet. Puedes usar la cuadrícula (grid) para ser preciso. Asegúrate de que el número de cada pad corresponda al número de pin del componente real.</li>
+                                <li><strong>Dibujar la Serigrafía (Silkscreen):</strong> Usa la herramienta "Line" para dibujar el contorno del componente. Esto te servirá como guía visual al momento de soldar.</li>
+                                <li><strong>Guardar el Footprint:</strong> Ve a <strong>File > Save As</strong> y guarda el footprint en una librería de usuario, idealmente con el mismo nombre que el símbolo para mantener la consistencia.</li>
+                            </ol>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Vincular -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">4. Vincular Símbolo y Footprint</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El último paso es decirle al programa que el símbolo que dibujaste en Livewire corresponde al footprint que diseñaste en PCB Wizard. Esta asociación es lo que permite la conversión automática del esquemático al PCB.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Asociando el Footprint</h3>
+                          <div class="info-box">
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                 <li>En Livewire, inserta tu nuevo símbolo en un esquemático.</li>
+                                 <li>Haz clic derecho sobre el símbolo y selecciona <strong>Properties</strong>.</li>
+                                 <li>En la ventana de propiedades, busca un botón que diga <strong>"Package"</strong> o "Footprint".</li>
+                                 <li>Se abrirá un selector de footprints. Busca y selecciona el que acabas de crear en PCB Wizard.</li>
+                                 <li>¡Listo! Ahora, cuando conviertas este esquemático a PCB, PCB Wizard usará automáticamente la huella física que diseñaste.</li>
+                             </ol>
+                          </div>
+                     </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=1Y2r_P22GgA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Crear un nuevo componente en PCB Wizard" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-pcb font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
