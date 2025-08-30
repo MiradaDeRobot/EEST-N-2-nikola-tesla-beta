@@ -11,20 +11,30 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #0a192f; /* Color de fondo si la imagen no carga */
+            
+            /* --- Puedes pegar aquí el código Base64 de tu imagen o un enlace URL --- */
+            background-image: url('https://i.postimg.cc/4xsmkWHp/1171867.png');
+            
+            /* Propiedades para que la imagen de fondo se vea bien */
+            background-size: cover; /* Cubre todo el espacio */
+            background-position: center center; /* Centra la imagen */
+            background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
         }
-        /* Estilo para la barra de scroll */
+        /* Estilo para la barra de scroll temática */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #fee2e2; /* red-100 */
+            background: #0b213f; /* Azul muy oscuro, más que el fondo */
         }
         ::-webkit-scrollbar-thumb {
-            background: #b91c1c; /* red-700 */
+            background: #0ea5e9; /* Cian/Sky Blue */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #991b1b; /* red-800 */
+            background: #38bdf8; /* Cian/Sky Blue más claro */
         }
         /* Animación para el acordeón */
         .accordion-content {
@@ -32,20 +42,29 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
+        .card-effect {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .card-effect:hover {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 20px 0px rgba(14, 165, 233, 0.5); /* Glow effect */
+            transform: translateY(-5px);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-red-500 via-red-600 to-red-700 text-gray-800">
+<body class="text-gray-300">
 
     <div id="app" class="container mx-auto p-4 md:p-8">
 
         <!-- Vista Principal: Selección de Año -->
         <div id="home-view">
             <header class="text-center mb-12">
-                <div class="bg-black p-4 md:p-6 rounded-2xl shadow-xl border border-white/50 flex items-center justify-center space-x-4 md:space-x-6">
-                    <img src="tesla escudo   2.jpg" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/312E81?text=Escudo+ETN%C2%B02';">
+                <div class="bg-gray-900/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-sky-400/30 flex items-center justify-center space-x-4 md:space-x-6">
+                    <img src="https://placehold.co/150x150/FFFFFF/0ea5e9?text=Escudo" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/0ea5e9?text=Escudo';">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-100 text-left">
                         <span>Portal Educativo de la Escuela Tecnica N°2</span>
-                        <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-red-400">Nikola Tesla</span>
+                        <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-sky-400">Nikola Tesla</span>
                     </h1>
                 </div>
             </header>
@@ -54,25 +73,24 @@
                 <!-- Buscador -->
                 <div class="mb-12">
                     <div class="relative">
-                        <input type="search" id="search-input" placeholder="Buscar un tema..." class="w-full p-4 pl-12 text-lg border-2 border-gray-300 rounded-full focus:ring-red-500 focus:border-red-500 transition-colors">
+                        <input type="search" id="search-input" placeholder="Buscar un tema..." class="w-full p-4 pl-12 text-lg bg-slate-800 border-2 border-slate-600 rounded-full focus:ring-sky-500 focus:border-sky-500 transition-colors text-gray-200 placeholder-gray-400">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                             <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                             </svg>
                         </div>
                     </div>
-                    <div id="search-results" class="bg-white mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto hidden"></div>
+                    <div id="search-results" class="bg-slate-800 border border-slate-700 mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto hidden"></div>
                 </div>
 
-
-                <h2 class="text-2xl font-bold text-center mb-8 text-black">Selecciona un año para ver los contenidos</h2>
+                <h2 class="text-3xl font-bold text-center mb-8 text-sky-400" style="background-color: black;">Selecciona un año para ver los contenidos</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="years-grid">
                     <!-- Los botones de los años se generan con JS -->
                 </div>
 
                 <!-- Nueva sección de Complementos de Estudio -->
-                <hr class="my-12 border-t-2 border-red-300">
-                <h2 class="text-2xl font-bold text-center mb-8 text-black">Complementos de estudio</h2>
+                <hr class="my-12 border-t-2 border-sky-400/30">
+                <h2 class="text-3xl font-bold text-center mb-8 text-sky-400" style="background-color: black;">Complementos de estudio</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="complements-grid">
                     <!-- Los botones de complementos se generan con JS -->
                 </div>
@@ -83,13 +101,13 @@
         <div id="content-view" class="hidden">
             <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
                 <div class="flex items-center">
-                    <button id="back-button" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg">
+                    <button id="back-button" class="bg-sky-600 text-white hover:bg-sky-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                         Volver
                     </button>
-                    <h1 id="content-title" class="text-3xl md:text-4xl font-bold text-gray-800 ml-4"></h1>
+                    <h1 id="content-title" class="text-3xl md:text-4xl font-bold text-gray-100 ml-4"></h1>
                 </div>
                 <div id="header-buttons-container">
                     <!-- El botón para el PDF se insertará aquí -->
@@ -435,202 +453,7 @@
             },
         };
 
-        // --- LÓGICA DE LA APLICACIÓN ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const homeView = document.getElementById('home-view');
-            const contentView = document.getElementById('content-view');
-            const backButton = document.getElementById('back-button');
-            const yearGrid = document.getElementById('years-grid');
-            const complementsGrid = document.getElementById('complements-grid');
-            const searchInput = document.getElementById('search-input');
-            const searchResultsContainer = document.getElementById('search-results');
-
-            const showHomeView = () => {
-                homeView.classList.remove('hidden');
-                contentView.classList.add('hidden');
-            };
-
-            const showContentView = (key, type) => {
-                homeView.classList.add('hidden');
-                contentView.classList.remove('hidden');
-                renderContent(key, type);
-            };
-
-            const renderButtons = (data, gridElement, isComplement = false) => {
-                gridElement.innerHTML = '';
-                for (const key in data) {
-                    const info = data[key];
-                    const button = document.createElement('button');
-                    
-                    if (isComplement) {
-                        button.className = 'bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:bg-red-50 hover:-translate-y-1 transform transition-all duration-300 text-center';
-                        button.innerHTML = `
-                            <div class="text-2xl font-bold text-red-600">${info.icon || '💻'}</div>
-                            <div class="text-lg font-semibold mt-2 text-gray-700">${info.title}</div>
-                        `;
-                    } else {
-                        button.className = 'bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:bg-red-50 hover:-translate-y-1 transform transition-all duration-300 text-center';
-                        button.innerHTML = `
-                            <div class="text-4xl font-bold text-red-600">${key}</div>
-                            <div class="text-lg font-semibold mt-2 text-gray-700">${info.title}</div>
-                        `;
-                    }
-
-                    button.addEventListener('click', () => showContentView(key, isComplement ? 'complement' : 'year'));
-                    gridElement.appendChild(button);
-                }
-            };
-
-            const renderContent = (key, type) => {
-                const dataSet = type === 'year' ? schoolData : complementsData;
-                const data = dataSet[key];
-                const contentTitle = document.getElementById('content-title');
-                const contentContainer = document.getElementById('content-container');
-                const headerButtonsContainer = document.getElementById('header-buttons-container');
-
-                contentTitle.textContent = `Contenidos de ${data.title}`;
-                contentContainer.innerHTML = '';
-                headerButtonsContainer.innerHTML = ''; 
-
-                if (data.pdf) {
-                    const pdfLink = document.createElement('a');
-                    pdfLink.href = data.pdf;
-                    pdfLink.target = '_blank';
-                    pdfLink.className = 'bg-green-600 text-white hover:bg-green-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg';
-                    pdfLink.innerHTML = `
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Diseño Curricular
-                    `;
-                    headerButtonsContainer.appendChild(pdfLink);
-                }
-
-                if (!data.subjects || data.subjects.length === 0) {
-                    contentContainer.innerHTML = '<p class="text-gray-500">No hay materias cargadas para esta sección.</p>';
-                    return;
-                }
-
-                data.subjects.forEach(subject => {
-                    const subjectDiv = document.createElement('div');
-                    subjectDiv.className = 'bg-white rounded-lg shadow-sm overflow-hidden';
-                    
-                    let unitsHtml = '<p class="text-sm text-gray-500 p-4">No hay unidades para esta materia.</p>';
-                    if (subject.units && subject.units.length > 0) {
-                        unitsHtml = subject.units.map(unit => {
-                            if (unit.link) { 
-                                return `
-                                <a href="${unit.link}" target="_blank" class="block border-t border-gray-200 p-4 hover:bg-gray-100 transition-colors duration-200">
-                                    <div class="flex justify-between items-center">
-                                        <h4 class="font-semibold text-gray-800">${unit.title}</h4>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-gray-600 mt-1 text-sm pr-6">${unit.content || ''}</p>
-                                </a>`;
-                            } else { 
-                                return `
-                                <div class="border-t border-gray-200 p-4">
-                                    <h4 class="font-semibold text-gray-800">${unit.title}</h4>
-                                    <p class="text-gray-600 mt-1 text-sm">${unit.content}</p>
-                                </div>`;
-                            }
-                        }).join('');
-                    }
-
-                    subjectDiv.innerHTML = `
-                        <button class="accordion-toggle w-full text-left p-4 flex justify-between items-center bg-red-50 hover:bg-red-100 focus:outline-none transition-colors">
-                            <h3 class="text-xl font-semibold text-red-800">${subject.name}</h3>
-                            <svg class="w-6 h-6 transform transition-transform duration-300 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content bg-white">
-                            ${unitsHtml}
-                        </div>
-                    `;
-                    contentContainer.appendChild(subjectDiv);
-                });
-
-                addAccordionListeners();
-            };
-            
-            const addAccordionListeners = () => {
-                document.querySelectorAll('.accordion-toggle').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const content = button.nextElementSibling;
-                        const icon = button.querySelector('svg');
-                        
-                        document.querySelectorAll('.accordion-content').forEach(otherContent => {
-                            if (otherContent !== content && otherContent.style.maxHeight) {
-                                otherContent.style.maxHeight = null;
-                                otherContent.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
-                            }
-                        });
-
-                        if (content.style.maxHeight) {
-                            content.style.maxHeight = null;
-                            icon.classList.remove('rotate-180');
-                        } else {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                            icon.classList.add('rotate-180');
-                        }
-                    });
-                });
-            };
-
-            const handleSearch = () => {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                searchResultsContainer.innerHTML = '';
-
-                if (searchTerm.length < 3) {
-                    searchResultsContainer.classList.add('hidden');
-                    return;
-                }
-
-                const allData = {...schoolData, ...complementsData};
-                let resultsFound = false;
-
-                for (const key in allData) {
-                    const section = allData[key];
-                    section.subjects.forEach(subject => {
-                        subject.units.forEach(unit => {
-                            const unitTitle = unit.title.toLowerCase();
-                            const unitContent = unit.content.toLowerCase();
-
-                            if (unit.link && (unitTitle.includes(searchTerm) || unitContent.includes(searchTerm))) {
-                                resultsFound = true;
-                                const resultLink = document.createElement('a');
-                                resultLink.href = unit.link;
-                                resultLink.target = '_blank';
-                                resultLink.className = 'block p-4 border-b border-gray-200 hover:bg-gray-100';
-                                resultLink.innerHTML = `
-                                    <p class="font-semibold">${unit.title}</p>
-                                    <p class="text-sm text-gray-600">${section.title} &gt; ${subject.name}</p>
-                                `;
-                                searchResultsContainer.appendChild(resultLink);
-                            }
-                        });
-                    });
-                }
-
-                if (resultsFound) {
-                    searchResultsContainer.classList.remove('hidden');
-                } else {
-                    searchResultsContainer.innerHTML = `<p class="p-4 text-gray-500">No se encontraron resultados.</p>`;
-                    searchResultsContainer.classList.remove('hidden');
-                }
-            };
-
-            backButton.addEventListener('click', showHomeView);
-            searchInput.addEventListener('input', handleSearch);
-            document.addEventListener('click', (e) => {
-                if (!searchResultsContainer.contains(e.target) && e.target !== searchInput) {
-                    searchResultsContainer.classList.add('hidden');
-                }
-            });
-
-            // --- Inicialización ---
-            const complementsData = {
+        const complementsData = {
                 programacion_basica: {
                     title: "Programación Básica",
                     icon: "⌨️",
@@ -742,7 +565,8 @@
                             units: [
                                 { title: "Unidad 1: Introducción y Fórmulas Básicas", content: "Interfaz, celdas, rangos, operaciones aritméticas y funciones básicas (SUMA, PROMEDIO).", link: "complementos/excel_u1.html" },
                                 { title: "Unidad 2: Gráficos y Formato Condicional", content: "Creación de gráficos de barras, circulares y de líneas. Aplicación de reglas de formato para resaltar datos.", link: "complementos/excel_u2.html" },
-                                { title: "Unidad 3: Funciones Avanzadas y Tablas Dinámicas", content: "Uso de funciones lógicas (SI, Y, O) y de búsqueda (BUSCARV). Creación de tablas dinámicas para resumir datos.", link: "complementos/excel_u3.html" }
+                                { title: "Unidad 3: Funciones Avanzadas y Tablas Dinámicas", content: "Uso de funciones lógicas (SI, Y, O) y de búsqueda (BUSCARV). Creación de tablas dinámicas para resumir datos.", link: "complementos/excel_u3.html" },
+                                { title: "Unidad 4: Catálogo de Fórmulas de Excel", content: "Exploración de un amplio catálogo de fórmulas matemáticas, de texto, de fecha y de búsqueda para resolver problemas complejos.", link: "complementos/excel_u4.html" }
                             ]
                         },
                         {
@@ -887,6 +711,202 @@
                 }
             };
 
+
+        // --- LÓGICA DE LA APLICACIÓN ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeView = document.getElementById('home-view');
+            const contentView = document.getElementById('content-view');
+            const backButton = document.getElementById('back-button');
+            const searchInput = document.getElementById('search-input');
+            const searchResultsContainer = document.getElementById('search-results');
+            const yearGrid = document.getElementById('years-grid');
+            const complementsGrid = document.getElementById('complements-grid');
+
+            const showHomeView = () => {
+                homeView.classList.remove('hidden');
+                contentView.classList.add('hidden');
+            };
+
+            const showContentView = (key, type) => {
+                homeView.classList.add('hidden');
+                contentView.classList.remove('hidden');
+                renderContent(key, type);
+            };
+
+            const renderButtons = (data, gridElement, isComplement = false) => {
+                gridElement.innerHTML = '';
+                for (const key in data) {
+                    const info = data[key];
+                    const button = document.createElement('button');
+                    
+                    if (isComplement) {
+                        button.className = 'bg-slate-800/90 backdrop-blur-sm border border-slate-700 p-6 rounded-xl shadow-md text-center card-effect';
+                        button.innerHTML = `
+                            <div class="text-3xl">${info.icon || '💻'}</div>
+                            <div class="text-lg font-semibold mt-2 text-slate-200">${info.title}</div>
+                        `;
+                    } else {
+                        button.className = 'bg-slate-800/90 backdrop-blur-sm border border-slate-700 p-6 rounded-xl shadow-md text-center card-effect';
+                        button.innerHTML = `
+                            <div class="text-4xl font-bold text-sky-400">${key}</div>
+                            <div class="text-lg font-semibold mt-2 text-slate-200">${info.title}</div>
+                        `;
+                    }
+
+                    button.addEventListener('click', () => showContentView(key, isComplement ? 'complement' : 'year'));
+                    gridElement.appendChild(button);
+                }
+            };
+
+            const renderContent = (key, type) => {
+                const dataSet = type === 'year' ? schoolData : complementsData;
+                const data = dataSet[key];
+                const contentTitle = document.getElementById('content-title');
+                const contentContainer = document.getElementById('content-container');
+                const headerButtonsContainer = document.getElementById('header-buttons-container');
+
+                contentTitle.textContent = `Contenidos de ${data.title}`;
+                contentContainer.innerHTML = '';
+                headerButtonsContainer.innerHTML = ''; 
+
+                if (data.pdf) {
+                    const pdfLink = document.createElement('a');
+                    pdfLink.href = data.pdf;
+                    pdfLink.target = '_blank';
+                    pdfLink.className = 'bg-emerald-600 text-white hover:bg-emerald-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex items-center shadow-md hover:shadow-lg';
+                    pdfLink.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Diseño Curricular
+                    `;
+                    headerButtonsContainer.appendChild(pdfLink);
+                }
+
+                if (!data.subjects || data.subjects.length === 0) {
+                    contentContainer.innerHTML = '<p class="text-gray-400">No hay materias cargadas para esta sección.</p>';
+                    return;
+                }
+
+                data.subjects.forEach(subject => {
+                    const subjectDiv = document.createElement('div');
+                    subjectDiv.className = 'bg-slate-800/90 backdrop-blur-sm border border-slate-700 rounded-lg shadow-sm overflow-hidden';
+                    
+                    let unitsHtml = '<p class="text-sm text-gray-400 p-4">No hay unidades para esta materia.</p>';
+                    if (subject.units && subject.units.length > 0) {
+                        unitsHtml = subject.units.map(unit => {
+                            if (unit.link) { 
+                                return `
+                                <a href="${unit.link}" target="_blank" class="block border-t border-slate-700 p-4 hover:bg-slate-700/50 transition-colors duration-200">
+                                    <div class="flex justify-between items-center">
+                                        <h4 class="font-semibold text-gray-200">${unit.title}</h4>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-gray-400 mt-1 text-sm pr-6">${unit.content || ''}</p>
+                                </a>`;
+                            } else { 
+                                return `
+                                <div class="border-t border-slate-700 p-4">
+                                    <h4 class="font-semibold text-gray-200">${unit.title}</h4>
+                                    <p class="text-gray-400 mt-1 text-sm">${unit.content}</p>
+                                </div>`;
+                            }
+                        }).join('');
+                    }
+
+                    subjectDiv.innerHTML = `
+                        <button class="accordion-toggle w-full text-left p-4 flex justify-between items-center bg-slate-900/40 hover:bg-slate-800/60 focus:outline-none transition-colors">
+                            <h3 class="text-xl font-semibold text-sky-400">${subject.name}</h3>
+                            <svg class="w-6 h-6 transform transition-transform duration-300 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            ${unitsHtml}
+                        </div>
+                    `;
+                    contentContainer.appendChild(subjectDiv);
+                });
+
+                addAccordionListeners();
+            };
+            
+            const addAccordionListeners = () => {
+                document.querySelectorAll('.accordion-toggle').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const content = button.nextElementSibling;
+                        const icon = button.querySelector('svg');
+                        
+                        document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                            if (otherContent !== content && otherContent.style.maxHeight) {
+                                otherContent.style.maxHeight = null;
+                                otherContent.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                            }
+                        });
+
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                            icon.classList.remove('rotate-180');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            icon.classList.add('rotate-180');
+                        }
+                    });
+                });
+            };
+
+            const handleSearch = () => {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                searchResultsContainer.innerHTML = '';
+
+                if (searchTerm.length < 3) {
+                    searchResultsContainer.classList.add('hidden');
+                    return;
+                }
+
+                const allData = {...schoolData, ...complementsData};
+                let resultsFound = false;
+
+                for (const key in allData) {
+                    const section = allData[key];
+                    section.subjects.forEach(subject => {
+                        subject.units.forEach(unit => {
+                            const unitTitle = unit.title.toLowerCase();
+                            const unitContent = unit.content ? unit.content.toLowerCase() : '';
+
+                            if (unit.link && (unitTitle.includes(searchTerm) || unitContent.includes(searchTerm))) {
+                                resultsFound = true;
+                                const resultLink = document.createElement('a');
+                                resultLink.href = unit.link;
+                                resultLink.target = '_blank';
+                                resultLink.className = 'block p-4 border-b border-slate-700 hover:bg-slate-700';
+                                resultLink.innerHTML = `
+                                    <p class="font-semibold text-gray-200">${unit.title}</p>
+                                    <p class="text-sm text-gray-400">${section.title} &gt; ${subject.name}</p>
+                                `;
+                                searchResultsContainer.appendChild(resultLink);
+                            }
+                        });
+                    });
+                }
+
+                if (resultsFound) {
+                    searchResultsContainer.classList.remove('hidden');
+                } else {
+                    searchResultsContainer.innerHTML = `<p class="p-4 text-gray-500">No se encontraron resultados.</p>`;
+                    searchResultsContainer.classList.remove('hidden');
+                }
+            };
+
+            backButton.addEventListener('click', showHomeView);
+            searchInput.addEventListener('input', handleSearch);
+            document.addEventListener('click', (e) => {
+                if (!searchResultsContainer.contains(e.target) && e.target !== searchInput) {
+                    searchResultsContainer.classList.add('hidden');
+                }
+            });
+
+            // --- Inicialización ---
             renderButtons(schoolData, yearGrid, false);
             renderButtons(complementsData, complementsGrid, true);
             showHomeView();
@@ -894,3 +914,4 @@
     </script>
 </body>
 </html>
+
