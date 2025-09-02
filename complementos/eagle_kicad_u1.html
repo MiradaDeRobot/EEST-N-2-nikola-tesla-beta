@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle/KiCad U1: Flujo de Trabajo Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #4f46e5; /* indigo-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #4338ca; /* indigo-700 */
+        }
+        h4 {
+            color: #3730a3; /* indigo-800 */
+        }
+        .info-box {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #6366f1; /* indigo-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-kicad {
+            background-color: #4f46e5;
+        }
+        .footer-button-kicad:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #3730a3;">Unidad 1: Flujo de Trabajo Profesional</h1>
+            <p class="text-lg text-gray-600">Diseño Profesional con Eagle / KiCad</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">1. Eagle y KiCad: Herramientas para el Mundo Real</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Autodesk Eagle</strong> y <strong>KiCad</strong> son dos de los programas de software de EDA (Automatización de Diseño Electrónico) más potentes y utilizados en la industria y por la comunidad de makers. A diferencia de las herramientas más simples, están diseñados para gestionar proyectos complejos, desde el concepto hasta la fabricación, con un fuerte énfasis en la <strong>gestión de librerías</strong> y la <strong>verificación de reglas de diseño</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Autodesk Eagle</h3>
+                            <p class="text-base">Un software robusto con una larga historia en la industria. Es conocido por su estabilidad y su integración con otros productos de Autodesk como Fusion 360.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">KiCad</h3>
+                            <p class="text-base">Una alternativa de código abierto (gratuita) que ha ganado una inmensa popularidad. Su desarrollo es impulsado por la comunidad y organizaciones como el CERN, y hoy en día es una herramienta increíblemente capaz que no tiene nada que envidiar al software comercial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">2. El Flujo de Trabajo Profesional: De la Idea al PCB</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Ambos programas separan el flujo de trabajo en tres aplicaciones principales que se comunican entre sí.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <img src="https://placehold.co/1200x400/EEF2FF/3730A3?text=Flujo+de+Trabajo:+Project+Manager+->+Schematic+Editor+->+PCB+Editor" alt="Flujo de Trabajo" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-3 gap-8">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #3730a3;">1. Gestor de Proyectos</h4>
+                                <p class="text-base mt-2">Es la ventana principal donde se organizan todos los archivos de un proyecto: el esquemático, el diseño de la placa (PCB), las librerías y los archivos de fabricación.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #3730a3;">2. Editor de Esquemáticos</h4>
+                                <p class="text-base mt-2">Aquí se crea la representación lógica del circuito. Se añaden los símbolos de los componentes, se conectan con "nets" (redes) y, lo más importante, se ejecuta el <strong>ERC (Electrical Rule Check)</strong> para verificar que no haya errores lógicos (como pines sin conectar o cortocircuitos).</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #3730a3;">3. Editor de PCB</h4>
+                                <p class="text-base mt-2">Una vez que el esquemático está validado, se pasa al editor de PCB. Aquí se colocan los footprints de los componentes y se rutean las pistas. Antes de finalizar, se ejecuta el <strong>DRC (Design Rule Check)</strong> para asegurar que el diseño cumple con las reglas del fabricante (ej. ancho mínimo de pista, separación entre pistas).</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Librerías -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">3. La Importancia de la Gestión de Librerías</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>En el diseño profesional, un componente no es solo un dibujo. Es una entidad que consta de tres partes vinculadas:</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <ul class="list-disc list-inside space-y-3 text-base">
+                            <li><strong>Símbolo (Symbol):</strong> La representación lógica que se usa en el esquemático.</li>
+                            <li><strong>Huella (Footprint):</strong> El patrón de pads a escala real que se usará en el PCB.</li>
+                            <li><strong>Modelo 3D (Opcional):</strong> Un modelo 3D del componente para la visualización.</li>
+                        </ul>
+                         <p class="text-base mt-4">Saber gestionar, modificar y crear tus propias librerías de componentes es una habilidad fundamental que te da control total sobre tus diseños.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">4. Proyecto Guiado: Diseñando un Regulador de Voltaje Simple</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a diseñar la placa para un regulador de voltaje de 5V usando el popular chip 7805.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Crear el Esquemático</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/3730A3?text=Esquemático+de+un+Regulador+7805" alt="Esquemático de Regulador" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Crea un nuevo proyecto. Abre el editor de esquemáticos.</li>
+                                <li>Añade los componentes desde las librerías: un regulador <code>7805</code>, dos <code>Capacitores</code> (ej. 10uF y 0.1uF) y dos <code>Conectores</code> de 2 pines para la entrada y la salida.</li>
+                                <li>Conecta los componentes usando la herramienta "Net" siguiendo el datasheet del 7805 (entrada, tierra y salida).</li>
+                                <li>Ejecuta el <strong>ERC (Electrical Rule Check)</strong> para verificar que no haya errores.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Pasar al Diseño de PCB y Colocar Componentes</h3>
+                             <p class="text-base">Genera el archivo de PCB desde el esquemático. Define un contorno de placa (Board Outline) rectangular. Coloca los componentes dentro del contorno, tratando de que las conexiones (ratsnest) sean lo más cortas y directas posible.</p>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Definir las Reglas de Diseño (DRC)</h3>
+                            <p class="text-base">Abre el menú de <strong>Design Rule Check (DRC)</strong>. Aquí es donde configuras las restricciones que te impone tu fabricante. Las más importantes son:</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                <li><strong>Clearance:</strong> La separación mínima entre cualquier elemento de cobre (pista-pista, pista-pad).</li>
+                                <li><strong>Track Width:</strong> El ancho mínimo de las pistas.</li>
+                            </ul>
+                         </div>
+                          <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 4: Rutear las Pistas y Crear un Plano de Masa</h3>
+                            <p class="text-base">Dibuja las pistas de señal. Para la conexión a tierra (GND), en lugar de una pista delgada, usa la herramienta <strong>"Polygon"</strong> o <strong>"Copper Pour"</strong> para dibujar un polígono que cubra toda la placa en la capa de cobre inferior y asígnalo a la red GND. Esto crea un plano de masa, que mejora la integridad de la señal y la disipación de calor.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=vahe-fs_r2" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tutorial de KiCad para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-kicad font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

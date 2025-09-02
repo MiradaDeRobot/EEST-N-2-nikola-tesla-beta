@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA U1: Asistentes de Escritura y Resumen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #7e22ce; /* purple-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #6b21a8; /* purple-800 */
+        }
+        h4 {
+            color: #581c87; /* purple-900 */
+        }
+        .info-box {
+            background-color: #f5f3ff; /* violet-50 */
+            border-left: 4px solid #a78bfa; /* violet-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-ia {
+            background-color: #7e22ce;
+        }
+        .footer-button-ia:hover {
+            background-color: #6b21a8;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #581c87;">Unidad 1: Asistentes de Escritura y Resumen</h1>
+            <p class="text-lg text-gray-600">Usos de IA en el Estudio</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">1. ¿Qué son los Asistentes de IA?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>Asistentes de Inteligencia Artificial</strong>, impulsados por Grandes Modelos de Lenguaje (LLMs) como ChatGPT, Gemini o Copilot, son herramientas conversacionales capaces de entender y generar texto de manera similar a un humano. Para los estudiantes, estas herramientas no son un reemplazo del pensamiento crítico, sino un <strong>potente compañero de estudio</strong> que puede ayudar a mejorar la calidad del trabajo, acelerar la investigación y comprender temas complejos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Clave: El Arte de Preguntar (Prompt Engineering)</h3>
+                        <p class="mb-4 text-base">La calidad de la respuesta de una IA depende directamente de la calidad de la pregunta o instrucción (llamada <strong>"prompt"</strong>). Un buen prompt es claro, específico y proporciona contexto. En lugar de preguntar "¿Qué es la electrónica?", es mucho más efectivo pedir: "Explícame los tres componentes pasivos fundamentales de la electrónica (resistencia, capacitor e inductor) como si fueras un profesor para un alumno de secundaria técnica."</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Redacción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">2. Mejorando la Redacción y Corrigiendo Gramática</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una de las aplicaciones más inmediatas y útiles de la IA en el estudio es su capacidad para actuar como un corrector de estilo y gramática sobrealimentado.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Corrección Gramatical</h3>
+                                <p class="text-base mt-2">Puedes pegar un texto que hayas escrito y pedirle a la IA que lo revise en busca de errores gramaticales, de puntuación o de tipeo. Va mucho más allá de un corrector tradicional.</p>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Mejora de Estilo y Claridad</h3>
+                                <p class="text-base mt-2">¿Sientes que una frase es confusa o no suena bien? Puedes pedirle a la IA que la reformule. Por ejemplo: "Reescribe esta oración para que sea más clara y concisa" o "Toma este párrafo y dale un tono más formal y académico."</p>
+                           </div>
+                        </div>
+                         <div class="info-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #a855f7;">Ejemplo Práctico de un Prompt</h4>
+                            <p class="text-base mt-2"><strong>Texto original del alumno:</strong><br>
+                           "el circuito no anda porque la resistencia es muy grande y no deja pasar la corriente. entonces el led no prende."</p>
+                            <p class="text-base mt-4"><strong>Prompt para la IA:</strong><br>
+                           "Reescribe el siguiente texto para que suene más técnico y formal, como en un informe de laboratorio:"</p>
+                            <p class="text-base mt-4"><strong>Respuesta de la IA:</strong><br>
+                           "El circuito no funciona correctamente debido a que el valor de la resistencia es demasiado elevado, lo que limita el flujo de corriente a un nivel insuficiente para polarizar el diodo emisor de luz (LED)."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Resumen -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">3. Resumiendo Textos Largos y Extrayendo Ideas Clave</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Enfrentarse a un documento técnico, un paper académico o un capítulo largo de un libro puede ser abrumador. La IA es una herramienta excepcional para procesar grandes volúmenes de texto y extraer la información más relevante.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Técnicas de Resumen</h3>
+                            <p class="text-base">Puedes pegar un texto (o a veces un enlace) y pedirle a la IA que realice diferentes tipos de resumen:</p>
+                             <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                <li><strong>Resumen General:</strong> "Resume el siguiente texto en 3 párrafos."</li>
+                                <li><strong>Extracción de Puntos Clave:</strong> "Extrae los 5 puntos más importantes del siguiente texto en una lista."</li>
+                                <li><strong>Búsqueda de Argumentos:</strong> "Identifica el argumento principal del autor en este ensayo y las evidencias que utiliza para respaldarlo."</li>
+                                <li><strong>Definición de Conceptos:</strong> "Lee este texto y define los siguientes términos que aparecen en él: [término 1], [término 2]."</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Ética -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">4. Buenas Prácticas y Consideraciones Éticas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Usar la IA de manera responsable es tan importante como saber cómo funciona. Ignorar las buenas prácticas puede llevar a problemas académicos serios y a un aprendizaje deficiente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="warning-box">
+                           <h3 class="font-semibold text-2xl mb-3" style="color: #b91c1c;">¡No al Plagio! Entender la Diferencia</h3>
+                            <p class="text-base mt-2"><strong>Copiar y pegar la respuesta de una IA y presentarla como tu propio trabajo es plagio.</strong> La IA debe ser un punto de partida, una fuente de inspiración o una herramienta de mejora, no el autor final. Siempre debes reescribir las ideas con tus propias palabras y asegurarte de que comprendes lo que estás escribiendo.</p>
+                         </div>
+                         <div class="warning-box mt-6">
+                           <h3 class="font-semibold text-2xl mb-3" style="color: #b91c1c;">Verifica SIEMPRE la Información</h3>
+                            <p class="text-base mt-2">Las IAs pueden cometer errores o "alucinar", es decir, <strong>inventar hechos, fechas, nombres o incluso fuentes bibliográficas</strong> que parecen reales pero no lo son. Nunca confíes ciegamente en la información que te proporciona. Utilízala como una guía, pero siempre contrasta los datos importantes con fuentes fiables y académicas.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F14UIy4n_Q" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Usar la IA para Estudiar (de forma ética)" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-ia font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

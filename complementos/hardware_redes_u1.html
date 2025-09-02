@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U4.1: Fundamentos de Redes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 4.1: Fundamentos de Redes</h1>
+            <p class="text-lg text-gray-600">Módulo 4: Redes Informáticas para el Técnico</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Tipos de Redes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Tipos de Redes: Clasificación por Alcance</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>red informática</strong> es un conjunto de dispositivos (computadoras, impresoras, servidores, etc.) interconectados entre sí para compartir información y recursos. La forma más común de clasificar las redes es según su alcance geográfico.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Red+LAN" alt="Red LAN" class="w-full h-auto rounded-lg shadow-md">
+                                <h3 class="mt-2 font-semibold text-xl">LAN (Local Area Network)</h3>
+                                <p class="text-base mt-1">Una Red de Área Local abarca un área geográfica pequeña, como una casa, una oficina, una escuela o un edificio. Es la red que la mayoría de nosotros usamos a diario. Ejemplo: La red Wi-Fi de tu casa que conecta tu PC, tu notebook y tu celular.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Red+WAN" alt="Red WAN" class="w-full h-auto rounded-lg shadow-md">
+                                <h3 class="mt-2 font-semibold text-xl">WAN (Wide Area Network)</h3>
+                                <p class="text-base mt-1">Una Red de Área Amplia conecta redes LAN a través de grandes distancias geográficas, como ciudades, países o continentes. El ejemplo más grande y conocido de una red WAN es <strong>Internet</strong>.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Red+MAN" alt="Red MAN" class="w-full h-auto rounded-lg shadow-md">
+                                <h3 class="mt-2 font-semibold text-xl">MAN (Metropolitan Area Network)</h3>
+                                <p class="text-base mt-1">Una Red de Área Metropolitana es un punto intermedio entre una LAN y una WAN. Generalmente abarca un área como un campus universitario grande o una ciudad entera, interconectando diversas LANs.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Topologías -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Topologías de Red: El Mapa del Cableado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>topología de red</strong> describe la disposición física o lógica de los dispositivos y el cableado en una red. Define cómo se comunican los nodos entre sí.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Topologías Físicas Principales</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Topología de Bus</h4>
+                                <img src="https://placehold.co/400x200/F1F5F9/1E3A8A?text=Topología+de+Bus" alt="Topología de Bus" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Todos los dispositivos comparten un único cable central (el "bus"). Era común en las redes antiguas, pero es obsoleta hoy en día porque si el cable principal falla, toda la red se cae.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Topología de Anillo</h4>
+                                <img src="https://placehold.co/400x200/F1F5F9/1E3A8A?text=Topología+de+Anillo" alt="Topología de Anillo" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Cada dispositivo está conectado a otros dos, formando un círculo. Los datos viajan en una dirección. Al igual que el bus, es poco común hoy en día porque el fallo de un solo nodo puede interrumpir toda la red.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Topología de Estrella</h4>
+                                <img src="https://placehold.co/400x200/F1F5F9/1E3A8A?text=Topología+de+Estrella" alt="Topología de Estrella" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2"><strong>Es el estándar absoluto en las redes modernas.</strong> Todos los dispositivos se conectan a un punto central, como un <strong>switch</strong> o un <strong>router</strong>. Si un cable o dispositivo falla, solo ese dispositivo se ve afectado, y el resto de la red sigue funcionando.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Modelos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Modelos de Referencia: OSI y TCP/IP</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para estandarizar la comunicación en redes, se crearon modelos conceptuales que dividen el complejo proceso de comunicación en una serie de <strong>capas</strong>. Cada capa tiene una función específica y se comunica con las capas adyacentes. Los dos modelos más importantes son el Modelo OSI y el Modelo TCP/IP.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Modelo OSI vs. Modelo TCP/IP</h3>
+                         <img src="https://placehold.co/1200x600/E0F2FE/1E40AF?text=Comparación+de+Capas+del+Modelo+OSI+y+TCP/IP" alt="Modelo OSI vs TCP/IP" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Modelo OSI (Open Systems Interconnection)</h4>
+                                <p class="text-base mt-2">Es un modelo teórico de 7 capas que describe de forma muy detallada cada paso de la comunicación. Aunque no se implementa directamente, es fundamental para entender los conceptos de redes. Sus capas son: 7. Aplicación, 6. Presentación, 5. Sesión, 4. Transporte, 3. Red, 2. Enlace de Datos, y 1. Física.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Modelo TCP/IP</h4>
+                                <p class="text-base mt-2">Es un modelo más práctico de 4 capas que es el que realmente se utiliza en Internet. Es una versión simplificada del modelo OSI. Sus capas son:</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-sm">
+                                    <li><strong>Aplicación:</strong> (Combina Aplicación, Presentación y Sesión del OSI). Protocolos como HTTP, FTP, SMTP.</li>
+                                    <li><strong>Transporte:</strong> Gestiona la comunicación extremo a extremo. Protocolos TCP y UDP.</li>
+                                    <li><strong>Internet:</strong> Se encarga del direccionamiento y enrutamiento. Protocolo IP.</li>
+                                    <li><strong>Acceso a la Red:</strong> (Combina Enlace de Datos y Física del OSI). Se encarga de la transmisión física de los datos. Ethernet, Wi-Fi.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=koc-b5A1d_M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Fundamentos de Redes, Modelo OSI y TCP/IP" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

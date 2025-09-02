@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.4: Memoria RAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.4: Memoria RAM: La Memoria a Corto Plazo</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué es la Memoria RAM?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Memoria de Acceso Aleatorio</strong> (RAM, por sus siglas en inglés, <em>Random Access Memory</em>) es la memoria de trabajo de la computadora. Es un tipo de memoria <strong>volátil</strong>, lo que significa que solo almacena datos mientras recibe energía. Su función es guardar temporalmente los datos y programas que la CPU está utilizando activamente, permitiendo un acceso ultrarrápido a ellos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Analogía: El Escritorio de Trabajo</h3>
+                         <p class="mb-4 text-base">La mejor forma de entenderlo es con una analogía: si el disco duro es un archivador donde guardas todos tus documentos (almacenamiento a largo plazo), la memoria RAM es tu <strong>escritorio de trabajo</strong>. Cuando quieres trabajar en algo, sacas los documentos del archivador y los pones sobre el escritorio para tenerlos a mano. Cuanto más grande sea tu escritorio (más RAM), más programas y archivos podrás tener abiertos y accesibles al mismo tiempo sin que todo se vuelva lento.</p>
+                         <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Módulos+de+Memoria+RAM" alt="Módulos de RAM" class="w-full h-auto rounded-lg shadow-md my-4">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Tipos de Memoria RAM: Generaciones DDR</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La memoria RAM para computadoras de escritorio se conoce como <strong>DDR SDRAM</strong> (<em>Double Data Rate Synchronous Dynamic Random-Access Memory</em>). "Double Data Rate" significa que puede realizar dos transferencias de datos por cada ciclo de reloj, duplicando su rendimiento. Con el tiempo, ha evolucionado en varias generaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">DDR4 vs. DDR5: Las Generaciones Actuales</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">DDR4</h4>
+                                <p class="text-base mt-2">Ha sido el estándar durante muchos años. Ofrece un rendimiento excelente y maduro. Las velocidades típicas van desde 2133 MHz hasta más de 4000 MHz. Físicamente, la muesca en el conector está en una posición diferente a la de DDR5.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">DDR5</h4>
+                                <p class="text-base mt-2">Es la generación más reciente y ofrece un salto significativo en rendimiento. Comienza con velocidades más altas (desde 4800 MHz), tiene mayor ancho de banda y es más eficiente energéticamente. Es el nuevo estándar para las plataformas de CPU más modernas.</p>
+                           </div>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">¡Incompatibilidad Física!</h4>
+                            <p class="text-base mt-2">Las placas madre y las CPUs están diseñadas para ser compatibles con una sola generación de RAM. <strong>No puedes instalar memoria DDR5 en una placa madre DDR4, y viceversa.</strong> La muesca en el conector de los módulos está ubicada en una posición diferente para evitar físicamente que se instalen incorrectamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Especificaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Especificaciones Clave de la Memoria RAM</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Al elegir memoria RAM, hay tres especificaciones principales que determinan su rendimiento y capacidad.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Capacidad (medida en Gigabytes - GB)</h3>
+                            <p class="text-base mt-2">Es la cantidad de datos que la memoria puede almacenar. La cantidad que necesitas depende del uso que le darás a la PC:</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                <li><strong>8 GB:</strong> El mínimo para tareas básicas como navegar por internet, ofimática y multimedia ligera.</li>
+                                <li><strong>16 GB:</strong> El estándar actual para la mayoría de los usuarios, incluyendo gaming y multitarea intensiva.</li>
+                                <li><strong>32 GB o más:</strong> Recomendado para profesionales que trabajan con edición de video en alta resolución, modelado 3D, virtualización o grandes bases de datos.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Velocidad (medida en Megahercios - MHz)</h3>
+                            <p class="text-base mt-2">Indica la frecuencia a la que la memoria opera, es decir, cuántos ciclos de transferencia de datos puede realizar por segundo. Una mayor velocidad permite a la CPU acceder a los datos más rápidamente, lo que mejora el rendimiento general del sistema, especialmente en tareas sensibles a la memoria como el gaming y la compresión de archivos.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">Latencia (CAS Latency - CL)</h3>
+                            <p class="text-base mt-2">La latencia mide el "tiempo de respuesta" de la memoria. Específicamente, es el número de ciclos de reloj que tarda la RAM en responder a una petición de datos. En este caso, <strong>un número CL más bajo es mejor</strong>. El rendimiento ideal se consigue con un equilibrio entre alta velocidad y baja latencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Instalación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Instalación y Configuración de Perfiles</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Instalar la RAM es un proceso sencillo, pero hacerlo correctamente es crucial para obtener el máximo rendimiento, especialmente aprovechando el modo de doble canal.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Modo Dual Channel</h3>
+                         <p class="text-base mb-4">La mayoría de las plataformas modernas usan "Dual Channel", que duplica el ancho de banda de comunicación entre la CPU y la RAM. Para activarlo, debes instalar los módulos de memoria en pares y en las ranuras correctas, que suelen estar codificadas por color o indicadas en el manual de la placa madre (generalmente las ranuras 2 y 4).</p>
+                         <img src="https://placehold.co/1200x400/E0F2FE/1E40AF?text=Instalación+de+RAM+en+Dual+Channel+(Ranuras+2+y+4)" alt="Dual Channel" class="w-full h-auto rounded-lg shadow-md my-4">
+                         
+                         <h3 class="text-2xl font-semibold mb-3 mt-8">Perfiles XMP y EXPO: ¡No te olvides de activarlos!</h3>
+                         <div class="info-box">
+                            <p class="text-base">Cuando compras una memoria RAM anunciada a, por ejemplo, 3200 MHz, por defecto funcionará a una velocidad estándar más baja (ej. 2133 MHz). Para alcanzar la velocidad anunciada, debes entrar al BIOS/UEFI de tu placa madre y activar un perfil preconfigurado:</p>
+                             <ul class="list-disc list-inside space-y-2 text-base mt-2">
+                                <li><strong>XMP (Extreme Memory Profile):</strong> Es el estándar de Intel.</li>
+                                <li><strong>EXPO (Extended Profiles for Overclocking):</strong> Es el nuevo estándar de AMD para DDR5.</li>
+                             </ul>
+                             <p class="text-base mt-2">Activar este perfil es un paso fundamental después de armar una PC para no desperdiciar el rendimiento por el que pagaste.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=0W2-kx_p-A8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo elegir, instalar y configurar la Memoria RAM" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U2.2: Desmontaje y Análisis de Notebooks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 2.2: Desmontaje y Análisis de Notebooks</h1>
+            <p class="text-lg text-gray-600">Módulo 2: Armado y Mantenimiento de Equipos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. El Desafío de la Miniaturización</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Desensamblar una notebook es un proceso significativamente más complejo que trabajar con una PC de escritorio. La necesidad de integrar todos los componentes en un chasis delgado y ligero obliga a los fabricantes a utilizar diseños compactos, componentes propietarios y métodos de ensamblaje que requieren paciencia y precisión. Cada marca y modelo es un mundo, pero los principios fundamentales son universales.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Por qué Desarmar una Notebook?</h3>
+                         <p class="mb-4 text-base">Las razones más comunes para abrir una notebook son:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Actualizaciones (Upgrades):</strong> Reemplazar o añadir memoria RAM o una unidad de almacenamiento SSD.</li>
+                            <li><strong>Mantenimiento:</strong> Realizar una limpieza profunda del sistema de refrigeración para solucionar problemas de sobrecalentamiento.</li>
+                            <li><strong>Reparaciones:</strong> Reemplazar componentes dañados como la batería, el teclado, la pantalla o el conector de carga.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Precauciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Precauciones de Seguridad Esenciales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Trabajar dentro de una notebook conlleva riesgos específicos. Ignorar estas precauciones puede resultar en daños permanentes al equipo.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="warning-box">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Antes de Empezar, SIEMPRE!</h4>
+                           <ol class="list-decimal list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Desconecta la Corriente:</strong> Quita el cargador de la notebook.</li>
+                               <li><strong>¡DESCONECTA LA BATERÍA!:</strong> Este es el paso más importante. Después de abrir la carcasa, lo primero que debes hacer es localizar el conector de la batería en la placa madre y desconectarlo con cuidado. Manipular componentes con la batería conectada puede causar cortocircuitos fatales.</li>
+                               <li><strong>Organiza los Tornillos:</strong> Las notebooks utilizan tornillos de diferentes longitudes. Usar un tornillo largo en un agujero corto puede perforar y dañar la placa madre. Usa un organizador de tornillos o una bandeja magnética para mantenerlos ordenados y saber exactamente dónde va cada uno.</li>
+                               <li><strong>Usa las Herramientas Adecuadas:</strong> Utiliza herramientas de apertura de plástico (púas o "spudgers") para separar las carcasas. Usar destornilladores metálicos puede marcar o romper los frágiles clips de plástico.</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Sección Proceso de Desmontaje -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Guía General de Desmontaje</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Aunque cada modelo es diferente, la mayoría sigue un proceso similar. Siempre es recomendable buscar un video de despiece ("teardown") de tu modelo específico en YouTube antes de empezar.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-12">
+                        
+                        <!-- Paso 1 -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Retirar la Tapa Inferior</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/1E3A8A?text=Removiendo+tornillos+de+la+tapa+inferior" alt="Tapa inferior" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <p class="text-base">La mayoría de las notebooks dan acceso a los componentes principales retirando la tapa inferior. Quita todos los tornillos visibles. Algunos pueden estar ocultos debajo de las patas de goma. Una vez retirados los tornillos, usa una herramienta de plástico para separar con cuidado los clips que unen la tapa al chasis, trabajando alrededor del perímetro.</p>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Desconectar la Batería</h3>
+                             <p class="text-base">Como se mencionó, este es el paso más crítico. Localiza el conector de la batería y desconéctalo de la placa madre. Puede ser un conector que se desliza o uno que se levanta. Procede con cuidado.</p>
+                        </div>
+                        
+                        <!-- Paso 3 -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Identificación y Extracción de Componentes</h3>
+                            <img src="https://placehold.co/1000x500/F1F5F9/1E3A8A?text=Componentes+internos+de+una+Notebook" alt="Componentes internos" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <p class="text-base">Con la placa a la vista, puedes identificar los componentes actualizables o a reemplazar:</p>
+                             <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                                <li><strong>Memoria RAM (SO-DIMM):</strong> Sujeta por dos clips metálicos a los lados. Para quitarla, empuja los clips hacia afuera y el módulo se levantará para poder extraerlo.</li>
+                                <li><strong>Unidad de Almacenamiento (SSD/HDD):</strong> Puede ser un SSD M.2 (fijado con un tornillo) o un SSD/HDD SATA de 2.5 pulgadas (fijado en un caddy o soporte).</li>
+                                <li><strong>Tarjeta Wi-Fi:</strong> Un pequeño módulo con uno o dos cables de antena (conectores U.FL) que se desconectan con mucho cuidado.</li>
+                                 <li><strong>Sistema de Refrigeración:</strong> Compuesto por ventiladores y heatpipes que cubren la CPU y la GPU. Para una limpieza, se deben quitar los tornillos (a menudo numerados) y desconectar los cables de los ventiladores.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Paso 4 -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 4: Cuidado con los Cables Flexibles (Flex/Ribbon Cables)</h3>
+                             <p class="text-base">Las notebooks están llenas de delicados cables planos que conectan el teclado, el touchpad, la pantalla, etc. Estos cables se sujetan con pequeños conectores ZIF (Zero Insertion Force) que tienen una pestaña de seguridad. Para desconectarlos, <strong>debes levantar la pestaña primero</strong> y luego deslizar el cable hacia afuera suavemente. ¡Nunca tires de ellos!</p>
+                        </div>
+
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=J_Q_2mG-sA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Guía de Desmontaje de una Notebook" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

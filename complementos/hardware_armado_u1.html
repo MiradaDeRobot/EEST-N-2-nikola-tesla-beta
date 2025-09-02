@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U2.1: Guía de Ensamblaje de una PC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 2.1: Guía de Ensamblaje de una PC de Escritorio</h1>
+            <p class="text-lg text-gray-600">Módulo 2: Armado y Mantenimiento de Equipos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Preparación: Antes de Empezar a Ensamblar</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Ensamblar tu propia PC es una de las experiencias más gratificantes para un entusiasta de la tecnología. No solo te permite personalizar cada aspecto de tu equipo, sino que también te da un conocimiento profundo de cómo funciona. Antes de tocar un solo componente, la preparación es clave para un montaje exitoso y sin estrés.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tu Espacio de Trabajo y Herramientas</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Espacio de Trabajo Ideal</h4>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                    <li>Una mesa grande, despejada y bien iluminada.</li>
+                                    <li>Superficie no conductora (madera es ideal, evita alfombras).</li>
+                                    <li>Ten a mano los manuales de tus componentes, especialmente el de la placa madre.</li>
+                                </ul>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Herramientas Esenciales</h4>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                    <li>Destornillador Phillips (de estrella) de tamaño mediano (idealmente magnético).</li>
+                                    <li>Cinchos plásticos (precintos) o bridas de velcro para la gestión de cables.</li>
+                                    <li>Una pequeña linterna puede ser útil.</li>
+                                </ul>
+                           </div>
+                        </div>
+                        <div class="warning-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Cuidado con la Estática (ESD)!</h4>
+                           <p class="text-base mt-2">La descarga electrostática (ESD) es el enemigo silencioso de los componentes electrónicos. Para evitarla, toca periódicamente una parte metálica sin pintar del gabinete de la PC (previamente enchufado a la pared, pero con la fuente apagada) para descargar cualquier acumulación de estática de tu cuerpo. El uso de una pulsera antiestática es la mejor práctica.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Proceso de Armado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. El Proceso de Ensamblaje: Guía Paso a Paso</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Seguiremos un orden lógico que minimiza los riesgos y facilita la instalación de cada componente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-12">
+                        
+                        <!-- Paso 1: CPU -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Instalar la CPU en la Placa Madre</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/1E3A8A?text=Instalación+de+la+CPU" alt="Instalación de CPU" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-2 text-base">
+                                <li>Abre la palanca de retención del zócalo de la CPU en la placa madre.</li>
+                                <li>Retira el protector plástico del zócalo.</li>
+                                <li>Toma la CPU por los bordes, ¡nunca toques los pines o contactos!</li>
+                                <li>Alinea la(s) muesca(s) o el triángulo dorado de la CPU con las del zócalo. La CPU solo encajará de una manera.</li>
+                                <li>Coloca la CPU suavemente en el zócalo sin hacer fuerza.</li>
+                                <li>Baja la palanca de retención hasta que quede asegurada.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Paso 2: RAM -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Instalar la Memoria RAM</h3>
+                            <p class="text-base">Consulta el manual de tu placa madre para saber qué ranuras usar para activar el Dual Channel (generalmente la 2da y 4ta contando desde la CPU).</p>
+                             <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Abre las pestañas de seguridad de las ranuras de RAM correspondientes.</li>
+                                <li>Alinea la muesca del módulo de RAM con la muesca de la ranura.</li>
+                                <li>Presiona firmemente y de manera uniforme por ambos extremos hasta que el módulo encaje y las pestañas de seguridad se cierren solas haciendo "clic".</li>
+                            </ol>
+                        </div>
+
+                        <!-- Paso 3: SSD M.2 -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3 (Opcional): Instalar el SSD NVMe M.2</h3>
+                            <p class="text-base">Si tienes un SSD de este tipo, es mucho más fácil instalarlo ahora que con la placa dentro del gabinete.</p>
+                             <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Localiza la ranura M.2 en tu placa madre y retira el tornillo de sujeción.</li>
+                                <li>Inserta el SSD en la ranura en un ángulo de unos 30 grados.</li>
+                                <li>Presiona suavemente el SSD hacia abajo hasta que quede plano y vuelve a colocar el tornillo para asegurarlo.</li>
+                            </ol>
+                        </div>
+                        
+                        <!-- Paso 4: Preparar el Gabinete -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 4: Preparar el Gabinete</h3>
+                             <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Instala los postes de montaje (standoffs) en el gabinete, asegurándote de que coincidan con los agujeros de tu placa madre según su formato (ATX, Micro-ATX, etc.).</li>
+                                <li>Instala el escudo de E/S (I/O Shield) en la apertura trasera del gabinete.</li>
+                            </ol>
+                        </div>
+                        
+                         <!-- Paso 5: Instalar Placa Madre -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 5: Montar la Placa Madre en el Gabinete</h3>
+                             <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Con cuidado, coloca la placa madre dentro del gabinete, alineando sus agujeros con los postes de montaje y sus puertos traseros con el I/O Shield.</li>
+                                <li>Atornilla la placa madre a los postes de montaje. No aprietes demasiado.</li>
+                            </ol>
+                        </div>
+                        
+                         <!-- Paso 6: GPU y Tarjetas de Expansión -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 6: Instalar la Tarjeta Gráfica</h3>
+                             <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Retira las tapas metálicas del gabinete que correspondan a la ranura PCIe x16.</li>
+                                <li>Abre la pestaña de seguridad de la ranura PCIe en la placa madre.</li>
+                                <li>Alinea la tarjeta y presiónala firmemente hasta que encaje en la ranura.</li>
+                                <li>Asegura la tarjeta al gabinete con sus tornillos.</li>
+                            </ol>
+                        </div>
+                        
+                         <!-- Paso 7: Almacenamiento -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 7: Instalar Unidades de Almacenamiento (SSD/HDD SATA)</h3>
+                             <p class="text-base">Fija tus SSDs de 2.5 pulgadas o HDDs de 3.5 pulgadas en las bahías correspondientes de tu gabinete.</p>
+                        </div>
+
+                        <!-- Paso 8: PSU -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 8: Instalar la Fuente de Alimentación (PSU)</h3>
+                             <p class="text-base">Coloca la fuente en su compartimento (generalmente en la parte inferior trasera) y asegúrala con sus cuatro tornillos al gabinete.</p>
+                        </div>
+                        
+                        <!-- Paso 9: Conectar Cables -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 9: Conectar todos los Cables</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/1E3A8A?text=Conexiones+principales+de+la+Placa+Madre" alt="Conexiones Placa Madre" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <p class="text-base">Este es el paso más meticuloso. Conecta los siguientes cables:</p>
+                             <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                                <li><strong>Alimentación Placa Madre:</strong> El conector grande de 24 pines.</li>
+                                <li><strong>Alimentación CPU:</strong> El conector de 4+4 u 8 pines, usualmente en la esquina superior izquierda de la placa.</li>
+                                <li><strong>Alimentación GPU:</strong> Los conectores PCIe de 6, 8 o 12 pines si tu tarjeta gráfica lo requiere.</li>
+                                <li><strong>Alimentación SATA:</strong> A tus discos duros y SSDs SATA.</li>
+                                <li><strong>Datos SATA:</strong> Desde tus discos a los puertos SATA de la placa madre.</li>
+                                <li><strong>Panel Frontal:</strong> Los pequeños y delicados cables del botón de encendido, LEDs, y puertos USB del gabinete. ¡Consulta el manual de la placa madre para esto!</li>
+                                <li><strong>Ventiladores:</strong> A los conectores "FAN" de la placa madre.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Paso 10: Cable Management -->
+                        <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 10: Gestión de Cables (Cable Management)</h3>
+                            <p class="text-base">Antes de cerrar el gabinete, usa los cinchos o bridas para organizar y sujetar los cables en la parte trasera del chasis. Un buen manejo de cables no solo mejora la estética, sino que también optimiza el flujo de aire.</p>
+                        </div>
+
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=PXaLc9AYIcg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Guía Completa de Ensamblaje de PC" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

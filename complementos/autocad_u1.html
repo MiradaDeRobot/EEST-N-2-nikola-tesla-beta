@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCAD U1: Interfaz y Comandos de Dibujo 2D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #b91c1c; /* red-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #991b1b; /* red-800 */
+        }
+        h4 {
+            color: #7f1d1d; /* red-900 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-autocad {
+            background-color: #b91c1c;
+        }
+        .footer-button-autocad:hover {
+            background-color: #991b1b;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #7f1d1d;">Unidad 1: Interfaz y Comandos de Dibujo 2D</h1>
+            <p class="text-lg text-gray-600">AutoCAD para Planos Técnicos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">1. AutoCAD: El Estándar del Dibujo Técnico Asistido por Computadora (CAD)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>AutoCAD</strong> es el software de diseño asistido por computadora (CAD) líder en el mundo, desarrollado por Autodesk. A diferencia de las herramientas de modelado 3D como Blender o Fusion 360, el punto fuerte de AutoCAD es el <strong>dibujo técnico en 2D</strong>. Es la herramienta fundamental para arquitectos, ingenieros, diseñadores industriales y técnicos para crear planos precisos de edificios, piezas mecánicas, circuitos eléctricos y mucho más.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">2. La Interfaz de AutoCAD: Un Vistazo Detallado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interfaz de AutoCAD está diseñada para la precisión y la eficiencia, con un fuerte énfasis en el uso del teclado para una mayor velocidad.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Anatomía del Espacio de Trabajo</h3>
+                         <img src="https://placehold.co/1200x600/FEE2E2/7F1D1D?text=Interfaz+de+AutoCAD" alt="Interfaz de AutoCAD" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box space-y-4">
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #7f1d1d;">Cinta de Opciones (Ribbon)</h4>
+                                <p class="text-base mt-1">En la parte superior, organiza todas las herramientas en pestañas (Home, Insert, Annotate) y paneles (Draw, Modify, Layers). Aquí encontrarás los iconos de los comandos más comunes.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #7f1d1d;">Línea de Comandos (Command Line)</h4>
+                                <p class="text-base mt-1"><strong>Es el corazón de AutoCAD.</strong> Ubicada en la parte inferior, es donde escribes los nombres de los comandos (o sus atajos) y donde el programa te pide la información necesaria (ej. "Especifique primer punto"). Los profesionales a menudo trabajan casi exclusivamente con la línea de comandos.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #7f1d1d;">Área de Dibujo (Model Space)</h4>
+                                <p class="text-base mt-1">Es el lienzo infinito donde creas tus dibujos a escala 1:1. Siempre se dibuja en tamaño real.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #7f1d1d;">Barra de Estado (Status Bar)</h4>
+                                <p class="text-base mt-1">En la parte inferior derecha, contiene botones para activar y desactivar ayudas de dibujo cruciales como el modo <strong>Orto (F8)</strong> para líneas rectas, la <strong>Referencia a Objetos (F3)</strong> para encajar en puntos precisos y la visualización de la <strong>Rejilla (F7)</strong>.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Comandos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">3. Comandos Esenciales de Dibujo y Modificación</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Dominar AutoCAD se basa en aprender los atajos de teclado de los comandos más importantes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Comandos de Dibujo (Draw)</h3>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                    <li><strong>LINE (L):</strong> Dibuja segmentos de línea recta.</li>
+                                    <li><strong>CIRCLE (C):</strong> Dibuja un círculo a partir de un centro y un radio.</li>
+                                    <li><strong>RECTANGLE (REC):</strong> Dibuja un rectángulo especificando dos esquinas opuestas.</li>
+                                    <li><strong>ARC (A):</strong> Dibuja un arco.</li>
+                                </ul>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Comandos de Modificación (Modify)</h3>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                     <li><strong>MOVE (M):</strong> Mueve objetos.</li>
+                                     <li><strong>COPY (CO):</strong> Copia objetos.</li>
+                                     <li><strong>ROTATE (RO):</strong> Gira objetos.</li>
+                                     <li><strong>TRIM (TR):</strong> Recorta objetos hasta una arista de corte.</li>
+                                     <li><strong>OFFSET (O):</strong> Crea una copia paralela de un objeto a una distancia específica.</li>
+                                     <li><strong>FILLET (F):</strong> Redondea las esquinas de dos líneas.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">4. Proyecto Guiado: Dibujando una Brida Simple</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a dibujar una brida (flange) mecánica simple para practicar los comandos básicos y el uso de coordenadas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso a Paso Detallado:</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/7F1D1D?text=Dibujo+de+una+Brida+en+AutoCAD" alt="Dibujo de Brida" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Dibujar el Círculo Exterior:</strong> Escribe <code>C</code> y presiona Enter. Como punto central, escribe <code>0,0</code> y Enter. Como radio, escribe <code>50</code> y Enter.</li>
+                                <li><strong>Dibujar el Círculo Interior:</strong> Repite el comando <code>C</code>. Como centro, escribe de nuevo <code>0,0</code>. Como radio, escribe <code>25</code>.</li>
+                                <li><strong>Crear el Primer Agujero de Perno:</strong> Escribe <code>C</code>. Como centro, escribe <code>0,40</code> (para colocarlo sobre el eje Y). Como radio, escribe <code>5</code>.</li>
+                                <li><strong>Crear un Patrón Polar:</strong> Escribe <code>ARRAY</code>. Selecciona el círculo pequeño que acabas de crear. Elige la opción <strong>"Polar"</strong>. Especifica el centro del array como <code>0,0</code>. En la cinta de opciones que aparece, cambia el número de "Items" a <code>6</code>. Presiona Enter.</li>
+                                <li><strong>Añadir Líneas de Centro:</strong> Dibuja dos líneas que se crucen en el centro (<code>0,0</code>) para marcar los ejes. Puedes cambiar el tipo de línea a "Center" desde el panel de propiedades para que se vean como líneas de centro normalizadas.</li>
+                            </ol>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=n_4Q6A1JvE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tutorial Básico de AutoCAD 2D para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-autocad font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

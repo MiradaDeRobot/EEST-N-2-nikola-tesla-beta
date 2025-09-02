@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.5: Almacenamiento: Guardando tus Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.5: Almacenamiento: Guardando tus Datos</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección HDD vs SSD -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Discos Duros (HDD) vs. Unidades de Estado Sólido (SSD)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las unidades de almacenamiento son la memoria a largo plazo de la computadora. A diferencia de la RAM, el almacenamiento es <strong>no volátil</strong>, lo que significa que retiene los datos incluso cuando se apaga el equipo. Aquí es donde se guardan el sistema operativo, los programas y todos tus archivos personales. Durante décadas, el estándar fue el disco duro mecánico (HDD), pero hoy en día ha sido superado en rendimiento por las unidades de estado sólido (SSD).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Gran Diferencia: Mecánica vs. Electrónica</h3>
+                         <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=HDD+(Platos+giratorios)+vs+SSD+(Chips+de+memoria)" alt="HDD vs SSD" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Disco Duro Mecánico (HDD)</h4>
+                                <p class="text-base mt-2">Funciona con platos magnéticos que giran a alta velocidad (generalmente 5400 o 7200 RPM) y un cabezal de lectura/escritura que se mueve físicamente para acceder a los datos. Es una tecnología más antigua, más lenta y sensible a los golpes.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                    <li><strong>Ventaja:</strong> Mayor capacidad por un menor costo.</li>
+                                    <li><strong>Desventaja:</strong> Mucho más lento, ruidoso y frágil.</li>
+                                </ul>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Unidad de Estado Sólido (SSD)</h4>
+                                <p class="text-base mt-2">No tiene partes móviles. Almacena los datos en chips de memoria flash (similar a un pendrive). Al ser completamente electrónico, el acceso a los datos es casi instantáneo, lo que resulta en una mejora drástica en la velocidad general del sistema.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                     <li><strong>Ventaja:</strong> Extremadamente rápido, silencioso y resistente a los golpes.</li>
+                                     <li><strong>Desventaja:</strong> Más caro por gigabyte de almacenamiento.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de SSD -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Tipos de SSDs: Formatos y Protocolos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>No todos los SSDs son iguales. Su rendimiento y apariencia pueden variar mucho dependiendo de su factor de forma y del protocolo de comunicación que utilizan para conectarse a la placa madre.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">SATA vs. NVMe M.2</h3>
+                        <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Formatos+de+SSD:+SATA+2.5-inch+vs.+M.2" alt="Formatos de SSD" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">SSD SATA</h4>
+                                <p class="text-base mt-2">Utilizan el protocolo SATA, el mismo que los discos duros tradicionales. Vienen en un formato de 2.5 pulgadas (como una pequeña caja) o en formato M.2. Aunque son mucho más rápidos que un HDD, su velocidad está limitada por la interfaz SATA a unos 550 MB/s.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">SSD NVMe M.2</h4>
+                                <p class="text-base mt-2">Estos SSDs utilizan el factor de forma M.2 (parecen una memoria RAM pequeña) y se conectan directamente a un puerto PCIe de la placa madre a través del protocolo <strong>NVMe (Non-Volatile Memory Express)</strong>. Esto elimina el cuello de botella de SATA, permitiendo velocidades de lectura/escritura que pueden superar los 7,000 MB/s, ¡más de 10 veces más rápido que un SSD SATA!</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección RAID -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. RAID: Combinando Unidades para Rendimiento o Redundancia</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>RAID</strong> (<em>Redundant Array of Independent Disks</em> o Conjunto Redundante de Discos Independientes) es una tecnología que permite combinar varias unidades de almacenamiento en un único volumen lógico. El objetivo es mejorar el rendimiento, proporcionar redundancia de datos (protección contra fallos) o una combinación de ambos.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Niveles de RAID más Comunes</h3>
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">RAID 0 (Striping o División)</h4>
+                                <img src="https://placehold.co/400x200/F1F5F9/1E3A8A?text=RAID+0" alt="RAID 0" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Los datos se dividen y se escriben en dos o más discos simultáneamente. <strong>Objetivo:</strong> Máximo rendimiento. La velocidad de lectura/escritura es casi el doble. <strong>Desventaja:</strong> No hay redundancia. Si un disco falla, se pierden TODOS los datos del conjunto.</p>
+                             </div>
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">RAID 1 (Mirroring o Espejo)</h4>
+                                <img src="https://placehold.co/400x200/F1F5F9/1E3A8A?text=RAID+1" alt="RAID 1" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Los datos se duplican exactamente en dos discos. <strong>Objetivo:</strong> Máxima redundancia. Si un disco falla, los datos están a salvo en el otro. <strong>Desventaja:</strong> Se desaprovecha el 50% de la capacidad total de almacenamiento.</p>
+                             </div>
+                         </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">Otros Niveles (RAID 5, RAID 10)</h4>
+                            <p class="text-base mt-2">Existen otros niveles más complejos como RAID 5 (que ofrece un equilibrio entre rendimiento y redundancia con paridad) y RAID 10 (una combinación de RAID 1 y RAID 0), pero suelen ser más comunes en entornos de servidores y NAS (Network Attached Storage) que en PCs de escritorio convencionales.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=kE355tQ_HkM" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "HDD vs SSD vs NVMe y Tipos de RAID" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

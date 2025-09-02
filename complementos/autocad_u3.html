@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCAD U3: Preparación de Planos y Trazado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #b91c1c; /* red-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #991b1b; /* red-800 */
+        }
+        h4 {
+            color: #7f1d1d; /* red-900 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-autocad {
+            background-color: #b91c1c;
+        }
+        .footer-button-autocad:hover {
+            background-color: #991b1b;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #7f1d1d;">Unidad 3: Preparación de Planos y Trazado (Ploteo)</h1>
+            <p class="text-lg text-gray-600">AutoCAD para Planos Técnicos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">1. Del Dibujo al Plano: Espacio Modelo y Espacio Papel</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Hasta ahora, hemos trabajado en el <strong>Espacio Modelo</strong>, un universo digital infinito donde dibujamos nuestros diseños a escala real (1:1). Sin embargo, un plano profesional requiere un formato de hoja, un rótulo (cajetín), márgenes y escalas de impresión. Todo esto se gestiona en el <strong>Espacio Papel</strong>, también conocido como <strong>Layout (Presentación)</strong>.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Diferencia Fundamental</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Espacio Modelo (Model Space)</h4>
+                                <p class="text-base mt-2">Es donde se crea la geometría de tu diseño. Se dibuja siempre a tamaño real, sin preocuparse por el tamaño del papel. Es tu taller de dibujo.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Espacio Papel (Layout)</h4>
+                                <p class="text-base mt-2">Es una hoja virtual que representa el papel en el que vas a imprimir. Aquí no se dibuja el objeto, sino que se insertan "ventanas" (viewports) que muestran vistas de tu Espacio Modelo. Es tu sala de presentación.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Configuración de Página -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">2. Configuración de la Página (Page Setup)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Antes de empezar a organizar el plano, debemos definir las propiedades de nuestra hoja de papel virtual.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Administrador de Configuraciones de Página</h3>
+                        <p class="text-base">Haz clic derecho en una de las pestañas de <strong>Layout</strong> en la parte inferior y selecciona "Page Setup Manager". Aquí defines:</p>
+                        <img src="https://placehold.co/1200x500/FEE2E2/7F1D1D?text=Ventana+de+Page+Setup+Manager" alt="Page Setup Manager" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>Impresora/Trazador (Printer/Plotter):</strong> Selecciona la impresora que vas a usar o, lo más común, una impresora virtual como <code>DWG to PDF.pc3</code> para crear un archivo PDF.</li>
+                               <li><strong>Tamaño de Papel (Paper Size):</strong> Elige el formato de hoja normalizado que necesites (ej. A4, A3).</li>
+                               <li><strong>Área de Trazado (Plot Area):</strong> Generalmente se deja en "Layout" para que imprima toda la hoja.</li>
+                               <li><strong>Tabla de Estilos de Trazado (Plot Style Table):</strong> Aquí es donde defines cómo se imprimirán los colores. Para planos técnicos, se suele usar <code>monochrome.ctb</code>, que imprime todo en negro, respetando los grosores de línea definidos en las capas.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Viewports -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">3. Ventanas Gráficas (Viewports): Las Ventanas a tu Modelo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una <strong>Ventana Gráfica (Viewport)</strong> es un objeto que creas en el Espacio Papel y que actúa como una ventana a través de la cual puedes ver tu dibujo del Espacio Modelo. Puedes tener múltiples viewports en una misma hoja, cada una mostrando una parte diferente de tu dibujo o la misma parte a diferentes escalas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Creación y Configuración de una Ventana Gráfica</h3>
+                        <ol class="list-decimal list-inside space-y-2 mt-2 text-base">
+                            <li>Ve a la pestaña "Layout" en la cinta de opciones y crea un viewport rectangular.</li>
+                            <li>Haz doble clic dentro del viewport para "activarlo". Ahora puedes hacer zoom y encuadrar tu dibujo del Espacio Modelo como si estuvieras en él.</li>
+                            <li>Con el viewport activado, selecciona una <strong>escala estándar</strong> desde la barra de estado (ej. 1:1, 1:2, 1:50). Esto es crucial para que el plano esté a escala.</li>
+                            <li>Una vez que la vista y la escala son correctas, haz doble clic fuera del viewport para desactivarlo y <strong>bloquéalo</strong> para evitar moverlo accidentalmente.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Trazado -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">4. El Proceso Final: Trazado (Ploteo) a PDF</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Con la hoja configurada, el rótulo insertado, las vistas a escala dentro de los viewports y las cotas añadidas, el último paso es generar el archivo final para su impresión o envío.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">El Comando PLOT</h3>
+                         <div class="example-box">
+                            <p class="text-base">Ejecuta el comando <code>PLOT</code> (o presiona Ctrl+P). Se abrirá la ventana de trazado. Como ya hemos configurado la página en el "Page Setup Manager", la mayoría de las opciones ya estarán correctas. Simplemente haz clic en "Preview" para ver una vista previa de cómo quedará el plano. Si todo está en orden, haz clic en "OK" para generar el archivo PDF.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=R3oZiffy3g" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Preparar e Imprimir un Plano en AutoCAD (Layouts y Escalas)" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-autocad font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

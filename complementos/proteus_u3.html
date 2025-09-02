@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteus U3: Visualización 3D y Generación de Gerbers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-proteus {
+            background-color: #047857;
+        }
+        .footer-button-proteus:hover {
+            background-color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 3: Visualización 3D y Generación de Gerbers</h1>
+            <p class="text-lg text-gray-600">Diseño y Simulación con Proteus</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección 3D -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. Visualización 3D: Dando Vida a tu Diseño</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Antes de enviar un diseño a fabricar, es fundamental tener una idea clara de cómo se verá el producto final. El <strong>Visualizador 3D (3D Visualizer)</strong> de ARES es una herramienta increíblemente potente que genera una representación tridimensional y fotorrealista de tu PCB, con todos los componentes montados.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Importancia de la Vista Previa 3D</h3>
+                         <img src="https://placehold.co/1200x500/ECFDF5/065F46?text=Visualizador+3D+de+Proteus+ARES" alt="Visualizador 3D" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <p class="mb-4 text-base">Esta herramienta no es solo estética, es una parte crucial del proceso de verificación del diseño. Te permite:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Verificar la Colocación:</strong> Comprobar si los componentes están correctamente orientados y si hay suficiente espacio entre ellos.</li>
+                            <li><strong>Detectar Colisiones:</strong> Asegurarse de que componentes altos (como capacitores electrolíticos) no choquen entre sí o con otros elementos.</li>
+                            <li><strong>Revisar la Serigrafía (Silkscreen):</strong> Verificar que los nombres y valores de los componentes sean legibles y no estén tapados por otros componentes.</li>
+                            <li><strong>Presentar el Proyecto:</strong> Generar imágenes de alta calidad para la documentación o presentación del proyecto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Gerbers -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. Archivos Gerber: El Lenguaje de los Fabricantes de PCB</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Cuando envías un diseño a un fabricante profesional de PCBs, no le envías el archivo de Proteus. Le envías un conjunto de archivos estandarizados llamados <strong>Archivos Gerber</strong>. Cada archivo Gerber es un "mapa" vectorial que describe una de las capas de la placa.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Paquete de Fabricación Completo</h3>
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #047857;">Un paquete de fabricación típico incluye:</h4>
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>Archivos Gerber para cada capa de cobre:</strong> Uno para "Top Copper", otro para "Bottom Copper", etc.</li>
+                               <li><strong>Archivos Gerber para las máscaras de soldadura (Solder Mask):</strong> Uno para la capa superior y otro para la inferior. La máscara de soldadura es la capa de barniz (generalmente verde) que protege el cobre y deja expuestos solo los pads.</li>
+                               <li><strong>Archivo Gerber para la serigrafía (Silkscreen):</strong> Contiene el texto y los contornos de los componentes.</li>
+                               <li><strong>Archivo Excellon para las perforaciones (Drill File):</strong> Un archivo separado que indica las coordenadas y el diámetro de cada uno de los agujeros que se deben perforar en la placa.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Proyecto Guiado: Generando los Gerbers del Circuito Blink</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a generar el paquete completo de archivos de fabricación para el PCB de nuestro Arduino Blink.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Abrir la Herramienta de Salida</h3>
+                            <p class="text-base">Con tu diseño de PCB abierto en ARES, ve al menú superior <strong>Output > Generate Gerber/Excellon Files...</strong>. Se abrirá la ventana de configuración.</p>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Configurar las Capas y Formato</h3>
+                            <img src="https://placehold.co/1000x500/F1F5F9/64748B?text=Ventana+de+Generación+de+Archivos+Gerber" alt="Generación de Gerbers" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li><strong>Formato:</strong> Asegúrate de que el formato seleccionado sea <code>RS274X</code>, que es el estándar moderno.</li>
+                                <li><strong>Capas (Layers):</strong> En la pestaña "Layers", selecciona todas las capas que necesitas para la fabricación. Para una placa simple de una cara, como la nuestra, normalmente marcarías:
+                                    <ul class="list-disc list-inside ml-6 mt-2">
+                                        <li><code>Bottom Copper</code> (Cobre Inferior)</li>
+                                        <li><code>Top Silk</code> (Serigrafía Superior)</li>
+                                        <li><code>Solder Mask Bottom</code> (Máscara de Soldadura Inferior)</li>
+                                        <li><code>Board Edge</code> (Contorno de la Placa)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Drill File:</strong> En la pestaña "Drill", asegúrate de que la opción para generar el archivo de perforación esté activada.</li>
+                                <li><strong>Carpeta de Salida:</strong> Especifica una carpeta donde se guardarán todos los archivos generados. Es una buena práctica crear una carpeta nueva llamada "Gerbers" dentro de tu proyecto.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Ejecutar y Verificar</h3>
+                             <p class="text-base">Haz clic en el botón <strong>"OK"</strong>. Proteus generará todos los archivos en la carpeta que especificaste. El resultado será una lista de archivos con extensiones como <code>.GBL</code> (Gerber Bottom Layer), <code>.GTS</code> (Gerber Top Silkscreen), <code>.TXT</code> (Drill File), etc.</p>
+                             <p class="text-base mt-2">Estos archivos son los que se comprimen en un archivo <code>.zip</code> y se envían al fabricante de PCBs. Puedes usar un visor de Gerbers online gratuito para verificar que todas las capas se han generado correctamente antes de enviarlos.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F14UIy4n_Qo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Generar Archivos Gerber en Proteus" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-proteus font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

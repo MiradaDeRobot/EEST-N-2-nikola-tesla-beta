@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U5.5: Hardware de Dispositivos Móviles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 5.5: Introducción al Hardware de Dispositivos Móviles</h1>
+            <p class="text-lg text-gray-600">Módulo 5: Temas Especializados y de Vanguardia</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. El Milagro de la Integración: El SoC</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El hardware de los dispositivos móviles (smartphones y tablets) es una proeza de la ingeniería. A diferencia de las PCs de escritorio modulares, los dispositivos móviles deben integrar una computadora completa en un chasis diminuto, enfrentándose a tres desafíos principales: <strong>espacio físico limitado, consumo de energía ultra bajo y disipación de calor pasiva</strong> (sin ventiladores activos).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Solución: El SoC (System on a Chip)</h3>
+                         <p class="mb-4 text-base">La clave para lograr esta integración es el <strong>SoC (System on a Chip)</strong>. Un SoC es un único circuito integrado que contiene la mayoría de los componentes esenciales de una computadora en un solo encapsulado, funcionando como el cerebro y el sistema nervioso del dispositivo. Los fabricantes más importantes son Qualcomm (Snapdragon), Apple (A-series/M-series), Samsung (Exynos) y MediaTek (Dimensity).</p>
+                         <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Diagrama+de+un+SoC+móvil" alt="SoC" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #0369a1;">Componentes Integrados en un SoC:</h4>
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>CPU:</strong> Generalmente con una arquitectura ARM, que es extremadamente eficiente. Suelen usar un diseño big.LITTLE, con núcleos de alto rendimiento para tareas pesadas y núcleos de alta eficiencia para tareas en segundo plano.</li>
+                               <li><strong>GPU:</strong> Un procesador gráfico optimizado para el bajo consumo.</li>
+                               <li><strong>ISP (Image Signal Processor):</strong> Un procesador dedicado a procesar los datos de las cámaras en tiempo real.</li>
+                               <li><strong>NPU (Neural Processing Unit):</strong> Un acelerador de hardware para tareas de inteligencia artificial.</li>
+                               <li><strong>Módem:</strong> El chip responsable de la conectividad celular (4G/5G).</li>
+                               <li><strong>Controladores de Memoria, Wi-Fi, Bluetooth, GPS, etc.</strong></li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Pantalla -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. El Módulo de Pantalla: Nuestra Ventana al Dispositivo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La pantalla de un smartphone moderno es un módulo complejo compuesto por varias capas fusionadas.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Las Capas de la Pantalla</h3>
+                        <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Capas+del+Módulo+de+Pantalla" alt="Capas de la Pantalla" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Panel de Visualización (LCD/OLED)</h4>
+                                <p class="text-base mt-2">Es la capa que genera la imagen. Las pantallas <strong>OLED/AMOLED</strong> son superiores, ya que cada píxel emite su propia luz, ofreciendo negros perfectos y colores más vibrantes. Las <strong>LCD</strong> necesitan una retroiluminación (backlight), lo que resulta en negros menos profundos.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Digitalizador (Capa Táctil)</h4>
+                                <p class="text-base mt-2">Es una capa transparente que se encuentra sobre el panel. Utiliza tecnología <strong>capacitiva</strong>: detecta los pequeños cambios en el campo eléctrico causados por el contacto con nuestro dedo para registrar la posición del toque. Es el componente que hace que la pantalla sea "táctil".</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Cristal Protector</h4>
+                                <p class="text-base mt-2">Es la capa exterior que tocamos. Está hecha de un vidrio químicamente reforzado (como <strong>Corning Gorilla Glass</strong>) para resistir arañazos y caídas.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Otros Componentes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Memoria, Almacenamiento y Módulo de Carga</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Estos tres componentes son vitales para la velocidad y la autonomía del dispositivo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Memoria RAM (LPDDR) y Almacenamiento (UFS)</h3>
+                             <p class="text-base">Los móviles utilizan RAM <strong>LPDDR (Low-Power DDR)</strong> para minimizar el consumo. El almacenamiento moderno es <strong>UFS (Universal Flash Storage)</strong>, que permite leer y escribir datos simultáneamente, haciendo que el sistema se sienta mucho más rápido que con el antiguo estándar eMMC.</p>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold mb-3">Batería y Módulo de Carga</h3>
+                             <p class="text-base">La autonomía es un pilar fundamental. Las baterías de <strong>Iones de Litio (Li-Ion)</strong> o <strong>Polímero de Litio (Li-Po)</strong> son el estándar. Pero la batería es solo una parte de un sistema complejo que incluye:</p>
+                             <div class="info-box mt-4">
+                                <h4 class="font-semibold text-lg" style="color: #0369a1;">Circuito de Carga y Gestión de Energía (PMIC)</h4>
+                                <p class="text-base mt-1">El <strong>PMIC (Power Management Integrated Circuit)</strong> es un chip crucial que gestiona toda la energía del dispositivo. Regula la carga de la batería para maximizar su vida útil, controla los voltajes para los distintos componentes del SoC y protege el sistema contra sobrecargas o sobrecalentamiento durante la carga.</p>
+                             </div>
+                             <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #0369a1;">Puerto de Carga (USB-C)</h4>
+                                <p class="text-base mt-1">El puerto <strong>USB-C</strong> es el estándar moderno. Es un componente modular que no solo sirve para la carga (soportando tecnologías de carga rápida), sino también para la transferencia de datos a alta velocidad (USB 3.x) y la salida de video (DisplayPort Alternate Mode).</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Cámaras -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. El Módulo de Cámaras: Mucho más que Megapíxeles</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La calidad de la cámara de un smartphone depende de la interacción de varios componentes de hardware, procesados luego por el ISP del SoC.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Sensor de Imagen</h4>
+                               <p class="text-base mt-1">Es el corazón de la cámara. Su <strong>tamaño</strong> y el <strong>tamaño de sus píxeles</strong> son más importantes que la cantidad de megapíxeles. Un sensor más grande capta más luz, lo que resulta en mejores fotos en condiciones de poca iluminación.</p>
+                            </div>
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Lente y Apertura</h4>
+                               <p class="text-base mt-1">La <strong>apertura</strong> (medida con el número f/, ej. f/1.8) controla cuánta luz entra al sensor. Un número f/ más bajo significa una apertura más grande, lo que es mejor para fotos nocturnas y para lograr un desenfoque de fondo natural (efecto bokeh).</p>
+                            </div>
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Estabilización de Imagen</h4>
+                               <p class="text-base mt-1"><strong>OIS (Estabilización Óptica):</strong> Mueve físicamente el sensor o la lente para compensar el temblor de la mano. Es superior para fotos. <strong>EIS (Estabilización Electrónica):</strong> Utiliza software para recortar y estabilizar la imagen. Es muy efectiva para video.</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Sensores y Biometría -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">5. Sensores y Biometría: La Conciencia del Entorno</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Un smartphone está repleto de sensores que le permiten entender su entorno e interactuar con el usuario de formas inteligentes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Sensores de Movimiento y Entorno</h3>
+                         <ul class="list-disc list-inside space-y-3 text-base">
+                             <li><strong>Acelerómetro:</strong> Detecta la aceleración lineal y la orientación del dispositivo (rotación de pantalla).</li>
+                             <li><strong>Giroscopio:</strong> Mide la velocidad angular, permitiendo detectar movimientos de rotación con mayor precisión, esencial para la estabilización de video y juegos de VR.</li>
+                             <li><strong>Magnetómetro (Brújula):</strong> Detecta campos magnéticos y determina la orientación cardinal.</li>
+                             <li><strong>Sensor de Proximidad:</strong> Apaga la pantalla cuando acercas el teléfono a tu oreja durante una llamada.</li>
+                             <li><strong>Sensor de Luz Ambiental:</strong> Ajusta el brillo de la pantalla automáticamente.</li>
+                         </ul>
+                         <h3 class="text-2xl font-semibold mb-3 mt-8">Sistemas Biométricos</h3>
+                         <p class="text-base">Son los sistemas que verifican la identidad del usuario:</p>
+                         <ul class="list-disc list-inside space-y-3 text-base mt-2">
+                             <li><strong>Lectores de Huellas Dactilares:</strong> Pueden ser <strong>ópticos</strong> (usan luz para crear una imagen 2D de la huella) o <strong>ultrasónicos</strong> (usan sonido para crear un mapa 3D, más seguros), y a menudo están integrados bajo la pantalla.</li>
+                             <li><strong>Reconocimiento Facial:</strong> Puede ser 2D (usa la cámara frontal, menos seguro) o 3D (usa sensores infrarrojos para proyectar puntos y crear un mapa de profundidad del rostro, mucho más seguro).</li>
+                         </ul>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Sección Audio y Conectividad -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">6. Módulos de Audio, Háptica y Conectividad</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Estos módulos definen cómo escuchamos, sentimos y nos conectamos con el mundo a través del dispositivo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Micrófonos</h4>
+                               <p class="text-base mt-1">Los móviles modernos utilizan <strong>múltiples micrófonos</strong>. Uno principal para captar la voz en las llamadas y otros secundarios para la <strong>cancelación de ruido</strong>, filtrando el sonido ambiental para que la voz se escuche más clara.</p>
+                            </div>
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Altavoces y Respuesta Háptica</h4>
+                               <p class="text-base mt-1">Suelen tener un altavoz principal para multimedia y un auricular (earpiece) para llamadas. Las configuraciones de <strong>altavoces estéreo</strong> son comunes en la gama alta. El <strong>motor de vibración</strong> (háptica) proporciona retroalimentación táctil, desde una simple vibración hasta respuestas más precisas y sutiles.</p>
+                            </div>
+                            <div class="info-box">
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Conectividad Inalámbrica</h4>
+                               <p class="text-base mt-1">Además del módem celular, un módulo de conectividad integra las antenas y chips para <strong>Wi-Fi</strong>, <strong>Bluetooth</strong>, <strong>GPS</strong> (para la geolocalización) y <strong>NFC (Near Field Communication)</strong> para pagos sin contacto y emparejamiento rápido de dispositivos.</p>
+                            </div>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=S-3go2_2g4s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Todos los Componentes Dentro de un Smartphone" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

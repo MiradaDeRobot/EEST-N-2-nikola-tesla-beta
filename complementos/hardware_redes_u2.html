@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U4.2: Hardware de Red</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 4.2: Hardware de Red</h1>
+            <p class="text-lg text-gray-600">Módulo 4: Redes Informáticas para el Técnico</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Dispositivos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Dispositivos de Interconexión: Los Pilares de la Red</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El hardware de red es la infraestructura física que permite que los datos viajen de un punto a otro. Cada dispositivo cumple una función específica en la gestión y dirección del tráfico de la red.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="space-y-8">
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl" style="color: #475569;">Router (Enrutador)</h3>
+                                <p class="text-base mt-2">Es el "director de orquesta" de la red. Su función principal es <strong>interconectar redes diferentes</strong> (como tu red local LAN e Internet WAN) y <strong>enrutar</strong> los paquetes de datos para que lleguen a su destino correcto. El router de tu casa es el dispositivo que te da acceso a Internet.</p>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl" style="color: #475569;">Switch (Conmutador)</h3>
+                                <p class="text-base mt-2">Es el punto central de una red local en topología de estrella. Su función es <strong>conectar múltiples dispositivos dentro de la misma red LAN</strong>. A diferencia de su antecesor, el Hub, un switch es inteligente: aprende las direcciones MAC de los dispositivos conectados a cada uno de sus puertos y envía los datos únicamente al puerto de destino, optimizando el tráfico y evitando colisiones.</p>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl" style="color: #475569;">Access Point (Punto de Acceso Inalámbrico - AP)</h3>
+                                <p class="text-base mt-2">Es un dispositivo que crea una red de área local inalámbrica (WLAN), comúnmente conocida como red Wi-Fi. Permite que dispositivos inalámbricos (notebooks, celulares, tablets) se conecten a la red cableada. La mayoría de los routers domésticos modernos tienen un switch y un access point integrados.</p>
+                           </div>
+                            <div class="example-box">
+                                <h3 class="font-semibold text-2xl" style="color: #475569;">Hub (Concentrador) - Obsoleto</h3>
+                                <p class="text-base mt-2">Es un dispositivo antiguo que también servía como punto central de una red. Sin embargo, un hub no es inteligente: cuando recibe datos por un puerto, los retransmite por <strong>todos los demás puertos</strong>, generando tráfico innecesario y colisiones. Han sido completamente reemplazados por los switches.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tarjetas y Cableado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Tarjetas de Red y Cableado Estructurado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Para que un dispositivo pueda conectarse a una red, necesita una <strong>Tarjeta de Interfaz de Red</strong> (NIC). El medio físico a través del cual se conectan es el cableado.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Tipos de Cable de Par Trenzado (UTP)</h3>
+                        <p class="text-base">El cable de par trenzado no blindado (UTP) es el estándar para las redes Ethernet cableadas. Se clasifica en categorías según su rendimiento:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Categoría 5e (Cat 5e)</h4>
+                                <p class="text-base mt-2">Soporta velocidades de hasta 1 Gigabit por segundo (Gbps). Es el mínimo aceptable para redes modernas.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Categoría 6 (Cat 6)</h4>
+                                <p class="text-base mt-2">También soporta 1 Gbps, pero a mayores frecuencias, lo que lo hace más robusto contra interferencias. Puede soportar 10 Gbps en distancias muy cortas.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Categoría 6a (Cat 6a)</h4>
+                                <p class="text-base mt-2">Es el estándar para redes de 10 Gbps, con un blindaje mejorado para eliminar la diafonía (crosstalk) entre cables.</p>
+                           </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Fibra Óptica</h3>
+                        <p class="text-base">Utiliza pulsos de luz para transmitir datos a través de hilos de vidrio o plástico. Ofrece un ancho de banda inmensamente superior y es inmune a las interferencias electromagnéticas, siendo ideal para conexiones troncales y de larga distancia.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Crimpeado -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Práctica: Armado de Cables de Red (Crimpeado de RJ45)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Saber armar tus propios cables de red es una habilidad técnica fundamental. El proceso se llama "crimpear" y consiste en fijar un conector RJ45 al extremo de un cable UTP.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Normas de Cableado: T568A y T568B</h3>
+                         <p class="text-base">Existen dos estándares para el orden de los 8 hilos de colores dentro del conector RJ45. Es crucial seguir uno de ellos para que el cable funcione.</p>
+                         <img src="https://placehold.co/1200x400/E0F2FE/1E40AF?text=Normas+de+colores+T568A+y+T568B" alt="Normas T568A y T568B" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Cable Directo (Straight-Through)</h4>
+                                <p class="text-base mt-2">Se usa para conectar dispositivos diferentes (ej. una PC a un switch). Se utiliza la <strong>misma norma en ambos extremos</strong> (generalmente T568B en ambos lados).</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Cable Cruzado (Crossover)</h4>
+                                <p class="text-base mt-2">Se usa para conectar dispositivos iguales (ej. una PC a otra PC directamente). Se utiliza <strong>una norma en cada extremo</strong> (T568A en uno y T568B en el otro). Hoy en día es menos necesario, ya que la mayoría de los dispositivos modernos pueden detectar y ajustar la conexión automáticamente (Auto MDI-X).</p>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s_r_n-C3FpA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Crimpear un Cable de Red RJ45" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

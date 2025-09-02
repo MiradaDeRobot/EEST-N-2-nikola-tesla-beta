@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U5.4: Hardware para Realidad Virtual y Aumentada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 5.4: Hardware para Realidad Virtual y Aumentada</h1>
+            <p class="text-lg text-gray-600">Módulo 5: Temas Especializados y de Vanguardia</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Definiendo Nuevas Realidades: VR vs. AR</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La Realidad Virtual (VR) y la Realidad Aumentada (AR) son tecnologías inmersivas que están cambiando la forma en que interactuamos con el contenido digital. Aunque a menudo se mencionan juntas, se basan en conceptos fundamentalmente diferentes.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8">
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Realidad Virtual (VR)</h3>
+                                <p class="text-base mt-2">La VR te <strong>sumerge completamente</strong> en un entorno digital, bloqueando el mundo real. Utiliza un visor (Head-Mounted Display o HMD) que cubre tus ojos para transportarte a un mundo completamente virtual. El objetivo es crear una sensación de "presencia" en ese nuevo entorno.</p>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Realidad Aumentada (AR)</h3>
+                                <p class="text-base mt-2">La AR <strong>superpone información digital</strong> sobre el mundo real. No te aísla, sino que "aumenta" tu percepción de la realidad con hologramas, datos o gráficos. Se experimenta a través de dispositivos como smartphones (ej. Pokémon GO) o gafas inteligentes (ej. Microsoft HoloLens).</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Hardware VR -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Hardware para una Experiencia de VR Óptima</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La Realidad Virtual es una de las tareas más exigentes para una PC. Requiere renderizar dos imágenes separadas (una para cada ojo) a una alta resolución y a una tasa de refresco muy elevada para evitar el mareo por movimiento (motion sickness).</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes Críticos de la PC</h3>
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Tarjeta Gráfica (GPU):</strong> Es el componente más importante, por mucho. Una GPU potente (ej. NVIDIA RTX 4070 o superior) es esencial para mantener una tasa de fotogramas estable de 90 FPS o más, que es el mínimo para una experiencia cómoda.</li>
+                               <li><strong>Procesador (CPU):</strong> Debe ser lo suficientemente rápido para gestionar el seguimiento del movimiento, la física del juego y la lógica sin crear cuellos de botella para la GPU.</li>
+                               <li><strong>Memoria RAM:</strong> 16 GB es considerado el mínimo indispensable para una experiencia de VR fluida.</li>
+                           </ul>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">El Visor (HMD - Head-Mounted Display)</h3>
+                        <p class="text-base">Es el periférico central de la VR. Sus especificaciones determinan la calidad de la inmersión:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Resolución por Ojo:</strong> Cuanto más alta, más nítida será la imagen y menos se notará el "efecto rejilla" (screen-door effect).</li>
+                            <li><strong>Tasa de Refresco:</strong> 90 Hz es el mínimo recomendado para evitar mareos. Visores modernos apuntan a 120 Hz o más.</li>
+                            <li><strong>Campo de Visión (FOV):</strong> Mide qué tan amplia es la imagen. Un FOV más grande aumenta la inmersión.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Hardware AR -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Hardware Específico para Realidad Aumentada</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El hardware de AR enfrenta un desafío diferente: debe "ver" y entender el entorno del usuario en tiempo real para poder colocar los hologramas de forma convincente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes Clave en Gafas de AR</h3>
+                        <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Componentes+de+un+Visor+de+Realidad+Aumentada" alt="Hardware AR" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                            <div class="example-box">
+                                <h4 class="font-semibold text-lg" style="color: #475569;">Sensores y Cámaras</h4>
+                                <p class="text-base mt-2">Un conjunto de cámaras y sensores de profundidad (como los sensores LiDAR) escanean constantemente el entorno para crear un mapa 3D del espacio. Esto permite que los objetos virtuales se anclen a superficies reales, se oculten detrás de objetos reales y interactúen con el mundo físico.</p>
+                            </div>
+                            <div class="example-box">
+                                <h4 class="font-semibold text-lg" style="color: #475569;">Pantallas Transparentes (Waveguides)</h4>
+                                <p class="text-base mt-2">A diferencia de la VR, las pantallas deben ser transparentes para que el usuario pueda ver el mundo real. La tecnología más avanzada utiliza "guías de ondas" (waveguides), que son piezas de cristal o plástico que proyectan la luz de un micro-proyector directamente en la retina del usuario, creando la ilusión de un holograma flotando en el espacio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tracking -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Tecnologías de Seguimiento (Tracking)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El seguimiento preciso de la posición y orientación de la cabeza y las manos del usuario es lo que hace que la experiencia inmersiva sea creíble. Existen dos métodos principales para lograrlo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                             <div class="info-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #0369a1;">Seguimiento Inside-Out</h3>
+                                <p class="text-base mt-2">El visor utiliza cámaras incorporadas para escanear el entorno y determinar su propia posición en el espacio. Es el estándar en los visores modernos (como Meta Quest) por su simplicidad y portabilidad, ya que no requiere sensores externos.</p>
+                             </div>
+                             <div class="info-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #0369a1;">Seguimiento Outside-In</h3>
+                                <p class="text-base mt-2">Utiliza sensores externos (estaciones base o cámaras) colocados en la habitación que rastrean la posición del visor. Aunque requiere una configuración más compleja, puede ofrecer una mayor precisión y un área de seguimiento más grande, siendo ideal para aplicaciones profesionales.</p>
+                             </div>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=zNN-z2_NI7o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Requisitos de Hardware para Realidad Virtual" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

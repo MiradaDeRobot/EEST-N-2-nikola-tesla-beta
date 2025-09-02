@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteus U1: Entorno de Simulación y Captura Esquemática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-proteus {
+            background-color: #047857;
+        }
+        .footer-button-proteus:hover {
+            background-color: #065f46;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 1: Entorno de Simulación y Captura Esquemática (ISIS)</h1>
+            <p class="text-lg text-gray-600">Diseño y Simulación con Proteus</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. ¿Qué es Proteus? El Laboratorio de Electrónica Virtual</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Proteus Design Suite</strong> es un software profesional para el diseño y simulación de circuitos electrónicos. Su gran fortaleza reside en su capacidad para simular el comportamiento de <strong>microcontroladores (como Arduino, PIC, etc.)</strong> directamente en el esquemático. Esto permite probar tanto el hardware como el software (el código que se ejecuta en el microcontrolador) antes de fabricar una placa física.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">ISIS: Captura Esquemática y Simulación</h3>
+                            <p class="text-base">Es el entorno donde se dibuja el diagrama esquemático del circuito. Aquí se seleccionan componentes, se conectan y, lo más importante, se ejecuta la simulación para verificar su funcionamiento lógico y eléctrico.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">ARES: Diseño de PCB</h3>
+                            <p class="text-base">Es el entorno para el diseño del circuito impreso (PCB). Una vez que el circuito ha sido verificado en ISIS, se transfiere a ARES para posicionar los componentes y rutear las pistas de cobre.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. La Interfaz de Simulación de ISIS</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interfaz de ISIS está repleta de herramientas. Conocer las áreas principales es clave para trabajar de forma fluida.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Anatomía del Espacio de Trabajo</h3>
+                         <img src="https://placehold.co/1200x600/ECFDF5/065F46?text=Interfaz+de+Proteus+ISIS" alt="Interfaz de ISIS" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Ventana de Edición (Editing Window):</strong> El área principal donde dibujas tu circuito.</li>
+                               <li><strong>Barra de Herramientas Izquierda:</strong> Contiene los modos de trabajo. Los más importantes son <strong>"Component Mode"</strong> para seleccionar y colocar componentes, y <strong>"Terminals Mode"</strong> para añadir terminales como Tierra (Ground) y Potencia (Power).</li>
+                               <li><strong>Ventana de Dispositivos (Devices):</strong> Una vez en "Component Mode", aquí es donde aparece la lista de componentes que has seleccionado de la librería para usar en tu proyecto.</li>
+                               <li><strong>Botones de Simulación:</strong> En la parte inferior izquierda, encontrarás los controles de Play, Pausa y Stop para iniciar y detener la simulación del circuito.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Proyecto Guiado: Simulación de un LED Parpadeante con Arduino</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Este proyecto te enseñará el flujo de trabajo completo: crear el hardware virtual en ISIS y cargarle el software (firmware) para simular un sistema embebido real.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Seleccionar los Componentes</h3>
+                            <p class="text-base">En la barra izquierda, entra en <strong>"Component Mode"</strong>. Haz clic en el botón <strong>"P" (Pick Devices)</strong>. Se abrirá la librería. Busca y añade los siguientes componentes:
+                                <ul class="list-disc list-inside ml-6 mt-2 text-base">
+                                    <li><code>Arduino Uno</code></li>
+                                    <li><code>Res</code> (Resistencia genérica)</li>
+                                    <li><code>LED-RED</code> (Un LED de color rojo)</li>
+                                </ul>
+                            </p>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Montar el Circuito</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/64748B?text=Circuito+Blink+en+ISIS" alt="Circuito Blink" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Selecciona el Arduino Uno de tu lista de dispositivos y colócalo en la ventana de edición.</li>
+                                <li>Coloca la Resistencia y el LED. Haz doble clic en la resistencia y cambia su valor a <code>220</code> ohmios.</li>
+                                <li><strong>Realizar el Cableado:</strong> Haz clic en el terminal del pin 13 del Arduino y arrastra un cable hasta un extremo de la resistencia. Conecta el otro extremo de la resistencia al ánodo del LED (el lado sin la barra).</li>
+                                <li>En la barra izquierda, entra en <strong>"Terminals Mode"</strong>, selecciona <strong>"Ground"</strong> (Tierra) y colócalo debajo del LED. Conecta el cátodo del LED a la terminal de tierra.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Preparar y Cargar el Firmware (.HEX)</h3>
+                            <p class="text-base">Proteus no programa el Arduino, simula uno que ya ha sido programado. Para ello, necesitamos el archivo compilado del programa (<code>.hex</code>).</p>
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Abre el <strong>Arduino IDE</strong>. Escribe el sketch clásico "Blink".</li>
+                                <li>Ve al menú <strong>Archivo > Preferencias</strong> y asegúrate de que la casilla "Mostrar salida detallada durante: <strong>compilación</strong>" esté marcada.</li>
+                                <li>Ve al menú <strong>Programa > Exportar binarios compilados</strong>. Esto generará el archivo <code>.hex</code> en la misma carpeta donde guardaste tu sketch.</li>
+                                <li>Vuelve a Proteus. Haz doble clic en el Arduino. En la ventana de propiedades, busca el campo <strong>"Program File"</strong>. Haz clic en el ícono de la carpeta y busca y selecciona el archivo <code>.hex</code> que acabas de generar.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 4: ¡Simular!</h3>
+                             <p class="text-base">Haz clic en el botón <strong>"Play"</strong> en la esquina inferior izquierda. Si todo está correcto, ¡verás cómo el LED en tu circuito virtual comienza a parpadear!</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=1t-v7-2-V8" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Simular Arduino en Proteus - Primeros Pasos" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-proteus font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

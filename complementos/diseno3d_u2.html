@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño 3D U2: Diseño Paramétrico con Fusion 360</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1d4ed8; /* blue-700 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-3d {
+            background-color: #2563eb;
+        }
+        .footer-button-3d:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 2: Diseño Paramétrico con Fusion 360</h1>
+            <p class="text-lg text-gray-600">Diseño 3D</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">1. El Poder del Diseño Paramétrico</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Autodesk Fusion 360</strong> es una herramienta de software CAD, CAM, CAE y PCB basada en la nube. A diferencia de Tinkercad, que se basa en la manipulación directa de formas, Fusion 360 utiliza un enfoque de <strong>diseño paramétrico</strong>. Esto significa que cada parte de tu modelo está definida por parámetros (como dimensiones y restricciones) que se pueden editar en cualquier momento, y el modelo se actualizará automáticamente. Es el estándar para la ingeniería y el diseño de productos.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">2. La Interfaz y Herramientas a Fondo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interfaz de Fusion 360 es más compleja, pero está organizada de forma lógica. Dominar sus componentes es clave para un flujo de trabajo eficiente.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Barra de Herramientas (Toolbar) en Detalle</h3>
+                         <img src="https://placehold.co/1200x600/EFF6FF/1E3A8A?text=Interfaz+de+Fusion+360" alt="Interfaz de Fusion 360" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box space-y-4">
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #1e3a8a;">Panel de Boceto (Sketch)</h4>
+                                <p class="text-base mt-1">Aquí es donde creas la base 2D de tus diseños. Incluye herramientas como <strong>Línea, Rectángulo, Círculo</strong> y, la más importante, <strong>Sketch Dimension (D)</strong> para definir medidas exactas.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #1e3a8a;">Panel de Creación (Create)</h4>
+                                <p class="text-base mt-1">Contiene las herramientas para convertir tus bocetos 2D en cuerpos 3D. Las más usadas son: <strong>Extrude (E)</strong> para dar volumen, <strong>Revolve</strong> para crear formas cilíndricas a partir de un perfil, y <strong>Sweep</strong> para extruir un perfil a lo largo de una ruta.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #1e3a8a;">Panel de Modificación (Modify)</h4>
+                                <p class="text-base mt-1">Una vez que tienes un cuerpo 3D, estas herramientas te permiten alterarlo. Las más importantes son: <strong>Fillet (F)</strong> para redondear bordes, <strong>Chamfer</strong> para hacer chaflanes, <strong>Shell</strong> para vaciar un sólido y <strong>Hole</strong> para crear agujeros precisos.</p>
+                           </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold my-3">El Navegador y la Línea de Tiempo</h3>
+                         <div class="info-box space-y-4">
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #1e3a8a;">Navegador (Browser)</h4>
+                                <p class="text-base mt-1">A la izquierda, el Navegador organiza todos los elementos de tu diseño en una estructura de árbol. Es fundamental para mantener el orden. Aquí puedes ver y ocultar elementos como los Cuerpos (Bodies), los Bocetos (Sketches), los planos de construcción y las juntas (Joints) en un ensamblaje.</p>
+                           </div>
+                           <div>
+                                <h4 class="font-semibold text-lg" style="color: #1e3a8a;">Línea de Tiempo (Timeline)</h4>
+                                <p class="text-base mt-1"><strong>Esta es la característica más importante del diseño paramétrico.</strong> Ubicada en la parte inferior, la línea de tiempo registra cada operación (un boceto, una extrusión, un corte, un redondeo) que realizas en orden cronológico. Puedes "retroceder en el tiempo" arrastrando el marcador, hacer doble clic en cualquier operación para editar sus parámetros (cambiar una medida, por ejemplo), y todo el modelo se reconstruirá automáticamente con los nuevos cambios. Es el historial editable de tu diseño.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Proyectos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">3. Proyectos Guiados: Aprendiendo el Flujo Paramétrico</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La mejor forma de entender el diseño paramétrico es creando. Sigue estos proyectos paso a paso.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-12">
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 1: Creando un Soporte en L (Escuadra)</h3>
+                            <p class="text-base mb-4">Este proyecto te enseñará el flujo de trabajo básico: Boceto > Dimensión > Extrusión.</p>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear un Boceto:</strong> Haz clic en "Create Sketch" y selecciona el plano XY (el del "suelo").</li>
+                                <li><strong>Dibujar el Perfil:</strong> Usa la herramienta "Line" para dibujar el perfil de una L. No te preocupes por las medidas exactas todavía.</li>
+                                <li><strong>Añadir Dimensiones:</strong> Usa la herramienta "Sketch Dimension" (Atajo: D). Define el alto y el ancho de la L a 50mm, y el grosor a 10mm.</li>
+                                <li><strong>Finalizar Boceto:</strong> Haz clic en "Finish Sketch".</li>
+                                <li><strong>Extruir:</strong> Selecciona la herramienta "Extrude" (Atajo: E). Haz clic en el perfil de tu L y introduce un valor (ej. 20mm) para darle volumen.</li>
+                            </ol>
+                            <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Creación+de+un+Soporte+en+L" alt="Soporte en L" class="w-full h-auto rounded-lg shadow-md mt-4">
+                         </div>
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 2: Modelando un Espaciador con Agujeros</h3>
+                            <p class="text-base mb-4">Este proyecto introduce herramientas más avanzadas como patrones y redondeos.</p>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear la Base:</strong> Crea un boceto en el plano XY. Dibuja un Círculo ("Center Diameter Circle") con un diámetro de 50mm. Finaliza el boceto y extruyelo 10mm.</li>
+                                <li><strong>Crear el Primer Agujero:</strong> Crea un nuevo boceto sobre la cara superior de tu cilindro. Dibuja un círculo pequeño (ej. 5mm) cerca del borde. Finaliza el boceto. Usa "Extrude" sobre este círculo y en "Operation" elige "Cut" para perforar.</li>
+                                <li><strong>Crear un Patrón:</strong> Selecciona la operación de corte en la Línea de Tiempo. Ve a "Create > Pattern > Circular Pattern". Como "Axis", selecciona el borde circular exterior de tu pieza. En "Quantity", introduce 4.</li>
+                                <li><strong>Añadir Redondeos (Fillets):</strong> Selecciona la herramienta "Fillet" (Atajo: F). Haz clic en los bordes superior e inferior de la pieza y define un radio pequeño (ej. 1mm).</li>
+                            </ol>
+                             <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Modelado+de+un+Espaciador" alt="Modelando un Espaciador" class="w-full h-auto rounded-lg shadow-md mt-4">
+                         </div>
+
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 3: Creando una Caja con Tapa</h3>
+                            <p class="text-base mb-4">Este proyecto enseña a vaciar objetos y a crear encajes simples.</p>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear la Caja:</strong> Dibuja un rectángulo en un boceto (ej. 100x50mm). Extrúyelo a la altura deseada (ej. 40mm).</li>
+                                <li><strong>Vaciar la Caja:</strong> Usa la herramienta <strong>"Shell"</strong>. Selecciona la cara superior de la caja y define un grosor para las paredes (ej. 2mm). La caja quedará hueca.</li>
+                                <li><strong>Crear el Labio de la Tapa:</strong> Crea un nuevo boceto sobre el borde superior de las paredes de la caja. Dibuja un rectángulo que sobresalga ligeramente hacia adentro (ej. 1mm de grosor).</li>
+                                <li><strong>Extruir la Tapa:</strong> Extruye ese último rectángulo hacia arriba (ej. 10mm) para formar la tapa.</li>
+                                <li><strong>Añadir Tolerancia:</strong> Usa la herramienta "Press Pull" (Atajo: Q) en las caras internas del labio de la tapa y redúcelas una pequeña cantidad (ej. -0.2mm) para asegurar que la tapa encaje sin problemas después de la impresión.</li>
+                            </ol>
+                             <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Creación+de+una+Caja+con+Tapa" alt="Caja con Tapa" class="w-full h-auto rounded-lg shadow-md mt-4">
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Sección Exportación -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">4. Exportando para Fabricación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Fusion 360 puede exportar diseños a una multitud de formatos, dependiendo del destino (impresora 3D, fresadora CNC, etc.).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="info-box">
+                             <h4 class="font-semibold text-lg" style="color: #0369a1;">Pasos para Exportar a STL (Impresión 3D):</h4>
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                 <li>En el navegador de la izquierda, haz clic derecho sobre el "Cuerpo" (Body) o "Componente" que deseas exportar.</li>
+                                 <li>Selecciona la opción <strong>"Save as Mesh"</strong> (Guardar como Malla).</li>
+                                 <li>En el menú que aparece, asegúrate de que el formato seleccionado sea <strong>STL</strong> y que la calidad (refinement) sea "Alta".</li>
+                                 <li>Haz clic en "OK" y guarda el archivo en tu computadora.</li>
+                             </ol>
+                          </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=sU9Ohd_I_4E" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Curso de Fusion 360 para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-3d font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U5.2: Hardware para Servidores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 5.2: Hardware para Servidores</h1>
+            <p class="text-lg text-gray-600">Módulo 5: Temas Especializados y de Vanguardia</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué Hace Diferente al Hardware de Servidor?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Mientras que el hardware de consumo (como el de una PC de gaming) está diseñado para el rendimiento en ráfagas cortas, el hardware de servidor está diseñado para una misión completamente diferente: la <strong>fiabilidad y el funcionamiento ininterrumpido 24/7</strong>. Un servidor es una computadora que proporciona servicios a otros equipos (clientes) en una red, y su fallo puede dejar a toda una organización sin acceso a datos o aplicaciones críticas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Los Pilares del Hardware de Servidor</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Fiabilidad y Estabilidad:</strong> Diseñado para funcionar sin parar durante años.</li>
+                            <li><strong>Redundancia:</strong> Componentes duplicados (como fuentes de alimentación) para que el sistema siga funcionando incluso si uno falla.</li>
+                            <li><strong>Escalabilidad:</strong> Capacidad de ampliar sus recursos (más CPUs, más RAM, más almacenamiento) para satisfacer una demanda creciente.</li>
+                            <li><strong>Gestión Remota:</strong> Herramientas para administrar y monitorizar el servidor a distancia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección CPUs de Servidor -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. CPUs de Servidor: Xeon y Epyc</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Los procesadores para servidores son diferentes a sus contrapartes de escritorio. Están optimizados para el trabajo en paralelo y la gestión de grandes cantidades de memoria y periféricos.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Intel Xeon</h4>
+                                <p class="text-base mt-2">Es la línea de procesadores de Intel para estaciones de trabajo y servidores. Se caracterizan por soportar memoria ECC, tener un alto número de núcleos y grandes cantidades de memoria caché L3.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">AMD Epyc</h4>
+                                <p class="text-base mt-2">Es la respuesta de AMD a Intel Xeon. Los procesadores Epyc han ganado popularidad por ofrecer un número de núcleos extremadamente alto por zócalo, un gran ancho de banda de memoria y un rendimiento excepcional en cargas de trabajo de virtualización y computación de alto rendimiento.</p>
+                           </div>
+                        </div>
+                         <div class="info-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #0369a1;">Configuraciones Multi-Zócalo</h4>
+                           <p class="text-base mt-2">Una de las características más distintivas de las plataformas de servidor es la capacidad de tener <strong>placas madre con múltiples zócalos de CPU</strong> (generalmente 2 o 4). Esto permite instalar varios procesadores físicos en un solo sistema, multiplicando el número total de núcleos y la capacidad de procesamiento paralelo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Memoria ECC -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Memoria ECC: La Red de Seguridad de los Datos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La memoria <strong>ECC (Error-Correcting Code)</strong> es un tipo de memoria RAM que puede detectar y corregir los errores de datos más comunes sobre la marcha. En un sistema que opera 24/7, los pequeños errores de bits causados por interferencias cósmicas o eléctricas son inevitables. En una PC normal, un error de un solo bit puede causar un pantallazo azul. En un servidor, esto es inaceptable.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cómo Funciona?</h3>
+                         <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Módulo+de+Memoria+RAM+ECC+(con+chip+extra)" alt="Memoria ECC" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <p class="text-base">Los módulos de memoria ECC tienen un chip de memoria adicional que almacena un código de paridad. Cuando los datos se leen de la memoria, el sistema puede usar este código para verificar si los datos son correctos y, si un solo bit ha cambiado, puede corregirlo automáticamente. Esta es una característica <strong>esencial para la integridad de los datos</strong> en aplicaciones críticas como bases de datos, transacciones financieras y servidores de archivos.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Almacenamiento -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Almacenamiento para Servidores (NAS y RAID)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El almacenamiento en servidores se centra en la capacidad, el rendimiento y, sobre todo, la redundancia de datos. Un <strong>NAS (Network Attached Storage)</strong> es un servidor dedicado exclusivamente al almacenamiento de archivos en una red.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Configuraciones RAID para Servidores</h3>
+                         <p class="text-base">Además de RAID 0 y RAID 1, en servidores se utilizan configuraciones más avanzadas:</p>
+                         <div class="grid md:grid-cols-2 gap-8 mt-4">
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">RAID 5 (División con Paridad)</h4>
+                                <p class="text-base mt-2">Requiere un mínimo de 3 discos. Los datos se dividen entre los discos, y en uno de ellos se escribe un bloque de "paridad" que permite reconstruir los datos si uno de los discos falla. Ofrece un buen equilibrio entre rendimiento, capacidad y redundancia.</p>
+                             </div>
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">RAID 10 (Espejo de Divisiones)</h4>
+                                <p class="text-base mt-2">También conocido como RAID 1+0, requiere un mínimo de 4 discos. Combina la velocidad de RAID 0 con la redundancia de RAID 1. Es una de las configuraciones más seguras y de mayor rendimiento, pero se pierde el 50% de la capacidad total.</p>
+                             </div>
+                         </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">Fuentes de Alimentación Redundantes</h4>
+                            <p class="text-base mt-2">Muchos servidores están equipados con <strong>dos o más fuentes de alimentación</strong>. Si una falla, la otra toma el relevo instantáneamente sin que el servidor se apague. Esto permite reemplazar la fuente defectuosa "en caliente" (hot-swap) sin interrumpir el servicio.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=N_p3p-58ODg" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Las Diferencias del Hardware de Servidor" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

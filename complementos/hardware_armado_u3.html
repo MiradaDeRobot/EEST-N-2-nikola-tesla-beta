@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U2.3: Mantenimiento Preventivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 2.3: Mantenimiento Preventivo</h1>
+            <p class="text-lg text-gray-600">Módulo 2: Armado y Mantenimiento de Equipos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué es el Mantenimiento Preventivo?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>mantenimiento preventivo</strong> es un conjunto de tareas periódicas que se realizan en un equipo para reducir la probabilidad de fallos y alargar su vida útil. A diferencia del mantenimiento correctivo (que repara algo que ya se ha roto), el mantenimiento preventivo busca evitar que los problemas ocurran en primer lugar. Es como cambiar el aceite de un coche: lo haces para prevenir un fallo catastrófico del motor en el futuro.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Beneficios Clave</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Mejora del Rendimiento:</strong> Un sistema limpio y actualizado funciona de manera más rápida y eficiente.</li>
+                            <li><strong>Mayor Vida Útil:</strong> Mantener bajas las temperaturas y los componentes limpios reduce el desgaste y alarga su durabilidad.</li>
+                            <li><strong>Estabilidad del Sistema:</strong> Reduce la probabilidad de "cuelgues", reinicios inesperados y "pantallazos azules".</li>
+                            <li><strong>Ahorro a Largo Plazo:</strong> Es mucho más barato limpiar el polvo de un ventilador que reemplazar una tarjeta gráfica sobrecalentada.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Limpieza Física -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Limpieza Física de Componentes</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>El polvo es el enemigo número uno del hardware. Actúa como un aislante térmico, atrapando el calor, obstruyendo los ventiladores y dificultando el flujo de aire. Una limpieza física regular (cada 3-6 meses, dependiendo del ambiente) es la tarea de mantenimiento más importante.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #0369a1;">Herramientas para la Limpieza:</h4>
+                           <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                               <li><strong>Aire Comprimido o Soplador de Aire:</strong> Para expulsar el polvo de lugares de difícil acceso.</li>
+                               <li><strong>Alcohol Isopropílico (90% o más):</strong> Para limpiar superficies y restos de pasta térmica.</li>
+                               <li><strong>Paños de Microfibra y Bastoncillos de Algodón:</strong> Para una limpieza delicada.</li>
+                               <li><strong>Brochas y Pinceles Suaves:</strong> Para quitar el polvo adherido a placas y componentes.</li>
+                           </ul>
+                        </div>
+                         <div class="warning-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Precaución con el Aire Comprimido!</h4>
+                           <p class="text-base mt-2">Al usar aire comprimido para limpiar un ventilador, sujeta las aspas con un dedo para evitar que giren a una velocidad excesiva. Hacerlas girar sin control puede dañar su motor.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=02p_i33-8kQ" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Limpiar tu PC Correctamente" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Software -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Actualización de Software y Firmware</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El mantenimiento no es solo físico. Mantener actualizados los controladores (drivers) y el firmware del sistema es vital para la seguridad, la compatibilidad y el rendimiento.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Actualización de Controladores (Drivers)</h3>
+                             <p class="text-base">Los drivers son el software que permite que el sistema operativo se comunique con el hardware. Los más importantes a mantener actualizados son los de la <strong>tarjeta gráfica (GPU)</strong>, ya que los fabricantes (NVIDIA, AMD) lanzan nuevas versiones constantemente para optimizar el rendimiento en nuevos juegos y aplicaciones.</p>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">Actualización del BIOS/UEFI</h3>
+                             <p class="text-base">Actualizar el firmware de la placa madre puede mejorar la compatibilidad con nuevo hardware (CPUs, RAM), corregir errores de estabilidad y parchear vulnerabilidades de seguridad.</p>
+                            <div class="warning-box mt-4">
+                               <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Procedimiento Delicado!</h4>
+                               <p class="text-base mt-2">La actualización del BIOS es un proceso crítico. Una interrupción durante el proceso (como un corte de luz) puede dejar la placa madre inutilizable. Realiza este procedimiento solo si es necesario y siguiendo al pie de la letra las instrucciones del fabricante.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Monitorización -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Monitorización de Temperaturas y Rendimiento</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vigilar activamente la "salud" de tu sistema te permite detectar problemas antes de que se conviertan en fallos graves. Esto se hace a través de software especializado que lee los sensores de tus componentes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Software de Monitorización Esencial</h3>
+                          <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Interfaz+de+Software+de+Monitorización+(HWMonitor)" alt="Software de Monitorización" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box">
+                             <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>HWMonitor o HWiNFO64:</strong> Programas muy completos que muestran en tiempo real las temperaturas, voltajes, frecuencias y velocidades de los ventiladores de todos tus componentes.</li>
+                                <li><strong>MSI Afterburner:</strong> La herramienta por excelencia para monitorizar el rendimiento de la GPU en tiempo real mientras juegas, mostrando los FPS, la temperatura, el uso y la frecuencia.</li>
+                                 <li><strong>CrystalDiskInfo:</strong> Lee los datos <strong>S.M.A.R.T.</strong> de tus unidades de almacenamiento (SSD y HDD) y te da un estado de salud general. Es vital para anticipar un fallo inminente del disco.</li>
+                             </ul>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Temperaturas de Referencia</h4>
+                            <p class="text-base mt-2">Aunque varía según el componente, unas temperaturas de referencia generales para CPU y GPU son:</p>
+                             <ul class="list-disc list-inside space-y-2 text-base mt-2">
+                                <li><strong>En Reposo (Idle):</strong> Entre 30°C y 50°C.</li>
+                                <li><strong>Bajo Carga (Gaming/Trabajo):</strong> Entre 60°C y 85°C.</li>
+                                <li><strong>Temperaturas de Riesgo:</strong> Por encima de 90°C. Si tu equipo alcanza estas temperaturas de forma sostenida, es un indicativo claro de que necesitas mejorar la refrigeración o realizar una limpieza.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

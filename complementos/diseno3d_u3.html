@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño 3D U3: Modelado Orgánico con Blender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1d4ed8; /* blue-700 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-3d {
+            background-color: #2563eb;
+        }
+        .footer-button-3d:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 3: Modelado Orgánico con Blender</h1>
+            <p class="text-lg text-gray-600">Diseño 3D</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">1. Blender: El Universo del 3D en tus Manos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Blender</strong> es una suite de creación 3D gratuita y de código abierto. A diferencia del diseño paramétrico de Fusion 360, Blender se especializa en el <strong>modelado poligonal (o de mallas)</strong>, una técnica que consiste en manipular directamente los vértices, aristas y caras de un objeto, como si fuera arcilla digital. Esto lo hace ideal para crear formas orgánicas, personajes y modelos artísticos.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">2. La Interfaz y la Barra de Herramientas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interfaz de Blender es densa, pero está optimizada para la velocidad. La barra de herramientas de la izquierda del <strong>3D Viewport</strong> contiene las acciones de transformación más comunes.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Herramientas Principales</h3>
+                         <img src="https://placehold.co/1200x600/EFF6FF/1E3A8A?text=Interfaz+de+Blender+con+Barra+de+Herramientas" alt="Interfaz de Blender" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Select Box:</strong> La herramienta de selección por defecto para hacer clic o arrastrar y seleccionar objetos.</li>
+                               <li><strong>Move (Atajo: G):</strong> Mueve el objeto seleccionado. Puedes restringir el movimiento a un eje presionando X, Y o Z.</li>
+                               <li><strong>Rotate (Atajo: R):</strong> Rota el objeto seleccionado.</li>
+                               <li><strong>Scale (Atajo: S):</strong> Escala (cambia el tamaño) del objeto seleccionado.</li>
+                               <li><strong>Transform:</strong> Muestra un "gizmo" que combina las tres herramientas anteriores (Mover, Rotar y Escalar).</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Flujo de Trabajo -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">3. Flujo de Trabajo: Modo Objeto vs. Modo Edición</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El concepto más fundamental en Blender es la diferencia entre el <strong>Modo Objeto</strong> y el <strong>Modo Edición</strong>. Se puede alternar entre ellos con la tecla <strong>TAB</strong>.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Modo Objeto (Object Mode)</h4>
+                                <p class="text-base mt-2">En este modo, tratas a cada modelo como un objeto completo. Puedes moverlo, rotarlo y escalarlo, pero no puedes modificar su forma interna.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Modo Edición (Edit Mode)</h4>
+                                <p class="text-base mt-2">Aquí es donde ocurre la magia del modelado. Puedes seleccionar y manipular los elementos que componen la malla del objeto: <strong>vértices</strong> (puntos), <strong>aristas</strong> (líneas) y <strong>caras</strong> (polígonos).</p>
+                           </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Herramientas Esenciales del Modo Edición</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 text-center">
+                            <div class="p-4 bg-gray-100 rounded"><strong>Extruir (E)</strong><p class="text-sm mt-1">Crea nueva geometría a partir de una selección.</p></div>
+                            <div class="p-4 bg-gray-100 rounded"><strong>Insertar (I)</strong><p class="text-sm mt-1">Crea una cara nueva dentro de otra cara.</p></div>
+                            <div class="p-4 bg-gray-100 rounded"><strong>Biselar (Ctrl+B)</strong><p class="text-sm mt-1">Suaviza los bordes afilados.</p></div>
+                            <div class="p-4 bg-gray-100 rounded"><strong>Corte en Bucle (Ctrl+R)</strong><p class="text-sm mt-1">Añade más detalle a la malla.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Sección Tutoriales -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">4. Proyectos Guiados: Aprendiendo a Modelar</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La mejor forma de aprender es haciendo. Vamos a crear algunas figuras sencillas para poner en práctica todo lo que hemos visto.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-12">
+                         
+                         <!-- PROYECTO 1: TAZA -->
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 1: Modelando una Taza Sencilla</h3>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Punto de Partida:</strong> Empieza con el cubo por defecto. Con el cubo seleccionado, entra en <strong>Modo Edición (TAB)</strong>.</li>
+                                <li><strong>Dar Forma al Cuerpo:</strong> Con todo seleccionado (A), escala el cubo en el eje Z (S, luego Z) para hacerlo un poco más alto.</li>
+                                <li><strong>Crear el Interior:</strong> Cambia al modo de selección de Caras (presiona 3). Selecciona solo la cara superior. Presiona <strong>I</strong> para <strong>Insertar</strong> una nueva cara y mueve el ratón hacia adentro para crear un borde.</li>
+                                <li><strong>Vaciar la Taza:</strong> Con la nueva cara aún seleccionada, presiona <strong>E</strong> para <strong>Extruir</strong> y mueve el ratón hacia abajo, creando el interior hueco de la taza.</li>
+                                <li><strong>Crear el Asa:</strong> Vuelve al <strong>Modo Objeto (TAB)</strong>. Añade un nuevo objeto desde el menú Add > Mesh > Torus (<code>Shift + A</code>). Mueve (G) y rota (R, luego X, luego 90) el toroide para posicionarlo en el costado de la taza.</li>
+                                <li><strong>Unir las Piezas:</strong> Selecciona primero el asa, luego (manteniendo Shift) la taza. Presiona <strong>Ctrl+J</strong> para unirlos en un solo objeto.</li>
+                                <li><strong>Suavizar el Modelo:</strong> Ve al <strong>Properties Panel</strong>, a la pestaña de Modificadores (el ícono de la llave inglesa). Haz clic en "Add Modifier" y elige <strong>"Subdivision Surface"</strong>. Aumenta los niveles ("Levels Viewport") a 2 o 3 para ver el resultado suavizado. Haz clic derecho sobre el objeto y selecciona "Shade Smooth".</li>
+                            </ol>
+                         </div>
+                         
+                         <!-- PROYECTO 2: PEÓN -->
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 2: Modelando un Peón de Ajedrez</h3>
+                             <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Modelado+de+un+Peón" alt="Modelando un Peón" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Punto de Partida:</strong> Borra el cubo y añade un Cilindro (<code>Shift + A</code> > Mesh > Cylinder).</li>
+                                <li><strong>Añadir Detalle:</strong> Entra en <strong>Modo Edición (TAB)</strong>. Usa la herramienta <strong>Corte en Bucle (Ctrl+R)</strong>. Acerca el ratón al cilindro y, con la rueda del ratón, aumenta el número de cortes a 5 o 6. Haz clic para confirmar.</li>
+                                <li><strong>Dar Forma:</strong> Cambia al modo de selección de Aristas (presiona 2). Selecciona un bucle de aristas (<code>Alt + Clic</code> en una arista horizontal). Presiona <strong>S</strong> para <strong>Escalar</strong> el bucle hacia adentro o hacia afuera. Repite esto con los diferentes bucles para crear la base ancha, el cuello estrecho y la cabeza del peón.</li>
+                                <li><strong>Crear la Cabeza:</strong> Selecciona la cara superior, presiona <strong>E</strong> para extruir un poco hacia arriba, luego <strong>S</strong> para escalar hacia adentro. Vuelve a extruir (E) y escalar (S) varias veces para formar la esfera de la cabeza.</li>
+                                <li><strong>Suavizar:</strong> Aplica un modificador de <strong>Subdivision Surface</strong> como en el proyecto anterior.</li>
+                            </ol>
+                         </div>
+                         
+                         <!-- PROYECTO 3: CASA -->
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 3: Creando una Casa Sencilla</h3>
+                             <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Modelado+de+una+Casa" alt="Modelando una Casa" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Punto de Partida:</strong> Empieza con el cubo por defecto. Entra en <strong>Modo Edición (TAB)</strong>.</li>
+                                <li><strong>Crear el Tejado:</strong> Usa <strong>Corte en Bucle (Ctrl+R)</strong> para añadir un corte vertical en el centro del cubo. Cambia al modo de selección de Aristas (2) y selecciona la nueva arista superior. Presiona <strong>G</strong> y luego <strong>Z</strong> para moverla hacia arriba, creando el tejado a dos aguas.</li>
+                                <li><strong>Hacer la Puerta:</strong> Selecciona la cara frontal. Presiona <strong>I</strong> para <strong>Insertar</strong> una cara y escálala para darle forma de puerta. Con esa cara aún seleccionada, presiona <strong>E</strong> para <strong>Extruir</strong> y muévela ligeramente hacia adentro.</li>
+                                <li><strong>Añadir una Chimenea:</strong> Selecciona una de las caras del tejado. Inserta (I) una pequeña cara cuadrada. Extrúyela (E) hacia arriba para crear la chimenea.</li>
+                            </ol>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Sección Exportación -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">5. Exportando para Impresión 3D</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que tu modelo está listo, es hora de exportarlo para que un software de impresión pueda leerlo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="info-box">
+                             <h4 class="font-semibold text-lg" style="color: #0369a1;">Pasos para Exportar a STL:</h4>
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                 <li>Asegúrate de estar en <strong>Modo Objeto</strong> y selecciona el modelo que quieres exportar.</li>
+                                 <li>Ve al menú <strong>File > Export > Stl (.stl)</strong>.</li>
+                                 <li>En el panel de exportación de la derecha, asegúrate de marcar la casilla <strong>"Selection Only"</strong> para exportar únicamente el objeto seleccionado.</li>
+                                 <li>Dale un nombre a tu archivo y haz clic en "Export STL".</li>
+                             </ol>
+                          </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=B0J27vS_y_I" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Blender para Principiantes Absolutos" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-3d font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

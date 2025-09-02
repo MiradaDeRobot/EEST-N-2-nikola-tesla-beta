@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA U3: Apoyo Creativo y Explicaciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #7e22ce; /* purple-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #6b21a8; /* purple-800 */
+        }
+        h4 {
+            color: #581c87; /* purple-900 */
+        }
+        .info-box {
+            background-color: #f5f3ff; /* violet-50 */
+            border-left: 4px solid #a78bfa; /* violet-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-ia {
+            background-color: #7e22ce;
+        }
+        .footer-button-ia:hover {
+            background-color: #6b21a8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #581c87;">Unidad 3: Apoyo Creativo y Explicaciones</h1>
+            <p class="text-lg text-gray-600">Usos de IA en el Estudio</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">1. La IA como Socio Creativo y Tutor Personal</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Más allá de ser una enciclopedia interactiva, la verdadera potencia de la IA para el estudio reside en su capacidad para actuar como un <strong>socio creativo</strong>. Puede ayudarte a superar el bloqueo del escritor, a explorar ideas desde ángulos inesperados y a desglosar los temas más complejos hasta que sean comprensibles. La clave es dejar de verla como una máquina de respuestas y empezar a usarla como un compañero de diálogo.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Brainstorming -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">2. Brainstorming y Generación de Ideas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>¿No sabes por dónde empezar un proyecto o cómo enfocar un ensayo? La IA es una herramienta fantástica para la lluvia de ideas (brainstorming).</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Técnicas de Prompting para la Creatividad</h3>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-lg" style="color: #a855f7;">Generar Temas para un Proyecto</h4>
+                                <p class="text-base mt-2"><strong>Prompt:</strong> "Soy un estudiante de electrónica y necesito ideas para mi proyecto final. Me interesan los microcontroladores y el IoT. Dame 10 ideas de proyectos que sean originales, de dificultad intermedia y que resuelvan un problema práctico."</p>
+                            </div>
+                             <div class="info-box mt-4">
+                                <h4 class="font-semibold text-lg" style="color: #a855f7;">Encontrar Argumentos para un Debate o Ensayo</h4>
+                                <p class="text-base mt-2"><strong>Prompt:</strong> "Estoy escribiendo un ensayo sobre las ventajas y desventajas de la refrigeración líquida vs. la refrigeración por aire en PCs de alto rendimiento. Preséntame 3 argumentos sólidos a favor de cada tipo de refrigeración."</p>
+                            </div>
+                             <div class="info-box mt-4">
+                                <h4 class="font-semibold text-lg" style="color: #a855f7;">Crear un Esquema o Estructura</h4>
+                                <p class="text-base mt-2"><strong>Prompt:</strong> "Basado en el tema 'La evolución del almacenamiento de datos, desde los discos duros hasta los SSDs NVMe', crea un esquema detallado para una presentación de 5 diapositivas, indicando qué puntos clave debería cubrir en cada una."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Explicaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">3. Explicando lo Inexplicable: La IA como Tutor Personalizado</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Uno de los superpoderes de la IA es su capacidad para adaptar una explicación a tus necesidades específicas. Si un libro de texto o un profesor no logran aclarar un concepto, puedes pedirle a la IA que te lo explique de infinitas maneras hasta que lo entiendas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Técnicas de Prompting para la Comprensión</h3>
+                        <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=IA+explicando+un+concepto+complejo" alt="IA como Tutor" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Uso de Analogías</h4>
+                                <p class="text-base mt-2">Relacionar un concepto nuevo con algo que ya conoces es una de las formas más efectivas de aprender.</p>
+                                <p class="text-sm mt-2"><strong>Prompt:</strong> "Explícame cómo funciona una red VLAN usando la analogía de un edificio de oficinas con diferentes departamentos."</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Explicaciones Paso a Paso</h4>
+                                <p class="text-base mt-2">Para procesos complejos, pedir un desglose secuencial es muy útil.</p>
+                                <p class="text-sm mt-2"><strong>Prompt:</strong> "Descríbeme el proceso de POST (Power-On Self-Test) de una computadora paso a paso, desde que presiono el botón de encendido hasta que empieza a cargar el sistema operativo."</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Diferentes Niveles de Dificultad</h4>
+                                <p class="text-base mt-2">Puedes pedirle a la IA que ajuste la complejidad de la explicación.</p>
+                                <p class="text-sm mt-2"><strong>Prompt:</strong> "Explícame qué es la memoria caché de una CPU. Primero, explícalo de forma muy simple para alguien que no sabe nada de hardware. Luego, dame una explicación más técnica que incluya los niveles L1, L2 y L3."</p>
+                           </div>
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Simulación de Diálogos</h4>
+                                <p class="text-base mt-2">Puedes pedirle a la IA que adopte un rol para poner a prueba tus conocimientos.</p>
+                                <p class="text-sm mt-2"><strong>Prompt:</strong> "Actúa como un entrevistador técnico. Yo soy un candidato para un puesto de técnico de PC. Hazme 5 preguntas sobre diagnóstico de fallas comunes de hardware."</p>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=U33Ah3m_g8w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Prompts Creativos para el Aprendizaje con IA" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-ia font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

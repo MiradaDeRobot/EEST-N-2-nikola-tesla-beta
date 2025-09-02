@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Inventor U1: Introducción y Diseño de Interfaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #f97316; /* orange-500 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #ea580c; /* orange-600 */
+        }
+        h4 {
+            color: #c2410c; /* orange-700 */
+        }
+        .info-box {
+            background-color: #fff7ed; /* orange-50 */
+            border-left: 4px solid #fb923c; /* orange-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-appinventor {
+            background-color: #f97316;
+        }
+        .footer-button-appinventor:hover {
+            background-color: #ea580c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #c2410c;">Unidad 1: Introducción y Diseño de Interfaces</h1>
+            <p class="text-lg text-gray-600">Creación de Apps con App Inventor</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #ea580c;">1. ¿Qué es App Inventor? Programación al Alcance de Todos</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>MIT App Inventor</strong> es una plataforma de desarrollo de aplicaciones móviles basada en la web, originalmente creada por Google y ahora mantenida por el Instituto de Tecnología de Massachusetts (MIT). Su objetivo es democratizar la creación de apps, permitiendo que personas sin experiencia previa en programación puedan construir aplicaciones completamente funcionales para dispositivos Android.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Filosofía de los Bloques</h3>
+                         <p class="mb-4 text-base">App Inventor se basa en el concepto de <strong>programación por bloques</strong>. En lugar de escribir líneas de código, arrastras y encajas bloques de colores que representan diferentes funciones y lógicas, de forma muy similar a un rompecabezas. Esto elimina los errores de sintaxis y permite centrarse en la lógica y la creatividad del proyecto.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #ea580c;">2. El Entorno de Desarrollo de App Inventor</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>El entorno de App Inventor se divide en dos vistas principales: el <strong>Diseñador</strong>, donde construyes la interfaz visual de tu app, y los <strong>Bloques</strong>, donde programas su comportamiento.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Vista de Diseñador</h3>
+                         <img src="https://placehold.co/1200x600/FFF7ED/C2410C?text=Interfaz+de+la+Vista+de+Diseñador" alt="Vista de Diseñador" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-base">
+                           <div><strong>1. Paleta (Palette):</strong> A la izquierda, contiene todos los componentes que puedes arrastrar a tu app, organizados por categorías (Botones, Imágenes, Sensores, etc.).</div>
+                           <div><strong>2. Visor (Viewer):</strong> Es la pantalla del teléfono virtual donde colocas y organizas los componentes.</div>
+                           <div><strong>3. Componentes (Components):</strong> Muestra una lista jerárquica de todos los componentes que has añadido a tu pantalla.</div>
+                           <div><strong>4. Propiedades (Properties):</strong> A la derecha, te permite cambiar las propiedades del componente que tengas seleccionado (ej. el texto de un botón, el color de fondo, el tamaño de la fuente).</div>
+                        </div>
+                         <h3 class="text-2xl font-semibold mt-8 mb-3">La Vista de Bloques</h3>
+                         <img src="https://placehold.co/1200x600/FFF7ED/C2410C?text=Interfaz+de+la+Vista+de+Bloques" alt="Vista de Bloques" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box grid md:grid-cols-2 gap-4 text-base">
+                           <div><strong>1. Bloques (Blocks):</strong> A la izquierda, es tu "caja de herramientas" de programación. Contiene bloques de lógica (Control, Lógica, Matemáticas) y bloques específicos para cada componente que hayas añadido en el diseñador.</div>
+                           <div><strong>2. Visor (Viewer):</strong> Es el lienzo donde arrastras y encajas los bloques para construir la lógica de tu aplicación.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutorial -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #ea580c;">3. Proyecto Guiado: Creando tu Primera App "Hola Mundo"</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a crear una aplicación simple: tendrá una etiqueta de texto y un botón. Al presionar el botón, el texto de la etiqueta cambiará.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Diseño de la Interfaz (Vista de Diseñador)</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/64748B?text=Diseño+de+la+Interfaz+en+App+Inventor" alt="Diseño de Interfaz" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li>Desde la <strong>Paleta</strong>, arrastra un componente <strong>Label (Etiqueta)</strong> al centro del Visor.</li>
+                                <li>Con la Etiqueta seleccionada, ve a sus <strong>Propiedades</strong> y cambia el <code>Text</code> a "Hola a todos". Puedes aumentar el <code>FontSize</code> (ej. a 30) y marcar <code>FontBold</code> (negrita).</li>
+                                <li>Arrastra un componente <strong>Button (Botón)</strong> desde la Paleta y colócalo debajo de la etiqueta.</li>
+                                <li>En las <strong>Propiedades</strong> del Botón, cambia su <code>Text</code> a "Presióname".</li>
+                                <li>Para centrar todo, selecciona <strong>Screen1</strong> en la lista de Componentes y en sus Propiedades, cambia <code>AlignHorizontal</code> a "Center".</li>
+                            </ol>
+                         </div>
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Programación de la Lógica (Vista de Bloques)</h3>
+                            <img src="https://placehold.co/1000x300/F1F5F9/64748B?text=Programación+de+Bloques+del+Hola+Mundo" alt="Programación en Bloques" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li>Haz clic en el botón <strong>"Blocks"</strong> en la esquina superior derecha para cambiar de vista.</li>
+                                <li>En el panel de Bloques, haz clic en <strong>Button1</strong>. Aparecerán todos los bloques relacionados con ese botón.</li>
+                                <li>Arrastra el bloque de evento <code>when Button1.Click do</code> al Visor. Este bloque se ejecutará cada vez que el usuario presione el botón.</li>
+                                <li>Ahora, haz clic en <strong>Label1</strong>. Busca el bloque <code>set Label1.Text to</code> y arrástralo para que encaje dentro del bloque del botón.</li>
+                                <li>Finalmente, en los bloques integrados (Built-in), haz clic en <strong>Text</strong>. Arrastra el primer bloque (el que tiene comillas vacías) y encájalo en el hueco del bloque <code>set Label1.Text to</code>. Haz clic dentro de las comillas y escribe "¡Hola, Mundo!".</li>
+                            </ol>
+                         </div>
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Probar la Aplicación</h3>
+                             <p class="text-base">La forma más fácil de probar tu app es con tu propio teléfono Android. Descarga la app "MIT AI2 Companion" desde la Play Store. Luego, en App Inventor, ve al menú <strong>Connect > AI Companion</strong>. Escanea el código QR que aparece con la app de tu teléfono, ¡y tu aplicación aparecerá en tu dispositivo para que puedas probarla en tiempo real!</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=lC4_Aa1n9yA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tutorial de App Inventor para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-appinventor font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

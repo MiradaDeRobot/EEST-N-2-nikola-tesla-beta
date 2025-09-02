@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U3.3: Reparaciones a Nivel Componente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 3.3: Reparaciones a Nivel Componente (Avanzado)</h1>
+            <p class="text-lg text-gray-600">Módulo 3: Diagnóstico y Reparación de Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Introducción a la Micro-soldadura</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La reparación a nivel de componente es el siguiente paso en la jerarquía de un técnico. En lugar de reemplazar una placa madre completa, se identifica y se reemplaza el componente defectuoso específico en la placa, como un capacitor, un conector o un chip. Esta disciplina, conocida como <strong>micro-soldadura</strong>, requiere herramientas especializadas, un pulso firme y un profundo conocimiento de los circuitos electrónicos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cuándo es necesaria?</h3>
+                        <p class="mb-4 text-base">Se recurre a la micro-soldadura cuando el diagnóstico apunta a un fallo físico en un componente integrado en un PCB, como por ejemplo:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li>Un conector USB o de carga que se ha roto físicamente.</li>
+                            <li>Capacitores hinchados o con fugas cerca del circuito de alimentación de la CPU.</li>
+                            <li>Un chip de BIOS corrupto que necesita ser reemplazado.</li>
+                            <li>Daños por líquido que han corroído pequeños componentes SMD.</li>
+                        </ul>
+                         <div class="warning-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">Nivel de Dificultad: Alto</h4>
+                           <p class="text-base mt-2">Esta es una habilidad avanzada. Intentar realizar estas reparaciones sin la práctica y las herramientas adecuadas puede causar daños irreparables a la placa. Se recomienda practicar extensamente en placas de desecho antes de trabajar en un equipo funcional.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Herramientas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Herramientas Esenciales para la Micro-soldadura</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Además del kit básico de soldadura, la reparación a nivel componente requiere un equipo más especializado.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Estación de Soldadura de Calidad</h4>
+                                <p class="text-base mt-2">Un cautín con puntas intercambiables y control preciso de la temperatura es fundamental. Se utilizan puntas muy finas para trabajar con componentes SMD.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Estación de Aire Caliente</h4>
+                                <p class="text-base mt-2">Es la herramienta clave para desoldar y soldar componentes de montaje superficial (SMD) con múltiples pines, como los chips. Permite calentar un área de manera uniforme sin contacto físico.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Microscopio (Estéreo o Digital)</h4>
+                                <p class="text-base mt-2">Es imposible trabajar con componentes SMD modernos sin magnificación. Un microscopio permite ver claramente las pequeñas uniones de soldadura e identificar problemas.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Multímetro de Precisión</h4>
+                                <p class="text-base mt-2">Indispensable para medir voltajes, resistencias y, sobre todo, para comprobar la continuidad de las pistas y diagnosticar cortocircuitos.</p>
+                           </div>
+                            <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Flux y Malla Desoldadora</h4>
+                                <p class="text-base mt-2">El flux es un compuesto químico que facilita que el estaño fluya correctamente y previene la oxidación. La malla es esencial para limpiar el exceso de estaño de los pads.</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Pinzas de Precisión (Tweezers)</h4>
+                                <p class="text-base mt-2">Un juego de pinzas finas y antiestáticas es necesario para manipular los diminutos componentes SMD.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Reparaciones Comunes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Ejemplos de Reparaciones a Nivel Componente</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>A continuación, se describen algunas de las reparaciones más comunes que se realizan con estas técnicas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Reemplazo de Capacitores Electrolíticos</h3>
+                             <p class="text-base">Los capacitores (o condensadores) defectuosos son una causa muy común de fallo en placas madre y fuentes de alimentación. Se identifican porque están visiblemente <strong>hinchados</strong> en la parte superior o tienen fugas de electrolito.</p>
+                             <img src="https://placehold.co/1000x400/F1F5F9/1E3A8A?text=Capacitores+Hinchados+vs+Sanos" alt="Capacitores Hinchados" class="w-full h-auto rounded-lg shadow-md my-4">
+                             <div class="example-box">
+                                 <p class="text-base">El reemplazo de capacitores THT se realiza con un cautín, desoldando las dos patas por la parte trasera de la placa y soldando un nuevo capacitor. <strong>Es crucial respetar la polaridad</strong> (la banda en el capacitor indica el negativo) y usar un reemplazo con el mismo valor de capacidad (μF) y un voltaje igual o superior.</p>
+                             </div>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">Reemplazo de Conectores (USB, DC Jack)</h3>
+                             <p class="text-base">Los conectores sufren mucho desgaste mecánico y son propensos a romperse. Suelen tener varios pines pequeños de señal y dos o cuatro patas grandes de anclaje soldadas a la placa.</p>
+                             <div class="example-box">
+                                 <p class="text-base">Para reemplazarlos, se utiliza una combinación de aire caliente para aflojar todos los pines a la vez y un cautín para añadir estaño de bajo punto de fusión que facilite el proceso. Luego se limpia el estaño viejo con malla y se suelda el nuevo conector.</p>
+                             </div>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold mb-3">Reparación de Pantallas de Notebooks</h3>
+                             <p class="text-base">Aunque no siempre implica soldadura, el reemplazo de una pantalla es una reparación avanzada. Requiere desensamblar con mucho cuidado el bisel de la pantalla, desconectar el delicado cable de video (LVDS/eDP) y el cable del backlight, y reemplazar el panel LCD. Es un trabajo que exige paciencia y un manejo muy cuidadoso de las piezas plásticas.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=vx7-3_1n-4o" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Introducción a la Micro-soldadura para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

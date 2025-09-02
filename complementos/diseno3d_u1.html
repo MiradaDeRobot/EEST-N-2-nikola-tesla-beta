@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño 3D U1: Introducción a Tinkercad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1d4ed8; /* blue-700 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-3d {
+            background-color: #2563eb;
+        }
+        .footer-button-3d:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1: Introducción al Diseño con Tinkercad</h1>
+            <p class="text-lg text-gray-600">Diseño 3D</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">1. ¿Qué es Tinkercad? Tu Primer Paso en el 3D</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>Tinkercad</strong> es una aplicación de diseño e impresión 3D en línea, gratuita y fácil de usar. Es la herramienta perfecta para principiantes de todas las edades que deseen iniciarse en el mundo del modelado 3D. Su filosofía se basa en la simplicidad: en lugar de menús complejos, utilizas formas básicas que puedes combinar, estirar y modificar para crear casi cualquier cosa que imagines.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ventajas Principales</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Basado en la Web:</strong> No necesitas instalar nada. Funciona directamente en tu navegador.</li>
+                            <li><strong>Curva de Aprendizaje Suave:</strong> Su interfaz intuitiva permite crear modelos complejos en minutos.</li>
+                            <li><strong>Ideal para Impresión 3D:</strong> Exportar tus creaciones para imprimirlas es un proceso directo y sencillo.</li>
+                            <li><strong>Gratuito:</strong> Es una herramienta completamente gratuita ofrecida por Autodesk.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">2. El Entorno de Diseño: Un Vistazo a Fondo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Al crear un nuevo diseño, te encontrarás con un espacio de trabajo limpio y organizado. Vamos a desglosarlo.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Anatomía de la Interfaz</h3>
+                         <img src="https://placehold.co/1200x600/EFF6FF/1E3A8A?text=Interfaz+de+Tinkercad+Detallada" alt="Interfaz de Tinkercad" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Barra de Herramientas Superior:</strong> Aquí residen las herramientas de edición más importantes. Las exploraremos en detalle más adelante, pero las clave son <strong>Agrupar, Desagrupar, Alinear</strong> y <strong>Simetría</strong>.</li>
+                               <li><strong>Cubo de Vistas (ViewCube):</strong> Te permite cambiar rápidamente la perspectiva. Haz clic en las caras, esquinas o aristas del cubo para rotar la vista. El ícono de la casa te devuelve a la vista inicial.</li>
+                               <li><strong>Plano de Trabajo (Workplane):</strong> Es tu mesa de trabajo virtual. Todo lo que arrastres desde el panel de formas aparecerá aquí. Puedes editar el tamaño de la rejilla para ajustarla a las dimensiones de tu impresora 3D.</li>
+                               <li><strong>Panel de Formas (Shapes Panel):</strong> Tu biblioteca de bloques de construcción. Contiene formas geométricas básicas, texto, símbolos y colecciones de piezas más complejas.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Herramientas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">3. Las Herramientas Clave y el Flujo de Trabajo</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La magia de Tinkercad reside en unas pocas herramientas poderosas que, combinadas, permiten una creatividad sin límites.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Agrupar (Group)</h4>
+                                <p class="text-base mt-2">Fusiona múltiples formas en un solo objeto. Si una de las formas es un "Hueco", la restará de las formas sólidas, creando perforaciones.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Desagrupar (Ungroup)</h4>
+                                <p class="text-base mt-2">Revierte la acción de agrupar, separando un objeto complejo de nuevo en sus formas originales.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Alinear (Align)</h4>
+                                <p class="text-base mt-2">Permite alinear dos o más objetos de forma precisa. Puedes centrarlos o alinearlos a sus bordes en los ejes X, Y y Z. Es fundamental para la precisión.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Simetría (Mirror)</h4>
+                                <p class="text-base mt-2">Crea una copia especular de un objeto a lo largo de un eje seleccionado. Muy útil para crear piezas simétricas.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutoriales -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">4. Proyectos Guiados: Aprendiendo a Modelar</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La mejor forma de aprender es haciendo. Vamos a crear algunas figuras para poner en práctica todo lo que hemos visto.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-12">
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 1: Creando un Llavero Personalizado</h3>
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear la Base:</strong> Arrastra un <strong>Cubo</strong> y redimensiónalo a <strong>60mm de largo, 20mm de ancho y 4mm de alto</strong>.</li>
+                                <li><strong>Crear el Agujero:</strong> Arrastra un <strong>Cilindro</strong>, conviértelo en <strong>"Hueco"</strong> y redimensiónalo a <strong>5mm x 5mm</strong>. Colócalo cerca de un extremo.</li>
+                                <li><strong>Perforar:</strong> Selecciona ambos objetos y haz clic en <strong>"Agrupar"</strong>.</li>
+                                <li><strong>Añadir Texto:</strong> Arrastra la forma de <strong>"Texto"</strong>, escribe tu nombre y ajústale el tamaño.</li>
+                                <li><strong>Alinear y Grabar:</strong> Usa la herramienta <strong>"Alinear"</strong> para centrar el texto. Conviértelo en <strong>"Hueco"</strong>, húndelo 1mm en la base y vuelve a <strong>"Agrupar"</strong> todo.</li>
+                            </ol>
+                         </div>
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 2: Diseñando una Placa de Nombre</h3>
+                            <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Creación+de+una+Placa+de+Nombre" alt="Placa de Nombre" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear la Placa:</strong> Arrastra un <strong>Cubo</strong> y ajústalo a <strong>150mm de largo, 50mm de alto y 5mm de grosor</strong>.</li>
+                                <li><strong>Crear el Soporte:</strong> Arrastra una <strong>Cuña (Wedge)</strong>. Rótala 90 grados para que se apoye en su lado más largo. Ajústala a un tamaño adecuado (ej. 5mm de grosor, 20mm de alto y 20mm de profundidad).</li>
+                                <li><strong>Posicionar el Primer Soporte:</strong> Usa la herramienta <strong>"Alinear"</strong> para alinear la parte trasera de la placa con la parte trasera del soporte. Muévelo hacia uno de los extremos.</li>
+                                <li><strong>Duplicar y Reflejar:</strong> Con el soporte seleccionado, presiona <strong>Duplicar (Ctrl+D)</strong>. Selecciona el nuevo soporte, usa la herramienta <strong>"Simetría" (Mirror)</strong> y haz clic en la flecha correspondiente para invertirlo. Muévelo al otro extremo de la placa.</li>
+                                <li><strong>Unir Todo:</strong> Selecciona la placa y los dos soportes y haz clic en <strong>"Agrupar"</strong>.</li>
+                                <li><strong>Añadir Texto:</strong> Añade tu nombre o un texto a la cara frontal de la placa, alinéalo y agrúpalo como en el proyecto anterior (puede ser en relieve o grabado).</li>
+                            </ol>
+                         </div>
+                         
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Proyecto 3: Construyendo una Caja Sencilla con Tapa</h3>
+                             <img src="https://placehold.co/1000x300/F1F5F9/1E3A8A?text=Proceso+de+Creación+de+una+Caja+con+Tapa" alt="Caja con Tapa" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-4 text-base">
+                                <li><strong>Crear la Base:</strong> Arrastra un <strong>Cubo</strong> y dale un tamaño, por ejemplo, <strong>50mm x 50mm y 30mm de alto</strong>.</li>
+                                <li><strong>Crear el Hueco:</strong> Duplica la base (Ctrl+D). La copia aparecerá en el mismo lugar. Cambia las dimensiones de la copia a <strong>46mm x 46mm</strong> (dejando 2mm de pared por lado). Auméntale la altura para que sobresalga y conviértela en <strong>"Hueco"</strong>.</li>
+                                <li><strong>Vaciar la Caja:</strong> Usa la herramienta <strong>"Alinear"</strong> para centrar perfectamente el hueco con la base. Una vez alineados, <strong>Agrúpalos</strong> para crear la caja hueca.</li>
+                                <li><strong>Crear la Tapa:</strong> Duplica la base original de nuevo. Muévela hacia un lado. Cambia su altura a <strong>5mm</strong>.</li>
+                                <li><strong>Crear el Encaje:</strong> Duplica la tapa. Cambia sus dimensiones a <strong>45.5mm x 45.5mm</strong> (un poco más pequeño que el interior de la caja para que encaje) y su altura a 3mm.</li>
+                                <li><strong>Unir la Tapa:</strong> Alinea la pieza de encaje con la tapa, de forma que quede centrada y en la parte inferior. <strong>Agrúpalas</strong>. ¡Ya tienes una caja y una tapa que encajan!</li>
+                            </ol>
+                         </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- Sección Exportación -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1d4ed8;">5. Exportando tu Creación para Impresión 3D</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que tu modelo está listo, es hora de exportarlo para que un software de impresión pueda leerlo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="info-box">
+                             <h4 class="font-semibold text-lg" style="color: #0369a1;">Pasos para Exportar a STL:</h4>
+                             <ol class="list-decimal list-inside space-y-3 text-base">
+                                 <li>Selecciona el objeto o el conjunto de objetos que quieres exportar.</li>
+                                 <li>Haz clic en el botón <strong>"Exportar"</strong> en la esquina superior derecha.</li>
+                                 <li>En la ventana de exportación, elige el formato de archivo. Para la impresión 3D, el <strong>.STL</strong> es el estándar universal.</li>
+                                 <li>El archivo se descargará a tu computadora, listo para ser abierto en un software "slicer" como Ultimaker Cura.</li>
+                             </ol>
+                          </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=g9L3iS1O1fE" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Tutorial Completo de Tinkercad para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-3d font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

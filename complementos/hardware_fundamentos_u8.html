@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.8: Refrigeración</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.8: Refrigeración: Manteniendo las Temperaturas a Raya</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Por qué? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Por Qué es Crucial la Refrigeración?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los componentes electrónicos, especialmente la CPU y la GPU, generan una gran cantidad de calor como subproducto de su funcionamiento. Si este calor no se disipa eficientemente, las temperaturas pueden elevarse a niveles peligrosos, lo que provoca una degradación del rendimiento y puede acortar la vida útil de los componentes.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Enemigo: Estrangulamiento Térmico (Thermal Throttling)</h3>
+                         <p class="mb-4 text-base">El <strong>estrangulamiento térmico</strong> es un mecanismo de autoprotección. Cuando un componente como la CPU alcanza una temperatura máxima de seguridad, reduce automáticamente su frecuencia de reloj (y por lo tanto su rendimiento) para generar menos calor y evitar daños. Una buena refrigeración asegura que tus componentes puedan funcionar a su máxima capacidad de forma sostenida.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Aire vs Líquida -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Refrigeración por Aire vs. Refrigeración Líquida</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Existen dos métodos principales para refrigerar la CPU: el tradicional disipador por aire y los más modernos sistemas de refrigeración líquida.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Refrigeración por Aire (Air Cooling)</h4>
+                                <img src="https://placehold.co/500x300/F1F5F9/1E3A8A?text=Disipador+por+Aire+de+Torre" alt="Disipador por Aire" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Funciona mediante un <strong>disipador</strong> (un bloque de aletas de aluminio) conectado a la CPU a través de <strong>heatpipes</strong> (tubos de cobre con un líquido en su interior que se evapora para transferir el calor). Un <strong>ventilador</strong> empuja aire a través de las aletas para disipar el calor.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                    <li><strong>Pros:</strong> Fiable, más económico, fácil de instalar.</li>
+                                    <li><strong>Contras:</strong> Puede ser voluminoso, el rendimiento puede ser limitado en CPUs de gama muy alta.</li>
+                                </ul>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Refrigeración Líquida (Liquid Cooling)</h4>
+                                <img src="https://placehold.co/500x300/F1F5F9/1E3A8A?text=Sistema+de+Refrigeración+Líquida+AIO" alt="Refrigeración Líquida" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Utiliza un <strong>líquido refrigerante</strong> para transferir el calor. Un <strong>bloque</strong> sobre la CPU absorbe el calor, una <strong>bomba</strong> impulsa el líquido caliente a un <strong>radiador</strong>, donde los <strong>ventiladores</strong> enfrían el líquido antes de que regrese al bloque. Existen dos tipos: <strong>AIO (All-in-One)</strong>, que son sistemas sellados y fáciles de instalar, y <strong>Custom Loops</strong>, que son sistemas personalizados y complejos.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                     <li><strong>Pros:</strong> Mayor rendimiento térmico, estética más limpia.</li>
+                                     <li><strong>Contras:</strong> Más caro, riesgo (muy bajo) de fugas, la bomba puede fallar.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Flujo de Aire -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Flujo de Aire en el Gabinete (Airflow)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>De nada sirve tener el mejor disipador si el aire caliente no puede salir del gabinete. Un buen <strong>flujo de aire</strong> es fundamental para que todos los componentes se mantengan frescos. El objetivo es crear una corriente constante que introduzca aire fresco por el frente y expulse el aire caliente por la parte trasera y superior.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Configuración Típica y Presión de Aire</h3>
+                         <img src="https://placehold.co/1200x500/E0F2FE/1E40AF?text=Diagrama+de+Flujo+de+Aire+Óptimo" alt="Flujo de Aire" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box">
+                            <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>Ventiladores de Entrada (Intake):</strong> Se colocan en el panel frontal (y a veces inferior) del gabinete para introducir aire fresco del exterior.</li>
+                                <li><strong>Ventiladores de Salida (Exhaust):</strong> Se colocan en el panel trasero y superior para expulsar el aire caliente que generan la CPU y la GPU.</li>
+                                <li><strong>Presión de Aire:</strong> El balance entre el aire que entra y el que sale define la presión interna:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                        <li><strong>Presión Positiva:</strong> Más aire entrando que saliendo. Ayuda a reducir la acumulación de polvo.</li>
+                                        <li><strong>Presión Negativa:</strong> Más aire saliendo que entrando. Puede mejorar ligeramente las temperaturas pero atrae más polvo.</li>
+                                        <li><strong>Presión Neutral:</strong> Flujo de entrada y salida equilibrado. Es el ideal para la mayoría de los casos.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Pasta Térmica -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Pasta Térmica: El Conector Esencial</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>pasta térmica</strong> es un compuesto de alta conductividad térmica que se aplica entre la superficie de la CPU y la base del disipador. Su función es rellenar las imperfecciones microscópicas de ambas superficies metálicas para asegurar una transferencia de calor perfecta.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Aplicación y Mantenimiento</h3>
+                         <div class="example-box">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Cómo Aplicar Pasta Térmica:</h4>
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>Limpia a fondo la superficie de la CPU y la base del disipador con alcohol isopropílico y un paño sin pelusa para eliminar cualquier resto de pasta antigua.</li>
+                                <li>Aplica una pequeña cantidad de pasta térmica nueva en el centro de la CPU. El tamaño de un guisante o un grano de arroz es suficiente.</li>
+                                <li>Instala el disipador encima. La presión del montaje se encargará de esparcir la pasta de manera uniforme. No es necesario esparcirla manualmente.</li>
+                            </ol>
+                         </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">¿Cuándo hay que cambiarla?</h4>
+                            <p class="text-base mt-2">La pasta térmica se degrada con el tiempo. Se recomienda cambiarla cada 2-3 años, o antes si notas que las temperaturas de tu CPU han empezado a subir inexplicablemente.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=NpKoE6i3_F4" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Refrigeración, Flujo de Aire y Aplicación de Pasta Térmica" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

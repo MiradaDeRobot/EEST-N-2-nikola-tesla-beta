@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U5.3: El Mundo de los Periféricos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 5.3: El Mundo de los Periféricos</h1>
+            <p class="text-lg text-gray-600">Módulo 5: Temas Especializados y de Vanguardia</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué son los Periféricos?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Los <strong>periféricos</strong> son todos los dispositivos de hardware que se conectan a la computadora para interactuar con ella o para expandir sus capacidades. Son el puente entre el usuario y el mundo digital. Se clasifican principalmente en periféricos de entrada, de salida y de entrada/salida (E/S).</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Experiencia de Usuario</h3>
+                        <p class="mb-4 text-base">Mientras que los componentes internos determinan la potencia de la PC, los periféricos definen la <strong>calidad de la experiencia de usuario</strong>. Un buen teclado, un ratón preciso y un monitor de alta calidad pueden transformar completamente la forma en que trabajamos y jugamos.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Teclados y Ratones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Periféricos de Entrada: Teclados y Ratones</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Son los dispositivos de entrada por excelencia. Aunque parecen simples, existe una enorme variedad de tecnologías diseñadas para diferentes tipos de usuarios.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Teclados: Membrana vs. Mecánicos</h3>
+                                <p class="text-base mt-2"><strong>Teclados de Membrana:</strong> Son los más comunes y económicos. Utilizan una membrana de goma debajo de las teclas. Son silenciosos pero ofrecen una sensación táctil menos precisa y tienen una menor durabilidad.</p>
+                                <p class="text-base mt-4"><strong>Teclados Mecánicos:</strong> Utilizan interruptores (switches) individuales para cada tecla. Ofrecen una respuesta táctil superior, mayor durabilidad y son los preferidos para gaming y escritura intensiva. Los switches vienen en diferentes "sabores" (ej. Cherry MX Red, Blue, Brown) que varían en su sensación y sonido.</p>
+                           </div>
+                           <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Ratones (Mice): Especificaciones Clave</h3>
+                                <p class="text-base mt-2"><strong>Sensor (Óptico vs. Láser):</strong> Los sensores ópticos son el estándar actual, ofreciendo gran precisión en la mayoría de las superficies. Los láser pueden funcionar sobre más superficies (como el cristal), pero a veces pueden ser menos predecibles.</p>
+                                <p class="text-base mt-4"><strong>DPI (Puntos por Pulgada):</strong> Mide la sensibilidad del ratón. Un DPI más alto significa que el cursor se moverá más en la pantalla con un movimiento físico más pequeño. Los gamers suelen preferir ratones con DPI ajustable.</p>
+                                <p class="text-base mt-4"><strong>Tasa de Sondeo (Polling Rate):</strong> Medida en Hercios (Hz), indica cuántas veces por segundo el ratón informa su posición a la computadora. Un estándar de 1000 Hz es ideal para una respuesta instantánea.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Monitores -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Periféricos de Salida: El Monitor</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El monitor es nuestra ventana al mundo digital. Su calidad impacta directamente en todo lo que hacemos, desde leer texto hasta disfrutar de una película o un videojuego.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Especificaciones Clave de un Monitor</h3>
+                         <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Especificaciones+de+un+Monitor" alt="Monitor" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box space-y-4">
+                           <div>
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Resolución</h4>
+                               <p class="text-base mt-1">Es el número de píxeles que componen la imagen. Una mayor resolución resulta en una imagen más nítida y detallada. Las más comunes son: <strong>Full HD (1920x1080)</strong>, <strong>QHD/2K (2560x1440)</strong> y <strong>UHD/4K (3840x2160)</strong>.</p>
+                           </div>
+                           <div>
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Tasa de Refresco (Hz)</h4>
+                               <p class="text-base mt-1">Indica cuántas veces por segundo la pantalla actualiza la imagen. Un monitor estándar funciona a 60 Hz. Para gaming, se buscan tasas de refresco altas (<strong>144 Hz, 165 Hz, 240 Hz</strong>) para una experiencia de juego mucho más fluida y receptiva.</p>
+                           </div>
+                           <div>
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Tiempo de Respuesta (ms)</h4>
+                               <p class="text-base mt-1">Mide el tiempo que tarda un píxel en cambiar de un color a otro (generalmente de gris a gris). Un tiempo de respuesta bajo (<strong>1ms</strong> es ideal) es crucial para el gaming, ya que reduce el efecto de "ghosting" o estela en movimientos rápidos.</p>
+                           </div>
+                             <div>
+                               <h4 class="font-semibold text-lg" style="color: #0369a1;">Tipo de Panel</h4>
+                               <p class="text-base mt-1">La tecnología del panel LCD afecta la calidad de imagen: <strong>IPS</strong> (colores vibrantes y buenos ángulos de visión, ideal para diseño), <strong>VA</strong> (excelente contraste, buenos para multimedia) y <strong>TN</strong> (tiempos de respuesta más rápidos, pero peores colores y ángulos, enfocado en gaming competitivo).</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Calibración -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Calibración de Monitores para Diseño Gráfico</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para profesionales como fotógrafos, diseñadores gráficos y editores de video, la precisión del color es fundamental. Un monitor sin calibrar puede mostrar colores incorrectos, lo que lleva a que un trabajo se vea completamente diferente cuando se imprime o se ve en otro dispositivo. La <strong>calibración</strong> es el proceso de ajustar el monitor para que muestre los colores de acuerdo con un estándar establecido.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">¿Cómo se Calibra un Monitor?</h3>
+                         <div class="example-box">
+                            <p class="text-base">Aunque se pueden hacer ajustes manuales básicos, la única forma de lograr una calibración precisa es con un dispositivo de hardware llamado <strong>colorímetro</strong> (marcas como Datacolor Spyder o Calibrite). Este dispositivo se coloca sobre la pantalla y, junto con su software, mide los colores que muestra el monitor y los compara con los valores estándar, generando un <strong>perfil de color (ICC)</strong> personalizado que corrige las desviaciones.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=w-N0s4-A_xI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Guía de Compra de Periféricos: Teclado, Ratón y Monitor" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

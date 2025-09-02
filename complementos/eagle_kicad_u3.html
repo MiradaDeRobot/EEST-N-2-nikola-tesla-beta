@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle/KiCad U3: Paneles y Fabricación en Serie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #4f46e5; /* indigo-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #4338ca; /* indigo-700 */
+        }
+        h4 {
+            color: #3730a3; /* indigo-800 */
+        }
+        .info-box {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #6366f1; /* indigo-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-kicad {
+            background-color: #4f46e5;
+        }
+        .footer-button-kicad:hover {
+            background-color: #4338ca;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #3730a3;">Unidad 3: Paneles y Fabricación en Serie</h1>
+            <p class="text-lg text-gray-600">Diseño Profesional con Eagle / KiCad</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">1. De Prototipo a Producción: La Panelización</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cuando necesitas fabricar más de unas pocas unidades de un PCB, no es eficiente producir las placas de una en una. La <strong>panelización</strong> es el proceso de tomar un diseño de PCB y disponer múltiples copias de él en un panel más grande que se ajusta a los tamaños estándar de las máquinas de fabricación. Esto optimiza drásticamente el proceso, reduce los costos y es un paso esencial para la producción en serie.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Métodos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">2. Métodos de Separación de Paneles (Depanelización)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una vez que el panel está fabricado y ensamblado, las placas individuales deben separarse. Existen dos métodos principales para preparar el panel para esta separación.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">V-Scoring vs. Tab-Routing</h3>
+                         <img src="https://placehold.co/1200x400/EEF2FF/3730A3?text=V-Scoring+vs.+Tab-Routing+con+Mouse+Bites" alt="Métodos de Panelización" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">V-Scoring (Corte en V)</h4>
+                                <p class="text-base mt-2">Se realiza una ranura en forma de V en la parte superior e inferior del panel a lo largo de las líneas de separación. Esto debilita el material, permitiendo que las placas se separen limpiamente con un "clic".</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                    <li><strong>Ideal para:</strong> PCBs con bordes rectos y sin componentes cerca del borde.</li>
+                                    <li><strong>Ventaja:</strong> Separación rápida y limpia, sin dejar residuos.</li>
+                                </ul>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Tab-Routing con "Mouse Bites"</h4>
+                                <p class="text-base mt-2">Las placas se separan completamente mediante un fresado (routing), pero se dejan unidas al panel por pequeñas pestañas (tabs). Estas pestañas a menudo tienen pequeñas perforaciones ("mouse bites") que facilitan romperlas después.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                    <li><strong>Ideal para:</strong> PCBs con formas irregulares o curvas.</li>
+                                    <li><strong>Ventaja:</strong> Permite cualquier forma de placa y la colocación de componentes hasta el borde.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fabricación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #4338ca;">3. Preparando los Archivos para el Fabricante</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La mayoría de las veces, no realizarás la panelización tú mismo en el software de diseño. En su lugar, proporcionarás el diseño de una sola placa al fabricante y le darás instrucciones específicas sobre cómo quieres que se panelice.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Paquete de Fabricación Final</h3>
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>Genera los Archivos Gerber y Excellon:</strong> Sigue el mismo proceso que en Proteus. Exporta todas las capas de tu diseño (cobre, máscara de soldadura, serigrafía, contorno) y el archivo de perforación.</li>
+                               <li><strong>Crea un Archivo "Readme.txt":</strong> Incluye un simple archivo de texto en tu paquete con instrucciones claras para el fabricante. Por ejemplo:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                        <li>"Panelizar este diseño en un arreglo de 2x5 (2 filas, 5 columnas)."</li>
+                                        <li>"Método de separación: V-Scoring."</li>
+                                        <li>"Espacio entre placas: 2mm."</li>
+                                    </ul>
+                               </li>
+                               <li><strong>Comprime todo en un .ZIP:</strong> Agrupa todos los archivos Gerber, el archivo de perforación y tu "Readme.txt" en un único archivo comprimido .zip. Este es el archivo que subirás a la página web del fabricante.</li>
+                           </ul>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=F14UIy4n_Qo" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Preparar Archivos para Fabricar PCBs" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-kicad font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

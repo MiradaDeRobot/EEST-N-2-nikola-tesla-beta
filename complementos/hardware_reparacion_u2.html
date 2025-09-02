@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U3.2: Solución de Fallas Comunes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 3.2: Solución de Fallas Comunes</h1>
+            <p class="text-lg text-gray-600">Módulo 3: Diagnóstico y Reparación de Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Falla 1: No enciende -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Falla Común: La PC no enciende nada</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Este es uno de los problemas más alarmantes: presionas el botón de encendido y no ocurre absolutamente nada. Ni luces, ni ventiladores, ni pitidos. El problema casi siempre está relacionado con la energía.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Proceso de Diagnóstico Paso a Paso</h3>
+                        <div class="example-box">
+                           <ol class="list-decimal list-inside space-y-4 text-base">
+                               <li><strong>Verificaciones Básicas (Lo obvio primero):</strong>
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                        <li>¿Está el cable de alimentación bien conectado a la fuente y a la toma de corriente?</li>
+                                        <li>¿Está encendido el interruptor de la fuente de alimentación (PSU)? (El que tiene el símbolo I/O).</li>
+                                        <li>¿Funciona la toma de corriente? Pruébala con otro dispositivo (una lámpara, un cargador).</li>
+                                    </ul>
+                               </li>
+                               <li><strong>Descartar la Fuente de Alimentación (PSU):</strong> La PSU es la sospechosa principal. Una forma de probarla es el "test del clip", un método avanzado que consiste en puentear dos pines del conector de 24 pines para forzar su encendido sin estar conectada a la placa madre.</li>
+                               <li><strong>Revisar Conexiones Internas:</strong> Asegúrate de que los cables de alimentación de la placa madre (24 pines) y de la CPU (4+4 u 8 pines) estén firmemente conectados.</li>
+                               <li><strong>El Botón de Encendido:</strong> Es posible que el propio botón del gabinete o su cable estén defectuosos. Puedes probar a encender la PC puenteando los dos pines del panel frontal correspondientes al "Power SW" con un destornillador.</li>
+                               <li><strong>Aislar el Problema:</strong> Desconecta todos los componentes no esenciales (GPU, discos duros, RAM, etc.), dejando solo la CPU y su disipador. Si la PC enciende (aunque no dé video), el problema está en uno de los componentes que quitaste. Vuelve a conectarlos uno por uno hasta encontrar al culpable.</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Falla 2: BSOD -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Falla Común: "Pantallazos Azules" (BSOD)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>El <strong>Pantallazo Azul de la Muerte</strong> (BSOD, por sus siglas en inglés, <em>Blue Screen of Death</em>) ocurre cuando Windows encuentra un error tan crítico que no puede continuar operando de forma segura y se detiene por completo. Aunque puede ser intimidante, el BSOD casi siempre proporciona un <strong>código de error</strong> que es la clave para el diagnóstico.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Causas Comunes y Diagnóstico</h3>
+                         <img src="https://placehold.co/1200x600/F1F5F9/1E3A8A?text=Ejemplo+de+Pantallazo+Azul+(BSOD)" alt="BSOD" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #0369a1;">Posibles Causas:</h4>
+                           <ul class="list-disc list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Memoria RAM Defectuosa:</strong> Es una de las causas más frecuentes. Errores al leer o escribir datos en la RAM pueden corromper el sistema.</li>
+                               <li><strong>Controladores (Drivers) Incompatibles o Corruptos:</strong> Un driver mal programado o desactualizado, especialmente el de la tarjeta gráfica, puede causar inestabilidad.</li>
+                               <li><strong>Fallos de Almacenamiento:</strong> Si el sistema operativo no puede leer o escribir archivos críticos en el SSD/HDD, puede provocar un BSOD.</li>
+                               <li><strong>Sobrecalentamiento:</strong> Temperaturas extremas en la CPU o GPU pueden generar errores de cálculo que lleven a un fallo del sistema.</li>
+                           </ul>
+                        </div>
+                         <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Proceso de Solución:</h4>
+                            <ol class="list-decimal list-inside space-y-2 mt-2 text-base">
+                                <li><strong>Anota el Código de Error:</strong> Lo más importante es el texto del error (ej. `MEMORY_MANAGEMENT`, `IRQL_NOT_LESS_OR_EQUAL`). Búscalo en internet para tener una pista.</li>
+                                <li><strong>Prueba la RAM:</strong> Usa la herramienta "Diagnóstico de Memoria de Windows" o, para un análisis más exhaustivo, MemTest86.</li>
+                                <li><strong>Actualiza o Reinstala Drivers:</strong> Asegúrate de tener los últimos drivers para tu tarjeta gráfica y chipset. Si el problema empezó tras una actualización, intenta volver a la versión anterior.</li>
+                                <li><strong>Verifica el Disco:</strong> Abre el Símbolo del sistema como administrador y ejecuta el comando `chkdsk /f /r` para buscar y reparar errores en el disco.</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Falla 3: Sobrecalentamiento -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Falla Común: Problemas de Sobrecalentamiento</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El sobrecalentamiento es un problema progresivo que puede manifestarse de muchas formas antes de causar un fallo total.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="warning-box">
+                           <h4 class="font-semibold text-lg" style="color: #b91c1c;">Síntomas Clave:</h4>
+                           <ul class="list-disc list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Thermal Throttling:</strong> El síntoma más común. La PC se vuelve extremadamente lenta de repente durante tareas intensivas (como jugar o renderizar) porque la CPU/GPU reduce su velocidad para protegerse.</li>
+                               <li><strong>Apagados o Reinicios Repentinos:</strong> Si la temperatura alcanza un punto crítico, el sistema se apagará bruscamente para evitar daños.</li>
+                               <li><strong>Ventiladores al Máximo:</strong> Los ventiladores giran constantemente a altas RPM, generando mucho ruido, incluso en tareas ligeras.</li>
+                           </ul>
+                        </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">Soluciones:</h4>
+                            <ol class="list-decimal list-inside space-y-2 mt-2 text-base">
+                                <li><strong>Monitoriza las Temperaturas:</strong> Usa un software como HWMonitor para confirmar que las temperaturas son el problema.</li>
+                                <li><strong>Limpieza Profunda:</strong> Apaga y desconecta el equipo. Abre el gabinete y realiza una limpieza exhaustiva del polvo acumulado en los disipadores, ventiladores y filtros.</li>
+                                <li><strong>Reemplazo de Pasta Térmica:</strong> Si la limpieza no es suficiente y el equipo tiene varios años, la pasta térmica de la CPU/GPU puede haberse secado. Reemplazarla puede reducir drásticamente las temperaturas.</li>
+                                <li><strong>Mejora del Flujo de Aire:</strong> Verifica que los ventiladores del gabinete estén funcionando y configurados correctamente para crear un buen flujo de aire.</li>
+                           </ol>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=f-s_oC-p_M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Solucionar Problemas de Sobrecalentamiento" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

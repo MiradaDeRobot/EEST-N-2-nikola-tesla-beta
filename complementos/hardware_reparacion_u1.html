@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U3.1: Metodologías de Diagnóstico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 3.1: Metodologías de Diagnóstico</h1>
+            <p class="text-lg text-gray-600">Módulo 3: Diagnóstico y Reparación de Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. El Arte de Solucionar Problemas (Troubleshooting)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El diagnóstico de hardware es una de las habilidades más valiosas de un técnico. No se trata de adivinar, sino de aplicar un <strong>proceso lógico y sistemático</strong> para aislar la causa de un problema. Una buena metodología te permite descartar componentes, identificar el origen del fallo de manera eficiente y evitar reemplazar piezas que funcionan correctamente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Los Pasos del Técnico</h3>
+                         <p class="mb-4 text-base">Un buen diagnóstico sigue un flujo de trabajo claro:</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Recopilar Información:</strong> Escuchar al usuario y entender los síntomas. ¿Cuándo empezó el problema? ¿Ocurre siempre o de forma intermitente?</li>
+                            <li><strong>Formular una Hipótesis:</strong> Basado en los síntomas, desarrollar una teoría sobre la posible causa (ej. "los reinicios aleatorios podrían ser por sobrecalentamiento").</li>
+                            <li><strong>Probar la Hipótesis:</strong> Realizar pruebas para confirmar o descartar la teoría (ej. "monitorizar las temperaturas bajo carga").</li>
+                            <li><strong>Resolver y Verificar:</strong> Una vez identificada la causa, aplicar la solución (ej. "limpiar el disipador y cambiar la pasta térmica") y verificar que el problema ha desaparecido.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección POST -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. El Proceso POST y los Códigos de Error</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La primera línea de defensa en el diagnóstico es el <strong>POST (Power-On Self-Test)</strong>. Es una serie de comprobaciones que el BIOS/UEFI de la placa madre realiza cada vez que se enciende la computadora para verificar que el hardware esencial (CPU, RAM, GPU) está presente y funciona mínimamente.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">¿Cómo nos informa el POST de un error?</h3>
+                        <p class="text-base">Si el POST detecta un fallo crítico que impide el arranque, lo comunicará de dos maneras principales:</p>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">Códigos de Pitidos (Beep Codes)</h4>
+                                <p class="text-base mt-2">En placas madre más antiguas o básicas, el sistema emite una secuencia de pitidos a través de un pequeño altavoz (speaker). Cada secuencia corresponde a un error específico. Por ejemplo:</p>
+                                <ul class="list-disc list-inside space-y-2 mt-2 text-sm">
+                                    <li><strong>1 pitido corto:</strong> Todo OK.</li>
+                                    <li><strong>1 pitido largo, 2 cortos:</strong> Error de tarjeta gráfica.</li>
+                                    <li><strong>Pitidos continuos:</strong> Error de memoria RAM.</li>
+                                </ul>
+                                 <p class="text-xs mt-2">Nota: Las secuencias varían según el fabricante del BIOS (AMI, Award, etc.).</p>
+                           </div>
+                           <div class="info-box">
+                                <h4 class="font-semibold text-xl" style="color: #0369a1;">LEDs de Diagnóstico (Debug LEDs)</h4>
+                                <p class="text-base mt-2">Las placas madre modernas suelen incluir un conjunto de 4 LEDs (CPU, DRAM, VGA, BOOT). Durante el arranque, cada LED se enciende mientras se comprueba ese componente. Si el sistema se detiene y uno de los LEDs permanece encendido, te indica exactamente qué componente está causando el problema.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Software -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Uso de Software de Diagnóstico</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Cuando la computadora arranca pero presenta inestabilidad o problemas de rendimiento, el siguiente paso es utilizar software especializado para realizar pruebas más profundas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">MemTest86: Pruebas de Memoria RAM</h3>
+                             <p class="text-base">Es la herramienta estándar para diagnosticar fallos en la memoria RAM. Se ejecuta desde un pendrive de arranque (antes de que cargue el sistema operativo) y realiza una serie de pruebas intensivas en los módulos de RAM para detectar errores. Un solo error en MemTest86 es suficiente para confirmar que un módulo de memoria está defectuoso.</p>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">CrystalDiskInfo: Salud del Almacenamiento</h3>
+                             <p class="text-base">Este programa lee los datos <strong>S.M.A.R.T.</strong> (Self-Monitoring, Analysis, and Reporting Technology) de tus SSDs y HDDs. Te proporciona un informe del estado de salud de la unidad ("Bueno", "Riesgo", "Malo"), el número de horas de uso, la temperatura y otros atributos críticos que pueden advertirte de un fallo inminente.</p>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold mb-3">Software de Stress Test (Pruebas de Estrés)</h3>
+                             <p class="text-base">Programas como <strong>Prime95</strong> (para CPU) y <strong>FurMark</strong> (para GPU) llevan estos componentes al 100% de su capacidad de forma sostenida. Son muy útiles para diagnosticar problemas de sobrecalentamiento o inestabilidad en la fuente de alimentación que solo aparecen bajo carga intensa.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=f8-earL-S8A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Programas Esenciales para Diagnosticar tu PC" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

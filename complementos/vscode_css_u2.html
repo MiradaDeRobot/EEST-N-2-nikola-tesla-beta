@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web U2: CSS - Dando Estilo a la Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0d9488; /* teal-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0f766e; /* teal-700 */
+        }
+        h4 {
+            color: #134e4a; /* teal-900 */
+        }
+        .info-box {
+            background-color: #f0fdfa; /* teal-50 */
+            border-left: 4px solid #2dd4bf; /* teal-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-web {
+            background-color: #0d9488;
+        }
+        .footer-button-web:hover {
+            background-color: #0f766e;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #134e4a;">Unidad 2: CSS - Dando Estilo a la Web</h1>
+            <p class="text-lg text-gray-600">Desarrollo Web con Visual Studio Code</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">1. ¿Qué es CSS? La Ropa de la Web</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>CSS (Cascading Style Sheets)</strong>, u Hojas de Estilo en Cascada, es el lenguaje que usamos para definir el estilo y la presentación visual de un documento HTML. Si HTML es el esqueleto de una página, CSS es la piel, la ropa y el maquillaje. Se encarga de todo lo visual: colores, fuentes, espaciado, posicionamiento y animaciones.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Sintaxis -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">2. Sintaxis y Selectores: Cómo Apuntar a los Elementos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Para aplicar un estilo, primero necesitas decirle a CSS a qué elemento HTML quieres aplicárselo. Esto se hace mediante <strong>selectores</strong>.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Regla CSS Básica</h3>
+                        <div class="example-box">
+<pre><code>selector {
+    propiedad: valor;
+}
+
+/* Ejemplo: Hacer que todos los párrafos (<p>) tengan texto azul */
+p {
+    color: blue;
+}
+</code></pre>
+                        </div>
+                        <div class="info-box mt-6">
+                           <h4 class="font-semibold text-lg" style="color: #0d9488;">Selectores Fundamentales:</h4>
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>Selector de Etiqueta:</strong> Selecciona todas las etiquetas de un tipo. Ejemplo: <code>h1</code> selecciona todos los títulos h1.</li>
+                               <li><strong>Selector de Clase:</strong> Selecciona todos los elementos que tengan un atributo <code>class</code> específico. Se define con un punto. Ejemplo: <code>.destacado</code> selecciona todos los elementos con <code>class="destacado"</code>.</li>
+                               <li><strong>Selector de ID:</strong> Selecciona un único elemento que tenga un atributo <code>id</code> específico. Se define con una almohadilla (<code>#</code>). El ID debe ser único en toda la página. Ejemplo: <code>#titulo-principal</code>.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Propiedades -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">3. Catálogo de Propiedades CSS Esenciales</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Aquí tienes una lista de las propiedades CSS más comunes, divididas por categoría, para empezar a dar estilo a tus páginas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Colores y Fondos</h3>
+                            <div class="example-box"><code>color: blue;</code>: Cambia el color del texto.<br><code>background-color: #f0f0f0;</code>: Cambia el color de fondo.<br><code>background-image: url('imagen.jpg');</code>: Establece una imagen de fondo.</div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Tipografía</h3>
+                            <div class="example-box"><code>font-family: Arial, sans-serif;</code>: Define la fuente.<br><code>font-size: 16px;</code>: Define el tamaño del texto.<br><code>font-weight: bold;</code>: Define el grosor del texto (normal, bold).<br><code>text-align: center;</code>: Alinea el texto (left, center, right).<br><code>text-decoration: none;</code>: Quita o añade decoraciones como el subrayado de los enlaces.<br><code>line-height: 1.5;</code>: Define el espacio entre líneas de texto.</div>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold">El Modelo de Caja (Box Model)</h3>
+                             <img src="https://placehold.co/1000x300/F0FDFA/134E4A?text=Diagrama+del+Modelo+de+Caja+(Margin,+Border,+Padding)" alt="Box Model" class="w-full h-auto rounded-lg shadow-md my-4">
+                             <div class="example-box"><code>width: 500px;</code>: Define el ancho del contenido.<br><code>height: 300px;</code>: Define el alto del contenido.<br><code>padding: 10px;</code>: Añade un relleno interior.<br><code>border: 1px solid black;</code>: Añade un borde.<br><code>margin: 20px;</code>: Añade un margen exterior.<br><code>border-radius: 15px;</code>: Redondea las esquinas del borde.</div>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold">Layout y Posicionamiento</h3>
+                             <div class="example-box"><strong>Display:</strong> <code>display: block;</code> (ocupa todo el ancho disponible), <code>display: inline;</code> (ocupa solo el espacio necesario), <code>display: flex;</code> (activa el modelo de caja flexible para alinear elementos fácilmente).</div>
+                             <div class="example-box"><strong>Position:</strong> <code>position: relative;</code> (se puede mover respecto a su posición original), <code>position: absolute;</code> (se posiciona respecto a su contenedor padre más cercano que no sea estático).</div>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold">Pseudo-clases: Estilos Interactivos</h3>
+                              <p class="text-base mb-4">Las pseudo-clases permiten aplicar estilos a un elemento en un estado especial, como cuando el ratón está sobre él.</p>
+                             <div class="example-box"><code>a:hover { color: red; }</code><br>Este código hace que cualquier enlace (<code>&lt;a&gt;</code>) cambie su color a rojo cuando el usuario pasa el ratón por encima (<code>:hover</code>).</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">4. Proyecto Guiado: Dando Estilo a Nuestra Biografía</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Tomaremos el HTML de la biografía de Nikola Tesla de la unidad anterior y le daremos vida con CSS.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Paso 1: Crear y Enlazar el Archivo CSS</h3>
+                         <p class="text-base">En VS Code, crea un nuevo archivo en la misma carpeta que tu HTML y llámalo <code>estilos.css</code>. Luego, añade la siguiente línea dentro del <code>&lt;head&gt;</code> de tu archivo HTML para enlazarlo:</p>
+                         <div class="example-box"><pre><code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code></pre></div>
+
+                         <h3 class="text-2xl font-semibold mt-8 mb-3">Paso 2: Añadir los Estilos en <code>estilos.css</code></h3>
+                         <div class="example-box">
+<pre><code>/* Estilos generales para toda la página */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos para el contenedor principal */
+main {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos para los títulos */
+h1, h2 {
+    color: #0f766e; /* Un tono de teal */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #2dd4bf;
+    padding-bottom: 5px;
+}
+
+/* Estilos para la imagen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* Estilos para el pie de página y los enlaces */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+a {
+    color: #0d9488;
+    text-decoration: none; /* Quita el subrayado por defecto */
+}
+
+a:hover {
+    text-decoration: underline; /* Añade el subrayado al pasar el ratón */
+}
+</code></pre>
+                         </div>
+                         <p class="text-base mt-4">¡Guarda ambos archivos y abre tu <code>biografia.html</code> en el navegador para ver el resultado! Notarás cómo la página ha pasado de ser un simple texto negro sobre blanco a un diseño estructurado y agradable a la vista.</p>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=025yS4n6W4w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Curso de CSS para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-web font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
+

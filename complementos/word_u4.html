@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word U4: Herramientas Avanzadas y Automatización</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #2b579a; /* Word Blue */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e3a8a; /* Darker Word Blue */
+        }
+        h4 {
+            color: #1e40af; /* Even Darker Word Blue */
+        }
+        .info-box {
+            background-color: #eff6ff; /* blue-50 */
+            border-left: 4px solid #3b82f6; /* blue-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f0fdf4; /* green-50 */
+            border-left: 4px solid #22c55e; /* green-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-blue-800">Unidad 4: Herramientas Avanzadas y Automatización</h1>
+            <p class="text-lg text-gray-600">Microsoft Word</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Combinación de Correspondencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">1. Combinación de Correspondencia (Mail Merge)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Combinación de Correspondencia</strong> es una de las herramientas de automatización más potentes de Word. Permite crear un lote de documentos personalizados a partir de un único documento modelo y una lista de datos. Es ideal para enviar cartas, etiquetas, sobres o correos electrónicos masivos, donde cada uno contiene información específica (como el nombre y la dirección) de un destinatario.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Componentes y Proceso</h3>
+                        <p class="mb-4">El proceso involucra dos archivos principales y se realiza a través de un asistente en la pestaña <strong>"Correspondencia"</strong>.</p>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4 items-center">
+                            <div>
+                                <h4 class="text-xl font-semibold text-blue-800 mb-2">Los Dos Elementos Clave</h4>
+                                <ul class="list-disc list-inside space-y-3 text-base">
+                                    <li><strong>Documento Principal:</strong> Es la plantilla de Word que contiene el texto fijo y los "campos de combinación" (marcadores de posición como «Nombre» o «Dirección»).</li>
+                                    <li><strong>Origen de Datos:</strong> Es el archivo que contiene la información variable. Generalmente es una hoja de cálculo de Excel, una lista de contactos de Outlook o una base de datos de Access.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/500x300/EFF6FF/1E3A8A?text=Esquema+de+Combinación+de+Correspondencia" alt="Esquema de Combinación de Correspondencia" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">Pasos del Asistente</h4>
+                            <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li><strong>Iniciar Combinación de Correspondencia:</strong> En la pestaña "Correspondencia", selecciona el tipo de documento (ej. Cartas).</li>
+                                <li><strong>Seleccionar Destinatarios:</strong> Elige la lista de datos existente (tu archivo de Excel, por ejemplo).</li>
+                                <li><strong>Insertar Campos Combinados:</strong> Coloca los marcadores de posición (ej. «Nombre», «Apellido») en tu documento de Word.</li>
+                                <li><strong>Vista Previa de Resultados:</strong> Revisa cómo quedarán los documentos con los datos reales.</li>
+                                <li><strong>Finalizar y Combinar:</strong> Genera los documentos finales, ya sea para imprimirlos directamente o para guardarlos en un nuevo archivo de Word con todas las cartas personalizadas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=kMAox-p-S2s" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo usar la Combinación de Correspondencia" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Plantillas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">2. Creación y Uso de Plantillas (.dotx)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Una <strong>plantilla</strong> es un modelo de documento pre-diseñado que se puede utilizar para crear nuevos documentos. En lugar de empezar desde una página en blanco, una plantilla ya contiene el formato, los estilos, los encabezados y cualquier texto o gráfico que desees que aparezca siempre. Son la clave para mantener la consistencia y ahorrar tiempo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Crear tu Propia Plantilla</h3>
+                        <p class="mb-4">Cualquier documento de Word se puede convertir en una plantilla.</p>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4 items-center">
+                            <div>
+                                <ol class="list-decimal list-inside space-y-3 text-base">
+                                    <li>Crea un documento y configúralo exactamente como lo deseas (márgenes, estilos, encabezados, logos, etc.).</li>
+                                    <li>Ve a <strong>"Archivo" > "Guardar como"</strong>.</li>
+                                    <li>En el menú desplegable "Tipo", en lugar de "Documento de Word (*.docx)", elige <strong>"Plantilla de Word (*.dotx)"</strong>.</li>
+                                    <li>Word te llevará automáticamente a la carpeta de Plantillas personalizadas. Dale un nombre y guárdala.</li>
+                                    <li>Ahora, al ir a "Archivo" > "Nuevo", tu plantilla aparecerá en la sección "Personal".</li>
+                                </ol>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/500x300/F0FDF4/15803D?text=Guardar+como+Plantilla+(.dotx)" alt="Guardar como Plantilla" class="w-full h-auto rounded-lg shadow-md">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Macros -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4 text-blue-700">3. Introducción a las Macros</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una <strong>macro</strong> es una secuencia de comandos y acciones que se puede grabar y ejecutar para automatizar tareas repetitivas. Si te encuentras realizando la misma serie de clics y pulsaciones de teclas una y otra vez, una macro puede hacerlo por ti en una fracción de segundo.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Grabadora de Macros</h3>
+                        <p class="mb-4">La forma más sencilla de crear una macro es usando la grabadora integrada, que se encuentra en la pestaña <strong>"Vista" > "Macros" > "Grabar macro..."</strong>.</p>
+                        <div class="example-box">
+                            <h4 class="text-xl font-semibold text-green-800 mb-2">Ejemplo: Crear una Macro de Formato</h4>
+                            <ol class="list-decimal list-inside space-y-2 mt-4 text-base">
+                                <li>Inicia la grabadora de macros y asígnale un nombre (ej. "FormatoEspecial").</li>
+                                <li>Realiza las acciones que quieres grabar: por ejemplo, cambia la fuente a "Consolas", el tamaño a 10, el color a gris oscuro y aplica un borde al párrafo.</li>
+                                <li>Detén la grabadora.</li>
+                                <li>Ahora, simplemente seleccionando otro párrafo y ejecutando la macro "FormatoEspecial", se aplicarán todos esos cambios instantáneamente.</li>
+                            </ol>
+                        </div>
+                        <div class="info-box">
+                            <h4 class="text-xl font-semibold text-red-800 mb-2">¡Cuidado con la Seguridad!</h4>
+                            <p class="text-base">Las macros son muy potentes y, por ello, pueden ser utilizadas para crear virus (código malicioso). Por seguridad, Word deshabilita las macros de documentos descargados de internet por defecto. Solo debes habilitar macros de fuentes en las que confíes plenamente.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=w39-dGw_N4k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Grabar y Ejecutar una Macro en Word" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="bg-red-600 text-white hover:bg-red-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

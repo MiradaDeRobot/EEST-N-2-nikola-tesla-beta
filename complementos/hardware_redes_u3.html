@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U4.3: Configuración de Redes SOHO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 4.3: Configuración de Redes Domésticas y SOHO</h1>
+            <p class="text-lg text-gray-600">Módulo 4: Redes Informáticas para el Técnico</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. El Router Doméstico: El Centro de Mando</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La configuración de una red doméstica o de pequeña oficina (SOHO - Small Office/Home Office) gira en torno a un dispositivo central: el <strong>router</strong>. Este equipo multifunción es el responsable de gestionar toda la conectividad, tanto interna como externa.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Accediendo a la Interfaz de Configuración</h3>
+                        <p class="mb-4 text-base">Para configurar un router, necesitas acceder a su panel de administración a través de un navegador web. Para ello, primero debes conocer su dirección IP, también conocida como la <strong>Puerta de Enlace Predeterminada (Default Gateway)</strong>.</p>
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg" style="color: #475569;">¿Cómo encontrar la Puerta de Enlace?</h4>
+                           <ol class="list-decimal list-inside space-y-2 mt-2 text-base">
+                               <li>En Windows, abre el Símbolo del sistema (CMD) y escribe el comando: <code>ipconfig</code>. Busca la dirección IP que aparece en "Puerta de enlace predeterminada".</li>
+                               <li>Las direcciones más comunes son <code>192.168.1.1</code> o <code>192.168.0.1</code>.</li>
+                               <li>Introduce esa dirección IP en la barra de direcciones de tu navegador.</li>
+                               <li>El router te pedirá un usuario y una contraseña. Si nunca los has cambiado, estos datos suelen estar en una pegatina en la parte inferior del propio router (ej. Usuario: <code>admin</code>, Contraseña: <code>admin</code> o <code>password</code>).</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Configuraciones Esenciales -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Configuraciones Esenciales del Router</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una vez dentro del panel de administración, hay varias configuraciones clave que todo técnico debe conocer.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Configuración de la Red Inalámbrica (Wi-Fi)</h3>
+                            <div class="info-box">
+                                <ul class="list-disc list-inside space-y-3 text-base">
+                                    <li><strong>SSID (Nombre de la Red):</strong> Es el nombre con el que aparecerá tu red Wi-Fi. Cámbialo por uno personalizado y evita usar información personal.</li>
+                                    <li><strong>Seguridad y Contraseña:</strong> Es la configuración más importante. Utiliza siempre el protocolo de seguridad <strong>WPA2</strong> o, si está disponible, <strong>WPA3</strong>. Establece una contraseña fuerte que combine letras mayúsculas, minúsculas, números y símbolos.</li>
+                                    <li><strong>Canal:</strong> Las redes Wi-Fi operan en diferentes canales. Si vives en una zona con muchas redes vecinas, puede haber interferencias. Usar una app de "Wi-Fi Analyzer" en tu celular te puede ayudar a encontrar el canal menos congestionado.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">Configuración de DHCP</h3>
+                             <p class="text-base">El <strong>DHCP (Dynamic Host Configuration Protocol)</strong> es el servicio que asigna automáticamente una dirección IP a cada dispositivo que se conecta a la red. En la configuración del router, puedes definir el <strong>rango de direcciones IP</strong> que el servidor DHCP puede asignar (ej. desde 192.168.1.100 hasta 192.168.1.150).</p>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">Seguridad del Router</h3>
+                              <div class="warning-box">
+                                <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Cambia la Contraseña de Administrador!</h4>
+                                <p class="text-base mt-2">Es fundamental cambiar la contraseña por defecto para acceder al panel de configuración del router. Dejar la contraseña "admin" es una gran vulnerabilidad de seguridad.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Troubleshooting -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Solución de Problemas Comunes de Conectividad</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Como técnico, te enfrentarás constantemente a problemas de conectividad. Aquí te mostramos cómo abordar los más habituales.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8">
+                             <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Problema: "No tengo Internet"</h3>
+                                <ol class="list-decimal list-inside space-y-3 text-base">
+                                    <li><strong>Revisa los LEDs del Router:</strong> Verifica que las luces de Encendido, WAN (o Internet) y Wi-Fi/LAN estén encendidas y, en algunos casos, parpadeando.</li>
+                                    <li><strong>Revisa el Cableado:</strong> Asegúrate de que el cable que viene del proveedor de Internet esté bien conectado al puerto WAN del router.</li>
+                                    <li><strong>La Regla de Oro: Reinicia Todo.</strong> Apaga el router y tu computadora. Espera 30 segundos. Enciende primero el router, espera a que todas sus luces se estabilicen y luego enciende tu computadora. Esto soluciona un sorprendente número de problemas.</li>
+                                    <li><strong>Prueba con Otros Dispositivos:</strong> ¿Tu celular se puede conectar al Wi-Fi y navegar? Si es así, el problema está en tu PC. Si ningún dispositivo funciona, el problema probablemente es de tu proveedor de Internet.</li>
+                                </ol>
+                             </div>
+                              <div class="example-box">
+                                <h3 class="font-semibold text-2xl mb-3" style="color: #475569;">Problema: "El Wi-Fi es muy lento o se corta"</h3>
+                                <ol class="list-decimal list-inside space-y-3 text-base">
+                                    <li><strong>Ubicación del Router:</strong> El router debe estar en una ubicación céntrica de la casa, en un lugar elevado y lejos de obstrucciones metálicas o muros gruesos.</li>
+                                    <li><strong>Interferencia de Canales:</strong> Como se mencionó antes, usa un analizador de Wi-Fi para encontrar un canal menos saturado.</li>
+                                    <li><strong>Distancia:</strong> La señal Wi-Fi se debilita con la distancia. Si estás muy lejos, considera usar un <strong>repetidor Wi-Fi</strong> o un sistema de <strong>red en malla (Mesh)</strong>.</li>
+                                    <li><strong>Diferencia entre 2.4 GHz y 5 GHz:</strong> La banda de 2.4 GHz tiene más alcance pero es más lenta y susceptible a interferencias. La banda de 5 GHz es mucho más rápida pero tiene menos alcance. Conéctate a la banda de 5 GHz siempre que sea posible.</li>
+                                </ol>
+                             </div>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=y3gQod2BF_M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Configurar tu Router y Solucionar Problemas de Wi-Fi" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

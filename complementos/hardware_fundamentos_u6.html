@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.6: Tarjetas Gráficas (GPU)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.6: Tarjetas Gráficas (GPU): Potencia Visual</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué es una Tarjeta Gráfica (GPU)?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Unidad de Procesamiento Gráfico</strong> (GPU, por sus siglas en inglés, <em>Graphics Processing Unit</em>) es un procesador especializado diseñado para renderizar imágenes, videos y animaciones a una velocidad extremadamente alta. Mientras la CPU es un procesador de propósito general excelente para tareas secuenciales, la GPU es una experta en paralelismo masivo, capaz de realizar miles de cálculos simples simultáneamente, lo que es ideal para las tareas gráficas.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Más Allá de los Videojuegos</h3>
+                         <p class="mb-4 text-base">Aunque su aplicación más conocida es el gaming, el poder de procesamiento paralelo de las GPUs modernas las ha convertido en herramientas indispensables para campos como:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>Edición de Video y Renderizado 3D:</strong> Aceleran drásticamente el tiempo necesario para procesar efectos visuales y renderizar escenas complejas.</li>
+                            <li><strong>Inteligencia Artificial y Machine Learning:</strong> Son el hardware de elección para entrenar redes neuronales profundas.</li>
+                            <li><strong>Computación Científica:</strong> Se utilizan para simulaciones complejas en campos como la física, la biología y las finanzas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Dedicadas vs Integradas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. GPUs Dedicadas vs. Gráficos Integrados</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Existen dos formas principales en las que una computadora puede manejar el procesamiento de gráficos, y la diferencia en rendimiento entre ellas es abismal.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=GPU+Integrada+(en+CPU)+vs+GPU+Dedicada+(Tarjeta+propia)" alt="Dedicada vs Integrada" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Gráficos Integrados (iGPU)</h4>
+                                <p class="text-base mt-2">Están incorporados directamente en el mismo chip que la CPU. Utilizan la memoria RAM del sistema como su propia memoria de video (VRAM). Son suficientes para tareas cotidianas como navegar por internet, ver videos en alta definición y ofimática.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                    <li><strong>Ventajas:</strong> Bajo costo, bajo consumo de energía.</li>
+                                    <li><strong>Desventajas:</strong> Rendimiento muy limitado para gaming o tareas profesionales.</li>
+                                </ul>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Tarjeta Gráfica Dedicada (dGPU)</h4>
+                                <p class="text-base mt-2">Es un componente completamente separado que se instala en una ranura PCIe de la placa madre. Tiene su propio procesador gráfico (GPU), su propia memoria de video de alta velocidad (VRAM) y su propio sistema de refrigeración. Ofrece un rendimiento inmensamente superior.</p>
+                                <ul class="list-disc list-inside space-y-2 mt-4 text-sm">
+                                     <li><strong>Ventajas:</strong> Máximo rendimiento para gaming, creación de contenido y computación.</li>
+                                     <li><strong>Desventajas:</strong> Mucho más cara, consume más energía y genera más calor.</li>
+                                </ul>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Fabricantes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Fabricantes Principales: La Batalla por los Gráficos</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Al igual que con las CPUs, el mercado de las GPUs dedicadas está dominado por dos grandes competidores, con Intel uniéndose recientemente a la contienda.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Logo+NVIDIA" alt="Logo NVIDIA" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">NVIDIA</h4>
+                                <p class="text-base mt-1">Líder del mercado, conocido por su línea de tarjetas <strong>GeForce</strong> para gaming (ej. RTX 4070, RTX 4080). Son pioneros en tecnologías como el Ray Tracing (trazado de rayos en tiempo real) y DLSS (escalado de imagen por IA).</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Logo+AMD" alt="Logo AMD" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">AMD (Radeon)</h4>
+                                <p class="text-base mt-1">El principal competidor de NVIDIA, con su línea de tarjetas <strong>Radeon</strong> (ej. RX 7700 XT, RX 7800 XT). Ofrecen una competencia muy fuerte, a menudo con una excelente relación rendimiento/precio, y su propia tecnología de escalado, FSR.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Especificaciones -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Especificaciones Clave de una GPU</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El rendimiento de una tarjeta gráfica viene determinado por la sinergia de varios componentes y especificaciones.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Memoria de Video (VRAM)</h3>
+                            <p class="text-base mt-2">Es la memoria RAM dedicada exclusivamente a la tarjeta gráfica. Almacena las texturas, los modelos 3D y otros datos gráficos que la GPU necesita para renderizar una imagen. La <strong>capacidad</strong> (medida en GB) es crucial, especialmente para jugar a altas resoluciones y con texturas de alta calidad. El <strong>tipo</strong> de memoria (ej. GDDR6, GDDR6X) determina su velocidad y ancho de banda.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Núcleos de Procesamiento</h3>
+                            <p class="text-base mt-2">Son el equivalente a los núcleos de una CPU, pero en una GPU hay miles de ellos. Cada fabricante les da un nombre diferente:</p>
+                             <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                <li><strong>NVIDIA:</strong> Núcleos CUDA (CUDA Cores).</li>
+                                <li><strong>AMD:</strong> Procesadores de Flujo (Stream Processors).</li>
+                             </ul>
+                             <p class="text-base mt-2">En términos generales, un mayor número de núcleos suele indicar un mayor poder de procesamiento bruto, aunque no se pueden comparar directamente entre marcas.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">Frecuencia de Reloj (Clock Speed)</h3>
+                            <p class="text-base mt-2">Al igual que en la CPU, se mide en Megahercios (MHz) e indica la velocidad a la que operan los núcleos de la GPU. Una frecuencia más alta puede resultar en más fotogramas por segundo (FPS) en los videojuegos.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=g-d2ffg_y2c" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo funciona una Tarjeta Gráfica y qué significan sus especificaciones" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

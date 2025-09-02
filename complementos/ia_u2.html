@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA U2: Búsqueda Inteligente e Investigación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #7e22ce; /* purple-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #6b21a8; /* purple-800 */
+        }
+        h4 {
+            color: #581c87; /* purple-900 */
+        }
+        .info-box {
+            background-color: #f5f3ff; /* violet-50 */
+            border-left: 4px solid #a78bfa; /* violet-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fff1f2; /* red-50 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-ia {
+            background-color: #7e22ce;
+        }
+        .footer-button-ia:hover {
+            background-color: #6b21a8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #581c87;">Unidad 2: Búsqueda Inteligente e Investigación</h1>
+            <p class="text-lg text-gray-600">Usos de IA en el Estudio</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">1. La IA como Motor de Investigación</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La investigación académica tradicionalmente comienza con una búsqueda de palabras clave en un motor como Google. La IA transforma este proceso en una <strong>conversación de investigación</strong>. En lugar de buscar fragmentos de información en múltiples enlaces, puedes hacer preguntas complejas y recibir respuestas sintetizadas que integran conocimiento de diversas fuentes.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Búsqueda Tradicional vs. Búsqueda con IA</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Búsqueda Tradicional</h4>
+                                <p class="text-base mt-2">Buscas "efectos del transistor BJT". Abres 10 pestañas diferentes, lees cada una, identificas los puntos en común y sintetizas la información tú mismo.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Búsqueda con IA</h4>
+                                <p class="text-base mt-2">Le pides a una IA conectada a internet: "Explica los tres modos de operación de un transistor BJT (corte, saturación y activa) y dame una aplicación práctica para cada uno". La IA lee y sintetiza la información por ti en una respuesta coherente.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Técnicas de Investigación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">2. Técnicas de Prompting para una Investigación Efectiva</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Saber cómo "preguntarle" a la IA es clave para obtener resultados de investigación valiosos. Aquí hay algunas técnicas efectivas:</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Brainstorming y Exploración de Temas</h3>
+                            <p class="text-base">Usa la IA para generar ideas o explorar diferentes ángulos de un tema.</p>
+                            <div class="info-box">
+                                <p class="text-base"><strong>Prompt de ejemplo:</strong> "Estoy investigando sobre el impacto de la Ley de Moore en la computación moderna. Dame 5 subtemas o áreas de investigación interesantes que podría explorar."</p>
+                            </div>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">Explicaciones de Conceptos Complejos</h3>
+                             <p class="text-base">Si te encuentras con un concepto difícil, pídele a la IA que actúe como un tutor.</p>
+                             <div class="info-box">
+                                <p class="text-base"><strong>Prompt de ejemplo:</strong> "Explícame qué es la modulación por ancho de pulso (PWM) usando una analogía simple, como un interruptor de luz."</p>
+                            </div>
+                        </div>
+                         <div>
+                             <h3 class="text-2xl font-semibold mb-3">Búsqueda y Resumen de Fuentes</h3>
+                             <p class="text-base">Puedes pedirle a la IA que encuentre información y te la resuma. ¡Pero cuidado con las fuentes!</p>
+                             <div class="info-box">
+                                <p class="text-base"><strong>Prompt de ejemplo:</strong> "Encuentra y resume los puntos principales de tres artículos académicos que discutan las ventajas de la memoria RAM ECC en servidores."</p>
+                            </div>
+                             <div class="warning-box mt-4">
+                               <h4 class="font-semibold text-lg" style="color: #b91c1c;">¡Alerta de Alucinación!</h4>
+                               <p class="text-base mt-2">Este es el punto más crítico. Las IAs a menudo <strong>inventan fuentes, citas y URLs</strong>. Siempre debes verificar que los artículos o estudios que menciona existen realmente. Más sobre esto en la siguiente sección.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Fact-Checking -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #6b21a8;">3. Verificación de Fuentes y Fact-Checking: El Paso Crucial</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La IA es una herramienta de investigación, no una fuente de verdad absoluta. Trata cada dato que te proporciona con un sano escepticismo y sigue un proceso riguroso de verificación.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Metodología de Verificación</h3>
+                        <img src="https://placehold.co/1200x400/F1F5F9/1E3A8A?text=Proceso+de+Verificación+de+Datos" alt="Proceso de Verificación" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg" style="color: #475569;">Checklist de Fact-Checking:</h4>
+                           <ol class="list-decimal list-inside space-y-3 mt-2 text-base">
+                               <li><strong>Pide las Fuentes Originales:</strong> Termina siempre tus prompts de investigación con "Por favor, proporciona las URLs de tus fuentes". Si la IA te da enlaces, visítalos para confirmar que la información está allí y que el contexto es correcto.</li>
+                               <li><strong>Verifica las Fuentes Inventadas:</strong> Si la IA menciona un estudio como "El informe de la Universidad de Stanford de 2023 sobre IA", busca ese informe en Google. Si no lo encuentras fácilmente, es muy probable que sea una alucinación.</li>
+                               <li><strong>Corroboración Cruzada:</strong> Para cualquier dato fáctico importante (una fecha, un número, el nombre de una persona), búscalo en al menos dos o tres fuentes fiables e independientes para confirmarlo.</li>
+                               <li><strong>Confía en Fuentes Primarias:</strong> Siempre que sea posible, busca la fuente original de la información (el paper científico, el comunicado de prensa oficial, el datasheet del fabricante) en lugar de confiar en resúmenes de terceros.</li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+             <div class="video-box">
+                <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                <a href="https://www.youtube.com/watch?v=F14UIy4n_Q" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                    Ver video sobre "Cómo Usar IA para Investigar (y no caer en trampas)" &rarr;
+                </a>
+            </div>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-ia font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

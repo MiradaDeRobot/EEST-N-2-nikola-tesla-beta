@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.2: La Placa Madre (Motherboard)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.2: La Placa Madre (Motherboard)</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué es la Placa Madre? El Centro de Conexiones</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Placa Madre</strong> (o Motherboard) es el componente más fundamental de una computadora. Es un gran circuito impreso que actúa como una plataforma central, conectando todos los componentes principales del sistema entre sí. Piensa en ella como el sistema nervioso y esquelético de la PC: proporciona tanto el soporte físico como las vías de comunicación para que la CPU, la RAM, el almacenamiento y la GPU puedan trabajar juntos.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funciones Clave</h3>
+                         <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Diagrama+de+una+Placa+Madre+ATX" alt="Placa Madre" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <ul class="list-disc list-inside space-y-3 mt-4 text-base">
+                            <li><strong>Interconexión de Componentes:</strong> Proporciona los zócalos y ranuras para instalar la CPU, la memoria RAM y las tarjetas de expansión.</li>
+                            <li><strong>Distribución de Energía:</strong> Recibe la energía de la fuente de alimentación y la distribuye de forma regulada a todos los componentes conectados a ella.</li>
+                            <li><strong>Comunicación de Datos:</strong> A través de sus circuitos (llamados "buses"), permite que los componentes intercambien datos a altas velocidades.</li>
+                            <li><strong>Interfaz con Periféricos:</strong> Incluye los puertos de E/S (Entrada/Salida) para conectar dispositivos externos como teclados, ratones, monitores y unidades USB.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Formatos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Formatos de Placa Madre (Factor de Forma)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El "factor de forma" se refiere al tamaño y la disposición física de la placa madre. Determina el tipo de gabinete que se puede usar y la cantidad de ranuras de expansión disponibles.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/400x400/F1F5F9/1E3A8A?text=Formato+ATX" alt="Formato ATX" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">ATX (Advanced Technology eXtended)</h4>
+                                <p class="text-base mt-1">Es el estándar para las PC de escritorio. Ofrece el mayor número de ranuras de expansión (PCIe) y ranuras de RAM, ideal para equipos de alto rendimiento y gaming.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x400/F1F5F9/1E3A8A?text=Formato+Micro-ATX" alt="Formato Micro-ATX" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">Micro-ATX</h4>
+                                <p class="text-base mt-1">Una versión más corta que la ATX, con menos ranuras de expansión. Es un formato muy popular por su equilibrio entre tamaño y funcionalidad, ideal para computadoras compactas pero potentes.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x400/F1F5F9/1E3A8A?text=Formato+Mini-ITX" alt="Formato Mini-ITX" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">Mini-ITX</h4>
+                                <p class="text-base mt-1">Es el formato más pequeño, diseñado para sistemas de cine en casa (HTPC) o computadoras de muy bajo perfil. Típicamente solo tiene una ranura de expansión para una tarjeta gráfica.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Componentes -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Componentes Detallados de la Placa Madre</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a desglosar las partes más importantes que encontrarás en cualquier placa madre moderna.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Zócalo del CPU (Socket)</h3>
+                            <p class="text-base mt-2">Es el conector donde se instala el procesador. Cada familia de procesadores tiene un tipo de zócalo específico (ej. LGA 1700 para Intel, AM5 para AMD). Es el primer factor de compatibilidad a considerar.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Ranuras de RAM (DIMM Slots)</h3>
+                            <p class="text-base mt-2">Aquí es donde se instalan los módulos de memoria RAM. La mayoría de las placas ATX tienen 4 ranuras, mientras que las Mini-ITX suelen tener 2. Soportan configuraciones de doble canal (Dual Channel) para un mayor rendimiento.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">Puertos de Expansión (PCIe)</h3>
+                            <p class="text-base mt-2">Las ranuras <strong>PCI Express (PCIe)</strong> se usan para conectar tarjetas de expansión. La más importante es la ranura PCIe x16 (la más larga y reforzada), donde se instala la tarjeta gráfica. Otras ranuras más pequeñas (x1, x4) se usan para tarjetas de sonido, de red o de captura de video.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Chipset</h3>
+                            <p class="text-base mt-2">Es un conjunto de circuitos integrados (generalmente cubierto por un disipador de calor) que actúa como el "director de tráfico" de la placa madre. Gestiona el flujo de datos entre la CPU, la RAM, los puertos de expansión y los periféricos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección BIOS/UEFI -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. El BIOS/UEFI: El Arranque del Sistema</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>El <strong>BIOS</strong> (Basic Input/Output System) o su sucesor moderno, <strong>UEFI</strong> (Unified Extensible Firmware Interface), es el firmware de la placa madre. Es el primer software que se ejecuta al encender la PC.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Funciones y Configuración</h3>
+                         <img src="https://placehold.co/1200x600/E0F2FE/1E40AF?text=Interfaz+Gráfica+de+una+UEFI" alt="Interfaz UEFI" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">Funciones Principales:</h4>
+                             <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>POST (Power-On Self-Test):</strong> Realiza una autocomprobación de todo el hardware principal (CPU, RAM, GPU) al arrancar para asegurarse de que funciona correctamente.</li>
+                                <li><strong>Inicialización de Hardware:</strong> Prepara los componentes para que el sistema operativo pueda tomarlos.</li>
+                                <li><strong>Carga del Sistema Operativo:</strong> Busca el sistema operativo en una unidad de almacenamiento y le cede el control de la computadora.</li>
+                             </ul>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Configuraciones Comunes:</h4>
+                             <p class="text-base mt-2">Se accede al UEFI/BIOS presionando una tecla específica durante el arranque (generalmente Supr, F2, o F12). Dentro, puedes configurar:</p>
+                              <ul class="list-disc list-inside space-y-3 text-base">
+                                <li>El orden de arranque de los dispositivos (boot order).</li>
+                                <li>La fecha y hora del sistema.</li>
+                                <li>Activar perfiles de memoria RAM (XMP/EXPO) para que funcionen a su máxima velocidad.</li>
+                                <li>Monitorizar temperaturas y voltajes.</li>
+                                <li>Configuraciones de overclocking (para usuarios avanzados).</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=s_6E3G-dE_0" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "¿Qué es el BIOS/UEFI y para qué sirve?" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

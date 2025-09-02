@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteus U2: Diseño de PCB en ARES</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #047857; /* emerald-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #059669; /* emerald-600 */
+        }
+        h4 {
+            color: #065f46; /* emerald-800 */
+        }
+        .info-box {
+            background-color: #ecfdf5; /* emerald-50 */
+            border-left: 4px solid #10b981; /* emerald-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-proteus {
+            background-color: #047857;
+        }
+        .footer-button-proteus:hover {
+            background-color: #065f46;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e2d3b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #065f46;">Unidad 2: Diseño de PCB en ARES</h1>
+            <p class="text-lg text-gray-600">Diseño y Simulación con Proteus</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">1. Del Esquemático al Mundo Físico: ARES</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Una vez que nuestro circuito ha sido diseñado y verificado mediante simulación en ISIS, el siguiente paso es crear el diseño físico de la placa de circuito impreso (PCB). Aquí es donde entra <strong>ARES (Advanced Routing and Editing Software)</strong>, el entorno de Proteus dedicado al diseño de PCB. ARES nos permite tomar los componentes de nuestro esquemático y organizarlos en una placa virtual, dibujando las pistas de cobre que los interconectarán.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Interfaz -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">2. La Interfaz de Diseño de PCB de ARES</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>La interfaz de ARES es similar a la de ISIS, pero con herramientas específicas para el diseño físico.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Anatomía del Espacio de Trabajo</h3>
+                         <img src="https://placehold.co/1200x600/ECFDF5/065F46?text=Interfaz+de+Proteus+ARES" alt="Interfaz de ARES" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Ventana de Edición:</strong> El área principal donde se visualiza y se diseña la placa.</li>
+                               <li><strong>Selector de Capas (Layers):</strong> En la parte inferior, te permite cambiar entre las diferentes capas del PCB. Las más importantes son <strong>"Top Copper"</strong> (cobre superior), <strong>"Bottom Copper"</strong> (cobre inferior, la más usada para placas de una cara) y <strong>"Board Edge"</strong> (para definir el contorno de la placa).</li>
+                               <li><strong>Barra de Herramientas Izquierda:</strong> Similar a ISIS, pero con modos para <strong>"Track Mode"</strong> (para dibujar pistas), <strong>"Component Mode"</strong> (para colocar componentes) y herramientas de dibujo 2D para definir la forma de la placa.</li>
+                               <li><strong>Visualizador 3D (3D Visualizer):</strong> Una herramienta increíblemente útil que te muestra una representación tridimensional y realista de cómo se verá tu placa una vez ensamblada.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #059669;">3. Proyecto Guiado: Diseñando el PCB para el Circuito Blink</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a tomar el circuito del LED parpadeante que simulamos en la unidad anterior y a diseñar su placa PCB.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 1: Transferir el Diseño de ISIS a ARES</h3>
+                            <p class="text-base">Abre tu proyecto en ISIS. En la barra de herramientas superior, busca y haz clic en el botón <strong>"PCB Layout"</strong> (suele tener el icono de un chip con pistas). ARES se abrirá automáticamente con los "footprints" (huellas físicas) de tus componentes listos para ser colocados, y un recuadro amarillo que representa el área de trabajo.</p>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 2: Definir el Contorno de la Placa (Board Edge)</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/64748B?text=Definiendo+el+Contorno+de+la+Placa" alt="Board Edge" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>En el selector de capas, elige <strong>"Board Edge"</strong>.</li>
+                                <li>En la barra de herramientas izquierda, selecciona el modo <strong>"2D Graphics Box Mode"</strong>.</li>
+                                <li>Dibuja un rectángulo amarillo del tamaño que desees para tu placa, asegurándote de que todos los componentes quepan dentro.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 3: Colocación de Componentes (Placement)</h3>
+                            <p class="text-base">Arrastra los componentes (Arduino, resistencia, LED) desde la lista de dispositivos y colócalos dentro del contorno de la placa. Fíjate en las líneas verdes delgadas (el <strong>"ratsnest"</strong>), que te indican qué pines deben conectarse. Rota y organiza los componentes para que las líneas del ratsnest se crucen lo menos posible.</p>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 4: Ruteado de Pistas (Routing)</h3>
+                            <img src="https://placehold.co/1000x400/F1F5F9/64748B?text=Ruteando+las+Pistas+en+la+Capa+Bottom+Copper" alt="Ruteado de Pistas" class="w-full h-auto rounded-lg shadow-md my-4">
+                            <ol class="list-decimal list-inside space-y-3 text-base">
+                                <li>En el selector de capas, elige <strong>"Bottom Copper"</strong>.</li>
+                                <li>En la barra izquierda, entra en <strong>"Track Mode"</strong>. Puedes seleccionar un grosor de pista (ej. T40 es un buen estándar para señales).</li>
+                                <li>Haz clic en un pad (ej. pin 13 del Arduino). Sigue la línea del ratsnest y haz clic en el pad de destino (el de la resistencia). ARES dibujará la pista de cobre.</li>
+                                <li>Repite el proceso para todas las conexiones hasta que no queden más líneas del ratsnest.</li>
+                            </ol>
+                         </div>
+                         <div class="example-box">
+                            <h3 class="text-2xl font-semibold mb-3">Paso 5: Visualización 3D</h3>
+                             <p class="text-base">En la barra de herramientas superior, haz clic en el botón <strong>"3D Visualizer"</strong>. Se abrirá una nueva ventana que te mostrará una vista 3D realista de tu placa terminada, lo que te permite verificar la colocación de los componentes y la apariencia final.</p>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=g4-25I91-5k" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Diseño de PCB en Proteus ARES" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-proteus font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

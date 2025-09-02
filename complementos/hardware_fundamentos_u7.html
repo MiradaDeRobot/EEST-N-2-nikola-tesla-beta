@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.7: Fuente de Alimentación (PSU)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.7: Fuente de Alimentación (PSU): La Energía Vital</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección ¿Qué es? -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. ¿Qué es la Fuente de Alimentación (PSU)?</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La <strong>Fuente de Alimentación</strong> (PSU, por sus siglas en inglés, <em>Power Supply Unit</em>) es el componente encargado de suministrar energía eléctrica a todos los demás componentes de la computadora. Su función es crucial: convierte la corriente alterna (AC) de la toma de corriente de la pared en la corriente continua (DC) de bajo voltaje que necesitan los delicados circuitos electrónicos de la PC.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Corazón del Sistema</h3>
+                         <p class="mb-4 text-base">Aunque a menudo es un componente subestimado, una PSU de buena calidad es vital para la estabilidad y la longevidad de todo el sistema. Una fuente de mala calidad puede proporcionar voltajes inestables, dañar otros componentes o incluso fallar catastróficamente.</p>
+                         <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Fuente+de+Alimentación+y+sus+cables" alt="Fuente de Alimentación" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <p class="text-base">La PSU distribuye la energía a través de varios raíles de voltaje, siendo los principales:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                            <li><strong>+12V:</strong> El raíl más importante en las PCs modernas, alimenta los componentes que más consumen, como la CPU y la tarjeta gráfica.</li>
+                            <li><strong>+5V:</strong> Alimenta muchos circuitos de la placa madre, así como los puertos USB y algunas unidades de almacenamiento.</li>
+                            <li><strong>+3.3V:</strong> Utilizado por el chipset de la placa madre y las ranuras PCIe.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Eficiencia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Certificaciones de Eficiencia: El Sello 80 Plus</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>eficiencia</strong> de una PSU mide cuánta energía de la toma de corriente se convierte efectivamente en energía útil para los componentes. El resto se pierde en forma de calor. La certificación <strong>80 Plus</strong> es el estándar de la industria para identificar fuentes de alimentación eficientes.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Niveles de Certificación 80 Plus</h3>
+                        <img src="https://placehold.co/1200x300/F1F5F9/1E3A8A?text=Logos+de+Certificación+80+Plus" alt="Logos 80 Plus" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <p class="text-base">Una fuente con certificación 80 Plus garantiza una eficiencia de al menos el 80% en diferentes niveles de carga. Existen varios niveles, cada uno más exigente que el anterior:</p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center mt-4">
+                            <div class="p-4 bg-gray-200 rounded"><strong>80 Plus White</strong></div>
+                            <div class="p-4 bg-yellow-600 text-white rounded"><strong>80 Plus Bronze</strong></div>
+                            <div class="p-4 bg-gray-400 rounded"><strong>80 Plus Silver</strong></div>
+                            <div class="p-4 bg-yellow-400 rounded"><strong>80 Plus Gold</strong></div>
+                            <div class="p-4 bg-gray-300 rounded"><strong>80 Plus Platinum</strong></div>
+                        </div>
+                         <div class="info-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #0369a1;">¿Por qué es importante?</h4>
+                             <ul class="list-disc list-inside space-y-2 text-base mt-2">
+                                <li><strong>Menor Consumo Eléctrico:</strong> Una fuente más eficiente desperdicia menos energía, lo que se traduce en un ahorro en la factura de la luz.</li>
+                                <li><strong>Menos Calor:</strong> Al desperdiciar menos energía, genera menos calor. Esto ayuda a mantener más bajas las temperaturas dentro del gabinete.</li>
+                                <li><strong>Mayor Calidad:</strong> Generalmente, las fuentes con certificaciones más altas están construidas con componentes de mejor calidad y son más fiables.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Modularidad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Modularidad: Organizando los Cables</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La modularidad se refiere a si los cables de la fuente de alimentación son fijos o se pueden conectar y desconectar. Esta característica afecta principalmente a la facilidad del ensamblaje y a la gestión de cables.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">No Modular</h4>
+                                <img src="https://placehold.co/400x300/F1F5F9/1E3A8A?text=PSU+No+Modular" alt="PSU No Modular" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Todos los cables vienen permanentemente conectados a la fuente. Son la opción más económica, pero la gestión de cables es más complicada, ya que hay que esconder todos los cables que no se utilizan.</p>
+                             </div>
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Semi-Modular</h4>
+                                <img src="https://placehold.co/400x300/F1F5F9/1E3A8A?text=PSU+Semi-Modular" alt="PSU Semi-Modular" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Los cables esenciales (placa madre y CPU) están fijos, pero los cables periféricos (para GPU, SATA, etc.) son modulares. Ofrecen un buen equilibrio entre precio y comodidad.</p>
+                             </div>
+                             <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Full Modular</h4>
+                                <img src="https://placehold.co/400x300/F1F5F9/1E3A8A?text=PSU+Full+Modular" alt="PSU Full Modular" class="w-full h-auto rounded-lg shadow-md my-2">
+                                <p class="text-base mt-2">Ningún cable está conectado de forma permanente. Solo conectas los cables que necesitas, lo que facilita enormemente el ensamblaje y permite una gestión de cables impecable y un mejor flujo de aire.</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Potencia -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Cálculo de la Potencia Necesaria (Wattage)</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Elegir la potencia correcta (medida en Vatios o Watts) es crucial. Una fuente con poca potencia provocará inestabilidad y reinicios del sistema bajo carga. Una con demasiada potencia no es perjudicial, pero es un gasto innecesario.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">¿Cuántos Vatios Necesito?</h3>
+                         <div class="info-box">
+                             <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>Identifica los Componentes Clave:</strong> Los mayores consumidores de energía son la <strong>CPU</strong> y la <strong>GPU</strong>. Sus especificaciones técnicas suelen indicar su consumo máximo (TDP o TGP).</li>
+                                <li><strong>Suma el Consumo:</strong> Suma el consumo de la CPU, la GPU y un estimado para el resto de los componentes (placa madre, RAM, discos, ventiladores), que suele rondar los 50-100W.</li>
+                                <li><strong>Añade un Margen de Seguridad (Headroom):</strong> Nunca es bueno que una fuente trabaje al 100% de su capacidad. Se recomienda elegir una fuente que ofrezca un 20-30% más de la potencia máxima que calculaste. Esto asegura estabilidad y eficiencia, ya que las fuentes suelen ser más eficientes al 50% de carga.</li>
+                             </ul>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Herramientas Online</h4>
+                            <p class="text-base mt-2">Existen calculadoras de PSU online (como la de OuterVision o Cooler Master) que facilitan enormemente este proceso. Simplemente seleccionas todos tus componentes y la herramienta te dará una recomendación de la potencia necesaria.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=kPy9k_s94-w" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Cómo Elegir la Fuente de Alimentación Correcta" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

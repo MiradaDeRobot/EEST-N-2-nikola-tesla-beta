@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U1.1: Introducción a la Arquitectura de Computadoras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 1.1: Introducción a la Arquitectura de Computadoras</h1>
+            <p class="text-lg text-gray-600">Módulo 1: Fundamentos del Hardware</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Historia -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Historia y Evolución de las Computadoras</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Entender el presente del hardware requiere un vistazo a su fascinante pasado. La computación ha evolucionado a una velocidad vertiginosa, pasando de máquinas que ocupaban habitaciones enteras a dispositivos que caben en nuestro bolsillo, todo en menos de un siglo.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Las Generaciones de Computadoras</h3>
+                        <p class="mb-4 text-base">La evolución del hardware se suele dividir en generaciones, marcadas por un avance tecnológico clave:</p>
+                        <ul class="list-disc list-inside space-y-4 mt-4 text-base">
+                            <li><strong>Primera Generación (1940-1956): Válvulas de Vacío.</strong> Computadoras como la ENIAC eran enormes, consumían una cantidad masiva de energía y se programaban reconfigurando cables. Su uso era principalmente militar y científico.</li>
+                            <li><strong>Segunda Generación (1956-1963): Transistores.</strong> El reemplazo de las válvulas por transistores hizo a las computadoras más pequeñas, rápidas, baratas y fiables. Nacieron los primeros lenguajes de alto nivel como COBOL y FORTRAN.</li>
+                            <li><strong>Tercera Generación (1964-1971): Circuitos Integrados.</strong> Se lograron colocar múltiples transistores en un solo chip de silicio, lo que redujo aún más el tamaño y el costo, haciendo las computadoras accesibles para las grandes empresas.</li>
+                            <li><strong>Cuarta Generación (1971-Presente): Microprocesadores.</strong> La invención del microprocesador (una CPU completa en un solo chip) dio lugar a la revolución de la computadora personal (PC). Empresas como Apple e IBM llevaron la informática a los hogares y oficinas.</li>
+                             <li><strong>Quinta Generación (Presente y Futuro): Inteligencia Artificial.</strong> Esta generación se centra en la computación paralela, la inteligencia artificial y el procesamiento del lenguaje natural. Las computadoras ya no solo calculan, sino que "aprenden" y "razonan".</li>
+                        </ul>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=S3-wXYx_k-A" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "La Historia de la Computación" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Tipos de Computadoras -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Tipos de Computadoras Modernas</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Hoy en día, el término "computadora" abarca una gran variedad de dispositivos, cada uno diseñado con un propósito específico. Los formatos más comunes son las de escritorio, las notebooks y las All-in-One.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=PC+de+Escritorio" alt="PC de Escritorio" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">PC de Escritorio (Desktop)</h4>
+                                <p class="text-base mt-1">Son modulares, con un gabinete (torre) que aloja los componentes y periféricos separados. Ofrecen el máximo rendimiento, personalización y capacidad de actualización.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=Notebook+(Laptop)" alt="Notebook" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">Notebook (Laptop)</h4>
+                                <p class="text-base mt-1">Integran todos los componentes, incluyendo pantalla, teclado y batería, en un formato portátil. Priorizan la movilidad, aunque con un rendimiento y capacidad de actualización más limitados.</p>
+                           </div>
+                           <div>
+                                <img src="https://placehold.co/400x250/F1F5F9/1E3A8A?text=All-in-One+(AIO)" alt="All-in-One" class="w-full h-auto rounded-lg shadow-md">
+                                <h4 class="mt-2 font-semibold text-xl">All-in-One (AIO)</h4>
+                                <p class="text-base mt-1">Integran los componentes de hardware directamente en el monitor, eliminando la necesidad de un gabinete. Ofrecen una estética limpia y ahorran espacio, pero son las menos actualizables.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Conceptos Básicos -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Conceptos Fundamentales: Hardware, Software y Firmware</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Para entender cómo funciona una computadora, es vital diferenciar sus tres componentes esenciales, que trabajan en conjunto para que todo sea posible.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">La Trinidad de la Informática</h3>
+                         <img src="https://placehold.co/1200x400/E0F2FE/1E40AF?text=Interacción+entre+Hardware,+Software+y+Firmware" alt="Diagrama de Interacción" class="w-full h-auto rounded-lg shadow-md my-4">
+                         <div class="info-box">
+                            <ul class="list-disc list-inside space-y-4 text-base">
+                               <li><strong>Hardware:</strong> Son todos los componentes <strong>físicos y tangibles</strong> de una computadora. Es todo lo que puedes tocar: el procesador (CPU), la memoria RAM, el disco duro, la placa madre, el monitor, el teclado, etc. Es el "cuerpo" de la computadora.</li>
+                               <li><strong>Software:</strong> Son los <strong>programas, aplicaciones e instrucciones intangibles</strong> que se ejecutan en el hardware. Es el "alma" o la "conciencia" de la computadora. Se divide en:
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                        <li><strong>Software de Sistema:</strong> El más importante es el Sistema Operativo (Windows, macOS, Linux), que gestiona los recursos del hardware y permite que otros programas funcionen.</li>
+                                        <li><strong>Software de Aplicación:</strong> Son los programas que usamos para tareas específicas, como un navegador web, un procesador de texto o un videojuego.</li>
+                                    </ul>
+                               </li>
+                               <li><strong>Firmware:</strong> Es un tipo especial de software que está <strong>grabado permanentemente</strong> en un chip de memoria del hardware (como el BIOS/UEFI de la placa madre). Su función es proporcionar las instrucciones más básicas para que el hardware se inicie y pueda comunicarse con el software. Es el "instinto" de la computadora, el puente entre el mundo físico y el lógico.</li>
+                           </ul>
+                         </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=k2ey_2_h3VA" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Diferencias entre Hardware, Software y Firmware" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

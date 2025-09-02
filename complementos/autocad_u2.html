@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCAD U2: Capas, Bloques y Acotación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #b91c1c; /* red-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #991b1b; /* red-800 */
+        }
+        h4 {
+            color: #7f1d1d; /* red-900 */
+        }
+        .info-box {
+            background-color: #fee2e2; /* red-100 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-autocad {
+            background-color: #b91c1c;
+        }
+        .footer-button-autocad:hover {
+            background-color: #991b1b;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #7f1d1d;">Unidad 2: Capas, Bloques y Acotación</h1>
+            <p class="text-lg text-gray-600">AutoCAD para Planos Técnicos</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Capas -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">1. Capas (Layers): Organizando tu Dibujo</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Las <strong>capas</strong> son el método fundamental de organización en AutoCAD. Imagina que son como hojas de acetato transparentes apiladas una sobre otra. Puedes dibujar diferentes partes de tu plano en diferentes capas (ej. una para muros, una para cotas, una para texto) y luego controlar la visibilidad y propiedades de cada capa de forma independiente.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">El Administrador de Propiedades de Capas (Layer Properties Manager)</h3>
+                        <p class="mb-4 text-base">Se accede con el comando <code>LAYER</code> (o <code>LA</code>). Aquí es donde creas y gestionas todas tus capas. Cada capa tiene propiedades clave:</p>
+                         <img src="https://placehold.co/1200x400/FEE2E2/7F1D1D?text=Administrador+de+Capas+de+AutoCAD" alt="Administrador de Capas" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>Nombre:</strong> Dale un nombre descriptivo (ej. "Ejes", "Mobiliario", "Cotas").</li>
+                               <li><strong>Color:</strong> Asigna un color a la capa para diferenciar visualmente los objetos.</li>
+                               <li><strong>Tipo de Línea (Linetype):</strong> Define si la línea es continua, de trazos, de centro, etc.</li>
+                               <li><strong>Grosor de Línea (Lineweight):</strong> Controla el grosor con el que se imprimirá la línea.</li>
+                               <li><strong>Visibilidad (On/Off/Freeze):</strong> Puedes apagar una capa (Off) para ocultarla o congelarla (Freeze) para que también se excluya de los cálculos del programa, mejorando el rendimiento.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Bloques -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">2. Bloques (Blocks): Dibujando de Forma Eficiente</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Un <strong>bloque</strong> es un conjunto de objetos que se combinan para crear un único objeto reutilizable. Son una de las herramientas más potentes para mejorar la eficiencia y mantener la consistencia en un dibujo.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Ventajas de Usar Bloques</h3>
+                        <div class="grid md:grid-cols-2 gap-8 mt-4">
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Eficiencia y Reutilización</h4>
+                                <p class="text-base mt-2">Dibuja un objeto una sola vez (como un tornillo, una silla o un símbolo eléctrico) y guárdalo como un bloque. Luego puedes insertarlo tantas veces como necesites.</p>
+                           </div>
+                           <div class="example-box">
+                                <h4 class="font-semibold text-xl" style="color: #475569;">Fácil Actualización</h4>
+                                <p class="text-base mt-2">Si editas la definición del bloque, <strong>todas las inserciones de ese bloque en el dibujo se actualizan automáticamente</strong>. Si tienes 100 tornillos iguales y necesitas cambiar su tamaño, solo editas el bloque una vez.</p>
+                           </div>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Creación e Inserción de Bloques</h3>
+                        <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                            <li><strong>Crear un Bloque (<code>BLOCK</code>):</strong> Dibuja la geometría que quieres convertir en bloque. Ejecuta el comando <code>BLOCK</code>, dale un nombre, selecciona un punto base para su inserción y selecciona los objetos que lo componen.</li>
+                            <li><strong>Insertar un Bloque (<code>INSERT</code>):</strong> Ejecuta el comando <code>INSERT</code> para abrir una galería con todos los bloques definidos en tu dibujo. Selecciona el que quieres y colócalo en tu plano.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Acotación -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #991b1b;">3. Acotación (Dimensioning): Documentando tu Diseño</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>La <strong>acotación</strong> es el proceso de añadir las medidas al dibujo. Un plano técnico sin cotas es solo un dibujo; con cotas, se convierte en un documento de fabricación o construcción.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Comandos de Acotación Principales</h3>
+                        <img src="https://placehold.co/1200x400/FEE2E2/7F1D1D?text=Ejemplos+de+Acotación+en+AutoCAD" alt="Acotación en AutoCAD" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <ul class="list-disc list-inside space-y-3 text-base">
+                               <li><strong>DIMLINEAR:</strong> Crea cotas horizontales o verticales.</li>
+                               <li><strong>DIMALIGNED:</strong> Crea cotas alineadas a un objeto inclinado.</li>
+                               <li><strong>DIMRADIUS / DIMDIAMETER:</strong> Crean cotas de radio y diámetro para círculos y arcos.</li>
+                               <li><strong>DIMANGULAR:</strong> Crea cotas para medir el ángulo entre dos líneas.</li>
+                           </ul>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 mt-8">Estilos de Cota (Dimension Styles)</h3>
+                        <p class="text-base">Con el comando <code>DIMSTYLE</code> (o <code>D</code>), puedes abrir el administrador de estilos de cota. Aquí puedes personalizar cada aspecto de tus cotas: el tamaño del texto, el tipo de flecha, el color de las líneas, las unidades y la precisión, para que se ajusten a las normas de dibujo técnico.</p>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=kYI8Tr3n-eI" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Capas, Bloques y Acotación en AutoCAD" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-autocad font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

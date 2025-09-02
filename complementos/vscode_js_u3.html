@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web U3: JavaScript - Añadiendo Interactividad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #0d9488; /* teal-600 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #0f766e; /* teal-700 */
+        }
+        h4 {
+            color: #134e4a; /* teal-900 */
+        }
+        .info-box {
+            background-color: #f0fdfa; /* teal-50 */
+            border-left: 4px solid #2dd4bf; /* teal-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-web {
+            background-color: #0d9488;
+        }
+        .footer-button-web:hover {
+            background-color: #0f766e;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #1e293b;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #134e4a;">Unidad 3: JavaScript - Añadiendo Interactividad</h1>
+            <p class="text-lg text-gray-600">Desarrollo Web con Visual Studio Code</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Introducción -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">1. ¿Qué es JavaScript? El Cerebro de la Web</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p><strong>JavaScript (JS)</strong> es un lenguaje de programación que permite implementar funciones complejas en las páginas web. Mientras que HTML estructura el contenido y CSS le da estilo, JavaScript añade la <strong>interactividad</strong>. Es el lenguaje que se encarga de que las cosas sucedan: desde simples alertas y animaciones hasta complejas aplicaciones web que reaccionan a las acciones del usuario en tiempo real.</p>
+                </div>
+            </section>
+            
+            <!-- Sección Sintaxis -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">2. Fundamentos del Lenguaje: La Gramática de JS</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Antes de manipular una página, es crucial entender los conceptos básicos del lenguaje.</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Variables</h3>
+                            <p class="text-base mt-2">Son contenedores para almacenar datos. Se declaran con <code>let</code> (para variables que pueden cambiar) o <code>const</code> (para constantes que no cambiarán).</p>
+                            <div class="example-box"><pre><code>let edad = 25;<br>const nombre = "Nikola";</code></pre></div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold">Condicionales (if/else)</h3>
+                            <p class="text-base mt-2">Permiten que tu código tome decisiones y ejecute diferentes bloques de código según una condición.</p>
+                            <div class="example-box"><pre><code>if (edad >= 18) {<br>    console.log("Es mayor de edad.");<br>} else {<br>    console.log("Es menor de edad.");<br>}</code></pre></div>
+                        </div>
+                         <div>
+                            <h3 class="text-2xl font-semibold">Funciones</h3>
+                            <p class="text-base mt-2">Son bloques de código reutilizables que realizan una tarea específica. Se definen con la palabra clave <code>function</code>.</p>
+                             <div class="example-box"><pre><code>function saludar(nombre) {<br>    return "Hola, " + nombre;<br>}<br><br>// Para usarla:<br>let saludo = saludar("Tesla"); // saludo ahora contiene "Hola, Tesla"</code></pre></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección DOM -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">3. El DOM: El Puente entre HTML y JavaScript</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>El <strong>DOM (Document Object Model)</strong> es la habilidad más importante que aprenderás en JavaScript para la web. Es una representación de tu documento HTML en forma de árbol de objetos. JavaScript puede leer y modificar este árbol, lo que le permite cambiar el contenido, la estructura y el estilo de la página dinámicamente.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Seleccionar y Manipular Elementos</h3>
+                        <div class="info-box">
+                           <h4 class="font-semibold text-lg" style="color: #0d9488;">Pasos para la Manipulación:</h4>
+                           <ol class="list-decimal list-inside space-y-3 text-base">
+                               <li><strong>Seleccionar un elemento:</strong> Primero, necesitas "atrapar" el elemento HTML que quieres manipular.
+                                    <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                        <li><code>document.getElementById('id-del-elemento')</code>: Selecciona un elemento por su ID.</li>
+                                        <li><code>document.querySelector('.clase-del-elemento')</code>: Selecciona el primer elemento que coincida con un selector de CSS.</li>
+                                    </ul>
+                               </li>
+                               <li><strong>Manipularlo:</strong> Una vez seleccionado, puedes cambiar sus propiedades.
+                                   <ul class="list-inside list-['-_'] ml-6 mt-2">
+                                       <li><code>elemento.innerHTML = "Nuevo contenido";</code>: Cambia el contenido HTML interno.</li>
+                                       <li><code>elemento.style.color = "red";</code>: Cambia sus estilos CSS.</li>
+                                       <li><code>elemento.classList.add('nueva-clase');</code>: Añade una clase de CSS.</li>
+                                   </ul>
+                               </li>
+                           </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Tutorial -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #0f766e;">4. Proyecto Guiado: Creando un Interruptor de Modo Oscuro</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Vamos a añadir interactividad a nuestra página de biografía. Crearemos un botón que permita al usuario cambiar entre un tema claro y uno oscuro.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Paso 1: Modificar el HTML (<code>biografia.html</code>)</h3>
+                         <p class="text-base">Añade un botón en el <code>&lt;header&gt;</code> y enlaza un nuevo archivo JavaScript justo antes de cerrar el <code>&lt;/body&gt;</code>.</p>
+                         <div class="example-box"><pre><code>...
+&lt;header&gt;
+    &lt;h1&gt;Nikola Tesla: El Genio de la Electricidad&lt;/h1&gt;
+    &lt;button id="modo-oscuro-btn"&gt;Activar Modo Oscuro&lt;/button&gt;
+&lt;/header&gt;
+...
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+
+                         <h3 class="text-2xl font-semibold mt-8 mb-3">Paso 2: Añadir Estilos para el Modo Oscuro (<code>estilos.css</code>)</h3>
+                         <p class="text-base">Añade al final de tu archivo CSS una nueva clase que definirá los colores del modo oscuro.</p>
+                         <div class="example-box"><pre><code>...
+/* Añadir al final de estilos.css */
+body.modo-oscuro {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+main.modo-oscuro {
+    background-color: #2a2a2a;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.modo-oscuro h1, .modo-oscuro h2 {
+    color: #2dd4bf; /* Un teal brillante */
+}
+</code></pre></div>
+                         
+                         <h3 class="text-2xl font-semibold mt-8 mb-3">Paso 3: Crear la Lógica en JavaScript (<code>script.js</code>)</h3>
+                         <p class="text-base">Crea un nuevo archivo llamado <code>script.js</code>. Este código seleccionará el botón y el cuerpo de la página, y añadirá la funcionalidad de cambiar las clases.</p>
+                         <div class="example-box"><pre><code>// 1. Seleccionar los elementos que necesitamos
+const botonModoOscuro = document.getElementById('modo-oscuro-btn');
+const body = document.querySelector('body');
+const main = document.querySelector('main');
+
+// 2. Crear la función que cambiará los estilos
+function cambiarModoOscuro() {
+    // toggle() añade la clase si no está, y la quita si ya está
+    body.classList.toggle('modo-oscuro');
+    main.classList.toggle('modo-oscuro');
+    
+    // Cambiar el texto del botón
+    if (body.classList.contains('modo-oscuro')) {
+        botonModoOscuro.innerHTML = "Activar Modo Claro";
+    } else {
+        botonModoOscuro.innerHTML = "Activar Modo Oscuro";
+    }
+}
+
+// 3. Escuchar el evento 'click' en el botón
+botonModoOscuro.addEventListener('click', cambiarModoOscuro);
+</code></pre></div>
+                         <p class="text-base mt-4">¡Listo! Guarda los tres archivos. Ahora, cuando abras tu página y hagas clic en el botón, verás cómo los estilos cambian gracias a la magia de JavaScript.</p>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=Q9fwkpxr3ek" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "Curso de JavaScript para Principiantes" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-web font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>

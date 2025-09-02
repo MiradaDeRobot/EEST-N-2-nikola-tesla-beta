@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware U4.4: Temas Avanzados de Redes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h2 {
+            border-bottom: 2px solid #1d4ed8; /* blue-700 */
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #1e40af; /* blue-800 */
+        }
+        h4 {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .info-box {
+            background-color: #e0f2fe; /* sky-100 */
+            border-left: 4px solid #38bdf8; /* sky-400 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .video-box {
+            background-color: #fefce8; /* yellow-50 */
+            border-left: 4px solid #facc15; /* yellow-400 */
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .example-box {
+            background-color: #f1f5f9; /* slate-100 */
+            border-left: 4px solid #64748b; /* slate-500 */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .footer-button-hardware {
+            background-color: #1d4ed8;
+        }
+        .footer-button-hardware:hover {
+            background-color: #1e40af;
+        }
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-6 md:p-10">
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold" style="color: #1e3a8a;">Unidad 4.4: Temas Avanzados de Redes</h1>
+            <p class="text-lg text-gray-600">Módulo 4: Redes Informáticas para el Técnico</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <!-- Sección Subnetting -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">1. Direccionamiento IP y Subnetting</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>Cada dispositivo en una red necesita una <strong>dirección IP</strong> única para ser identificado. El <strong>subnetting</strong> (o subredes) es la técnica de dividir una red IP grande en redes más pequeñas y manejables. Esto mejora la organización, la seguridad y la eficiencia de la red.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">La Máscara de Subred</h3>
+                        <p class="mb-4 text-base">La máscara de subred es lo que le dice a un dispositivo qué parte de la dirección IP corresponde a la red y qué parte corresponde al host (al dispositivo). Por ejemplo, en la IP <code>192.168.1.5</code> con máscara <code>255.255.255.0</code>, la parte <code>192.168.1</code> identifica la red y el <code>.5</code> identifica al dispositivo dentro de esa red.</p>
+                        <div class="example-box">
+                           <h4 class="font-semibold text-lg" style="color: #475569;">¿Por qué hacer Subnetting?</h4>
+                           <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                               <li><strong>Organización:</strong> Puedes separar dispositivos por departamento (ej. Contabilidad en una subred, Ventas en otra).</li>
+                               <li><strong>Seguridad:</strong> Puedes crear reglas en el router para limitar la comunicación entre subredes, aislando áreas críticas.</li>
+                               <li><strong>Rendimiento:</strong> Reduce el tráfico de broadcast (mensajes enviados a todos los dispositivos), lo que mejora el rendimiento general.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección VLANs -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">2. Configuración de VLANs (Redes de Área Local Virtuales)</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                     <p>Una <strong>VLAN</strong> permite crear múltiples redes lógicas separadas sobre una misma infraestructura de red física. Es como si tuvieras varios switches virtuales dentro de un solo switch físico. Los dispositivos en una VLAN no pueden comunicarse con los de otra VLAN a menos que se configure explícitamente en un router (un proceso llamado "enrutamiento inter-VLAN").</p>
+                     <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-3">Funcionamiento y Ventajas</h3>
+                         <img src="https://placehold.co/1200x500/F1F5F9/1E3A8A?text=Diagrama+de+Red+con+VLANs" alt="VLANs" class="w-full h-auto rounded-lg shadow-md my-4">
+                        <div class="info-box">
+                           <p class="text-base">Para que esto funcione, se necesitan <strong>switches gestionables (managed switches)</strong>. En estos switches, puedes asignar cada puerto a una VLAN específica. Por ejemplo, los puertos 1-8 pueden ser la VLAN 10 (Ventas) y los puertos 9-16 la VLAN 20 (Ingeniería), aunque todos estén conectados al mismo switch.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-4 text-base">
+                               <li><strong>Flexibilidad:</strong> Los dispositivos pueden estar en la misma red lógica sin importar su ubicación física.</li>
+                               <li><strong>Seguridad Mejorada:</strong> Aísla el tráfico y los recursos, impidiendo que usuarios no autorizados accedan a servidores o datos sensibles.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Seguridad -->
+            <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">3. Conceptos de Seguridad en Redes</h2>
+                <div class="space-y-8 text-lg leading-relaxed">
+                    <p>Proteger una red es tan importante como construirla. Un técnico debe conocer los conceptos básicos de seguridad para proteger los datos y los dispositivos de amenazas externas e internas.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-3">Firewall (Cortafuegos)</h3>
+                             <p class="text-base">Un firewall es una barrera de seguridad que monitoriza y controla el tráfico de red entrante y saliente basándose en un conjunto de reglas de seguridad. Puede ser un dispositivo de hardware o un software. Su función principal es bloquear el tráfico no autorizado y malicioso para que no entre en la red privada.</p>
+                        </div>
+                        <div>
+                             <h3 class="text-2xl font-semibold mb-3">VPN (Red Privada Virtual)</h3>
+                             <p class="text-base">Una VPN crea una conexión segura y cifrada a través de una red pública como Internet. Es como crear un "túnel" privado para tus datos. Se utiliza principalmente para dos fines:</p>
+                             <ul class="list-disc list-inside space-y-2 mt-2 text-base">
+                                 <li><strong>Acceso Remoto Seguro:</strong> Permite a un empleado conectarse de forma segura a la red de su oficina desde casa.</li>
+                                 <li><strong>Privacidad y Seguridad:</strong> Cifra tu tráfico de internet, protegiéndote cuando usas redes Wi-Fi públicas.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Wi-Fi Avanzado -->
+             <section>
+                <h2 class="text-3xl font-semibold mb-4" style="color: #1e40af;">4. Redes Inalámbricas Avanzadas</h2>
+                <div class="space-y-6 text-lg leading-relaxed">
+                    <p>La tecnología Wi-Fi evoluciona constantemente para ofrecer mayores velocidades, menor latencia y mejor gestión en entornos congestionados.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                         <h3 class="text-2xl font-semibold mb-3">Estándares Wi-Fi (802.11)</h3>
+                         <div class="info-box">
+                             <ul class="list-disc list-inside space-y-3 text-base">
+                                <li><strong>Wi-Fi 4 (802.11n):</strong> Un estándar más antiguo, pero todavía funcional.</li>
+                                <li><strong>Wi-Fi 5 (802.11ac):</strong> Introdujo mejoras significativas de velocidad, operando principalmente en la banda de 5 GHz.</li>
+                                <li><strong>Wi-Fi 6 (802.11ax):</strong> El estándar actual. No solo es más rápido, sino que su principal ventaja es la eficiencia. Utiliza tecnologías como <strong>OFDMA</strong> para gestionar mucho mejor las conexiones de múltiples dispositivos simultáneamente, lo que es ideal para hogares y oficinas con muchos aparatos conectados.</li>
+                                 <li><strong>Wi-Fi 6E:</strong> Una extensión de Wi-Fi 6 que añade una nueva banda de frecuencia de <strong>6 GHz</strong>, mucho menos congestionada que las de 2.4 y 5 GHz.</li>
+                             </ul>
+                        </div>
+                        <div class="example-box mt-6">
+                            <h4 class="font-semibold text-lg" style="color: #475569;">Optimización de Canales y Ancho de Banda</h4>
+                            <p class="text-base mt-2">En la configuración de tu router, puedes ajustar el <strong>ancho del canal</strong> (20, 40, 80 o 160 MHz). Un ancho de canal mayor permite velocidades más altas, pero es más susceptible a interferencias. En entornos muy congestionados, a veces es mejor usar un ancho de canal más estrecho para lograr una conexión más estable.</p>
+                        </div>
+                    </div>
+                     <div class="video-box">
+                        <h4 class="font-semibold text-lg">🎥 Video de Apoyo</h4>
+                        <a href="https://www.youtube.com/watch?v=ht5-T7o-o-M" target="_blank" class="inline-block mt-2 font-semibold text-blue-600 hover:text-blue-800 hover:underline">
+                            Ver video sobre "VLANs, Firewalls y Wi-Fi 6 Explicado" &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 text-center">
+            <a href="../index.html" class="footer-button-hardware font-bold py-2 px-4 rounded-lg transition-colors duration-300 inline-flex items-center shadow-md hover:shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Volver al Portal
+            </a>
+        </footer>
+
+    </div>
+</body>
+</html>
