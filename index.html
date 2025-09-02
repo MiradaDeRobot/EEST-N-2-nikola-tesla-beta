@@ -61,7 +61,7 @@
         <div id="home-view">
             <header class="text-center mb-12">
                 <div class="bg-gray-900/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-sky-400/30 flex items-center justify-center space-x-4 md:space-x-6">
-                    <img src="https://placehold.co/150x150/FFFFFF/0ea5e9?text=Escudo" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/0ea5e9?text=Escudo';">
+                    <img src="tesla escudo.png" alt="Escudo de la Escuela" class="w-24 h-24 sm:w-52 sm:h-52 rounded-full bg-white p-1 shadow-lg flex-shrink-0" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/0ea5e9?text=Escudo';">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-100 text-left">
                         <span>Portal Educativo de la Escuela Tecnica N°2</span>
                         <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-sky-400">Nikola Tesla</span>
@@ -83,14 +83,14 @@
                     <div id="search-results" class="bg-slate-800 border border-slate-700 mt-2 rounded-lg shadow-lg max-h-96 overflow-y-auto hidden"></div>
                 </div>
 
-                <h2 class="text-3xl font-bold text-center mb-8 text-sky-400" style="background-color: black;">Selecciona un año para ver los contenidos</h2>
+                <h2 style="background-color: black;" class="text-3xl font-bold text-center mb-8 text-sky-400">Selecciona un año para ver los contenidos</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="years-grid">
                     <!-- Los botones de los años se generan con JS -->
                 </div>
 
                 <!-- Nueva sección de Complementos de Estudio -->
                 <hr class="my-12 border-t-2 border-sky-400/30">
-                <h2 class="text-3xl font-bold text-center mb-8 text-sky-400" style="background-color: black;">Complementos de estudio</h2>
+                <h2 style="background-color: black;" class="text-3xl font-bold text-center mb-8 text-sky-400">Complementos de estudio</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6" id="complements-grid">
                     <!-- Los botones de complementos se generan con JS -->
                 </div>
@@ -535,13 +535,51 @@
                     icon: "🔧",
                     subjects: [
                         {
-                            name: "Componentes de PC",
+                            name: "Módulo 1: Fundamentos del Hardware",
                             units: [
-                                { title: "Unidad 1: Arquitectura de la PC y Placa Madre", content: "Componentes centrales, buses, zócalos y conectores.", link: "complementos/informatica_hardware_u1.html" },
-                                { title: "Unidad 2: Procesador, Memoria y Almacenamiento", content: "CPU, memoria RAM, discos duros (HDD) y unidades de estado sólido (SSD).", link: "complementos/informatica_hardware_u2.html" },
-                                { title: "Unidad 3: Periféricos y Ensamblaje", content: "Tarjetas de video, fuentes de alimentación, periféricos de entrada/salida y montaje de una PC.", link: "complementos/informatica_hardware_u3.html" },
-                                { title: "Unidad 4: Reparación y Mantenimiento", content: "Diagnóstico de problemas comunes de hardware: fallas de arranque, sobrecalentamiento, problemas de memoria y almacenamiento.", link: "complementos/informatica_hardware_u4.html" },
-                                { title: "Unidad 5: Notebooks: Componentes y Cuidados", content: "Diferencias clave entre los componentes de una notebook y una PC de escritorio. Consejos para el cuidado y mantenimiento preventivo.", link: "complementos/informatica_hardware_u5.html" }
+                                { title: "1.1. Introducción a la Arquitectura de Computadoras", content: "Historia, evolución y conceptos básicos de hardware, software y firmware.", link: "complementos/hardware_fundamentos_u1.html" },
+                                { title: "1.2. La Placa Madre (Motherboard)", content: "Formatos, componentes clave, puertos y el rol del BIOS/UEFI.", link: "complementos/hardware_fundamentos_u2.html" },
+                                { title: "1.3. La Unidad Central de Procesamiento (CPU)", content: "Fabricantes, especificaciones (núcleos, hilos, frecuencia) y arquitecturas.", link: "complementos/hardware_fundamentos_u3.html" },
+                                { title: "1.4. Memoria RAM", content: "Tipos (DDR4, DDR5), capacidad, velocidad, latencia e instalación.", link: "complementos/hardware_fundamentos_u4.html" },
+                                { title: "1.5. Almacenamiento", content: "Diferencias entre HDD y SSD (SATA, NVMe). Introducción a configuraciones RAID.", link: "complementos/hardware_fundamentos_u5.html" },
+                                { title: "1.6. Tarjetas Gráficas (GPU)", content: "GPUs dedicadas vs. integradas, fabricantes y especificaciones clave.", link: "complementos/hardware_fundamentos_u6.html" },
+                                { title: "1.7. Fuente de Alimentación (PSU)", content: "Certificaciones de eficiencia, tipos de modularidad y cálculo de potencia.", link: "complementos/hardware_fundamentos_u7.html" },
+                                { title: "1.8. Refrigeración", content: "Sistemas de refrigeración por aire y líquida, flujo de aire y pasta térmica.", link: "complementos/hardware_fundamentos_u8.html" },
+                            ]
+                        },
+                        {
+                            name: "Módulo 2: Armado y Mantenimiento",
+                            units: [
+                                { title: "2.1. Guía de Ensamblaje de una PC de Escritorio", content: "Selección de componentes, proceso de montaje y gestión de cables.", link: "complementos/hardware_armado_u1.html" },
+                                { title: "2.2. Desmontaje y Análisis de Notebooks", content: "Diferencias en el despiece e identificación de componentes internos.", link: "complementos/hardware_armado_u2.html" },
+                                { title: "2.3. Mantenimiento Preventivo", content: "Limpieza física, actualización de drivers y monitorización de rendimiento.", link: "complementos/hardware_armado_u3.html" },
+                            ]
+                        },
+                        {
+                            name: "Módulo 3: Diagnóstico y Reparación",
+                            units: [
+                                { title: "3.1. Metodologías de Diagnóstico", content: "El proceso POST, códigos de error y uso de software de diagnóstico.", link: "complementos/hardware_reparacion_u1.html" },
+                                { title: "3.2. Solución de Fallas Comunes", content: "Diagnóstico de problemas de encendido, BSODs, sobrecalentamiento y fallos de almacenamiento.", link: "complementos/hardware_reparacion_u2.html" },
+                                { title: "3.3. Reparaciones a Nivel Componente (Avanzado)", content: "Introducción a la micro-soldadura, reemplazo de componentes y reparación de pantallas.", link: "complementos/hardware_reparacion_u3.html" },
+                            ]
+                        },
+                        {
+                            name: "Módulo 4: Redes Informáticas para el Técnico",
+                            units: [
+                                 { title: "4.1. Fundamentos de Redes", content: "Tipos y topologías de red. Modelos OSI y TCP/IP.", link: "complementos/hardware_redes_u1.html" },
+                                 { title: "4.2. Hardware de Red", content: "Routers, switches, cableado y crimpeado de RJ45.", link: "complementos/hardware_redes_u2.html" },
+                                 { title: "4.3. Configuración de Redes SOHO", content: "Configuración básica de un router y solución de problemas de conectividad.", link: "complementos/hardware_redes_u3.html" },
+                                 { title: "4.4. Temas Avanzados de Redes", content: "Direccionamiento IP, subnetting, VLANs y conceptos de seguridad.", link: "complementos/hardware_redes_u4.html" },
+                            ]
+                        },
+                        {
+                            name: "Módulo 5: Temas Especializados y de Vanguardia",
+                            units: [
+                                { title: "5.1. Hardware para Gaming y Alto Rendimiento", content: "Overclocking seguro de CPU y GPU y optimización de sistemas.", link: "complementos/hardware_especializado_u1.html" },
+                                { title: "5.2. Hardware para Servidores", content: "Componentes específicos como CPUs Xeon/Epyc, memoria ECC y configuraciones NAS.", link: "complementos/hardware_especializado_u2.html" },
+                                { title: "5.3. El Mundo de los Periféricos", content: "Análisis de teclados, ratones, monitores e impresoras. Calibración de monitores.", link: "complementos/hardware_especializado_u3.html" },
+                                { title: "5.4. Hardware para Realidad Virtual y Aumentada", content: "Requisitos y componentes clave para experiencias de VR y AR.", link: "complementos/hardware_especializado_u4.html" },
+                                { title: "5.5. Introducción al Hardware de Dispositivos Móviles", content: "Análisis de los componentes internos de smartphones y tablets.", link: "complementos/hardware_especializado_u5.html" },
                             ]
                         }
                     ]
@@ -583,6 +621,38 @@
                                 { title: "Unidad 1: Asistentes de Escritura y Resumen", content: "Herramientas de IA para mejorar la redacción, corregir gramática y resumir textos largos.", link: "complementos/ia_u1.html" },
                                 { title: "Unidad 2: Búsqueda Inteligente e Investigación", content: "Uso de IA para encontrar información académica, verificar fuentes y obtener respuestas a preguntas complejas.", link: "complementos/ia_u2.html" },
                                 { title: "Unidad 3: Apoyo Creativo y Explicaciones", content: "Cómo usar modelos de lenguaje para brainstorming, explicar conceptos difíciles y generar ideas.", link: "complementos/ia_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Diseño 3D",
+                            units: [
+                                { title: "Unidad 1: Introducción al Diseño con Tinkercad", content: "Conceptos básicos de modelado 3D, formas primitivas y creación de objetos simples en un entorno web.", link: "complementos/diseno3d_u1.html" },
+                                { title: "Unidad 2: Diseño Paramétrico con Fusion 360", content: "Introducción al diseño paramétrico, bocetos, extrusiones y creación de piezas mecánicas precisas.", link: "complementos/diseno3d_u2.html" },
+                                { title: "Unidad 3: Modelado Orgánico con Blender", content: "Principios del modelado de mallas (mesh modeling), escultura digital y creación de formas complejas y orgánicas.", link: "complementos/diseno3d_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "AutoCAD para Planos Técnicos",
+                            units: [
+                                { title: "Unidad 1: Interfaz y Comandos de Dibujo 2D", content: "Introducción a la interfaz, coordenadas, y uso de comandos como Línea, Círculo, Recortar y Alargar para crear geometría básica.", link: "complementos/autocad_u1.html" },
+                                { title: "Unidad 2: Capas, Bloques y Acotación", content: "Organización del dibujo con capas, creación y uso de bloques reutilizables, y técnicas de acotación para planos técnicos.", link: "complementos/autocad_u2.html" },
+                                { title: "Unidad 3: Preparación de Planos y Trazado (Ploteo)", content: "Configuración del espacio papel (layout), creación de ventanas gráficas, escalas de impresión y exportación a PDF para planos normalizados.", link: "complementos/autocad_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Desarrollo Web con Visual Studio Code",
+                            units: [
+                                { title: "Unidad 1: HTML - La Estructura de la Web", content: "Uso de VS Code para escribir la estructura semántica de una página web con etiquetas HTML.", link: "complementos/vscode_html_u1.html" },
+                                { title: "Unidad 2: CSS - Dando Estilo a la Web", content: "Aplicación de reglas de estilo CSS para controlar colores, fuentes, espaciado y diseño (layout).", link: "complementos/vscode_css_u2.html" },
+                                { title: "Unidad 3: JavaScript - Añadiendo Interactividad", content: "Introducción a la programación con JavaScript para manipular el DOM y responder a las acciones del usuario.", link: "complementos/vscode_js_u3.html" }
+                            ]
+                        },
+                        {
+                            name: "Creación de Apps con App Inventor",
+                            units: [
+                                { title: "Unidad 1: Introducción y Diseño de Interfaces", content: "Conociendo la plataforma App Inventor. Diseño de la interfaz de usuario (UI) arrastrando y soltando componentes.", link: "complementos/appinventor_u1.html" },
+                                { title: "Unidad 2: Programación con Bloques", content: "Lógica de programación utilizando el editor de bloques para controlar el comportamiento de la aplicación.", link: "complementos/appinventor_u2.html" },
+                                { title: "Unidad 3: Sensores, Datos y Proyectos Completos", content: "Uso de los sensores del teléfono (GPS, acelerómetro) y creación de una aplicación funcional de principio a fin.", link: "complementos/appinventor_u3.html" }
                             ]
                         }
                     ]
@@ -914,4 +984,7 @@
     </script>
 </body>
 </html>
+
+
+
 
